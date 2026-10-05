@@ -301,8 +301,44 @@ img{max-width:100%}
    those would be a different product.
 ------------------------------------------------------------------------- */
 .page--chat{padding:0}
-.chat{display:flex;flex-direction:column;
-      height:calc(100dvh - 52px - 76px - env(safe-area-inset-bottom,0px))}
+.chat-wrap{height:calc(100dvh - 52px - 76px - env(safe-area-inset-bottom,0px))}
+
+/* Phone: the list IS the tab, and opening a conversation replaces it.
+   Desktop: both at once, which is what every desktop messenger does. */
+.chat-wrap{display:block}
+.chat-wrap .convo-list{display:flex;flex-direction:column;height:100%;
+                       overflow-y:auto;overscroll-behavior:contain}
+.chat-wrap .convo-pane{display:none}
+.chat-wrap.has-open .convo-list{display:none}
+.chat-wrap.has-open .convo-pane{display:flex;flex-direction:column;height:100%}
+
+.list-head{display:flex;align-items:center;gap:12px;padding:4px 16px 12px}
+.list-head h1{flex:1;font-family:var(--serif);font-size:34px;margin:0;font-weight:400}
+.add{flex:none;width:36px;height:36px;border-radius:50%;background:var(--surface);
+     border:1px solid var(--hairline-strong);color:var(--ink);font-size:20px;
+     line-height:34px;text-align:center}
+.list-empty{font-size:14.5px;line-height:1.5;color:var(--ink-tertiary);padding:8px 16px}
+
+.crow{display:flex;gap:12px;align-items:center;width:100%;padding:12px 16px;
+      border-bottom:1px solid var(--hairline);text-align:left}
+.crow.on{background:var(--chip-soft)}
+.crow .av{width:44px;height:44px;font-size:17px;flex:none}
+.crow-body{flex:1;min-width:0}
+.crow-top{display:flex;align-items:baseline;gap:8px}
+.crow-top b{flex:1;min-width:0;font-size:16px;font-weight:700;white-space:nowrap;
+            overflow:hidden;text-overflow:ellipsis}
+.crow-top span{flex:none;font-size:12.5px;color:var(--ink-secondary)}
+.crow-body p{margin:2px 0 0;font-size:14.5px;color:var(--ink-secondary);
+             white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.empty-pane{align-items:center;justify-content:center;gap:12px;padding:32px;
+            text-align:center}
+.empty-pane h3{font-family:var(--serif);font-size:24px;margin:0;font-weight:400}
+.empty-pane p{font-size:14.5px;line-height:1.5;color:var(--ink-tertiary);margin:0;
+              max-width:34ch}
+.cback{flex:none;width:32px;height:32px;display:grid;place-items:center;
+       margin-left:-6px;color:var(--ink)}
+.cback svg{width:20px;height:20px}
 
 /* Conversation header */
 .chead{flex:none;display:flex;align-items:center;gap:10px;padding:8px 16px 10px;
@@ -396,11 +432,6 @@ img{max-width:100%}
 .chat-acts{flex:none;display:flex;gap:8px;padding:0 12px 8px;flex-wrap:wrap}
 .ghost{font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:var(--r-pill);
        background:var(--chip);color:var(--ink)}
-.empty-chat{flex:1;display:flex;flex-direction:column;align-items:center;
-            justify-content:center;gap:10px;padding:24px;text-align:center}
-.empty-chat h3{font-family:var(--serif);font-size:22px;margin:0;font-weight:400}
-.empty-chat p{font-size:14.5px;line-height:1.5;color:var(--ink-tertiary);margin:0;
-              max-width:30ch}
 
 .picker{display:flex;flex-direction:column;gap:2px;padding:0 20px}
 .picker input{width:100%;font:inherit;font-size:16.5px;color:var(--ink);
@@ -420,7 +451,18 @@ img{max-width:100%}
 .notice{font-size:13.5px;line-height:1.5;color:var(--ink-tertiary);background:var(--chip);
         border-radius:14px;padding:10px 12px;margin:0 12px 8px;flex:none}
 
-@media (min-width:900px){ .chat{height:calc(100dvh - 60px)} }
+@media (min-width:900px){
+  /* Three columns overall: the app's nav rail, this list, and the thread. */
+  .page.page--chat{max-width:none;margin:0;padding:0}
+  .chat-wrap{height:calc(100dvh - 60px);
+             display:grid;grid-template-columns:320px minmax(0,1fr)}
+  .chat-wrap .convo-list,
+  .chat-wrap.has-open .convo-list{display:flex;border-right:1px solid var(--hairline)}
+  .chat-wrap .convo-pane,
+  .chat-wrap.has-open .convo-pane{display:flex}
+  .cback{display:none}
+  .list-head h1{font-size:26px}
+}
 
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
@@ -525,15 +567,29 @@ let stack = [{ tab:'home' }]; // view stack; last entry is what is showing
 let reported = null;          // which item's report note is showing
 let PHIL = [];                // the ranked roster, from assets/philosophers.json
 let SAMPLE = undefined;       // the model, once asked for: null means no model here
-let chat = { cast: [], msgs: [], busy:false, query:'', picking:false, said:{},
-             typing:null, draft:'' };
+/* A chat app holds conversations, not one transcript. Each carries its own
+   cast, its own history, and its own record of which philosophers have
+   already shown a real passage. */
+let chat = { convos: [], open: null, busy:false, query:'', picking:false,
+             pending: [], typing:null, draft:'' };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
 function load(){
   try{
     const c = localStorage.getItem('still.chat');
-    if(c) chat = Object.assign(chat, JSON.parse(c), {busy:false, picking:false});
+    if(c){
+      const saved = JSON.parse(c);
+      // An earlier build kept a single conversation; carry it over as one.
+      if(saved.cast && !saved.convos){
+        saved.convos = saved.cast.length
+          ? [{id:'c1', cast:saved.cast, msgs:saved.msgs||[], said:saved.said||{},
+              at: Date.now()}] : [];
+        saved.open = saved.convos.length ? 'c1' : null;
+      }
+      delete saved.cast; delete saved.msgs; delete saved.said;
+      chat = Object.assign(chat, saved, {busy:false, picking:false, pending:[]});
+    }
   }catch(e){ /* defaults stand */ }
   try{
     const raw = localStorage.getItem('still.state');
@@ -546,8 +602,10 @@ function save(){
   try{
     localStorage.setItem('still.state', JSON.stringify(state));
     localStorage.setItem('still.lang', lang);
-    localStorage.setItem('still.chat', JSON.stringify(
-      {cast: chat.cast, msgs: chat.msgs.slice(-60), said: chat.said}));
+    localStorage.setItem('still.chat', JSON.stringify({
+      open: chat.open,
+      convos: chat.convos.map(c => ({...c, msgs: c.msgs.slice(-60)}))
+    }));
   }catch(e){ /* nothing to do; the page still works for this session */ }
 }
 
@@ -624,6 +682,8 @@ function go(entry){ reported = null; stack.push(entry); render(); window.scrollT
 function tab(name){ reported = null; stack = [{tab:name}]; render(); window.scrollTo(0,0); }
 function back(){ reported = null;
   if(chat.picking){ chat.picking = false; return render(); }
+  if(chat.open && stack[0].tab === 'chat' && stack.length === 1){
+    chat.open = null; return render(); }
   if(stack.length > 1){ stack.pop(); render(); } }
 
 /* --- Views --------------------------------------------------------------- */
@@ -856,24 +916,92 @@ function castAvatar(p, cls){
   return `<div class="av ${cls||''}">${img}</div>`;
 }
 
+/* The shape of a chat app: a list of conversations, and the one you have
+   open. Below 900px you see one or the other; above it, both at once, which
+   is what the two-pane layout in every desktop messenger does. */
+
+const convo = () => chat.convos.find(c => c.id === chat.open) || null;
+
+function convoTitle(c){
+  const names = (c.cast || []).map(id => (philById(id) || {}).name).filter(Boolean);
+  if(!names.length) return t('Empty conversation','空对话');
+  if(names.length <= 2) return names.join(t(' and ',' 与 '));
+  return names.slice(0,2).join(', ') + t(` and ${names.length-2} more`, ` 等 ${names.length} 人`);
+}
+
+function whenLabel(ts){
+  if(!ts) return '';
+  const d = new Date(ts), now = new Date();
+  const days = Math.floor((now - d) / 86400000);
+  if(days < 1 && d.getDate() === now.getDate())
+    return d.toLocaleTimeString(lang === 'zh' ? 'zh-CN' : 'en-US',
+      {hour:'numeric', minute:'2-digit'});
+  if(days < 7) return t(`${Math.max(1,days)}d`, `${Math.max(1,days)} 天`);
+  return d.toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-GB',
+    {day:'numeric', month:'short'});
+}
+
 function chatView(){
   if(chat.picking) return pickerView();
-  const cast = chat.cast.map(philById).filter(Boolean);
-  const names = cast.map(p => p.name);
-  const title = names.length === 0 ? t('No one yet','还没有人')
-    : names.length <= 2 ? names.join(t(' and ',' 与 '))
-    : names.slice(0,2).join(', ') + t(` and ${names.length-2} more`, ` 等 ${names.length} 人`);
+  const open = convo();
+  // One pane on a phone, both on a desktop.
+  return `<div class="page page--chat"><div class="chat-wrap${open ? ' has-open' : ''}">
+    ${convoList(open)}
+    ${open ? convoPane(open) : emptyPane()}
+  </div></div>`;
+}
 
-  return `<div class="page page--chat"><div class="chat">
+function convoList(open){
+  return `<aside class="convo-list">
+    <div class="list-head">
+      <h1>${t('Agon','争鸣')}</h1>
+      <button class="add" data-new="1" aria-label="${t('New conversation','新建对话')}">+</button>
+    </div>
+    ${chat.convos.length ? chat.convos
+      .slice().sort((x,y) => (y.at||0) - (x.at||0))
+      .map(c => {
+        const last = c.msgs[c.msgs.length - 1];
+        const face = (c.cast || []).map(philById).filter(Boolean)[0];
+        return `<button class="crow${open && open.id === c.id ? ' on' : ''}"
+                        data-open-convo="${esc(c.id)}">
+          ${face ? castAvatar(face) : `<div class="av">${esc(convoTitle(c)[0] || '?')}</div>`}
+          <div class="crow-body">
+            <div class="crow-top">
+              <b>${esc(convoTitle(c))}</b>
+              <span>${esc(whenLabel(c.at))}</span>
+            </div>
+            <p>${last ? esc((last.mine ? t('You: ','你：') : '') + last.text)
+                      : t('No messages yet','还没有消息')}</p>
+          </div>
+        </button>`;
+      }).join('')
+      : `<p class="list-empty">${t('No conversations yet. Tap + to start one.','还没有对话。点 + 开始。')}</p>`}
+  </aside>`;
+}
 
+function emptyPane(){
+  return `<section class="convo-pane empty-pane">
+    <h3>${t('Start an argument','开一场争论')}</h3>
+    <p>${t('Pick philosophers and say something. Their replies are positions derived from commitments their texts carry — written by a model, and labelled on every line.','选几位哲学家，然后说点什么。他们的回应是从其文本中的承诺推导出的立场 — 由模型写成，并在每一行标明。')}</p>
+    <button class="ghost" data-new="1">${t('New conversation','新建对话')}</button>
+  </section>`;
+}
+
+function convoPane(c){
+  const cast = (c.cast || []).map(philById).filter(Boolean);
+  return `<section class="convo-pane">
     <header class="chead">
-      <div class="faces">${cast.slice(0,4).map(p => castAvatar(p)).join('')
-        || `<div class="av">+</div>`}</div>
+      <button class="cback" data-close-convo="1" aria-label="${t('Back','返回')}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="faces">${cast.slice(0,3).map(p => castAvatar(p)).join('')
+        || `<div class="av">?</div>`}</div>
       <div class="who">
-        <b>${esc(title)}</b>
-        <span>${cast.length
-          ? t(`${cast.length} in the room · simulated`, `${cast.length} 人在场 · 模拟`)
-          : t('Tap + to add philosophers','点 + 添加哲学家')}</span>
+        <b>${esc(convoTitle(c))}</b>
+        <span>${cast.length ? t(`${cast.length} in the room · simulated`,
+                                `${cast.length} 人在场 · 模拟`)
+                            : t('Nobody here yet','这里还没有人')}</span>
       </div>
       <button class="add" data-pick-open="1" aria-label="${t('Add','添加')}">+</button>
     </header>
@@ -882,25 +1010,21 @@ function chatView(){
       'No model is reachable here, so nobody will reply. The version on claude.ai can ask Claude directly.',
       '此处无法连接模型，因此不会有回应。claude.ai 上的版本可以直接向 Claude 提问。')}</p>` : ''}
 
-    ${cast.length === 0 ? `<div class="empty-chat">
-        <h3>${t('Start an argument','开一场争论')}</h3>
-        <p>${t('Add philosophers and say something. Their replies are positions derived from commitments their texts carry — written by a model, and labelled on every line.','加入几位哲学家，然后说点什么。他们的回应是从其文本中的承诺推导出的立场 — 由模型写成，并在每一行标明。')}</p>
-      </div>` : `
-      <div class="msgs" id="msgs">
-        ${chat.msgs.length ? `<span class="daysep">${t('Today','今天')}</span>` : ''}
-        ${chat.msgs.map(msgRow).join('')}
-        ${chat.typing ? `<article class="msg">
-          ${castAvatar(philById(chat.typing) || {name:'?'})}
-          <div class="msg-body">
-            <div class="msg-head"><b>${esc((philById(chat.typing)||{}).name || '')}</b></div>
-            <div class="typing" aria-label="${t('typing','正在输入')}"><i></i><i></i><i></i></div>
-          </div>
-        </article>` : ''}
-      </div>`}
+    <div class="msgs" id="msgs">
+      ${c.msgs.length ? `<span class="daysep">${t('Today','今天')}</span>` : ''}
+      ${c.msgs.map((m,i) => msgRow(m, i, c)).join('')}
+      ${chat.typing ? `<article class="msg">
+        ${castAvatar(philById(chat.typing) || {name:'?'})}
+        <div class="msg-body">
+          <div class="msg-head"><b>${esc((philById(chat.typing)||{}).name || '')}</b></div>
+          <div class="typing" aria-label="${t('typing','正在输入')}"><i></i><i></i><i></i></div>
+        </div>
+      </article>` : ''}
+    </div>
 
     ${cast.length ? `<div class="chat-acts">
       <button class="ghost" data-talk="1">${t('Let them argue','让他们互相辩论')}</button>
-      ${chat.msgs.length ? `<button class="ghost" data-clear="1">${t('Clear','清空')}</button>` : ''}
+      ${c.msgs.length ? `<button class="ghost" data-clear="1">${t('Clear','清空')}</button>` : ''}
     </div>` : ''}
 
     <form class="composer" id="composer">
@@ -913,19 +1037,17 @@ function chatView(){
           <path d="M12 19V5"/><path d="M5.5 11.5L12 5l6.5 6.5"/></svg>
       </button>
     </form>
-  </div></div>`;
+  </section>`;
 }
 
 const clock = ts => { const d = new Date(ts || Date.now());
   return d.getHours().toString().padStart(2,'0') + ':' +
          d.getMinutes().toString().padStart(2,'0'); };
 
-function msgRow(m, i){
-  // Same speaker twice running reads as one turn: no repeated face or name,
-  // and the bubble loses its tail.
-  const prev = chat.msgs[i-1];
+function msgRow(m, i, c){
+  // Same speaker twice running reads as one turn.
+  const prev = c.msgs[i-1], next = c.msgs[i+1];
   const cont = prev && !!prev.mine === !!m.mine && prev.id === m.id ? ' cont' : '';
-  const next = chat.msgs[i+1];
   const last = !(next && !!next.mine === !!m.mine && next.id === m.id);
 
   if(m.mine) return `<article class="msg mine${cont}">
@@ -965,8 +1087,9 @@ function msgRow(m, i){
 function pickerView(){
   const q = chat.query.trim().toLowerCase();
   const list = PHIL.filter(p => !q || p.name.toLowerCase().includes(q));
+  const target = convo() ? convo().cast : chat.pending;
   const row = p => {
-    const on = chat.cast.includes(p.id);
+    const on = target.includes(p.id);
     return `<div class="prow">
       ${castAvatar(p)}
       <div class="meta"><b>${esc(p.name)}</b>
@@ -984,6 +1107,10 @@ function pickerView(){
     <div class="picker">
       <input id="pq" placeholder="${t('Search 151 philosophers…','搜索 151 位哲学家…')}"
              value="${esc(chat.query)}">
+      <button class="wide" data-pick-done="1" style="margin:0 0 12px">${
+        convo() ? t('Done','完成')
+                : t(`Start conversation${chat.pending.length ? ' · ' + chat.pending.length : ''}`,
+                    `开始对话${chat.pending.length ? ' · ' + chat.pending.length : ''}`)}</button>
       ${list.map(row).join('') || `<p class="empty">${t('Nobody by that name.','没有这个名字。')}</p>`}
     </div>
   </div>`;
@@ -1054,12 +1181,14 @@ function brief(cast){
 }
 
 function transcript(){
-  return chat.msgs.slice(-12).map(m =>
+  const c = convo(); if(!c) return '';
+  return c.msgs.slice(-12).map(m =>
     (m.mine ? 'Reader' : m.name) + ': ' + m.text).join('\n');
 }
 
 async function speak(extra){
-  const cast = chat.cast.map(philById).filter(Boolean);
+  const c = convo(); if(!c) return;
+  const cast = c.cast.map(philById).filter(Boolean);
   if(!cast.length || chat.busy) return;
   const m = await model();
   if(!m) return;
@@ -1083,18 +1212,18 @@ async function speak(extra){
       chat.typing = null;
       // One real passage per philosopher, the first time they speak.
       let said = null;
-      if(p.quotes.length && !chat.said[p.id]){
+      if(p.quotes.length && !c.said[p.id]){
         said = p.quotes[Math.floor(Math.random()*p.quotes.length)];
-        chat.said[p.id] = 1;
+        c.said[p.id] = 1;
       }
-      chat.msgs.push({ id:p.id, name:p.name, text:String(r.text), said,
-                       at: Date.now(),
-                       commitment: r.commitment ? String(r.commitment) : null,
-                       bridge: r.bridge ? String(r.bridge) : null });
-      save(); render();
+      c.msgs.push({ id:p.id, name:p.name, text:String(r.text), said,
+                    at: Date.now(),
+                    commitment: r.commitment ? String(r.commitment) : null,
+                    bridge: r.bridge ? String(r.bridge) : null });
+      c.at = Date.now(); save(); render();
     }
   }catch(e){
-    chat.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text:
+    c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text:
       t('The model did not answer. Try again.','模型没有回应，请重试。') });
   }
   chat.busy = false; chat.typing = null; save(); render();
@@ -1299,7 +1428,8 @@ function render(){
     grow(nb);
     if(hadFocus){ nb.focus(); nb.setSelectionRange(nb.value.length, nb.value.length); }
   }
-  document.getElementById('back').hidden = stack.length <= 1 && !chat.picking;
+  document.getElementById('back').hidden = stack.length <= 1 && !chat.picking
+    && !(stack[0].tab === 'chat' && chat.open);
   navBar();
 }
 
@@ -1356,22 +1486,38 @@ document.addEventListener('click', ev => {
     return;
   }
 
-  if((el = hit('[data-pick-open]'))){ chat.picking = true; return render(); }
+  if((el = hit('[data-new]'))){
+    chat.open = null; chat.pending = []; chat.picking = true; chat.query = '';
+    return render();
+  }
+  if((el = hit('[data-open-convo]'))){
+    chat.open = el.dataset.openConvo; chat.draft = ''; return render();
+  }
+  if((el = hit('[data-close-convo]'))){ chat.open = null; return render(); }
+  if((el = hit('[data-pick-open]'))){ chat.picking = true; chat.query = ''; return render(); }
+  if((el = hit('[data-pick-done]'))){
+    if(!convo() && chat.pending.length){
+      const c = { id: 'c' + Date.now(), cast: chat.pending.slice(), msgs: [],
+                  said: {}, at: Date.now() };
+      chat.convos.push(c); chat.open = c.id; chat.pending = [];
+    }
+    chat.picking = false; save(); return render();
+  }
   if((el = hit('[data-toggle]'))){
     const id = el.dataset.toggle;
-    chat.cast = chat.cast.includes(id)
-      ? chat.cast.filter(x => x !== id) : chat.cast.concat(id);
+    const c = convo();
+    const list = c ? c.cast : chat.pending;
+    const next = list.includes(id) ? list.filter(x => x !== id) : list.concat(id);
+    if(c) c.cast = next; else chat.pending = next;
     save(); return render();
-  }
-  if((el = hit('[data-drop]'))){
-    chat.cast = chat.cast.filter(x => x !== el.dataset.drop); save(); return render();
   }
   if((el = hit('[data-talk]'))){
     return speak('Continue: have them take up the argument with each other. '
                + 'Do not address the reader.');
   }
   if((el = hit('[data-clear]'))){
-    chat.msgs = []; chat.said = {}; save(); return render();
+    const c = convo(); if(c){ c.msgs = []; c.said = {}; }
+    save(); return render();
   }
 
   if((el = hit('[data-report]'))){
@@ -1396,10 +1542,12 @@ function grow(el){
 }
 
 function send(){
+  const c = convo(); if(!c) return;
   const box = document.getElementById('say');
   const text = box ? box.value.trim() : '';
   if(!text || chat.busy) return;
-  chat.msgs.push({ mine:true, text, at: Date.now() });
+  c.msgs.push({ mine:true, text, at: Date.now() });
+  c.at = Date.now();
   chat.draft = ''; if(box){ box.value = ''; grow(box); }
   save(); render();
   speak('The reader just said: ' + text + '\nAnswer them.');
