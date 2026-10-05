@@ -145,10 +145,6 @@ img{max-width:100%}
 
 .feed{display:flex;flex-direction:column;gap:20px;padding:4px 16px 0}
 .feed .q{cursor:pointer}
-/* Two column boxes that vanish below the wide breakpoint; each card carries
-   its feed position as `order`, so one column reads newest first. */
-.feed-col{display:contents}
-.feed .footer-note{order:9999}
 
 /* --- Thread -------------------------------------------------------------- */
 .section-h{font-size:16px;padding-left:4px;margin:24px 0 12px}
@@ -203,47 +199,36 @@ img{max-width:100%}
 
 /* --- Answers: the commonplace book --------------------------------------- */
 .ans{display:flex;flex-direction:column;align-items:center;padding:16px 20px 0}
-.book{width:min(300px,78%);aspect-ratio:546/750;position:relative;
+/* One object, the same size shut and open, so it never moves off-centre.
+   Same model as `Turning` in AnswersView.swift: a plain dark cover lifts
+   on its hinge past upright, darkening as it turns from the light, and
+   fades as it goes — it never lands beside the page. Timing curves are
+   Theme.Motion.bookOpen / bookClose; 110deg and the fade are
+   Theme.Motion.coverLift / coverFadeFrom. */
+.book{width:min(300px,78%);aspect-ratio:2/3;position:relative;
       perspective:1200px;cursor:pointer;margin-top:16px;
       filter:drop-shadow(0 8px 22px rgba(36,50,53,.10))}
-.book .face{position:absolute;inset:0;border-radius:3px;overflow:hidden;
-            backface-visibility:hidden}
-.book .leaf{background:var(--book-page);display:flex}
-.book .gutter{width:26px;flex:none;
-              background:linear-gradient(to left,rgba(189,181,163,.35),transparent)}
-.book .leaf-text{flex:1;padding:24px;display:flex;flex-direction:column;
-                 justify-content:center;gap:24px;min-width:0}
-.book .block{width:9px;flex:none;background:#D6D0C2}
-.book .board{width:5px;flex:none;background:var(--cloth)}
+.book .face{position:absolute;inset:0;border-radius:4px;overflow:hidden}
+.book .leaf{background:var(--book-page);display:flex;flex-direction:column;
+            justify-content:center;align-items:center;gap:24px;padding:24px;
+            text-align:center}
 .passage{font-family:var(--serif);font-size:24px;line-height:1.7;margin:0;
          overflow-wrap:anywhere}
 .attrib{font-family:var(--serif);font-style:italic;font-size:19px;margin:0}
-/* The front board swings on its hinge — rigid, as a cased board is, with
-   the case outside and the endpaper inside. Same model as `Turning` in
-   AnswersView.swift: each side darkens as it turns from the reader, and the
-   board shades the leaf under it until it lifts clear. Timing curves are
-   Theme.Motion.bookOpen / bookClose. */
-.book .board-turn{position:absolute;inset:0;transform-origin:left center;
-                  transform-style:preserve-3d;
-                  transition:transform .8s cubic-bezier(.4,0,.25,1)}
-.book.open .board-turn{transform:rotateY(-180deg);
-                       transition:transform .95s cubic-bezier(.45,0,.2,1)}
-.book .side{position:absolute;inset:0;border-radius:3px;overflow:hidden;
-            backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.book .side::after{content:"";position:absolute;inset:0;background:var(--ink);
-                   pointer-events:none;transition:opacity .8s ease-in}
-.book .cover-face{background:var(--cloth)}
-.book .cover-face::after{opacity:0}
-.book.open .cover-face::after{opacity:.22}
-.book .cover-face img{width:100%;height:100%;object-fit:cover;display:block}
-/* Laid out in its own coordinates, where the spine is on the left; the
-   half-turn sets it on the right, against the gutter. */
-.book .endpaper{transform:rotateY(180deg);
-                border:6px solid var(--cloth);border-left:0;
-                background:linear-gradient(to right,rgba(189,181,163,.35),rgba(189,181,163,0)),
-                           var(--book-page)}
-.book .endpaper::after{opacity:.22}
-.book.open .endpaper::after{opacity:0;transition:opacity .5s ease-out .45s}
+.book .cover{background:var(--ink);display:flex;flex-direction:column;
+             align-items:center;justify-content:center;gap:12px;
+             transform-origin:left center;
+             transition:transform .8s cubic-bezier(.4,0,.25,1),
+                        opacity .45s ease-in}
+.book .cover b{font-size:12px;font-weight:700;letter-spacing:.13em;
+               color:var(--book-page)}
+.book .cover i{width:24px;height:1px;background:var(--book-page);opacity:.35}
+.book.open .cover{transform:rotateY(-110deg);opacity:0;
+                  transition:transform .95s cubic-bezier(.45,0,.2,1),
+                             opacity .5s ease-out .4s}
+.book .cover::after{content:"";position:absolute;inset:0;background:var(--ink);
+                    opacity:0;transition:opacity .8s ease-in}
+.book.open .cover::after{opacity:.22}
 .book .leaf::after{content:"";position:absolute;inset:0;pointer-events:none;
                    background:linear-gradient(to right,rgba(36,50,53,.30),rgba(36,50,53,0));
                    transition:opacity .45s ease-out .1s}
@@ -308,89 +293,114 @@ img{max-width:100%}
       color:var(--ink-tertiary)}
 
 
-/* --- Chat --------------------------------------------------------------- */
-/* Everything a philosopher "says" here is written by a model. The design's
-   job is to make that impossible to miss: a SIMULATED tag on every generated
-   line, and a visually separate block, in the thread's own quote styling, for
-   the passages they actually wrote. The two must never look alike. */
-/* A messaging app, not a document: the frame is fixed to the viewport, the
-   transcript is the only thing that scrolls, and the composer never leaves
-   the bottom of the screen. */
-.page--chat{padding:8px 0 0}
+/* --- Chat ---------------------------------------------------------------
+   A conventional messenger: conversation header, bubbles with tails, a pill
+   composer. The one thing it keeps from the rest of the app is the honesty:
+   a SIMULATED chip by the name, the derivation behind a disclosure, and the
+   real sourced passage as an attachment under the bubble. A chat that hid
+   those would be a different product.
+------------------------------------------------------------------------- */
+.page--chat{padding:0}
 .chat{display:flex;flex-direction:column;
-      height:calc(100dvh - 52px - 76px - env(safe-area-inset-bottom,0px));
-      padding:0 20px}
-.chat .cast{flex:none}
-.chat .msgs{flex:1;overflow-y:auto;overscroll-behavior:contain;
-            padding:8px 0 12px;margin:0 -4px;
-            padding-left:4px;padding-right:4px}
-.chat .notice{flex:none;margin:0 0 8px}
-.cast{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
-.cast::-webkit-scrollbar{display:none}
-.cast-add{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;
-          width:64px}
-.cast-add .ring{width:46px;height:46px;border-radius:50%;display:grid;
-                place-items:center;border:1px dashed var(--hairline-strong);
-                color:var(--ink-secondary);font-size:22px}
-.cast-chip{flex:none;width:64px;display:flex;flex-direction:column;align-items:center;
-           gap:4px;position:relative}
-.cast-chip small{font-size:11px;line-height:1.2;text-align:center;color:var(--ink-secondary);
-                 overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;
-                 -webkit-box-orient:vertical}
-.cast-chip .x{position:absolute;top:-2px;right:6px;width:19px;height:19px;
-              border-radius:50%;background:var(--ink);color:var(--on-ink);
-              font-size:12px;line-height:19px;text-align:center}
-.tier{font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 5px;
-      border-radius:var(--r-pill);background:var(--chip);color:var(--ink-secondary)}
-.tier.pro{background:var(--ink);color:var(--accent)}
+      height:calc(100dvh - 52px - 76px - env(safe-area-inset-bottom,0px))}
 
-.msgs{display:flex;flex-direction:column;gap:20px;padding:4px 0}
-.msg{display:flex;gap:12px;align-items:flex-start}
-.msg.mine{flex-direction:row-reverse}
-.msg-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+/* Conversation header */
+.chead{flex:none;display:flex;align-items:center;gap:10px;padding:8px 16px 10px;
+       border-bottom:1px solid var(--hairline)}
+.faces{display:flex;flex:none}
+.faces .av{width:34px;height:34px;font-size:14px;border:2px solid var(--bg);
+           margin-left:-10px}
+.faces .av:first-child{margin-left:0}
+.chead .who{flex:1;min-width:0}
+.chead .who b{display:block;font-size:15.5px;font-weight:700;white-space:nowrap;
+              overflow:hidden;text-overflow:ellipsis}
+.chead .who span{font-size:12.5px;color:var(--ink-secondary)}
+.chead .add{flex:none;width:34px;height:34px;border-radius:50%;background:var(--chip);
+            color:var(--ink);font-size:19px;line-height:34px;text-align:center}
+
+/* Transcript */
+.msgs{flex:1;overflow-y:auto;overscroll-behavior:contain;
+      display:flex;flex-direction:column;gap:2px;padding:12px 12px 16px}
+.daysep{align-self:center;font-size:11.5px;color:var(--ink-tertiary);
+        background:var(--chip);border-radius:var(--r-pill);padding:4px 12px;
+        margin:4px 0 10px}
+
+.msg{display:flex;gap:8px;align-items:flex-start;max-width:84%;margin-top:10px}
+.msg.cont{margin-top:2px}
+.msg.mine{flex-direction:row-reverse;align-self:flex-end}
+.msg:not(.mine){align-self:flex-start}
+.msg .av{width:28px;height:28px;font-size:12px;flex:none;margin-top:16px}
+.msg.cont .av{visibility:hidden}
+.msg-body{min-width:0;display:flex;flex-direction:column;gap:3px}
 .msg.mine .msg-body{align-items:flex-end}
-.msg-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.msg-head b{font-size:15.5px;font-weight:700}
-.sim{font-size:9.5px;font-weight:700;letter-spacing:.8px;color:var(--danger);
-     background:var(--dangerBg,rgba(236,105,64,.10));padding:2px 6px;
-     border-radius:var(--r-pill)}
-.bubble{font-size:16.5px;line-height:1.55;background:var(--surface);
-        border:1px solid var(--hairline);border-radius:var(--r-inner);
-        padding:12px 14px;max-width:100%}
-.msg.mine .bubble{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
-.said{background:var(--quote-bg);border-radius:var(--r-inner);padding:12px 14px;
-      display:flex;flex-direction:column;gap:6px}
-.said .tag{font-size:9.5px;font-weight:700;letter-spacing:.8px;color:var(--ink-secondary)}
-.said q{font-family:var(--serif);font-size:18px;line-height:1.5;quotes:"\201C" "\201D"}
-.said .src{font-size:13px;font-weight:500;color:var(--ink-secondary)}
-/* The review's §10 asks the interface to separate commitments the texts
-   actually carry from modern applications derived from them. This is that
-   separation, kept closed by default so the position reads as a position. */
-.derived{font-size:14px;line-height:1.5;background:var(--chip-soft);
-         border:1px solid var(--hairline);border-radius:var(--r-inner);
-         padding:10px 12px}
-.derived summary{font-size:13px;font-weight:500;color:var(--ink-secondary);
+.msg.mine{align-items:flex-end}
+
+.msg-head{display:flex;align-items:center;gap:6px;padding:0 4px 1px}
+.msg-head b{font-size:12.5px;font-weight:600;color:var(--ink-secondary)}
+.msg.cont .msg-head{display:none}
+.sim{font-size:9px;font-weight:700;letter-spacing:.6px;color:var(--danger);
+     background:rgba(236,105,64,.10);padding:1px 5px;border-radius:var(--r-pill)}
+
+.bubble{font-size:16px;line-height:1.45;padding:9px 13px;
+        background:var(--surface);border:1px solid var(--hairline);
+        border-radius:18px 18px 18px 5px;word-wrap:break-word}
+.msg.cont .bubble{border-radius:18px 18px 18px 18px}
+.msg.mine .bubble{background:var(--ink);color:var(--on-ink);border-color:var(--ink);
+                  border-radius:18px 18px 5px 18px}
+.msg.mine.cont .bubble{border-radius:18px}
+.stamp{font-size:10.5px;color:var(--ink-tertiary);padding:0 5px}
+
+/* Attachments under a bubble */
+.derived{font-size:13.5px;line-height:1.45;background:var(--chip-soft);
+         border:1px solid var(--hairline);border-radius:14px;padding:8px 11px;
+         max-width:100%}
+.derived summary{font-size:12.5px;font-weight:500;color:var(--ink-secondary);
                  cursor:pointer;list-style:none}
 .derived summary::-webkit-details-marker{display:none}
-.derived summary::before{content:"▸ ";font-size:11px}
-.derived[open] summary::before{content:"▾ "}
-.derived p{margin:10px 0 0;color:var(--text-body-soft)}
-.derived .tag{display:block;font-size:9.5px;font-weight:700;letter-spacing:.8px;
-              color:var(--ink-secondary);margin-bottom:2px}
+.derived summary::before{content:"\25B8  "}
+.derived[open] summary::before{content:"\25BE  "}
+.derived p{margin:8px 0 0;color:var(--text-body-soft)}
+.derived .tag{display:block;font-size:9px;font-weight:700;letter-spacing:.7px;
+              color:var(--ink-secondary);margin-bottom:1px}
 .derived .tag.warn{color:var(--danger)}
+.said{background:var(--quote-bg);border-radius:14px;padding:9px 12px;
+      display:flex;flex-direction:column;gap:4px;max-width:100%}
+.said .tag{font-size:9px;font-weight:700;letter-spacing:.7px;color:var(--ink-secondary)}
+.said q{font-family:var(--serif);font-size:16px;line-height:1.45;quotes:"\201C" "\201D"}
+.said .src{font-size:12px;font-weight:500;color:var(--ink-secondary)}
 
+.typing{display:flex;gap:4px;align-items:center;padding:11px 14px;
+        background:var(--surface);border:1px solid var(--hairline);
+        border-radius:18px 18px 18px 5px;width:fit-content}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-secondary);
+          animation:blip 1.2s infinite ease-in-out;display:block}
+.typing i:nth-child(2){animation-delay:.18s}
+.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blip{0%,60%,100%{opacity:.25;transform:translateY(0)}
+                30%{opacity:1;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){ .typing i{animation:none;opacity:.5} }
+
+/* Composer */
 .composer{flex:none;display:flex;gap:8px;align-items:flex-end;
-          background:var(--bg);padding:8px 0 4px}
-.composer textarea{flex:1;min-height:46px;max-height:140px;resize:none;
-                   font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);
+          padding:8px 12px 10px;border-top:1px solid var(--hairline);
+          background:var(--bg)}
+.composer textarea{flex:1;min-height:40px;max-height:120px;resize:none;font:inherit;
+                   font-size:16px;line-height:1.35;color:var(--ink);
                    background:var(--surface);border:1px solid var(--hairline-strong);
-                   border-radius:var(--r-inner);padding:12px 14px}
-.composer button{flex:none;height:46px;padding:0 18px;border-radius:var(--r-pill);
-                 background:var(--ink);color:var(--on-ink);font-size:15px;font-weight:500}
-.composer button[disabled]{opacity:.4}
-.chat-acts{display:flex;gap:8px;flex-wrap:wrap}
-.ghost{font-size:14.5px;font-weight:500;padding:8px 14px;border-radius:var(--r-pill);
+                   border-radius:var(--r-pill);padding:10px 16px}
+.composer .send{flex:none;width:40px;height:40px;border-radius:50%;
+                background:var(--ink);color:var(--on-ink);display:grid;
+                place-items:center}
+.composer .send svg{width:19px;height:19px}
+.composer .send[disabled]{opacity:.35}
+.chat-acts{flex:none;display:flex;gap:8px;padding:0 12px 8px;flex-wrap:wrap}
+.ghost{font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:var(--r-pill);
        background:var(--chip);color:var(--ink)}
+.empty-chat{flex:1;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:10px;padding:24px;text-align:center}
+.empty-chat h3{font-family:var(--serif);font-size:22px;margin:0;font-weight:400}
+.empty-chat p{font-size:14.5px;line-height:1.5;color:var(--ink-tertiary);margin:0;
+              max-width:30ch}
 
 .picker{display:flex;flex-direction:column;gap:2px;padding:0 20px}
 .picker input{width:100%;font:inherit;font-size:16.5px;color:var(--ink);
@@ -404,29 +414,14 @@ img{max-width:100%}
 .prow .pick{flex:none;font-size:13px;font-weight:500;padding:6px 12px;
             border-radius:var(--r-pill);background:var(--chip)}
 .prow .pick.on{background:var(--ink);color:var(--on-ink)}
-.notice{font-size:14px;line-height:1.5;color:var(--ink-tertiary);background:var(--chip);
-        border-radius:var(--r-inner);padding:12px 14px}
-@media (min-width:900px){
-  .chat{height:calc(100dvh - 60px)}
-}
-/* Consecutive lines from one speaker read as one turn, so only the first
-   carries the face and the name. */
-.msg.cont{margin-top:-14px}
-.msg.cont .av{visibility:hidden;height:0}
-.msg.cont .msg-head{display:none}
-.stamp{font-size:11px;color:var(--ink-tertiary);align-self:flex-end;
-       padding:0 2px}
-.msg.mine .stamp{align-self:flex-start}
-.typing{display:flex;gap:4px;align-items:center;padding:12px 14px;
-        background:var(--surface);border:1px solid var(--hairline);
-        border-radius:var(--r-inner);width:fit-content}
-.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-secondary);
-          animation:blip 1.2s infinite ease-in-out;display:block}
-.typing i:nth-child(2){animation-delay:.18s}
-.typing i:nth-child(3){animation-delay:.36s}
-@keyframes blip{0%,60%,100%{opacity:.25;transform:translateY(0)}
-                30%{opacity:1;transform:translateY(-3px)}}
-@media (prefers-reduced-motion:reduce){ .typing i{animation:none;opacity:.5} }
+.tier{font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 5px;
+      border-radius:var(--r-pill);background:var(--chip);color:var(--ink-secondary)}
+.tier.pro{background:var(--ink);color:var(--accent)}
+.notice{font-size:13.5px;line-height:1.5;color:var(--ink-tertiary);background:var(--chip);
+        border-radius:14px;padding:10px 12px;margin:0 12px 8px;flex:none}
+
+@media (min-width:900px){ .chat{height:calc(100dvh - 60px)} }
+
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
              padding:10px 12px;margin-top:12px}
@@ -442,9 +437,10 @@ img{max-width:100%}
    changes — only how much room they get and where the navigation lives.
 --------------------------------------------------------------------------- */
 
-/* Tablet: the column grows, the floating tab bar stays. */
+/* Tablet: the column grows, up to the same 800px measure as the desktop,
+   and the floating tab bar stays. */
 @media (min-width:640px){
-  .app{max-width:560px}
+  .app{max-width:800px}
   .nav{max-width:430px}
   .grid{grid-template-columns:repeat(3,1fr)}
 }
@@ -479,33 +475,13 @@ img{max-width:100%}
   .bar .back{position:static;transform:none}
 
   #view{grid-column:2;grid-row:2;min-width:0}
-  /* A measure, not the whole window: 36px headlines across 1400px are
-     unreadable. */
-  .page{max-width:620px;margin:0 auto;
+  /* A measure, not the whole window: one column, never wider than 800px,
+     on every page. */
+  .page{max-width:800px;margin:0 auto;
         padding:16px 0 64px}
 
   .pills{padding-left:20px;padding-right:20px}
   .grid{grid-template-columns:repeat(3,1fr)}
-}
-
-/* Wide desktop: the book and what is written about it sit side by side
-   instead of stacked, which is the one place the extra width genuinely
-   changes how the page reads. */
-@media (min-width:1180px){
-  .page{max-width:1000px}
-  .ans{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);
-       gap:40px;align-items:start;padding-top:32px}
-  .ans .book{grid-column:1;width:100%;margin-top:0}
-  .ans > :not(.book):not(.reading){grid-column:1}
-  .ans .reading{grid-column:2;grid-row:1 / span 6;padding-top:0}
-  .feed{padding-left:0;padding-right:0}
-
-  /* Home: two columns, cards dealt left, right, left — so the newest two sit
-     side by side and neither column leaves holes under a short card. */
-  .feed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-        gap:20px;align-items:start}
-  .feed-col{display:flex;flex-direction:column;gap:20px}
-  .feed .footer-note{grid-column:1 / -1}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -705,10 +681,8 @@ function questionCard(q, flat){
 
 function homeView(){
   const qs = questions();
-  const col = side => qs.map((q,i) => i % 2 === side
-    ? `<div style="order:${i}">${questionCard(q,false)}</div>` : '').join('');
   return `<div class="page"><div class="feed">
-    <div class="feed-col">${col(0)}</div><div class="feed-col">${col(1)}</div>
+    ${qs.map(q => questionCard(q,false)).join('')}
     <p class="footer-note" style="padding:8px 8px 0">${esc(L((C.strings||{}).footer))}</p>
   </div></div>`;
 }
@@ -831,17 +805,10 @@ function answersView(){
     <div class="book ${bookOpen?'open':''}" id="book" role="button" tabindex="0"
          aria-label="${bookOpen ? t('Tap to close','轻点合上') : t('Then tap to open','然后轻点打开')}">
       <div class="face leaf">
-        <div class="gutter"></div>
-        <div class="leaf-text">
-          <p class="passage">“${esc(L(r && r.quote))}”</p>
-          <p class="attrib">— ${esc(L(v && v.name))}</p>
-        </div>
-        <div class="block"></div><div class="board"></div>
+        <p class="passage">“${esc(L(r && r.quote))}”</p>
+        <p class="attrib">— ${esc(L(v && v.name))}</p>
       </div>
-      <div class="board-turn">
-        <div class="side cover-face"><img src="${IMG}BookCover.png" alt=""></div>
-        <div class="side endpaper"></div>
-      </div>
+      <div class="face cover"><b>STILL</b><i></i></div>
     </div>
 
     ${bookOpen ? `
@@ -892,37 +859,44 @@ function castAvatar(p, cls){
 function chatView(){
   if(chat.picking) return pickerView();
   const cast = chat.cast.map(philById).filter(Boolean);
+  const names = cast.map(p => p.name);
+  const title = names.length === 0 ? t('No one yet','还没有人')
+    : names.length <= 2 ? names.join(t(' and ',' 与 '))
+    : names.slice(0,2).join(', ') + t(` and ${names.length-2} more`, ` 等 ${names.length} 人`);
 
   return `<div class="page page--chat"><div class="chat">
-    <div class="cast">
-      <button class="cast-add" data-pick-open="1">
-        <span class="ring">+</span><small>${t('Add','添加')}</small>
-      </button>
-      ${cast.map(p => `<div class="cast-chip">
-        ${castAvatar(p)}
-        <button class="x" data-drop="${esc(p.id)}" aria-label="${t('Remove','移除')}">×</button>
-        <small>${esc(p.name)}</small>
-      </div>`).join('')}
-    </div>
 
-    ${cast.length === 0 ? `<p class="notice">${t(
-      'Add philosophers, then say something. Nobody here is predicting what the dead would really have said — the replies are positions derived from commitments their texts carry, written by a model, and every line says so. Open "How this was derived" to see the step from text to modern application.',
-      '先加入几位哲学家，然后说点什么。这里没有人在预测逝者真正会说什么 — 这些回应是从他们文本中的承诺推导出的立场，由模型写成，每一条都会标明。展开「这是如何推出的」可以看到从文本到现代应用的那一步。')}</p>` : ''}
+    <header class="chead">
+      <div class="faces">${cast.slice(0,4).map(p => castAvatar(p)).join('')
+        || `<div class="av">+</div>`}</div>
+      <div class="who">
+        <b>${esc(title)}</b>
+        <span>${cast.length
+          ? t(`${cast.length} in the room · simulated`, `${cast.length} 人在场 · 模拟`)
+          : t('Tap + to add philosophers','点 + 添加哲学家')}</span>
+      </div>
+      <button class="add" data-pick-open="1" aria-label="${t('Add','添加')}">+</button>
+    </header>
 
     ${SAMPLE === null ? `<p class="notice">${t(
-      'No model is reachable from this page, so nobody will reply. The live version on claude.ai can ask Claude directly; this copy cannot.',
-      '此页面无法连接模型，因此不会有回应。claude.ai 上的版本可以直接向 Claude 提问，这个副本不能。')}</p>` : ''}
+      'No model is reachable here, so nobody will reply. The version on claude.ai can ask Claude directly.',
+      '此处无法连接模型，因此不会有回应。claude.ai 上的版本可以直接向 Claude 提问。')}</p>` : ''}
 
-    <div class="msgs" id="msgs">
-      ${chat.msgs.map(msgRow).join('')}
-      ${chat.typing ? `<article class="msg">
-        ${castAvatar(philById(chat.typing) || {name:'?'})}
-        <div class="msg-body">
-          <div class="msg-head"><b>${esc((philById(chat.typing)||{}).name || '')}</b></div>
-          <div class="typing" aria-label="${t('typing','正在输入')}"><i></i><i></i><i></i></div>
-        </div>
-      </article>` : ''}
-    </div>
+    ${cast.length === 0 ? `<div class="empty-chat">
+        <h3>${t('Start an argument','开一场争论')}</h3>
+        <p>${t('Add philosophers and say something. Their replies are positions derived from commitments their texts carry — written by a model, and labelled on every line.','加入几位哲学家，然后说点什么。他们的回应是从其文本中的承诺推导出的立场 — 由模型写成，并在每一行标明。')}</p>
+      </div>` : `
+      <div class="msgs" id="msgs">
+        ${chat.msgs.length ? `<span class="daysep">${t('Today','今天')}</span>` : ''}
+        ${chat.msgs.map(msgRow).join('')}
+        ${chat.typing ? `<article class="msg">
+          ${castAvatar(philById(chat.typing) || {name:'?'})}
+          <div class="msg-body">
+            <div class="msg-head"><b>${esc((philById(chat.typing)||{}).name || '')}</b></div>
+            <div class="typing" aria-label="${t('typing','正在输入')}"><i></i><i></i><i></i></div>
+          </div>
+        </article>` : ''}
+      </div>`}
 
     ${cast.length ? `<div class="chat-acts">
       <button class="ghost" data-talk="1">${t('Let them argue','让他们互相辩论')}</button>
@@ -932,7 +906,12 @@ function chatView(){
     <form class="composer" id="composer">
       <textarea id="say" rows="1" placeholder="${t('Message','发消息')}"
         ${cast.length ? '' : 'disabled'}></textarea>
-      <button type="submit" ${cast.length && !chat.busy ? '' : 'disabled'}>${t('Send','发送')}</button>
+      <button class="send" type="submit" aria-label="${t('Send','发送')}"
+        ${cast.length && !chat.busy ? '' : 'disabled'}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5"/><path d="M5.5 11.5L12 5l6.5 6.5"/></svg>
+      </button>
     </form>
   </div></div>`;
 }
@@ -942,18 +921,21 @@ const clock = ts => { const d = new Date(ts || Date.now());
          d.getMinutes().toString().padStart(2,'0'); };
 
 function msgRow(m, i){
-  // Same speaker twice running reads as one turn.
+  // Same speaker twice running reads as one turn: no repeated face or name,
+  // and the bubble loses its tail.
   const prev = chat.msgs[i-1];
   const cont = prev && !!prev.mine === !!m.mine && prev.id === m.id ? ' cont' : '';
+  const next = chat.msgs[i+1];
+  const last = !(next && !!next.mine === !!m.mine && next.id === m.id);
+
   if(m.mine) return `<article class="msg mine${cont}">
-      ${'' /* no avatar for the reader: the app has no account and no face */}
-      <div class="msg-body"><div class="bubble">${esc(m.text)}</div>
-      <span class="stamp">${clock(m.at)}</span></div>
+      <div class="msg-body">
+        <div class="bubble">${esc(m.text)}</div>
+        ${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}
+      </div>
     </article>`;
 
   const p = philById(m.id) || {name:m.name, image:null};
-  // Shown once per philosopher: something they demonstrably wrote, so the
-  // generated voice always has the real one beside it for comparison.
   const q = m.said;
   return `<article class="msg${cont}">
     ${castAvatar(p)}
@@ -975,7 +957,7 @@ function msgRow(m, i){
           ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
           : esc(L(q.label))}</span>
       </div>` : ''}
-      <span class="stamp">${clock(m.at)}</span>
+      ${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}
     </div>
   </article>`;
 }
@@ -1066,7 +1048,8 @@ function brief(cast){
     ' "commitment": <the principle you are reasoning from, under 12 words>,',
     ' "bridge": <one sentence: how that principle reaches this modern object>,',
     ' "text": <the position, in their manner>}.',
-    'One to three entries. Not every speaker has to answer.'
+    'One to three entries. Not every speaker has to answer.',
+    lang === 'zh' ? 'Write every field in Simplified Chinese.' : 'Write every field in English.'
   ].join('\n');
 }
 
@@ -1267,7 +1250,7 @@ function meView(){
 const TABS = [
   ['home',    t=>({en:'Home',zh:'首页'}),    '<path d="M3.5 10.6L12 3.8l8.5 6.8"/><path d="M5.6 9.8V20a.8.8 0 0 0 .8.8h11.2a.8.8 0 0 0 .8-.8V9.8"/>'],
   ['answers', t=>({en:'Answers',zh:'答案'}), '<path d="M12 6.6C10.3 5.2 8 4.5 5 4.5a1 1 0 0 0-1 1v11.6a1 1 0 0 0 1 1c3 0 5.3.7 7 2.1"/><path d="M12 6.6c1.7-1.4 4-2.1 7-2.1a1 1 0 0 1 1 1v11.6a1 1 0 0 1-1 1c-3 0-5.3.7-7 2.1"/><path d="M12 6.6v13.6"/>'],
-  ['chat',    t=>({en:'Chat',zh:'对话'}),    '<path d="M20.5 12.3c0 4-3.8 7.2-8.5 7.2a9.8 9.8 0 0 1-2.6-.35L4.5 20.5l1.4-3.6A6.9 6.9 0 0 1 3.5 12.3c0-4 3.8-7.2 8.5-7.2s8.5 3.2 8.5 7.2z"/>'],
+  ['chat',    t=>({en:'Agon',zh:'争鸣'}),    '<path d="M20.5 12.3c0 4-3.8 7.2-8.5 7.2a9.8 9.8 0 0 1-2.6-.35L4.5 20.5l1.4-3.6A6.9 6.9 0 0 1 3.5 12.3c0-4 3.8-7.2 8.5-7.2s8.5 3.2 8.5 7.2z"/>'],
   ['explore', t=>({en:'Explore',zh:'浏览'}), '<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>'],
   ['me',      t=>({en:'Me',zh:'我'}),        '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/>']
 ];
