@@ -328,6 +328,9 @@ img{max-width:100%}
 .crow-top b{flex:1;min-width:0;font-size:16px;font-weight:700;white-space:nowrap;
             overflow:hidden;text-overflow:ellipsis}
 .crow-top span{flex:none;font-size:12.5px;color:var(--ink-secondary)}
+.extag{flex:none;font-size:8.5px;font-weight:700;letter-spacing:.7px;
+       padding:2px 5px;border-radius:var(--r-pill);background:var(--chip);
+       color:var(--ink-secondary)}
 .crow-body p{margin:2px 0 0;font-size:14.5px;color:var(--ink-secondary);
              white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
@@ -433,18 +436,55 @@ img{max-width:100%}
 .ghost{font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:var(--r-pill);
        background:var(--chip);color:var(--ink)}
 
-.picker{display:flex;flex-direction:column;gap:2px;padding:0 20px}
-.picker input{width:100%;font:inherit;font-size:16.5px;color:var(--ink);
-              background:var(--surface);border:1px solid var(--hairline-strong);
-              border-radius:var(--r-inner);padding:12px 14px;margin-bottom:12px}
-.prow{display:flex;align-items:center;gap:12px;width:100%;padding:8px 4px;
-      border-bottom:1px solid var(--hairline)}
+/* The picker dialog. A sheet from the bottom on a phone, a centred card on a
+   desktop — the two places people expect a chooser to come from. */
+.backdrop{position:fixed;inset:0;z-index:40;background:rgba(36,50,53,.32);
+          backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.modal{position:fixed;z-index:41;left:0;right:0;bottom:0;
+       display:flex;flex-direction:column;max-height:86dvh;
+       background:var(--bg);border-radius:22px 22px 0 0;
+       box-shadow:0 -8px 40px rgba(36,50,53,.22);
+       padding-bottom:env(safe-area-inset-bottom,0px)}
+.modal header{flex:none;display:flex;align-items:center;gap:12px;
+              padding:18px 20px 12px}
+.modal header b{flex:1;font-size:17px}
+.modal header .x{flex:none;width:30px;height:30px;border-radius:50%;
+                 background:var(--chip);color:var(--ink);font-size:17px;
+                 line-height:30px;text-align:center}
+.modal input{flex:none;margin:0 20px;font:inherit;font-size:16.5px;color:var(--ink);
+             background:var(--surface);border:1px solid var(--hairline-strong);
+             border-radius:var(--r-pill);padding:11px 16px}
+.filters{flex:none;display:flex;gap:8px;overflow-x:auto;padding:12px 20px 4px;
+         scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.fpill{flex:none;font-size:13.5px;font-weight:500;padding:7px 14px;
+       border-radius:var(--r-pill);background:var(--chip);color:var(--ink)}
+.fpill.on{background:var(--ink);color:var(--accent)}
+.selected{flex:none;display:flex;gap:6px;flex-wrap:wrap;padding:10px 20px 2px}
+.selchip{font-size:13px;font-weight:500;padding:5px 8px 5px 11px;
+         border-radius:var(--r-pill);background:var(--ink);color:var(--on-ink);
+         display:flex;align-items:center;gap:6px}
+.selchip span{opacity:.6;font-size:14px}
+.plist{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:8px 20px 0}
+.modal footer{flex:none;padding:12px 20px 16px}
+.modal footer .wide{margin:0}
+.modal footer .wide[disabled]{opacity:.35}
+
+.prow{display:flex;align-items:center;gap:12px;width:100%;padding:9px 4px;
+      border-bottom:1px solid var(--hairline);text-align:left}
 .prow .meta{flex:1;min-width:0}
 .prow b{font-size:16px;font-weight:500;display:block}
-.prow span{font-size:12.5px;color:var(--ink-secondary)}
-.prow .pick{flex:none;font-size:13px;font-weight:500;padding:6px 12px;
-            border-radius:var(--r-pill);background:var(--chip)}
-.prow .pick.on{background:var(--ink);color:var(--on-ink)}
+.prow .meta > span{font-size:12.5px;color:var(--ink-secondary)}
+.prow .tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--chip);
+            color:var(--ink-secondary);font-size:15px;line-height:28px;
+            text-align:center}
+.prow.on .tick{background:var(--ink);color:var(--on-ink)}
+
+@media (min-width:640px){
+  .modal{left:50%;bottom:auto;top:50%;right:auto;transform:translate(-50%,-50%);
+         width:min(460px,calc(100vw - 40px));border-radius:20px;max-height:min(680px,82dvh);
+         box-shadow:0 20px 60px rgba(36,50,53,.26)}
+}
 .tier{font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 5px;
       border-radius:var(--r-pill);background:var(--chip);color:var(--ink-secondary)}
 .tier.pro{background:var(--ink);color:var(--accent)}
@@ -570,8 +610,8 @@ let SAMPLE = undefined;       // the model, once asked for: null means no model 
 /* A chat app holds conversations, not one transcript. Each carries its own
    cast, its own history, and its own record of which philosophers have
    already shown a real passage. */
-let chat = { convos: [], open: null, busy:false, query:'', picking:false,
-             pending: [], typing:null, draft:'' };
+let chat = { convos: [], open: null, busy:false, query:'', filter:'all',
+             picking:false, pending: [], typing:null, draft:'' };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
@@ -941,14 +981,107 @@ function whenLabel(ts){
     {day:'numeric', month:'short'});
 }
 
+
+/* Example conversations, so the tab opens on something to read rather than an
+   empty list. They are authored, not captured from a model, and they are
+   marked as examples in the list — the app does not pass off invented
+   sessions as a record of anything.
+
+   The positions follow the same rules the live brief imposes: a commitment
+   the texts carry, an explicit bridge to the modern object, no quotation
+   marks around anything invented, and no convergence on a comfortable middle.
+   The passages under them are real, pulled from content.json by index, which
+   is why each speaker here is one of the 29 with sourced quotes. */
+const EXAMPLES = [
+  { hours: 2, cast: ['p-marcus-aurelius', 'p-epicurus'],
+    turns: [
+      {mine:true, en:'Nobody will remember me in a hundred years. Why am I working this hard?',
+                  zh:'一百年后没人会记得我。那我这么拼是为了什么？'},
+      {who:'p-marcus-aurelius', q:0,
+       commit:{en:'Oblivion is the ordinary case, not a misfortune',
+               zh:'湮没是常态，而非不幸'},
+       bridge:{en:'A career measured in reach and legacy is measuring itself against a span that forgets emperors too.',
+               zh:'以影响力与遗产衡量的事业，是在拿一个连皇帝都会遗忘的尺度衡量自己。'},
+       en:'You are not working hard for posterity. Posterity is a crowd that will not arrive. Do the work because it is the work in front of you, and let the forgetting happen on its own schedule.',
+       zh:'你不是为后世而拼。后世是一群永远不会到场的人。做这件事，是因为它就在你面前；至于被遗忘，让它按自己的节奏发生。'},
+      {who:'p-epicurus', q:0,
+       commit:{en:'A fear with no subject to suffer it is not a reason',
+               zh:'没有承受者的恐惧，不构成理由'},
+       bridge:{en:'Being forgotten is a state you are never present for, so it cannot be counted as a cost of anything.',
+               zh:'「被遗忘」是一个你永远不在场的状态，因此它不能被算作任何事情的代价。'},
+       en:'Marcus makes it a discipline. I say it is simpler than that: there is no one left to mind. Strip out the fear and what remains is the only real question, which is whether the work is any good to you now.',
+       zh:'马可把它当作一种修炼。我认为更简单：没有人会在意，因为那时已无人可在意。去掉这份恐惧，剩下的才是唯一真实的问题 — 这件事此刻对你是否是好的。'},
+    ]},
+
+  { hours: 26, cast: ['p-john-stuart-mill', 'p-erving-goffman'],
+    turns: [
+      {mine:true, en:'Should a feed decide what I read?', zh:'该让信息流决定我读什么吗？'},
+      {who:'p-john-stuart-mill', q:1,
+       commit:{en:'Sovereignty over one’s own mind; truth needs collision',
+               zh:'个人对自己心智的主权；真理需要碰撞'},
+       bridge:{en:'A ranking that shows you what you already agree with removes the collision that made opinion worth holding.',
+               zh:'一个只给你看你已经认同之物的排序，取消了那种使意见值得持有的碰撞。'},
+       en:'The danger is not that it chooses badly. It is that it chooses agreeably. An opinion you have never had to defend is not held, it is merely kept.',
+       zh:'危险不在于它选得差，而在于它选得合你心意。一个你从未需要辩护的意见，不是被持有，只是被存放着。'},
+      {who:'p-erving-goffman', q:0,
+       commit:{en:'Conduct is shaped by who is watching',
+               zh:'行为由「谁在看」塑造'},
+       bridge:{en:'A feed is an audience that never leaves, so reading becomes a performance of the kind of reader you want to be seen as.',
+               zh:'信息流是一个永不退场的观众，于是阅读变成了一场表演：表演你希望被看成的那种读者。'},
+       en:'Mill assumes you are alone with the argument. You are not. You are reading in front of a room, and some of what you open is chosen for how it will look to have opened it.',
+       zh:'密尔假设你是独自面对论证的。你不是。你是在一屋子人面前阅读，而你点开的某些东西，是因为「点开过」这件事看起来如何而被选中的。'},
+    ]},
+
+  { hours: 74, cast: ['p-confucius', 'p-friedrich-nietzsche'],
+    turns: [
+      {mine:true, en:'Is duty to my family a trap?', zh:'对家庭的义务是一个陷阱吗？'},
+      {who:'p-confucius', q:1,
+       commit:{en:'Virtue is formed by submitting the self to form',
+               zh:'德性在以礼约己中养成'},
+       bridge:{en:'What you are calling a trap is the shape that makes a person legible to the people who raised them.',
+               zh:'你称之为陷阱的，正是那个让一个人对养育他的人可被理解的形状。'},
+       en:'You ask whether the obligation confines you. It does. That is what an obligation is. The question worth asking is whether you would be anyone in particular without the ones you did not choose.',
+       zh:'你问这份义务是否束缚你。它确实束缚。义务本就如此。真正值得问的是：若没有那些你未曾选择的人，你还会是某个具体的人吗？'},
+      {who:'p-friedrich-nietzsche', q:0,
+       commit:{en:'Moral facts are interpretations with a history',
+               zh:'道德事实是有来历的解释'},
+       bridge:{en:'Filial duty is not discovered but inherited, and inheritance is exactly what deserves examining.',
+               zh:'孝的义务不是被发现的，而是被继承的；而继承恰恰是最该被审视的东西。'},
+       en:'Confucius calls the cage a shape and asks you to admire the carpentry. Ask instead who built it and what they needed from you. If the answer still holds after that, keep it — but keep it as yours.',
+       zh:'孔子把笼子称作形状，并请你欣赏它的木工。不如去问：谁造的，他们需要你提供什么。如果问过之后答案依然成立，那就留着 — 但要作为你自己的东西留着。'},
+    ]},
+];
+
+/* Seeded only into an empty list, so a reader's own conversations are never
+   displaced. */
+function seedExamples(){
+  if(chat.convos.length || !PHIL.length) return;
+  const now = Date.now();
+  EXAMPLES.forEach((ex, n) => {
+    const cast = ex.cast.filter(id => philById(id));
+    if(cast.length !== ex.cast.length) return;   // roster changed; skip quietly
+    const at = now - ex.hours * 3600000;
+    let step = 0;
+    const msgs = ex.turns.map(turn => {
+      step += 90000;
+      if(turn.mine) return {mine:true, text: L({en:turn.en, zh:turn.zh}), at: at + step};
+      const p = philById(turn.who);
+      return { id:p.id, name:p.name, at: at + step,
+               text: L({en:turn.en, zh:turn.zh}),
+               commitment: L(turn.commit), bridge: L(turn.bridge),
+               said: p.quotes[turn.q] || null };
+    });
+    chat.convos.push({ id:'ex' + n, cast, msgs, said:{}, at: at + step, example:true });
+  });
+}
+
 function chatView(){
-  if(chat.picking) return pickerView();
   const open = convo();
   // One pane on a phone, both on a desktop.
   return `<div class="page page--chat"><div class="chat-wrap${open ? ' has-open' : ''}">
     ${convoList(open)}
     ${open ? convoPane(open) : emptyPane()}
-  </div></div>`;
+  </div>${chat.picking ? pickerModal() : ''}</div>`;
 }
 
 function convoList(open){
@@ -968,6 +1101,7 @@ function convoList(open){
           <div class="crow-body">
             <div class="crow-top">
               <b>${esc(convoTitle(c))}</b>
+              ${c.example ? `<span class="extag">${t('EXAMPLE','示例')}</span>` : ''}
               <span>${esc(whenLabel(c.at))}</span>
             </div>
             <p>${last ? esc((last.mine ? t('You: ','你：') : '') + last.text)
@@ -1084,35 +1218,76 @@ function msgRow(m, i, c){
   </article>`;
 }
 
-function pickerView(){
+/* Choosing who is in the room is a decision made on top of the conversation,
+   not a place you navigate to, so it is a dialog. Search and filters are the
+   whole point at 151 names — scrolling that list is not picking. */
+const FILTERS = [
+  ['all',     () => ({en:'All',    zh:'全部'})],
+  ['pro',     () => ({en:'Pro',    zh:'Pro'})],
+  ['basic',   () => ({en:'Basic',  zh:'Basic'})],
+  ['sourced', () => ({en:'Quoted', zh:'有出处'})],
+];
+
+function pickerModal(){
   const q = chat.query.trim().toLowerCase();
-  const list = PHIL.filter(p => !q || p.name.toLowerCase().includes(q));
+  const f = chat.filter || 'all';
   const target = convo() ? convo().cast : chat.pending;
+
+  const list = PHIL.filter(p => {
+    if(q && !p.name.toLowerCase().includes(q)) return false;
+    if(f === 'pro')     return p.tier === 'pro';
+    if(f === 'basic')   return p.tier === 'basic';
+    if(f === 'sourced') return p.quotes.length > 0;
+    return true;
+  });
+
+  const chip = id => {
+    const p = philById(id); if(!p) return '';
+    return `<button class="selchip" data-toggle="${esc(p.id)}">
+      ${esc(p.name)}<span>×</span></button>`;
+  };
+
   const row = p => {
     const on = target.includes(p.id);
-    return `<div class="prow">
+    return `<button class="prow${on ? ' on' : ''}" data-toggle="${esc(p.id)}">
       ${castAvatar(p)}
-      <div class="meta"><b>${esc(p.name)}</b>
+      <div class="meta">
+        <b>${esc(p.name)}</b>
         <span>#${p.rank} · <span class="tier ${p.tier}">${p.tier === 'pro' ? 'PRO' : 'BASIC'}</span>${
-          p.quotes.length ? ' · ' + t(`${p.quotes.length} sourced`, `${p.quotes.length} 条有出处`) : ''}</span></div>
-      <button class="pick ${on?'on':''}" data-toggle="${esc(p.id)}">${
-        on ? t('Added','已加入') : t('Add','加入')}</button>
-    </div>`;
+          p.quotes.length ? ' · ' + t(`${p.quotes.length} sourced`, `${p.quotes.length} 条有出处`) : ''}</span>
+      </div>
+      <span class="tick">${on ? '✓' : '+'}</span>
+    </button>`;
   };
-  return `<div class="page">
-    <div class="page-head">
-      <h1 class="page-title">${t('Who is in the room','谁在场')}</h1>
-      <p class="page-sub">${t('Ranked by how many people read them on Wikipedia. The top 50 are Pro. It measures readership, not importance.','按维基百科阅读量排序。前 50 位为 Pro。它衡量的是阅读量，不是重要性。')}</p>
+
+  return `<div class="backdrop" data-pick-cancel="1"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-label="${t('Add philosophers','添加哲学家')}">
+    <header>
+      <b>${convo() ? t('Add to this conversation','添加到此对话')
+                   : t('New conversation','新建对话')}</b>
+      <button class="x" data-pick-cancel="1" aria-label="${t('Close','关闭')}">×</button>
+    </header>
+
+    <input id="pq" placeholder="${t('Search 151 philosophers…','搜索 151 位哲学家…')}"
+           value="${esc(chat.query)}" autocomplete="off">
+
+    <div class="filters">${FILTERS.map(([k, lab]) =>
+      `<button class="fpill${f === k ? ' on' : ''}" data-filter-pick="${k}">${
+        esc(lab()[lang] || lab().en)}</button>`).join('')}</div>
+
+    ${target.length ? `<div class="selected">${target.map(chip).join('')}</div>` : ''}
+
+    <div class="plist">
+      ${list.length ? list.map(row).join('')
+        : `<p class="list-empty">${t('Nobody by that name.','没有这个名字。')}</p>`}
     </div>
-    <div class="picker">
-      <input id="pq" placeholder="${t('Search 151 philosophers…','搜索 151 位哲学家…')}"
-             value="${esc(chat.query)}">
-      <button class="wide" data-pick-done="1" style="margin:0 0 12px">${
+
+    <footer>
+      <button class="wide" data-pick-done="1" ${target.length ? '' : 'disabled'}>${
         convo() ? t('Done','完成')
-                : t(`Start conversation${chat.pending.length ? ' · ' + chat.pending.length : ''}`,
-                    `开始对话${chat.pending.length ? ' · ' + chat.pending.length : ''}`)}</button>
-      ${list.map(row).join('') || `<p class="empty">${t('Nobody by that name.','没有这个名字。')}</p>`}
-    </div>
+                : t(`Start conversation${target.length ? ' · ' + target.length : ''}`,
+                    `开始对话${target.length ? ' · ' + target.length : ''}`)}</button>
+    </footer>
   </div>`;
 }
 
@@ -1422,6 +1597,12 @@ function render(){
     // Images and wrapped text can change the height after this tick.
     requestAnimationFrame(() => { list.scrollTop = list.scrollHeight; });
   }
+  const pq = document.getElementById('pq');
+  if(pq){
+    pq.value = chat.query;
+    pq.focus();
+    pq.setSelectionRange(chat.query.length, chat.query.length);
+  }
   const nb = document.getElementById('say');
   if(nb){
     nb.value = chat.draft || '';
@@ -1487,14 +1668,23 @@ document.addEventListener('click', ev => {
   }
 
   if((el = hit('[data-new]'))){
-    chat.open = null; chat.pending = []; chat.picking = true; chat.query = '';
+    chat.open = null; chat.pending = []; chat.picking = true;
+    chat.query = ''; chat.filter = 'all';
     return render();
   }
   if((el = hit('[data-open-convo]'))){
     chat.open = el.dataset.openConvo; chat.draft = ''; return render();
   }
   if((el = hit('[data-close-convo]'))){ chat.open = null; return render(); }
-  if((el = hit('[data-pick-open]'))){ chat.picking = true; chat.query = ''; return render(); }
+  if((el = hit('[data-pick-open]'))){
+    chat.picking = true; chat.query = ''; chat.filter = 'all'; return render();
+  }
+  if((el = hit('[data-pick-cancel]'))){
+    chat.picking = false; chat.pending = []; return render();
+  }
+  if((el = hit('[data-filter-pick]'))){
+    chat.filter = el.dataset.filterPick; return render();
+  }
   if((el = hit('[data-pick-done]'))){
     if(!convo() && chat.pending.length){
       const c = { id: 'c' + Date.now(), cast: chat.pending.slice(), msgs: [],
@@ -1560,16 +1750,7 @@ document.addEventListener('submit', ev => {
 
 document.addEventListener('input', ev => {
   if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); return; }
-  if(ev.target.id === 'pq'){
-    // Re-rendering on every keystroke would steal the caret, so the list is
-    // refreshed in place and the field left alone.
-    chat.query = ev.target.value;
-    const v = document.querySelector('.picker');
-    if(v){ const inp = v.querySelector('input');
-      v.innerHTML = pickerView().split('<div class="picker">')[1].split('</div></div>')[0];
-      const n = v.querySelector('input'); if(n){ n.value = chat.query; n.focus();
-        n.setSelectionRange(chat.query.length, chat.query.length); } }
-  }
+  if(ev.target.id === 'pq'){ chat.query = ev.target.value; render(); }
 });
 
 document.addEventListener('keydown', ev => {
@@ -1590,7 +1771,11 @@ load();
 Promise.all([
   fetch('assets/content.json').then(r => r.json()),
   fetch('assets/philosophers.json').then(r => r.json()).catch(() => ({philosophers:[]}))
-]).then(([data, roster]) => { C = data; PHIL = roster.philosophers || []; render(); model(); })
+]).then(([data, roster]) => {
+  C = data; PHIL = roster.philosophers || [];
+  seedExamples();
+  render(); model();
+})
   .catch(() => {
     document.getElementById('view').innerHTML =
       `<p class="empty">Could not load the content file.</p>`;
