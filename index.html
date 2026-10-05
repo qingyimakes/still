@@ -322,15 +322,28 @@ img{max-width:100%}
 .crow{display:flex;gap:12px;align-items:center;width:100%;padding:12px 16px;
       border-bottom:1px solid var(--hairline);text-align:left}
 .crow.on{background:var(--chip-soft)}
+.crow .faces{flex:none;display:flex;align-items:center}
 .crow .av{width:44px;height:44px;font-size:17px;flex:none}
+/* Overlap only once there is more than one face, so a single portrait is not
+   needlessly shrunk. */
+.crow .faces.many .av{width:34px;height:34px;font-size:13px;
+                      border:2px solid var(--bg);margin-left:-13px}
+.crow .faces.many .av:first-child{margin-left:0}
+.crow .faces .more{font-size:11.5px;font-weight:600;color:var(--ink-secondary);
+                   margin-left:4px}
 .crow-body{flex:1;min-width:0}
 .crow-top{display:flex;align-items:baseline;gap:8px}
 .crow-top b{flex:1;min-width:0;font-size:16px;font-weight:700;white-space:nowrap;
             overflow:hidden;text-overflow:ellipsis}
 .crow-top span{flex:none;font-size:12.5px;color:var(--ink-secondary)}
-.extag{flex:none;font-size:8.5px;font-weight:700;letter-spacing:.7px;
-       padding:2px 5px;border-radius:var(--r-pill);background:var(--chip);
-       color:var(--ink-secondary)}
+.drop{flex:none;width:20px;height:20px;border-radius:50%;background:var(--chip);
+      color:var(--ink-secondary);font-size:13px;line-height:20px;text-align:center;
+      opacity:0;transition:opacity .15s}
+.crow:hover .drop,.crow:focus-within .drop{opacity:1}
+@media (hover:none){ .drop{opacity:1} }
+.extag{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.7px;
+       padding:2px 5px;margin-right:6px;border-radius:var(--r-pill);
+       background:var(--chip);color:var(--ink-secondary);vertical-align:1px}
 .crow-body p{margin:2px 0 0;font-size:14.5px;color:var(--ink-secondary);
              white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
@@ -611,7 +624,7 @@ let SAMPLE = undefined;       // the model, once asked for: null means no model 
    cast, its own history, and its own record of which philosophers have
    already shown a real passage. */
 let chat = { convos: [], open: null, busy:false, query:'', filter:'all',
-             picking:false, pending: [], typing:null, draft:'' };
+             picking:false, pending: [], typing:null, draft:'', seeded:false };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
@@ -643,7 +656,7 @@ function save(){
     localStorage.setItem('still.state', JSON.stringify(state));
     localStorage.setItem('still.lang', lang);
     localStorage.setItem('still.chat', JSON.stringify({
-      open: chat.open,
+      open: chat.open, seeded: chat.seeded,
       convos: chat.convos.map(c => ({...c, msgs: c.msgs.slice(-60)}))
     }));
   }catch(e){ /* nothing to do; the page still works for this session */ }
@@ -997,65 +1010,179 @@ const EXAMPLES = [
     turns: [
       {mine:true, en:'Nobody will remember me in a hundred years. Why am I working this hard?',
                   zh:'一百年后没人会记得我。那我这么拼是为了什么？'},
+
       {who:'p-marcus-aurelius', q:0,
        commit:{en:'Oblivion is the ordinary case, not a misfortune',
                zh:'湮没是常态，而非不幸'},
        bridge:{en:'A career measured in reach and legacy is measuring itself against a span that forgets emperors too.',
                zh:'以影响力与遗产衡量的事业，是在拿一个连皇帝都会遗忘的尺度衡量自己。'},
-       en:'You are not working hard for posterity. Posterity is a crowd that will not arrive. Do the work because it is the work in front of you, and let the forgetting happen on its own schedule.',
-       zh:'你不是为后世而拼。后世是一群永远不会到场的人。做这件事，是因为它就在你面前；至于被遗忘，让它按自己的节奏发生。'},
+       en:'You are not working hard for posterity. Posterity is a crowd that will not arrive. Do the work because it is in front of you, and let the forgetting keep its own schedule.',
+       zh:'你不是为后世而拼。后世是一群永远不会到场的人。做这件事，因为它就在你面前；至于被遗忘，让它按自己的节奏发生。'},
+
       {who:'p-epicurus', q:0,
        commit:{en:'A fear with no subject to suffer it is not a reason',
                zh:'没有承受者的恐惧，不构成理由'},
        bridge:{en:'Being forgotten is a state you are never present for, so it cannot be counted as a cost of anything.',
-               zh:'「被遗忘」是一个你永远不在场的状态，因此它不能被算作任何事情的代价。'},
-       en:'Marcus makes it a discipline. I say it is simpler than that: there is no one left to mind. Strip out the fear and what remains is the only real question, which is whether the work is any good to you now.',
-       zh:'马可把它当作一种修炼。我认为更简单：没有人会在意，因为那时已无人可在意。去掉这份恐惧，剩下的才是唯一真实的问题 — 这件事此刻对你是否是好的。'},
+               zh:'「被遗忘」是你永远不在场的状态，因此不能被算作任何事情的代价。'},
+       en:'Marcus makes a discipline of it. I say it is simpler: there will be no one left to mind. Take the fear out and the only real question remains, which is whether the work is any good to you now.',
+       zh:'马可把它变成一种修炼。我认为更简单：那时已无人可在意。把恐惧拿掉，剩下的才是唯一真实的问题 — 这件事此刻对你是否是好的。'},
+
+      {who:'p-marcus-aurelius',
+       commit:{en:'The ruling faculty is the only thing in your power',
+               zh:'唯有主宰心智的那部分在你掌握之中'},
+       bridge:{en:'Asking whether the work pleases you now still hands the verdict to a feeling you do not control.',
+               zh:'追问「此刻是否令你愉悦」，仍是把裁决权交给一种你无法控制的感受。'},
+       en:'That is too easy, Epicurus. You remove the fear and leave him with his appetites as a guide. Appetites are weather. He asked what to do on the days the work gives him nothing, and you have told him to wait for better weather.',
+       zh:'这太轻巧了，伊壁鸠鲁。你取走恐惧，却把欲望留给他当向导。欲望是天气。他问的是：在这份工作什么也给不了他的日子里该怎么办 — 而你叫他等天放晴。'},
+
+      {who:'p-epicurus',
+       commit:{en:'Pleasure rightly understood is the absence of disturbance',
+               zh:'正确理解的快乐，是没有扰动'},
+       bridge:{en:'He mistakes my position for indulgence; the point was to stop wanting what cannot be had, not to chase what feels good.',
+               zh:'他把我的立场误作放纵；要点是停止欲求不可得之物，而非追逐快感。'},
+       en:'You have made me a glutton to argue with. I did not say follow appetite. I said remove what cannot be satisfied — and a name that outlives you is first on that list. What is left is modest and reachable, which is the whole of my case.',
+       zh:'你把我当成一个饕餮之徒来反驳。我没说顺从欲望。我说的是：去掉那些无法被满足的东西 — 而「身后之名」正是其中第一项。剩下的既朴素又可及，这就是我的全部主张。'},
+
+      {mine:true, en:'But I do want to be remembered. Is that just vanity?',
+                  zh:'可我确实想被记住。这只是虚荣吗？'},
+
+      {who:'p-marcus-aurelius', q:1,
+       commit:{en:'Judgement, not the event, is where the harm enters',
+               zh:'伤害进入之处是判断，而非事件本身'},
+       bridge:{en:'Wanting to be remembered is not the problem; treating the want as a verdict on your life is.',
+               zh:'想被记住本身不是问题；把这份想望当成对你一生的判决才是。'},
+       en:'Vanity is not the wanting. It is letting the wanting decide what the day is worth. You may want it the way you want good weather — and then go out regardless.',
+       zh:'虚荣不在于想要。而在于让这份想要来裁定一天的价值。你可以像盼望好天气那样盼望它 — 然后照样出门。'},
+
+      {who:'p-epicurus', q:2,
+       commit:{en:'Desires divide into natural and empty',
+               zh:'欲望分为自然的与虚妄的'},
+       bridge:{en:'The wish for fame is the clearest case of a desire with no natural limit, which is why it cannot be fed.',
+               zh:'对名声的欲求是「没有自然限度」的最清楚例子，所以它永远喂不饱。'},
+       en:'Call it what it is: a want with no ceiling. However much you are remembered it will not be the amount that stops you wanting. That is not a moral failing, it is a structural one — and it is why I would not build a life on it.',
+       zh:'就说它的本相：一种没有上限的欲求。无论你被记住多少，那都不会是让你停止欲求的分量。这不是道德上的缺陷，而是结构上的 — 这正是我不会把一生建在其上的原因。'},
+
+      {who:'p-marcus-aurelius',
+       commit:{en:'Act for the common thing, which does not need you to be named',
+               zh:'为共同之事而行动，而共同之事不需要你的名字'},
+       bridge:{en:'Work that serves something beyond the worker survives the question of who gets credited for it.',
+               zh:'服务于劳作者之外之物的工作，能挺过「功劳归谁」这一问。'},
+       en:'Here we agree and I dislike it. Build on what the work does, not on what it returns to you. The difference between us is only that he calls this prudence and I call it duty.',
+       zh:'在这一点上我们一致，而我并不乐意。把根基放在这份工作做成了什么，而不是它回报了你什么。我们的分歧只在于：他称之为明智，我称之为义务。'},
     ]},
 
   { hours: 26, cast: ['p-john-stuart-mill', 'p-erving-goffman'],
     turns: [
       {mine:true, en:'Should a feed decide what I read?', zh:'该让信息流决定我读什么吗？'},
+
       {who:'p-john-stuart-mill', q:1,
        commit:{en:'Sovereignty over one’s own mind; truth needs collision',
-               zh:'个人对自己心智的主权；真理需要碰撞'},
-       bridge:{en:'A ranking that shows you what you already agree with removes the collision that made opinion worth holding.',
-               zh:'一个只给你看你已经认同之物的排序，取消了那种使意见值得持有的碰撞。'},
-       en:'The danger is not that it chooses badly. It is that it chooses agreeably. An opinion you have never had to defend is not held, it is merely kept.',
+               zh:'个人对自身心智的主权；真理需要碰撞'},
+       bridge:{en:'A ranking that shows you what you already agree with removes the collision that made an opinion worth holding.',
+               zh:'一个只给你看你已认同之物的排序，取消了使意见值得持有的那种碰撞。'},
+       en:'The danger is not that it chooses badly. It is that it chooses agreeably. An opinion you have never had to defend is not held — it is merely kept.',
        zh:'危险不在于它选得差，而在于它选得合你心意。一个你从未需要辩护的意见，不是被持有，只是被存放着。'},
+
       {who:'p-erving-goffman', q:0,
        commit:{en:'Conduct is shaped by who is watching',
                zh:'行为由「谁在看」塑造'},
-       bridge:{en:'A feed is an audience that never leaves, so reading becomes a performance of the kind of reader you want to be seen as.',
-               zh:'信息流是一个永不退场的观众，于是阅读变成了一场表演：表演你希望被看成的那种读者。'},
+       bridge:{en:'A feed is an audience that never leaves, so reading becomes a performance of the kind of reader you want to be taken for.',
+               zh:'信息流是一个永不退场的观众，于是阅读变成一场表演：表演你希望被当作的那种读者。'},
        en:'Mill assumes you are alone with the argument. You are not. You are reading in front of a room, and some of what you open is chosen for how it will look to have opened it.',
-       zh:'密尔假设你是独自面对论证的。你不是。你是在一屋子人面前阅读，而你点开的某些东西，是因为「点开过」这件事看起来如何而被选中的。'},
+       zh:'密尔假设你独自面对论证。你不是。你在一屋子人面前阅读，而你点开的某些东西，是因为「点开过」这件事看起来如何而被选中的。'},
+
+      {who:'p-john-stuart-mill', q:0,
+       commit:{en:'Understanding requires meeting the strongest opposing case',
+               zh:'理解需要面对最强的反对意见'},
+       bridge:{en:'If reading is performance, the performance can still be judged by whether it ever stages the other side.',
+               zh:'若阅读是表演，这表演仍可由「它是否曾上演对立面」来评判。'},
+       en:'Then let the room be the test. Perform if you must — but notice that you only ever perform agreement. Nobody is applauded for reading the case against themselves, which is exactly why it has to be deliberate.',
+       zh:'那就让这屋子成为检验。要表演便表演 — 但请注意，你表演的永远只是认同。没有人会因读了反对自己的论证而获得掌声，这正是它必须是刻意为之的原因。'},
+
+      {who:'p-erving-goffman',
+       commit:{en:'Backstage conduct differs from the front; the self is managed, not revealed',
+               zh:'后台与前台的行为不同；自我是被经营的，而非被揭示的'},
+       bridge:{en:'Private reading has no backstage left when every article can be shared, so the deliberate act Mill asks for is itself on stage.',
+               zh:'当每篇文章都可被分享，私下阅读便不再有后台 — 于是密尔所要求的刻意之举，本身也在台上。'},
+       en:'Deliberate in front of whom? You are describing a private act that no longer has a private room. He can read the other side — and the reading will be a costume too, unless nobody ever finds out he did it.',
+       zh:'在谁面前刻意？你描述的是一种已经没有私人房间的私人行为。他可以去读对立面 — 而那次阅读同样会是一件戏服，除非没有任何人知道他读过。'},
+
+      {mine:true, en:'So is there anything I can actually do about it?',
+                  zh:'那我到底还能做点什么？'},
+
+      {who:'p-john-stuart-mill', q:2,
+       commit:{en:'Error examined is worth more than truth inherited',
+               zh:'被审视的错误，胜过被继承的真理'},
+       bridge:{en:'The remedy is not a better feed but a habit the feed cannot supply: seeking the argument you expect to lose.',
+               zh:'解药不是更好的信息流，而是信息流无法提供的习惯：去寻找你预期会输掉的那场论证。'},
+       en:'Yes, and it is unglamorous. Go looking for the position you expect to defeat, and read it until you could argue it. If that is a costume, it is one that changes the man wearing it.',
+       zh:'有，而且毫不体面。去寻找那个你预期能驳倒的立场，读到你能替它辩护为止。若这是一件戏服，它也是会改变穿戴者的那种。'},
     ]},
 
   { hours: 74, cast: ['p-confucius', 'p-friedrich-nietzsche'],
     turns: [
       {mine:true, en:'Is duty to my family a trap?', zh:'对家庭的义务是一个陷阱吗？'},
+
       {who:'p-confucius', q:1,
        commit:{en:'Virtue is formed by submitting the self to form',
                zh:'德性在以礼约己中养成'},
-       bridge:{en:'What you are calling a trap is the shape that makes a person legible to the people who raised them.',
-               zh:'你称之为陷阱的，正是那个让一个人对养育他的人可被理解的形状。'},
-       en:'You ask whether the obligation confines you. It does. That is what an obligation is. The question worth asking is whether you would be anyone in particular without the ones you did not choose.',
-       zh:'你问这份义务是否束缚你。它确实束缚。义务本就如此。真正值得问的是：若没有那些你未曾选择的人，你还会是某个具体的人吗？'},
+       bridge:{en:'What you call a trap is the shape that makes a person legible to the people who raised them.',
+               zh:'你称之为陷阱的，正是让一个人对养育他的人可被理解的那个形状。'},
+       en:'You ask whether the obligation confines you. It does. That is what an obligation is. The question worth asking is whether you would be anyone in particular without the people you did not choose.',
+       zh:'你问这份义务是否束缚你。它确实束缚。义务本就如此。值得问的是：若没有那些你未曾选择的人，你还会是某个具体的人吗？'},
+
       {who:'p-friedrich-nietzsche', q:0,
        commit:{en:'Moral facts are interpretations with a history',
                zh:'道德事实是有来历的解释'},
-       bridge:{en:'Filial duty is not discovered but inherited, and inheritance is exactly what deserves examining.',
-               zh:'孝的义务不是被发现的，而是被继承的；而继承恰恰是最该被审视的东西。'},
-       en:'Confucius calls the cage a shape and asks you to admire the carpentry. Ask instead who built it and what they needed from you. If the answer still holds after that, keep it — but keep it as yours.',
-       zh:'孔子把笼子称作形状，并请你欣赏它的木工。不如去问：谁造的，他们需要你提供什么。如果问过之后答案依然成立，那就留着 — 但要作为你自己的东西留着。'},
+       bridge:{en:'Filial duty is not discovered but inherited, and an inheritance is exactly the thing that deserves examining.',
+               zh:'孝的义务不是被发现的，而是被继承的；而遗产恰恰最该被审视。'},
+       en:'Confucius calls the cage a shape and invites you to admire the carpentry. Ask instead who built it and what they needed from you. If the answer survives that, keep it — but keep it as yours.',
+       zh:'孔子把笼子称作形状，并请你欣赏它的木工。不如去问：谁造的，他们需要你提供什么。若答案经得起这一问，那就留着 — 但要作为你自己的东西留着。'},
+
+      {who:'p-confucius', q:0,
+       commit:{en:'Begin by knowing others rather than resenting their claim on you',
+               zh:'先求知人，而非怨人之求于己'},
+       bridge:{en:'Examining an inheritance is not the same as being owed an account by the people who gave it.',
+               zh:'审视一份遗产，与要求赠予者向你交代，是两回事。'},
+       en:'You would have him audit his parents before he has understood them. I say the understanding comes first and is the harder task. Most who demand reasons from their family have simply not yet looked at them closely.',
+       zh:'你要他在尚未理解父母之前先去审计他们。我说理解在先，而那是更难的功课。多数向家人索要理由的人，只是还不曾认真看过他们。'},
+
+      {who:'p-friedrich-nietzsche', q:1,
+       commit:{en:'There is no doer behind the deed; the self is made, not found',
+               zh:'行为背后没有行为者；自我是造成的，不是找到的'},
+       bridge:{en:'If a person is constituted by inherited roles, then examining them is not disloyalty but the only way to author anything.',
+               zh:'若一个人由继承而来的角色构成，那么审视它们就不是不忠，而是去创作任何东西的唯一途径。'},
+       en:'Understanding first, always first, and the examination never comes. I do not ask him to resent them. I ask him to notice that the dutiful son was built the same way a vice is built — by repetition — and then decide whether to keep building him.',
+       zh:'理解在先，永远在先，于是审视永不到来。我不是要他怨恨他们。我要他看到：那个孝顺的儿子，与一种恶习是以同样方式造成的 — 靠重复 — 然后再决定要不要继续造下去。'},
+
+      {mine:true, en:'My parents gave up a lot for me. Does that change the answer?',
+                  zh:'我父母为我放弃了很多。这会改变答案吗？'},
+
+      {who:'p-confucius', q:2,
+       commit:{en:'What is right is prior to what is advantageous',
+               zh:'义先于利'},
+       bridge:{en:'Framing a sacrifice as a debt turns a relation into a transaction, which is the mistake under the question.',
+               zh:'把牺牲表述为债务，就把一种关系变成了一笔交易 — 而这正是问题底下的错误。'},
+       en:'It changes the question, not the answer. You are treating their sacrifice as an invoice. It was not one. A debt can be discharged and then you are free; what they gave you cannot be, and that is not a worse position to be in.',
+       zh:'它改变的是问题，不是答案。你把他们的牺牲当作一张账单。它不是。债可以还清，还清你就自由了；他们给你的还不清 — 而这并不是更糟的处境。'},
+
+      {who:'p-friedrich-nietzsche',
+       commit:{en:'Gratitude that cannot be refused is a form of power',
+               zh:'无法拒绝的感激是一种权力形式'},
+       bridge:{en:'A gift no one can repay installs a permanent creditor, whatever name the relation is given.',
+               zh:'一份无人能偿还的馈赠，会安置一个永久的债主 — 无论这关系被叫作什么。'},
+       en:'Note what he has just done. The debt cannot be repaid, therefore you owe forever, and he calls this freedom. I would rather you said plainly: they gave, you did not ask, and you will decide what you give back.',
+       zh:'注意他刚刚做了什么。债无法偿还，因此你永远亏欠 — 而他称之为自由。我宁愿你直说：他们给了，你并未索要，而你将自行决定回报什么。'},
     ]},
 ];
 
-/* Seeded only into an empty list, so a reader's own conversations are never
-   displaced. */
+/* Seeded once, tracked by a flag rather than by the list being empty. Gating
+   on emptiness meant anyone who had already opened the tab — which is anyone
+   who had tried it at all — never saw them. Existing conversations are added
+   to, never replaced. */
 function seedExamples(){
-  if(chat.convos.length || !PHIL.length) return;
+  if(chat.seeded || !PHIL.length) return;
+  chat.seeded = true;
   const now = Date.now();
   EXAMPLES.forEach((ex, n) => {
     const cast = ex.cast.filter(id => philById(id));
@@ -1073,6 +1200,9 @@ function seedExamples(){
     });
     chat.convos.push({ id:'ex' + n, cast, msgs, said:{}, at: at + step, example:true });
   });
+  if(!chat.open && chat.convos.length) chat.open = chat.convos
+    .slice().sort((x,y) => (y.at||0) - (x.at||0))[0].id;
+  save();
 }
 
 function chatView(){
@@ -1094,18 +1224,25 @@ function convoList(open){
       .slice().sort((x,y) => (y.at||0) - (x.at||0))
       .map(c => {
         const last = c.msgs[c.msgs.length - 1];
-        const face = (c.cast || []).map(philById).filter(Boolean)[0];
+        const faces = (c.cast || []).map(philById).filter(Boolean);
         return `<button class="crow${open && open.id === c.id ? ' on' : ''}"
                         data-open-convo="${esc(c.id)}">
-          ${face ? castAvatar(face) : `<div class="av">${esc(convoTitle(c)[0] || '?')}</div>`}
+          <div class="faces stack${faces.length > 1 ? ' many' : ''}">
+            ${faces.length
+              ? faces.slice(0,3).map(f => castAvatar(f)).join('')
+              : `<div class="av">${esc(convoTitle(c)[0] || '?')}</div>`}
+            ${faces.length > 3 ? `<span class="more">+${faces.length - 3}</span>` : ''}
+          </div>
           <div class="crow-body">
             <div class="crow-top">
               <b>${esc(convoTitle(c))}</b>
-              ${c.example ? `<span class="extag">${t('EXAMPLE','示例')}</span>` : ''}
               <span>${esc(whenLabel(c.at))}</span>
+              <span class="drop" data-drop-convo="${esc(c.id)}"
+                    role="button" aria-label="${t('Delete','删除')}">×</span>
             </div>
-            <p>${last ? esc((last.mine ? t('You: ','你：') : '') + last.text)
-                      : t('No messages yet','还没有消息')}</p>
+            <p>${c.example ? `<span class="extag">${t('EXAMPLE','示例')}</span>` : ''}${
+              last ? esc((last.mine ? t('You: ','你：') : '') + last.text)
+                   : t('No messages yet','还没有消息')}</p>
           </div>
         </button>`;
       }).join('')
@@ -1157,7 +1294,9 @@ function convoPane(c){
     </div>
 
     ${cast.length ? `<div class="chat-acts">
-      <button class="ghost" data-talk="1">${t('Let them argue','让他们互相辩论')}</button>
+      <button class="ghost" data-talk="1">${
+        c.msgs.length ? t('Keep them going','让他们继续')
+                      : t('Let them argue','让他们互相辩论')}</button>
       ${c.msgs.length ? `<button class="ghost" data-clear="1">${t('Clear','清空')}</button>` : ''}
     </div>` : ''}
 
@@ -1350,7 +1489,9 @@ function brief(cast){
     ' "commitment": <the principle you are reasoning from, under 12 words>,',
     ' "bridge": <one sentence: how that principle reaches this modern object>,',
     ' "text": <the position, in their manner>}.',
-    'One to three entries. Not every speaker has to answer.',
+    'Give EXACTLY ONE entry for each speaker listed, in the order listed.',
+    'Everyone in the room speaks once. Later speakers should answer what the',
+    'earlier ones just said, not repeat them.',
     lang === 'zh' ? 'Write every field in Simplified Chinese.' : 'Write every field in English.'
   ].join('\n');
 }
@@ -1672,6 +1813,12 @@ document.addEventListener('click', ev => {
     chat.query = ''; chat.filter = 'all';
     return render();
   }
+  if((el = hit('[data-drop-convo]'))){
+    const id = el.dataset.dropConvo;
+    chat.convos = chat.convos.filter(c => c.id !== id);
+    if(chat.open === id) chat.open = null;
+    save(); return render();
+  }
   if((el = hit('[data-open-convo]'))){
     chat.open = el.dataset.openConvo; chat.draft = ''; return render();
   }
@@ -1702,8 +1849,10 @@ document.addEventListener('click', ev => {
     save(); return render();
   }
   if((el = hit('[data-talk]'))){
-    return speak('Continue: have them take up the argument with each other. '
-               + 'Do not address the reader.');
+    // Another round among themselves: each speaks once more, to each other
+    // rather than to the reader.
+    return speak('Continue the argument. Each speaker answers what the others '
+               + 'have just said. Do not address the reader.');
   }
   if((el = hit('[data-clear]'))){
     const c = convo(); if(c){ c.msgs = []; c.said = {}; }
