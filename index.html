@@ -143,6 +143,10 @@ img{max-width:100%}
 
 .feed{display:flex;flex-direction:column;gap:20px;padding:4px 16px 0}
 .feed .q{cursor:pointer}
+/* Two column boxes that vanish below the wide breakpoint; each card carries
+   its feed position as `order`, so one column reads newest first. */
+.feed-col{display:contents}
+.feed .footer-note{order:9999}
 
 /* --- Thread -------------------------------------------------------------- */
 .section-h{font-size:16px;padding-left:4px;margin:24px 0 12px}
@@ -346,6 +350,13 @@ img{max-width:100%}
   .ans > :not(.book):not(.reading){grid-column:1}
   .ans .reading{grid-column:2;grid-row:1 / span 6;padding-top:0}
   .feed{padding-left:0;padding-right:0}
+
+  /* Home: two columns, cards dealt left, right, left — so the newest two sit
+     side by side and neither column leaves holes under a short card. */
+  .feed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        gap:20px;align-items:start}
+  .feed-col{display:flex;flex-direction:column;gap:20px}
+  .feed .footer-note{grid-column:1 / -1}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -533,8 +544,10 @@ function questionCard(q, flat){
 
 function homeView(){
   const qs = questions();
+  const col = side => qs.map((q,i) => i % 2 === side
+    ? `<div style="order:${i}">${questionCard(q,false)}</div>` : '').join('');
   return `<div class="page"><div class="feed">
-    ${qs.map(q => questionCard(q,false)).join('')}
+    <div class="feed-col">${col(0)}</div><div class="feed-col">${col(1)}</div>
     <p class="footer-note" style="padding:8px 8px 0">${esc(L((C.strings||{}).footer))}</p>
   </div></div>`;
 }
