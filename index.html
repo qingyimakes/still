@@ -218,10 +218,36 @@ img{max-width:100%}
 .passage{font-family:var(--serif);font-size:24px;line-height:1.7;margin:0;
          overflow-wrap:anywhere}
 .attrib{font-family:var(--serif);font-style:italic;font-size:19px;margin:0}
-.book .cover-face{transform-origin:left center;transition:transform .55s ease-in-out;
-                  background:var(--cloth)}
-.book.open .cover-face{transform:rotateY(-180deg)}
+/* The front board swings on its hinge — rigid, as a cased board is, with
+   the case outside and the endpaper inside. Same model as `Turning` in
+   AnswersView.swift: each side darkens as it turns from the reader, and the
+   board shades the leaf under it until it lifts clear. Timing curves are
+   Theme.Motion.bookOpen / bookClose. */
+.book .board-turn{position:absolute;inset:0;transform-origin:left center;
+                  transform-style:preserve-3d;
+                  transition:transform .8s cubic-bezier(.4,0,.25,1)}
+.book.open .board-turn{transform:rotateY(-180deg);
+                       transition:transform .95s cubic-bezier(.45,0,.2,1)}
+.book .side{position:absolute;inset:0;border-radius:3px;overflow:hidden;
+            backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.book .side::after{content:"";position:absolute;inset:0;background:var(--ink);
+                   pointer-events:none;transition:opacity .8s ease-in}
+.book .cover-face{background:var(--cloth)}
+.book .cover-face::after{opacity:0}
+.book.open .cover-face::after{opacity:.22}
 .book .cover-face img{width:100%;height:100%;object-fit:cover;display:block}
+/* Laid out in its own coordinates, where the spine is on the left; the
+   half-turn sets it on the right, against the gutter. */
+.book .endpaper{transform:rotateY(180deg);
+                border:6px solid var(--cloth);border-left:0;
+                background:linear-gradient(to right,rgba(189,181,163,.35),rgba(189,181,163,0)),
+                           var(--book-page)}
+.book .endpaper::after{opacity:.22}
+.book.open .endpaper::after{opacity:0;transition:opacity .5s ease-out .45s}
+.book .leaf::after{content:"";position:absolute;inset:0;pointer-events:none;
+                   background:linear-gradient(to right,rgba(36,50,53,.30),rgba(36,50,53,0));
+                   transition:opacity .45s ease-out .1s}
+.book.open .leaf::after{opacity:0}
 .ans-hold{font-family:var(--serif);font-size:28px;line-height:1.414;text-align:center;
           margin:20px 0 0;text-wrap:balance}
 .ans-tap{font-size:17px;line-height:1.376;text-align:center;margin:8px 0 0}
@@ -287,7 +313,18 @@ img{max-width:100%}
    job is to make that impossible to miss: a SIMULATED tag on every generated
    line, and a visually separate block, in the thread's own quote styling, for
    the passages they actually wrote. The two must never look alike. */
-.chat{display:flex;flex-direction:column;gap:16px;padding:0 20px}
+/* A messaging app, not a document: the frame is fixed to the viewport, the
+   transcript is the only thing that scrolls, and the composer never leaves
+   the bottom of the screen. */
+.page--chat{padding:8px 0 0}
+.chat{display:flex;flex-direction:column;
+      height:calc(100dvh - 52px - 76px - env(safe-area-inset-bottom,0px));
+      padding:0 20px}
+.chat .cast{flex:none}
+.chat .msgs{flex:1;overflow-y:auto;overscroll-behavior:contain;
+            padding:8px 0 12px;margin:0 -4px;
+            padding-left:4px;padding-right:4px}
+.chat .notice{flex:none;margin:0 0 8px}
 .cast{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
 .cast::-webkit-scrollbar{display:none}
 .cast-add{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;
@@ -342,9 +379,8 @@ img{max-width:100%}
               color:var(--ink-secondary);margin-bottom:2px}
 .derived .tag.warn{color:var(--danger)}
 
-.composer{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));
-          display:flex;gap:8px;align-items:flex-end;background:var(--bg);
-          padding:8px 0 4px}
+.composer{flex:none;display:flex;gap:8px;align-items:flex-end;
+          background:var(--bg);padding:8px 0 4px}
 .composer textarea{flex:1;min-height:46px;max-height:140px;resize:none;
                    font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);
                    background:var(--surface);border:1px solid var(--hairline-strong);
@@ -370,7 +406,27 @@ img{max-width:100%}
 .prow .pick.on{background:var(--ink);color:var(--on-ink)}
 .notice{font-size:14px;line-height:1.5;color:var(--ink-tertiary);background:var(--chip);
         border-radius:var(--r-inner);padding:12px 14px}
-@media (min-width:900px){ .composer{bottom:0} }
+@media (min-width:900px){
+  .chat{height:calc(100dvh - 60px)}
+}
+/* Consecutive lines from one speaker read as one turn, so only the first
+   carries the face and the name. */
+.msg.cont{margin-top:-14px}
+.msg.cont .av{visibility:hidden;height:0}
+.msg.cont .msg-head{display:none}
+.stamp{font-size:11px;color:var(--ink-tertiary);align-self:flex-end;
+       padding:0 2px}
+.msg.mine .stamp{align-self:flex-start}
+.typing{display:flex;gap:4px;align-items:center;padding:12px 14px;
+        background:var(--surface);border:1px solid var(--hairline);
+        border-radius:var(--r-inner);width:fit-content}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-secondary);
+          animation:blip 1.2s infinite ease-in-out;display:block}
+.typing i:nth-child(2){animation-delay:.18s}
+.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blip{0%,60%,100%{opacity:.25;transform:translateY(0)}
+                30%{opacity:1;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){ .typing i{animation:none;opacity:.5} }
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
              padding:10px 12px;margin-top:12px}
@@ -493,7 +549,8 @@ let stack = [{ tab:'home' }]; // view stack; last entry is what is showing
 let reported = null;          // which item's report note is showing
 let PHIL = [];                // the ranked roster, from assets/philosophers.json
 let SAMPLE = undefined;       // the model, once asked for: null means no model here
-let chat = { cast: [], msgs: [], busy:false, query:'', picking:false, said:{} };
+let chat = { cast: [], msgs: [], busy:false, query:'', picking:false, said:{},
+             typing:null, draft:'' };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
@@ -781,7 +838,10 @@ function answersView(){
         </div>
         <div class="block"></div><div class="board"></div>
       </div>
-      <div class="face cover-face"><img src="${IMG}BookCover.png" alt=""></div>
+      <div class="board-turn">
+        <div class="side cover-face"><img src="${IMG}BookCover.png" alt=""></div>
+        <div class="side endpaper"></div>
+      </div>
     </div>
 
     ${bookOpen ? `
@@ -833,7 +893,7 @@ function chatView(){
   if(chat.picking) return pickerView();
   const cast = chat.cast.map(philById).filter(Boolean);
 
-  return `<div class="page"><div class="chat">
+  return `<div class="page page--chat"><div class="chat">
     <div class="cast">
       <button class="cast-add" data-pick-open="1">
         <span class="ring">+</span><small>${t('Add','添加')}</small>
@@ -853,8 +913,16 @@ function chatView(){
       'No model is reachable from this page, so nobody will reply. The live version on claude.ai can ask Claude directly; this copy cannot.',
       '此页面无法连接模型，因此不会有回应。claude.ai 上的版本可以直接向 Claude 提问，这个副本不能。')}</p>` : ''}
 
-    <div class="msgs">${chat.msgs.map(msgRow).join('')}</div>
-    ${chat.busy ? `<p class="notice">${t('Thinking…','正在思考…')}</p>` : ''}
+    <div class="msgs" id="msgs">
+      ${chat.msgs.map(msgRow).join('')}
+      ${chat.typing ? `<article class="msg">
+        ${castAvatar(philById(chat.typing) || {name:'?'})}
+        <div class="msg-body">
+          <div class="msg-head"><b>${esc((philById(chat.typing)||{}).name || '')}</b></div>
+          <div class="typing" aria-label="${t('typing','正在输入')}"><i></i><i></i><i></i></div>
+        </div>
+      </article>` : ''}
+    </div>
 
     ${cast.length ? `<div class="chat-acts">
       <button class="ghost" data-talk="1">${t('Let them argue','让他们互相辩论')}</button>
@@ -862,24 +930,32 @@ function chatView(){
     </div>` : ''}
 
     <form class="composer" id="composer">
-      <textarea id="say" rows="1" placeholder="${t('Say something…','说点什么…')}"
+      <textarea id="say" rows="1" placeholder="${t('Message','发消息')}"
         ${cast.length ? '' : 'disabled'}></textarea>
       <button type="submit" ${cast.length && !chat.busy ? '' : 'disabled'}>${t('Send','发送')}</button>
     </form>
   </div></div>`;
 }
 
+const clock = ts => { const d = new Date(ts || Date.now());
+  return d.getHours().toString().padStart(2,'0') + ':' +
+         d.getMinutes().toString().padStart(2,'0'); };
+
 function msgRow(m, i){
-  if(m.mine) return `<article class="msg mine">
+  // Same speaker twice running reads as one turn.
+  const prev = chat.msgs[i-1];
+  const cont = prev && !!prev.mine === !!m.mine && prev.id === m.id ? ' cont' : '';
+  if(m.mine) return `<article class="msg mine${cont}">
       ${'' /* no avatar for the reader: the app has no account and no face */}
-      <div class="msg-body"><div class="bubble">${esc(m.text)}</div></div>
+      <div class="msg-body"><div class="bubble">${esc(m.text)}</div>
+      <span class="stamp">${clock(m.at)}</span></div>
     </article>`;
 
   const p = philById(m.id) || {name:m.name, image:null};
   // Shown once per philosopher: something they demonstrably wrote, so the
   // generated voice always has the real one beside it for comparison.
   const q = m.said;
-  return `<article class="msg">
+  return `<article class="msg${cont}">
     ${castAvatar(p)}
     <div class="msg-body">
       <div class="msg-head"><b>${esc(p.name)}</b>
@@ -899,6 +975,7 @@ function msgRow(m, i){
           ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
           : esc(L(q.label))}</span>
       </div>` : ''}
+      <span class="stamp">${clock(m.at)}</span>
     </div>
   </article>`;
 }
@@ -1010,9 +1087,17 @@ async function speak(extra){
       brief(cast) + '\n\nConversation so far:\n' + (transcript() || '(nothing yet)') +
       '\n\n' + extra }]);
     const rows = Array.isArray(out) ? out : (out && out.replies) || [];
+    chat.busy = false;
     for(const r of rows){
       const p = cast.find(x => x.name === r.name) || cast[0];
       if(!p || !r.text) continue;
+      // Everything arrived in one response, but delivering it in one go reads
+      // as a wall of text rather than people answering. Each turn gets its own
+      // typing pause, roughly scaled to how much there is to say.
+      chat.typing = p.id; render();
+      await new Promise(r2 => setTimeout(r2,
+        Math.min(2200, 450 + String(r.text).length * 9)));
+      chat.typing = null;
       // One real passage per philosopher, the first time they speak.
       let said = null;
       if(p.quotes.length && !chat.said[p.id]){
@@ -1020,14 +1105,16 @@ async function speak(extra){
         chat.said[p.id] = 1;
       }
       chat.msgs.push({ id:p.id, name:p.name, text:String(r.text), said,
+                       at: Date.now(),
                        commitment: r.commitment ? String(r.commitment) : null,
                        bridge: r.bridge ? String(r.bridge) : null });
+      save(); render();
     }
   }catch(e){
-    chat.msgs.push({ id:null, name:'—', text:
-      t('The model did not answer. Try again.','模型没有回应，请重试。'), said:null });
+    chat.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text:
+      t('The model did not answer. Try again.','模型没有回应，请重试。') });
   }
-  chat.busy = false; save(); render();
+  chat.busy = false; chat.typing = null; save(); render();
 }
 
 let exploreFilter = 'all';
@@ -1209,7 +1296,26 @@ function render(){
   else if(e.tab === 'me')      html = meView();
   else                          html = homeView();
 
+  const box = document.getElementById('say');
+  const hadFocus = box && document.activeElement === box;
+  if(box) chat.draft = box.value;
+
   view.innerHTML = html;
+
+  // A chat that jumps to the top on every new line is unusable, and a
+  // composer that loses what you typed mid-sentence is worse.
+  const list = document.getElementById('msgs');
+  if(list){
+    list.scrollTop = list.scrollHeight;
+    // Images and wrapped text can change the height after this tick.
+    requestAnimationFrame(() => { list.scrollTop = list.scrollHeight; });
+  }
+  const nb = document.getElementById('say');
+  if(nb){
+    nb.value = chat.draft || '';
+    grow(nb);
+    if(hadFocus){ nb.focus(); nb.setSelectionRange(nb.value.length, nb.value.length); }
+  }
   document.getElementById('back').hidden = stack.length <= 1 && !chat.picking;
   navBar();
 }
@@ -1251,9 +1357,19 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-voice]'))) return go({tab:stack[0].tab, voice:el.dataset.voice});
   if((el = hit('[data-work]')))  return go({tab:stack[0].tab, work:el.dataset.work});
 
+  /* The turn runs on the element that is already on screen: re-rendering
+     with `.open` already set would draw the book open with nothing to
+     transition from. A new passage goes under the shut cover first, the
+     board swings, and only then is the page re-rendered to match. */
   if((el = hit('#book'))){
-    if(bookOpen){ bookOpen = false; render(); }
-    else { draw(); bookOpen = true; render(); }
+    if(el.dataset.turning) return;
+    const opening = !bookOpen;
+    if(opening){ draw(); render(); el = document.getElementById('book'); void el.offsetWidth; }
+    el.dataset.turning = '1';
+    el.classList.toggle('open', opening);
+    const settle = () => { bookOpen = opening; render(); };
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches) settle();
+    else setTimeout(settle, opening ? 950 : 800);
     return;
   }
 
@@ -1291,18 +1407,28 @@ document.addEventListener('click', ev => {
   }
 });
 
+function grow(el){
+  el.style.height = 'auto';
+  el.style.height = Math.min(140, el.scrollHeight) + 'px';
+}
+
+function send(){
+  const box = document.getElementById('say');
+  const text = box ? box.value.trim() : '';
+  if(!text || chat.busy) return;
+  chat.msgs.push({ mine:true, text, at: Date.now() });
+  chat.draft = ''; if(box){ box.value = ''; grow(box); }
+  save(); render();
+  speak('The reader just said: ' + text + '\nAnswer them.');
+}
+
 document.addEventListener('submit', ev => {
   if(ev.target.id !== 'composer') return;
-  ev.preventDefault();
-  const box = document.getElementById('say');
-  const text = box.value.trim();
-  if(!text) return;
-  chat.msgs.push({ mine:true, text });
-  box.value = ''; save(); render();
-  speak('The reader just said: ' + text + '\nAnswer them.');
+  ev.preventDefault(); send();
 });
 
 document.addEventListener('input', ev => {
+  if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); return; }
   if(ev.target.id === 'pq'){
     // Re-rendering on every keystroke would steal the caret, so the list is
     // refreshed in place and the field left alone.
@@ -1317,6 +1443,11 @@ document.addEventListener('input', ev => {
 
 document.addEventListener('keydown', ev => {
   if(ev.key === 'Enter' && ev.target.id === 'book'){ ev.target.click(); }
+  // Enter sends; Shift+Enter is a new line. On a phone the key is Return and
+  // people expect it to send, as it does everywhere else.
+  if(ev.key === 'Enter' && !ev.shiftKey && ev.target.id === 'say'){
+    ev.preventDefault(); send();
+  }
 });
 
 addEventListener('scroll', () => {
