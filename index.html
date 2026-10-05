@@ -1,0 +1,897 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Still</title>
+
+<style>
+/* ---------------------------------------------------------------------------
+   Tokens. Lifted from PastLives/Theme/Theme.swift, which is the single source
+   of truth in the app; px here map 1:1 to pt there. The app is light only, so
+   this page commits to one palette and paints every surface explicitly.
+
+   Type comes from the system, the same way it does in the app: New York for
+   the serif, SF for the sans. See the note on --serif below.
+--------------------------------------------------------------------------- */
+:root{
+  color-scheme: light;
+
+  --bg:#FAFAFA; --surface:#FFFFFF; --parchment:#E0D5C7;
+  --book-page:#F5F2EC; --cloth:#D3CCBD; --paper-ground:#F2F0EA;
+  --quote-bg:rgba(224,213,199,.32);
+  --chip:rgba(36,50,53,.07); --chip-soft:rgba(36,50,53,.045);
+  --fill-muted:rgba(36,50,53,.05);
+
+  --ink:#243235; --ink-secondary:#6B6B6B; --ink-tertiary:#5F5B54;
+  --text-body:#3C3C3C; --text-body-soft:#5A5A5A; --text-body-muted:#4A4A4A;
+  --initials:#8A867E; --nav-inactive:#7C8B8E; --on-ink:#FFFFFF;
+
+  --accent:#DBFEAA; --danger:#A83C13; --like:#EC6940;
+
+  --hairline:rgba(36,50,53,.09); --hairline-strong:rgba(36,50,53,.14);
+  --hairline-card:rgba(36,50,53,.16); --divider:rgba(36,50,53,.13);
+
+  --r-card:24px; --r-inner:16px; --r-chip:14px; --r-vote:12px; --r-pill:999px;
+
+  /* The faces the app actually renders. `ui-serif` resolves to New York and
+     `-apple-system` to SF on Apple platforms, so on an iPhone this page sets
+     type in exactly what the app sets it in. The design file specifies
+     Newsreader and DM Sans, but the app does not bundle them, and matching
+     the app is the point of this page. */
+  --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",sans-serif;
+
+  /* Outside the phone column, on a desktop window. */
+  --room:#EDEBE7;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--room);font-family:var(--sans);color:var(--ink);
+     -webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;
+       text-align:left}
+a{color:inherit}
+img{max-width:100%}
+/* `hidden` has to beat the display rules below it; the publish skeleton adds
+   this too, but the page is also served straight from the repo. */
+[hidden]{display:none !important}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+
+/* --- The phone column ---------------------------------------------------- */
+.app{max-width:430px;margin:0 auto;min-height:100%;background:var(--bg);
+     position:relative;box-shadow:0 0 0 1px rgba(36,50,53,.06)}
+@media (min-width:520px){
+  .app{box-shadow:0 1px 40px rgba(36,50,53,.10)}
+}
+
+/* --- Top bar. The app uses the system navigation bar, which from iOS 26
+       floats over the content as glass and applies its own scroll-edge
+       effect; this is the same idea in CSS. ---------------------------------*/
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;height:52px;
+     display:flex;align-items:center;justify-content:center;
+     background:rgba(250,250,250,.72);backdrop-filter:blur(20px) saturate(180%);
+     -webkit-backdrop-filter:blur(20px) saturate(180%);
+     border-bottom:1px solid transparent;transition:border-color .2s}
+.bar.scrolled{border-bottom-color:var(--hairline)}
+.brand{font-family:var(--serif);font-style:italic;font-size:17px}
+.bar .back{position:absolute;left:12px;top:50%;transform:translateY(-50%);
+           width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
+           justify-content:center;background:rgba(255,255,255,.92);
+           backdrop-filter:blur(20px) saturate(180%);
+           -webkit-backdrop-filter:blur(20px) saturate(180%);
+           box-shadow:0 1px 6px rgba(36,50,53,.10)}
+.bar .back svg{width:22px;height:22px}
+
+/* --- Page scaffold ------------------------------------------------------- */
+.page{padding:16px 0 calc(64px + 42px + env(safe-area-inset-bottom,0px))}
+.page-head{padding:8px 20px 4px}
+.page-title{font-family:var(--serif);font-size:34px;margin:0}
+.page-sub{font-size:15px;line-height:1.4;color:var(--ink-tertiary);margin:8px 0 0}
+
+/* --- Bottom nav ---------------------------------------------------------- */
+.nav{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;
+     transform:translateX(-50%);width:calc(100% - 32px);max-width:398px;z-index:30;
+     display:grid;grid-template-columns:repeat(4,1fr);padding:5px;
+     border-radius:var(--r-pill);background:rgba(252,251,249,.86);
+     backdrop-filter:blur(24px) saturate(180%);
+     -webkit-backdrop-filter:blur(24px) saturate(180%);
+     border:1px solid rgba(36,50,53,.05);
+     box-shadow:0 6px 24px rgba(36,50,53,.10),0 1px 2px rgba(36,50,53,.05)}
+.nav button{height:54px;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:2px;color:var(--ink);border-radius:var(--r-pill)}
+.nav button[aria-current="page"]{background:var(--chip)}
+.nav svg{width:23px;height:23px}
+.nav span{font-size:11.5px;font-weight:500}
+
+/* --- Cards --------------------------------------------------------------- */
+.card{background:var(--surface);border-radius:var(--r-card);
+      border:1px solid var(--surface);box-shadow:0 1px 2px rgba(36,50,53,.04)}
+.card--flat{background:transparent;border-color:var(--hairline-card);box-shadow:none}
+
+.q{padding:24px}
+.q--flat{padding:20px}
+.q-top{display:flex;align-items:flex-start;gap:8px}
+.q-date{font-size:14.5px;line-height:1.407;font-weight:500;color:var(--ink-secondary);flex:1}
+.icon-btn{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;
+          color:var(--ink-secondary);flex:none}
+.icon-btn svg{width:19px;height:19px}
+.icon-btn.on{color:var(--like)}
+.q-title{font-family:var(--serif);font-size:36px;line-height:1.24;margin:12px 0 0;
+         text-wrap:balance}
+.q--flat .q-title{font-size:30px;line-height:1.3}
+.q-why{font-size:17px;line-height:1.45;color:var(--text-body);margin:12px 0 0}
+
+/* --- Options ------------------------------------------------------------- */
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.opt{position:relative;display:flex;align-items:center;gap:12px;width:100%;
+     padding:12px 16px;border-radius:var(--r-inner);overflow:hidden;
+     border:1px solid var(--hairline-strong);background:transparent}
+.opt .fillbar{position:absolute;inset:0 auto 0 0;width:0;background:var(--fill-muted);
+              transition:width .3s ease-out}
+.opt.mine{border-width:1.5px}
+.opt > *{position:relative}
+.opt .key{width:26px;height:26px;flex:none;border-radius:50%;display:grid;
+          place-items:center;font-size:13px;font-weight:700;background:var(--chip);
+          color:var(--ink-secondary)}
+.opt .lbl{font-size:17px;line-height:1.376;flex:1}
+.opt .pct{font-size:15px;line-height:1.4;font-weight:500;color:var(--ink-tertiary);
+          font-variant-numeric:tabular-nums;flex:none}
+.q-close{font-size:15px;line-height:1.4;color:var(--ink-tertiary);margin-top:16px}
+.wide{display:block;width:100%;margin-top:16px;text-align:center;font-size:16px;
+      padding:14px;border-radius:var(--r-pill);background:var(--ink);color:var(--on-ink)}
+
+.feed{display:flex;flex-direction:column;gap:20px;padding:4px 16px 0}
+.feed .q{cursor:pointer}
+
+/* --- Thread -------------------------------------------------------------- */
+.section-h{font-size:16px;padding-left:4px;margin:24px 0 12px}
+.pills{display:flex;gap:8px;overflow-x:auto;padding:2px 20px 2px;
+       scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:none;min-width:42px;text-align:center;font-size:14.5px;font-weight:500;
+      padding:8px 16px;border-radius:var(--r-pill);background:var(--chip)}
+.rows{display:flex;flex-direction:column;gap:32px;padding:16px 20px 0}
+.row{display:flex;gap:12px;align-items:flex-start}
+.av{width:46px;height:46px;flex:none;border-radius:50%;background:var(--parchment);
+    display:grid;place-items:center;overflow:hidden;font-family:var(--serif);
+    font-size:19px;color:var(--initials)}
+.av img{width:100%;height:100%;object-fit:cover}
+.av--lg{width:56px;height:56px;font-size:22px}
+.row-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.row-name{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.row-name b{font-size:16.5px;font-weight:700}
+.row-name span{font-size:14px;color:var(--ink-secondary)}
+.voted{align-self:flex-start;font-size:13px;font-weight:500;padding:4px 12px;
+       border-radius:var(--r-vote);line-height:1.3}
+.quotebox{background:var(--quote-bg);border-radius:var(--r-inner);padding:12px 16px;
+          display:flex;flex-direction:column;gap:8px}
+.quotebox q{font-family:var(--serif);font-size:19px;line-height:1.516;quotes:"\201C" "\201D"}
+.quotebox .src{font-size:13.5px;font-weight:500;color:var(--ink-secondary)}
+.quotebox .src u{text-underline-offset:2px}
+.claim{font-size:17px;font-weight:500;line-height:1.494}
+.detail{font-size:16.5px;line-height:1.564;color:var(--text-body-soft)}
+.reach{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.4;
+       color:var(--ink-secondary)}
+.readmore{font-size:14.5px;font-weight:500;padding:4px 0;text-decoration:underline;
+          text-underline-offset:3px}
+.row-foot{display:flex;align-items:center;gap:12px;padding-top:4px}
+.row-foot .origin{font-size:14px;color:var(--ink-secondary);flex:1}
+
+/* --- Reading list -------------------------------------------------------- */
+.shelf{display:flex;gap:16px;overflow-x:auto;padding:4px 20px 12px;
+       scrollbar-width:none}
+
+.shelf::-webkit-scrollbar{display:none}
+.book-card{flex:none;width:196px;padding:16px;display:flex;flex-direction:column;
+           gap:12px;text-align:left}
+.cover{aspect-ratio:2/3;border-radius:4px;background:var(--parchment);overflow:hidden;
+       display:grid;place-items:center;padding:12px}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover span{font-family:var(--serif);font-size:15px;color:var(--ink);text-align:center;
+            line-height:1.2}
+.book-card h4{font-family:var(--serif);font-size:19px;margin:0;font-weight:400}
+.book-card .by{font-size:14px;color:var(--ink-tertiary);margin:4px 0 0}
+.book-card p{font-size:15px;line-height:1.4;color:var(--text-body-muted);margin:0}
+.footer-note{font-size:15px;line-height:1.4;color:var(--ink-tertiary);padding:24px 24px 0}
+
+/* --- Answers: the commonplace book --------------------------------------- */
+.ans{display:flex;flex-direction:column;align-items:center;padding:16px 20px 0}
+.book{width:min(300px,78%);aspect-ratio:546/750;position:relative;
+      perspective:1200px;cursor:pointer;margin-top:16px;
+      filter:drop-shadow(0 8px 22px rgba(36,50,53,.10))}
+.book .face{position:absolute;inset:0;border-radius:3px;overflow:hidden;
+            backface-visibility:hidden}
+.book .leaf{background:var(--book-page);display:flex}
+.book .gutter{width:26px;flex:none;
+              background:linear-gradient(to left,rgba(189,181,163,.35),transparent)}
+.book .leaf-text{flex:1;padding:24px;display:flex;flex-direction:column;
+                 justify-content:center;gap:24px;min-width:0}
+.book .block{width:9px;flex:none;background:#D6D0C2}
+.book .board{width:5px;flex:none;background:var(--cloth)}
+.passage{font-family:var(--serif);font-size:24px;line-height:1.7;margin:0;
+         overflow-wrap:anywhere}
+.attrib{font-family:var(--serif);font-style:italic;font-size:19px;margin:0}
+.book .cover-face{transform-origin:left center;transition:transform .55s ease-in-out;
+                  background:var(--cloth)}
+.book.open .cover-face{transform:rotateY(-180deg)}
+.book .cover-face img{width:100%;height:100%;object-fit:cover;display:block}
+.ans-hold{font-family:var(--serif);font-size:28px;line-height:1.414;text-align:center;
+          margin:20px 0 0;text-wrap:balance}
+.ans-tap{font-size:17px;line-height:1.376;text-align:center;margin:8px 0 0}
+.ans-note{font-size:12px;line-height:1.4;color:var(--ink-tertiary);text-align:center;
+          margin:12px 0 0;max-width:34ch}
+.label{font-size:13px;font-weight:600;letter-spacing:1.4px}
+.label--sm{font-size:12px;font-weight:400;letter-spacing:.6px;color:var(--ink-secondary)}
+.reading{width:100%;display:flex;flex-direction:column;gap:16px;padding-top:24px}
+.reading .who{display:flex;align-items:center;gap:12px}
+.reading .who b{font-size:16.5px}
+.reading .who div span{display:block;font-size:14.5px;color:var(--ink-secondary)}
+.reading .grp{display:flex;flex-direction:column;gap:4px}
+.reading .grp p{font-size:15px;line-height:1.4;color:var(--text-body-soft);margin:0}
+.reading .grp p.dark{color:var(--ink)}
+.disclaim{background:var(--chip);border-radius:var(--r-inner);padding:16px;
+          display:flex;flex-direction:column;gap:4px}
+.disclaim b{font-size:15px;font-weight:500}
+.disclaim p{font-size:15px;line-height:1.4;color:var(--ink-tertiary);margin:0}
+
+/* --- Explore ------------------------------------------------------------- */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 20px 0}
+.tile{padding:16px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.tile .av{width:52px;height:52px}
+.tile h4{font-family:var(--serif);font-size:19px;margin:0;font-weight:400;line-height:1.2}
+.tile span{font-size:12px;color:var(--ink-secondary)}
+
+/* --- Entry (voice / work) ------------------------------------------------ */
+.entry{padding:20px}
+.entry-head{display:flex;gap:16px;align-items:center}
+.entry h2{font-family:var(--serif);font-size:28px;margin:0;font-weight:400}
+.entry .meta{font-size:14.5px;line-height:1.407;color:var(--ink-secondary);margin:4px 0 0}
+.entry .body{font-size:16.5px;line-height:1.564;color:var(--text-body-soft);margin:16px 0 0}
+.entry .credit{font-size:12px;line-height:1.5;color:var(--ink-tertiary);margin:20px 0 0;
+               padding-top:16px;border-top:1px solid var(--hairline)}
+
+/* --- Me ------------------------------------------------------------------ */
+.me{padding:16px 20px 0;display:flex;flex-direction:column;gap:12px}
+.stat-row{display:flex;gap:12px}
+.stat{flex:1;padding:16px;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:26px;font-weight:400}
+.stat span{font-size:14px;color:var(--ink-secondary)}
+.panel{padding:16px;display:flex;flex-direction:column;gap:8px}
+.panel h3{font-size:16px;margin:0}
+.panel p{font-size:15px;line-height:1.4;color:var(--text-body-soft);margin:0}
+.seg{display:flex;gap:4px;background:var(--chip);border-radius:var(--r-pill);padding:3px}
+.seg button{flex:1;text-align:center;font-size:14.5px;font-weight:500;padding:8px;
+            border-radius:var(--r-pill);color:var(--ink-secondary)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);
+                                 box-shadow:0 1px 2px rgba(36,50,53,.10)}
+.rule{padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--ink);
+      color:var(--on-ink);border-radius:var(--r-card)}
+.rule b{font-family:var(--serif);font-style:italic;font-size:19px;font-weight:400}
+.rule p{font-size:15px;line-height:1.4;margin:0;opacity:.82}
+
+.kinds{display:flex;flex-wrap:wrap;gap:6px}
+.kind{font-size:12px;padding:5px 10px;border-radius:var(--r-pill);background:var(--chip);
+      color:var(--ink-tertiary)}
+
+/* The Answers tab lays the same sheet under the whole column that the app
+   lays under the whole screen — including behind the top bar, which is why
+   this sits on .app and not on .page. The sheet is scaled to cover rather
+   than tiled: a tile seam is a straight line, and nothing in handmade paper
+   is straight. */
+.app.paper{background:var(--paper-ground) url(assets/img/PaperGround.png) center/cover no-repeat}
+.app.paper .bar{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.report-note{font-size:13px;line-height:1.45;color:var(--danger);
+             background:rgba(236,105,64,.10);border-radius:var(--r-chip);
+             padding:10px 12px;margin-top:12px}
+.empty{padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-tertiary)}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="app">
+  <header class="bar" id="bar">
+    <button class="back" id="back" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <span class="brand">Still</span>
+  </header>
+
+  <main id="view"></main>
+
+  <nav class="nav" id="nav"></nav>
+</div>
+
+<script>
+/* ---------------------------------------------------------------------------
+   Still, on the web.
+
+   A port of the iOS app, reading the same PastLives/Resources/content.json the
+   app ships in its bundle. Everything on this page comes out of that file:
+   the questions, the replies, the quotations and their sources. Nothing is
+   generated here, which is the whole point of the project — a quote is only a
+   quote if it has a source you can follow.
+
+   State (votes, likes, language) lives in this browser only, the same way the
+   app keeps it on the phone and never sends it anywhere.
+--------------------------------------------------------------------------- */
+
+const IMG = 'assets/img/';
+let C = null;                 // content.json
+let lang = 'en';
+let state = { votes:{}, likes:{} };
+let stack = [{ tab:'home' }]; // view stack; last entry is what is showing
+let reported = null;          // which item's report note is showing
+
+/* --- Storage. Every access can throw (private windows, blocked site data),
+       and the page has to render correctly when it does. ------------------ */
+function load(){
+  try{
+    const raw = localStorage.getItem('still.state');
+    if(raw) state = Object.assign(state, JSON.parse(raw));
+    const l = localStorage.getItem('still.lang');
+    if(l === 'en' || l === 'zh') lang = l;
+  }catch(e){ /* defaults stand */ }
+}
+function save(){
+  try{
+    localStorage.setItem('still.state', JSON.stringify(state));
+    localStorage.setItem('still.lang', lang);
+  }catch(e){ /* nothing to do; the page still works for this session */ }
+}
+
+/* --- Helpers ------------------------------------------------------------- */
+const t = (en, zh) => lang === 'zh' ? zh : en;
+const L = v => !v ? '' : (typeof v === 'string' ? v : (v[lang] || v.en || ''));
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = n => n.toLocaleString(lang === 'zh' ? 'zh-CN' : 'en-US');
+const byId = (arr, id) => arr.find(x => x.id === id);
+
+function dateLabel(iso){
+  const d = new Date(iso + 'T00:00:00Z');
+  const o = {timeZone:'UTC'};
+  if(lang === 'zh'){
+    const wd = d.toLocaleDateString('zh-Hans-CN',{...o, weekday:'long'});
+    return `${d.getUTCMonth()+1}月${d.getUTCDate()}日 ${wd}`;
+  }
+  // en_GB puts the day before the month, and the app's format keeps a comma
+  // after the weekday that the locale's own long form leaves out.
+  const wd = d.toLocaleDateString('en-GB',{...o, weekday:'long'});
+  const mo = d.toLocaleDateString('en-GB',{...o, month:'long'});
+  return `${wd}, ${d.getUTCDate()} ${mo}`;
+}
+const initial = name => (name || '?').trim()[0] || '?';
+
+const FLAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"'
+  + ' stroke-linecap="round" stroke-linejoin="round">'
+  + '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>';
+/* The app logs a report on the device and can hand it to Mail. The web port
+   has neither, so the button says so rather than pretending to send. */
+const reportBtn = key => `<button class="icon-btn" data-report="${esc(key)}"
+  aria-label="${t('Report','举报')}">${FLAG}</button>`;
+const reportNote = key => reported === key
+  ? `<p class="report-note">${t('Reporting is in the app — it logs on the device and can be handed to Mail. This page cannot send anything.','举报功能在 App 内：记录在设备上，并可通过邮件发送。此页面无法发送任何内容。')}</p>`
+  : '';
+function avatar(name, image, cls){
+  const inner = image && image.file
+    ? `<img src="${IMG}${esc(image.file)}" alt="" loading="lazy">`
+    : esc(initial(name));
+  return `<div class="av ${cls||''}">${inner}</div>`;
+}
+const kindLabel = k => L((C.kinds || {})[k]) || k;
+const style = k => (C.optionStyle || {})[k] || {fill:'#E0D5C7',ink:'#243235',
+  text:'#5F5B54',line:'#243235',bg:'rgba(36,50,53,.06)'};
+
+/* Questions newest first — the app sorts the feed by date descending, so an
+   appended question rises to the top instead of sinking to its index. */
+const questions = () => C.questions
+  .filter(q => q.status === 'published')
+  .sort((a,b) => b.date.localeCompare(a.date));
+
+const responsesFor = q => C.responses.filter(r => r.questionId === q.id);
+
+/* Ordered by how far a voice reaches, the way the thread is ordered in the
+   app, so the best-known names are not always first by accident. */
+function threadRows(q, filter){
+  let rs = responsesFor(q);
+  if(filter && filter !== 'all') rs = rs.filter(r => r.optionKey === filter);
+  return rs.map(r => ({ r, v: byId(C.voices, r.voiceId) }))
+           .filter(x => x.v)
+           .sort((a,b) => ((b.v.reach||{}).weight||0) - ((a.v.reach||{}).weight||0));
+}
+
+function worksFor(q){
+  const ids = new Set();
+  Object.values(q.answers || {}).forEach(a => (a.workIds||[]).forEach(w => ids.add(w)));
+  return [...ids].map(id => byId(C.works, id)).filter(Boolean);
+}
+
+/* --- Navigation ---------------------------------------------------------- */
+const here = () => stack[stack.length - 1];
+function go(entry){ reported = null; stack.push(entry); render(); window.scrollTo(0,0); }
+function tab(name){ reported = null; stack = [{tab:name}]; render(); window.scrollTo(0,0); }
+function back(){ reported = null; if(stack.length > 1){ stack.pop(); render(); } }
+
+/* --- Views --------------------------------------------------------------- */
+
+function optionRow(q, o, chosen){
+  const p = style(o.key);
+  const answered = chosen != null;
+  const mine = chosen === o.key;
+  const pct = (q.baselinePct || {})[o.key];
+  const dim = answered && !mine ? 'opacity:.42' : '';
+  return `
+  <button class="opt ${mine?'mine':''}" data-vote="${esc(o.key)}"
+          style="border-color:${mine?esc(p.line):'var(--hairline-strong)'}">
+    <span class="fillbar" style="background:${mine?esc(p.bg):'var(--fill-muted)'};
+          width:${answered && pct!=null ? pct : 0}%"></span>
+    <span class="key" style="${answered?`background:${esc(p.fill)};color:${esc(p.ink)};${dim}`:''}">${esc(o.key)}</span>
+    <span class="lbl">${esc(L(o.label))}</span>
+    ${answered && pct!=null
+      ? `<span class="pct" style="${mine?`color:${esc(p.text)}`:''}">${pct}%</span>` : ''}
+  </button>`;
+}
+
+function questionCard(q, flat){
+  const chosen = state.votes[q.id] ?? null;
+  const liked = !!state.likes['question:'+q.id];
+  const joined = q.joined || 0;
+  const close = joined > 0
+    ? (chosen == null
+        ? t(`Answer to open the thread. ${num(joined)} living have already answered.`,
+            `作答后即可展开讨论。已有 ${num(joined)} 位在世的人作答。`)
+        : t(`${num(joined)} living have answered. You can change yours any time.`,
+            `${num(joined)} 位在世的人已作答。你可以随时更改答案。`))
+    : L((C.strings||{})[chosen == null ? 'lead' : 'bars']);
+
+  return `
+  <article class="card ${flat?'card--flat':''} q ${flat?'q--flat':''}" data-open="${flat?'':esc(q.id)}">
+    <div class="q-top">
+      <span class="q-date">${esc(dateLabel(q.date))}</span>
+      <button class="icon-btn ${liked?'on':''}" data-like="question:${esc(q.id)}"
+              aria-label="${t('Like','喜欢')}" aria-pressed="${liked}">
+        <svg viewBox="0 0 24 24" fill="${liked?'currentColor':'none'}" stroke="currentColor"
+             stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.7 1.1-1a5.5 5.5 0 0 0 0-7.7z"/></svg>
+      </button>
+      ${reportBtn('question:'+q.id)}
+    </div>
+    <h2 class="q-title">${esc(L(q.title))}</h2>
+    <p class="q-why">${esc(L(q.why))}</p>
+    <div class="opts">${q.options.map(o => optionRow(q,o,chosen)).join('')}</div>
+    <p class="q-close">${esc(close)}</p>
+    ${reportNote('question:'+q.id)}
+    ${chosen != null && !flat
+      ? `<button class="wide" data-open="${esc(q.id)}">${t('Open the thread','打开讨论')}</button>` : ''}
+  </article>`;
+}
+
+function homeView(){
+  const qs = questions();
+  return `<div class="page"><div class="feed">
+    ${qs.map(q => questionCard(q,false)).join('')}
+    <p class="footer-note" style="padding:8px 8px 0">${esc(L((C.strings||{}).footer))}</p>
+  </div></div>`;
+}
+
+function threadView(id, filter){
+  const q = byId(C.questions, id);
+  if(!q) return `<div class="empty">${t('Not found','没有找到')}</div>`;
+  const rows = threadRows(q, filter);
+  const books = worksFor(q);
+  const f = filter || 'all';
+
+  const pill = (key, label) => {
+    const active = f === key;
+    const isOpt = key !== 'all';
+    const p = style(key);
+    const bg = active ? (isOpt ? p.fill : 'var(--ink)') : 'var(--chip)';
+    const fg = active ? (isOpt ? p.ink : 'var(--accent)') : (isOpt ? p.text : 'var(--ink)');
+    return `<button class="pill" data-filter="${esc(key)}"
+      style="background:${esc(bg)};color:${esc(fg)}">${esc(label)}</button>`;
+  };
+
+  return `<div class="page">
+    <div style="padding:0 16px">${questionCard(q,true)}</div>
+
+    <h3 class="section-h" style="padding-left:24px">${t('Comments from the past lives','讨论 · 按影响力排序')}</h3>
+    <div class="pills">
+      ${pill('all', t('All','全部'))}
+      ${q.options.map(o => pill(o.key, o.key)).join('')}
+    </div>
+
+    <div class="rows">${rows.map(x => responseRow(x, q)).join('') ||
+      `<p class="empty">${t('Nothing here yet.','这里还没有内容。')}</p>`}</div>
+
+    ${books.length ? `
+      <h3 class="section-h" style="padding-left:24px;font-family:var(--serif);
+          font-style:italic;font-size:21px">${esc(L((C.strings||{}).books))}</h3>
+      <div class="shelf">${books.map(bookCard).join('')}</div>` : ''}
+
+    <p class="footer-note">${esc(L((C.strings||{}).footer))}</p>
+  </div>`;
+}
+
+function responseRow({r, v}, q){
+  const p = style(r.optionKey);
+  const opt = (q.options.find(o => o.key === r.optionKey) || {});
+  const liked = !!state.likes['response:'+r.id];
+  const src = r.source || {};
+  const link = src.url || (v.wiki ? `https://en.wikipedia.org/wiki/${encodeURIComponent(v.wiki)}` : null);
+
+  return `
+  <article class="row">
+    <button data-voice="${esc(v.id)}" aria-label="${esc(L(v.name))}">${avatar(L(v.name), v.image)}</button>
+    <div class="row-body">
+      <div class="row-name">
+        <b>${esc(L(v.name))}</b><span>${esc(kindLabel(r.kind))}</span>
+      </div>
+      <span class="voted" style="background:${esc(p.bg)};color:${esc(p.text)}">${
+        t('Voted for ','投给 ')}${esc(r.optionKey)} · ${esc(L(opt.label))}</span>
+
+      ${r.quote && L(r.quote) && src.label ? `
+        <div class="quotebox">
+          <q>${esc(L(r.quote))}</q>
+          <span class="src">— ${src.url
+            ? `<a href="${esc(src.url)}" target="_blank" rel="noopener"><u>${esc(L(src.label))}</u></a>`
+            : `<u>${esc(L(src.label))}</u>`}</span>
+        </div>` : ''}
+
+      <p class="claim">${esc(L(r.claim))}</p>
+      ${r.detail ? `<p class="detail">${esc(L(r.detail))}</p>` : ''}
+      ${r.extra ? `<p class="detail">${esc(L(r.extra))}</p>` : ''}
+      ${v.reach ? `<p class="reach">${esc(L(v.reach.note))}</p>` : ''}
+      ${link ? `<a class="readmore" href="${esc(link)}" target="_blank" rel="noopener">${
+        esc(L((C.strings||{}).readMore))}</a>` : ''}
+
+      <div class="row-foot">
+        <span class="origin">${esc(L(r.origin))}</span>
+        <button class="icon-btn ${liked?'on':''}" data-like="response:${esc(r.id)}"
+                aria-label="${t('Like','喜欢')}" aria-pressed="${liked}">
+          <svg viewBox="0 0 24 24" fill="${liked?'currentColor':'none'}" stroke="currentColor"
+               stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.7 1.1-1a5.5 5.5 0 0 0 0-7.7z"/></svg>
+        </button>
+        ${reportBtn('response:'+r.id)}
+      </div>
+      ${reportNote('response:'+r.id)}
+    </div>
+  </article>`;
+}
+
+function bookCard(w){
+  return `<button class="card book-card" data-work="${esc(w.id)}">
+    <div class="cover">${w.image && w.image.file
+      ? `<img src="${IMG}${esc(w.image.file)}" alt="" loading="lazy">`
+      : `<span>${esc(L(w.title))}</span>`}</div>
+    <div><h4>${esc(L(w.title))}</h4><p class="by">${esc(L(w.author))}</p></div>
+    <p>${esc(L(w.why))}</p>
+  </button>`;
+}
+
+/* --- Answers ------------------------------------------------------------- */
+/* One passage, drawn at random, from the same bundle the threads use. The
+   reader never types the question, so the page cannot pretend to have read
+   it — and says so. */
+let drawn = null, bookOpen = false;
+
+function quotable(){
+  return C.responses.filter(r => r.quote && L(r.quote) && r.source && r.source.label);
+}
+function draw(){
+  const pool = quotable();
+  drawn = pool[Math.floor(Math.random() * pool.length)] || null;
+}
+
+function answersView(){
+  if(!drawn) draw();
+  const r = drawn;
+  const v = r ? byId(C.voices, r.voiceId) : null;
+  const q = r ? byId(C.questions, r.questionId) : null;
+
+  return `<div class="page"><div class="ans">
+    <div class="book ${bookOpen?'open':''}" id="book" role="button" tabindex="0"
+         aria-label="${bookOpen ? t('Tap to close','轻点合上') : t('Then tap to open','然后轻点打开')}">
+      <div class="face leaf">
+        <div class="gutter"></div>
+        <div class="leaf-text">
+          <p class="passage">“${esc(L(r && r.quote))}”</p>
+          <p class="attrib">— ${esc(L(v && v.name))}</p>
+        </div>
+        <div class="block"></div><div class="board"></div>
+      </div>
+      <div class="face cover-face"><img src="${IMG}BookCover.png" alt=""></div>
+    </div>
+
+    ${bookOpen ? `
+      <p class="ans-tap" style="margin-top:20px"><u>${t('Tap to close','轻点合上')}</u></p>
+      <section class="reading">
+        <p class="label" style="text-align:center;margin:0">${t('AI EXPLANATION','AI 解读')}</p>
+        ${v ? `<div class="who">${avatar(L(v.name), v.image)}
+          <div><b>${esc(L(v.name))}</b><span>${esc(kindLabel(r.kind))} · ${esc(L(r.origin))}</span></div>
+        </div>` : ''}
+        <div class="grp">
+          <p class="label label--sm">${t('WHERE THIS CAME FROM','它出自哪里')}</p>
+          ${q ? `<p>${t('Written for the thread','写给这条讨论：')}${lang==='zh'?'「':' “'}${esc(L(q.title))}${lang==='zh'?'」。':'”.'}</p>`:''}
+          ${r.detail ? `<p>${esc(L(r.detail))}</p>` : ''}
+        </div>
+        <div class="grp">
+          <p class="label label--sm">${t('SOURCE','出处')}</p>
+          <p class="dark">${esc(L(r.source.label))}</p>
+          ${r.source.url ? `<p><a href="${esc(r.source.url)}" target="_blank" rel="noopener"
+            style="font-size:12px;color:var(--ink-secondary);word-break:break-all">${esc(r.source.url)}</a></p>`:''}
+        </div>
+        <div class="disclaim">
+          <b>${t('This was not written about your question.','这段话不是针对你的问题写的。')}</b>
+          <p>${t('Nobody here knows what you are carrying. Read it against your question and see what it touches — or what it refuses.','这里没有人知道你正背负着什么。把它放在你的问题旁边读，看它触到了什么 — 或者拒绝了什么。')}</p>
+        </div>
+      </section>` : `
+      <h2 class="ans-hold">${t('Hold a question in mind.','心里想着一个问题。')}</h2>
+      <p class="ans-tap">${t('Then tap to open','然后轻点打开')}</p>
+      <p class="ans-note">${t('One passage, drawn at random. It was not written for you, and it is not an answer.','一段文字，随机抽取。它不是为你而写的，也不是答案。')}</p>`}
+  </div></div>`;
+}
+
+/* --- Explore ------------------------------------------------------------- */
+let exploreFilter = 'all';
+
+function exploreView(){
+  const types = ['person','text','school','community','field'];
+  const typeLabel = ty => ({
+    person:    t('People','人物'),  text:      t('Books','典籍'),
+    school:    t('Schools','学派'), community: t('Communities','社群'),
+    field:     t('Research','研究')
+  })[ty] || ty;
+
+  const list = exploreFilter === 'all'
+    ? C.voices : C.voices.filter(v => v.type === exploreFilter);
+
+  const pill = key => `<button class="pill" data-etype="${esc(key)}"
+      style="${exploreFilter===key?'background:var(--ink);color:var(--accent)':''}">${
+      esc(key==='all' ? t('All','全部') : typeLabel(key))}</button>`;
+
+  return `<div class="page">
+    <div class="page-head">
+      <h1 class="page-title">${t('Explore','浏览')}</h1>
+      <p class="page-sub">${t('Everyone who speaks in these threads — people, books, schools, communities and research','在这些讨论里发言的一切 — 人、书、学派、社群与研究')}</p>
+    </div>
+    <div class="pills" style="margin-top:16px">
+      ${pill('all')}${types.map(pill).join('')}
+    </div>
+    <div class="grid">${list.map(v => `
+      <button class="card tile" data-voice="${esc(v.id)}">
+        ${avatar(L(v.name), v.image)}
+        <h4>${esc(L(v.name))}</h4>
+        <span>${esc(kindLabel(v.kind))}</span>
+      </button>`).join('')}</div>
+  </div>`;
+}
+
+function voiceView(id){
+  const v = byId(C.voices, id);
+  if(!v) return `<div class="empty">${t('Not found','没有找到')}</div>`;
+  const said = C.responses.filter(r => r.voiceId === v.id);
+  const threads = [...new Set(said.map(r => r.questionId))];
+  const works = (v.workIds||[]).map(w => byId(C.works, w)).filter(Boolean);
+  const img = v.image;
+
+  return `<div class="page"><div class="entry">
+    <div class="entry-head">
+      ${avatar(L(v.name), img, 'av--lg')}
+      <div><h2>${esc(L(v.name))}</h2>
+        <p class="meta">${esc(kindLabel(v.kind))} · ${esc(L(v.origin))}</p></div>
+    </div>
+    ${v.reach ? `<p class="body" style="font-family:var(--serif);font-style:italic">${
+      esc(L(v.reach.note))}</p>` : ''}
+    <p class="meta" style="margin-top:16px">${
+      lang==='zh' ? `在 ${threads.length} 条讨论中发言` :
+      `in ${threads.length} ${threads.length===1?'thread':'threads'}`}</p>
+
+    ${works.length ? `<h3 class="section-h" style="padding-left:0">${
+      esc(L((C.strings||{}).books))}</h3>
+      <div class="shelf" style="padding-left:0;padding-right:0">${works.map(bookCard).join('')}</div>`:''}
+
+    <h3 class="section-h" style="padding-left:0">${t('Said in these threads','在这些讨论里说过')}</h3>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      ${said.map(r => {
+        const q = byId(C.questions, r.questionId);
+        return `<button class="card" style="padding:16px;text-align:left"
+                        data-open="${esc(r.questionId)}">
+          <p style="font-family:var(--serif);font-size:17px;margin:0 0 8px">${esc(L(q && q.title))}</p>
+          <p style="font-size:15px;line-height:1.5;color:var(--text-body-soft);margin:0">${
+            esc(L(r.claim))}</p>
+        </button>`;
+      }).join('')}
+    </div>
+
+    ${img ? `<p class="credit">${esc(t('Image','图片'))}: ${esc(img.licence||'')}${
+      img.credit ? ' · ' + esc(img.credit) : ''}${img.sourceUrl
+      ? ` · <a href="${esc(img.sourceUrl)}" target="_blank" rel="noopener">${
+        t('source','来源')}</a>` : ''}</p>` : ''}
+  </div></div>`;
+}
+
+function workView(id){
+  const w = byId(C.works, id);
+  if(!w) return `<div class="empty">${t('Not found','没有找到')}</div>`;
+  return `<div class="page"><div class="entry">
+    <div class="cover" style="width:140px;aspect-ratio:2/3;margin-bottom:20px">${
+      w.image && w.image.file ? `<img src="${IMG}${esc(w.image.file)}" alt="">`
+      : `<span>${esc(L(w.title))}</span>`}</div>
+    <h2>${esc(L(w.title))}</h2>
+    <p class="meta">${esc(L(w.author))} · ${esc(L(w.year))} · ${esc(L(w.place))}</p>
+    <p class="body">${esc(L(w.desc))}</p>
+    <p class="body">${esc(L(w.why))}</p>
+    ${w.authorBlurb ? `<p class="body">${esc(L(w.authorBlurb))}</p>`:''}
+    ${w.wiki ? `<a class="readmore" style="display:inline-block;margin-top:16px"
+      href="https://en.wikipedia.org/wiki/${encodeURIComponent(w.wiki)}"
+      target="_blank" rel="noopener">${esc(L((C.strings||{}).readMore))}</a>`:''}
+    ${w.image ? `<p class="credit">${esc(t('Image','图片'))}: ${esc(w.image.licence||'')}${
+      w.image.credit ? ' · ' + esc(w.image.credit) : ''}${w.image.sourceUrl
+      ? ` · <a href="${esc(w.image.sourceUrl)}" target="_blank" rel="noopener">${
+        t('source','来源')}</a>`:''}</p>`:''}
+  </div></div>`;
+}
+
+function meView(){
+  const votes = Object.keys(state.votes).length;
+  const likes = Object.keys(state.likes).length;
+  return `<div class="page">
+    <div class="page-head">
+      <h1 class="page-title">${t('Me','我')}</h1>
+      <p class="page-sub">${t('Everything here stays in this browser.','这里的一切都只保存在这个浏览器里。')}</p>
+    </div>
+    <div class="me">
+      <div class="stat-row">
+        <div class="card stat"><b>${votes}</b><span>${t('Voted','已投票')}</span></div>
+        <div class="card stat"><b>${likes}</b><span>${t('Liked','喜欢')}</span></div>
+      </div>
+
+      <div class="card panel">
+        <h3>${t('Language','语言')}</h3>
+        <p>${t('Interface and all explanations','界面与全部释义的语言')}</p>
+        <div class="seg">
+          <button data-lang="en" aria-pressed="${lang==='en'}">English</button>
+          <button data-lang="zh" aria-pressed="${lang==='zh'}">中文</button>
+        </div>
+      </div>
+
+      <div class="rule">
+        <b>${t('The rule that outranks other rules','高于其他一切的规则')}</b>
+        <p>${t('Never fabricate a quotation, and never imply a historical person answered a modern question. Every reply carries a visible claim kind, and a quote is only a quote if it has a source you can follow.','绝不虚构引文，也绝不暗示某位历史人物回答了现代问题。每一条发言都标明主张的类型，而引文只有在能追溯到来源时才算引文。')}</p>
+        <div class="kinds">${Object.keys(C.kinds||{}).map(k =>
+          `<span class="kind" style="background:rgba(255,255,255,.12);color:#fff">${
+            esc(kindLabel(k))}</span>`).join('')}</div>
+      </div>
+
+      <div class="card panel">
+        <h3>${t('This is the web preview','这是网页版预览')}</h3>
+        <p>${t('Still is an iOS app. This page is a faithful port of it so you can read the threads in a browser — the same content file, the same design tokens. Reporting, sharing a quote and notifications live in the app.','Still 是一款 iOS 应用。这个页面是它的网页移植版，便于在浏览器中阅读 — 相同的内容文件，相同的设计变量。举报、分享引文与通知仍在 App 内。')}</p>
+      </div>
+
+      <div class="card panel">
+        <h3>${t('Erase what this browser remembers','清除这个浏览器记住的内容')}</h3>
+        <p>${t('Your answers and likes. There is no account, so this is the whole of it and it cannot be undone.','你的回答与喜欢。没有账号，所以这就是全部，且无法撤销。')}</p>
+        <button class="wide" id="reset" style="background:var(--chip);color:var(--danger)">${
+          t('Erase','清除')}</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* --- Nav bar ------------------------------------------------------------- */
+const TABS = [
+  ['home',    t=>({en:'Home',zh:'首页'}),    '<path d="M3.5 10.6L12 3.8l8.5 6.8"/><path d="M5.6 9.8V20a.8.8 0 0 0 .8.8h11.2a.8.8 0 0 0 .8-.8V9.8"/>'],
+  ['answers', t=>({en:'Answers',zh:'答案'}), '<path d="M12 6.6C10.3 5.2 8 4.5 5 4.5a1 1 0 0 0-1 1v11.6a1 1 0 0 0 1 1c3 0 5.3.7 7 2.1"/><path d="M12 6.6c1.7-1.4 4-2.1 7-2.1a1 1 0 0 1 1 1v11.6a1 1 0 0 1-1 1c-3 0-5.3.7-7 2.1"/><path d="M12 6.6v13.6"/>'],
+  ['explore', t=>({en:'Explore',zh:'浏览'}), '<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>'],
+  ['me',      t=>({en:'Me',zh:'我'}),        '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/>']
+];
+function navBar(){
+  const cur = stack[0].tab;
+  document.getElementById('nav').innerHTML = TABS.map(([id, label, path]) => `
+    <button data-tab="${id}" ${cur===id?'aria-current="page"':''}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+           stroke-linecap="round" stroke-linejoin="round">${path}</svg>
+      <span>${esc(label()[lang] || label().en)}</span>
+    </button>`).join('');
+}
+
+/* --- Render -------------------------------------------------------------- */
+function render(){
+  const e = here();
+  const view = document.getElementById('view');
+  let html;
+  if(e.voice)      html = voiceView(e.voice);
+  else if(e.work)  html = workView(e.work);
+  else if(e.thread)html = threadView(e.thread, e.filter);
+  else if(e.tab === 'answers') html = answersView();
+  else if(e.tab === 'explore') html = exploreView();
+  else if(e.tab === 'me')      html = meView();
+  else                          html = homeView();
+
+  view.innerHTML = html;
+  // The paper belongs to the Answers tab itself, not to anything pushed on
+  // top of it — a voice or a work opened from there is an ordinary page.
+  document.querySelector('.app').classList.toggle('paper',
+    e.tab === 'answers' && !e.voice && !e.work && !e.thread);
+  document.getElementById('back').hidden = stack.length <= 1;
+  navBar();
+}
+
+/* --- Events. One delegated listener; the whole page is re-rendered from
+       state, so nothing has to be wired up per element. -------------------- */
+document.addEventListener('click', ev => {
+  const hit = sel => ev.target.closest(sel);
+  let el;
+
+  if((el = hit('[data-tab]')))    return tab(el.dataset.tab);
+  if((el = hit('#back')))         return back();
+  if((el = hit('[data-lang]')))   { lang = el.dataset.lang; save(); return render(); }
+
+  if((el = hit('[data-vote]'))){
+    const card = el.closest('[data-open]') || el.closest('.q');
+    const q = here().thread ? byId(C.questions, here().thread)
+                            : byId(C.questions, card && card.dataset.open);
+    if(!q) return;
+    state.votes[q.id] = el.dataset.vote; save();
+    // In the feed, answering is what unlocks the thread, so it opens straight
+    // away rather than making the reader tap twice. Inside the thread it just
+    // updates in place.
+    if(here().thread) render();
+    else { render(); setTimeout(() => go({tab:stack[0].tab, thread:q.id}), 320); }
+    return;
+  }
+
+  if((el = hit('[data-like]'))){
+    const k = el.dataset.like;
+    if(state.likes[k]) delete state.likes[k]; else state.likes[k] = 1;
+    save(); return render();
+  }
+
+  if((el = hit('[data-filter]'))){
+    here().filter = el.dataset.filter; return render();
+  }
+  if((el = hit('[data-etype]'))){ exploreFilter = el.dataset.etype; return render(); }
+  if((el = hit('[data-voice]'))) return go({tab:stack[0].tab, voice:el.dataset.voice});
+  if((el = hit('[data-work]')))  return go({tab:stack[0].tab, work:el.dataset.work});
+
+  if((el = hit('#book'))){
+    if(bookOpen){ bookOpen = false; render(); }
+    else { draw(); bookOpen = true; render(); }
+    return;
+  }
+
+  if((el = hit('[data-report]'))){
+    reported = reported === el.dataset.report ? null : el.dataset.report;
+    render(); return;
+  }
+
+  if((el = hit('#reset'))){
+    state = { votes:{}, likes:{} }; save(); return render();
+  }
+
+  if((el = hit('a'))) return;               // let real links through
+
+  if((el = hit('[data-open]')) && el.dataset.open){
+    return go({tab:stack[0].tab, thread:el.dataset.open});
+  }
+});
+
+document.addEventListener('keydown', ev => {
+  if(ev.key === 'Enter' && ev.target.id === 'book'){ ev.target.click(); }
+});
+
+addEventListener('scroll', () => {
+  document.getElementById('bar').classList.toggle('scrolled', scrollY > 4);
+}, {passive:true});
+
+/* --- Boot ---------------------------------------------------------------- */
+load();
+fetch('assets/content.json')
+  .then(r => r.json())
+  .then(data => { C = data; render(); })
+  .catch(() => {
+    document.getElementById('view').innerHTML =
+      `<p class="empty">Could not load the content file.</p>`;
+  });
+</script>
