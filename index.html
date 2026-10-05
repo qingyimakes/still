@@ -274,13 +274,6 @@ img{max-width:100%}
 .kind{font-size:12px;padding:5px 10px;border-radius:var(--r-pill);background:var(--chip);
       color:var(--ink-tertiary)}
 
-/* The Answers tab lays the same sheet under the whole column that the app
-   lays under the whole screen — including behind the top bar, which is why
-   this sits on .app and not on .page. The sheet is scaled to cover rather
-   than tiled: a tile seam is a straight line, and nothing in handmade paper
-   is straight. */
-.app.paper{background:var(--paper-ground) url(assets/img/PaperGround.png) center/cover no-repeat}
-.app.paper .bar{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
              padding:10px 12px;margin-top:12px}
@@ -340,12 +333,6 @@ img{max-width:100%}
 
   .pills{padding-left:20px;padding-right:20px}
   .grid{grid-template-columns:repeat(3,1fr)}
-
-  /* The paper belongs to the page, not behind the navigation. */
-  .app.paper{background:var(--bg)}
-  .app.paper #view{background:var(--paper-ground)
-    url(assets/img/PaperGround.png) center/cover no-repeat;min-height:100vh}
-  .app.paper .bar{background:transparent}
 }
 
 /* Wide desktop: the book and what is written about it sit side by side
@@ -888,10 +875,6 @@ function render(){
   else                          html = homeView();
 
   view.innerHTML = html;
-  // The paper belongs to the Answers tab itself, not to anything pushed on
-  // top of it — a voice or a work opened from there is an ordinary page.
-  document.querySelector('.app').classList.toggle('paper',
-    e.tab === 'answers' && !e.voice && !e.work && !e.thread);
   document.getElementById('back').hidden = stack.length <= 1;
   navBar();
 }
