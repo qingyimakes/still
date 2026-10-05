@@ -100,6 +100,8 @@ img{max-width:100%}
             justify-content:center;gap:2px;color:var(--ink);border-radius:var(--r-pill)}
 .nav button[aria-current="page"]{background:var(--chip)}
 .nav svg{width:23px;height:23px}
+.nav-brand{display:none;font-family:var(--serif);font-style:italic;font-size:21px;
+           padding:4px 16px 20px}
 .nav span{font-size:11.5px;font-weight:500}
 
 /* --- Cards --------------------------------------------------------------- */
@@ -283,6 +285,81 @@ img{max-width:100%}
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
              padding:10px 12px;margin-top:12px}
 .empty{padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-tertiary)}
+
+/* ---------------------------------------------------------------------------
+   Wider viewports.
+
+   The phone layout is the design; on a laptop it should not be a 430px strip
+   floating in grey. Two steps: a tablet widens the column, and a desktop
+   turns the bottom tab bar on its side into a sidebar, which is what the
+   width is actually good for. Nothing about the cards, type or colour
+   changes — only how much room they get and where the navigation lives.
+--------------------------------------------------------------------------- */
+
+/* Tablet: the column grows, the floating tab bar stays. */
+@media (min-width:640px){
+  .app{max-width:560px}
+  .nav{max-width:400px}
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Desktop: navigation moves to the left and stays put. */
+@media (min-width:900px){
+  body{background:var(--bg)}
+  .app{max-width:none;box-shadow:none;display:grid;
+       grid-template-columns:248px minmax(0,1fr);
+       grid-template-rows:auto 1fr;align-items:start}
+
+  /* The sidebar spans both rows, so the top bar starts beside it. */
+  .nav{grid-column:1;grid-row:1 / span 2;position:sticky;
+       top:env(safe-area-inset-top,0px);bottom:auto;left:auto;transform:none;
+       width:auto;max-width:none;height:100vh;height:100dvh;
+       display:flex;flex-direction:column;align-items:stretch;gap:2px;
+       padding:20px 12px;border:0;border-right:1px solid var(--hairline);
+       border-radius:0;background:transparent;backdrop-filter:none;
+       -webkit-backdrop-filter:none;box-shadow:none}
+  .nav-brand{display:block}
+  .nav button{flex-direction:row;justify-content:flex-start;gap:12px;
+              height:46px;padding:0 16px}
+  .nav span{font-size:15px}
+
+  /* The wordmark lives in the sidebar now, so the bar keeps only the back
+     button — and stops being a translucent slab over nothing. */
+  .bar{grid-column:2;grid-row:1;justify-content:flex-start;height:auto;
+       padding:12px 0 0 24px;background:transparent;backdrop-filter:none;
+       -webkit-backdrop-filter:none;border-bottom:0}
+  .bar.scrolled{border-bottom-color:transparent}
+  .bar .brand{display:none}
+  .bar .back{position:static;transform:none}
+
+  #view{grid-column:2;grid-row:2;min-width:0}
+  /* A measure, not the whole window: 36px headlines across 1400px are
+     unreadable. */
+  .page{max-width:620px;margin:0 auto;
+        padding:16px 0 64px}
+
+  .pills{padding-left:20px;padding-right:20px}
+  .grid{grid-template-columns:repeat(3,1fr)}
+
+  /* The paper belongs to the page, not behind the navigation. */
+  .app.paper{background:var(--bg)}
+  .app.paper #view{background:var(--paper-ground)
+    url(assets/img/PaperGround.png) center/cover no-repeat;min-height:100vh}
+  .app.paper .bar{background:transparent}
+}
+
+/* Wide desktop: the book and what is written about it sit side by side
+   instead of stacked, which is the one place the extra width genuinely
+   changes how the page reads. */
+@media (min-width:1180px){
+  .page{max-width:1000px}
+  .ans{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);
+       gap:40px;align-items:start;padding-top:32px}
+  .ans .book{grid-column:1;width:100%;margin-top:0}
+  .ans > :not(.book):not(.reading){grid-column:1}
+  .ans .reading{grid-column:2;grid-row:1 / span 6;padding-top:0}
+  .feed{padding-left:0;padding-right:0}
+}
 
 @media (prefers-reduced-motion:reduce){
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
@@ -788,7 +865,8 @@ const TABS = [
 ];
 function navBar(){
   const cur = stack[0].tab;
-  document.getElementById('nav').innerHTML = TABS.map(([id, label, path]) => `
+  document.getElementById('nav').innerHTML =
+    '<span class="nav-brand">Still</span>' + TABS.map(([id, label, path]) => `
     <button data-tab="${id}" ${cur===id?'aria-current="page"':''}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
            stroke-linecap="round" stroke-linejoin="round">${path}</svg>
