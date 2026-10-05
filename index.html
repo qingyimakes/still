@@ -91,8 +91,8 @@ img{max-width:100%}
 
 /* --- Bottom nav ---------------------------------------------------------- */
 .nav{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;
-     transform:translateX(-50%);width:calc(100% - 32px);max-width:398px;z-index:30;
-     display:grid;grid-template-columns:repeat(4,1fr);padding:5px;
+     transform:translateX(-50%);width:calc(100% - 32px);max-width:430px;z-index:30;
+     display:grid;grid-template-columns:repeat(5,1fr);padding:5px;
      border-radius:var(--r-pill);background:rgba(252,251,249,.86);
      backdrop-filter:blur(24px) saturate(180%);
      -webkit-backdrop-filter:blur(24px) saturate(180%);
@@ -104,7 +104,7 @@ img{max-width:100%}
 .nav svg{width:23px;height:23px}
 .nav-brand{display:none;font-family:var(--serif);font-style:italic;font-size:21px;
            padding:4px 16px 20px}
-.nav span{font-size:11.5px;font-weight:500}
+.nav span{font-size:10.5px;font-weight:500}
 
 /* --- Cards --------------------------------------------------------------- */
 .card{background:var(--surface);border-radius:var(--r-card);
@@ -241,6 +241,7 @@ img{max-width:100%}
 .disclaim b{font-size:15px;font-weight:500}
 .disclaim p{font-size:15px;line-height:1.4;color:var(--ink-tertiary);margin:0}
 
+
 /* --- Explore ------------------------------------------------------------- */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 20px 0}
 .tile{padding:16px;display:flex;flex-direction:column;gap:10px;text-align:left}
@@ -280,6 +281,96 @@ img{max-width:100%}
 .kind{font-size:12px;padding:5px 10px;border-radius:var(--r-pill);background:var(--chip);
       color:var(--ink-tertiary)}
 
+
+/* --- Chat --------------------------------------------------------------- */
+/* Everything a philosopher "says" here is written by a model. The design's
+   job is to make that impossible to miss: a SIMULATED tag on every generated
+   line, and a visually separate block, in the thread's own quote styling, for
+   the passages they actually wrote. The two must never look alike. */
+.chat{display:flex;flex-direction:column;gap:16px;padding:0 20px}
+.cast{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+.cast::-webkit-scrollbar{display:none}
+.cast-add{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;
+          width:64px}
+.cast-add .ring{width:46px;height:46px;border-radius:50%;display:grid;
+                place-items:center;border:1px dashed var(--hairline-strong);
+                color:var(--ink-secondary);font-size:22px}
+.cast-chip{flex:none;width:64px;display:flex;flex-direction:column;align-items:center;
+           gap:4px;position:relative}
+.cast-chip small{font-size:11px;line-height:1.2;text-align:center;color:var(--ink-secondary);
+                 overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;
+                 -webkit-box-orient:vertical}
+.cast-chip .x{position:absolute;top:-2px;right:6px;width:19px;height:19px;
+              border-radius:50%;background:var(--ink);color:var(--on-ink);
+              font-size:12px;line-height:19px;text-align:center}
+.tier{font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 5px;
+      border-radius:var(--r-pill);background:var(--chip);color:var(--ink-secondary)}
+.tier.pro{background:var(--ink);color:var(--accent)}
+
+.msgs{display:flex;flex-direction:column;gap:20px;padding:4px 0}
+.msg{display:flex;gap:12px;align-items:flex-start}
+.msg.mine{flex-direction:row-reverse}
+.msg-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.msg.mine .msg-body{align-items:flex-end}
+.msg-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.msg-head b{font-size:15.5px;font-weight:700}
+.sim{font-size:9.5px;font-weight:700;letter-spacing:.8px;color:var(--danger);
+     background:var(--dangerBg,rgba(236,105,64,.10));padding:2px 6px;
+     border-radius:var(--r-pill)}
+.bubble{font-size:16.5px;line-height:1.55;background:var(--surface);
+        border:1px solid var(--hairline);border-radius:var(--r-inner);
+        padding:12px 14px;max-width:100%}
+.msg.mine .bubble{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.said{background:var(--quote-bg);border-radius:var(--r-inner);padding:12px 14px;
+      display:flex;flex-direction:column;gap:6px}
+.said .tag{font-size:9.5px;font-weight:700;letter-spacing:.8px;color:var(--ink-secondary)}
+.said q{font-family:var(--serif);font-size:18px;line-height:1.5;quotes:"\201C" "\201D"}
+.said .src{font-size:13px;font-weight:500;color:var(--ink-secondary)}
+/* The review's §10 asks the interface to separate commitments the texts
+   actually carry from modern applications derived from them. This is that
+   separation, kept closed by default so the position reads as a position. */
+.derived{font-size:14px;line-height:1.5;background:var(--chip-soft);
+         border:1px solid var(--hairline);border-radius:var(--r-inner);
+         padding:10px 12px}
+.derived summary{font-size:13px;font-weight:500;color:var(--ink-secondary);
+                 cursor:pointer;list-style:none}
+.derived summary::-webkit-details-marker{display:none}
+.derived summary::before{content:"▸ ";font-size:11px}
+.derived[open] summary::before{content:"▾ "}
+.derived p{margin:10px 0 0;color:var(--text-body-soft)}
+.derived .tag{display:block;font-size:9.5px;font-weight:700;letter-spacing:.8px;
+              color:var(--ink-secondary);margin-bottom:2px}
+.derived .tag.warn{color:var(--danger)}
+
+.composer{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));
+          display:flex;gap:8px;align-items:flex-end;background:var(--bg);
+          padding:8px 0 4px}
+.composer textarea{flex:1;min-height:46px;max-height:140px;resize:none;
+                   font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);
+                   background:var(--surface);border:1px solid var(--hairline-strong);
+                   border-radius:var(--r-inner);padding:12px 14px}
+.composer button{flex:none;height:46px;padding:0 18px;border-radius:var(--r-pill);
+                 background:var(--ink);color:var(--on-ink);font-size:15px;font-weight:500}
+.composer button[disabled]{opacity:.4}
+.chat-acts{display:flex;gap:8px;flex-wrap:wrap}
+.ghost{font-size:14.5px;font-weight:500;padding:8px 14px;border-radius:var(--r-pill);
+       background:var(--chip);color:var(--ink)}
+
+.picker{display:flex;flex-direction:column;gap:2px;padding:0 20px}
+.picker input{width:100%;font:inherit;font-size:16.5px;color:var(--ink);
+              background:var(--surface);border:1px solid var(--hairline-strong);
+              border-radius:var(--r-inner);padding:12px 14px;margin-bottom:12px}
+.prow{display:flex;align-items:center;gap:12px;width:100%;padding:8px 4px;
+      border-bottom:1px solid var(--hairline)}
+.prow .meta{flex:1;min-width:0}
+.prow b{font-size:16px;font-weight:500;display:block}
+.prow span{font-size:12.5px;color:var(--ink-secondary)}
+.prow .pick{flex:none;font-size:13px;font-weight:500;padding:6px 12px;
+            border-radius:var(--r-pill);background:var(--chip)}
+.prow .pick.on{background:var(--ink);color:var(--on-ink)}
+.notice{font-size:14px;line-height:1.5;color:var(--ink-tertiary);background:var(--chip);
+        border-radius:var(--r-inner);padding:12px 14px}
+@media (min-width:900px){ .composer{bottom:0} }
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
              padding:10px 12px;margin-top:12px}
@@ -298,7 +389,7 @@ img{max-width:100%}
 /* Tablet: the column grows, the floating tab bar stays. */
 @media (min-width:640px){
   .app{max-width:560px}
-  .nav{max-width:400px}
+  .nav{max-width:430px}
   .grid{grid-template-columns:repeat(3,1fr)}
 }
 
@@ -400,10 +491,17 @@ let lang = 'en';
 let state = { votes:{}, likes:{} };
 let stack = [{ tab:'home' }]; // view stack; last entry is what is showing
 let reported = null;          // which item's report note is showing
+let PHIL = [];                // the ranked roster, from assets/philosophers.json
+let SAMPLE = undefined;       // the model, once asked for: null means no model here
+let chat = { cast: [], msgs: [], busy:false, query:'', picking:false, said:{} };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
 function load(){
+  try{
+    const c = localStorage.getItem('still.chat');
+    if(c) chat = Object.assign(chat, JSON.parse(c), {busy:false, picking:false});
+  }catch(e){ /* defaults stand */ }
   try{
     const raw = localStorage.getItem('still.state');
     if(raw) state = Object.assign(state, JSON.parse(raw));
@@ -415,6 +513,8 @@ function save(){
   try{
     localStorage.setItem('still.state', JSON.stringify(state));
     localStorage.setItem('still.lang', lang);
+    localStorage.setItem('still.chat', JSON.stringify(
+      {cast: chat.cast, msgs: chat.msgs.slice(-60), said: chat.said}));
   }catch(e){ /* nothing to do; the page still works for this session */ }
 }
 
@@ -489,7 +589,9 @@ function worksFor(q){
 const here = () => stack[stack.length - 1];
 function go(entry){ reported = null; stack.push(entry); render(); window.scrollTo(0,0); }
 function tab(name){ reported = null; stack = [{tab:name}]; render(); window.scrollTo(0,0); }
-function back(){ reported = null; if(stack.length > 1){ stack.pop(); render(); } }
+function back(){ reported = null;
+  if(chat.picking){ chat.picking = false; return render(); }
+  if(stack.length > 1){ stack.pop(); render(); } }
 
 /* --- Views --------------------------------------------------------------- */
 
@@ -712,6 +814,222 @@ function answersView(){
 }
 
 /* --- Explore ------------------------------------------------------------- */
+// MARK: - Group chat
+//
+// The philosophers here are a model writing in their manner. That is the one
+// thing this app refuses to let anyone mistake, so every generated line is
+// tagged SIMULATED, and the passages they actually wrote appear in a separate
+// block, in the thread's quote styling, with the source. The two never share
+// a shape.
+
+const philById = id => PHIL.find(p => p.id === id);
+
+function castAvatar(p, cls){
+  const img = p.image ? `<img src="${IMG}${esc(p.image)}" alt="" loading="lazy">` : esc(initial(p.name));
+  return `<div class="av ${cls||''}">${img}</div>`;
+}
+
+function chatView(){
+  if(chat.picking) return pickerView();
+  const cast = chat.cast.map(philById).filter(Boolean);
+
+  return `<div class="page"><div class="chat">
+    <div class="cast">
+      <button class="cast-add" data-pick-open="1">
+        <span class="ring">+</span><small>${t('Add','添加')}</small>
+      </button>
+      ${cast.map(p => `<div class="cast-chip">
+        ${castAvatar(p)}
+        <button class="x" data-drop="${esc(p.id)}" aria-label="${t('Remove','移除')}">×</button>
+        <small>${esc(p.name)}</small>
+      </div>`).join('')}
+    </div>
+
+    ${cast.length === 0 ? `<p class="notice">${t(
+      'Add philosophers, then say something. Nobody here is predicting what the dead would really have said — the replies are positions derived from commitments their texts carry, written by a model, and every line says so. Open "How this was derived" to see the step from text to modern application.',
+      '先加入几位哲学家，然后说点什么。这里没有人在预测逝者真正会说什么 — 这些回应是从他们文本中的承诺推导出的立场，由模型写成，每一条都会标明。展开「这是如何推出的」可以看到从文本到现代应用的那一步。')}</p>` : ''}
+
+    ${SAMPLE === null ? `<p class="notice">${t(
+      'No model is reachable from this page, so nobody will reply. The live version on claude.ai can ask Claude directly; this copy cannot.',
+      '此页面无法连接模型，因此不会有回应。claude.ai 上的版本可以直接向 Claude 提问，这个副本不能。')}</p>` : ''}
+
+    <div class="msgs">${chat.msgs.map(msgRow).join('')}</div>
+    ${chat.busy ? `<p class="notice">${t('Thinking…','正在思考…')}</p>` : ''}
+
+    ${cast.length ? `<div class="chat-acts">
+      <button class="ghost" data-talk="1">${t('Let them argue','让他们互相辩论')}</button>
+      ${chat.msgs.length ? `<button class="ghost" data-clear="1">${t('Clear','清空')}</button>` : ''}
+    </div>` : ''}
+
+    <form class="composer" id="composer">
+      <textarea id="say" rows="1" placeholder="${t('Say something…','说点什么…')}"
+        ${cast.length ? '' : 'disabled'}></textarea>
+      <button type="submit" ${cast.length && !chat.busy ? '' : 'disabled'}>${t('Send','发送')}</button>
+    </form>
+  </div></div>`;
+}
+
+function msgRow(m, i){
+  if(m.mine) return `<article class="msg mine">
+      ${'' /* no avatar for the reader: the app has no account and no face */}
+      <div class="msg-body"><div class="bubble">${esc(m.text)}</div></div>
+    </article>`;
+
+  const p = philById(m.id) || {name:m.name, image:null};
+  // Shown once per philosopher: something they demonstrably wrote, so the
+  // generated voice always has the real one beside it for comparison.
+  const q = m.said;
+  return `<article class="msg">
+    ${castAvatar(p)}
+    <div class="msg-body">
+      <div class="msg-head"><b>${esc(p.name)}</b>
+        <span class="sim">${t('SIMULATED','模拟')}</span></div>
+      <div class="bubble">${esc(m.text)}</div>
+      ${m.bridge ? `<details class="derived">
+        <summary>${t('How this was derived','这是如何推出的')}</summary>
+        ${m.commitment ? `<p><span class="tag">${t('COMMITMENT IN THE TEXTS','文本中的承诺')}</span>
+          ${esc(m.commitment)}</p>` : ''}
+        <p><span class="tag warn">${t('DERIVED — NOT HISTORICAL','推导所得 — 非史实')}</span>
+          ${esc(m.bridge)}</p>
+      </details>` : ''}
+      ${q ? `<div class="said">
+        <span class="tag">${t('WHAT HE ACTUALLY WROTE','他真正写下的')}</span>
+        <q>${esc(L(q.text))}</q>
+        <span class="src">— ${q.url
+          ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
+          : esc(L(q.label))}</span>
+      </div>` : ''}
+    </div>
+  </article>`;
+}
+
+function pickerView(){
+  const q = chat.query.trim().toLowerCase();
+  const list = PHIL.filter(p => !q || p.name.toLowerCase().includes(q));
+  const row = p => {
+    const on = chat.cast.includes(p.id);
+    return `<div class="prow">
+      ${castAvatar(p)}
+      <div class="meta"><b>${esc(p.name)}</b>
+        <span>#${p.rank} · <span class="tier ${p.tier}">${p.tier === 'pro' ? 'PRO' : 'BASIC'}</span>${
+          p.quotes.length ? ' · ' + t(`${p.quotes.length} sourced`, `${p.quotes.length} 条有出处`) : ''}</span></div>
+      <button class="pick ${on?'on':''}" data-toggle="${esc(p.id)}">${
+        on ? t('Added','已加入') : t('Add','加入')}</button>
+    </div>`;
+  };
+  return `<div class="page">
+    <div class="page-head">
+      <h1 class="page-title">${t('Who is in the room','谁在场')}</h1>
+      <p class="page-sub">${t('Ranked by how many people read them on Wikipedia. The top 50 are Pro. It measures readership, not importance.','按维基百科阅读量排序。前 50 位为 Pro。它衡量的是阅读量，不是重要性。')}</p>
+    </div>
+    <div class="picker">
+      <input id="pq" placeholder="${t('Search 151 philosophers…','搜索 151 位哲学家…')}"
+             value="${esc(chat.query)}">
+      ${list.map(row).join('') || `<p class="empty">${t('Nobody by that name.','没有这个名字。')}</p>`}
+    </div>
+  </div>`;
+}
+
+// --- Asking the model ------------------------------------------------------
+
+async function model(){
+  if(SAMPLE === undefined){
+    try{ SAMPLE = (window.claude && claude.use) ? await claude.use('sample') : null; }
+    catch(e){ SAMPLE = null; }
+    render();
+  }
+  return SAMPLE;
+}
+
+/* The instruction the whole feature rests on.
+   Shaped by the Extrapolative Fidelity review: the task is mandatory-response
+   philosophical extrapolation, so "he never discussed this" is not an
+   acceptable answer. What is asked for is a controlled interpretive
+   continuation — a position derived from commitments the texts actually
+   carry — not a guess at what the man would really have thought.
+
+   Three constraints come straight out of the review. Position before voice,
+   because style that arrives first hides the reasoning (SHARP). An explicit
+   bridge from commitment to modern object, because anachronism is not using
+   the word "algorithm" — it is smuggling in modern facts as things the
+   thinker already knew (Skinner, §8). And sharp disagreement, because a
+   shared base model flattens every thinker toward the same balanced modern
+   assistant (RoleCDE; Shi & Haupt's artificial consensus). */
+function brief(cast){
+  return [
+    'You are generating a CONTROLLED INTERPRETIVE CONTINUATION, not a historical claim.',
+    'The reader is told on every line that these words are generated.',
+    '',
+    'Speakers: ' + cast.map(p => p.name).join(', ') + '.',
+    '',
+    'Work in this order for each speaker. Do not skip to the voice.',
+    'a. Find the commitment. Which principle, distinction or priority that this',
+    '   thinker demonstrably held actually bears on the question?',
+    'b. Build the bridge. Restate the modern object as the philosophical problem',
+    '   that commitment can handle. Do NOT assume the thinker knows any modern',
+    '   fact, institution or technology. Using the word "algorithm" is fine;',
+    '   treating the thinker as already knowing how one works is not.',
+    'c. Only then write the position, in their manner.',
+    '',
+    'Hard rules:',
+    '1. NEVER produce a quotation. No quotation marks around anything attributed',
+    '   to them, and never "as I wrote in". Real quotations are added by the app',
+    '   from sourced texts; you do not supply them.',
+    '2. You must take a substantive position. "He never addressed this" is a',
+    '   failure, not caution. If the commitments underdetermine the answer, say',
+    '   which way they lean and what would settle it.',
+    '3. Do not converge. These people disagree about foundations; a reply that',
+    '   any thoughtful modern person could have written is a failed reply.',
+    '   Refuse the balanced, both-sides, safety-conscious register.',
+    '4. Two to four sentences of position. Plain speech. No greetings, no stage',
+    '   directions, no asterisks.',
+    '',
+    'Reply with JSON only: an array of',
+    '{"name": <one of the speakers>,',
+    ' "commitment": <the principle you are reasoning from, under 12 words>,',
+    ' "bridge": <one sentence: how that principle reaches this modern object>,',
+    ' "text": <the position, in their manner>}.',
+    'One to three entries. Not every speaker has to answer.'
+  ].join('\n');
+}
+
+function transcript(){
+  return chat.msgs.slice(-12).map(m =>
+    (m.mine ? 'Reader' : m.name) + ': ' + m.text).join('\n');
+}
+
+async function speak(extra){
+  const cast = chat.cast.map(philById).filter(Boolean);
+  if(!cast.length || chat.busy) return;
+  const m = await model();
+  if(!m) return;
+
+  chat.busy = true; render();
+  try{
+    const out = await m.json([{ role:'user', content:
+      brief(cast) + '\n\nConversation so far:\n' + (transcript() || '(nothing yet)') +
+      '\n\n' + extra }]);
+    const rows = Array.isArray(out) ? out : (out && out.replies) || [];
+    for(const r of rows){
+      const p = cast.find(x => x.name === r.name) || cast[0];
+      if(!p || !r.text) continue;
+      // One real passage per philosopher, the first time they speak.
+      let said = null;
+      if(p.quotes.length && !chat.said[p.id]){
+        said = p.quotes[Math.floor(Math.random()*p.quotes.length)];
+        chat.said[p.id] = 1;
+      }
+      chat.msgs.push({ id:p.id, name:p.name, text:String(r.text), said,
+                       commitment: r.commitment ? String(r.commitment) : null,
+                       bridge: r.bridge ? String(r.bridge) : null });
+    }
+  }catch(e){
+    chat.msgs.push({ id:null, name:'—', text:
+      t('The model did not answer. Try again.','模型没有回应，请重试。'), said:null });
+  }
+  chat.busy = false; save(); render();
+}
+
 let exploreFilter = 'all';
 
 function exploreView(){
@@ -862,6 +1180,7 @@ function meView(){
 const TABS = [
   ['home',    t=>({en:'Home',zh:'首页'}),    '<path d="M3.5 10.6L12 3.8l8.5 6.8"/><path d="M5.6 9.8V20a.8.8 0 0 0 .8.8h11.2a.8.8 0 0 0 .8-.8V9.8"/>'],
   ['answers', t=>({en:'Answers',zh:'答案'}), '<path d="M12 6.6C10.3 5.2 8 4.5 5 4.5a1 1 0 0 0-1 1v11.6a1 1 0 0 0 1 1c3 0 5.3.7 7 2.1"/><path d="M12 6.6c1.7-1.4 4-2.1 7-2.1a1 1 0 0 1 1 1v11.6a1 1 0 0 1-1 1c-3 0-5.3.7-7 2.1"/><path d="M12 6.6v13.6"/>'],
+  ['chat',    t=>({en:'Chat',zh:'对话'}),    '<path d="M20.5 12.3c0 4-3.8 7.2-8.5 7.2a9.8 9.8 0 0 1-2.6-.35L4.5 20.5l1.4-3.6A6.9 6.9 0 0 1 3.5 12.3c0-4 3.8-7.2 8.5-7.2s8.5 3.2 8.5 7.2z"/>'],
   ['explore', t=>({en:'Explore',zh:'浏览'}), '<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>'],
   ['me',      t=>({en:'Me',zh:'我'}),        '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/>']
 ];
@@ -884,13 +1203,14 @@ function render(){
   if(e.voice)      html = voiceView(e.voice);
   else if(e.work)  html = workView(e.work);
   else if(e.thread)html = threadView(e.thread, e.filter);
+  else if(e.tab === 'chat')    html = chatView();
   else if(e.tab === 'answers') html = answersView();
   else if(e.tab === 'explore') html = exploreView();
   else if(e.tab === 'me')      html = meView();
   else                          html = homeView();
 
   view.innerHTML = html;
-  document.getElementById('back').hidden = stack.length <= 1;
+  document.getElementById('back').hidden = stack.length <= 1 && !chat.picking;
   navBar();
 }
 
@@ -937,6 +1257,24 @@ document.addEventListener('click', ev => {
     return;
   }
 
+  if((el = hit('[data-pick-open]'))){ chat.picking = true; return render(); }
+  if((el = hit('[data-toggle]'))){
+    const id = el.dataset.toggle;
+    chat.cast = chat.cast.includes(id)
+      ? chat.cast.filter(x => x !== id) : chat.cast.concat(id);
+    save(); return render();
+  }
+  if((el = hit('[data-drop]'))){
+    chat.cast = chat.cast.filter(x => x !== el.dataset.drop); save(); return render();
+  }
+  if((el = hit('[data-talk]'))){
+    return speak('Continue: have them take up the argument with each other. '
+               + 'Do not address the reader.');
+  }
+  if((el = hit('[data-clear]'))){
+    chat.msgs = []; chat.said = {}; save(); return render();
+  }
+
   if((el = hit('[data-report]'))){
     reported = reported === el.dataset.report ? null : el.dataset.report;
     render(); return;
@@ -953,6 +1291,30 @@ document.addEventListener('click', ev => {
   }
 });
 
+document.addEventListener('submit', ev => {
+  if(ev.target.id !== 'composer') return;
+  ev.preventDefault();
+  const box = document.getElementById('say');
+  const text = box.value.trim();
+  if(!text) return;
+  chat.msgs.push({ mine:true, text });
+  box.value = ''; save(); render();
+  speak('The reader just said: ' + text + '\nAnswer them.');
+});
+
+document.addEventListener('input', ev => {
+  if(ev.target.id === 'pq'){
+    // Re-rendering on every keystroke would steal the caret, so the list is
+    // refreshed in place and the field left alone.
+    chat.query = ev.target.value;
+    const v = document.querySelector('.picker');
+    if(v){ const inp = v.querySelector('input');
+      v.innerHTML = pickerView().split('<div class="picker">')[1].split('</div></div>')[0];
+      const n = v.querySelector('input'); if(n){ n.value = chat.query; n.focus();
+        n.setSelectionRange(chat.query.length, chat.query.length); } }
+  }
+});
+
 document.addEventListener('keydown', ev => {
   if(ev.key === 'Enter' && ev.target.id === 'book'){ ev.target.click(); }
 });
@@ -963,9 +1325,10 @@ addEventListener('scroll', () => {
 
 /* --- Boot ---------------------------------------------------------------- */
 load();
-fetch('assets/content.json')
-  .then(r => r.json())
-  .then(data => { C = data; render(); })
+Promise.all([
+  fetch('assets/content.json').then(r => r.json()),
+  fetch('assets/philosophers.json').then(r => r.json()).catch(() => ({philosophers:[]}))
+]).then(([data, roster]) => { C = data; PHIL = roster.philosophers || []; render(); model(); })
   .catch(() => {
     document.getElementById('view').innerHTML =
       `<p class="empty">Could not load the content file.</p>`;

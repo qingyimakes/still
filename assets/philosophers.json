@@ -1,0 +1,2563 @@
+{
+ "_method": "English Wikipedia pageviews, 12 complete months, all-access, user traffic only (bots excluded). Regenerate with Tools/rank-philosophers.py. Pageviews measure readership, not importance, and carry two biases worth naming: they count English-language readers, and they reward people famous for something other than philosophy — Marx, Freud, Jung, Machiavelli and Rand all outrank Kant. The cutoff at 50 is arbitrary and the numbers either side of it are 2% apart.",
+ "philosophers": [
+  {
+   "id": "p-karl-marx",
+   "name": "Karl Marx",
+   "wiki": "Karl_Marx",
+   "rank": 1,
+   "tier": "pro",
+   "voiceId": "v-marx",
+   "origin": {
+    "en": "Germany, 1844",
+    "zh": "德国，1844 年"
+   },
+   "image": "marx.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "The worker therefore only feels himself outside his work, and in his work feels outside himself.",
+      "zh": "因此，工人只有在工作之外才感到自在，而在工作之中则感到不在自身。"
+     },
+     "label": {
+      "en": "Marx, Economic and Philosophic Manuscripts of 1844, 'Estranged Labour'",
+      "zh": "马克思《1844 年经济学哲学手稿》〈异化劳动〉"
+     },
+     "url": "https://en.wikipedia.org/wiki/Economic_and_Philosophic_Manuscripts_of_1844"
+    },
+    {
+     "text": {
+      "en": "It is not the consciousness of men that determines their existence, but their social existence that determines their consciousness.",
+      "zh": "不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。"
+     },
+     "label": {
+      "en": "Karl Marx, A Contribution to the Critique of Political Economy, Preface, trans. S. W. Ryazanskaya",
+      "zh": "卡尔·马克思《政治经济学批判》序言，梁赞斯卡娅 英译"
+     },
+     "url": "https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm"
+    },
+    {
+     "text": {
+      "en": "The worker therefore only feels himself outside his work, and in his work feels outside himself.",
+      "zh": "因此，工人只有在工作之外才感到自在，而在工作之中却感到不自在。"
+     },
+     "label": {
+      "en": "Karl Marx, Economic and Philosophic Manuscripts of 1844, \"Estranged Labour\"",
+      "zh": "卡尔·马克思《1844 年经济学哲学手稿》〈异化劳动〉"
+     },
+     "url": "https://www.marxists.org/archive/marx/works/1844/manuscripts/labour.htm"
+    }
+   ]
+  },
+  {
+   "id": "p-noam-chomsky",
+   "name": "Noam Chomsky",
+   "wiki": "Noam_Chomsky",
+   "rank": 2,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-marcus-aurelius",
+   "name": "Marcus Aurelius",
+   "wiki": "Marcus_Aurelius",
+   "rank": 3,
+   "tier": "pro",
+   "voiceId": "v-marcus-aurelius",
+   "origin": {
+    "en": "Rome, c. 175",
+    "zh": "罗马，约 175 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Shortly thou wilt forget all things, and shortly all things will forget thee.",
+      "zh": "不久你将遗忘万物，不久万物也将遗忘你。"
+     },
+     "label": {
+      "en": "Marcus Aurelius, Meditations VII.21, trans. George Long",
+      "zh": "马可·奥勒留《沉思录》7.21，朗 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Meditations_(Long)/Book_VII"
+    },
+    {
+     "text": {
+      "en": "Things themselves touch not the soul, not in the least degree; nor have they admission to the soul, nor can they turn or move the soul: but the soul turns and moves itself alone.",
+      "zh": "事物本身完全触碰不到灵魂，它们进不了灵魂，也无法扭转或推动灵魂；灵魂只由它自己扭转、自己推动。"
+     },
+     "label": {
+      "en": "Marcus Aurelius, Meditations, Book V, §19, trans. George Long",
+      "zh": "马可·奥勒留《沉思录》第五卷第 19 节，朗 英译"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus/Book_V"
+    }
+   ]
+  },
+  {
+   "id": "p-friedrich-nietzsche",
+   "name": "Friedrich Nietzsche",
+   "wiki": "Friedrich_Nietzsche",
+   "rank": 4,
+   "tier": "pro",
+   "voiceId": "v-nietzsche",
+   "origin": {
+    "en": "Germany, 1887",
+    "zh": "德国，1887 年"
+   },
+   "image": "nietzsche.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "There are no moral phenomena at all, but only a moral interpretation of phenomena.",
+      "zh": "根本没有道德现象，只有对现象的道德解释。"
+     },
+     "label": {
+      "en": "Nietzsche, Beyond Good and Evil §108, trans. Helen Zimmern",
+      "zh": "尼采《善恶的彼岸》第 108 节，齐默恩 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Beyond_Good_and_Evil"
+    },
+    {
+     "text": {
+      "en": "There is no 'being' behind doing, effecting, becoming; 'the doer' is merely a fiction added to the deed — the deed is everything.",
+      "zh": "在行动、作用、生成的背后并没有「存在」；「行为者」只是被添加到行为之上的虚构 — 行为就是一切。"
+     },
+     "label": {
+      "en": "Nietzsche, On the Genealogy of Morals I.13, trans. Horace Samuel",
+      "zh": "尼采《道德的谱系》第一章第 13 节，塞缪尔 译"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Genealogy_of_Morals"
+    },
+    {
+     "text": {
+      "en": "The discipline of suffering, of great suffering — do you not know that only this discipline has created all enhancements of man so far?",
+      "zh": "苦难的磨练，巨大苦难的磨练 — 你不知道迄今为止人的一切提升都只由这种磨练造就吗？"
+     },
+     "label": {
+      "en": "Nietzsche, Beyond Good and Evil §225, trans. Helen Zimmern",
+      "zh": "尼采《善恶的彼岸》第 225 节，齐默恩 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Beyond_Good_and_Evil"
+    },
+    {
+     "text": {
+      "en": "What saith thy conscience?—'Thou shalt become what thou art.'",
+      "zh": "你的良心说什么？——「你应当成为你之所是。」"
+     },
+     "label": {
+      "en": "Friedrich Nietzsche, The Joyful Wisdom, §270, trans. Thomas Common",
+      "zh": "弗里德里希·尼采《快乐的科学》第 270 节，康芒 英译"
+     },
+     "url": "https://www.gutenberg.org/cache/epub/52881/pg52881.txt"
+    },
+    {
+     "text": {
+      "en": "From the military school of life.—That which does not kill me, makes me stronger.",
+      "zh": "出自人生的军事学校 — 那些杀不死我的，使我更强。"
+     },
+     "label": {
+      "en": "Friedrich Nietzsche, The Twilight of the Idols, \"Maxims and Arrows\" §8, trans. Anthony M. Ludovici",
+      "zh": "弗里德里希·尼采《偶像的黄昏》〈箴言与箭〉第 8 节，卢多维奇 英译"
+     },
+     "url": "https://www.gutenberg.org/cache/epub/52263/pg52263.txt"
+    }
+   ]
+  },
+  {
+   "id": "p-sigmund-freud",
+   "name": "Sigmund Freud",
+   "wiki": "Sigmund_Freud",
+   "rank": 5,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-aristotle",
+   "name": "Aristotle",
+   "wiki": "Aristotle",
+   "rank": 6,
+   "tier": "pro",
+   "voiceId": "v-aristotle",
+   "origin": {
+    "en": "Athens, c. 340 BCE",
+    "zh": "雅典，约公元前 340 年"
+   },
+   "image": "aristotle.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Man is by nature a political animal; and he who by nature and not by mere accident is without a state, is either above humanity, or below it.",
+      "zh": "人天生是政治的动物；凡因本性而非偶然无邦可属者，不是超乎人类，就是低于人类。"
+     },
+     "label": {
+      "en": "Aristotle, Politics I.2, trans. Benjamin Jowett",
+      "zh": "亚里士多德《政治学》1.2，乔伊特 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Politics_(Jowett)"
+    },
+    {
+     "text": {
+      "en": "We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts.",
+      "zh": "我们通过做公正之事而成为公正的人，通过做节制之事而成为节制的人，通过做勇敢之事而成为勇敢的人。"
+     },
+     "label": {
+      "en": "Aristotle, Nicomachean Ethics II.1, trans. W. D. Ross",
+      "zh": "亚里士多德《尼各马可伦理学》2.1，罗斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Nicomachean_Ethics"
+    },
+    {
+     "text": {
+      "en": "To feel them at the right times, with reference to the right objects, towards the right people, with the right motive, and in the right way, is what is both intermediate and best.",
+      "zh": "在恰当的时机、针对恰当的对象、对恰当的人、以恰当的动机、以恰当的方式去感受，才既是中道也是最好。"
+     },
+     "label": {
+      "en": "Aristotle, Nicomachean Ethics II.6, trans. W. D. Ross",
+      "zh": "亚里士多德《尼各马可伦理学》2.6，罗斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Nicomachean_Ethics"
+    },
+    {
+     "text": {
+      "en": "We are busy that we may have leisure, and make war that we may live in peace.",
+      "zh": "我们忙碌是为了得闲，作战是为了和平地生活。"
+     },
+     "label": {
+      "en": "Aristotle, Nicomachean Ethics X.7, trans. W. D. Ross",
+      "zh": "亚里士多德《尼各马可伦理学》10.7，罗斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Nicomachean_Ethics"
+    },
+    {
+     "text": {
+      "en": "For that which is common to the greatest number has the least care bestowed upon it.",
+      "zh": "由最多人共同拥有的东西，往往得到最少的照料。"
+     },
+     "label": {
+      "en": "Aristotle, Politics, Book II, Chapter III, 1261b, trans. Benjamin Jowett",
+      "zh": "亚里士多德《政治学》第二卷第三章 1261b，乔伊特 英译"
+     },
+     "url": "https://archive.org/details/aristotlespoliti00aris"
+    },
+    {
+     "text": {
+      "en": "We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts.",
+      "zh": "我们因做公正的事而成为公正的人，因做节制的事而成为节制的人，因做勇敢的事而成为勇敢的人。"
+     },
+     "label": {
+      "en": "Aristotle, Nicomachean Ethics, Book II, Chapter 1, trans. W. D. Ross",
+      "zh": "亚里士多德《尼各马可伦理学》第二卷第一章，罗斯 英译"
+     },
+     "url": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html"
+    }
+   ]
+  },
+  {
+   "id": "p-socrates",
+   "name": "Socrates",
+   "wiki": "Socrates",
+   "rank": 7,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-carl-jung",
+   "name": "Carl Jung",
+   "wiki": "Carl_Jung",
+   "rank": 8,
+   "tier": "pro",
+   "voiceId": "v-jung",
+   "origin": {
+    "en": "Zurich, 1952",
+    "zh": "苏黎世，1952 年"
+   },
+   "image": "jung.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Synchronicity: a meaningful coincidence of two or more events, where something other than the probability of chance is involved.",
+      "zh": "共时性：两个或多个事件的有意义的巧合，其中涉及的不只是偶然的概率。"
+     },
+     "label": {
+      "en": "Jung, Synchronicity: An Acausal Connecting Principle, 1952",
+      "zh": "荣格《共时性：一种非因果的联系原则》，1952 年"
+     },
+     "url": "https://en.wikipedia.org/wiki/Synchronicity"
+    }
+   ]
+  },
+  {
+   "id": "p-plato",
+   "name": "Plato",
+   "wiki": "Plato",
+   "rank": 9,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ayn-rand",
+   "name": "Ayn Rand",
+   "wiki": "Ayn_Rand",
+   "rank": 10,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-augustine-of-hippo",
+   "name": "Augustine of Hippo",
+   "wiki": "Augustine_of_Hippo",
+   "rank": 11,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-niccolò-machiavelli",
+   "name": "Niccolò Machiavelli",
+   "wiki": "Niccolò_Machiavelli",
+   "rank": 12,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-albert-camus",
+   "name": "Albert Camus",
+   "wiki": "Albert_Camus",
+   "rank": 13,
+   "tier": "pro",
+   "voiceId": "v-camus",
+   "origin": {
+    "en": "France, 1942",
+    "zh": "法国，1942 年"
+   },
+   "image": "camus.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "The struggle itself towards the heights is enough to fill a man's heart. One must imagine Sisyphus happy.",
+      "zh": "仅仅是向着高处挣扎这件事本身，就足以充满一个人的心。必须想象西西弗斯是幸福的。"
+     },
+     "label": {
+      "en": "Camus, The Myth of Sisyphus, closing lines",
+      "zh": "加缪《西西弗斯神话》结尾"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Myth_of_Sisyphus"
+    }
+   ]
+  },
+  {
+   "id": "p-immanuel-kant",
+   "name": "Immanuel Kant",
+   "wiki": "Immanuel_Kant",
+   "rank": 14,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thomas-aquinas",
+   "name": "Thomas Aquinas",
+   "wiki": "Thomas_Aquinas",
+   "rank": 15,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-voltaire",
+   "name": "Voltaire",
+   "wiki": "Voltaire",
+   "rank": 16,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-confucius",
+   "name": "Confucius",
+   "wiki": "Confucius",
+   "rank": 17,
+   "tier": "pro",
+   "voiceId": "v-confucius",
+   "origin": {
+    "en": "China, c. 500 BCE",
+    "zh": "中国，约公元前 500 年"
+   },
+   "image": "confucius.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "I will not be afflicted at men's not knowing me; I will be afflicted that I do not know men.",
+      "zh": "不患人之不己知，患不知人也。"
+     },
+     "label": {
+      "en": "Analects 1.16, trans. James Legge",
+      "zh": "《论语·学而》1.16，理雅各 译"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Analects_of_Confucius_(Legge)"
+    },
+    {
+     "text": {
+      "en": "To subdue one's self and return to propriety, is perfect virtue.",
+      "zh": "克己复礼为仁。"
+     },
+     "label": {
+      "en": "Analects 12.1, trans. James Legge",
+      "zh": "《论语·颜渊》12.1，理雅各 译"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Analects_of_Confucius_(Legge)"
+    },
+    {
+     "text": {
+      "en": "The superior man understands what is right; the inferior man understands what is profitable.",
+      "zh": "君子喻於義，小人喻於利。"
+     },
+     "label": {
+      "en": "Confucius, Analects 4.16, trans. based on James Legge",
+      "zh": "《论语·里仁》4.16，理雅各 英译"
+     },
+     "url": "https://zh.wikisource.org/zh-hant/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
+    }
+   ]
+  },
+  {
+   "id": "p-michel-foucault",
+   "name": "Michel Foucault",
+   "wiki": "Michel_Foucault",
+   "rank": 18,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-john-locke",
+   "name": "John Locke",
+   "wiki": "John_Locke",
+   "rank": 19,
+   "tier": "pro",
+   "voiceId": "v-locke",
+   "origin": {
+    "en": "England, 1689",
+    "zh": "英格兰，1689 年"
+   },
+   "image": "locke.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Consciousness always accompanies thinking, and it is that which makes every one to be what he calls self.",
+      "zh": "意识总是伴随思想，正是它使每个人成为他所谓的「自我」。"
+     },
+     "label": {
+      "en": "Locke, An Essay Concerning Human Understanding, II.27.9",
+      "zh": "洛克《人类理解论》第二卷第 27 章第 9 节"
+     },
+     "url": "https://en.wikisource.org/wiki/An_Essay_Concerning_Human_Understanding"
+    }
+   ]
+  },
+  {
+   "id": "p-hannah-arendt",
+   "name": "Hannah Arendt",
+   "wiki": "Hannah_Arendt",
+   "rank": 20,
+   "tier": "pro",
+   "voiceId": "v-arendt",
+   "origin": {
+    "en": "United States, 1958",
+    "zh": "美国，1958 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Men, though they must die, are not born in order to die but in order to begin.",
+      "zh": "人虽必死，但生来不是为了死，而是为了开始。"
+     },
+     "label": {
+      "en": "Arendt, The Human Condition, §24",
+      "zh": "阿伦特《人的境况》第 24 节"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Human_Condition_(Arendt_book)"
+    },
+    {
+     "text": {
+      "en": "The miracle that saves the world, the realm of human affairs, from its normal, 'natural' ruin is ultimately the fact of natality.",
+      "zh": "最终把世界 — 这个人类事务的领域 — 从其正常的、「自然的」毁灭中拯救出来的奇迹，就是诞生这一事实。"
+     },
+     "label": {
+      "en": "Hannah Arendt, The Human Condition, Chapter V, §34",
+      "zh": "汉娜·阿伦特《人的境况》第五章第 34 节"
+     },
+     "url": "https://archive.org/details/humancondition00aren"
+    }
+   ]
+  },
+  {
+   "id": "p-bertrand-russell",
+   "name": "Bertrand Russell",
+   "wiki": "Bertrand_Russell",
+   "rank": 21,
+   "tier": "pro",
+   "voiceId": "v-russell",
+   "origin": {
+    "en": "Britain, 1929",
+    "zh": "英国，1929 年"
+   },
+   "image": "russell.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "The fact that an opinion has been widely held is no evidence whatever that it is not utterly absurd.",
+      "zh": "一个意见被广泛持有，丝毫不能证明它不是荒谬透顶的。"
+     },
+     "label": {
+      "en": "Russell, Marriage and Morals, chapter 5",
+      "zh": "罗素《婚姻与道德》第五章"
+     },
+     "url": "https://en.wikipedia.org/wiki/Marriage_and_Morals"
+    },
+    {
+     "text": {
+      "en": "It is undesirable to believe a proposition when there is no ground whatever for supposing it true.",
+      "zh": "当一个命题毫无理由被认为为真时，相信它是不可取的。"
+     },
+     "label": {
+      "en": "Russell, Sceptical Essays, 'On the Value of Scepticism'",
+      "zh": "罗素《怀疑论集》，〈论怀疑的价值〉"
+     },
+     "url": "https://en.wikipedia.org/wiki/Sceptical_Essays"
+    },
+    {
+     "text": {
+      "en": "When the experts are agreed, the opposite opinion cannot be held to be certain.",
+      "zh": "当专家意见一致时，相反的意见就不能被认为是确定的。"
+     },
+     "label": {
+      "en": "Russell, Sceptical Essays, 'On the Value of Scepticism'",
+      "zh": "罗素《怀疑论集》，〈论怀疑的价值〉"
+     },
+     "url": "https://en.wikipedia.org/wiki/Sceptical_Essays"
+    },
+    {
+     "text": {
+      "en": "A great deal of harm is being done in the modern world by belief in the virtuousness of work.",
+      "zh": "现代世界正因为相信「劳动是美德」而造成大量伤害。"
+     },
+     "label": {
+      "en": "Bertrand Russell, \"In Praise of Idleness\", 1932",
+      "zh": "伯特兰·罗素〈闲散颂〉，1932 年"
+     },
+     "url": "https://libcom.org/article/praise-idleness-bertrand-russell"
+    }
+   ]
+  },
+  {
+   "id": "p-rumi",
+   "name": "Rumi",
+   "wiki": "Rumi",
+   "rank": 22,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-diogenes",
+   "name": "Diogenes",
+   "wiki": "Diogenes",
+   "rank": 23,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jean-paul-sartre",
+   "name": "Jean-Paul Sartre",
+   "wiki": "Jean-Paul_Sartre",
+   "rank": 24,
+   "tier": "pro",
+   "voiceId": "v-sartre",
+   "origin": {
+    "en": "France, 1946",
+    "zh": "法国，1946 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.",
+      "zh": "人是被判定为自由的：一旦被抛入世界，他就要为自己所做的一切负责。"
+     },
+     "label": {
+      "en": "Sartre, Existentialism Is a Humanism, 1946",
+      "zh": "萨特《存在主义是一种人道主义》，1946 年"
+     },
+     "url": "https://en.wikipedia.org/wiki/Existentialism_Is_a_Humanism"
+    },
+    {
+     "text": {
+      "en": "Man first of all exists, encounters himself, surges up in the world – and defines himself afterwards.",
+      "zh": "人首先存在，遇见自己，在世界中涌现 — 然后才定义自己。"
+     },
+     "label": {
+      "en": "Jean-Paul Sartre, Existentialism is a Humanism, 1946",
+      "zh": "让-保罗·萨特《存在主义是一种人道主义》，1946 年"
+     },
+     "url": "https://www.marxists.org/reference/archive/sartre/works/exist/sartre.htm"
+    }
+   ]
+  },
+  {
+   "id": "p-rené-descartes",
+   "name": "René Descartes",
+   "wiki": "René_Descartes",
+   "rank": 25,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-henry-david-thoreau",
+   "name": "Henry David Thoreau",
+   "wiki": "Henry_David_Thoreau",
+   "rank": 26,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ludwig-wittgenstein",
+   "name": "Ludwig Wittgenstein",
+   "wiki": "Ludwig_Wittgenstein",
+   "rank": 27,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-arthur-schopenhauer",
+   "name": "Arthur Schopenhauer",
+   "wiki": "Arthur_Schopenhauer",
+   "rank": 28,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-søren-kierkegaard",
+   "name": "Søren Kierkegaard",
+   "wiki": "Søren_Kierkegaard",
+   "rank": 29,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-baruch-spinoza",
+   "name": "Baruch Spinoza",
+   "wiki": "Baruch_Spinoza",
+   "rank": 30,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jean-jacques-rousseau",
+   "name": "Jean-Jacques Rousseau",
+   "wiki": "Jean-Jacques_Rousseau",
+   "rank": 31,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-simone-de-beauvoir",
+   "name": "Simone de Beauvoir",
+   "wiki": "Simone_de_Beauvoir",
+   "rank": 32,
+   "tier": "pro",
+   "voiceId": "v-beauvoir",
+   "origin": {
+    "en": "France, 1949",
+    "zh": "法国，1949 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "One is not born, but rather becomes, a woman.",
+      "zh": "女人不是天生的，而是被造就的。"
+     },
+     "label": {
+      "en": "Beauvoir, The Second Sex, Book II opening line",
+      "zh": "波伏娃《第二性》第二卷开篇"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Second_Sex"
+    },
+    {
+     "text": {
+      "en": "One is not born, but rather becomes, a woman.",
+      "zh": "女人不是天生的，而是被造就的。"
+     },
+     "label": {
+      "en": "Beauvoir, The Second Sex, Book II opening line",
+      "zh": "波伏娃《第二性》第二卷开篇"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Second_Sex"
+    }
+   ]
+  },
+  {
+   "id": "p-georg-wilhelm-friedrich-hegel",
+   "name": "Georg Wilhelm Friedrich Hegel",
+   "wiki": "Georg_Wilhelm_Friedrich_Hegel",
+   "rank": 33,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-adam-smith",
+   "name": "Adam Smith",
+   "wiki": "Adam_Smith",
+   "rank": 34,
+   "tier": "pro",
+   "voiceId": "v-smith",
+   "origin": {
+    "en": "Scotland, 1759",
+    "zh": "苏格兰，1759 年"
+   },
+   "image": "smith.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "We suppose ourselves the spectators of our own behaviour, and endeavour to imagine what effect it would, in this light, produce upon us.",
+      "zh": "我们把自己设想为自身行为的旁观者，并努力想象在这种目光下它会对我们产生什么影响。"
+     },
+     "label": {
+      "en": "Smith, The Theory of Moral Sentiments, III.1",
+      "zh": "斯密《道德情操论》第三卷第一章"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments"
+    },
+    {
+     "text": {
+      "en": "Man naturally desires, not only to be loved, but to be lovely.",
+      "zh": "人天然渴望的不只是被爱，而是成为可爱的。"
+     },
+     "label": {
+      "en": "Smith, The Theory of Moral Sentiments, III.2",
+      "zh": "斯密《道德情操论》第三卷第二章"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments"
+    },
+    {
+     "text": {
+      "en": "We suppose ourselves the spectators of our own behaviour, and endeavour to imagine what effect it would, in this light, produce upon us.",
+      "zh": "我们把自己设想为自身行为的旁观者，并努力想象在这种目光下它会对我们产生什么影响。"
+     },
+     "label": {
+      "en": "Smith, The Theory of Moral Sentiments, III.1",
+      "zh": "斯密《道德情操论》第三卷第一章"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments"
+    },
+    {
+     "text": {
+      "en": "We address ourselves, not to their humanity, but to their self-love, and never talk to them of our own necessities, but of their advantages.",
+      "zh": "我们不是诉诸他们的仁慈，而是诉诸他们的自利；我们从不向他们诉说自己的需要，而只谈他们的利益。"
+     },
+     "label": {
+      "en": "Adam Smith, An Inquiry into the Nature and Causes of the Wealth of Nations, Book I, Chapter II",
+      "zh": "亚当·斯密《国富论》第一卷第二章"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Wealth_of_Nations/Book_I/Chapter_2"
+    }
+   ]
+  },
+  {
+   "id": "p-francis-bacon",
+   "name": "Francis Bacon",
+   "wiki": "Francis_Bacon",
+   "rank": 35,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-slavoj-žižek",
+   "name": "Slavoj Žižek",
+   "wiki": "Slavoj_Žižek",
+   "rank": 36,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-adi-shankara",
+   "name": "Adi Shankara",
+   "wiki": "Adi_Shankara",
+   "rank": 37,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-mary-wollstonecraft",
+   "name": "Mary Wollstonecraft",
+   "wiki": "Mary_Wollstonecraft",
+   "rank": 38,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ralph-waldo-emerson",
+   "name": "Ralph Waldo Emerson",
+   "wiki": "Ralph_Waldo_Emerson",
+   "rank": 39,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-viktor-frankl",
+   "name": "Viktor Frankl",
+   "wiki": "Viktor_Frankl",
+   "rank": 40,
+   "tier": "pro",
+   "voiceId": "v-frankl",
+   "origin": {
+    "en": "Vienna, 1946",
+    "zh": "维也纳，1946 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Everything can be taken from a man but one thing: the last of the human freedoms — to choose one's attitude in any given set of circumstances.",
+      "zh": "一切都可以从一个人身上被夺走，除了一件事：人类最后的自由 — 在任何既定处境中选择自己态度的自由。"
+     },
+     "label": {
+      "en": "Frankl, Man's Search for Meaning, part one",
+      "zh": "弗兰克尔《活出意义来》第一部"
+     },
+     "url": "https://en.wikipedia.org/wiki/Man%27s_Search_for_Meaning"
+    },
+    {
+     "text": {
+      "en": "Suffering ceases to be suffering at the moment it finds a meaning.",
+      "zh": "痛苦在找到意义的那一刻，就不再是痛苦。"
+     },
+     "label": {
+      "en": "Frankl, Man's Search for Meaning, part two",
+      "zh": "弗兰克尔《活出意义来》第二部"
+     },
+     "url": "https://en.wikipedia.org/wiki/Man%27s_Search_for_Meaning"
+    }
+   ]
+  },
+  {
+   "id": "p-pythagoras",
+   "name": "Pythagoras",
+   "wiki": "Pythagoras",
+   "rank": 41,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-seneca-the-younger",
+   "name": "Seneca the Younger",
+   "wiki": "Seneca_the_Younger",
+   "rank": 42,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-friedrich-engels",
+   "name": "Friedrich Engels",
+   "wiki": "Friedrich_Engels",
+   "rank": 43,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-martin-heidegger",
+   "name": "Martin Heidegger",
+   "wiki": "Martin_Heidegger",
+   "rank": 44,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-avicenna",
+   "name": "Avicenna",
+   "wiki": "Avicenna",
+   "rank": 45,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-david-hume",
+   "name": "David Hume",
+   "wiki": "David_Hume",
+   "rank": 46,
+   "tier": "pro",
+   "voiceId": "v-hume",
+   "origin": {
+    "en": "Scotland, 1739",
+    "zh": "苏格兰，1739 年"
+   },
+   "image": "hume.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Reason is, and ought only to be the slave of the passions, and can never pretend to any other office than to serve and obey them.",
+      "zh": "理性是、且只应当是激情的奴隶，除了服侍与服从激情之外，绝不能僭称任何别的职能。"
+     },
+     "label": {
+      "en": "Hume, A Treatise of Human Nature, II.3.3",
+      "zh": "休谟《人性论》第二卷第三章第三节"
+     },
+     "url": "https://en.wikisource.org/wiki/A_Treatise_of_Human_Nature"
+    },
+    {
+     "text": {
+      "en": "All inferences from experience suppose, as their foundation, that the future will resemble the past.",
+      "zh": "一切来自经验的推论，都以「未来将类似过去」为其基础。"
+     },
+     "label": {
+      "en": "Hume, An Enquiry Concerning Human Understanding, IV.2",
+      "zh": "休谟《人类理解研究》第四章第二节"
+     },
+     "url": "https://en.wikisource.org/wiki/An_Enquiry_Concerning_Human_Understanding"
+    },
+    {
+     "text": {
+      "en": "They are nothing but a bundle or collection of different perceptions, which succeed each other with an inconceivable rapidity.",
+      "zh": "它们不过是一束或一组不同的知觉，以不可思议的速度彼此接续。"
+     },
+     "label": {
+      "en": "Hume, A Treatise of Human Nature, I.4.6",
+      "zh": "休谟《人性论》第一卷第四章第六节"
+     },
+     "url": "https://en.wikisource.org/wiki/A_Treatise_of_Human_Nature"
+    },
+    {
+     "text": {
+      "en": "I never can catch myself at any time without a perception, and never can observe any thing but the perception.",
+      "zh": "我从来不能在没有某个知觉的情况下捕捉到我自己，也从来只能观察到知觉本身。"
+     },
+     "label": {
+      "en": "Hume, A Treatise of Human Nature, I.4.6",
+      "zh": "休谟《人性论》第一卷第四章第六节"
+     },
+     "url": "https://en.wikisource.org/wiki/A_Treatise_of_Human_Nature"
+    },
+    {
+     "text": {
+      "en": "A wise man, therefore, proportions his belief to the evidence.",
+      "zh": "因此，明智的人使他的相信程度与证据相称。"
+     },
+     "label": {
+      "en": "Hume, An Enquiry Concerning Human Understanding, X.1",
+      "zh": "休谟《人类理解研究》第十章第一节"
+     },
+     "url": "https://en.wikisource.org/wiki/An_Enquiry_Concerning_Human_Understanding"
+    },
+    {
+     "text": {
+      "en": "I never can catch myself at any time without a perception, and never can observe any thing but the perception.",
+      "zh": "我从来不能在没有任何知觉的时候捕捉到自己，也从来观察不到知觉之外的任何东西。"
+     },
+     "label": {
+      "en": "David Hume, A Treatise of Human Nature, Book I, Part IV, §VI",
+      "zh": "大卫·休谟《人性论》第一卷第四部分第六节"
+     },
+     "url": "https://www.gutenberg.org/cache/epub/4705/pg4705.txt"
+    }
+   ]
+  },
+  {
+   "id": "p-antonio-gramsci",
+   "name": "Antonio Gramsci",
+   "wiki": "Antonio_Gramsci",
+   "rank": 47,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jürgen-habermas",
+   "name": "Jürgen Habermas",
+   "wiki": "Jürgen_Habermas",
+   "rank": 48,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-frantz-fanon",
+   "name": "Frantz Fanon",
+   "wiki": "Frantz_Fanon",
+   "rank": 49,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-hypatia",
+   "name": "Hypatia",
+   "wiki": "Hypatia",
+   "rank": 50,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-erasmus",
+   "name": "Erasmus",
+   "wiki": "Erasmus",
+   "rank": 51,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-gottfried-wilhelm-leibniz",
+   "name": "Gottfried Wilhelm Leibniz",
+   "wiki": "Gottfried_Wilhelm_Leibniz",
+   "rank": 52,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-blaise-pascal",
+   "name": "Blaise Pascal",
+   "wiki": "Blaise_Pascal",
+   "rank": 53,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thomas-hobbes",
+   "name": "Thomas Hobbes",
+   "wiki": "Thomas_Hobbes",
+   "rank": 54,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-laozi",
+   "name": "Laozi",
+   "wiki": "Laozi",
+   "rank": 55,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-john-stuart-mill",
+   "name": "John Stuart Mill",
+   "wiki": "John_Stuart_Mill",
+   "rank": 56,
+   "tier": "basic",
+   "voiceId": "v-mill",
+   "origin": {
+    "en": "United Kingdom, 1859",
+    "zh": "英国，1859 年"
+   },
+   "image": "mill.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "He who knows only his own side of the case knows little of that.",
+      "zh": "只知道自己这一方说法的人，对这件事所知甚少。"
+     },
+     "label": {
+      "en": "Mill, On Liberty, chapter 2",
+      "zh": "密尔《论自由》第二章"
+     },
+     "url": "https://en.wikisource.org/wiki/On_Liberty"
+    },
+    {
+     "text": {
+      "en": "Over himself, over his own body and mind, the individual is sovereign.",
+      "zh": "对于他自己，对于他自己的身体与心灵，个人就是主权者。"
+     },
+     "label": {
+      "en": "Mill, On Liberty, chapter 1",
+      "zh": "密尔《论自由》第一章"
+     },
+     "url": "https://en.wikisource.org/wiki/On_Liberty"
+    },
+    {
+     "text": {
+      "en": "Truth gains more even by the errors of one who, with due study and preparation, thinks for himself, than by the true opinions of those who only hold them because they do not suffer themselves to think.",
+      "zh": "一个经过适当研究与准备而独立思考者所犯的错误，比那些仅因不容自己思考而持有正确意见者，更有益于真理。"
+     },
+     "label": {
+      "en": "Mill, On Liberty, chapter 2",
+      "zh": "密尔《论自由》第二章"
+     },
+     "url": "https://en.wikisource.org/wiki/On_Liberty"
+    },
+    {
+     "text": {
+      "en": "It is better to be a human being dissatisfied than a pig satisfied; better to be Socrates dissatisfied than a fool satisfied.",
+      "zh": "做一个不满足的人，胜过做一头满足的猪；做一个不满足的苏格拉底，胜过做一个满足的傻瓜。"
+     },
+     "label": {
+      "en": "Mill, Utilitarianism, chapter 2",
+      "zh": "密尔《功利主义》第二章"
+     },
+     "url": "https://en.wikisource.org/wiki/Utilitarianism"
+    },
+    {
+     "text": {
+      "en": "Over himself, over his own body and mind, the individual is sovereign.",
+      "zh": "对于他自己，对于他自己的身体和心灵，个人是最高主权者。"
+     },
+     "label": {
+      "en": "John Stuart Mill, On Liberty, Chapter I",
+      "zh": "约翰·斯图亚特·密尔《论自由》第一章"
+     },
+     "url": "https://en.wikisource.org/wiki/On_Liberty/Chapter_1"
+    }
+   ]
+  },
+  {
+   "id": "p-simone-weil",
+   "name": "Simone Weil",
+   "wiki": "Simone_Weil",
+   "rank": 57,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-maimonides",
+   "name": "Maimonides",
+   "wiki": "Maimonides",
+   "rank": 58,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-judith-butler",
+   "name": "Judith Butler",
+   "wiki": "Judith_Butler",
+   "rank": 59,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-heraclitus",
+   "name": "Heraclitus",
+   "wiki": "Heraclitus",
+   "rank": 60,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jeremy-bentham",
+   "name": "Jeremy Bentham",
+   "wiki": "Jeremy_Bentham",
+   "rank": 61,
+   "tier": "basic",
+   "voiceId": "v-bentham",
+   "origin": {
+    "en": "Britain, 1789",
+    "zh": "英国，1789 年"
+   },
+   "image": "bentham.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nature has placed mankind under the governance of two sovereign masters, pain and pleasure.",
+      "zh": "自然把人类置于两位主权者的统治之下：痛苦与快乐。"
+     },
+     "label": {
+      "en": "Bentham, An Introduction to the Principles of Morals and Legislation, chapter 1",
+      "zh": "边沁《道德与立法原理导论》第一章"
+     },
+     "url": "https://en.wikisource.org/wiki/An_Introduction_to_the_Principles_of_Morals_and_Legislation"
+    }
+   ]
+  },
+  {
+   "id": "p-karl-popper",
+   "name": "Karl Popper",
+   "wiki": "Karl_Popper",
+   "rank": 62,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-john-dewey",
+   "name": "John Dewey",
+   "wiki": "John_Dewey",
+   "rank": 63,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-edward-said",
+   "name": "Edward Said",
+   "wiki": "Edward_Said",
+   "rank": 64,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-auguste-comte",
+   "name": "Auguste Comte",
+   "wiki": "Auguste_Comte",
+   "rank": 65,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-epictetus",
+   "name": "Epictetus",
+   "wiki": "Epictetus",
+   "rank": 66,
+   "tier": "basic",
+   "voiceId": "v-epictetus",
+   "origin": {
+    "en": "Nicopolis, c. 125 CE",
+    "zh": "尼科波利斯，约公元 125 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Things not in our control are body, property, reputation, command, and, in one word, whatever are not our own actions.",
+      "zh": "不在我们控制之中的，是身体、财产、名声、权位，总之，是一切并非我们自己行为的东西。"
+     },
+     "label": {
+      "en": "Epictetus, Enchiridion §1, trans. Elizabeth Carter",
+      "zh": "爱比克泰德《手册》第 1 节，卡特 英译"
+     },
+     "url": "https://classics.mit.edu/Epictetus/epicench.html"
+    }
+   ]
+  },
+  {
+   "id": "p-william-james",
+   "name": "William James",
+   "wiki": "William_James",
+   "rank": 67,
+   "tier": "basic",
+   "voiceId": "v-william-james",
+   "origin": {
+    "en": "Harvard, 1896",
+    "zh": "哈佛，1896 年"
+   },
+   "image": "william-james.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "The true is the name of whatever proves itself to be good in the way of belief.",
+      "zh": "「真」是一切在信念方面证明自己为好的东西的名称。"
+     },
+     "label": {
+      "en": "James, Pragmatism, Lecture II",
+      "zh": "詹姆斯《实用主义》第二讲"
+     },
+     "url": "https://en.wikisource.org/wiki/Pragmatism:_A_New_Name_for_Some_Old_Ways_of_Thinking"
+    },
+    {
+     "text": {
+      "en": "We cannot escape the issue by remaining sceptical, for although we do avoid error in that way if religion be untrue, we lose the good, if it be true.",
+      "zh": "保持怀疑并不能让我们回避这个问题：若宗教不真，我们固然因此避开了错误；但若它为真，我们就失去了那份好处。"
+     },
+     "label": {
+      "en": "James, The Will to Believe, section X",
+      "zh": "詹姆斯《信仰的意志》第十节"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Will_to_Believe"
+    },
+    {
+     "text": {
+      "en": "By their fruits ye shall know them, not by their roots.",
+      "zh": "看它们结出的果实来认识它们，而不是看它们的根。"
+     },
+     "label": {
+      "en": "William James, The Varieties of Religious Experience, Lecture I: Religion and Neurology",
+      "zh": "威廉·詹姆斯《宗教经验之种种》第一讲「宗教与神经学」"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Varieties_of_Religious_Experience/Lecture_I"
+    },
+    {
+     "text": {
+      "en": "A permanently successful peace-economy can not be a simple pleasure-economy.",
+      "zh": "一个能够长久成立的和平经济，不可能只是一种享乐经济。"
+     },
+     "label": {
+      "en": "William James, \"The Moral Equivalent of War\", 1910",
+      "zh": "威廉·詹姆斯〈战争的道德等价物〉，1910 年"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Moral_Equivalent_of_War"
+    }
+   ]
+  },
+  {
+   "id": "p-gilles-deleuze",
+   "name": "Gilles Deleuze",
+   "wiki": "Gilles_Deleuze",
+   "rank": 68,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jacques-derrida",
+   "name": "Jacques Derrida",
+   "wiki": "Jacques_Derrida",
+   "rank": 69,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jean-baudrillard",
+   "name": "Jean Baudrillard",
+   "wiki": "Jean_Baudrillard",
+   "rank": 70,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-walter-benjamin",
+   "name": "Walter Benjamin",
+   "wiki": "Walter_Benjamin",
+   "rank": 71,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-cornel-west",
+   "name": "Cornel West",
+   "wiki": "Cornel_West",
+   "rank": 72,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-epicurus",
+   "name": "Epicurus",
+   "wiki": "Epicurus",
+   "rank": 73,
+   "tier": "basic",
+   "voiceId": "v-epicurus",
+   "origin": {
+    "en": "Athens, c. 300 BCE",
+    "zh": "雅典，约公元前 300 年"
+   },
+   "image": "epicurus.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Death is nothing to us; for that which is dissolved is without sensation, and that which lacks sensation is nothing to us.",
+      "zh": "死亡与我们无关：消散之物没有感觉，而没有感觉之物与我们无关。"
+     },
+     "label": {
+      "en": "Epicurus, Principal Doctrines II, trans. Robert Drew Hicks",
+      "zh": "伊壁鸠鲁《主要教义》第二条，希克斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Principal_Doctrines"
+    },
+    {
+     "text": {
+      "en": "A blessed and indestructible being neither has trouble itself nor causes trouble to another.",
+      "zh": "一个有福而不朽的存在，自身没有烦扰，也不给他人带来烦扰。"
+     },
+     "label": {
+      "en": "Epicurus, Principal Doctrines I, trans. Robert Drew Hicks",
+      "zh": "伊壁鸠鲁《主要教义》第一条，希克斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Principal_Doctrines"
+    },
+    {
+     "text": {
+      "en": "By pleasure we mean the absence of pain in the body and of trouble in the soul.",
+      "zh": "我们所说的快乐，是指身体没有痛苦、灵魂没有烦扰。"
+     },
+     "label": {
+      "en": "Epicurus, Letter to Menoeceus, trans. Robert Drew Hicks",
+      "zh": "伊壁鸠鲁《致美诺伊凯的信》，希克斯 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Letter_to_Menoeceus"
+    }
+   ]
+  },
+  {
+   "id": "p-jacques-lacan",
+   "name": "Jacques Lacan",
+   "wiki": "Jacques_Lacan",
+   "rank": 74,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-al-ghazali",
+   "name": "Al-Ghazali",
+   "wiki": "Al-Ghazali",
+   "rank": 75,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-montesquieu",
+   "name": "Montesquieu",
+   "wiki": "Montesquieu",
+   "rank": 76,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ibn-khaldun",
+   "name": "Ibn Khaldun",
+   "wiki": "Ibn_Khaldun",
+   "rank": 77,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-peter-singer",
+   "name": "Peter Singer",
+   "wiki": "Peter_Singer",
+   "rank": 78,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-gautama-buddha",
+   "name": "Gautama Buddha",
+   "wiki": "Gautama_Buddha",
+   "rank": 79,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-daniel-dennett",
+   "name": "Daniel Dennett",
+   "wiki": "Daniel_Dennett",
+   "rank": 80,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-michel-de-montaigne",
+   "name": "Michel de Montaigne",
+   "wiki": "Michel_de_Montaigne",
+   "rank": 81,
+   "tier": "basic",
+   "voiceId": "v-montaigne",
+   "origin": {
+    "en": "France, 1580",
+    "zh": "法国，1580 年"
+   },
+   "image": "montaigne.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "There is as much difference between us and ourselves, as between us and others.",
+      "zh": "我们与自己之间的差别，和我们与他人之间的差别一样大。"
+     },
+     "label": {
+      "en": "Montaigne, Essays II.1, trans. Charles Cotton",
+      "zh": "蒙田《随笔集》第二卷第一章，科顿 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Essays_of_Michel_de_Montaigne"
+    },
+    {
+     "text": {
+      "en": "I do not paint his being, I paint his passage.",
+      "zh": "我描绘的不是他的存在，而是他的经过。"
+     },
+     "label": {
+      "en": "Montaigne, Essays III.2, trans. Charles Cotton",
+      "zh": "蒙田《随笔集》第三卷第二章，科顿 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Essays_of_Michel_de_Montaigne"
+    }
+   ]
+  },
+  {
+   "id": "p-marshall-mcluhan",
+   "name": "Marshall McLuhan",
+   "wiki": "Marshall_McLuhan",
+   "rank": 82,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-theodor-w-adorno",
+   "name": "Theodor W. Adorno",
+   "wiki": "Theodor_W._Adorno",
+   "rank": 83,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thales-of-miletus",
+   "name": "Thales of Miletus",
+   "wiki": "Thales_of_Miletus",
+   "rank": 84,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-john-rawls",
+   "name": "John Rawls",
+   "wiki": "John_Rawls",
+   "rank": 85,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-peter-kropotkin",
+   "name": "Peter Kropotkin",
+   "wiki": "Peter_Kropotkin",
+   "rank": 86,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-mikhail-bakunin",
+   "name": "Mikhail Bakunin",
+   "wiki": "Mikhail_Bakunin",
+   "rank": 87,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-iris-murdoch",
+   "name": "Iris Murdoch",
+   "wiki": "Iris_Murdoch",
+   "rank": 88,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-democritus",
+   "name": "Democritus",
+   "wiki": "Democritus",
+   "rank": 89,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-averroes",
+   "name": "Averroes",
+   "wiki": "Averroes",
+   "rank": 90,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-boethius",
+   "name": "Boethius",
+   "wiki": "Boethius",
+   "rank": 91,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ramanuja",
+   "name": "Ramanuja",
+   "wiki": "Ramanuja",
+   "rank": 92,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-herbert-marcuse",
+   "name": "Herbert Marcuse",
+   "wiki": "Herbert_Marcuse",
+   "rank": 93,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-roland-barthes",
+   "name": "Roland Barthes",
+   "wiki": "Roland_Barthes",
+   "rank": 94,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-edmund-husserl",
+   "name": "Edmund Husserl",
+   "wiki": "Edmund_Husserl",
+   "rank": 95,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-william-of-ockham",
+   "name": "William of Ockham",
+   "wiki": "William_of_Ockham",
+   "rank": 96,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-nagarjuna",
+   "name": "Nagarjuna",
+   "wiki": "Nagarjuna",
+   "rank": 97,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-plotinus",
+   "name": "Plotinus",
+   "wiki": "Plotinus",
+   "rank": 98,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-louis-althusser",
+   "name": "Louis Althusser",
+   "wiki": "Louis_Althusser",
+   "rank": 99,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-anselm-of-canterbury",
+   "name": "Anselm of Canterbury",
+   "wiki": "Anselm_of_Canterbury",
+   "rank": 100,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-henri-bergson",
+   "name": "Henri Bergson",
+   "wiki": "Henri_Bergson",
+   "rank": 101,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-george-berkeley",
+   "name": "George Berkeley",
+   "wiki": "George_Berkeley",
+   "rank": 102,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-alfred-north-whitehead",
+   "name": "Alfred North Whitehead",
+   "wiki": "Alfred_North_Whitehead",
+   "rank": 103,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-martha-nussbaum",
+   "name": "Martha Nussbaum",
+   "wiki": "Martha_Nussbaum",
+   "rank": 104,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-zeno-of-citium",
+   "name": "Zeno of Citium",
+   "wiki": "Zeno_of_Citium",
+   "rank": 105,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-parmenides",
+   "name": "Parmenides",
+   "wiki": "Parmenides",
+   "rank": 106,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-isaiah-berlin",
+   "name": "Isaiah Berlin",
+   "wiki": "Isaiah_Berlin",
+   "rank": 107,
+   "tier": "basic",
+   "voiceId": "v-berlin",
+   "origin": {
+    "en": "Oxford, 1958",
+    "zh": "牛津，1958 年"
+   },
+   "image": "berlin.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "I am normally said to be free to the degree to which no man or body of men interferes with my activity.",
+      "zh": "通常说我是自由的，程度取决于没有任何人或任何群体干涉我的活动。"
+     },
+     "label": {
+      "en": "Berlin, Two Concepts of Liberty, 1958",
+      "zh": "伯林《两种自由概念》，1958 年"
+     },
+     "url": "https://en.wikipedia.org/wiki/Two_Concepts_of_Liberty"
+    }
+   ]
+  },
+  {
+   "id": "p-charles-sanders-peirce",
+   "name": "Charles Sanders Peirce",
+   "wiki": "Charles_Sanders_Peirce",
+   "rank": 108,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thomas-kuhn",
+   "name": "Thomas Kuhn",
+   "wiki": "Thomas_Kuhn",
+   "rank": 109,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-robert-nozick",
+   "name": "Robert Nozick",
+   "wiki": "Robert_Nozick",
+   "rank": 110,
+   "tier": "basic",
+   "voiceId": "v-nozick",
+   "origin": {
+    "en": "Harvard, 1974",
+    "zh": "哈佛，1974 年"
+   },
+   "image": "nozick.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Plugging into the machine is a kind of suicide.",
+      "zh": "接入那台机器是一种自杀。"
+     },
+     "label": {
+      "en": "Nozick, Anarchy, State, and Utopia, chapter 3",
+      "zh": "诺齐克《无政府、国家与乌托邦》第三章"
+     },
+     "url": "https://en.wikipedia.org/wiki/Experience_machine"
+    },
+    {
+     "text": {
+      "en": "Plugging into the machine is a kind of suicide.",
+      "zh": "接入那台机器是一种自杀。"
+     },
+     "label": {
+      "en": "Nozick, Anarchy, State, and Utopia, chapter 3",
+      "zh": "诺齐克《无政府、国家与乌托邦》第三章"
+     },
+     "url": "https://en.wikipedia.org/wiki/Experience_machine"
+    }
+   ]
+  },
+  {
+   "id": "p-alasdair-macintyre",
+   "name": "Alasdair MacIntyre",
+   "wiki": "Alasdair_MacIntyre",
+   "rank": 111,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-charles-taylor-(philosopher)",
+   "name": "Charles Taylor",
+   "wiki": "Charles_Taylor_(philosopher)",
+   "rank": 112,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-duns-scotus",
+   "name": "Duns Scotus",
+   "wiki": "Duns_Scotus",
+   "rank": 113,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thorstein-veblen",
+   "name": "Thorstein Veblen",
+   "wiki": "Thorstein_Veblen",
+   "rank": 114,
+   "tier": "basic",
+   "voiceId": "v-veblen",
+   "origin": {
+    "en": "United States, 1899",
+    "zh": "美国，1899 年"
+   },
+   "image": "veblen.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Conspicuous consumption of valuable goods is a means of reputability to the gentleman of leisure.",
+      "zh": "对贵重物品的炫耀性消费，是有闲绅士获取名望的手段。"
+     },
+     "label": {
+      "en": "Veblen, The Theory of the Leisure Class, chapter 4",
+      "zh": "凡勃伦《有闲阶级论》第四章"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Theory_of_the_Leisure_Class"
+    }
+   ]
+  },
+  {
+   "id": "p-john-searle",
+   "name": "John Searle",
+   "wiki": "John_Searle",
+   "rank": 115,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-david-chalmers",
+   "name": "David Chalmers",
+   "wiki": "David_Chalmers",
+   "rank": 116,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-patanjali",
+   "name": "Patanjali",
+   "wiki": "Patanjali",
+   "rank": 117,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-mencius",
+   "name": "Mencius",
+   "wiki": "Mencius",
+   "rank": 118,
+   "tier": "basic",
+   "voiceId": "v-mencius",
+   "origin": {
+    "en": "China, c. 300 BCE",
+    "zh": "中国，约公元前 300 年"
+   },
+   "image": "mencius.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "The tendency of man's nature to good is like the tendency of water to flow downwards.",
+      "zh": "人性之善也，犹水之就下也。"
+     },
+     "label": {
+      "en": "Mencius 6A.2, trans. James Legge",
+      "zh": "《孟子·告子上》6A.2，理雅各 译"
+     },
+     "url": "https://en.wikisource.org/wiki/The_Works_of_Mencius"
+    }
+   ]
+  },
+  {
+   "id": "p-al-farabi",
+   "name": "Al-Farabi",
+   "wiki": "Al-Farabi",
+   "rank": 119,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-maurice-merleau-ponty",
+   "name": "Maurice Merleau-Ponty",
+   "wiki": "Maurice_Merleau-Ponty",
+   "rank": 120,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-gottlob-frege",
+   "name": "Gottlob Frege",
+   "wiki": "Gottlob_Frege",
+   "rank": 121,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-thomas-nagel",
+   "name": "Thomas Nagel",
+   "wiki": "Thomas_Nagel",
+   "rank": 122,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-saul-kripke",
+   "name": "Saul Kripke",
+   "wiki": "Saul_Kripke",
+   "rank": 123,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-erving-goffman",
+   "name": "Erving Goffman",
+   "wiki": "Erving_Goffman",
+   "rank": 124,
+   "tier": "basic",
+   "voiceId": "v-goffman",
+   "origin": {
+    "en": "United States, 1959",
+    "zh": "美国，1959 年"
+   },
+   "image": "goffman.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Life itself is a dramatically enacted thing.",
+      "zh": "生活本身就是一件被戏剧性地演出的事。"
+     },
+     "label": {
+      "en": "Goffman, The Presentation of Self in Everyday Life, conclusion",
+      "zh": "戈夫曼《日常生活中的自我呈现》结论"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Presentation_of_Self_in_Everyday_Life"
+    }
+   ]
+  },
+  {
+   "id": "p-richard-rorty",
+   "name": "Richard Rorty",
+   "wiki": "Richard_Rorty",
+   "rank": 125,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-johann-gottlieb-fichte",
+   "name": "Johann Gottlieb Fichte",
+   "wiki": "Johann_Gottlieb_Fichte",
+   "rank": 126,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-willard-van-orman-quine",
+   "name": "Willard Van Orman Quine",
+   "wiki": "Willard_Van_Orman_Quine",
+   "rank": 127,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-derek-parfit",
+   "name": "Derek Parfit",
+   "wiki": "Derek_Parfit",
+   "rank": 128,
+   "tier": "basic",
+   "voiceId": "v-parfit",
+   "origin": {
+    "en": "Oxford, 1984",
+    "zh": "牛津，1984 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Personal identity is not what matters.",
+      "zh": "人格同一性并不是重要的东西。"
+     },
+     "label": {
+      "en": "Parfit, Reasons and Persons, part III",
+      "zh": "帕菲特《理与人》第三部分"
+     },
+     "url": "https://en.wikipedia.org/wiki/Reasons_and_Persons"
+    }
+   ]
+  },
+  {
+   "id": "p-mozi",
+   "name": "Mozi",
+   "wiki": "Mozi",
+   "rank": 129,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-max-horkheimer",
+   "name": "Max Horkheimer",
+   "wiki": "Max_Horkheimer",
+   "rank": 130,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-emmanuel-levinas",
+   "name": "Emmanuel Levinas",
+   "wiki": "Emmanuel_Levinas",
+   "rank": 131,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-friedrich-wilhelm-joseph-schelling",
+   "name": "Friedrich Wilhelm Joseph Schelling",
+   "wiki": "Friedrich_Wilhelm_Joseph_Schelling",
+   "rank": 132,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-hans-georg-gadamer",
+   "name": "Hans-Georg Gadamer",
+   "wiki": "Hans-Georg_Gadamer",
+   "rank": 133,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-hilary-putnam",
+   "name": "Hilary Putnam",
+   "wiki": "Hilary_Putnam",
+   "rank": 134,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-g-e-m-anscombe",
+   "name": "G. E. M. Anscombe",
+   "wiki": "G._E._M._Anscombe",
+   "rank": 135,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-jean-françois-lyotard",
+   "name": "Jean-François Lyotard",
+   "wiki": "Jean-François_Lyotard",
+   "rank": 136,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-g-e-moore",
+   "name": "G. E. Moore",
+   "wiki": "G._E._Moore",
+   "rank": 137,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-bernard-williams",
+   "name": "Bernard Williams",
+   "wiki": "Bernard_Williams",
+   "rank": 138,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-rudolf-carnap",
+   "name": "Rudolf Carnap",
+   "wiki": "Rudolf_Carnap",
+   "rank": 139,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-zhu-xi",
+   "name": "Zhu Xi",
+   "wiki": "Zhu_Xi",
+   "rank": 140,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-ernest-becker",
+   "name": "Ernest Becker",
+   "wiki": "Ernest_Becker",
+   "rank": 141,
+   "tier": "basic",
+   "voiceId": "v-becker",
+   "origin": {
+    "en": "United States, 1973",
+    "zh": "美国，1973 年"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "The idea of death, the fear of it, haunts the human animal like nothing else.",
+      "zh": "死亡的念头、对死亡的恐惧，以任何别的事物都不及的方式纠缠着人这种动物。"
+     },
+     "label": {
+      "en": "Becker, The Denial of Death, preface",
+      "zh": "贝克尔《拒斥死亡》序言"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Denial_of_Death"
+    },
+    {
+     "text": {
+      "en": "Society is a codified hero system, which means that society everywhere is a living myth of the significance of human life.",
+      "zh": "社会是一套被编码的英雄体系；这意味着任何地方的社会都是关于「人生意义」的活神话。"
+     },
+     "label": {
+      "en": "Becker, The Denial of Death, chapter 1",
+      "zh": "贝克尔《拒斥死亡》第一章"
+     },
+     "url": "https://en.wikipedia.org/wiki/The_Denial_of_Death"
+    }
+   ]
+  },
+  {
+   "id": "p-han-fei",
+   "name": "Han Fei",
+   "wiki": "Han_Fei",
+   "rank": 142,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-wang-yangming",
+   "name": "Wang Yangming",
+   "wiki": "Wang_Yangming",
+   "rank": 143,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-harry-frankfurt",
+   "name": "Harry Frankfurt",
+   "wiki": "Harry_Frankfurt",
+   "rank": 144,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-zhuangzi",
+   "name": "Zhuangzi",
+   "wiki": "Zhuangzi",
+   "rank": 145,
+   "tier": "basic",
+   "voiceId": "v-zhuangzi",
+   "origin": {
+    "en": "China, c. 4th c. BCE",
+    "zh": "中国，约公元前 4 世纪"
+   },
+   "image": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "All men know the advantage of being useful, but no one knows the advantage of being useless.",
+      "zh": "人皆知有用之用，而莫知无用之用也。"
+     },
+     "label": {
+      "en": "Zhuangzi, Inner Chapters 4, trans. James Legge",
+      "zh": "《庄子·内篇·人间世》，理雅各 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Zhuangzi"
+    },
+    {
+     "text": {
+      "en": "He did not know whether it was Zhou dreaming that he was a butterfly, or a butterfly dreaming that he was Zhou.",
+      "zh": "不知周之梦为胡蝶与，胡蝶之梦为周与。"
+     },
+     "label": {
+      "en": "Zhuangzi, Inner Chapters 2, trans. James Legge",
+      "zh": "《庄子·内篇·齐物论》，理雅各 译"
+     },
+     "url": "https://en.wikisource.org/wiki/Zhuangzi"
+    }
+   ]
+  },
+  {
+   "id": "p-paul-ricoeur",
+   "name": "Paul Ricoeur",
+   "wiki": "Paul_Ricoeur",
+   "rank": 146,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-dogen",
+   "name": "Dogen",
+   "wiki": "Dogen",
+   "rank": 147,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-xunzi",
+   "name": "Xunzi",
+   "wiki": "Xunzi",
+   "rank": 148,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-nishida-kitaro",
+   "name": "Nishida Kitaro",
+   "wiki": "Nishida_Kitaro",
+   "rank": 149,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-donald-davidson",
+   "name": "Donald Davidson",
+   "wiki": "Donald_Davidson",
+   "rank": 150,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  },
+  {
+   "id": "p-bell-hooks",
+   "name": "bell hooks",
+   "wiki": "bell_hooks",
+   "rank": 151,
+   "tier": "basic",
+   "voiceId": null,
+   "origin": null,
+   "image": null,
+   "quotes": []
+  }
+ ]
+}
