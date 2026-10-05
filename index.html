@@ -383,6 +383,8 @@ img{max-width:100%}
 .msg.mine{flex-direction:row-reverse;align-self:flex-end}
 .msg:not(.mine){align-self:flex-start}
 .msg .av{width:28px;height:28px;font-size:12px;flex:none;margin-top:16px}
+.avlink{flex:none;display:block;border-radius:50%}
+.avlink:hover .av{outline:2px solid var(--hairline-strong);outline-offset:1px}
 .msg.cont .av{visibility:hidden}
 .msg-body{min-width:0;display:flex;flex-direction:column;gap:3px}
 .msg.mine .msg-body{align-items:flex-end}
@@ -393,6 +395,10 @@ img{max-width:100%}
 .msg.cont .msg-head{display:none}
 .sim{font-size:9px;font-weight:700;letter-spacing:.6px;color:var(--danger);
      background:rgba(236,105,64,.10);padding:1px 5px;border-radius:var(--r-pill)}
+/* Canned, not generated. Distinct from SIMULATED, which is about the words
+   not being a quotation; this is about them not coming from a model at all. */
+.demo{font-size:9px;font-weight:700;letter-spacing:.6px;color:var(--ink-secondary);
+      background:var(--chip);padding:1px 5px;border-radius:var(--r-pill)}
 
 .bubble{font-size:16px;line-height:1.45;padding:9px 13px;
         background:var(--surface);border:1px solid var(--hairline);
@@ -968,6 +974,12 @@ function answersView(){
 
 const philById = id => PHIL.find(p => p.id === id);
 
+function linkAvatar(p, cls){
+  if(!p || !p.id) return castAvatar(p, cls);
+  return `<button class="avlink" data-phil="${esc(p.id)}"
+                  aria-label="${esc(p.name || '')}">${castAvatar(p, cls)}</button>`;
+}
+
 function castAvatar(p, cls){
   const img = p.image ? `<img src="${IMG}${esc(p.image)}" alt="" loading="lazy">` : esc(initial(p.name));
   return `<div class="av ${cls||''}">${img}</div>`;
@@ -1209,6 +1221,92 @@ function seedExamples(){
   save();
 }
 
+
+/* A philosopher's page. Everything on it is either from the roster — which is
+   a Wikipedia readership measure and says so — or from content.json, which
+   carries the sourced passages. Nothing here is generated, which is why a
+   face in a simulated conversation can be trusted to lead somewhere real. */
+function philView(id){
+  const p = philById(id);
+  if(!p) return `<div class="empty">${t('Not found','没有找到')}</div>`;
+  const v = p.voiceId ? byId(C.voices, p.voiceId) : null;
+  const said = v ? C.responses.filter(r => r.voiceId === v.id) : [];
+  const threads = [...new Set(said.map(r => r.questionId))];
+  const works = v ? (v.workIds || []).map(w => byId(C.works, w)).filter(Boolean) : [];
+  const wiki = `https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki)}`;
+
+  return `<div class="page"><div class="entry">
+    <div class="entry-head">
+      ${castAvatar(p, 'av--lg')}
+      <div>
+        <h2>${esc(p.name)}</h2>
+        <p class="meta">${v ? esc(kindLabel(v.kind)) + ' · ' + esc(L(v.origin))
+                            : t('In the roster, not yet in the threads',
+                                '在名册中，尚未出现在讨论里')}</p>
+      </div>
+    </div>
+
+    <div class="kinds" style="margin-top:16px">
+      <span class="kind"><span class="tier ${p.tier}">${
+        p.tier === 'pro' ? 'PRO' : 'BASIC'}</span></span>
+      <span class="kind">${t(`#${p.rank} by readership`, `阅读量排名 #${p.rank}`)}</span>
+      <span class="kind">${p.quotes.length
+        ? t(`${p.quotes.length} sourced passages`, `${p.quotes.length} 段有出处的文字`)
+        : t('No sourced passages yet','暂无有出处的文字')}</span>
+    </div>
+
+    ${v && v.reach ? `<p class="body" style="font-family:var(--serif);font-style:italic">${
+      esc(L(v.reach.note))}</p>` : ''}
+
+    ${p.quotes.length ? `
+      <h3 class="section-h" style="padding-left:0">${t('What they actually wrote','他们真正写下的')}</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        ${p.quotes.map(q => `<div class="said">
+          <q>${esc(L(q.text))}</q>
+          <span class="src">— ${q.url
+            ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
+            : esc(L(q.label))}</span>
+        </div>`).join('')}
+      </div>` : `
+      <p class="notice" style="margin:16px 0 0">${t(
+        'No passage of theirs is in this app yet, so a reply from them cannot be checked against their own words.',
+        '这个 App 里还没有他们的文字，因此他们的回应无法与其本人的原话对照。')}</p>`}
+
+    ${works.length ? `
+      <h3 class="section-h" style="padding-left:0">${esc(L((C.strings||{}).books))}</h3>
+      <div class="shelf" style="padding-left:0;padding-right:0">${works.map(bookCard).join('')}</div>` : ''}
+
+    ${threads.length ? `
+      <h3 class="section-h" style="padding-left:0">${
+        t('Speaks in these threads','在这些讨论里发言')}</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        ${said.map(r => {
+          const qn = byId(C.questions, r.questionId);
+          return `<button class="card" style="padding:16px;text-align:left"
+                          data-open="${esc(r.questionId)}">
+            <p style="font-family:var(--serif);font-size:17px;margin:0 0 8px">${
+              esc(L(qn && qn.title))}</p>
+            <p style="font-size:15px;line-height:1.5;color:var(--text-body-soft);margin:0">${
+              esc(L(r.claim))}</p>
+          </button>`;
+        }).join('')}
+      </div>` : ''}
+
+    <a class="readmore" style="display:inline-block;margin-top:20px"
+       href="${esc(wiki)}" target="_blank" rel="noopener">${
+       t('Read about them on Wikipedia','在维基百科上了解他们')} ↗</a>
+
+    ${v && v.image ? `<p class="credit">${esc(t('Image','图片'))}: ${esc(v.image.licence||'')}${
+      v.image.credit ? ' · ' + esc(v.image.credit) : ''}${v.image.sourceUrl
+      ? ` · <a href="${esc(v.image.sourceUrl)}" target="_blank" rel="noopener">${
+        t('source','来源')}</a>` : ''}</p>` : ''}
+
+    <p class="credit" style="border:0;padding-top:8px">${t(
+      'Rank is English Wikipedia readership over twelve months. It measures how many people read about someone, not how important they are.',
+      '排名依据英文维基百科十二个月的阅读量。它衡量的是有多少人读到此人，而非其重要性。')}</p>
+  </div></div>`;
+}
+
 function chatView(){
   const open = convo();
   // One pane on a phone, both on a desktop.
@@ -1270,7 +1368,7 @@ function convoPane(c){
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <div class="faces">${cast.slice(0,3).map(p => castAvatar(p)).join('')
+      <div class="faces">${cast.slice(0,3).map(p => linkAvatar(p)).join('')
         || `<div class="av">?</div>`}</div>
       <div class="who">
         <b>${esc(convoTitle(c))}</b>
@@ -1337,10 +1435,11 @@ function msgRow(m, i, c){
   const p = philById(m.id) || {name:m.name, image:null};
   const q = m.said;
   return `<article class="msg${cont}">
-    ${castAvatar(p)}
+    ${linkAvatar(p)}
     <div class="msg-body">
       <div class="msg-head"><b>${esc(p.name)}</b>
-        <span class="sim">${t('SIMULATED','模拟')}</span></div>
+        <span class="sim">${t('SIMULATED','模拟')}</span>
+        ${m.demo ? `<span class="demo">${t('DEMO','演示')}</span>` : ''}</div>
       <div class="bubble">${esc(m.text)}</div>
       ${m.bridge ? `<details class="derived">
         <summary>${t('How this was derived','这是如何推出的')}</summary>
@@ -1434,6 +1533,100 @@ function pickerModal(){
   </div>`;
 }
 
+
+/* Demo replies, for where no model can be reached — localhost and GitHub
+   Pages, which is to say everywhere except the published artifact. Without
+   these the button does nothing and the tab cannot be shown to anyone.
+//
+   They are authored, and they are marked DEMO in the transcript on top of
+   the SIMULATED tag, because a canned line passed off as model output would
+   misrepresent what the system does — which is the one thing this app is
+   built not to do. The authored rounds cover the three example pairs; any
+   other room gets a placeholder that says plainly what it is. */
+const DEMO_ROUNDS = {
+  'p-marcus-aurelius|p-epicurus': [[
+    {who:'p-marcus-aurelius',
+     commit:{en:'Nothing outside the mind can compel a judgement',
+             zh:'心外之物不能强加判断'},
+     bridge:{en:'If the work itself cannot make him feel it was worth it, the verdict was never the work’s to give.',
+             zh:'若工作本身无法让他觉得值得，那么这判决本就不该由工作来给。'},
+     en:'Then let us put it where it belongs. The work does not owe him a feeling at the end of it. He owes the work his attention while it lasts, and that is the whole of the arrangement.',
+     zh:'那就把它放回该在的位置。工作不欠他一份完成后的感受。他欠工作的是过程中的专注 — 整个约定就是这样。'},
+    {who:'p-epicurus',
+     commit:{en:'Friendship is the most durable of the goods we can secure',
+             zh:'友谊是我们所能确保之物中最经久的'},
+     bridge:{en:'A life arranged around work asks a question about legacy; a life arranged around company does not have to.',
+             zh:'围绕工作安排的人生会提出「身后」的问题；围绕友伴安排的人生则不必。'},
+     en:'An austere arrangement, and it leaves out the part that actually holds. Ask who he is doing it near, not only what for. The ones who would notice if he stopped are the ones the question was really about.',
+     zh:'一个严苛的安排，却漏掉了真正支撑人的那部分。问他是在谁身边做这件事，而不只是为了什么。那些会察觉他停下的人，才是这个问题真正关乎的。'},
+  ]],
+  'p-john-stuart-mill|p-erving-goffman': [[
+    {who:'p-john-stuart-mill',
+     commit:{en:'Liberty is worthless without the capacity to use it',
+             zh:'没有运用能力的自由毫无价值'},
+     bridge:{en:'A choice architecture that never exercises judgement leaves the freedom formally intact and practically unusable.',
+             zh:'一种从不锻炼判断力的选择架构，让自由在形式上完好、在实践上无法使用。'},
+     en:'You keep telling me the room is always there. Granted. The room does not read for him. A capacity that is never exercised is lost, and that loss is not a performance — it is the only part of this that is permanent.',
+     zh:'你一再告诉我那屋子始终在。承认。但屋子不会替他阅读。一种从不被运用的能力会消失，而这种丧失不是表演 — 它是这整件事中唯一永久的部分。'},
+    {who:'p-erving-goffman',
+     commit:{en:'Roles are not masks over a self; they are how a self is sustained',
+             zh:'角色不是覆盖自我的面具；它正是自我得以维持的方式'},
+     bridge:{en:'If the serious reader is a role, then performing it consistently is not a sham but the mechanism by which someone becomes one.',
+             zh:'若「认真的读者」是一个角色，那么持续地扮演它便不是作假，而是一个人成为它的机制。'},
+     en:'We are closer than you think. I never said the performance was empty. Keep performing the reader who faces the other side and, in time, there is no one behind the performance who does not.',
+     zh:'我们比你以为的更接近。我从未说表演是空的。持续扮演那个直面对立面的读者，久而久之，表演背后就不再有一个不这么做的人。'},
+  ]],
+  'p-confucius|p-friedrich-nietzsche': [[
+    {who:'p-confucius',
+     commit:{en:'Reciprocity: do not impose what you would not accept',
+             zh:'恕：己所不欲，勿施于人'},
+     bridge:{en:'Deciding alone what you owe is the same unilateral move you would refuse if your parents made it.',
+             zh:'独自决定你亏欠什么，与你父母若如此行事你会拒绝的那种单方面做法，是同一回事。'},
+     en:'You tell him to decide alone what he returns. He did not arrive alone and he will not decide alone. If a parent announced the terms by himself you would call it tyranny; the son announcing them is no better for being younger.',
+     zh:'你叫他独自决定回报什么。他不是独自到来的，也不会独自决定。若父母单方面宣布条件，你会称之为专横；儿子来宣布，并不因年轻而更好。'},
+    {who:'p-friedrich-nietzsche',
+     commit:{en:'What is given a name becomes possible to refuse',
+             zh:'被命名之物才可能被拒绝'},
+     bridge:{en:'Naming the arrangement as an arrangement is what makes consent to it meaningful rather than automatic.',
+             zh:'把这种安排说成一种安排，才使对它的同意是有意义的，而不是自动的。'},
+     en:'Tyranny — finally a word with some blood in it. I do not ask him to announce anything. I ask him to know that he could, and then to stay. A duty that was never refusable was never kept either.',
+     zh:'专横 — 终于有个带血的词了。我不是要他宣布什么。我是要他知道他本可以，然后留下。一份从不可能被拒绝的义务，也从未被真正守护过。'},
+  ]],
+};
+
+/* A clearly-labelled stand-in for any other room. It deliberately does not
+   put a philosophical position in anyone's mouth. */
+function demoPlaceholder(p){
+  return { en: `This is where ${p.name} would answer. No model is connected to this copy, so there is nothing to generate the reply.`,
+           zh: `这里本应是${p.name}的回应。此副本未连接模型，因此没有东西来生成这条回复。` };
+}
+
+async function demoSpeak(c, cast){
+  const key = cast.map(p => p.id).join('|');
+  const rounds = DEMO_ROUNDS[key] || [];
+  c.demoRound = c.demoRound || 0;
+  const round = rounds[c.demoRound];
+  c.demoRound++;
+
+  for(const p of cast){
+    const turn = round && round.find(r => r.who === p.id);
+    chat.typing = p.id; render();
+    const body = turn ? L({en:turn.en, zh:turn.zh}) : L(demoPlaceholder(p));
+    await new Promise(r => setTimeout(r, Math.min(2000, 500 + body.length * 8)));
+    chat.typing = null;
+
+    let said = null;
+    if(turn && p.quotes.length && !c.said[p.id]){
+      said = p.quotes[Math.floor(Math.random() * p.quotes.length)];
+      c.said[p.id] = 1;
+    }
+    c.msgs.push({ id:p.id, name:p.name, text:body, said, at: Date.now(), demo:true,
+                  commitment: turn ? L(turn.commit) : null,
+                  bridge: turn ? L(turn.bridge) : null });
+    c.at = Date.now(); save(); render();
+  }
+}
+
 // --- Asking the model ------------------------------------------------------
 
 async function model(){
@@ -1511,9 +1704,15 @@ async function speak(extra){
   const cast = c.cast.map(philById).filter(Boolean);
   if(!cast.length || chat.busy) return;
   const m = await model();
-  if(!m) return;
-
   chat.busy = true; render();
+  if(!m){
+    // No model here. Rather than a button that does nothing, play an
+    // authored round and say in the transcript that that is what it is.
+    await demoSpeak(c, cast);
+    chat.busy = false; chat.typing = null; save(); render();
+    return;
+  }
+
   try{
     const out = await m.json([{ role:'user', content:
       brief(cast) + '\n\nConversation so far:\n' + (transcript() || '(nothing yet)') +
@@ -1719,7 +1918,8 @@ function render(){
   const e = here();
   const view = document.getElementById('view');
   let html;
-  if(e.voice)      html = voiceView(e.voice);
+  if(e.phil)       html = philView(e.phil);
+  else if(e.voice) html = voiceView(e.voice);
   else if(e.work)  html = workView(e.work);
   else if(e.thread)html = threadView(e.thread, e.filter);
   else if(e.tab === 'chat')    html = chatView();
@@ -1816,6 +2016,9 @@ document.addEventListener('click', ev => {
     chat.open = null; chat.pending = []; chat.picking = true;
     chat.query = ''; chat.filter = 'all';
     return render();
+  }
+  if((el = hit('[data-phil]'))){
+    return go({tab: stack[0].tab, phil: el.dataset.phil});
   }
   if((el = hit('[data-drop-convo]'))){
     const id = el.dataset.dropConvo;
