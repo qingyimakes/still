@@ -307,10 +307,11 @@ img{max-width:100%}
    Desktop: both at once, which is what every desktop messenger does. */
 .chat-wrap{display:block}
 .chat-wrap .convo-list{display:flex;flex-direction:column;height:100%;
-                       overflow-y:auto;overscroll-behavior:contain}
+                       min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .chat-wrap .convo-pane{display:none}
 .chat-wrap.has-open .convo-list{display:none}
-.chat-wrap.has-open .convo-pane{display:flex;flex-direction:column;height:100%}
+.chat-wrap.has-open .convo-pane{display:flex;flex-direction:column;height:100%;
+                                min-height:0}
 
 .list-head{display:flex;align-items:center;gap:12px;padding:4px 16px 12px}
 .list-head h1{flex:1;font-family:var(--serif);font-size:34px;margin:0;font-weight:400}
@@ -371,7 +372,7 @@ img{max-width:100%}
             color:var(--ink);font-size:19px;line-height:34px;text-align:center}
 
 /* Transcript */
-.msgs{flex:1;overflow-y:auto;overscroll-behavior:contain;
+.msgs{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
       display:flex;flex-direction:column;gap:2px;padding:12px 12px 16px}
 .daysep{align-self:center;font-size:11.5px;color:var(--ink-tertiary);
         background:var(--chip);border-radius:var(--r-pill);padding:4px 12px;
@@ -508,11 +509,14 @@ img{max-width:100%}
   /* Three columns overall: the app's nav rail, this list, and the thread. */
   .page.page--chat{max-width:none;margin:0;padding:0}
   .chat-wrap{height:calc(100dvh - 60px);
-             display:grid;grid-template-columns:320px minmax(0,1fr)}
+             display:grid;grid-template-columns:320px minmax(0,1fr);
+             grid-template-rows:minmax(0,1fr)}
   .chat-wrap .convo-list,
-  .chat-wrap.has-open .convo-list{display:flex;border-right:1px solid var(--hairline)}
+  .chat-wrap.has-open .convo-list{display:flex;min-height:0;
+                                  border-right:1px solid var(--hairline)}
   .chat-wrap .convo-pane,
-  .chat-wrap.has-open .convo-pane{display:flex}
+  .chat-wrap.has-open .convo-pane{display:flex;flex-direction:column;
+                                  height:100%;min-height:0}
   .cback{display:none}
   .list-head h1{font-size:26px}
 }
