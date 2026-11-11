@@ -1217,6 +1217,22 @@ body.resizing{cursor:col-resize;user-select:none}
 .act svg{width:16px;height:16px}
 .act.down svg{transform:rotate(180deg)}
 .act-note{font-size:12px;color:var(--ink-secondary);margin-left:var(--sp-xs)}
+.act-group{display:flex;align-items:center;gap:inherit}
+/* Feedback on a reply: a sheet on a phone, a centred card above. */
+.fb-body{padding:0 20px;display:flex;flex-direction:column;gap:var(--sp-m);overflow-y:auto}
+.fb-rates{display:flex;gap:var(--sp-s)}
+.fb-rates .act{width:44px;height:44px;border:1px solid var(--hairline-strong)}
+.fb-rates .act.on{border-color:var(--ink)}
+.fb-rates .act svg{width:20px;height:20px}
+.fb-body textarea{font:inherit;font-size:16px;line-height:1.45;color:var(--ink);resize:vertical;
+  background:var(--surface);border:1px solid var(--hairline-strong);border-radius:14px;padding:10px 14px}
+.fb-note{margin:0;font-size:13px;line-height:1.5;color:var(--ink-secondary)}
+.fb-err{margin:0;font-size:13.5px;color:var(--danger)}
+.modal footer.fb-row{display:flex;gap:var(--sp-s);padding-top:var(--sp-l)}
+.fb-row button{flex:1;min-height:44px;border-radius:var(--r-pill);font-size:16px;font-weight:500}
+.fb-cancel{background:var(--chip);color:var(--ink)}
+.fb-send{background:var(--ink);color:var(--on-ink)}
+.fb-send[disabled]{opacity:.5}
 /* Today's use: same panel as the model menu. */
 .upanel{width:320px;padding:var(--sp-m) var(--sp-l) var(--sp-l)}
 .up-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--sp-s);
@@ -1229,7 +1245,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .up-bar{height:5px;border-radius:var(--r-pill);background:var(--hairline)}
 .up-bar i{display:block;height:100%;border-radius:inherit;background:var(--ink)}
 .up-bar.low i{background:var(--danger)}
-.up-none{margin:0;font-size:13px;color:var(--ink-secondary)}
+.up-none{margin:var(--sp-s) 0 0;font-size:13px;line-height:1.45;color:var(--ink-secondary)}
 /* Header like Claude's usage sheet: close on the left, title centred. */
 .up-top{display:grid;grid-template-columns:36px 1fr 36px;align-items:center;margin-bottom:var(--sp-m)}
 .up-top b{text-align:center;font-size:15px;font-weight:600;color:var(--ink)}
@@ -1510,7 +1526,10 @@ body.resizing{cursor:col-resize;user-select:none}
   .composer textarea{min-height:44px;padding:11px 0}
   .act{width:44px;height:44px;flex:none}
   .derive-link{min-width:0}
-  .msg-acts{gap:var(--sp-s)}
+  /* Five 44px actions leave the link no room beside them: it takes its own
+     line above them. */
+  .msg-acts{gap:var(--sp-s);flex-wrap:wrap;row-gap:0}
+  .msg-acts .derive-link{flex:1 0 100%;text-align:left;margin-right:0}
   .ghost{min-height:44px;padding:10px 16px}
   .explore-tools input,.modal input{min-height:44px}
   .crow-rename input{font-size:16px;min-height:44px}
@@ -2220,6 +2239,19 @@ function philByAgent(a){
 }
 /* What the book shows, in one shape for both sources. A pool passage has no
    Chinese yet: in zh the English is shown and labelled as the English. */
+/* The Book of Answers passage a chat was opened from, in the shape
+   /v1/ask takes: {quote, work, passageId, author}. The agent finds the
+   passage in the thinker's own index (by id, else by its words); the quote
+   text is never used as evidence by itself. */
+function askContext(r, P){
+  if(!r || !P) return null;
+  if(r.pool){
+    const m = String(r.id || '').match(/^ap-([^-]+)-([^-]+)-mvp-(\d+)/);
+    return { quote: r.en, work: r.work || '', author: r.name || '',
+             passageId: m ? `${m[1]}:${m[2]}:mvp:${m[3]}` : '' };
+  }
+  return { quote: (P.quote && (P.quote.en || L(P.quote))) || '', work: '', author: P.name || '', passageId: '' };
+}
 function passageOf(r){
   if(!r) return null;
   if(r.pool){
@@ -2935,12 +2967,12 @@ function convoPane(c){
 
     <div class="cfoot">
     ${(() => {
-      // B25: the ↓ and "Keep them going" sit side by side as one centred
-      // group, like Claude's ↓ and "1 artifact"; alone, the ↓ floats centred.
+      // B25: "Keep them going" then the ↓, side by side as one centred
+      // group, like Claude's pills (founder); alone, the ↓ floats centred.
       const down = `<button type="button" class="tobottom" id="tobottom" hidden aria-label="${t('Scroll to the latest','滚动到最新')}"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
       return cast.length > 1 && c.msgs.some(m => !m.context) && !chat.busy && !accessBlocked()
-        ? `<div class="chat-acts">${down}
-      <button class="ghost" data-talk="1">${t('Keep them going','让他们继续')}</button>
+        ? `<div class="chat-acts">
+      <button class="ghost" data-talk="1">${t('Keep them going','让他们继续')}</button>${down}
     </div>` : down;
     })()}
     ${cast.length && !c.msgs.length ? suggestions(cast) : ''}
@@ -3108,7 +3140,13 @@ function usagePanel(){
             <span>${t(`${u.replies_left} of ${u.replies_cap} messages left`, `剩 ${u.replies_left}/${u.replies_cap} 条`)}</span></div>
           <div class="up-bar${f >= .9 ? ' low' : ''}"><i style="width:${(f * 100).toFixed(1)}%"></i></div>
         </div>`;
-      }).join('') : `<p class="up-none">${t('No limits counted yet today.','今天还没有计数。')}</p>`}
+      }).join('') : `<div class="up-row">
+          <div class="up-line"><span>${t('Nothing used yet today','今天还没有使用')}</span></div>
+          <div class="up-bar"><i style="width:0%"></i></div>
+          <p class="up-none">${AGENT_KEY
+            ? t('Your access code gives 60 messages a day. They reset at midnight.','你的访问码每天可发 60 条消息，午夜重置。')
+            : t('Your first message is free. After that, an access code gives 60 messages a day.','第一条消息免费。之后，访问码每天可发 60 条消息。')}</p>
+        </div>`}
     </div>`;
 }
 function closeUsage(){
@@ -3395,17 +3433,31 @@ function msgFoot(m, last, labels){
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
   const UP = '<path d="M7 11v9H4v-9h3zm0 0l4-7a2 2 0 0 1 2 2v3h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/>';
   const SHARE = '<path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>';
+  const COPY = '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>';
+  const CHECK = '<path d="M5 12.5l4.5 4.5L19 7"/>';
+  const SPEAK = '<path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/>';
+  const STOP = '<rect x="7" y="7" width="10" height="10" rx="1.5"/>';
   const canDerive = !!(m.agent || m.bridge);
+  const speaking = SPEAKING === key;
+  // Copy, read aloud, the thumbs and share sit together at the right, as
+  // one group, like Claude's reply actions.
   return `<p class="msg-foot">${bits.map(b => `<span>${b}</span>`).join('')}</p>
     <div class="msg-acts">
       ${canDerive ? `<button type="button" class="derive-link" data-derive="${esc(key)}"
           aria-haspopup="dialog">${t('How this was derived','这是如何推出的')}</button>` : ''}
+      <span class="act-group">
+      <button type="button" class="act${COPIED === key ? ' on' : ''}" data-copy="${esc(key)}"
+        aria-label="${COPIED === key ? t('Copied','已复制') : t('Copy','复制')}">${icon(COPIED === key ? CHECK : COPY)}</button>
+      ${'speechSynthesis' in window ? `<button type="button" class="act${speaking ? ' on' : ''}" data-speak="${esc(key)}"
+        aria-pressed="${speaking}" aria-label="${speaking ? t('Stop reading','停止朗读') : t('Read aloud','朗读')}">${icon(speaking ? STOP : SPEAK)}</button>` : ''}
       <button type="button" class="act${r === 'up' ? ' on' : ''}" data-react="up" data-key="${esc(key)}"
-        aria-pressed="${r === 'up'}" aria-label="${t('Good reply','回应不错')}">${icon(UP)}</button>
+        aria-haspopup="dialog" aria-pressed="${r === 'up'}" aria-label="${t('Good reply','回应不错')}">${icon(UP)}</button>
       <button type="button" class="act down${r === 'down' ? ' on' : ''}" data-react="down" data-key="${esc(key)}"
-        aria-pressed="${r === 'down'}" aria-label="${t('Bad reply','回应不好')}">${icon(UP)}</button>
+        aria-haspopup="dialog" aria-pressed="${r === 'down'}" aria-label="${t('Bad reply','回应不好')}">${icon(UP)}</button>
       <button type="button" class="act" data-share="${esc(key)}"
         aria-label="${t('Share this reply','分享这条回应')}">${icon(SHARE)}</button>
+      </span>
+      ${THANKED === key ? `<span class="act-note" role="status">${t('Thanks','谢谢')}</span>` : ''}
       ${SHARED === key ? `<span class="act-note" role="status">${t('Copied','已复制')}</span>` : ''}
     </div>`;
 }
@@ -3414,25 +3466,122 @@ function msgFoot(m, last, labels){
 const msgKey = m => `${m.at}:${m.id}`;
 let REACT = (() => { try{ return JSON.parse(localStorage.getItem('still.reactions') || '{}'); }catch(e){ return {}; } })();
 let SHARED = null;
-function react(key, val){
-  REACT[key] = REACT[key] === val ? undefined : val;
-  try{ localStorage.setItem('still.reactions', JSON.stringify(REACT)); }catch(e){}
-  render();
-}
 function msgByKey(key){
   const c = convo(); return c ? c.msgs.find(m => msgKey(m) === key) : null;
 }
 /* A shared reply carries its label with it: out of the conversation, it
    must still say it is simulated and who wrote it. Only verified spans keep
    quotation marks, as in the chat. */
+/* A reply as plain text, paragraphs kept: what Copy, Read aloud and
+   feedback carry. Verified spans keep their quotation marks. */
+function replyPlain(m){
+  if(!m.agent) return String(m.text || '').trim();
+  const tmp = document.createElement('div');
+  tmp.innerHTML = agentBubble(m.agent, m.text);
+  tmp.querySelectorAll('q').forEach(q => { q.textContent = '“' + q.textContent + '”'; });
+  tmp.querySelectorAll('sup').forEach(s => s.remove());
+  return [...tmp.querySelectorAll('p')].map(x => x.textContent.trim()).filter(Boolean).join('\n\n');
+}
+let COPIED = null;
+async function copyReply(key){
+  const m = msgByKey(key); if(!m) return;
+  try{ await navigator.clipboard.writeText(replyPlain(m)); }catch(e){ return; }
+  COPIED = key; render();
+  setTimeout(() => { if(COPIED === key){ COPIED = null; render(); } }, 1600);
+}
+/* Read aloud: the browser's own voice, in the reply's language. Tapping
+   again, or another reply, stops it. */
+let SPEAKING = null;
+function speakReply(key){
+  const synth = window.speechSynthesis; if(!synth) return;
+  const was = SPEAKING;
+  synth.cancel(); SPEAKING = null;
+  if(was === key){ render(); return; }
+  const m = msgByKey(key); if(!m) return render();
+  const text = replyPlain(m);
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = questionLang(text) === 'zh' ? 'zh-CN' : 'en-US';
+  const voice = synth.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith(u.lang.slice(0, 2)));
+  if(voice) u.voice = voice;
+  u.onend = u.onerror = () => { if(SPEAKING === key){ SPEAKING = null; render(); } };
+  SPEAKING = key; render();
+  synth.speak(u);
+}
+/* Feedback on one reply. The thumb opens the sheet; only a sent rating
+   fills it. Submitting sends the conversation to Still, and the sheet says
+   so before anyone presses the button. */
+let FEEDBACK = null;   // { key, rating, comment, sending, err }
+let THANKED = null;
+function openFeedback(key, rating){
+  FEEDBACK = { key, rating, comment: '', sending: false, err: '' };
+  render();
+  setTimeout(() => { const b = document.querySelector('.fb-sheet [data-fb-rate].on'); if(b) b.focus(); });
+}
+function feedbackDialog(){
+  if(!FEEDBACK) return '';
+  const f = FEEDBACK;
+  const UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4v-9h3zm0 0l4-7a2 2 0 0 1 2 2v3h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/></svg>';
+  return `<div class="backdrop" data-fb-cancel="1"></div>
+    <div class="modal sheet fb-sheet" role="dialog" aria-modal="true" aria-labelledby="fb-t">
+      <header><b id="fb-t">${t('Give feedback','反馈')}</b></header>
+      <div class="fb-body">
+        <div class="fb-rates" role="group" aria-label="${t('Rating','评价')}">
+          <button type="button" class="act${f.rating === 'up' ? ' on' : ''}" data-fb-rate="up"
+            aria-pressed="${f.rating === 'up'}" aria-label="${t('Good reply','回应不错')}">${UP}</button>
+          <button type="button" class="act down${f.rating === 'down' ? ' on' : ''}" data-fb-rate="down"
+            aria-pressed="${f.rating === 'down'}" aria-label="${t('Bad reply','回应不好')}">${UP}</button>
+        </div>
+        <textarea id="fb-comment" rows="4" maxlength="2000"
+          placeholder="${t('Tell us more (optional)','补充说明（可选）')}"
+          aria-label="${t('Tell us more (optional)','补充说明（可选）')}">${esc(f.comment)}</textarea>
+        <p class="fb-note">${t('Submitting sends this conversation to Still so we can fix problems.',
+          '提交会把这段对话发送给 Still，用于修复问题。')}</p>
+        ${f.err ? `<p class="fb-err" role="alert">${esc(f.err)}</p>` : ''}
+      </div>
+      <footer class="fb-row">
+        <button type="button" class="fb-cancel" data-fb-cancel="1">${t('Cancel','取消')}</button>
+        <button type="button" class="fb-send" data-fb-send="1"${f.sending ? ' disabled' : ''}>${
+          f.sending ? t('Sending…','发送中…') : t('Submit feedback','提交反馈')}</button>
+      </footer>
+    </div>`;
+}
+async function sendFeedback(){
+  const f = FEEDBACK; if(!f || f.sending) return;
+  const box = document.getElementById('fb-comment');
+  if(box) f.comment = box.value;
+  const c = convo(), m = msgByKey(f.key);
+  if(!c || !m){ FEEDBACK = null; return render(); }
+  if(!AGENT_URL){ f.err = t("Feedback can't be sent from this page.", '这个页面无法发送反馈。'); return render(); }
+  const conversation = c.msgs.filter(x => !x.context && (x.mine || x.id)).slice(-40).map(x => ({
+    role: x.mine ? 'user' : 'thinker', who: x.mine ? 'Reader' : x.name,
+    text: x.mine ? String(x.text || '') : replyPlain(x), at: new Date(x.at).toISOString() }));
+  const body = { rating: f.rating, comment: f.comment.trim(), message_id: m.round || msgKey(m),
+    platform: 'web', lang, model: (m.agent && m.agent.model) || null,
+    thinkers: c.cast.map(philById).filter(Boolean).map(p => p.name), conversation };
+  f.sending = true; f.err = ''; render();
+  try{
+    const r = await fetch(AGENT_URL + '/v1/feedback', { method: 'POST',
+      headers: agentHeaders({ 'content-type': 'application/json' }),   // as /v1/ask
+      body: JSON.stringify(body) });
+    if(!r.ok) throw new Error('feedback ' + r.status);
+  }catch(e){
+    if(FEEDBACK !== f) return;
+    f.sending = false;
+    f.err = t("Couldn't send it. Check your connection and try again.", '没能发送。请检查网络后再试。');
+    return render();
+  }
+  REACT[f.key] = f.rating;
+  try{ localStorage.setItem('still.reactions', JSON.stringify(REACT)); }catch(e){}
+  FEEDBACK = null; THANKED = f.key; render();
+  setTimeout(() => { if(THANKED === f.key){ THANKED = null; render(); } }, 2400);
+}
+document.addEventListener('keydown', ev => {
+  if(FEEDBACK && ev.key === 'Escape' && !FEEDBACK.sending){ ev.preventDefault(); FEEDBACK = null; render(); }
+});
 async function shareReply(key){
   const m = msgByKey(key); if(!m) return;
   const p = philById(m.id) || { name: m.name };
-  const tmp = document.createElement('div');
-  tmp.innerHTML = m.agent ? agentBubble(m.agent, m.text) : paras(m.text);
-  tmp.querySelectorAll('q').forEach(q => { q.textContent = '“' + q.textContent + '”'; });
-  tmp.querySelectorAll('sup').forEach(s => s.remove());
-  const body = [...tmp.querySelectorAll('p')].map(x => x.textContent.trim()).filter(Boolean).join('\n\n');
+  const body = replyPlain(m);
   const model = m.agent && m.agent.model ? shortModel(m.agent.model) : t('an AI model','AI 模型');
   const text = `${pn(p)}: ${body}\n\n` + t(
     `Simulated. Written by ${model} in ${pn(p)}'s voice, not their words. From Still.`,
@@ -4428,6 +4577,10 @@ async function agentSpeak(c, cast){
       t('Stopped. No one else was asked.', '已停止，没有再问其他人。') });
     save(); render();
   };
+  // Chats opened before B11 have the card but no ask: send its words.
+  const ctxMsg = c.msgs.find(m => m.context && m.quote);
+  const askCtx = !ctxMsg ? null : ctxMsg.ask || { quote: ctxMsg.quote.en || L(ctxMsg.quote), work: '',
+    author: (ctxMsg.source && ctxMsg.source.label && String(ctxMsg.source.label.en || '').split(',')[0]) || '', passageId: '' };
   for(const p of cast.filter(x => AGENT_IDS[x.id])){
     if(ROUND.ctl.signal.aborted){ stopped(); return; }
     // Nothing runs in a tab nobody is looking at. The round stops here and
@@ -4446,6 +4599,7 @@ async function agentSpeak(c, cast){
       const out = await agentFetch('/v1/ask',
         { question, thinker: AGENT_IDS[p.id], why: true, message_id: ROUND && ROUND.id,
           lang: questionLang(question),
+          ...(askCtx ? { context: askCtx } : {}),
           ...(pick ? { choice: pick.id } : {}) }, 90000);
       if(out && out.rated){
         chat.typing = null;
@@ -4553,7 +4707,7 @@ async function agentSpeak(c, cast){
     why.provider_host = (served && served.provider_host)
       || (AGENT_INFO && AGENT_INFO.provider_host) || '';
     c.msgs.push({ id:p.id, name:p.name, text:String(row.answer), said:null,
-                  at: Date.now(), agent: why });
+                  at: Date.now(), agent: why, round: ROUND && ROUND.id });
     markFresh(c.msgs[c.msgs.length - 1]);
     c.at = Date.now(); save(); render();
   }
@@ -4721,9 +4875,7 @@ function agentRow(m, p, cont, last){
       <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
       <div class="bubble">${agentBubble(a, m.text)}</div>
       ${passages.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
-        <summary><span>${esc([t('What they actually wrote','真正写下的'),
-          t(`${passages.length} passage${passages.length > 1 ? 's' : ''}`, `${passages.length} 段`),
-          cleanTitle(passages[0].title || passages[0].work_id || '')].filter(Boolean).join(' · '))}</span>
+        <summary><span>${t('Sources','来源')} · ${passages.length}</span>
           <svg class="chev" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
       </details>` : ''}
@@ -5429,6 +5581,7 @@ function meSettings(){
           <dd>${t('Your answers, likes, views, language and name.','你的回答、喜欢、浏览记录、语言和名字。')}</dd>
           <dt>${t("Sent to Still's AI",'发送给 Still 的 AI')}</dt>
           <dd>${t('What you type in chat, kept without your name.','你在聊天中输入的内容，保存时不含你的名字。')}</dd>
+          <dd>${t('If you submit feedback on a reply, the conversation it came from.','如果你对某条回应提交反馈，会发送它所在的整段对话。')}</dd>
         </dl></section>
       <section><h3>${t('Erase what this browser remembers','清除这个浏览器记住的内容')}</h3>
         <p>${t('Your answers and likes. There is no account, so this is the whole of it and it cannot be undone.','你的回答与喜欢。没有账号，所以这就是全部，且无法撤销。')}</p>
@@ -5491,7 +5644,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog();
+  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -5701,16 +5854,23 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-chat-from-book]'))){
     const r = drawn, P = passageOf(r), v = P && P.voice, p = P && P.phil;
     if(!r) return;
-    // The passage opens the chat as context, shown as a quote card. It is
-    // not the reader's message and is never sent as one: the reader types
-    // first.
+    // The passage opens the chat as context, shown as a quote card; the
+    // first question about it is sent for the reader (below).
     // A text, a school or a voice with no persona: the passage still opens
     // the chat, and the reader picks who to talk to about it.
     const c = { id: 'c' + Date.now(), cast: p ? [p.id] : [], said: {}, at: Date.now(),
-      msgs: [{ context: true, at: Date.now(), quote: P.quote, source: P.source, voiceId: v ? v.id : null }] };
+      msgs: [{ context: true, at: Date.now(), quote: P.quote, source: P.source, voiceId: v ? v.id : null,
+        // B11: what the agent needs to answer about this passage, sent with
+        // every question in this chat (/v1/ask "context").
+        ask: askContext(r, P) }] };
     chat.convos.push(c); chat.open = c.id; chat.pending = []; chat.picking = !p;
     chat.query = ''; chat.filter = 'all';
-    save(); return tab('chat');
+    save(); tab('chat');
+    // Founder: with someone to ask, the first message is sent for the
+    // reader — "What do you mean by …?" — so the thinker answers at once.
+    if(p){ const q = L(P.quote) || P.quote.en || '';
+      sendText(t(`What do you mean by “${q}”?`, `你说“${q}”是什么意思？`)); }
+    return;
   }
   if((el = hit('#book'))){ toggleBook(); return; }
 
@@ -5817,7 +5977,15 @@ document.addEventListener('click', ev => {
     return;
   }
   if((el = hit('[data-derive-close]'))){ closeDerive(); return; }
-  if((el = hit('[data-react]'))){ react(el.dataset.key, el.dataset.react); return; }
+  if((el = hit('[data-react]'))){ openFeedback(el.dataset.key, el.dataset.react); return; }
+  if((el = hit('[data-copy]'))){ copyReply(el.dataset.copy); return; }
+  if((el = hit('[data-speak]'))){ speakReply(el.dataset.speak); return; }
+  if((el = hit('[data-fb-rate]'))){
+    const box = document.getElementById('fb-comment');
+    if(FEEDBACK){ if(box) FEEDBACK.comment = box.value; FEEDBACK.rating = el.dataset.fbRate; }
+    render(); const b = document.querySelector('.fb-sheet [data-fb-rate].on'); if(b) b.focus(); return; }
+  if((el = hit('[data-fb-cancel]'))){ if(FEEDBACK && !FEEDBACK.sending){ FEEDBACK = null; render(); } return; }
+  if((el = hit('[data-fb-send]'))){ sendFeedback(); return; }
   if((el = hit('[data-share]'))){ shareReply(el.dataset.share); return; }
   if((el = hit('[data-usage-close]'))){ closeUsage(); return; }
   if((el = hit('[data-books-view]'))){
@@ -5919,9 +6087,14 @@ function send(){
   const text = box ? box.value.trim() : '';
   if(!text || chat.busy) return;
   if(accessBlocked()) return render();
+  chat.draft = ''; if(box){ box.value = ''; grow(box); }
+  sendText(text);
+}
+function sendText(text){
+  const c = convo(); if(!c || !text || chat.busy) return;
+  if(accessBlocked()) return render();
   c.msgs.push({ mine:true, text, at: Date.now() });
   c.at = Date.now();
-  chat.draft = ''; if(box){ box.value = ''; grow(box); }
   save(); render();
   speak('The reader just said: ' + text + '\nAnswer them.');
 }
