@@ -3292,10 +3292,10 @@
    "locator": "",
    "locatorApprox": false,
    "translator": "Giles, Herbert Allen (d. 1935)",
-   "context": "Chuang Tzu, from a passage on knowledge and its limits.",
+   "context": "Chuang Tzu, chapter XXII, where the character Confucius answers his disciple Yen Hui; Zhuangzi often puts his own ideas in Confucius's mouth.",
    "interpretation": {
-    "en": "The line belongs to a passage on the limits of knowledge, and the surrounding text mixes the Zhuangzi with Giles's notes, so the speaker is not clear from this excerpt. It expresses a recurring Daoist idea: the highest speech says nothing and the highest action does nothing deliberate, because words and purposeful deeds carve up what is whole. The next remark, that spread-out knowledge proves shallow, makes a related point about the vanity of trying to know everything.",
-    "zh": "这句话属于一段讨论知识局限的文字，周围文本把《庄子》原文与翟理斯的注释混在一起，所以从这段摘录看不清说话人是谁。它表达了道家反复出现的观念：最高的言语不发一言，最高的行动不刻意作为，因为言辞和有目的的作为会割裂本为整体的东西。紧接着说知识铺得越开就越显浅薄，讲的是与此相关的道理：想要无所不知是徒劳的。"
+    "en": "In this story the character Confucius is answering his disciple Yan Hui; the words are Zhuangzi's invention, not the historical Confucius. The line expresses a recurring Daoist idea: the highest speech says nothing and the highest action does nothing deliberate, because words and purposeful deeds carve up what is whole. The next remark, that spread-out knowledge proves shallow, makes a related point about the vanity of trying to know everything. Giles mixes his own notes into the surrounding text, so the exact boundaries of the original are uncertain here.",
+    "zh": "在这个故事里，说话的是角色孔子，他在回答弟子颜回；这些话是庄子的虚构，并非历史上的孔子所说。这句话表达了道家反复出现的一个观念：最高的言语什么也不说，最高的行动不刻意做什么，因为言语和有意的作为会把浑然一体的东西割裂开。紧接着说，铺开的知识终究浅薄，讲的是同一层意思：想要无所不知是徒劳的。翟理斯把自己的注释混入了上下文，所以原文的确切起止在这里并不确定。"
    }
   },
   {
@@ -3308,10 +3308,10 @@
    "locator": "",
    "locatorApprox": false,
    "translator": "Giles, Herbert Allen (d. 1935)",
-   "context": "Chuang Tzu, on how what we make everything of becomes what we cannot bear to lose.",
+   "context": "Chuang Tzu, chapter XIV, where the character Lao Tzu lectures Confucius; the words are Zhuangzi's, put in Lao Tzu's mouth.",
    "interpretation": {
-    "en": "The passage observes that whatever people make into everything for themselves becomes what they cannot bear to lose: those who live for wealth cannot give up money, those who live for fame cannot give up renown, those who love power will not hand it to others. Such people are anxious while holding and miserable when losing, and never learn from the past. Giles's closing phrase, accursed of God, imposes a theistic sense; the original speaks of people punished by Heaven, an impersonal order rather than a personal God. The excerpt does not show who is speaking.",
-    "zh": "这段文字指出，人把什么当作自己的一切，什么就成了他无法承受失去的东西：为财富而活的人放不下钱，为名声而活的人放不下名，贪恋权力的人不肯把权柄交给别人。这样的人得之则忧，失之则悲，却从不从过去吸取教训。翟理斯在结尾把他们译作受上帝诅咒的人，带进了有神论色彩；原文说的是受天惩罚的人，天是一种非人格的秩序，而非人格化的上帝。从这段摘录看不出说话人是谁。"
+    "en": "In this story the character Lao Tzu is lecturing Confucius; the speech is Zhuangzi's invention. It observes that whatever people make into everything for themselves becomes what they cannot bear to lose: those who live for wealth cannot give up money, those who live for fame cannot give up renown, those who love power will not hand it to others. Such people are anxious while holding and miserable when losing, and never learn from the past. Giles's closing phrase, accursed of God, imposes a theistic sense; the original speaks of people punished by Heaven, an impersonal order rather than a personal God.",
+    "zh": "在这个故事里，说话的是角色老子，他在教诲孔子；这段话是庄子的虚构。它指出，人把什么当作自己的一切，什么就成了他失去不起的东西：以财富为一切的人放不下钱，以名声为一切的人放不下名，贪恋权力的人不肯把权柄交给别人。这样的人拥有时战战兢兢，失去时悲苦不堪，却从不从过去吸取教训。翟理斯结尾译作被上帝诅咒的人，带入了有神论色彩；原文说的是受天惩罚的人，天是一种非人格的秩序，而不是人格化的上帝。"
    }
   },
   {
@@ -3968,6 +3968,134 @@
    "interpretation": {
     "en": "This is the second-to-last sentence of Self-Reliance. Emerson has just described how a turn of good fortune lifts people's spirits and makes them expect good days, and he dismisses that hope. Peace, he says, cannot come from outside events at all, only from the self, and the essay's final sentence restates this as the triumph of principles. The two lines together sum up the essay's argument that reliance on externals, whether custom, opinion or luck, is the opposite of self-reliance.",
     "zh": "这是《自立》的倒数第二句。爱默生刚刚描述了好运如何让人精神振奋、期待好日子，并否定了这种期望。他说，平静根本不可能来自外在事件，只能来自自身；文章最后一句又把这一点重申为原则的胜利。两句合起来概括了全文的论点：依赖外物，无论是习俗、舆论还是运气，都与自立背道而驰。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-01853-9",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "The more a thing is desired and loved, the more does its loss bring sorrow and pain.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF SEPARATE SUBSTANCES AS PRETENDED BY THE, CHAPTER XLVIII",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "In the Summa Contra Gentiles, Aquinas argues that the loss of what we love most must bring the deepest sorrow.",
+   "interpretation": {
+    "en": "This is a premise in Aquinas's case that perfect happiness cannot be had in this life. The more something is loved, the more its loss hurts; happiness is loved most of all, and any happiness on earth will be lost, at the latest at death. So earthly happiness always carries the shadow of its own ending, and for Aquinas that is a sign the final good lies elsewhere, in the vision of God.",
+    "zh": "这是阿奎那论证此生无法获得完满幸福的一个前提。越被爱的东西，失去它就越痛苦；幸福是人最爱的，而尘世的任何幸福都会失去，最迟在死亡之时。所以尘世的幸福总带着自身终结的阴影，在阿奎那看来，这恰恰说明终极的善在别处，在于对上帝的直观。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-02801-203",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "All human wisdom and goodness flow from the divine wisdom and goodness, and are a kind of likeness thereof.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF GRACE",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "The Summa Contra Gentiles, arguing that God cannot cause a person to sin, since human wisdom and goodness are an image of the divine.",
+   "interpretation": {
+    "en": "Aquinas uses this line to argue that God cannot be the cause of anyone's sin. Human wisdom and goodness are, on his view, a faint likeness of God's; a wise and good person would never push someone into wrongdoing, so God, who is wiser and better without limit, cannot either. The argument depends on his theology of creation, in which everything good in people is borrowed from its source.",
+    "zh": "阿奎那用这句话论证上帝不可能是任何人犯罪的原因。在他看来，人的智慧和善只是上帝智慧和善的微弱肖像；一个智慧而善良的人决不会把别人推向罪恶，那么无限地更智慧、更善良的上帝就更不会。这个论证依赖他的创造神学：人身上一切的善都借自它的源头。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-00500-7",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "Joy and delight are a kind of repose of the will in the object of its willing.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF SUPPOSITION",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "The Summa Contra Gentiles defines joy as the will at rest in what it wanted, on the way to an argument about God's own joy.",
+   "interpretation": {
+    "en": "Aquinas defines joy as the will coming to rest in what it was reaching for. Wanting is a kind of movement toward something; joy is what happens when the movement arrives. He offers the definition on the way to an argument that God, who already has everything his will is directed toward, rejoices most fully of all.",
+    "zh": "阿奎那把喜乐定义为意志在它所追求的对象中得到安息。想要是一种朝向某物的运动；喜乐就是这运动抵达时发生的事。他给出这个定义，是为了接下来论证：上帝已经拥有他意志所指向的一切，因而他的喜乐最为完满。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-00503-287",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "True love requires one to will another's good as one's own.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF SUPPOSITION",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "The Summa Contra Gentiles, on what it means to love: to want another's good as one wants one's own.",
+   "interpretation": {
+    "en": "Aquinas separates real love from love that is really self-interest. If someone is valued only for being useful or pleasant, the one doing the valuing loves only himself; true love wants the other's good for the other's sake. The point serves an argument that God truly loves created things, but the distinction, which Aquinas takes over from Aristotle on friendship, stands on its own.",
+    "zh": "阿奎那把真正的爱与实为自利的爱区分开来。如果一个人只因有用或令人愉快而被看重，那么看重他的人爱的其实只是自己；真正的爱是为了对方本身而愿对方好。这一点服务于论证上帝真正爱受造物，但这个区分源自亚里士多德论友爱，本身也站得住。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-03484-7",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "A man is good or bad in reference to virtue and vice, which are habits.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF THE SACRAMENT CAN RETURN TO GRACE, CHAPTER XLVIII",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "The Summa Contra Gentiles, on why virtue and vice are habits, settled dispositions, rather than single acts.",
+   "interpretation": {
+    "en": "For Aquinas a person's goodness lies in settled habits of character, virtues and vices, rather than in single acts. A habit does not decide what someone can do; it makes doing it well or badly come easily. He makes the point in a narrow setting, arguing that a priest's personal wickedness does not cancel his power to give the sacraments, though it makes him unfit to.",
+    "zh": "在阿奎那看来，人的好坏在于稳定的品格习性，即美德与恶习，而不在于单个的行为。习性并不决定人能做什么，而是让人做得好或做得坏变得容易。他是在一个很具体的场合提出这一点的：论证神父个人的邪恶并不取消他施行圣事的权能，只是使他不配施行。"
+   }
+  },
+  {
+   "id": "ap-aquinas-summa_contra_gentiles-mvp-00408-7",
+   "thinker": "aquinas",
+   "name": "Thomas Aquinas",
+   "en": "The more perfect the act of understanding is, the more delightful is it to the one who understands.",
+   "zh": null,
+   "work": "The Summa Contra Gentiles of Saint Thomas Aquinas",
+   "locator": "OF SINGULARS",
+   "locatorApprox": true,
+   "translator": "English Dominican Fathers (Laurence Shapcote, d. 1947)",
+   "context": "The Summa Contra Gentiles, holding that understanding brings delight, and more delight the more complete the understanding is.",
+   "interpretation": {
+    "en": "Aquinas holds that understanding is pleasurable, and the more complete the understanding, the greater the pleasure. The claim comes from Aristotle, for whom delight crowns a well-done activity. Aquinas uses it to argue that God, whose understanding is perfect, delights in it supremely, and that this delight shows God has a will.",
+    "zh": "阿奎那认为，理解本身带来快乐，理解越完满，快乐越大。这一说法来自亚里士多德：在他看来，快乐是一项活动做得好时的完成。阿奎那借此论证，上帝的理解是完满的，因而他从中得到最大的快乐，而这种快乐表明上帝有意志。"
+   }
+  },
+  {
+   "id": "ap-schopenhauer-fourfold_will_nature-pg50966-00622-1089",
+   "thinker": "schopenhauer",
+   "name": "Arthur Schopenhauer",
+   "en": "Truth can bide its time, for it has a long life before it.",
+   "zh": null,
+   "work": "On the Fourfold Root of the Principle of Sufficient Reason, and On the Will in Nature: Two Essays (revised edition)",
+   "locator": "Section 7, Proposition 24",
+   "locatorApprox": true,
+   "translator": "Hillebrand, Karl, Mme. (Jessie Hillebrand, d. 1905)",
+   "context": "Schopenhauer, contrasting intellectual fashions that vanish without trace with truth that can wait.",
+   "interpretation": {
+    "en": "The line closes a bitter, sarcastic passage aimed at Hegel and the university philosophy of Schopenhauer's day, which he thought was jargon written for salaries. Such fashions make a great noise and then vanish without trace; truth, on his view, can afford to wait for a later generation to notice it. The confidence is partly personal: Schopenhauer had been ignored for decades and believed time would vindicate him.",
+    "zh": "这句话收束了一段尖刻讥讽的文字，矛头指向黑格尔以及叔本华那个时代的大学哲学，他认为那是为薪水而写的行话。这类风尚喧嚣一时，随后消失得无影无踪；而在他看来，真理可以等待后来的一代人去发现。这种自信部分出于个人经历：叔本华被忽视了几十年，相信时间会证明他是对的。"
+   }
+  },
+  {
+   "id": "ap-schopenhauer-fourfold_will_nature-pg50966-00426-284",
+   "thinker": "schopenhauer",
+   "name": "Arthur Schopenhauer",
+   "en": "Our thirst after knowledge augments with our incapacity for belief.",
+   "zh": null,
+   "work": "On the Fourfold Root of the Principle of Sufficient Reason, and On the Will in Nature: Two Essays (revised edition)",
+   "locator": "Section I, Proposition 24",
+   "locatorApprox": true,
+   "translator": "Hillebrand, Karl, Mme. (Jessie Hillebrand, d. 1905)",
+   "context": "Schopenhauer, on the decline of religious belief in his time.",
+   "interpretation": {
+    "en": "Schopenhauer describes an age in which religious faith and authority lose their hold and people insist on judging for themselves. As belief weakens, he argues, the hunger to know grows stronger, because the need for metaphysics does not disappear with faith. He presents this as the moment when serious philosophy is wanted, and contrasts it sharply with the salaried academic philosophy he despised.",
+    "zh": "叔本华描述了一个宗教信仰和权威失去约束力、人们坚持自己作判断的时代。他认为，信仰越弱，求知的渴望就越强，因为对形而上学的需要并不随信仰一同消失。他把这看作需要严肃哲学的时刻，并把它与他所鄙视的、领薪水的学院哲学尖锐对立起来。"
    }
   }
  ]

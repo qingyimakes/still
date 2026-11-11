@@ -142,19 +142,25 @@
    left-set, a comfortable measure, size stepped down for a long passage. */
 .book2 .passage{font-family:var(--serif);margin:0;overflow-wrap:break-word;
   font-size:1.62em;line-height:1.5;color:var(--ink);
-  font-weight:460;font-optical-sizing:none;font-variation-settings:"opsz" 14;letter-spacing:.003em;
-  hanging-punctuation:first}
+  font-weight:460;font-optical-sizing:none;font-variation-settings:"opsz" 14;letter-spacing:.003em}
+/* No hanging-punctuation: only WebKit honours it, and it hangs the opening
+   mark outside .leaf-text, which scrolls and so clips it — on an iPhone the
+   passage showed its closing ” and no opening “ (founder, 2026-11-11). */
 .book2 .attrib{font-family:var(--serif);font-style:italic;margin:0;
   font-size:1.31em;text-align:right;color:var(--ink-tertiary)}
 .book2 .leaf-text.long .passage,.book2 .front .passage{font-size:1.44em;line-height:1.5}
 .book2 .attrib .linkish{font:inherit;color:var(--ink);text-decoration:underline;
   text-decoration-color:var(--hairline-strong);text-underline-offset:.2em}
-/* Centred when it fits; when it does not, it starts at the top and the
-   page scrolls. */
+/* The label (英文原文), passage and attribution, centred between the page
+   top and the hairline over the links, as in the app. When they do not
+   fit, they start at the top and the block scrolls. The centring is two
+   spacers that shrink to nothing, not auto margins on the first and last
+   child: the label's own margin:0 (index.html) beat that, and a zh page
+   with the label sat at the top (founder, 2026-11-11). */
 .leaf-text{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-start;
-  gap:5cqw;scrollbar-width:none}
-.leaf-text > :first-child{margin-top:auto}
-.leaf-text > :last-child{margin-bottom:auto}
+  scrollbar-width:none}
+.leaf-text::before,.leaf-text::after{content:"";flex:1 1 0}
+.leaf-text > :not(:last-child){margin-bottom:5cqw}
 .leaf-acts{flex:none;display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 var(--sp-m);
   padding-top:4cqw;margin-top:4cqw;border-top:1px solid var(--hairline)}
 .leaf-acts .linkish{font-family:var(--sans);font-size:max(14px,1.19em);color:var(--ink);

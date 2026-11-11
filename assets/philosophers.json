@@ -789,7 +789,41 @@
    "voiceId": null,
    "origin": null,
    "image": "roster-thomas-aquinas.jpg",
-   "quotes": [],
+   "quotes": [
+    {
+     "text": {
+      "en": "True love requires one to will another's good as one's own.",
+      "zh": "True love requires one to will another's good as one's own."
+     },
+     "label": {
+      "en": "Thomas Aquinas, Summa Contra Gentiles, trans. English Dominican Fathers (Laurence Shapcote)",
+      "zh": "托马斯·阿奎那《反异教大全》，英国多明我会神父（沙普科特）英译"
+     },
+     "poolId": "ap-aquinas-summa_contra_gentiles-mvp-00503-287"
+    },
+    {
+     "text": {
+      "en": "The more a thing is desired and loved, the more does its loss bring sorrow and pain.",
+      "zh": "The more a thing is desired and loved, the more does its loss bring sorrow and pain."
+     },
+     "label": {
+      "en": "Thomas Aquinas, Summa Contra Gentiles, trans. English Dominican Fathers (Laurence Shapcote)",
+      "zh": "托马斯·阿奎那《反异教大全》，英国多明我会神父（沙普科特）英译"
+     },
+     "poolId": "ap-aquinas-summa_contra_gentiles-mvp-01853-9"
+    },
+    {
+     "text": {
+      "en": "Joy and delight are a kind of repose of the will in the object of its willing.",
+      "zh": "Joy and delight are a kind of repose of the will in the object of its willing."
+     },
+     "label": {
+      "en": "Thomas Aquinas, Summa Contra Gentiles, trans. English Dominican Fathers (Laurence Shapcote)",
+      "zh": "托马斯·阿奎那《反异教大全》，英国多明我会神父（沙普科特）英译"
+     },
+     "poolId": "ap-aquinas-summa_contra_gentiles-mvp-00500-7"
+    }
+   ],
    "imageLicence": {
     "file": "roster-thomas-aquinas.jpg",
     "licence": "Public domain",
@@ -1372,7 +1406,32 @@
    "voiceId": null,
    "origin": null,
    "image": "roster-arthur-schopenhauer.jpg",
-   "quotes": [],
+   "quotes": [
+    {
+     "text": {
+      "en": "Truth can bide its time, for it has a long life before it.",
+      "zh": "Truth can bide its time, for it has a long life before it."
+     },
+     "label": {
+      "en": "Arthur Schopenhauer, On the Fourfold Root of the Principle of Sufficient Reason, and On the Will in Nature, trans. Mme Karl Hillebrand",
+      "zh": "叔本华《论充足理由律的四重根》与《论自然中的意志》，希勒布兰德夫人 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/50966",
+     "poolId": "ap-schopenhauer-fourfold_will_nature-pg50966-00622-1089"
+    },
+    {
+     "text": {
+      "en": "Our thirst after knowledge augments with our incapacity for belief.",
+      "zh": "Our thirst after knowledge augments with our incapacity for belief."
+     },
+     "label": {
+      "en": "Arthur Schopenhauer, On the Fourfold Root of the Principle of Sufficient Reason, and On the Will in Nature, trans. Mme Karl Hillebrand",
+      "zh": "叔本华《论充足理由律的四重根》与《论自然中的意志》，希勒布兰德夫人 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/50966",
+     "poolId": "ap-schopenhauer-fourfold_will_nature-pg50966-00426-284"
+    }
+   ],
    "imageLicence": {
     "file": "roster-arthur-schopenhauer.jpg",
     "licence": "Public domain",

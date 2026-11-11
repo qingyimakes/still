@@ -174,7 +174,10 @@ img{max-width:100%}
 .nav-ghost::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--dim,0)}
 .nav-ghost.under{z-index:0}
 .nav-ghost.over{z-index:3;box-shadow:-10px 0 30px rgba(36,50,53,.12)}
-html.nav-busy #view{position:relative;z-index:2;background:var(--bg)}
+/* The page sliding in covers the whole screen: a short page (a thinker
+   with a few lines) let the old page show below it, half-drawn, while it
+   slid (founder, B21). */
+html.nav-busy #view{position:relative;z-index:2;background:var(--bg);min-height:100dvh}
 html.nav-busy.on-answers #view{background:transparent}
 html.nav-drag #view{box-shadow:-10px 0 30px rgba(36,50,53,.12)}
 .nav-ghost.push-out{animation:navUnder .36s cubic-bezier(.2,.8,.2,1) both}
@@ -309,6 +312,10 @@ html.ob-open,html.ob-open body{overflow:hidden}
   box-shadow:0 12px 40px rgba(36,50,53,.22)}
 .af b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
 .af p{margin:var(--sp-xs) 0 var(--sp-m);font-size:14px;line-height:1.45;color:var(--ink-secondary)}
+.af-row{display:flex;border-top:1px solid var(--hairline)}
+.af .af-row button{flex:1;border-top:0;font-weight:500}
+.af .af-row button + button{border-left:1px solid var(--hairline)}
+.af .af-danger{color:var(--danger);font-weight:600!important}
 .af button{display:block;width:100%;min-height:44px;text-align:center;border-top:1px solid var(--hairline);font-size:16px;font-weight:600;color:var(--ink)}
 .q-why{font-size:17px;line-height:1.45;color:var(--text-body);margin:12px 0 0}
 
@@ -347,7 +354,13 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .av{width:46px;height:46px;flex:none;border-radius:50%;background:var(--parchment);
     display:grid;place-items:center;overflow:hidden;font-family:var(--serif);
     font-size:19px;color:var(--initials)}
-.av img{width:100%;height:100%;object-fit:cover}
+/* The photo fills the circle exactly. As a grid item its height:100% was
+   ignored, so a tall portrait kept its own shape (52x77 in a 52 circle) and
+   the parchment showed at the edge (founder, B19). Pinned to the circle
+   instead, and set a little high so faces stay in. */
+.av{position:relative}
+.av img{position:absolute;inset:0;display:block;width:100%;height:100%;
+        object-fit:cover;object-position:50% 20%}
 .av--lg{width:56px;height:56px;font-size:22px}
 .row-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:0}
 .row-body > .voted{margin-top:var(--sp-s)}
@@ -355,6 +368,8 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .row-body > .claim{margin-top:var(--sp-l)}
 .row-body > .detail{margin-top:var(--sp-s)}
 .row-body > .reach{margin-top:var(--sp-l)}
+/* B16: label the reach note so it isn't read as part of the reply (matches the app's meta style). */
+.reach-k{font-family:var(--sans);font-style:normal;font-size:13px}
 .row-body > .readmore{margin-top:var(--sp-xs)}
 .row-body > .row-foot{margin-top:var(--sp-m)}
 .row-name{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
@@ -701,6 +716,7 @@ button.cover:hover{outline:2px solid var(--hairline-strong);outline-offset:2px}
 /* --- Entry (voice / work) ------------------------------------------------ */
 .entry{padding:20px}
 .entry-head{display:flex;gap:16px;align-items:center}
+.entry-head .facts{margin:2px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-secondary)}
 .entry-chat{display:flex;align-items:center;flex-wrap:wrap;gap:var(--sp-s) var(--sp-m);margin-top:var(--sp-m)}
 .entry-chat .meta{margin:0}
 .chat-go{font-size:15px;font-weight:500;padding:10px 20px;min-height:44px;
@@ -756,15 +772,29 @@ button.cover:hover{outline:2px solid var(--hairline-strong);outline-offset:2px}
    behind them (founder): messages scroll underneath, and the list's bottom
    padding (set from the float's height) lets the last line clear it. */
 .convo-pane{position:relative}
-.cfoot{position:absolute;left:0;right:0;bottom:0;z-index:5;pointer-events:none;
-  /* Backed in the page colour, fading in over its top edge: text scrolling
-     up from below never shows behind the chip, around the message box or
-     between it and the tab bar, and there is no visible bar (founder). */
-  background:linear-gradient(to bottom, rgba(250,250,250,0), var(--bg) var(--sp-m))}
+.cfoot{position:absolute;left:0;right:0;bottom:0;z-index:5;pointer-events:none}
+/* Phone and tablet: the tab bar sits under the message box, so the box
+   keeps 4px above it (founder), not the safe-area inset the screen edge
+   would need. */
+@media (max-width:899px){
+  .cfoot .composer{padding-bottom:var(--sp-xs)}
+}
 .cfoot > *{pointer-events:auto}
+/* Scroll to the latest: centred, floating just above the chat's foot, shown
+   only once the reader has scrolled up (founder, B18). */
+.tobottom{position:absolute;left:50%;top:calc(-40px - var(--sp-s));transform:translateX(-50%);
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--hairline-strong);color:var(--ink);cursor:pointer;
+  background:var(--bg);box-shadow:0 2px 10px rgba(36,50,53,.10)}
+.tobottom[hidden]{display:none}
+.chat-acts{align-items:center}
+.chat-acts .tobottom{position:static;transform:none;width:36px;height:36px}
 .cfoot .composer{background:transparent}
-.cfoot .chat-acts .ghost{background:linear-gradient(var(--chip),var(--chip)),var(--bg);
-  box-shadow:0 2px 10px rgba(36,50,53,.08)}
+/* B25: the chip and the ↓ share one centred line, styled like Claude's
+   floating pill: page-coloured, a hairline edge and a soft shadow. */
+.cfoot .chat-acts{justify-content:center}
+.cfoot .chat-acts .ghost{background:var(--bg);border:1px solid var(--hairline-strong);
+  box-shadow:0 2px 10px rgba(36,50,53,.10)}
 .chat-wrap.has-open .convo-pane{display:flex;flex-direction:column;height:100%;
                                 min-height:0}
 
@@ -873,7 +903,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .chead .add{flex:none;width:34px;height:34px;border-radius:50%;background:var(--chip);
             color:var(--ink);display:grid;place-items:center;padding:0}
 .add svg{width:15px;height:15px}
-.list-head .add svg{width:18px;height:18px}   /* the new-chat pencil, drawn at 24 */
+.chead .add svg.add-person{width:18px;height:18px}   /* drawn at 24 */
 
 /* Transcript */
 /* The transcript is one centred column, the composer's width, so a 65ch
@@ -986,12 +1016,22 @@ body.resizing{cursor:col-resize;user-select:none}
 .derived .s-lab{display:block;font-size:12px;color:var(--ink-secondary);margin-top:2px}
 .src-link{font:inherit;color:inherit;text-align:left}
 .said-more{max-width:100%}
+/* B17: the passages a reply rests on fold to one line — label · count ·
+   source, then a chevron — closed by default, like the app. */
+.said-fold{max-width:var(--measure);margin-top:var(--sp-s)}
+.said-fold summary{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;
+  font-size:12.5px;font-weight:500;color:var(--ink-secondary);padding:4px 0}
+.said-fold summary span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.said-fold summary::-webkit-details-marker{display:none}
+.said-fold .chev{flex:none;transition:transform .15s ease}
+.said-fold[open] .chev{transform:rotate(180deg)}
+.said-fold .said{margin-top:6px}
 .said-more summary{font-size:12.5px;font-weight:500;color:var(--ink-secondary);cursor:pointer;
                    list-style:none;padding:2px 0}
 .said-more summary::-webkit-details-marker{display:none}
 .said-more .said{margin-top:6px}
 
-.w{opacity:0;animation:win .18s ease-out forwards}
+.w,.wb{opacity:0;animation:win .18s ease-out forwards}
 .after{opacity:0;animation:win .25s ease-out forwards}
 @keyframes win{to{opacity:1}}
 /* The thinking line: a soft shimmer across the words. */
@@ -1127,6 +1167,16 @@ body.resizing{cursor:col-resize;user-select:none}
 .key-save{min-height:40px;padding:0 var(--sp-xl);border-radius:var(--r-pill);background:var(--ink);
   color:var(--on-ink);font-size:15px;font-weight:500}
 .key-save:disabled{opacity:.35}
+/* The request stepper, as the app's: counter, one question, Continue
+   (Skip on an unanswered optional step), Back. */
+.acc-sheet--steps .acc-sheet-body{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-m)}
+.acc-sheet--steps .acc-lede{margin:0}
+.acc-sheet--steps .acc-form{align-self:stretch;display:flex;flex-direction:column;gap:var(--sp-m)}
+.acc-have{font-size:14.5px}
+.acc-step{margin:0;font-size:13px;color:var(--ink-secondary)}
+.acc-f small{display:block;margin-top:var(--sp-xs);font-size:13px;line-height:1.4;color:var(--ink-secondary)}
+.acc-next{width:100%}
+.acc-back{align-self:flex-start;min-height:32px;font-size:14.5px;color:var(--ink-secondary)}
 .bar .bar-acc{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12.5px;
   padding:var(--sp-xs) var(--sp-m);min-height:32px;color:var(--ink);background:rgba(255,255,255,.92);
   backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
@@ -1180,6 +1230,20 @@ body.resizing{cursor:col-resize;user-select:none}
 .up-bar i{display:block;height:100%;border-radius:inherit;background:var(--ink)}
 .up-bar.low i{background:var(--danger)}
 .up-none{margin:0;font-size:13px;color:var(--ink-secondary)}
+/* Header like Claude's usage sheet: close on the left, title centred. */
+.up-top{display:grid;grid-template-columns:36px 1fr 36px;align-items:center;margin-bottom:var(--sp-m)}
+.up-top b{text-align:center;font-size:15px;font-weight:600;color:var(--ink)}
+.up-x{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+      background:var(--chip);color:var(--ink);cursor:pointer}
+.up-row{padding:var(--sp-m) var(--sp-l);border-radius:var(--r-inner);background:var(--chip-soft, var(--chip))}
+.up-row + .up-row{margin-top:var(--sp-s)}
+/* Moved to <body> when open (see render), so the tab bar never covers it and
+   a phone gets the full width. */
+.uback.portal{z-index:60}
+.upanel.portal{z-index:61}
+@media (min-width:640px){
+  .upanel.portal{position:fixed;left:50%;top:50%;bottom:auto;right:auto;transform:translate(-50%,-50%);width:360px}
+}
 @media (max-width:639px){
   .modal.sheet{max-height:62dvh}
   /* Access: a half-height sheet that scrolls inside, and grows once a field
@@ -1217,6 +1281,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .mchip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;
        color:var(--ink-secondary);padding:4px 10px;border-radius:var(--r-pill)}
 .mchip:hover,.mchip[aria-expanded="true"]{background:var(--chip);color:var(--ink)}
+.cmodel .mchip--wait{cursor:default}
 .mchip svg{width:9px;height:6px}
 .mback{position:fixed;inset:0;z-index:43}
 .mmenu{position:absolute;z-index:44;right:0;bottom:calc(100% + var(--sp-s));width:300px;
@@ -1344,7 +1409,10 @@ body.resizing{cursor:col-resize;user-select:none}
 
 .report-note{font-size:13px;line-height:1.45;color:var(--danger);
              background:rgba(236,105,64,.10);border-radius:var(--r-chip);
-             padding:10px 12px;margin-top:12px}
+             padding:10px 12px;margin-top:12px;
+             /* Brought into view when it opens (see [data-report]): clear of the
+                top bar and of the tab bar floating over the bottom. */
+             scroll-margin:72px 0 calc(96px + var(--nav-lift))}
 .empty{padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-tertiary)}
 
 /* ---------------------------------------------------------------------------
@@ -1476,6 +1544,10 @@ body.resizing{cursor:col-resize;user-select:none}
   html.in-convo .chat-wrap{height:calc(100dvh - 66px - var(--nav-lift))}
   html.in-convo .chead{padding-top:calc(8px + env(safe-area-inset-top,0px))}
   html.in-convo body.kb .chat-wrap{height:100dvh}
+  /* iPhone Safari doesn't shrink 100dvh for the keyboard; it scrolls the
+     page up instead and the chat header goes off screen. While typing, the
+     chat takes the visible height (--vvh, set from visualViewport). */
+  body.kb .chat-wrap,html.in-convo body.kb .chat-wrap{height:var(--vvh,100dvh)}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
@@ -1802,6 +1874,25 @@ function optionRow(q, o, chosen){
   </button>`;
 }
 
+/* A destructive step asks first, in a centred dialog with Cancel and a red
+   action (founder, B24): deleting a conversation, erasing this browser's
+   answers. Never an anchored popover, never window.confirm. */
+let CONFIRM = null;   // { kind: 'convo', id } | { kind: 'erase' }
+function confirmDialog(){
+  if(!CONFIRM) return '';
+  const convoAsk = CONFIRM.kind === 'convo';
+  const title = convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Erase what this browser remembers?','清除这个浏览器记住的内容？');
+  const body = convoAsk ? t("It's removed from this browser. This can't be undone.",'它会从这个浏览器中移除，且无法撤销。')
+                        : t("Your answers and likes. This can't be undone.",'你的回答与喜欢。此操作无法撤销。');
+  const act = convoAsk ? t('Delete','删除') : t('Erase','清除');
+  return `<div class="backdrop" data-confirm-cancel="1"></div>
+    <div class="af af--confirm" role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-d">
+      <b id="cf-t">${title}</b>
+      <p id="cf-d">${body}</p>
+      <div class="af-row"><button type="button" data-confirm-cancel="1">${t('Cancel','取消')}</button>
+        <button type="button" class="af-danger" data-confirm-ok="1">${act}</button></div>
+    </div>`;
+}
 let LEDE_OPEN = false;      // the thread card's description, expanded
 let ANSWER_FIRST = false;   // the "Answer first" note for an unanswered Home card
 function answerFirstDialog(){
@@ -1816,6 +1907,7 @@ function answerFirstDialog(){
 }
 document.addEventListener('keydown', ev => {
   if(ANSWER_FIRST && ev.key === 'Escape'){ ev.preventDefault(); ANSWER_FIRST = false; render(); }
+  if(CONFIRM && ev.key === 'Escape'){ ev.preventDefault(); CONFIRM = null; render(); }
 });
 function questionCard(q, flat){
   const chosen = state.votes[q.id] ?? null;
@@ -1857,16 +1949,17 @@ function questionCard(q, flat){
   </article>`;
 }
 
-/* Home, ordered by the reader's topics: today's question stays on top;
-   after it, questions sharing more of the picks come first, newest first
-   among equals. Nothing is dropped. A question without topics ranks as
-   sharing none. */
+/* Home, ordered by the reader's topics: the newest published question
+   always stays on top, whatever the picks (as the app does); after it,
+   questions sharing more of the picks come first, newest first among
+   equals. Nothing is dropped. A question without topics ranks as sharing
+   none. */
 function homeOrder(qs){
   if(!PICKS.length) return qs;
-  const d = new Date(), today = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  const pinned = qs.length && qs[0].date === today ? [qs[0]] : [];
   const score = q => (Array.isArray(q.topics) ? q.topics : []).filter(x => PICKS.includes(x)).length;
-  return pinned.concat(qs.slice(pinned.length).map((q, i) => ({ q, i, s: score(q) }))
+  const newest = qs.reduce((a, q) => !a || (q.date || '') > (a.date || '') ? q : a, null);
+  if(!newest) return qs;
+  return [newest].concat(qs.filter(q => q !== newest).map((q, i) => ({ q, i, s: score(q) }))
     .sort((a, b) => b.s - a.s || a.i - b.i).map(x => x.q));
 }
 /* The welcome: twice, once. What Still is (and is not), then what you
@@ -2011,7 +2104,7 @@ function responseRow({r, v}, q){
       <p class="claim">${esc(L(r.claim))}</p>
       ${r.detail ? `<p class="detail">${esc(L(r.detail))}</p>` : ''}
       ${r.extra ? `<p class="detail">${esc(L(r.extra))}</p>` : ''}
-      ${v.reach ? `<p class="reach">${esc(L(v.reach.note))}</p>` : ''}
+      ${v.reach ? `<p class="reach"><span class="reach-k">${t('Known for: ','代表性贡献：')}</span>${esc(L(v.reach.note))}</p>` : ''}
       ${link ? `<a class="readmore" href="${esc(link)}" target="_blank" rel="noopener">${
         esc(S('readMore'))}</a>` : ''}
 
@@ -2534,11 +2627,21 @@ function startChat(id){
   chat.convos.push(c); chat.open = c.id; chat.pending = []; chat.picking = false;
   save(); tab('chat');
 }
+/* Years · field · country under a thinker's name, as the app's
+   Explore.facts builds it from the roster (Wikidata). */
+function facts(p){   // yearText is defined with the map, below
+  if(!p) return '';
+  const parts = [];
+  if(p.born != null) parts.push(`${yearText(p.born)}–${p.died != null ? yearText(p.died) : ''}`);
+  if(p.field && L(p.field)) parts.push(L(p.field));
+  if(p.country && L(p.country)) parts.push(L(p.country));
+  return parts.length ? `<p class="facts">${esc(parts.join(' · '))}</p>` : '';
+}
 function philView(id){
   const p = philById(id);
   if(!p) return `<div class="empty">${t('Not found','没有找到')}</div>`;
   if(p.libraryOnly) return `<div class="page"><div class="entry">
-      <div class="entry-head">${castAvatar(p)}<div><h2>${esc(pn(p))}</h2>
+      <div class="entry-head">${castAvatar(p)}<div><h2>${esc(pn(p))}</h2>${facts(p)}
         <p class="meta">${t("Their texts are in Still's library. A full page is not written yet.",'他们的著作已收入 Still 的文库。完整介绍尚未写成。')}</p></div></div>
       ${chatButton(p)}</div></div>`;
   const v = p.voiceId ? byId(C.voices, p.voiceId) : null;
@@ -2554,7 +2657,7 @@ function philView(id){
     <div class="entry-head">
       ${castAvatar(p, 'av--lg')}
       <div>
-        <h2>${esc(pn(p))}</h2>
+        <h2>${esc(pn(p))}</h2>${facts(p)}
         <p class="meta">${v ? esc(kindLabel(v.kind)) + ' · ' + esc(L(v.origin))
                             : t('In the roster, not yet in the threads',
                                 '在名册中，尚未出现在讨论里')}</p>
@@ -2637,9 +2740,7 @@ function convoList(open){
   return `<aside class="convo-list">
     <div class="list-head">
       <h1>${t('Agon','争鸣')}</h1>${AGENT_URL ? rpPill() : ''}
-      <button class="add" data-new="1" aria-label="${t('New conversation','新建对话')}"><svg viewBox="0 0 24 24" aria-hidden="true"
-        fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path
-        d="M12 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><path d="M17.5 3.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></button>
+      <button class="add" data-new="1" aria-label="${t('New conversation','新建对话')}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     </div>
     ${AGENT_URL && RP_OPEN && !open ? `<div class="rp-bar">${rpLine()}</div>` : ''}
     ${chat.convos.length ? chat.convos
@@ -2652,9 +2753,7 @@ function convoList(open){
         return `<div class="crow${open && open.id === c.id ? ' on' : ''}${menu ? ' menu-open' : ''}${swiped ? ' swiped' : ''}" data-crow="${id}">
           ${CROW.renaming === c.id ? '' : `<div class="crow-acts"${swiped ? '' : ' aria-hidden="true"'}>
             <button type="button" class="ca-more" data-swipe-more="${id}" tabindex="-1">${t('More','更多')}</button>
-            ${CROW.confirm === c.id
-              ? `<button type="button" class="ca-del" data-drop-convo="${id}" tabindex="-1">${t('Delete for good','永久删除')}</button>`
-              : `<button type="button" class="ca-del" data-swipe-delete="${id}" tabindex="-1">${t('Delete','删除')}</button>`}
+            <button type="button" class="ca-del" data-swipe-delete="${id}" tabindex="-1">${t('Delete','删除')}</button>
           </div>`}
           <div class="crow-slide">
           ${CROW.renaming === c.id
@@ -2684,9 +2783,7 @@ function convoList(open){
         ${menu ? `<div class="crow-menu" role="menu">
           <button role="menuitem" data-crow-pin="${id}">${c.pinned ? t('Unpin','取消置顶') : t('Pin','置顶')}</button>
           <button role="menuitem" data-crow-rename="${id}">${t('Rename','重命名')}</button>
-          ${CROW.confirm === c.id
-            ? `<button role="menuitem" class="danger" data-drop-convo="${id}">${t('Delete for good','永久删除')}</button>`
-            : `<button role="menuitem" class="danger" data-crow-delete="${id}">${t('Delete','删除')}</button>`}
+          <button role="menuitem" class="danger" data-crow-delete="${id}">${t('Delete','删除')}</button>
         </div>` : ''}`}
         </div>`;
       }).join('')
@@ -2815,7 +2912,9 @@ function convoPane(c){
             fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="8.75" r=".7" fill="currentColor"/></svg></button>`
                             : t('Nobody here yet','这里还没有人')}</span>
       </div>
-      <button class="add" data-pick-open="1" aria-label="${t('Add','添加')}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      <button class="add" data-pick-open="1" aria-label="${t('Add people','添加成员')}"><svg class="add-person" viewBox="0 0 24 24" aria-hidden="true"
+        fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle
+        cx="10" cy="8" r="3.5"/><path d="M3.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M19 7v6M16 10h6"/></svg></button>
     </header>
     ${AGENT_URL && RP_OPEN && !accessBlocked() ? `<div class="rp-bar">${rpLine()}</div>` : ''}
 
@@ -2835,9 +2934,15 @@ function convoPane(c){
     </div>
 
     <div class="cfoot">
-    ${cast.length && c.msgs.some(m => !m.context) && !chat.busy && !accessBlocked() ? `<div class="chat-acts">
+    ${(() => {
+      // B25: the ↓ and "Keep them going" sit side by side as one centred
+      // group, like Claude's ↓ and "1 artifact"; alone, the ↓ floats centred.
+      const down = `<button type="button" class="tobottom" id="tobottom" hidden aria-label="${t('Scroll to the latest','滚动到最新')}"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
+      return cast.length > 1 && c.msgs.some(m => !m.context) && !chat.busy && !accessBlocked()
+        ? `<div class="chat-acts">${down}
       <button class="ghost" data-talk="1">${t('Keep them going','让他们继续')}</button>
-    </div>` : ''}
+    </div>` : down;
+    })()}
     ${cast.length && !c.msgs.length ? suggestions(cast) : ''}
 
     ${accessBlocked() ? '' : `<form class="composer" id="composer">
@@ -2941,8 +3046,15 @@ function modelControls(){
   // Shown whenever the agent answers, even with a single model: without an
   // access code the Claude models drop out, and the pill and today's-use
   // ring used to vanish with them.
-  if(!AGENT_URL || AGENT_STATE !== 'ok' || !agentChoices().length) return '';
-  const cur = agentChoice(); if(!cur) return '';
+  // Wherever an agent is configured the pill is there (founder: it was
+  // missing on the phone). Until the health check has answered it reads
+  // Auto — what a question sent with no choice gets — and is not yet a menu.
+  if(!AGENT_URL) return '';
+  const cur = AGENT_STATE === 'ok' && agentChoices().length ? agentChoice() : null;
+  if(!cur){
+    if(AGENT_STATE === 'unknown') setTimeout(agentReady);
+    return `<span class="mchip mchip--wait">${t('Auto','自动')}</span>`;
+  }
   const name = cur.id === 'auto' ? t('Auto','自动') : modelName(cur.id);
   const frac = usageFraction(cur.id);
   const r = 7, len = 2 * Math.PI * r;
@@ -2983,10 +3095,12 @@ function usagePanel(){
     const d = new Date(at);
     return isNaN(d) ? '' : d.toLocaleTimeString(lang === 'zh' ? 'zh-CN' : 'en-US', { hour:'numeric', minute:'2-digit' });
   })();
-  return `<div class="mback" data-usage-close="1"></div>
+  return `<div class="mback uback" data-usage-close="1"></div>
     <div class="mmenu upanel" role="dialog" aria-label="${t("Today's use","今日用量")}">
-      <div class="up-head"><b>${t("Today's use","今日用量")}</b>${resets
-        ? `<span>${t(`Resets ${resets}`, `${resets} 重置`)}</span>` : ''}</div>
+      <div class="up-top"><button type="button" class="up-x" data-usage-close="1" aria-label="${t('Close','关闭')}">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <b>${t("Today's use","今日用量")}</b><span class="up-x-pad"></span></div>
+      ${resets ? `<div class="up-head"><span>${t(`Resets ${resets}`, `${resets} 重置`)}</span></div>` : ''}
       ${rows.length ? rows.map(({ g, u }) => {
         const f = Math.min(1, u.replies / u.replies_cap);
         return `<div class="up-row">
@@ -3251,7 +3365,15 @@ function revealFresh(){
       node.replaceWith(frag);
     }
     const total = words * step;
-    art.querySelectorAll('.msg-foot,.msg-acts,.said,.said-more,.vblock footer').forEach(x => {
+    // Quote rules, quote marks drawn by CSS (q, blockquote), reference
+    // numbers: every element inside the reply waits for its own first word,
+    // so the whole reply types in top to bottom (founder).
+    bubble.querySelectorAll('*:not(.w)').forEach(el => {
+      const first = el.querySelector('.w');
+      el.classList.add('wb');
+      el.style.animationDelay = first ? first.style.animationDelay : (total - elapsed) + 'ms';
+    });
+    art.querySelectorAll('.msg-foot,.msg-acts,.said,.said-more,.said-fold,.vblock footer').forEach(x => {
       x.classList.add('after'); x.style.animationDelay = (total - elapsed) + 'ms'; });
     if(elapsed > total + 400) FRESH.delete(key);
   }
@@ -3634,7 +3756,7 @@ const ACCESS = {
   required: (() => { try{ return localStorage.getItem('still.accessRequired') === '1'; }catch(e){ return false; } })(),
   sent: (() => { try{ return localStorage.getItem('still.accessRequested') === '1'; }catch(e){ return false; } })(),
   email: '', role: '', heard: '', question: '', interview: false, linkedin: '', updates: false,
-  sending: false, err: '', codeOpen: false, sheet: false, reason: ''
+  sending: false, err: '', codeOpen: false, sheet: false, reason: '', step: 0
 };
 function accessRequired(reason){
   if(!ACCESS.required) ACCESS.sheet = 'chat';   // the moment it happens: open the sheet once
@@ -3714,46 +3836,78 @@ function accessSheet(){
         <b id="acc-title">${t('Access code','访问码')}</b><span aria-hidden="true"></span></header>
       <div class="acc-sheet-body">${keyForm()}</div>
     </div>`;
+  // As the app's AccessSheet: Cancel | title, then one question per step.
+  // The lede and "Have an access code?" sit on the first step only.
+  const first = (ACCESS.step || 0) === 0;
   return `<div class="backdrop" data-acc-close="1"></div>
-    <div class="modal acc-sheet" role="dialog" aria-modal="true" aria-labelledby="acc-title">
-      <header><b id="acc-title">${ACCESS.sheet === 'chat' ? t('Want to keep talking?','想继续对话？') : t('Request full access','申请完整权限')}</b>
-        <button class="x" type="button" data-acc-close="1" aria-label="${t('Close','关闭')}">×</button></header>
+    <div class="modal acc-sheet acc-sheet--steps" role="dialog" aria-modal="true" aria-labelledby="acc-title">
+      <header class="code-head"><button class="ghost" type="button" data-acc-close="1">${t('Cancel','取消')}</button>
+        <b id="acc-title">${ACCESS.sheet === 'chat' ? t('Want to keep talking?','想继续对话？') : t('Request access','申请访问')}</b><span aria-hidden="true"></span></header>
       <div class="acc-sheet-body">
         ${rpPill()}${rpLine()}
         ${ACCESS.sent
           ? `<p class="acc-done">${t("Thanks — we'll be in touch.", '谢谢，我们会联系你。')}</p>`
-          : `<p class="acc-lede">${ACCESS.sheet === 'chat' && ACCESS.reason === 'free_closed'
+          : `${first ? `<p class="acc-lede">${ACCESS.sheet === 'chat' && ACCESS.reason === 'free_closed'
               ? t("Free messages are closed for today. Still is in research preview — leave your email and we'll send you full access.",
                   '今天的免费消息已关闭。Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')
               : t("Still is in research preview — leave your email and we'll send you full access.",
-              'Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')}</p>${accessForm(ACCESS.sheet === 'chat' ? 'chat_limit' : 'home')}`}
-        ${codeLink()}
+              'Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')}</p>
+              <button type="button" class="ghost acc-have" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>` : ''}
+            ${accessForm(ACCESS.sheet === 'chat' ? 'chat_limit' : 'home')}`}
       </div>
     </div>`;
+}
+const ACC_STEPS = 5;
+/* Whether the optional question on this step has an answer: if not, the
+   button says Skip rather than Continue, as in the app. */
+function accAnswered(step){
+  if(step === 1) return !!ACCESS.role;
+  if(step === 2) return !!ACCESS.heard;
+  if(step === 3) return !!ACCESS.question.trim();
+  return true;
+}
+function accNext(source){
+  const step = ACCESS.step || 0;
+  if(step === ACC_STEPS - 1) return submitAccess(source);
+  if(step === 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ACCESS.email.trim())){
+    ACCESS.err = t('Please enter a valid email.', '请输入有效的邮箱。'); return render();
+  }
+  ACCESS.err = ''; ACCESS.step = step + 1; render();
+  setTimeout(() => { const f = document.querySelector('.acc-form input:not([type=radio]):not([type=checkbox])'); if(f) f.focus(); });
 }
 function accessForm(source){
   const opts = (name, list) => `<div class="acc-opts" role="radiogroup">${list.map(([v, l]) =>
     `<label class="fpill"><input type="radio" name="${source}-${name}" value="${v}" data-acc="${name}"${ACCESS[name] === v ? ' checked' : ''}>${esc(l)}</label>`).join('')}</div>`;
-  return `<form class="acc-form" data-acc-form="${source}" novalidate>
-      <label class="acc-f"><span>${t('Email','邮箱')}</span>
-        <input type="email" data-acc="email" value="${esc(ACCESS.email)}" autocomplete="email" required></label>
-      <fieldset class="acc-f"><legend>${t('You are…','你是…')} <i>${t('optional','选填')}</i></legend>${opts('role', ACCESS_ROLES())}</fieldset>
-      <fieldset class="acc-f"><legend>${t('How did you hear about Still?','你是怎么知道 Still 的？')} <i>${t('optional','选填')}</i></legend>${opts('heard', ACCESS_HEARD())}</fieldset>
-      <label class="acc-f"><span>${t('What question would you ask a thinker?','你想问思想家什么问题？')} <i>${t('optional','选填')}</i></span>
-        <input type="text" data-acc="question" value="${esc(ACCESS.question)}" maxlength="200"></label>
-      <label class="acc-check"><input type="checkbox" data-acc="interview"${ACCESS.interview ? ' checked' : ''}>
+  // One question per step, as the app's stepper: email (with its note),
+  // who you are, how you heard, your question, then the two consents.
+  const step = ACCESS.step || 0, last = step === ACC_STEPS - 1;
+  const opt = `<i>${t('optional','选填')}</i>`;
+  const body = step === 0 ? `<label class="acc-f"><span>${t('Email','邮箱')}</span>
+        <input type="email" data-acc="email" value="${esc(ACCESS.email)}" autocomplete="email" required>
+        <small>${t('We use your email only to send you access.','我们只用你的邮箱来发送访问权限。')}</small></label>`
+    : step === 1 ? `<fieldset class="acc-f"><legend>${t('You are…','你是…')} ${opt}</legend>${opts('role', ACCESS_ROLES())}</fieldset>`
+    : step === 2 ? `<fieldset class="acc-f"><legend>${t('How did you hear about Still?','你是怎么知道 Still 的？')} ${opt}</legend>${opts('heard', ACCESS_HEARD())}</fieldset>`
+    : step === 3 ? `<label class="acc-f"><span>${t('What question would you ask a thinker?','你想问思想家什么问题？')} ${opt}</span>
+        <input type="text" data-acc="question" value="${esc(ACCESS.question)}" maxlength="200"></label>`
+    : `<label class="acc-check"><input type="checkbox" data-acc="interview"${ACCESS.interview ? ' checked' : ''}>
         <span>${t("I'm open to a 20-minute video call about how I use Still — thank-you: 3 months of full access.",
           '我愿意参加 20 分钟视频访谈，谈谈我如何使用 Still（感谢：3 个月完整权限）。')}</span></label>
       ${ACCESS.interview ? `<label class="acc-f acc-sub"><span>${t('LinkedIn (optional, helps us schedule)','LinkedIn（可选，方便安排时间）')}</span>
         <input type="url" data-acc="linkedin" value="${esc(ACCESS.linkedin)}" maxlength="200"
           inputmode="url" autocomplete="url" placeholder="linkedin.com/in/…"></label>` : ''}
       <label class="acc-check"><input type="checkbox" data-acc="updates"${ACCESS.updates ? ' checked' : ''}>
-        <span>${t('Also send me occasional updates about Still.','也给我发送 Still 的不定期更新。')}</span></label>
+        <span>${t('Also send me occasional updates about Still.','也给我发送 Still 的不定期更新。')}</span></label>`;
+  const label = ACCESS.sending ? t('Sending…','发送中…')
+    : last ? t('Request access','申请访问')
+    : step >= 1 && !accAnswered(step) ? t('Skip','跳过') : t('Continue','继续');
+  return `<form class="acc-form" data-acc-form="${source}" novalidate>
+      <p class="acc-step">${t(`${step + 1} of ${ACC_STEPS}`, `第 ${step + 1} / ${ACC_STEPS} 步`)}</p>
+      ${body}
       ${ACCESS.err ? `<p class="key-bad" role="alert">${esc(ACCESS.err)}</p>` : ''}
-      <button type="submit" class="acc-go"${ACCESS.sending ? ' disabled' : ''}>${
-        ACCESS.sending ? t('Sending…','发送中…') : t('Request access','申请访问')}</button>
-      <p class="acc-note">${t('We save your email, your answers and your country — only to give you access and, if you ticked it, to contact you.',
-        '我们保存你的邮箱、回答和所在国家，仅用于发送访问权限，以及在你勾选时联系你。')}</p>
+      <button type="submit" class="acc-go acc-next"${ACCESS.sending ? ' disabled' : ''}>${label}</button>
+      ${step > 0 ? `<button type="button" class="acc-back" data-acc-back="1">${t('Back','上一步')}</button>` : ''}
+      ${last ? `<p class="acc-note">${t('We save your email, your answers and your country — only to give you access and, if you ticked it, to contact you.',
+        '我们保存你的邮箱、回答和所在国家，仅用于发送访问权限，以及在你勾选时联系你。')}</p>` : ''}
     </form>`;
 }
 
@@ -4417,7 +4571,7 @@ function agentBubble(a, fallback){
   const sentences = a.sentences && a.sentences.length ? a.sentences
                   : [{ text: fallback, quotes: [] }];
   // Inline html, with blank lines and block quotes as paragraph breaks.
-  const out = []; let para = [];
+  const out = []; let para = [], afterBlock = false;
   const flush = () => { const h = para.join('').trim(); if(h) out.push(`<p>${h}</p>`); para = []; };
   for(const s of sentences){
     let parts = [{ t: String(s.text || ''), q: null }];
@@ -4432,8 +4586,13 @@ function agentBubble(a, fallback){
     }
     for(const part of parts){
       if(!part.q){
-        const bits = part.t.replace(QUOTE_MARKS, '').split(/\n\s*\n/);
-        bits.forEach((b, k) => { if(k) flush(); para.push(esc(b)); });
+        let plain = part.t.replace(QUOTE_MARKS, '');
+        // The punctuation that closed a block quote would open the next
+        // paragraph ("。这些…"); the block already ends the sentence.
+        if(afterBlock) plain = plain.replace(/^[\s.,;:!?\u3002\uFF0C\u3001\uFF1B\uFF1A\uFF01\uFF1F\u2019\u201D'"\u300D\u300F\u00BB)\uFF09]+/, '');
+        if(plain) afterBlock = false;
+        const bits = plain.split(/\n\s*\n/);
+        bits.forEach((b, k) => { if(k) flush(); para.push(ital(esc(b))); });
         continue;
       }
       const n = nums[part.q.evidence_id], src = byId[part.q.evidence_id];
@@ -4441,16 +4600,20 @@ function agentBubble(a, fallback){
         // Drop the colon or dash that led into it; the block makes the break.
         if(para.length) para[para.length - 1] = para[para.length - 1].replace(/[\s:—–-]+$/, '');
         flush();
-        const title = src && (src.title || src.work_id || '');
-        const loc = src && src.locator && !String(title).includes(src.locator) ? src.locator : '';
-        out.push(`<blockquote class="vblock"><p>${esc(part.t)}</p>${src ? `<footer>${
+        const raw = src && (src.title || src.work_id || '');
+        const title = cleanTitle(raw);
+        const loc = [headingOf(raw), src && src.locator && !String(raw).includes(src.locator) ? locText(src.locator) : '']
+          .filter(Boolean).join(', ');
+        out.push(`<blockquote class="vblock"><p>${ital(esc(part.t))}</p>${src ? `<footer>${
           esc(title)}${loc ? ', ' + esc(loc) : ''}${
           n ? ` · ${t('passage','第')} ${n}${lang === 'zh' ? ' 段' : ''}` : ''}</footer>` : ''}</blockquote>`);
+        afterBlock = true;
       }else{
+        afterBlock = false;
         para.push(`<q class="vq">${esc(part.t)}</q>${n ? `<sup class="vref">${n}</sup>` : ''}`);
       }
     }
-    para.push(' ');
+    if(!afterBlock) para.push(' ');
   }
   flush();
   return out.join('') || '<p></p>';
@@ -4493,15 +4656,43 @@ function agentCheck(s, nums){
 /* The agent's locator, read aloud: "paragraphs 181-181 (MVP rule)" is one
    paragraph, numbered by Still's own corpus rule rather than an edition's,
    so it says that in words. Nothing is dropped. */
+/* The agent's titles and locators can carry its own bookkeeping
+   ("Gutenberg #52881 / interval main / heading: BOOK FIRST / body [114408,116971]
+   / segment 121", "profile interval main [56,166154)"). Readers see the work
+   and a plain place in it; a "heading:" becomes that place. */
+function cleanTitle(s){
+  s = String(s || '');
+  const cut = s.search(/,?\s*Gutenberg\s*#\d+|\s\/\s/);
+  return (cut > 0 ? s.slice(0, cut) : s).trim();
+}
+function headingOf(s){
+  const m = String(s || '').match(/heading:\s*([^/\[]+)/i);
+  if(!m) return '';
+  const h = m[1].trim();
+  return h === h.toUpperCase() ? h.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : h;
+}
+function cleanLoc(l){
+  l = String(l || '')
+    .replace(/\bprofile\s+/ig, '')
+    .replace(/\binterval\s+main\b\s*(\[[^\])]*[\])])?/ig, '')
+    .replace(/\b(body|segment)\s*(\[[^\])]*[\])]|\d+)/ig, '')
+    .replace(/\bheading:\s*[^/\[]+/ig, '')
+    .replace(/[\s/,]+$|^[\s/,]+/g, '').replace(/\s*\/\s*/g, ' ').replace(/\s{2,}/g, ' ');
+  return l;
+}
+/* _word_ in the source texts is the transcriber's italics. */
+const ital = h => h.replace(/(^|[\s(“"'‘])_([^_\n]+?)_(?=[\s.,;:!?)”"'’]|$)/g, '$1<em>$2</em>');
 function locText(l){
-  l = String(l || '').trim();
+  l = cleanLoc(l).trim();
   l = l.replace(/\b(paragraph|page|line|section)s?\s+(\d+)\s*[-–]\s*\2\b/i, (m, w, a) => `${w.toLowerCase()} ${a}`)
        .replace(/\b(paragraph|page|line|section)s\s+(\d+)\s*[-–]\s*(\d+)/i, (m, w, a, b) => `${w.toLowerCase()}s ${a}–${b}`);
   return l.replace(/\s*\(MVP rule\)/i, t(" (Still's numbering)", '（Still 的编号）'));
 }
 function agentPassage(p, n, who){
-  const title = p.title || p.work_id || '';
-  const loc = p.locator && !String(title).includes(p.locator) ? ', ' + locText(p.locator) : '';
+  const raw = p.title || p.work_id || '';
+  const title = cleanTitle(raw);
+  const locs = [headingOf(raw), p.locator && !String(raw).includes(p.locator) ? locText(p.locator) : ''].filter(Boolean);
+  const loc = locs.length ? ', ' + locs.join(', ') : '';
   const v = who && who.voiceId ? byId(C.voices, who.voiceId) : null;
   const k = normTitle(String(title).replace(/,?\s*trans\..*$/i, ''));
   const cw = v ? (v.workIds || []).map(id => byId(C.works, id)).filter(Boolean)
@@ -4510,11 +4701,18 @@ function agentPassage(p, n, who){
   return `<div class="said">
     <span class="tag">${p.cited ? t('From the text','出自文本') : t('Read, not cited','读过，未引用')}
       <span class="num">· ${n}</span></span>
-    <q>${esc(p.text)}</q>
+    <q>${ital(esc(p.text))}</q>
     <span class="src">— ${target ? `<a href="#" class="linkish src-link" ${target}>${esc(title)}</a>` : esc(title)}${esc(loc)}</span>
   </div>`;
 }
 
+/* Which replies have their passages open survives a re-render. */
+const FOLD_OPEN = new Set();
+document.addEventListener('toggle', ev => {
+  const d = ev.target; if(!d.classList || !d.classList.contains('said-fold')) return;
+  const k = d.closest('[data-k]') && d.closest('[data-k]').dataset.k; if(!k) return;
+  d.open ? FOLD_OPEN.add(k) : FOLD_OPEN.delete(k);
+}, true);
 function agentRow(m, p, cont, last){
   const a = m.agent || {};
   const passages = a.passages || [];
@@ -4522,11 +4720,12 @@ function agentRow(m, p, cont, last){
     <div class="msg-body">
       <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
       <div class="bubble">${agentBubble(a, m.text)}</div>
-      ${passages.length ? agentPassage(passages[0], 1, p) : ''}
-      ${passages.length > 1 ? `<details class="said-more">
-        <summary>${t(`${passages.length - 1} more passage${passages.length > 2 ? 's' : ''}`,
-                     `另外 ${passages.length - 1} 段`)}</summary>
-        ${passages.slice(1).map((x, i) => agentPassage(x, i + 2, p)).join('')}
+      ${passages.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
+        <summary><span>${esc([t('What they actually wrote','真正写下的'),
+          t(`${passages.length} passage${passages.length > 1 ? 's' : ''}`, `${passages.length} 段`),
+          cleanTitle(passages[0].title || passages[0].work_id || '')].filter(Boolean).join(' · '))}</span>
+          <svg class="chev" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
       </details>` : ''}
       ${msgFoot(m, last, [
         t('Simulated','模拟'),
@@ -5085,7 +5284,7 @@ function voiceView(id){
   return `<div class="page"><div class="entry">
     <div class="entry-head">
       ${avatar(L(v.name), img, 'av--lg')}
-      <div><h2>${esc(fullName(v))}</h2>
+      <div><h2>${esc(fullName(v))}</h2>${facts(PHIL.find(x => x.voiceId === v.id))}
         <p class="meta">${esc(kindLabel(v.kind))} · ${esc(L(v.origin))}</p></div>
     </div>
     ${v.type === 'person' ? chatButton(PHIL.find(x => x.voiceId === v.id)) : ''}
@@ -5292,7 +5491,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog();
+  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -5309,12 +5508,33 @@ function render(){
   // - a new reply: to where it starts, so you read it from the top;
   // - anything else (a check, a thumbs-up, typing): stay where you were,
   //   unless you were already at the bottom.
+  // Today's use opens over everything: lift it out of the chat's foot (which
+  // sits under the tab bar and narrows a fixed sheet) to <body>.
+  document.querySelectorAll('body > .uback.portal, body > .upanel.portal').forEach(e => e.remove());
+  { const up = document.querySelector('.cmodel .upanel'), bk = document.querySelector('.cmodel .uback');
+    if(up){ if(bk){ bk.classList.add('portal'); document.body.append(bk); } up.classList.add('portal'); document.body.append(up); } }
   const list = document.getElementById('msgs');
   const foot = document.querySelector('.cfoot');
   if(list && foot){
-    const pad = () => { list.style.paddingBottom = (foot.offsetHeight + 12) + 'px'; };
+    // The float can grow after the list has scrolled (the model pill
+    // arriving with the health check, the chip appearing). A reader at the
+    // bottom stays at the bottom, so the last line clears the chip.
+    const pad = () => {
+      const want = (foot.offsetHeight + 12) + 'px';
+      if(list.style.paddingBottom === want) return;
+      const atEnd = list.scrollHeight - list.scrollTop - list.clientHeight < 24;
+      list.style.paddingBottom = want;
+      if(atEnd) list.scrollTop = list.scrollHeight;
+    };
     pad();
     if(window.ResizeObserver){ if(FOOT_RO) FOOT_RO.disconnect(); FOOT_RO = new ResizeObserver(pad); FOOT_RO.observe(foot); }
+    const down = document.getElementById('tobottom');
+    if(down){
+      const away = () => { down.hidden = list.scrollHeight - list.scrollTop - list.clientHeight < 160; };
+      list.addEventListener('scroll', away, { passive: true });
+      down.addEventListener('click', () => list.scrollTo({ top: list.scrollHeight, behavior: 'smooth' }));
+      requestAnimationFrame(away);
+    }
   }
   if(list){
     const c = convo(); const n = c ? c.msgs.length : 0;
@@ -5382,7 +5602,10 @@ document.addEventListener('click', ev => {
     setTimeout(() => { const b = document.querySelector('.crow-menu button'); if(b) b.focus(); });
     return;
   }
-  if((el = hit('[data-swipe-delete]'))){ CROW.confirm = el.dataset.swipeDelete; return render(); }
+  if((el = hit('[data-swipe-delete]'))){
+    CONFIRM = { kind: 'convo', id: el.dataset.swipeDelete }; ROWSWIPE.open = null; render();
+    setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
+  }
   if(ROWSWIPE.open && !hit('.crow-acts')){
     ROWSWIPE.open = null; CROW.confirm = null; render();
     if(hit('.crow')){ ev.preventDefault(); return; }
@@ -5420,7 +5643,8 @@ document.addEventListener('click', ev => {
     el.setAttribute('aria-pressed', PICKS.includes(id) ? 'true' : 'false');
     saveTopics(); return;
   }
-  if((el = hit('[data-acc-open]'))){ ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; return render(); }
+  if((el = hit('[data-acc-open]'))){ ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
+  if((el = hit('[data-acc-back]'))){ ACCESS.err = ''; ACCESS.step = Math.max(0, (ACCESS.step || 0) - 1); return render(); }
   if((el = hit('[data-acc-close]'))){ ACCESS.sheet = false; ACCESS.codeOpen = false; return render(); }
   if((el = hit('[data-af-close]'))){ ANSWER_FIRST = false; return render(); }
   if((el = hit('[data-lede]'))){ LEDE_OPEN = !LEDE_OPEN; return render(); }
@@ -5439,6 +5663,13 @@ document.addEventListener('click', ev => {
     const q = here().thread ? byId(C.questions, here().thread)
                             : byId(C.questions, card && card.dataset.open);
     if(!q) return;
+    // Tapping the answer you already chose takes it back (founder, B22):
+    // the card returns to unanswered and nothing opens.
+    if(state.votes[q.id] === el.dataset.vote){
+      delete state.votes[q.id]; save();
+      if(navigator.vibrate) try{ navigator.vibrate(8); }catch(e){}
+      return render();
+    }
     state.votes[q.id] = el.dataset.vote; save();
     // In the feed, answering is what unlocks the thread, so it opens straight
     // away rather than making the reader tap twice. Inside the thread it just
@@ -5515,7 +5746,10 @@ document.addEventListener('click', ev => {
     setTimeout(() => { const i = document.getElementById('rename-input'); if(i){ i.focus(); i.select(); } });
     return;
   }
-  if((el = hit('[data-crow-delete]'))){ CROW.confirm = el.dataset.crowDelete; return render(); }
+  if((el = hit('[data-crow-delete]'))){
+    CONFIRM = { kind: 'convo', id: el.dataset.crowDelete }; CROW.menu = null; render();
+    setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
+  }
   if(CROW.menu && !hit('.crow-menu')){ CROW.menu = CROW.confirm = null; render(); }
   if((el = hit('[data-open-convo]'))){
     const narrow = innerWidth < 900;   // side by side on a laptop: nothing slides
@@ -5635,11 +5869,29 @@ document.addEventListener('click', ev => {
 
   if((el = hit('[data-report]'))){
     reported = reported === el.dataset.report ? null : el.dataset.report;
-    render(); return;
+    render();
+    // On a question card the note sits under the options, far below the
+    // flag: on a phone it opened off the screen, under the tab bar, and the
+    // tap seemed to do nothing.
+    const note = reported && document.querySelector('.report-note');
+    if(note) note.scrollIntoView({ block:'nearest', behavior: navReduced() ? 'auto' : 'smooth' });
+    return;
   }
 
   if((el = hit('#reset'))){
-    state = { votes:{}, likes:{} }; save(); return render();
+    CONFIRM = { kind: 'erase' }; render();
+    setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
+  }
+  if((el = hit('[data-confirm-cancel]'))){ CONFIRM = null; return render(); }
+  if((el = hit('[data-confirm-ok]'))){
+    const c = CONFIRM; CONFIRM = null;
+    if(c && c.kind === 'erase'){ state = { votes:{}, likes:{} }; save(); }
+    else if(c && c.kind === 'convo'){
+      chat.convos = chat.convos.filter(x => x.id !== c.id);
+      if(chat.open === c.id) chat.open = null;
+      CROW.menu = CROW.confirm = null; ROWSWIPE.open = null; save();
+    }
+    return render();
   }
 
   if((el = hit('a'))) return;               // let real links through
@@ -5689,7 +5941,7 @@ document.addEventListener('submit', ev => {
     agentReady().then(render);
     return;
   }
-  if(ev.target.dataset && ev.target.dataset.accForm){ ev.preventDefault(); submitAccess(ev.target.dataset.accForm); return; }
+  if(ev.target.dataset && ev.target.dataset.accForm){ ev.preventDefault(); accNext(ev.target.dataset.accForm); return; }
   if(ev.target.dataset && ev.target.dataset.renameForm){ ev.preventDefault(); finishRename(true); return; }
   if(ev.target.id !== 'composer') return;
   ev.preventDefault(); send();
@@ -5760,7 +6012,11 @@ document.addEventListener('input', ev => {
   const af = ev.target.dataset && ev.target.dataset.acc;
   if(af){
     ACCESS[af] = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-    if(af === 'interview') render();   // reveals or hides the LinkedIn field
+    if(af === 'interview' || ev.target.type === 'radio') render();   // LinkedIn field; Skip → Continue
+    else if(af === 'question'){   // Skip ↔ Continue, without redrawing the field being typed in
+      const b = document.querySelector('.acc-next');
+      if(b && !ACCESS.sending) b.textContent = accAnswered(3) ? t('Continue','继续') : t('Skip','跳过');
+    }
     return;
   }
   if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); syncSend(); return; }
@@ -5799,6 +6055,20 @@ document.addEventListener('focusout', ev => {
     setTimeout(() => { if(!document.activeElement || !document.activeElement.matches('#say,#agent-key'))
       document.body.classList.remove('kb'); }, 50);
 });
+/* Keep the conversation's top (header, first lines) on screen while the
+   iPhone keyboard is up: size the chat to the visible area and undo the
+   page scroll Safari adds when the field takes focus. */
+if(window.visualViewport){
+  const vv = window.visualViewport;
+  const fit = () => {
+    if(!document.body.classList.contains('kb')){ document.documentElement.style.removeProperty('--vvh'); return; }
+    document.documentElement.style.setProperty('--vvh', Math.round(vv.height) + 'px');
+    if(window.scrollY || vv.offsetTop) window.scrollTo(0, 0);
+  };
+  vv.addEventListener('resize', fit); vv.addEventListener('scroll', fit);
+  document.addEventListener('focusin', () => setTimeout(fit, 60));
+  document.addEventListener('focusout', () => setTimeout(fit, 120));
+}
 
 /* Bottom sheets close with a swipe down from their top edge, as well as
    their close button or the backdrop. */

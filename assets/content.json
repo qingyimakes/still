@@ -119,7 +119,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-nothing-to-hide.A.0"
+      "q-nothing-to-hide.A.0",
+      "q-nothing-to-hide.A.1"
      ],
      "workIds": []
     },
@@ -127,7 +128,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-nothing-to-hide.B.0"
+      "q-nothing-to-hide.B.0",
+      "q-nothing-to-hide.B.1"
      ],
      "workIds": []
     },
@@ -143,7 +145,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-nothing-to-hide.D.0"
+      "q-nothing-to-hide.D.0",
+      "q-nothing-to-hide.D.1"
      ],
      "workIds": []
     }
@@ -204,7 +207,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-good-or-effective-leader.A.0"
+      "q-good-or-effective-leader.A.0",
+      "q-good-or-effective-leader.A.1"
      ],
      "workIds": []
     },
@@ -220,7 +224,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-good-or-effective-leader.C.0"
+      "q-good-or-effective-leader.C.0",
+      "q-good-or-effective-leader.C.1"
      ],
      "workIds": []
     },
@@ -229,7 +234,8 @@
      "verdictSub": null,
      "responseIds": [
       "q-good-or-effective-leader.D.0",
-      "q-good-or-effective-leader.D.1"
+      "q-good-or-effective-leader.D.1",
+      "q-good-or-effective-leader.D.2"
      ],
      "workIds": []
     }
@@ -298,7 +304,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-billionaire-earned-or-luck.B.0"
+      "q-billionaire-earned-or-luck.B.0",
+      "q-billionaire-earned-or-luck.B.1"
      ],
      "workIds": []
     },
@@ -306,7 +313,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-billionaire-earned-or-luck.C.0"
+      "q-billionaire-earned-or-luck.C.0",
+      "q-billionaire-earned-or-luck.C.1"
      ],
      "workIds": []
     },
@@ -314,7 +322,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-billionaire-earned-or-luck.D.0"
+      "q-billionaire-earned-or-luck.D.0",
+      "q-billionaire-earned-or-luck.D.1"
      ],
      "workIds": []
     }
@@ -375,7 +384,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-partner-secrets.A.0"
+      "q-partner-secrets.A.0",
+      "q-partner-secrets.A.1"
      ],
      "workIds": []
     },
@@ -383,7 +393,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-partner-secrets.B.0"
+      "q-partner-secrets.B.0",
+      "q-partner-secrets.B.1"
      ],
      "workIds": []
     },
@@ -400,7 +411,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-partner-secrets.D.0"
+      "q-partner-secrets.D.0",
+      "q-partner-secrets.D.1"
      ],
      "workIds": []
     }
@@ -461,7 +473,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-make-the-smartest-lead.A.0"
+      "q-make-the-smartest-lead.A.0",
+      "q-make-the-smartest-lead.A.1"
      ],
      "workIds": []
     },
@@ -469,7 +482,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-make-the-smartest-lead.B.0"
+      "q-make-the-smartest-lead.B.0",
+      "q-make-the-smartest-lead.B.1"
      ],
      "workIds": []
     },
@@ -477,7 +491,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-make-the-smartest-lead.C.0"
+      "q-make-the-smartest-lead.C.0",
+      "q-make-the-smartest-lead.C.1"
      ],
      "workIds": []
     },
@@ -545,7 +560,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-everyone-cuts-corners.A.0"
+      "q-everyone-cuts-corners.A.0",
+      "q-everyone-cuts-corners.A.1"
      ],
      "workIds": []
     },
@@ -553,7 +569,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-everyone-cuts-corners.B.0"
+      "q-everyone-cuts-corners.B.0",
+      "q-everyone-cuts-corners.B.1"
      ],
      "workIds": []
     },
@@ -561,7 +578,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-everyone-cuts-corners.C.0"
+      "q-everyone-cuts-corners.C.0",
+      "q-everyone-cuts-corners.C.1"
      ],
      "workIds": []
     },
@@ -629,7 +647,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-spy-on-your-country.A.0"
+      "q-spy-on-your-country.A.0",
+      "q-spy-on-your-country.A.1"
      ],
      "workIds": []
     },
@@ -637,7 +656,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-spy-on-your-country.B.0"
+      "q-spy-on-your-country.B.0",
+      "q-spy-on-your-country.B.1"
      ],
      "workIds": []
     },
@@ -645,7 +665,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-spy-on-your-country.C.0"
+      "q-spy-on-your-country.C.0",
+      "q-spy-on-your-country.C.1"
      ],
      "workIds": []
     },
@@ -715,7 +736,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-wanting-power-disqualifies.A.0"
+      "q-wanting-power-disqualifies.A.0",
+      "q-wanting-power-disqualifies.A.1"
      ],
      "workIds": []
     },
@@ -732,7 +754,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-wanting-power-disqualifies.C.0"
+      "q-wanting-power-disqualifies.C.0",
+      "q-wanting-power-disqualifies.C.1"
      ],
      "workIds": []
     },
@@ -740,7 +763,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-wanting-power-disqualifies.D.0"
+      "q-wanting-power-disqualifies.D.0",
+      "q-wanting-power-disqualifies.D.1"
      ],
      "workIds": []
     }
@@ -800,7 +824,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-better-or-ruthless.A.0"
+      "q-better-or-ruthless.A.0",
+      "q-better-or-ruthless.A.1"
      ],
      "workIds": []
     },
@@ -808,7 +833,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-better-or-ruthless.B.0"
+      "q-better-or-ruthless.B.0",
+      "q-better-or-ruthless.B.1"
      ],
      "workIds": []
     },
@@ -824,7 +850,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-better-or-ruthless.D.0"
+      "q-better-or-ruthless.D.0",
+      "q-better-or-ruthless.D.1"
      ],
      "workIds": []
     }
@@ -885,7 +912,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-lying-for-your-country.A.0"
+      "q-lying-for-your-country.A.0",
+      "q-lying-for-your-country.A.1"
      ],
      "workIds": []
     },
@@ -893,7 +921,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-lying-for-your-country.B.0"
+      "q-lying-for-your-country.B.0",
+      "q-lying-for-your-country.B.1"
      ],
      "workIds": []
     },
@@ -910,7 +939,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-lying-for-your-country.D.0"
+      "q-lying-for-your-country.D.0",
+      "q-lying-for-your-country.D.1"
      ],
      "workIds": []
     }
@@ -980,7 +1010,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-leader-like-you-or-better.B.0"
+      "q-leader-like-you-or-better.B.0",
+      "q-leader-like-you-or-better.B.1"
      ],
      "workIds": []
     },
@@ -988,7 +1019,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-leader-like-you-or-better.C.0"
+      "q-leader-like-you-or-better.C.0",
+      "q-leader-like-you-or-better.C.1"
      ],
      "workIds": []
     },
@@ -996,7 +1028,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-leader-like-you-or-better.D.0"
+      "q-leader-like-you-or-better.D.0",
+      "q-leader-like-you-or-better.D.1"
      ],
      "workIds": []
     }
@@ -1057,7 +1090,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-market-winner-best.A.0"
+      "q-market-winner-best.A.0",
+      "q-market-winner-best.A.1"
      ],
      "workIds": []
     },
@@ -1065,7 +1099,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-market-winner-best.B.0"
+      "q-market-winner-best.B.0",
+      "q-market-winner-best.B.1"
      ],
      "workIds": []
     },
@@ -1073,7 +1108,8 @@
      "verdict": null,
      "verdictSub": null,
      "responseIds": [
-      "q-market-winner-best.C.0"
+      "q-market-winner-best.C.0",
+      "q-market-winner-best.C.1"
      ],
      "workIds": []
     },
@@ -2612,6 +2648,99 @@
    }
   },
   {
+   "id": "q-nothing-to-hide.A.1",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "A",
+   "voiceId": "v-godwin",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Godwin hoped small communities could do without much law, because neighbours watching one another's conduct would restrain vice more surely than punishment. Being seen, for him, was the better kind of discipline.",
+    "zh": "葛德文希望小型社群可以不太需要法律，因为邻里彼此注视对方的行为，会比刑罚更有效地约束恶行。在他看来，被人看见是一种更好的约束。"
+   },
+   "detail": {
+    "en": "Godwin meant the free judgement of neighbours, not cameras or a state's records, and he said it worked only when 'unstained with caprice'; moving it to data collection is ours. His position is contested, and the cost is plain in his own words: a censorship that cannot be resisted is also one an innocent oddity cannot escape.",
+    "zh": "葛德文说的是邻里自由的判断，不是摄像头或国家的档案，而且他说只有在不受任性玷污时才有效；把它搬到数据收集上是我们的推论。他的立场颇有争议，代价就在他自己的话里：一种无法抗拒的审查，也是一个无害的怪人无法逃脱的审查。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the inspection of every man over the conduct of his neighbours, when unstained with caprice, would constitute a censorship of the most irresistible nature.",
+    "zh": "the inspection of every man over the conduct of his neighbours, when unstained with caprice, would constitute a censorship of the most irresistible nature."
+   },
+   "origin": {
+    "en": "England, 1793",
+    "zh": "英格兰，1793 年"
+   },
+   "source": {
+    "label": {
+     "en": "William Godwin, An Enquiry Concerning Political Justice",
+     "zh": "葛德文《政治正义论》"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-nothing-to-hide.B.1",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "B",
+   "voiceId": "v-william-james",
+   "kind": "philosophy",
+   "claim": {
+    "en": "William James held that a person has as many social selves as there are groups whose opinion he cares about, and shows each a different side. Who is watching shapes which self appears.",
+    "zh": "威廉·詹姆斯认为，一个人在意多少群体的看法，就有多少个社会自我，并向每个群体展示不同的一面。谁在看，决定了哪个自我出现。"
+   },
+   "detail": {
+    "en": "James treats this as normal and often harmless, a division of labour as much as a mask; the worry that constant watching collapses those selves into one performance is our extension. The weakness is that, on his account, there is no unperformed self for privacy to protect, only selves suited to different audiences.",
+    "zh": "詹姆斯把这看作正常的、往往无害的事，与其说是面具，不如说是一种分工；担心无处不在的注视会把这些自我压缩成一场表演，是我们的延伸。弱点是：按他的说法，并不存在一个未经表演、需要隐私来保护的自我，只有适合不同观众的各个自我。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "He generally shows a different side of himself to each of these different groups.",
+    "zh": "He generally shows a different side of himself to each of these different groups."
+   },
+   "origin": {
+    "en": "United States, 1890",
+    "zh": "美国，1890 年"
+   },
+   "source": {
+    "label": {
+     "en": "William James, The Principles of Psychology, vol. 1, ch. X",
+     "zh": "威廉·詹姆斯《心理学原理》第一卷第十章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/57628"
+   }
+  },
+  {
+   "id": "q-nothing-to-hide.D.1",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "D",
+   "voiceId": "v-smith",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Smith held that a sovereign should be freed from superintending private people's work, because no human wisdom or knowledge could ever be enough to do it well. Leaving people alone was not a gap in government but part of its proper shape.",
+    "zh": "斯密认为，君主应当卸下监管私人劳动的职责，因为任何人的智慧或知识都不足以把这件事做好。让人们自行其是，不是政府的缺位，而是政府应有的样子。"
+   },
+   "detail": {
+    "en": "Smith was writing about trade and industry, not about watching citizens; reading his limit on what a sovereign can know as a limit on surveillance is ours. The cost is that his argument rests on the state not being able to know enough, and modern data collection is precisely an attempt to close that gap.",
+    "zh": "斯密写的是贸易与产业，不是监视公民；把他对君主所能知之限度的论述，读成对监控的限制，是我们的推论。代价是：他的论证建立在国家无法知道足够多这一点上，而现代的数据收集恰恰是在试图填补这个空缺。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The sovereign is completely discharged from a duty, in the attempting to perform which he must always be exposed to innumerable delusions, and for the proper performance of which, no human wisdom or knowledge could ever be sufficient; the duty of superintending the industry of private people, and of directing it towards the employments most suitable to the interests of the society.",
+    "zh": "The sovereign is completely discharged from a duty, in the attempting to perform which he must always be exposed to innumerable delusions, and for the proper performance of which, no human wisdom or knowledge could ever be sufficient; the duty of superintending the industry of private people, and of directing it towards the employments most suitable to the interests of the society."
+   },
+   "origin": {
+    "en": "Scotland, 1776",
+    "zh": "苏格兰，1776 年"
+   },
+   "source": {
+    "label": {
+     "en": "Adam Smith, The Wealth of Nations, Book IV, ch. IX",
+     "zh": "亚当·斯密《国富论》第四卷第九章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3300"
+   }
+  },
+  {
    "id": "q-good-or-effective-leader.A.0",
    "questionId": "q-good-or-effective-leader",
    "optionKey": "A",
@@ -2767,6 +2896,99 @@
    }
   },
   {
+   "id": "q-good-or-effective-leader.A.1",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "A",
+   "voiceId": "v-kant",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Kant held that talent, resolve and nerve are good only in the hands of a good will; without one, the same gifts become dangerous. On his view ability is no substitute for character, because character decides what ability is used for.",
+    "zh": "康德认为，才智、决心和胆识，只有掌握在善良意志手中才是好的；没有善良意志，同样的天赋会变得危险。在他看来，能力不能代替品格，因为品格决定能力被用来做什么。"
+   },
+   "detail": {
+    "en": "Kant was writing about the moral worth of persons, not about choosing rulers; reading it as a test for leaders is our application. Its strength is the warning that competence magnifies whatever will directs it. Its cost is that Kant says little about how to judge a will from outside, which is all a voter ever sees.",
+    "zh": "康德写的是人的道德价值，而不是如何挑选统治者；把它当作衡量领导者的标准，是我们的引申。它的力量在于提醒：能力会放大驱使它的任何意志。代价是：一个人的意志如何从外部判断，康德几乎没说，而选民能看到的恰恰只有外部。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Intelligence, wit, judgement, and the other talents of the mind, however they may be named, or courage, resolution, perseverance, as qualities of temperament, are undoubtedly good and desirable in many respects; but these gifts of nature may also become extremely bad and mischievous if the will which is to make use of them, and which, therefore, constitutes what is called character, is not good.",
+    "zh": "Intelligence, wit, judgement, and the other talents of the mind, however they may be named, or courage, resolution, perseverance, as qualities of temperament, are undoubtedly good and desirable in many respects; but these gifts of nature may also become extremely bad and mischievous if the will which is to make use of them, and which, therefore, constitutes what is called character, is not good."
+   },
+   "origin": {
+    "en": "Königsberg, 1785",
+    "zh": "柯尼斯堡，1785 年"
+   },
+   "source": {
+    "label": {
+     "en": "Immanuel Kant, Groundwork of the Metaphysic of Morals, First Section, trans. T. K. Abbott",
+     "zh": "康德《道德形而上学奠基》第一章，阿博特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/5682"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.D.2",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "D",
+   "voiceId": "v-croce",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Croce held that strength of will is a real excellence of its own, one we admire even in Machiavelli's prince or in Iago, and that the moral person is the one who joins that same force to good will. On his terms the good leader is not the gentle one but the one who has both.",
+    "zh": "克罗齐认为，意志的力量本身就是一种真正的优点，连马基雅维利笔下的君主或伊阿古身上的这种力量，我们也会钦佩；而有德之人，就是把同样的力量与善良意志结合起来的人。照他的说法，好的领导者不是温和的人，而是两者兼备的人。"
+   },
+   "detail": {
+    "en": "Croce was writing a treatise on aesthetics and the theory of the will, not advice on choosing leaders; applying it here is ours. The cost is that he names the union without saying what to do when the strong-willed candidate and the good one are different people, which is the choice the question actually poses.",
+    "zh": "克罗齐写的是一部关于美学和意志理论的著作，不是挑选领导者的建议；把它用在这里是我们的引申。代价是：他指出了两者的结合，却没有说当意志坚强的人选和善良的人选是两个人时该怎么办，而这恰恰是这个问题真正要人做的选择。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The moral man unites with the pertinacity and fearlessness of a Caesar Borgia, of an Iago, or of a ser Ciappelletto, the good will of the saint or of the hero.",
+    "zh": "The moral man unites with the pertinacity and fearlessness of a Caesar Borgia, of an Iago, or of a ser Ciappelletto, the good will of the saint or of the hero."
+   },
+   "origin": {
+    "en": "Italy, 1902",
+    "zh": "意大利，1902 年"
+   },
+   "source": {
+    "label": {
+     "en": "Benedetto Croce, Aesthetic as Science of Expression and General Linguistic, trans. Douglas Ainslie",
+     "zh": "克罗齐《作为表现的科学和一般语言学的美学》，安斯利 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/9306"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.C.1",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "C",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hume argued that the rules of justice exist because they serve the public good, so in an emergency the safety of the people outranks them. On that view a leader is measured by what the rules are for, not by how faithfully they are kept.",
+    "zh": "休谟主张，正义的规则之所以存在，是因为它们服务于公共利益；所以在危急时刻，人民的安全高于这些规则。照这个看法，衡量领导者要看规则是为了什么，而不是看规则被守得多严。"
+   },
+   "detail": {
+    "en": "Hume's examples are sieges, famines and shipwrecks, where ordinary rules of property give way; extending that to everyday leadership is our application. Unlike Hobbes, he grounds justice itself in public usefulness rather than in the sovereign's office. The weakness is that an emergency is easy to declare, and Hume offers no check on the person who declares it.",
+    "zh": "休谟举的例子是围城、饥荒和船难，在这些情形下，平常的财产规则会让步；把它推广到日常的领导，是我们的引申。与霍布斯不同，他把正义本身建立在公共效用上，而不是建立在主权者的职责上。弱点是：紧急状态很容易宣布，而对宣布它的人，休谟没有给出任何约束。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The safety of the people is the supreme law: All other particular laws are subordinate to it, and dependent on it: And if, in the COMMON course of things, they be followed and regarded; it is only because the public safety and interest COMMONLY demand so equal and impartial an administration.",
+    "zh": "The safety of the people is the supreme law: All other particular laws are subordinate to it, and dependent on it: And if, in the COMMON course of things, they be followed and regarded; it is only because the public safety and interest COMMONLY demand so equal and impartial an administration."
+   },
+   "origin": {
+    "en": "Scotland, 1751",
+    "zh": "苏格兰，1751 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, An Enquiry Concerning the Principles of Morals, Section III",
+     "zh": "大卫·休谟《道德原则研究》第三章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4320"
+   }
+  },
+  {
    "id": "q-billionaire-earned-or-luck.A.0",
    "questionId": "q-billionaire-earned-or-luck",
    "optionKey": "A",
@@ -2917,6 +3139,99 @@
     "label": {
      "en": "Karl Marx, Capital, vol. I, ch. X, trans. Samuel Moore and Edward Aveling",
      "zh": "马克思《资本论》第一卷第十章，穆尔与艾威林 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.B.1",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "B",
+   "voiceId": "v-machiavelli",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Machiavelli observed that a ruler who wins and holds power will have his means judged honest and be praised by everyone, because most people judge by appearances and outcomes. Success writes its own character reference.",
+    "zh": "马基雅维利观察到，一个夺得并守住权力的君主，他的手段总会被认为是正当的，人人都会称赞他，因为多数人只凭表象和结果来判断。成功会替自己写好品行证明。"
+   },
+   "detail": {
+    "en": "He was writing about princes, not fortunes, and the step to how we judge the rich is ours. Where Smith traces our deference to the pleasures of wealth, Machiavelli traces it to the result: whoever won is assumed to have deserved it. The cost is that this explains the praise without telling us whether it is ever earned, and The Prince's own tone is contested; some have read it as satire.",
+    "zh": "他写的是君主而不是财富，把它推到我们如何看待富人，是我们的引申。斯密把我们对富人的顺从归于财富带来的愉悦，马基雅维利则归于结果：赢了的人，就被认定是配得上赢的。代价是：这解释了赞誉从何而来，却说不出赞誉是否属实；而且《君主论》本身的语气有争议，有人把它读作讽刺。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "let a prince have the credit of conquering and holding his state, the means will always be considered honest, and he will be praised by everybody; because the vulgar are always taken by what a thing seems to be and by what comes of it",
+    "zh": "let a prince have the credit of conquering and holding his state, the means will always be considered honest, and he will be praised by everybody; because the vulgar are always taken by what a thing seems to be and by what comes of it"
+   },
+   "origin": {
+    "en": "Florence, 1513",
+    "zh": "佛罗伦萨，1513 年"
+   },
+   "source": {
+    "label": {
+     "en": "Niccolò Machiavelli, The Prince, ch. XVIII, trans. W. K. Marriott",
+     "zh": "马基雅维利《君主论》第十八章，马里奥特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1232"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.C.1",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "C",
+   "voiceId": "v-gilman",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Gilman held that the power to make things belongs to society as a whole, and that individuals are its parts. Wealth, on her view, is social wealth before it is anyone's fortune.",
+    "zh": "吉尔曼认为，制造东西的能力属于整个社会，个人只是社会的组成部分。照她的看法，财富首先是社会的财富，然后才是某个人的家产。"
+   },
+   "detail": {
+    "en": "She did not deny that individuals work hard; she denied that their output can be separated from the society that trained, fed and equipped them. Applying this to a single modern fortune is our step. Her social theory is heavily disputed, and treating society as one organism can leave the individual with no claim to anything.",
+    "zh": "她并不否认个人勤奋；她否认的是，个人的产出能与培养、供养和装备他的社会分开。把这用在某一笔现代巨富上，是我们的引申。她的社会理论争议很大，而把社会当成一个有机体，可能让个人对任何东西都失去正当的主张。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Society is a unit, we are but parts. Social life develops the power to make things—the things which are essential to social life. Increase in these things is increase in social wealth and social power—a ceaseless line of development.",
+    "zh": "Society is a unit, we are but parts. Social life develops the power to make things—the things which are essential to social life. Increase in these things is increase in social wealth and social power—a ceaseless line of development."
+   },
+   "origin": {
+    "en": "United States, 1904",
+    "zh": "美国，1904 年"
+   },
+   "source": {
+    "label": {
+     "en": "Charlotte Perkins Gilman, Human Work",
+     "zh": "吉尔曼《人类的工作》"
+    },
+    "url": "https://www.gutenberg.org/ebooks/64098"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.D.1",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "D",
+   "voiceId": "v-godwin",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Godwin held that almost all wealth is produced by the daily labour of people now living, and that an inherited title is only a licence to collect what others have made.",
+    "zh": "葛德文认为，几乎所有财富都是由当下活着的人日复一日的劳动生产出来的，而继承来的产权只是一张收取他人劳动成果的执照。"
+   },
+   "detail": {
+    "en": "Godwin was writing about inherited estates in 1790s England, and extending him to self-made fortunes is ours; it would need the founder's own work to count for little. Unlike Marx, he wanted no seizure: he argued that equalising property by force would fail, and that only a change of opinion could fix it. The cost is that his remedy is slow and may never come.",
+    "zh": "葛德文写的是 18 世纪 90 年代英国的继承财产，把他推到白手起家的巨富身上是我们的引申；那样就得认定创始人自己的劳动无足轻重。与马克思不同，他不主张剥夺：他论证说用强力拉平财产会失败，只有观念的改变才能纠正。代价是：他的药方见效极慢，也许永远不会到来。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The property is produced by the daily labour of men who are now in existence. All that their ancestors bequeathed to them was a mouldy patent, which they show, as a title to extort from their neighbours what the labour of those neighbours has produced.",
+    "zh": "The property is produced by the daily labour of men who are now in existence. All that their ancestors bequeathed to them was a mouldy patent, which they show, as a title to extort from their neighbours what the labour of those neighbours has produced."
+   },
+   "origin": {
+    "en": "England, 1793",
+    "zh": "英格兰，1793 年"
+   },
+   "source": {
+    "label": {
+     "en": "William Godwin, An Enquiry Concerning Political Justice, Book VIII",
+     "zh": "葛德文《政治正义论》第八卷"
     },
     "url": null
    }
@@ -3077,6 +3392,99 @@
    }
   },
   {
+   "id": "q-partner-secrets.A.1",
+   "questionId": "q-partner-secrets",
+   "optionKey": "A",
+   "voiceId": "v-bacon",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bacon held that suspicion grows from knowing little, and that the cure is to find out more rather than let suspicion smoulder. Ignorance, not knowledge, is what feeds distrust.",
+    "zh": "培根认为，猜疑源于所知太少，补救的办法是去了解更多，而不是让猜疑闷在心里。滋养不信任的是无知，而不是知情。"
+   },
+   "detail": {
+    "en": "Bacon was advising people on those they 'employ and deal with', and in the same essay he tells them not to expect others to be saints; applying it to a partner's phone is ours. The cost is that he assumes what you learn will settle the suspicion, when some of it will start new ones.",
+    "zh": "培根是在劝人看待那些与自己共事往来的人，并在同一篇里提醒不要指望别人是圣人；把它用到伴侣的手机上是我们的推论。代价是：他假定知道的东西会平息猜疑，而有些东西反而会引出新的猜疑。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "There is nothing makes a man suspect much, more than to know little; and therefore men should remedy suspicion, by procuring to know more, and not to keep their suspicions in smother.",
+    "zh": "There is nothing makes a man suspect much, more than to know little; and therefore men should remedy suspicion, by procuring to know more, and not to keep their suspicions in smother."
+   },
+   "origin": {
+    "en": "England, 1625",
+    "zh": "英格兰，1625 年"
+   },
+   "source": {
+    "label": {
+     "en": "Francis Bacon, Essays, \"Of Suspicion\"",
+     "zh": "培根《随笔集》〈论猜疑〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/575"
+   }
+  },
+  {
+   "id": "q-partner-secrets.B.1",
+   "questionId": "q-partner-secrets",
+   "optionKey": "B",
+   "voiceId": "v-emerson",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Emerson held that a friend should stay something of a stranger, revered rather than possessed, because what is finest in a person cannot be seen from too close. Distance is what lets the other remain worth loving.",
+    "zh": "爱默生认为，朋友应当始终保留几分陌生，被敬重而不是被占有，因为一个人身上最美好的东西，靠得太近反而看不见。距离让对方始终值得爱。"
+   },
+   "detail": {
+    "en": "Emerson was writing about friendship, not marriage or romance, so carrying it to partners is ours. The cost is that his ideal is austere: it asks for a distance and a reserve that few couples sharing a home could live by.",
+    "zh": "爱默生写的是友谊，不是婚姻或爱情，把它用到伴侣身上是我们的推论。代价是：他的理想很清苦，要求的距离和矜持，同住一个屋檐下的伴侣很少能照此生活。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Let him be to thee for ever a sort of beautiful enemy, untamable, devoutly revered, and not a trivial conveniency to be soon outgrown and cast aside. The hues of the opal, the light of the diamond, are not to be seen if the eye is too near.",
+    "zh": "Let him be to thee for ever a sort of beautiful enemy, untamable, devoutly revered, and not a trivial conveniency to be soon outgrown and cast aside. The hues of the opal, the light of the diamond, are not to be seen if the eye is too near."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1841",
+    "zh": "马萨诸塞州康科德，1841 年"
+   },
+   "source": {
+    "label": {
+     "en": "Ralph Waldo Emerson, Essays: First Series, \"Friendship\"",
+     "zh": "爱默生《随笔集·第一辑》〈友谊〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/2944"
+   }
+  },
+  {
+   "id": "q-partner-secrets.D.1",
+   "questionId": "q-partner-secrets",
+   "optionKey": "D",
+   "voiceId": "v-augustine",
+   "kind": "religiousTeaching",
+   "claim": {
+    "en": "Augustine held that there is something in a person that even their own spirit does not know, and that only God knows anyone wholly. No partner could hand over the whole of themselves, because they do not have it.",
+    "zh": "奥古斯丁认为，人身上有些东西，连他自己的心灵也不知道，只有上帝完全认识一个人。没有哪个伴侣能把自己的全部交出来，因为他们自己也并不拥有全部。"
+   },
+   "detail": {
+    "en": "This is a religious teaching: Augustine's point is that full self-knowledge belongs to God, and the application to partners is ours. It reaches the same answer as Freud by another road. The weakness is that it settles what can be known, not whether you should try to know what can.",
+    "zh": "这是一种宗教教导：奥古斯丁的意思是，完全的自我认识属于上帝，把它用到伴侣身上是我们的推论。它经由另一条路，得出了与弗洛伊德相同的结论。弱点是：它回答了什么是可知的，却没有回答对于可知的部分，你是否应该去探知。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "although no man knoweth the things of a man, but the spirit of a man which is in him, yet is there something of man, which neither the spirit of man that is in him, itself knoweth.",
+    "zh": "although no man knoweth the things of a man, but the spirit of a man which is in him, yet is there something of man, which neither the spirit of man that is in him, itself knoweth."
+   },
+   "origin": {
+    "en": "Hippo, North Africa, c. 400",
+    "zh": "北非希波，约 400 年"
+   },
+   "source": {
+    "label": {
+     "en": "Augustine, Confessions, Book X, ch. 5, trans. E. B. Pusey",
+     "zh": "奥古斯丁《忏悔录》第十卷第五章，璞赛 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3296"
+   }
+  },
+  {
    "id": "q-make-the-smartest-lead.A.0",
    "questionId": "q-make-the-smartest-lead",
    "optionKey": "A",
@@ -3201,6 +3609,99 @@
    }
   },
   {
+   "id": "q-make-the-smartest-lead.A.1",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "A",
+   "voiceId": "v-augustine",
+   "kind": "religiousTeaching",
+   "claim": {
+    "en": "Augustine held that a person drawn to study and quiet is free to stay there unless the burden of governing is laid on them; then love obliges them to take it up. The call comes from others, not from ambition.",
+    "zh": "奥古斯丁认为，一个向往研读与清静的人可以安于其中，除非治理的重担被加在他身上；那时，爱使他不得不承担。召唤来自他人，而不是来自野心。"
+   },
+   "detail": {
+    "en": "Augustine was writing about Christians called to office, as he himself had been ordained against his will; applying it to a president is ours. Plato compels the good with the threat of being ruled by worse, while Augustine grounds the duty in love of neighbour. What he leaves open is who has the right to lay the burden on someone, which is the whole of this question.",
+    "zh": "奥古斯丁写的是被召去担任职务的基督徒，他自己当年就是违背本意被授予圣职的；把它用到总统身上，是我们的引申。柏拉图用被更差的人统治来强迫好人，奥古斯丁则把这份责任建立在对邻人的爱上。他没有回答的是：谁有权把重担加给一个人，而这正是本题的全部所在。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "And therefore holy leisure is longed for by the love of truth; but it is the necessity of love to undertake requisite business. If no one imposes this burden upon us, we are free to sift and contemplate truth; but if it be laid upon us, we are necessitated for love's sake to undertake it.",
+    "zh": "And therefore holy leisure is longed for by the love of truth; but it is the necessity of love to undertake requisite business. If no one imposes this burden upon us, we are free to sift and contemplate truth; but if it be laid upon us, we are necessitated for love's sake to undertake it."
+   },
+   "origin": {
+    "en": "Hippo, North Africa, c. 426",
+    "zh": "北非希波，约 426 年"
+   },
+   "source": {
+    "label": {
+     "en": "Augustine, The City of God, Book XIX, ch. 19, trans. Marcus Dods",
+     "zh": "奥古斯丁《上帝之城》第十九卷第十九章，多兹 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/45304"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.B.1",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "B",
+   "voiceId": "v-montaigne",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Montaigne held that a person may lend themselves to others but should give themselves only to themselves. Chosen mayor of Bordeaux while abroad, he served, and kept the office at arm's length.",
+    "zh": "蒙田认为，人可以把自己借给别人，但只应把自己交给自己。他身在国外时被选为波尔多市长，他接受了，却始终与这个职位保持距离。"
+   },
+   "detail": {
+    "en": "Montaigne did not refuse: he asked to be excused, was told the king wanted it, and took the post. So his answer is not a simple no; what he denies is that an office can claim the whole person. Applying this to a national draft is ours, and the cost is plain: a leader who serves at arm's length may be what a crisis can least afford.",
+    "zh": "蒙田并没有拒绝：他请求免任，被告知国王也有此意，于是就任。所以他的回答不是简单的不；他否认的是职位可以占有整个人。把它用到全国性的征召上，是我们的引申；代价也很明显：一个与职位保持距离的领导者，可能正是危机时期最承受不起的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "But against such affections as wholly carry me away from myself and fix me elsewhere, against those, I say, I oppose myself with my utmost power. ‘Tis my opinion that a man should lend himself to others, and only give himself to himself.",
+    "zh": "But against such affections as wholly carry me away from myself and fix me elsewhere, against those, I say, I oppose myself with my utmost power. ‘Tis my opinion that a man should lend himself to others, and only give himself to himself."
+   },
+   "origin": {
+    "en": "France, 1588",
+    "zh": "法国，1588 年"
+   },
+   "source": {
+    "label": {
+     "en": "Michel de Montaigne, Essays, Book III, ch. 10 \"Of Managing the Will\", trans. Charles Cotton, ed. W. C. Hazlitt",
+     "zh": "蒙田《随笔集》第三卷第十章〈论意志的掌控〉，科顿 英译，黑兹利特 编"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3600"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.C.1",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "C",
+   "voiceId": "v-thoreau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Thoreau held that an honest man could not, without disgrace, be associated with a government that upheld slavery. Whether to serve a state depends first on what that state is doing.",
+    "zh": "梭罗认为，一个正直的人不能与维护奴隶制的政府为伍而不蒙羞。是否为一个国家效力，首先取决于这个国家在做什么。"
+   },
+   "detail": {
+    "en": "Thoreau was writing about allegiance and taxes in 1849, not about taking office; applying it to a drafted leader is ours. Unlike the Confucian advice to keep hidden in bad times, his reason is complicity rather than prudence. The weakness is that a country which most needs its best people is usually one in trouble, and his test would keep them away.",
+    "zh": "梭罗在 1849 年写的是效忠和纳税，而不是出任公职；把它用到被征召的领导者身上，是我们的引申。与儒家无道则隐的劝告不同，他的理由是不愿同流合污，而不是明哲保身。弱点是：一个国家最需要其最优秀的人时，往往正是它陷入困境之时，而他的标准会让这些人远离。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "How does it become a man to behave toward the American government today? I answer that he cannot without disgrace be associated with it.",
+    "zh": "How does it become a man to behave toward the American government today? I answer that he cannot without disgrace be associated with it."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1849",
+    "zh": "马萨诸塞州康科德，1849 年"
+   },
+   "source": {
+    "label": {
+     "en": "Henry David Thoreau, \"Civil Disobedience\" (1849)",
+     "zh": "梭罗〈论公民的不服从〉（1849）"
+    },
+    "url": "https://www.gutenberg.org/ebooks/71"
+   }
+  },
+  {
    "id": "q-everyone-cuts-corners.A.0",
    "questionId": "q-everyone-cuts-corners",
    "optionKey": "A",
@@ -3322,6 +3823,99 @@
      "zh": "霍布斯《利维坦》第十四章"
     },
     "url": "https://www.gutenberg.org/ebooks/3207"
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.A.1",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "A",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "In Plato's account of his trial, Socrates refuses to weigh survival against doing right: a good man asks only whether what he does is right or wrong. The calculation itself is the mistake.",
+    "zh": "在柏拉图记述的审判中，苏格拉底拒绝把活命与行正道放在一起权衡：一个好人只问自己所做的事是对是错。算计本身就是错误。"
+   },
+   "detail": {
+    "en": "These are Plato's words for Socrates, defending his life before a jury, and carrying them to a lost contract is our application. Where Mencius ranks one good above another, Socrates declines to put winning on the scale at all. The cost is that he paid with his life, and most people who refuse to cut corners have families who did not choose that price.",
+    "zh": "这是柏拉图借苏格拉底之口、在陪审团前为自己辩护时说的话，把它用到一份丢掉的合同上，是我们的引申。孟子是把一种善排在另一种善之上，苏格拉底则干脆不把输赢放上天平。代价是：他为此付出了生命，而多数拒绝走捷径的人，身后都有并未选择承担这一代价的家人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "a man who is good for anything ought not to calculate the chance of living or dying; he ought only to consider whether in doing anything he is doing right or wrong—acting the part of a good man or of a bad.",
+    "zh": "a man who is good for anything ought not to calculate the chance of living or dying; he ought only to consider whether in doing anything he is doing right or wrong—acting the part of a good man or of a bad."
+   },
+   "origin": {
+    "en": "Athens, c. 390s BCE",
+    "zh": "雅典，约公元前 390 年代"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Apology (28b), trans. Benjamin Jowett",
+     "zh": "柏拉图《申辩篇》（28b），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1656"
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.B.1",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "B",
+   "voiceId": "v-thoreau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Thoreau held that being right does not wait on numbers: one person more right than his neighbours is already a majority of one. A practice does not become right by being common.",
+    "zh": "梭罗认为，对错不取决于人数：一个比邻人更正确的人，本身就已是「一个人的多数」。一种做法并不因普遍而变得正当。"
+   },
+   "detail": {
+    "en": "He wrote it about withdrawing support from a government that upheld slavery, a far graver wrong than cutting corners at work, and the transfer is ours. Kant's test asks what everyone could do; Thoreau simply refuses to let the count matter. The weakness is that the same confidence serves anyone sure they are right, including people who are wrong.",
+    "zh": "他是在主张撤回对一个维护奴隶制的政府的支持时写下这句话的，那远比职场上走捷径严重，这种移用是我们做的。康德的检验问的是人人能否这样做；梭罗则干脆不让人数起作用。弱点在于：同样的自信，任何自认为正确的人都可以用，包括错了的人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Moreover, any man more right than his neighbors constitutes a majority of one already.",
+    "zh": "Moreover, any man more right than his neighbors constitutes a majority of one already."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1849",
+    "zh": "马萨诸塞州康科德，1849 年"
+   },
+   "source": {
+    "label": {
+     "en": "Henry David Thoreau, \"Civil Disobedience\" (1849)",
+     "zh": "梭罗〈论公民的不服从〉（1849）"
+    },
+    "url": "https://www.gutenberg.org/ebooks/71"
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.C.1",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "C",
+   "voiceId": "v-marcus-aurelius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Marcus Aurelius told himself never to count anything as a gain if it required breaking his word, losing his self-respect, or doing what needs walls and veils to hide. A profit you must conceal is not a profit.",
+    "zh": "马可·奥勒留告诫自己：凡是需要背弃诺言、丧失廉耻，或要靠墙壁和帷幕来掩藏的东西，都不要算作好处。一笔必须藏起来的利益，算不上利益。"
+   },
+   "detail": {
+    "en": "These are private notes to himself, and applying them to an industry's habits is our reading. They give a quick test for any corner: would you cut it in the open? The cost is real, since Marcus wrote as an emperor who could afford to lose a deal, and the person losing bids may not be able to.",
+    "zh": "这是他写给自己的私人笔记，把它用到一个行业的惯例上，是我们的读法。它给每一条捷径提供了一个简单的检验：你敢不敢当众这样做？代价是真实的：马可写这些话时是一位皇帝，丢一笔交易无伤大雅，而丢标的人未必承受得起。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Never esteem of anything as profitable, which shall ever constrain thee either to break thy faith, or to lose thy modesty; to hate any man, to suspect, to curse, to dissemble, to lust after anything, that requireth the secret of walls or veils.",
+    "zh": "Never esteem of anything as profitable, which shall ever constrain thee either to break thy faith, or to lose thy modesty; to hate any man, to suspect, to curse, to dissemble, to lust after anything, that requireth the secret of walls or veils."
+   },
+   "origin": {
+    "en": "Rome, c. 175",
+    "zh": "罗马，约 175 年"
+   },
+   "source": {
+    "label": {
+     "en": "Marcus Aurelius, Meditations, Book III, trans. Meric Casaubon",
+     "zh": "马可·奥勒留《沉思录》第三卷，卡索邦 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/2680"
    }
   },
   {
@@ -3480,6 +4074,99 @@
    }
   },
   {
+   "id": "q-spy-on-your-country.A.1",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "A",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hume held that when a ruler pursues measures extremely harmful to the public, or reaches beyond his legal bounds, resisting him is allowable even though the law would call it rebellion. The public good can outrank the letter of the law.",
+    "zh": "休谟认为，当统治者推行对公众极其有害的措施，或越出法律界限时，反抗他是可以允许的，尽管法律会把这称为叛乱。公共利益可以高于法律条文。"
+   },
+   "detail": {
+    "en": "Hume meant open resistance by the people and the other parts of a mixed constitution, not one person acting in secret; using it to defend a spy or leaker is ours. He also insisted elsewhere that such cases are rare and that obedience is the rule, so the weakness is that he gives no way to tell, in the moment, who has judged rightly.",
+    "zh": "休谟说的是人民和混合政体中其他部分的公开反抗，而不是一个人暗中行事；用它来为间谍或泄密者辩护是我们的推论。他在别处也坚持，这种情形很少见，服从才是常规；所以弱点是：他没有给出办法，让人在当下分辨谁的判断是对的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Not only where the chief magistrate enters into measures, in themselves, extremely pernicious to the public, but even when he would encroach on the other parts of the constitution, and extend his power beyond the legal bounds, it is allowable to resist and dethrone him; though such resistance and violence may, in the general tenor of the laws, be deemed unlawful and rebellious.",
+    "zh": "Not only where the chief magistrate enters into measures, in themselves, extremely pernicious to the public, but even when he would encroach on the other parts of the constitution, and extend his power beyond the legal bounds, it is allowable to resist and dethrone him; though such resistance and violence may, in the general tenor of the laws, be deemed unlawful and rebellious."
+   },
+   "origin": {
+    "en": "Scotland, 1740",
+    "zh": "苏格兰，1740 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, A Treatise of Human Nature, Book III, Part II, §X",
+     "zh": "大卫·休谟《人性论》第三卷第二部分第十节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4705"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.B.1",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "B",
+   "voiceId": "v-pascal",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Pascal held that laws must be obeyed because they are laws, not because each person judges them just, since obedience that waits on private approval breeds sedition. A citizen who acts against the state on their own verdict of its justice undoes that.",
+    "zh": "帕斯卡认为，法律之所以必须服从，是因为它们是法律，而不是因为每个人都认为它们公正；因为以个人认可为前提的服从会滋生动乱。一个凭自己对国家是否公正的判断而与之作对的公民，恰恰破坏了这一点。"
+   },
+   "detail": {
+    "en": "Pascal's fragment is about domestic peace, not espionage, and his tone is debated: some read it as sincere counsel, others as a sceptic's bleak observation. Applying it to someone who spies on their own country is ours. The cost is that it gives no exit at all from a state that really is unjust.",
+    "zh": "帕斯卡的这则断想关乎国内的安宁，不涉及间谍，而且其语气有争议：有人读作真诚的劝告，也有人读作怀疑论者冷峻的观察。把它用到监视本国的人身上是我们的推论。代价是：面对一个确实不公正的国家，它完全没有留出出路。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "It is dangerous to say to the people that the laws are not just, for men obey them only because they think them just. Therefore it is necessary to say at the same time that they must be obeyed because they are laws, as superiors must be obeyed, not because they are just, but because they are superiors.",
+    "zh": "It is dangerous to say to the people that the laws are not just, for men obey them only because they think them just. Therefore it is necessary to say at the same time that they must be obeyed because they are laws, as superiors must be obeyed, not because they are just, but because they are superiors."
+   },
+   "origin": {
+    "en": "France, c. 1660",
+    "zh": "法国，约 1660 年"
+   },
+   "source": {
+    "label": {
+     "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+     "zh": "帕斯卡《思想录》，凯根·保罗 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/46921"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.C.1",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "C",
+   "voiceId": "v-montaigne",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Montaigne held that a wise person keeps their judgement entirely free inside, while outwardly conforming to the laws and customs of their time. He pointed to Socrates, who would not save his life by disobeying even an unjust magistrate.",
+    "zh": "蒙田认为，智者在内心保持判断的完全自由，在外则遵从当时的法律与习俗。他以苏格拉底为例：即便面对不公正的官员，苏格拉底也不肯以违抗来保全性命。"
+   },
+   "detail": {
+    "en": "This gives the 'obey' half of the Laws' choice its own reason: thought is free, so action need not rebel; applying it to spying is ours. Some readers take Montaigne's conservatism as partly ironic, so the reading is contested. The cost is that it leaves the free mind with no outlet but silence when the state is heading for disaster.",
+    "zh": "这为《克力同》中法律给出的选择里服从那一半提供了另一种理由：思想是自由的，所以行动不必反叛；把它用到间谍问题上是我们的推论。有些读者认为蒙田的保守带有几分反讽，因此这一解读有争议。代价是：当国家走向灾难时，自由的心灵除了沉默别无出路。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "a wise man, within, ought to withdraw and retire his soul from the crowd, and there keep it at liberty and in power to judge freely of things; but as to externals, absolutely to follow and conform himself to the fashion of the time.",
+    "zh": "a wise man, within, ought to withdraw and retire his soul from the crowd, and there keep it at liberty and in power to judge freely of things; but as to externals, absolutely to follow and conform himself to the fashion of the time."
+   },
+   "origin": {
+    "en": "France, 1580",
+    "zh": "法国，1580 年"
+   },
+   "source": {
+    "label": {
+     "en": "Michel de Montaigne, Essays, \"Of Custom, and that we should not easily change a law received\", trans. Charles Cotton, ed. W. C. Hazlitt",
+     "zh": "蒙田《随笔集》〈论习俗及不可轻易改变已有之法〉，科顿 英译，黑兹利特 编"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3600"
+   }
+  },
+  {
    "id": "q-wanting-power-disqualifies.A.0",
    "questionId": "q-wanting-power-disqualifies",
    "optionKey": "A",
@@ -3635,6 +4322,99 @@
    }
   },
   {
+   "id": "q-wanting-power-disqualifies.A.1",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "A",
+   "voiceId": "v-augustine",
+   "kind": "religiousTeaching",
+   "claim": {
+    "en": "Augustine held that it is unseemly to covet the high place needed to govern, even when the place is filled well. Someone who loves governing more than doing good, he says, is no true overseer.",
+    "zh": "奥古斯丁认为，觊觎治理民众所需的高位是不体面的，即使那个位置被人妥善地担任。他说，爱治理胜过爱行善的人，算不上真正的监督者。"
+   },
+   "detail": {
+    "en": "This is a rule about desire, not results: Augustine grants that the covetous may govern well and still calls the coveting wrong. Applying a passage about bishops to political office is ours. Plato's reluctance is a judgement about which city runs best, while Augustine's concerns the state of the person; the cost is that it disqualifies by motive, which no one can see.",
+    "zh": "这是关于欲望的规则，而不是关于结果的：奥古斯丁承认觊觎者也可能治理得好，但仍说觊觎本身是错的。把一段谈主教的话用到政治职位上，是我们的引申。柏拉图的不情愿是对哪座城邦治理得最好的判断，奥古斯丁关注的则是人本身的状态；代价是，它以动机取消资格，而动机是谁也看不见的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "So that he who loves to govern rather than to do good is no bishop. Accordingly no one is prohibited from the search after truth, for in this leisure may most laudably be spent; but it is unseemly to covet the high position requisite for governing the people, even though that position be held and that government be administered in a seemly manner.",
+    "zh": "So that he who loves to govern rather than to do good is no bishop. Accordingly no one is prohibited from the search after truth, for in this leisure may most laudably be spent; but it is unseemly to covet the high position requisite for governing the people, even though that position be held and that government be administered in a seemly manner."
+   },
+   "origin": {
+    "en": "Hippo, North Africa, c. 426",
+    "zh": "北非希波，约 426 年"
+   },
+   "source": {
+    "label": {
+     "en": "Augustine, The City of God, Book XIX, ch. 19, trans. Marcus Dods",
+     "zh": "奥古斯丁《上帝之城》第十九卷第十九章，多兹 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/45304"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.C.1",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "C",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes held that a restless desire of power after power is common to all people, and that it comes less from greed than from insecurity: no one can keep what they have without getting more.",
+    "zh": "霍布斯认为，对权力得寸进尺、永无休止的欲望是全人类共有的，而它与其说出于贪婪，不如说出于不安：人若不获取更多，就保不住已有的东西。"
+   },
+   "detail": {
+    "en": "Hobbes is describing human nature, not praising it, and he built a whole state to restrain this desire. If he is right, disqualifying the ambitious disqualifies everyone, so the question becomes how power is checked rather than who wants it; that application is ours. Critics have called his picture a portrait of his own violent century rather than of humanity.",
+    "zh": "霍布斯是在描述人性，而不是赞美它，他构建整个国家正是为了约束这种欲望。如果他是对的，取消有野心者的资格就等于取消所有人的资格，于是问题变成如何制约权力，而不是谁想要它；这一引申是我们的。批评者认为，他画的是自己那个暴烈的世纪，而不是人性本身。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "So that in the first place, I put for a general inclination of all mankind, a perpetual and restless desire of power after power, that ceaseth only in death. And the cause of this, is not always that a man hopes for a more intensive delight, than he has already attained to; or that he cannot be content with a moderate power: but because he cannot assure the power and means to live well, which he hath present, without the acquisition of more.",
+    "zh": "So that in the first place, I put for a general inclination of all mankind, a perpetual and restless desire of power after power, that ceaseth only in death. And the cause of this, is not always that a man hopes for a more intensive delight, than he has already attained to; or that he cannot be content with a moderate power: but because he cannot assure the power and means to live well, which he hath present, without the acquisition of more."
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XI, in The English Works, vol. III, ed. William Molesworth",
+     "zh": "霍布斯《利维坦》第十一章，收入莫尔斯沃思编《英文著作集》第三卷"
+    },
+    "url": "https://www.gutenberg.org/ebooks/73957"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.D.1",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "D",
+   "voiceId": "v-bacon",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bacon held that aspiring to power is lawful when its end is the power to do good. The danger lies in office itself, which gives license to do evil as well as good.",
+    "zh": "培根认为，追求权力，若其目的是获得行善的力量，便是正当的。危险在于职位本身：它既给人行善的余地，也给人作恶的余地。"
+   },
+   "detail": {
+    "en": "Bacon adds the old saying that a place shows the man, some for the better and some for the worse, and he was later impeached for taking bribes as Lord Chancellor. Reading the essay as an answer to whether ambition should disqualify is ours. Its weakness is that doing good is the reason every aspirant gives.",
+    "zh": "培根还引用一句古话：位置显出人的本相，有人变得更好，有人变得更坏；而他自己后来身为大法官，因受贿被弹劾。把这篇随笔读作对野心是否应取消资格的回答，是我们的引申。弱点是，为了行善是每个追求者都会给出的理由。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "In place, there is license to do good, and evil; whereof the latter is a curse: for in evil, the best condition is not to win; the second, not to can. But power to do good, is the true and lawful end of aspiring.",
+    "zh": "In place, there is license to do good, and evil; whereof the latter is a curse: for in evil, the best condition is not to win; the second, not to can. But power to do good, is the true and lawful end of aspiring."
+   },
+   "origin": {
+    "en": "England, 1625",
+    "zh": "英格兰，1625 年"
+   },
+   "source": {
+    "label": {
+     "en": "Francis Bacon, Essays, \"Of Great Place\"",
+     "zh": "弗朗西斯·培根《随笔集》〈论高位〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/575"
+   }
+  },
+  {
    "id": "q-better-or-ruthless.A.0",
    "questionId": "q-better-or-ruthless",
    "optionKey": "A",
@@ -3756,6 +4536,99 @@
      "zh": "克鲁泡特金《互助论》第二章"
     },
     "url": "https://www.gutenberg.org/ebooks/4341"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.A.1",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "A",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mill accepted that every winner gains from the losers' wasted effort, and held that society should still let people compete. It should step in only when success comes by fraud, treachery or force.",
+    "zh": "密尔承认，每个赢家都是从输家白费的努力中获益的，但他认为社会仍应让人们去竞争。只有当成功是靠欺诈、背信或暴力得来时，社会才应介入。"
+   },
+   "detail": {
+    "en": "Carried to business, this is our reading: winning by being better is legitimate, winning by fraud is not, and the line between them is the whole question. Mill wrote about individuals in professions and examinations, not firms with market power. The weakness is that he leaves lawful but ruthless tactics, like pricing a smaller rival out of business, on the permitted side.",
+    "zh": "把它用到企业上是我们的读法：靠更好取胜是正当的，靠欺诈取胜则不是，而两者的界线正是问题所在。密尔写的是职业和考试中的个人，而不是握有市场力量的公司。弱点在于：像用低价把小对手挤垮这类合法却狠辣的手段，在他的标准下仍属允许之列。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Whoever succeeds in an overcrowded profession, or in a competitive examination; whoever is preferred to another in any contest for an object which both desire, reaps benefit from the loss of others, from their wasted exertion and their disappointment. But it is, by common admission, better for the general interest of mankind, that persons should pursue their objects undeterred by this sort of consequences. In other words, society admits no rights, either legal or moral, in the disappointed competitors, to immunity from this kind of suffering; and feels called on to interfere, only when means of success have been employed which it is contrary to the general interest to permit--namely, fraud or treachery, and force.",
+    "zh": "Whoever succeeds in an overcrowded profession, or in a competitive examination; whoever is preferred to another in any contest for an object which both desire, reaps benefit from the loss of others, from their wasted exertion and their disappointment. But it is, by common admission, better for the general interest of mankind, that persons should pursue their objects undeterred by this sort of consequences. In other words, society admits no rights, either legal or moral, in the disappointed competitors, to immunity from this kind of suffering; and feels called on to interfere, only when means of success have been employed which it is contrary to the general interest to permit--namely, fraud or treachery, and force."
+   },
+   "origin": {
+    "en": "Britain, 1859",
+    "zh": "英国，1859 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, On Liberty, ch. V",
+     "zh": "约翰·斯图亚特·密尔《论自由》第五章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/34901"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.B.1",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "B",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes named competition as the first of three natural causes of conflict: where no common power holds people in awe, they invade one another for gain. Ruthlessness, on this view, is what ordinary people do when nothing stops them.",
+    "zh": "霍布斯把竞争列为人与人冲突的三大自然原因之首：在没有共同权力震慑众人的地方，人们会为了利益而相互侵犯。照这种看法，残酷不过是普通人在无人阻拦时会做的事。"
+   },
+   "detail": {
+    "en": "Hobbes was describing life without a state, not a market; reading a market with weak enforcement as a small version of it is our application. Unlike Marx, he blames human nature plus a missing referee rather than capitalism itself. The cost is that his remedy is a strong sovereign, and a powerful regulator can be captured by the very winners it is meant to restrain.",
+    "zh": "霍布斯描述的是没有国家的生活，而不是市场；把执法薄弱的市场看作它的缩影，是我们的引申。与马克思不同，他归咎的是人性加上裁判缺席，而不是资本主义本身。代价是：他的解药是强大的主权者，而强有力的监管者也可能被它本该约束的赢家所俘获。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "So that in the nature of man, we find three principal causes of quarrel. First, competition; secondly, diffidence; thirdly, glory.",
+    "zh": "So that in the nature of man, we find three principal causes of quarrel. First, competition; secondly, diffidence; thirdly, glory."
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XIII, in The English Works, vol. III, ed. William Molesworth",
+     "zh": "霍布斯《利维坦》第十三章，收于莫尔斯沃思编《霍布斯英文著作集》第三卷"
+    },
+    "url": "https://www.gutenberg.org/ebooks/73957"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.D.1",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "D",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hume held that people are selfish and seldom grateful, yet learn to serve strangers without any kindness, because each expects the favour returned. Trust, for him, is a convention that self-interest builds and keeps.",
+    "zh": "休谟认为人们自私、少有感恩之心，却能学会在毫无善意的情况下为陌生人效力，因为每个人都期待对方回报。在他看来，信任是一种由自利建立并维持的惯例。"
+   },
+   "detail": {
+    "en": "Applied to business, this is our reading: the firms that last are the ones others can count on, and that reliability is itself the edge. Unlike Kropotkin, Hume needs no goodwill, only long memories and repeated dealings. The weakness is that the convention holds only where dealings repeat; a firm that expects one big score has little reason to keep faith.",
+    "zh": "用到商业上是我们的读法：能长久的公司，是别人可以指望的公司，而这种可靠本身就是优势。与克鲁泡特金不同，休谟不需要善意，只需要长久的记忆和反复的往来。弱点在于：这种惯例只在往来反复时才成立；一家只想赚一大笔就走的公司，几乎没有理由守信。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Hence I learn to do a service to another, without bearing him any real kindness; because I forsee, that he will return my service, in expectation of another of the same kind, and in order to maintain the same correspondence of good offices with me or with others.",
+    "zh": "Hence I learn to do a service to another, without bearing him any real kindness; because I forsee, that he will return my service, in expectation of another of the same kind, and in order to maintain the same correspondence of good offices with me or with others."
+   },
+   "origin": {
+    "en": "Scotland, 1740",
+    "zh": "苏格兰，1740 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, A Treatise of Human Nature, Book III, Part II, §V",
+     "zh": "大卫·休谟《人性论》第三卷第二部分第五节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4705"
    }
   },
   {
@@ -3914,6 +4787,99 @@
    }
   },
   {
+   "id": "q-lying-for-your-country.A.1",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "A",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hume held that duties between states rest on a weaker need than duties between people, so a prince or minister who deceives another state deserves more indulgence than a private person who breaks his word. The office does change how the lie is judged.",
+    "zh": "休谟认为，国与国之间的义务所依托的需要，弱于人与人之间的义务，因此欺骗他国的君主或大臣，比食言的普通人更应得到宽容。职位确实改变了人们评判谎言的方式。"
+   },
+   "detail": {
+    "en": "Hume is talking about treaties between rulers, not lies a government tells its own citizens; stretching it that far is our step. The cost is that his scale is one of degree with no floor, so it offers no point at which a state's deception stops being excusable.",
+    "zh": "休谟谈的是统治者之间的条约，而不是政府对本国公民说的谎；把它延伸到那里是我们的推论。代价是：他的尺度只讲程度、没有底线，因此没有给出国家的欺骗在哪一点上不再可以原谅。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Since, therefore, the natural obligation to justice, among different states, is not so strong as among individuals, the moral obligation, which arises from it, must partake of its weakness; and we must necessarily give a greater indulgence to a prince or minister, who deceives another; than to a private gentleman, who breaks his word of honour.",
+    "zh": "Since, therefore, the natural obligation to justice, among different states, is not so strong as among individuals, the moral obligation, which arises from it, must partake of its weakness; and we must necessarily give a greater indulgence to a prince or minister, who deceives another; than to a private gentleman, who breaks his word of honour."
+   },
+   "origin": {
+    "en": "Scotland, 1740",
+    "zh": "苏格兰，1740 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, A Treatise of Human Nature, Book III, Part II, §XI",
+     "zh": "大卫·休谟《人性论》第三卷第二部分第十一节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4705"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.B.1",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "B",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes held that where no common power stands over the parties there is no law, and so nothing is unjust; in that condition force and fraud are virtues. He thought sovereign states stand toward one another in exactly that condition.",
+    "zh": "霍布斯认为，凡是没有共同权力凌驾于各方之上的地方，就没有法律，因而也无所谓不义；在那种状态下，暴力与欺诈都是美德。他认为主权国家彼此之间正处于这种状态。"
+   },
+   "detail": {
+    "en": "On this view a state that keeps faith with rivals who do not is disarming itself; that is our application of his account of war to diplomacy. The cost is that it says nothing about lies told inside a state, where Hobbes thinks law does hold, and that the same logic excuses every rival's deceit too.",
+    "zh": "照此看法，一个国家对不守信的对手守信，等于自缴武器；把他对战争状态的描述用到外交上，是我们的引申。代价是：它对国家内部说的谎只字未提，而霍布斯认为在国内法律确实有效；而且同样的逻辑也替每一个对手的欺骗开脱。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Where there is no common power, there is no law: where no law, no injustice. Force, and fraud, are in war the two cardinal virtues.",
+    "zh": "Where there is no common power, there is no law: where no law, no injustice. Force, and fraud, are in war the two cardinal virtues."
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XIII",
+     "zh": "霍布斯《利维坦》第十三章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/73957"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.D.1",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "D",
+   "voiceId": "v-bacon",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bacon ranked keeping secrets and concealing your mind as often necessary, but held outright false profession to be more culpable, allowable only in great and rare matters. Even there, he counted it a fault.",
+    "zh": "培根认为，保守秘密、掩饰心意常常是必要的，但公然的虚假表白则更应受责备，只有在重大而罕见的事情上才可允许。即便在那里，他仍把它算作过错。"
+   },
+   "detail": {
+    "en": "Bacon wrote for courtiers and statesmen, so the 'great and rare matters' plausibly include affairs of state, though the essay does not name them; applying it to national lies is ours. He also warned that the habit costs the liar trust, which is the stain in practical form. The weakness is that he gives no test for what counts as great and rare.",
+    "zh": "培根是写给廷臣和政治家看的，所以重大而罕见的事情很可能包括国事，但文中并未点明；把它用到为国说谎上是我们的推论。他也提醒，这种习惯会让说谎者失去信任，这就是污点的实际形态。弱点是：他没有给出判断何为重大而罕见的标准。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "But for the third degree, which is simulation, and false profession; that I hold more culpable, and less politic; except it be in great and rare matters.",
+    "zh": "But for the third degree, which is simulation, and false profession; that I hold more culpable, and less politic; except it be in great and rare matters."
+   },
+   "origin": {
+    "en": "England, 1625",
+    "zh": "英格兰，1625 年"
+   },
+   "source": {
+    "label": {
+     "en": "Francis Bacon, Essays, \"Of Simulation and Dissimulation\"",
+     "zh": "培根《随笔集》〈论伪装与掩饰〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/575"
+   }
+  },
+  {
    "id": "q-leader-like-you-or-better.A.0",
    "questionId": "q-leader-like-you-or-better",
    "optionKey": "A",
@@ -4069,6 +5035,99 @@
    }
   },
   {
+   "id": "q-leader-like-you-or-better.B.1",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "B",
+   "voiceId": "v-pascal",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Pascal held that ordinary people and the truly wise both judge soundly, and that the trouble comes from the half-learned in between, who think themselves wise and despise everyone else.",
+    "zh": "帕斯卡认为，普通人和真正的智者都判断得当，麻烦出在两者之间那些一知半解的人：他们自以为聪明，看不起其他所有人。"
+   },
+   "detail": {
+    "en": "Pascal is not praising popular opinion without reserve: elsewhere he says the people's opinions are sound but held for the wrong reasons. Applying this to elections is ours. It cuts against option A, since those most eager to lead because they know better may be exactly the half-learned he distrusts; its weakness is that it gives no way to tell the wise from the merely confident.",
+    "zh": "帕斯卡并非无条件地赞美民意：他在别处说，百姓的看法是对的，但他们持有这些看法的理由是错的。把这段话用到选举上，是我们的引申。它对选项 A 构成反驳：那些因为自认懂得更多而最想领导的人，也许正是他所不信任的半通之人；它的弱点是，没有给出区分真正的智者和单纯自信者的办法。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Those between the two, who have left their natural ignorance and not been able to reach the other, have some tincture of this vain knowledge, and assume to be wise. These trouble the world, and judge all things falsely. The people and the wise make up the world; these despise it, and are despised; they judge ill of all things, and the world rightly judges of them.",
+    "zh": "Those between the two, who have left their natural ignorance and not been able to reach the other, have some tincture of this vain knowledge, and assume to be wise. These trouble the world, and judge all things falsely. The people and the wise make up the world; these despise it, and are despised; they judge ill of all things, and the world rightly judges of them."
+   },
+   "origin": {
+    "en": "France, c. 1660",
+    "zh": "法国，约 1660 年"
+   },
+   "source": {
+    "label": {
+     "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+     "zh": "帕斯卡《思想录》，凯根·保罗 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/46921"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.C.1",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "C",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes held that a representative acts in the name of the people, who are the authors of everything done on their authority. What matters is not whether the leader resembles you but what commission you gave, and how far you limited it.",
+    "zh": "霍布斯认为，代表者以人民的名义行事，人民是凭其授权所做一切的作者。要紧的不是领导者像不像你，而是你给了他什么委托，又把它限定到什么程度。"
+   },
+   "detail": {
+    "en": "Hobbes meant this to strengthen the sovereign: give authority without limit and you own everything the ruler does, including what you hate. Reading it as a case for leaders who carry out the people's will is ours, and it cuts both ways. The useful point is the last clause: authority given with limits binds you only so far.",
+    "zh": "霍布斯的本意是加强主权者：无限制地授权，你就要承认统治者的一切作为都是你的，包括你厌恶的那些。把它读成领导者应执行人民意志的理由，是我们的引申，而且这把刀两面都割。有用的是最后一句：有限度的授权，只在那个限度内约束你。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "they cannot be understood for one; but many authors, of every thing their representative saith, or doth in their name; every man giving their common representer, authority from himself in particular; and owning all the actions the representer doth, in case they give him authority without stint: otherwise, when they limit him in what, and how far he shall represent them, none of them owneth more than they gave him commission to act.",
+    "zh": "they cannot be understood for one; but many authors, of every thing their representative saith, or doth in their name; every man giving their common representer, authority from himself in particular; and owning all the actions the representer doth, in case they give him authority without stint: otherwise, when they limit him in what, and how far he shall represent them, none of them owneth more than they gave him commission to act."
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XVI, in The English Works, vol. III, ed. William Molesworth",
+     "zh": "霍布斯《利维坦》第十六章，收入莫尔斯沃思编《英文著作集》第三卷"
+    },
+    "url": "https://www.gutenberg.org/ebooks/73957"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.D.1",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "D",
+   "voiceId": "v-addams",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Jane Addams argued that democracy stays real only if leaders and led keep common ground in their experience. In the Chicago wards she knew, voters chose the alderman who lived as they did, and reformers from outside failed because they did not.",
+    "zh": "简·亚当斯认为，只有领导者和被领导者在经验上保持共同的基础，民主才是真实的。在她熟悉的芝加哥选区里，选民选出的是和他们过着同样生活的市议员，而外来的改革者之所以失败，正因为他们不是这样。"
+   },
+   "detail": {
+    "en": "Addams was not defending that alderman: she shows him corrupt and still re-elected, because his standard suited his constituents. Turning her observation into an answer about national leaders is ours. Her point is that shared experience earns trust, and trust can cover a great deal; the cost is that one of you may also share your failings.",
+    "zh": "亚当斯并不是在为那位市议员辩护：她写出他腐败却仍然连任，因为他的标准正合选民的口味。把她的观察变成对国家领导人问题的回答，是我们的引申。她的要点是，共同的经验赢得信任，而信任可以遮掩很多东西；代价是，你们中的一员也可能带着你们的缺点。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "It is most difficult to hold to our political democracy and to make it in any sense a social expression and not a mere governmental contrivance, unless we take pains to keep on common ground in our human experiences. Otherwise there is in various parts of the community an inevitable difference of ethical standards which becomes responsible for much misunderstanding.",
+    "zh": "It is most difficult to hold to our political democracy and to make it in any sense a social expression and not a mere governmental contrivance, unless we take pains to keep on common ground in our human experiences. Otherwise there is in various parts of the community an inevitable difference of ethical standards which becomes responsible for much misunderstanding."
+   },
+   "origin": {
+    "en": "Chicago, 1902",
+    "zh": "芝加哥，1902 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jane Addams, Democracy and Social Ethics",
+     "zh": "简·亚当斯《民主与社会伦理》"
+    },
+    "url": "https://www.gutenberg.org/ebooks/15487"
+   }
+  },
+  {
    "id": "q-market-winner-best.A.0",
    "questionId": "q-market-winner-best",
    "optionKey": "A",
@@ -4190,6 +5249,99 @@
      "zh": "威廉·詹姆斯《实用主义》第六讲"
     },
     "url": "https://www.gutenberg.org/ebooks/5116"
+   }
+  },
+  {
+   "id": "q-market-winner-best.A.1",
+   "questionId": "q-market-winner-best",
+   "optionKey": "A",
+   "voiceId": "v-bentham",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bentham held that every person is the best judge of his own interest, and that no one consents to what he thinks will hurt him. A free purchase, on that view, is evidence that the buyer is better off.",
+    "zh": "边沁认为，每个人都是自身利益的最佳判断者，而且没有人会同意他认为有害于自己的事。照这种看法，一次自愿的购买，就是买家因此受益的证据。"
+   },
+   "detail": {
+    "en": "Bentham stated this as a rule of law about consent, and reading sales figures as a verdict on quality is our extension. Where Smith makes the consumer the purpose of the economy, Bentham makes the consumer the judge. The weakness is in the wording: a buyer judges his own interest, not products he never tried, and Bentham himself allowed that people deceive themselves.",
+    "zh": "边沁是把这当作关于「同意」的法律规则来讲的，把销量当作对品质的裁决，是我们的引申。斯密把消费者当作经济的目的，边沁则把消费者当作裁判。弱点就在措辞里：买家判断的是自身利益，而不是他从未试过的产品；边沁本人也承认人会自欺。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "This rule is founded upon two very simple propositions: one, that every person is the best judge of his own interest; the other, that no man will consent to what he thinks hurtful to himself.",
+    "zh": "This rule is founded upon two very simple propositions: one, that every person is the best judge of his own interest; the other, that no man will consent to what he thinks hurtful to himself."
+   },
+   "origin": {
+    "en": "Paris, 1802",
+    "zh": "巴黎，1802 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jeremy Bentham, The Theory of Legislation",
+     "zh": "边沁《立法理论》"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-market-winner-best.B.1",
+   "questionId": "q-market-winner-best",
+   "optionKey": "B",
+   "voiceId": "v-bacon",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bacon held that popular praise follows show rather than substance: fame, like a river, carries light things up and drowns weighty ones. Only the praise of people of judgment lasts.",
+    "zh": "培根认为，大众的赞誉追随的是表面而非实质：名声像河流一样，把轻浮的东西托起，把厚重的东西淹没。只有有判断力的人给的赞誉才能持久。"
+   },
+   "detail": {
+    "en": "Bacon was writing about praise of persons, and treating market share as a kind of fame is our reading. Where Mill asks those who know both options, Bacon asks those with judgment, which is harder to check. The cost is plain snobbery: it lets an expert dismiss what ordinary buyers really value as mere show.",
+    "zh": "培根谈的是对人的赞誉，把市场份额当作一种名声，是我们的读法。密尔问的是两样都了解的人，培根问的是有判断力的人，后者更难核实。代价是明显的势利：它让专家可以把普通买家真正看重的东西斥为表面功夫。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Certainly fame is like a river, that beareth up things light and swoln, and drowns things weighty and solid.",
+    "zh": "Certainly fame is like a river, that beareth up things light and swoln, and drowns things weighty and solid."
+   },
+   "origin": {
+    "en": "England, 1625",
+    "zh": "英格兰，1625 年"
+   },
+   "source": {
+    "label": {
+     "en": "Francis Bacon, Essays, \"Of Praise\"",
+     "zh": "培根《随笔》〈论赞美〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/575"
+   }
+  },
+  {
+   "id": "q-market-winner-best.C.1",
+   "questionId": "q-market-winner-best",
+   "optionKey": "C",
+   "voiceId": "v-thoreau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Thoreau measured the cost of a thing not in dollars but in the amount of life you must exchange for it. A price tag, on that measure, leaves out most of what a thing costs.",
+    "zh": "梭罗衡量一样东西的代价，不是用美元，而是用你必须为它付出的生命。照这个尺度，价签漏掉了一样东西的大部分代价。"
+   },
+   "detail": {
+    "en": "He was weighing a house against the years of labour it takes to pay for it, and turning this on market winners is our application. Unlike Marx's adulterated bread, Thoreau's point needs no fraud: an honest price can still misstate what a thing is worth to the person who pays it. The weakness is that life cannot be counted, so his test cannot rank two products the way a price can.",
+    "zh": "他权衡的是一所房子与付清它所需的多年劳作，把这用到市场赢家上，是我们的引申。与马克思笔下掺假的面包不同，梭罗的观点不需要欺诈：一个诚实的价格，也可能错估一样东西对付钱的人究竟值多少。弱点在于：生命无法计数，所以他的检验不能像价格那样给两件产品排序。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the cost of a thing is the amount of what I will call life which is required to be exchanged for it, immediately or in the long run.",
+    "zh": "the cost of a thing is the amount of what I will call life which is required to be exchanged for it, immediately or in the long run."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1854",
+    "zh": "马萨诸塞州康科德，1854 年"
+   },
+   "source": {
+    "label": {
+     "en": "Henry David Thoreau, Walden, \"Economy\"",
+     "zh": "梭罗《瓦尔登湖》〈经济篇〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/205"
    }
   },
   {
@@ -8145,8 +9297,8 @@
    "reach": {
     "weight": 58,
     "note": {
-     "en": "Invented the essay; the first sustained study of a self in flux",
-     "zh": "散文体裁的发明者；第一部持续研究流动自我的作品"
+     "en": "Created the essay as a form of writing; the first long, honest study of a self that keeps changing",
+     "zh": "开创了随笔这一文体；第一部长篇、坦诚地书写一个不断变化的自我的作品"
     }
    },
    "image": {
@@ -8471,6 +9623,91 @@
     "zh": "荷兰，1677 年"
    },
    "wiki": "Baruch_Spinoza",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-gilman",
+   "name": {
+    "en": "Gilman",
+    "zh": "吉尔曼"
+   },
+   "kind": "contestedArgument",
+   "type": "person",
+   "origin": {
+    "en": "United States, 1898",
+    "zh": "美国，1898 年"
+   },
+   "wiki": "Charlotte_Perkins_Gilman",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-godwin",
+   "name": {
+    "en": "Godwin",
+    "zh": "葛德文"
+   },
+   "kind": "contestedArgument",
+   "type": "person",
+   "origin": {
+    "en": "England, 1793",
+    "zh": "英格兰，1793 年"
+   },
+   "wiki": "William_Godwin",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-croce",
+   "name": {
+    "en": "Croce",
+    "zh": "克罗齐"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Italy, 1902",
+    "zh": "意大利，1902 年"
+   },
+   "wiki": "Benedetto_Croce",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-addams",
+   "name": {
+    "en": "Addams",
+    "zh": "亚当斯"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Chicago, 1902",
+    "zh": "芝加哥，1902 年"
+   },
+   "wiki": "Jane_Addams",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-bacon",
+   "name": {
+    "en": "Bacon",
+    "zh": "培根"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "England, 1612",
+    "zh": "英格兰，1612 年"
+   },
+   "wiki": "Francis_Bacon",
    "reach": null,
    "image": null,
    "workIds": []
