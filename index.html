@@ -4026,10 +4026,10 @@ function keyForm(){
   // until something is typed.
   return `<form class="keyform" data-key-form="1">
       ${AGENT_KEY_BAD ? `<p class="key-bad" role="alert">${t("That code didn't work.", '这个访问码不对。')}</p>` : ''}
-      <input id="agent-key" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required
+      <input id="agent-key" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
         placeholder="${t('Access code','访问码')}" aria-label="${t('Access code','访问码')}">
       <p>${t('Kept in this browser only.', '只保存在这个浏览器里。')}</p>
-      <button type="submit" class="key-save" disabled>${t('Save','保存')}</button>
+      <button type="submit" class="key-save"${AGENT_KEY ? '' : ' disabled'}>${t('Save','保存')}</button>
     </form>`;
 }
 
@@ -5925,7 +5925,7 @@ document.addEventListener('click', ev => {
     // Focus inside the tap itself: iOS raises the keyboard only for a focus
     // made during the user's gesture, never one from a timer.
     const k = document.getElementById('agent-key');
-    if(k){ k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = !k.value.trim();
+    if(k){ k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = false;
       k.focus(); k.select(); }
     return;
   }
@@ -6239,7 +6239,8 @@ document.addEventListener('submit', ev => {
   if(ev.target.dataset && ev.target.dataset.keyForm){
     ev.preventDefault();
     const v = (document.getElementById('agent-key') || {}).value || '';
-    if(!v.trim()) return;
+    if(!v.trim() && !AGENT_KEY) return;
+    // Empty: the saved code is removed, as Forget access code does.
     setAgentKey(v.trim()); AGENT_NEEDS_KEY = false; AGENT_KEY_BAD = false; ACCESS.codeOpen = false;
     ACCESS.sheet = false; AGENT_STATE = 'unknown';
     agentReady().then(render);
@@ -6312,7 +6313,8 @@ document.addEventListener('input', ev => {
   if(ev.target.id === 'me-name'){ ME_NAME = ev.target.value; try{ localStorage.setItem('still.name', ME_NAME.trim()); }catch(e){} return; }
   if(ev.target.id === 'agent-key'){
     const s = ev.target.form && ev.target.form.querySelector('.key-save');
-    if(s) s.disabled = !ev.target.value.trim();
+    // With a code saved, an empty Save removes it (founder).
+    if(s) s.disabled = !ev.target.value.trim() && !AGENT_KEY;
     return;
   }
   const af = ev.target.dataset && ev.target.dataset.acc;
