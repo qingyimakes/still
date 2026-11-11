@@ -163,6 +163,9 @@ img{max-width:100%}
 .me-sheet-body{padding:0 var(--sp-l) var(--sp-xl);overflow-y:auto;display:flex;flex-direction:column;gap:var(--sp-xl)}
 .me-sheet-body section h3{margin:0;font-size:16px;font-weight:700}
 .me-sheet-body section p{margin:4px 0 var(--sp-s);font-size:14.5px;color:var(--ink-secondary)}
+.me-data dl{margin:var(--sp-xs) 0 0}
+.me-data dt{font-size:13px;font-weight:600;color:var(--ink);margin-top:var(--sp-s)}
+.me-data dd{margin:2px 0 0;font-size:14.5px;line-height:1.45;color:var(--ink-secondary)}
 .me-sheet input#me-name{margin:0;width:100%;font-size:16px}
 
 /* --- Moving between pages -------------------------------------------------- */
@@ -292,7 +295,21 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .icon-btn.on{color:var(--like)}
 .q-title{font-family:var(--serif);font-size:36px;line-height:1.24;margin:12px 0 0;font-weight:400;
          text-wrap:balance}
-.q--flat .q-title{font-size:30px;line-height:1.3}
+/* In the thread: shortened, as the app does (titleCompact 26, three lines
+   of description with More / Less, tighter options). */
+.q--flat .q-title{font-size:26px;line-height:1.3;margin-top:var(--sp-s)}
+.q--flat .q-why{margin-top:var(--sp-s)}
+.q-why.clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.q-more{min-height:32px;margin-top:var(--sp-xxs);font-size:15px;font-weight:500;color:var(--ink-secondary)}
+.q--flat .opts{gap:var(--sp-xs);margin-top:var(--sp-m)}
+/* "Answer first": a small centred alert, as the app's. */
+.af{position:fixed;z-index:41;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(300px,calc(100% - 48px));padding:var(--sp-l) var(--sp-l) var(--sp-s);
+  background:var(--surface);border-radius:var(--r-card);text-align:center;
+  box-shadow:0 12px 40px rgba(36,50,53,.22)}
+.af b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
+.af p{margin:var(--sp-xs) 0 var(--sp-m);font-size:14px;line-height:1.45;color:var(--ink-secondary)}
+.af button{display:block;width:100%;min-height:44px;text-align:center;border-top:1px solid var(--hairline);font-size:16px;font-weight:600;color:var(--ink)}
 .q-why{font-size:17px;line-height:1.45;color:var(--text-body);margin:12px 0 0}
 
 /* --- Options ------------------------------------------------------------- */
@@ -739,7 +756,11 @@ button.cover:hover{outline:2px solid var(--hairline-strong);outline-offset:2px}
    behind them (founder): messages scroll underneath, and the list's bottom
    padding (set from the float's height) lets the last line clear it. */
 .convo-pane{position:relative}
-.cfoot{position:absolute;left:0;right:0;bottom:0;z-index:5;pointer-events:none}
+.cfoot{position:absolute;left:0;right:0;bottom:0;z-index:5;pointer-events:none;
+  /* Backed in the page colour, fading in over its top edge: text scrolling
+     up from below never shows behind the chip, around the message box or
+     between it and the tab bar, and there is no visible bar (founder). */
+  background:linear-gradient(to bottom, rgba(250,250,250,0), var(--bg) var(--sp-m))}
 .cfoot > *{pointer-events:auto}
 .cfoot .composer{background:transparent}
 .cfoot .chat-acts .ghost{background:linear-gradient(var(--chip),var(--chip)),var(--bg);
@@ -852,6 +873,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .chead .add{flex:none;width:34px;height:34px;border-radius:50%;background:var(--chip);
             color:var(--ink);display:grid;place-items:center;padding:0}
 .add svg{width:15px;height:15px}
+.list-head .add svg{width:18px;height:18px}   /* the new-chat pencil, drawn at 24 */
 
 /* Transcript */
 /* The transcript is one centred column, the composer's width, so a 65ch
@@ -1393,7 +1415,7 @@ body.resizing{cursor:col-resize;user-select:none}
   /* Pinned below the top bar (and its back button), never under it. */
   .t-left{position:sticky;top:72px;max-height:calc(100dvh - 88px);
           overflow-y:auto;overscroll-behavior:contain}
-  .t-left .q-title{font-size:30px;line-height:1.3}
+  .t-left .q-title{font-size:26px;line-height:1.3}
   .t-right > .section-h:first-child{margin-top:var(--sp-xs)}
 }
 
@@ -1780,6 +1802,21 @@ function optionRow(q, o, chosen){
   </button>`;
 }
 
+let LEDE_OPEN = false;      // the thread card's description, expanded
+let ANSWER_FIRST = false;   // the "Answer first" note for an unanswered Home card
+function answerFirstDialog(){
+  if(!ANSWER_FIRST) return '';
+  return `<div class="backdrop" data-af-close="1"></div>
+    <div class="af" role="alertdialog" aria-modal="true" aria-labelledby="af-t" aria-describedby="af-d">
+      <b id="af-t">${t('Answer first','先作答')}</b>
+      <p id="af-d">${t('Choose an answer and the thread opens. Nobody is scoring you, and you can change your answer any time.',
+        '选一个答案，讨论就会展开。没有人在给你打分，你也可以随时更改答案。')}</p>
+      <button type="button" data-af-close="1">${t('OK','好')}</button>
+    </div>`;
+}
+document.addEventListener('keydown', ev => {
+  if(ANSWER_FIRST && ev.key === 'Escape'){ ev.preventDefault(); ANSWER_FIRST = false; render(); }
+});
 function questionCard(q, flat){
   const chosen = state.votes[q.id] ?? null;
   const liked = !!state.likes['question:'+q.id];
@@ -1804,7 +1841,14 @@ function questionCard(q, flat){
       ${reportBtn('question:'+q.id)}
     </div>
     <h2 class="q-title">${esc(L(q.title))}</h2>
-    <p class="q-why">${esc(L(q.why))}</p>
+    ${flat
+      // In the thread the card is shortened, as the app does, so the
+      // replies show sooner: a smaller title, three lines of description
+      // with More / Less, tighter options.
+      ? `<p class="q-why${LEDE_OPEN ? '' : ' clamp'}">${esc(L(q.why))}</p>
+         <button type="button" class="q-more" data-lede="1" aria-expanded="${LEDE_OPEN}">${
+           LEDE_OPEN ? t('Less','收起') : t('More','更多')}</button>`
+      : `<p class="q-why">${esc(L(q.why))}</p>`}
     <div class="opts">${q.options.map(o => optionRow(q,o,chosen)).join('')}</div>
     <p class="q-close">${esc(close)}</p>
     ${reportNote('question:'+q.id)}
@@ -2593,7 +2637,9 @@ function convoList(open){
   return `<aside class="convo-list">
     <div class="list-head">
       <h1>${t('Agon','争鸣')}</h1>${AGENT_URL ? rpPill() : ''}
-      <button class="add" data-new="1" aria-label="${t('New conversation','新建对话')}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      <button class="add" data-new="1" aria-label="${t('New conversation','新建对话')}"><svg viewBox="0 0 24 24" aria-hidden="true"
+        fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path
+        d="M12 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><path d="M17.5 3.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></button>
     </div>
     ${AGENT_URL && RP_OPEN && !open ? `<div class="rp-bar">${rpLine()}</div>` : ''}
     ${chat.convos.length ? chat.convos
@@ -5178,6 +5224,13 @@ function meSettings(){
           `<span class="kind" style="background:rgba(255,255,255,.12);color:#fff">${
             esc(kindLabel(k))}</span>`).join('')}</div>
       </div>
+      <section class="me-data"><h3>${t('What stays here, what is sent','哪些留在这里，哪些会发送')}</h3>
+        <dl>
+          <dt>${t('Stays in this browser','留在这个浏览器里')}</dt>
+          <dd>${t('Your answers, likes, views, language and name.','你的回答、喜欢、浏览记录、语言和名字。')}</dd>
+          <dt>${t("Sent to Still's AI",'发送给 Still 的 AI')}</dt>
+          <dd>${t('What you type in chat, kept without your name.','你在聊天中输入的内容，保存时不含你的名字。')}</dd>
+        </dl></section>
       <section><h3>${t('Erase what this browser remembers','清除这个浏览器记住的内容')}</h3>
         <p>${t('Your answers and likes. There is no account, so this is the whole of it and it cannot be undone.','你的回答与喜欢。没有账号，所以这就是全部，且无法撤销。')}</p>
         <button class="wide" id="reset" style="background:var(--chip);color:var(--danger)">${t('Erase','清除')}</button></section>
@@ -5239,7 +5292,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet();
+  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -5369,6 +5422,8 @@ document.addEventListener('click', ev => {
   }
   if((el = hit('[data-acc-open]'))){ ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; return render(); }
   if((el = hit('[data-acc-close]'))){ ACCESS.sheet = false; ACCESS.codeOpen = false; return render(); }
+  if((el = hit('[data-af-close]'))){ ANSWER_FIRST = false; return render(); }
+  if((el = hit('[data-lede]'))){ LEDE_OPEN = !LEDE_OPEN; return render(); }
   if((el = hit('[data-acc-code]'))){
     ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
     setTimeout(() => { const k = document.getElementById('agent-key'); if(k) k.focus(); });
@@ -5483,6 +5538,8 @@ document.addEventListener('click', ev => {
       const c = { id: 'c' + Date.now(), cast: chat.pending.slice(), msgs: [],
                   said: {}, at: Date.now() };
       chat.convos.push(c); chat.open = c.id; chat.pending = [];
+      // On a phone the new conversation slides in like any opened one.
+      if(innerWidth < 900){ NAV = 'push'; CONVO_PUSHED = true; try{ history.pushState({ still: 'convo' }, ''); }catch(e){} }
     }
     chat.picking = false; save(); return render();
   }
@@ -5588,6 +5645,10 @@ document.addEventListener('click', ev => {
   if((el = hit('a'))) return;               // let real links through
 
   if((el = hit('[data-open]')) && el.dataset.open){
+    // Unanswered, the card says why it will not open yet, as the app does.
+    if(state.votes[el.dataset.open] == null){ ANSWER_FIRST = true; render();
+      setTimeout(() => { const b = document.querySelector('.af button'); if(b) b.focus(); }); return; }
+    LEDE_OPEN = false;
     return go({tab:stack[0].tab, thread:el.dataset.open});
   }
 });

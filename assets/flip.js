@@ -28,14 +28,30 @@ window.StillFlip = (() => {
   /* The green area the book sits on: the Answers page, below any top bar,
      beside the sidebar, and above a bottom tab bar, which floats over it.
      Measured as laid out at the top of the page. */
+  /* The height is the small viewport's (100svh): on a phone the browser's
+     toolbars come and go as the page scrolls, and the book must not change
+     size with them. */
+  let probe = null;
+  function viewH(){
+    if(!probe){
+      probe = document.createElement('div');
+      probe.setAttribute('aria-hidden', 'true');
+      probe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100vh;height:100svh;visibility:hidden;pointer-events:none';
+      document.body.appendChild(probe);
+    }
+    return probe.offsetHeight || innerHeight;
+  }
   function area(book){
     const page = book.closest('.page--answers');
     const w = page ? page.clientWidth : innerWidth;
     const top = page ? page.getBoundingClientRect().top + scrollY : 0;
-    let bottom = innerHeight;
+    const vh = viewH();
+    let bottom = vh;
     const nav = document.getElementById('nav');
     const r = nav && nav.getBoundingClientRect();
-    if(r && r.height && r.top > innerHeight / 2) bottom = r.top;
+    // A bar fixed to the bottom: as far above the small viewport's bottom
+    // as it is above the current one.
+    if(r && r.height && r.top > innerHeight / 2) bottom = vh - (innerHeight - r.top);
     return { page, w, h: Math.max(0, bottom - top), top };
   }
   /* Wider than tall: the desktop approach (.fits), the open spread centred
@@ -102,6 +118,11 @@ window.StillFlip = (() => {
   ];
   const art = i => `<svg viewBox="0 0 120 120" aria-hidden="true">${ART[i % ART.length]}</svg>`;
 
+  /* Class names inside the book must not be ones index.html styles on its
+     own: its .cover (library covers: 2:3, overflow hidden, padding) once
+     shrank and flattened this cover — on an iPhone it sat small in the
+     corner with the pages showing round it — and .wide resized the book.
+     Hence .lid, .fits. */
   /* The whole book. `final` is the last page's inner markup; `pages` the
      passages on the turning pages (real ones, already cut); `title` and
      `cta` the cover's words, already translated. `open` draws it settled
@@ -116,7 +137,7 @@ window.StillFlip = (() => {
         <div class="board"></div>
         <div class="final">${final}</div>
         <div class="leaves" aria-hidden="true">${leaves}
-          <div class="fl cover" style="--i:0">
+          <div class="fl lid" style="--i:0">
             <div class="face front cover2">
               <h2>${title}</h2>
               <div class="cta"><span>${cta}</span>

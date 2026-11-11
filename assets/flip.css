@@ -109,26 +109,34 @@
   background:linear-gradient(90deg,var(--flip-paper-back) 84%,var(--flip-gutter));
   display:flex;align-items:center;justify-content:center}
 .book2 .face.back svg{width:46cqw;height:46cqw;display:block;fill:none;stroke:currentColor;stroke-width:1.5;
-  stroke-linecap:round;stroke-linejoin:round;opacity:.78}
+  stroke-linecap:round;stroke-linejoin:round;stroke-opacity:.78}
 
 /* The cover overhangs the page block by 3px top, bottom and fore-edge.
    Two layers from the founder: the cream cover with the figure cut out,
    over the willow-pond painting that shows through the figure. */
-.book2 .cover .face{inset:-3px -3px -3px 0}
+.book2 .lid .face{inset:-3px -3px -3px 0}
 .book2 .face.front.cover2{border-radius:0 4px 4px 0;
   background:url(img/answers-cover-cutout.png) center/100% 100% no-repeat,
              url(img/answers-cover-bg.jpg) center/cover no-repeat,#f2ebe1;
-  display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:7cqw;overflow:hidden;box-shadow:none}
-.book2 .cover .back{background:var(--flip-board);border-radius:4px 0 0 4px}
+  display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:7cqw;box-shadow:none}
+/* No overflow:hidden on a face: with the rounded corner it gives the face a
+   mask layer, and WebKit can then ignore backface-visibility on it, so a
+   turned cover shows through, mirrored. The art and the shade already
+   follow the radius. */
+.book2 .lid .back{background:var(--flip-board);border-radius:4px 0 0 4px}
 .book2 .endpaper{position:absolute;inset:3px 0 3px 3px;border-radius:2px 0 0 2px;
   background:linear-gradient(90deg,var(--flip-paper-back) 84%,var(--flip-gutter))}
-.cover2 h2{margin:0;font-family:var(--sans);font-weight:700;font-size:3.9em;
+.cover2 h2{margin:0;font-family:var(--sans);font-weight:700;font-size:3.4em;
   line-height:.95;letter-spacing:-.02em;color:#111}
 .cover2 .cta{margin-top:auto;display:flex;align-items:center;justify-content:flex-end;gap:3.5cqw;
-  text-align:right;font-style:italic;font-size:1.44em;line-height:1.25;color:#111}
-.cover2 .go{flex:none;width:max(44px,4.06em);height:max(44px,4.06em);border-radius:50%;
+  text-align:right;font-style:italic;font-size:1.25em;line-height:1.25;color:#111}
+.cover2 .go{flex:none;width:4.06em;height:4.06em;border-radius:50%;
   background:#111;color:#fff;display:grid;place-items:center}
 .cover2 .go svg{width:45%;height:45%}
+/* Cover type, founder 2026-11-11 ("slightly smaller"): about 13% under the
+   first sizes (title 3.9em, prompt 1.44em). The arrow is in em of the
+   prompt, so it shrinks with it; it is a picture, not a target of its own
+   (the whole book is), so it has no 44px floor. */
 
 /* The passages. The last page reads like a page of a book, not a poster:
    left-set, a comfortable measure, size stepped down for a long passage. */
