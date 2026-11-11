@@ -1289,8 +1289,11 @@ button.sim-tag:hover{color:var(--ink)}
      has focus so the keyboard does not leave a sliver to type into. */
   .modal.acc-sheet{max-height:56dvh;transition:max-height .25s ease}
   .modal.acc-sheet:focus-within{max-height:calc(var(--vv-h, 100dvh) - var(--sp-xxl))}
-  /* Above the keyboard while one of its fields is being typed in. */
-  .modal{bottom:var(--kb-inset, 0px)}
+  /* While one of its fields is being typed in: a card at the top of the
+     visible area, clear of the keyboard. */
+  html.modal-typing .modal{top:calc(var(--vv-top, 0px) + var(--sp-s));bottom:auto;left:var(--sp-s);right:var(--sp-s);
+    border-radius:20px;max-height:calc(var(--vv-h, 100dvh) - var(--sp-l))}
+  html.modal-typing .modal::before{display:none}
   .mmenu.upanel{padding:var(--sp-l) var(--sp-xl) calc(var(--sp-xxl) + env(safe-area-inset-bottom,0px))}
 }
 /* The conversation's first line, in the meta style; it scrolls away. */
@@ -4023,7 +4026,7 @@ function keyForm(){
   // until something is typed.
   return `<form class="keyform" data-key-form="1">
       ${AGENT_KEY_BAD ? `<p class="key-bad" role="alert">${t("That code didn't work.", '这个访问码不对。')}</p>` : ''}
-      <input id="agent-key" type="password" autocomplete="one-time-code" required
+      <input id="agent-key" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required
         placeholder="${t('Access code','访问码')}" aria-label="${t('Access code','访问码')}">
       <p>${t('Kept in this browser only.', '只保存在这个浏览器里。')}</p>
       <button type="submit" class="key-save" disabled>${t('Save','保存')}</button>
@@ -5909,7 +5912,7 @@ document.addEventListener('click', ev => {
     el.setAttribute('aria-pressed', PICKS.includes(id) ? 'true' : 'false');
     saveTopics(); return;
   }
-  if((el = hit('[data-acc-open]'))){ ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
+  if((el = hit('[data-acc-open]'))){ MENU.open = false; MENU.sub = false; chat.usageOpen = false; ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
   if((el = hit('[data-acc-back]'))){ ACCESS.err = ''; ACCESS.step = Math.max(0, (ACCESS.step || 0) - 1); return render(); }
   if((el = hit('[data-acc-close]'))){ ACCESS.sheet = false; ACCESS.codeOpen = false; return render(); }
   if((el = hit('[data-af-close]'))){ ANSWER_FIRST = false; return render(); }
@@ -5927,6 +5930,9 @@ document.addEventListener('click', ev => {
     return;
   }
   if((el = hit('[data-acc-code]'))){
+    // From the model picker or Today's use: close those first, or they
+    // stayed on top of the code sheet and hid the field (founder).
+    MENU.open = false; MENU.sub = false; chat.usageOpen = false;
     ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
     { const k = document.getElementById('agent-key'); if(k) k.focus(); }   // in the tap, for iOS
     return;
@@ -6372,18 +6378,23 @@ if(window.visualViewport){
   vv.addEventListener('resize', fit); vv.addEventListener('scroll', fit);
   document.addEventListener('focusin', () => setTimeout(fit, 60));
   document.addEventListener('focusout', () => setTimeout(fit, 120));
-  // A field in a bottom sheet: the sheet's bottom sits on the keyboard's
-  // top, and the sheet is never taller than what is left above it.
+  // Typing in a sheet on a phone: the sheet leaves the bottom edge (where
+  // the keyboard goes) and sits at the top of what is visible, sized to it.
+  // Anchored to the visual viewport's own top, so it is right whether iOS
+  // shrinks the viewport or pans it (lifting by the keyboard's height went
+  // wrong when it panned: founder, 'access code panel still not fixed').
   const lift = () => {
     const f = document.activeElement;
-    const on = f && f.matches && f.matches('input,textarea') && f.closest('.modal');
-    const de = document.documentElement.style;
-    if(!on){ de.removeProperty('--kb-inset'); de.removeProperty('--vv-h'); return; }
-    de.setProperty('--kb-inset', Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop)) + 'px');
-    de.setProperty('--vv-h', Math.round(vv.height) + 'px');
+    const on = f && f.matches && f.matches('input,textarea') && f.closest('.modal')
+      && matchMedia('(max-width:639px)').matches;
+    const de = document.documentElement;
+    de.classList.toggle('modal-typing', !!on);
+    if(!on){ de.style.removeProperty('--vv-top'); de.style.removeProperty('--vv-h'); return; }
+    de.style.setProperty('--vv-top', Math.round(vv.offsetTop) + 'px');
+    de.style.setProperty('--vv-h', Math.round(vv.height) + 'px');
   };
   vv.addEventListener('resize', lift); vv.addEventListener('scroll', lift);
-  document.addEventListener('focusin', () => setTimeout(lift, 60));
+  document.addEventListener('focusin', () => { lift(); setTimeout(lift, 60); setTimeout(lift, 400); });
   document.addEventListener('focusout', () => setTimeout(lift, 120));
 }
 
