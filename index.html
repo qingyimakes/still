@@ -1219,6 +1219,12 @@ body.resizing{cursor:col-resize;user-select:none}
 .derive-link{font-size:12.5px;color:var(--ink-secondary);padding:4px 8px 4px 0;
              margin-right:auto;text-decoration:underline dotted;text-underline-offset:2px}
 .derive-link:hover{color:var(--ink)}
+.sim-tag{margin-left:auto;display:inline-flex;align-items:center;gap:4px;min-height:30px;
+         padding:0 var(--sp-xs) 0 var(--sp-s);font-size:12.5px;color:var(--ink-secondary)}
+.sim-tag svg{width:14px;height:14px}
+button.sim-tag:hover{color:var(--ink)}
+.der-labels{display:flex;flex-wrap:wrap;margin:0 0 var(--sp-xl) !important;font-size:12.5px;color:var(--ink-secondary)}
+.der-labels span + span::before{content:"\00B7";padding:0 5px}
 .act{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
      color:var(--ink-tertiary)}
 .act:hover{background:var(--chip);color:var(--ink)}
@@ -1237,8 +1243,9 @@ body.resizing{cursor:col-resize;user-select:none}
   background:var(--surface);border:1px solid var(--hairline-strong);border-radius:14px;padding:10px 14px}
 .fb-note{margin:0;font-size:13px;line-height:1.5;color:var(--ink-secondary)}
 .fb-err{margin:0;font-size:13.5px;color:var(--danger)}
-.modal footer.fb-row{display:flex;gap:var(--sp-s);padding-top:var(--sp-l)}
-.fb-row button{flex:1;min-height:44px;border-radius:var(--r-pill);font-size:16px;font-weight:500}
+.modal footer.fb-row{display:flex;gap:var(--sp-s);padding:var(--sp-l) 20px var(--sp-xl)}
+.fb-row button{flex:1;min-height:44px;padding:0 var(--sp-l);border-radius:var(--r-pill);
+               font-size:16px;font-weight:500;text-align:center}
 .fb-cancel{background:var(--chip);color:var(--ink)}
 .fb-send{background:var(--ink);color:var(--on-ink)}
 .fb-send[disabled]{opacity:.5}
@@ -1281,8 +1288,9 @@ body.resizing{cursor:col-resize;user-select:none}
   /* Access: a half-height sheet that scrolls inside, and grows once a field
      has focus so the keyboard does not leave a sliver to type into. */
   .modal.acc-sheet{max-height:56dvh;transition:max-height .25s ease}
-  .modal.acc-sheet:focus-within{max-height:86dvh}
-  .modal.acc-sheet--code{min-height:50dvh}
+  .modal.acc-sheet:focus-within{max-height:calc(var(--vv-h, 100dvh) - var(--sp-xxl))}
+  /* Above the keyboard while one of its fields is being typed in. */
+  .modal{bottom:var(--kb-inset, 0px)}
   .mmenu.upanel{padding:var(--sp-l) var(--sp-xl) calc(var(--sp-xxl) + env(safe-area-inset-bottom,0px))}
 }
 /* The conversation's first line, in the meta style; it scrolls away. */
@@ -1573,7 +1581,12 @@ body.resizing{cursor:col-resize;user-select:none}
   /* Five 44px actions leave the link no room beside them: it takes its own
      line above them. */
   .msg-acts{gap:var(--sp-s);flex-wrap:wrap;row-gap:0}
-  .msg-acts .derive-link{flex:1 0 100%;text-align:left;margin-right:0}
+  /* The reply's icons sit close, as in Claude's app (founder: too far
+     apart): 36px each, touching, the first icon on the text's left edge. */
+  .msg-acts .act{width:36px;height:36px}
+  .msg-acts .act-group{gap:0}
+  .msg-acts .act-group:first-of-type,.msg-acts > .act:first-of-type{margin-left:-10px}
+  .msg-acts .sim-tag{min-height:36px}
   .ghost{min-height:44px;padding:10px 16px}
   .explore-tools input,.modal input{min-height:44px}
   .crow-rename input{font-size:16px;min-height:44px}
@@ -3415,7 +3428,7 @@ function msgRow(m, i, c){
           ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
           : esc(L(q.label))}</span>
       </div></details>` : ''}
-      ${msgFoot(m, last, [t('Simulated','模拟')].concat(m.demo ? [t('Demo','演示')] : []))}
+      ${msgFoot(m, last)}
     </div>
   </article>`;
 }
@@ -3497,8 +3510,24 @@ function paras(text){
 /* Every reply ends with one plain line: the time (on the last of a run),
    then what it is. The labels are on every reply, never only the last —
    restyled from pills to text, not made optional. */
-function msgFoot(m, last, labels){
-  const bits = (last ? [clock(m.at)] : []).concat(labels);
+/* A reply's labels, all in one place: shown in the derivation sheet. */
+function replyLabels(m){
+  if(!m.agent) return [t('Simulated','模拟')].concat(m.demo ? [t('Demo','演示')] : []);
+  const a = m.agent, n = (a.passages || []).length;
+  return [
+    t('Simulated','模拟'),
+    t('Agent','代理') + (a.model ? ' · ' + esc(shortModel(a.model)) : ''),
+    // The planner's "inferential" means the passage did not clear its
+    // thresholds, not that the texts are silent: say only what is always true.
+    a.mode === 'direct' ? t('From a passage','以段落为据')
+      : n ? t('Inferred from a passage','从段落推论')
+      : t('Inferred, no passage','推论，无段落')];
+}
+/* Under a reply: the actions, and one small "Simulated ⓘ" that opens the
+   derivation sheet, where the time, model and kind of claim now live
+   (founder: fold them all into the sheet). The word Simulated stays on the
+   reply itself: every response carries a visible label (CLAUDE.md). */
+function msgFoot(m, last){
   const key = msgKey(m), r = REACT[key];
   const icon = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -3512,10 +3541,8 @@ function msgFoot(m, last, labels){
   const speaking = SPEAKING === key;
   // Copy, read aloud, the thumbs and share sit together at the right, as
   // one group, like Claude's reply actions.
-  return `<p class="msg-foot">${bits.map(b => `<span>${b}</span>`).join('')}</p>
-    <div class="msg-acts">
-      ${canDerive ? `<button type="button" class="derive-link" data-derive="${esc(key)}"
-          aria-haspopup="dialog">${t('How this was derived','这是如何推出的')}</button>` : ''}
+  const INFO = '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r=".6" fill="currentColor"/>';
+  return `<div class="msg-acts">
       <span class="act-group">
       <button type="button" class="act${COPIED === key ? ' on' : ''}" data-copy="${esc(key)}"
         aria-label="${COPIED === key ? t('Copied','已复制') : t('Copy','复制')}">${icon(COPIED === key ? CHECK : COPY)}</button>
@@ -3530,6 +3557,9 @@ function msgFoot(m, last, labels){
       </span>
       ${THANKED === key ? `<span class="act-note" role="status">${t('Thanks','谢谢')}</span>` : ''}
       ${SHARED === key ? `<span class="act-note" role="status">${t('Copied','已复制')}</span>` : ''}
+      ${canDerive ? `<button type="button" class="sim-tag" data-derive="${esc(key)}" aria-haspopup="dialog"
+          aria-label="${t('Simulated. How this was derived','模拟。这是如何推出的')}">${t('Simulated','模拟')}${icon(INFO)}</button>`
+        : `<span class="sim-tag">${t('Simulated','模拟')}</span>`}
     </div>`;
 }
 
@@ -3677,7 +3707,7 @@ function derivePanel(){
     <div class="modal howp sheet" role="dialog" aria-modal="true" aria-labelledby="derive-title">
       <header><b id="derive-title">${t(`How ${esc(pn(p))}'s reply was derived`, `${esc(pn(p))} 的回应是如何推出的`)}</b>
         <button class="x" type="button" data-derive-close="1" aria-label="${t('Close','关闭')}">×</button></header>
-      <div class="how-body">${body}</div>
+      <div class="how-body"><p class="der-labels">${[clock(m.at)].concat(replyLabels(m)).map(b => `<span>${b}</span>`).join('')}</p>${body}</div>
     </div>`;
 }
 
@@ -4965,16 +4995,7 @@ function agentRow(m, p, cont, last){
           ${FOLD_CHEV}</summary>
         ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
       </details>` : ''}
-      ${msgFoot(m, last, [
-        t('Simulated','模拟'),
-        t('Agent','代理') + (a.model ? ' · ' + esc(shortModel(a.model)) : ''),
-        // The planner's "inferential" means the passage did not clear its
-        // thresholds, not that the texts are silent: a reply can quote the
-        // very line on its subject and still be inferential. Say only what
-        // is always true. Short; the derivation sheet says it in full.
-        a.mode === 'direct' ? t('From a passage','以段落为据')
-          : passages.length ? t('Inferred from a passage','从段落推论')
-          : t('Inferred, no passage','推论，无段落')])}
+      ${msgFoot(m, last)}
     </div>
   </article>`;
 }
@@ -5898,14 +5919,16 @@ document.addEventListener('click', ev => {
     chat.usageOpen = false; ACCESS.sheet = 'chat'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
   if((el = hit('[data-up-key-edit]'))){
     chat.usageOpen = false; ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
-    setTimeout(() => { const k = document.getElementById('agent-key'); if(!k) return;
-      k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = !k.value.trim();
-      k.focus(); k.select(); });
+    // Focus inside the tap itself: iOS raises the keyboard only for a focus
+    // made during the user's gesture, never one from a timer.
+    const k = document.getElementById('agent-key');
+    if(k){ k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = !k.value.trim();
+      k.focus(); k.select(); }
     return;
   }
   if((el = hit('[data-acc-code]'))){
     ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
-    setTimeout(() => { const k = document.getElementById('agent-key'); if(k) k.focus(); });
+    { const k = document.getElementById('agent-key'); if(k) k.focus(); }   // in the tap, for iOS
     return;
   }
 
@@ -6325,11 +6348,15 @@ matchMedia('(min-width:900px)').addEventListener('change', () => { if(C) render(
 /* Phone keyboard: while a text field in the chat has focus, the tab bar
    steps aside (see body.kb). */
 document.addEventListener('focusin', ev => {
-  if(ev.target.matches && ev.target.matches('#say,#agent-key')) document.body.classList.add('kb');
+  // The message box only. The access-code field lives in a sheet: resizing
+  // the chat and scrolling back to the top while iOS raised the keyboard for
+  // it left the field under the keyboard with no keys (founder: 'access code
+  // cannot input'). Sheets are lifted above the keyboard instead (below).
+  if(ev.target.matches && ev.target.matches('#say')) document.body.classList.add('kb');
 });
 document.addEventListener('focusout', ev => {
-  if(ev.target.matches && ev.target.matches('#say,#agent-key'))
-    setTimeout(() => { if(!document.activeElement || !document.activeElement.matches('#say,#agent-key'))
+  if(ev.target.matches && ev.target.matches('#say'))
+    setTimeout(() => { if(!document.activeElement || !document.activeElement.matches('#say'))
       document.body.classList.remove('kb'); }, 50);
 });
 /* Keep the conversation's top (header, first lines) on screen while the
@@ -6345,6 +6372,19 @@ if(window.visualViewport){
   vv.addEventListener('resize', fit); vv.addEventListener('scroll', fit);
   document.addEventListener('focusin', () => setTimeout(fit, 60));
   document.addEventListener('focusout', () => setTimeout(fit, 120));
+  // A field in a bottom sheet: the sheet's bottom sits on the keyboard's
+  // top, and the sheet is never taller than what is left above it.
+  const lift = () => {
+    const f = document.activeElement;
+    const on = f && f.matches && f.matches('input,textarea') && f.closest('.modal');
+    const de = document.documentElement.style;
+    if(!on){ de.removeProperty('--kb-inset'); de.removeProperty('--vv-h'); return; }
+    de.setProperty('--kb-inset', Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop)) + 'px');
+    de.setProperty('--vv-h', Math.round(vv.height) + 'px');
+  };
+  vv.addEventListener('resize', lift); vv.addEventListener('scroll', lift);
+  document.addEventListener('focusin', () => setTimeout(lift, 60));
+  document.addEventListener('focusout', () => setTimeout(lift, 120));
 }
 
 /* Bottom sheets close with a swipe down from their top edge, as well as
