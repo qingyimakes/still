@@ -1,0 +1,4835 @@
+{
+ "_note": "Works in the thinker agent's library, per roster id, for the reading list on Explore and thinker pages. Generated from Agent/mvp/coverage/contracts.json, coverage_report.json (blocked works left out, originals marked) and translations.json, with editions from Agent/mvp/ALL_PRIMARY_20261107.md and Chinese titles from Design/sourcing/library-zh-titles.json. No publication years: the agent's records on this Mac carry none. Original-language titles (orig) are Wikidata P1476 for the work's own item, accepted only when the item's author (P50) is this thinker, its English article title matches the work, and the title's language matches the work's original language where known; source URL kept per title. Each work's `wiki` is its exact Wikipedia article ({en, zh} titles) from the work's Wikidata sitelinks; `source` is that item. A work is linked only when the item's author (P50) is this thinker; editions are followed to the work (P629). featuredWiki does the same for the content works. A `wiki` whose source starts 'manual:' is a hand mapping, not a Wikidata match: the work's item has no author statement, and the named en.wikipedia article's lead names this thinker as author of this work (checked 2026-11-10); its zh title is that article's zh interlanguage link. Each work's year, desc and why are Still's own notes (Design/sourcing/book-notes.json): written for the book page, checked against the record, never quoting the author; Wikidata dates were a cross-check only, being often an edition's.",
+ "generated": "2026-11-09",
+ "thinkers": {
+  "p-plato": {
+   "agent": "plato",
+   "works": [
+    {
+     "title": "Republic",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "理想国",
+     "orig": {
+      "text": "Πολιτεία",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q123397"
+     },
+     "wiki": {
+      "en": "Republic (Plato)",
+      "zh": "理想国",
+      "source": "https://www.wikidata.org/wiki/Q123397"
+     },
+     "year": {
+      "en": "c. 375 BCE",
+      "zh": "约公元前 375 年"
+     },
+     "desc": {
+      "en": "A long dialogue in which Socrates asks what justice is, and answers by designing an ideal city ruled by philosophers that mirrors an ordered soul.",
+      "zh": "一部长篇对话：苏格拉底追问何为正义，借构想一座由哲人治理的城邦，来映照灵魂的秩序。"
+     },
+     "why": {
+      "en": "Source of the cave allegory, and of most later arguments about who should rule and why.",
+      "zh": "洞穴之喻出自这里，后世关于谁该统治、为何统治的争论，大多从它出发。"
+     }
+    },
+    {
+     "title": "Apology",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "苏格拉底的申辩",
+     "orig": {
+      "text": "Ἀπολογία Σωκράτους",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q273668"
+     },
+     "wiki": {
+      "en": "Apology (Plato)",
+      "zh": "苏格拉底的申辩",
+      "source": "https://www.wikidata.org/wiki/Q273668"
+     },
+     "year": {
+      "en": "Written after 399 BCE",
+      "zh": "公元前 399 年之后写成"
+     },
+     "desc": {
+      "en": "Plato's version of Socrates' defence at his trial for impiety in 399 BCE; how closely it follows the speech actually given is unknown.",
+      "zh": "柏拉图笔下苏格拉底在公元前 399 年受审时的申辩；与当时实际所说有多接近，无从得知。"
+     },
+     "why": {
+      "en": "A man chooses to keep his way of life rather than his life, and explains why in public.",
+      "zh": "一个人宁可保住自己的生活方式也不保住性命，并当众说明理由。"
+     }
+    },
+    {
+     "title": "Crito",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "克力同",
+     "orig": {
+      "text": "Κρίτων",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q267634"
+     },
+     "wiki": {
+      "en": "Crito",
+      "zh": "克力同篇",
+      "source": "https://www.wikidata.org/wiki/Q267634"
+     },
+     "year": {
+      "en": "Written after 399 BCE",
+      "zh": "公元前 399 年之后写成"
+     },
+     "desc": {
+      "en": "Socrates, awaiting execution, refuses a friend's plan for his escape, arguing that a citizen may not answer injustice by breaking the laws.",
+      "zh": "苏格拉底等待行刑时拒绝友人安排的越狱，理由是公民不能以违法来回应不公。"
+     },
+     "why": {
+      "en": "A short, tight argument about whether you still owe obedience to a state that has wronged you.",
+      "zh": "篇幅很短，论证紧凑：国家亏待了你，你是否仍须服从它。"
+     }
+    },
+    {
+     "title": "Phaedo",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "斐多",
+     "orig": {
+      "text": "Φαίδων",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q244161"
+     },
+     "wiki": {
+      "en": "Phaedo",
+      "zh": "斐多篇",
+      "source": "https://www.wikidata.org/wiki/Q244161"
+     },
+     "year": {
+      "en": "c. 380–360 BCE",
+      "zh": "约公元前 380—前 360 年"
+     },
+     "desc": {
+      "en": "Socrates' last day, spent arguing with friends that the soul is immortal, ending with his death by hemlock.",
+      "zh": "苏格拉底生命的最后一天：他与朋友们论证灵魂不朽，最后饮鸩而死。"
+     },
+     "why": {
+      "en": "An account of facing death calmly that later Platonist and Christian thought kept returning to.",
+      "zh": "一种平静面对死亡的态度，后世柏拉图主义和基督教思想屡屡回到这里。"
+     }
+    },
+    {
+     "title": "Symposium",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "会饮篇",
+     "orig": {
+      "text": "Συμπόσιον",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q486727"
+     },
+     "wiki": {
+      "en": "Symposium (Plato)",
+      "zh": "會飲篇",
+      "source": "https://www.wikidata.org/wiki/Q486727"
+     },
+     "year": {
+      "en": "c. 385–370 BCE",
+      "zh": "约公元前 385—前 370 年"
+     },
+     "desc": {
+      "en": "Guests at a drinking party each praise love in turn; Socrates describes desire climbing from one beautiful body to beauty itself.",
+      "zh": "一场酒会上宾客轮流颂扬爱若斯；苏格拉底讲述欲望如何从一个美的身体上升到美本身。"
+     },
+     "why": {
+      "en": "The origin of the idea of platonic love, and a serious case that desire can lead somewhere beyond itself.",
+      "zh": "柏拉图式爱情这一说法的源头，也认真论证了欲望可以把人引向比它自身更高的东西。"
+     }
+    },
+    {
+     "title": "Phaedrus",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "斐德罗",
+     "orig": {
+      "text": "Φαῖδρος",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q555862"
+     },
+     "wiki": {
+      "en": "Phaedrus (dialogue)",
+      "zh": "費德魯斯篇",
+      "source": "https://www.wikidata.org/wiki/Q555862"
+     },
+     "year": {
+      "en": "c. 370 BCE",
+      "zh": "约公元前 370 年"
+     },
+     "desc": {
+      "en": "A walk outside Athens turns into speeches on love and an argument about rhetoric, ending with a critique of writing as a substitute for memory and live conversation.",
+      "zh": "雅典城外的一次散步，引出几篇关于爱的讲辞和一场修辞学讨论，结尾质疑书写能否替代记忆与当面对话。"
+     },
+     "why": {
+      "en": "The earliest sustained worry that a new technology of words makes people seem wiser than they are.",
+      "zh": "最早系统表达的一种担忧：新的文字技术会让人显得比实际更有学问。"
+     }
+    },
+    {
+     "title": "Gorgias",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "高尔吉亚",
+     "orig": {
+      "text": "Γοργίας",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q264241"
+     },
+     "wiki": {
+      "en": "Gorgias (dialogue)",
+      "zh": "高尔吉亚篇",
+      "source": "https://www.wikidata.org/wiki/Q264241"
+     },
+     "year": {
+      "en": "c. 387–380 BCE",
+      "zh": "约公元前 387—前 380 年"
+     },
+     "desc": {
+      "en": "Socrates questions a famous teacher of rhetoric and his followers, arguing that persuasion without knowledge is flattery and that doing wrong is worse than suffering it.",
+      "zh": "苏格拉底盘问一位著名修辞教师及其追随者，主张没有知识的说服只是谄媚，作恶比受害更糟。"
+     },
+     "why": {
+      "en": "Callicles' case for the strong ruling the weak is put here as forcefully as anywhere, then answered.",
+      "zh": "卡利克勒关于强者应当统治弱者的主张在此得到最有力的表述，随后遭到反驳。"
+     }
+    },
+    {
+     "title": "Meno",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "美诺",
+     "orig": {
+      "text": "Μένων",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q746253"
+     },
+     "wiki": {
+      "en": "Meno",
+      "zh": "美诺篇",
+      "source": "https://www.wikidata.org/wiki/Q746253"
+     },
+     "year": {
+      "en": "c. 385 BCE",
+      "zh": "约公元前 385 年"
+     },
+     "desc": {
+      "en": "Starts from whether virtue can be taught; Socrates leads an enslaved boy through a geometry problem to argue that learning is recollection.",
+      "zh": "从美德能否被教授问起；苏格拉底引导一名奴隶少年解出几何题，以此论证学习即回忆。"
+     },
+     "why": {
+      "en": "A compact way into an old puzzle: how you can look for something you do not yet know.",
+      "zh": "篇幅不长，却把一个难题讲得清楚：你如何寻找自己尚不知道的东西。"
+     }
+    },
+    {
+     "title": "Protagoras",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "普罗泰戈拉",
+     "orig": {
+      "text": "Πρωταγόρας",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q520328"
+     },
+     "wiki": {
+      "en": "Protagoras (dialogue)",
+      "source": "https://www.wikidata.org/wiki/Q520328"
+     },
+     "year": {
+      "en": "c. 390–380 BCE",
+      "zh": "约公元前 390—前 380 年"
+     },
+     "desc": {
+      "en": "Socrates and the famous sophist Protagoras debate whether virtue can be taught and whether its parts are one; by the end each seems to have switched sides.",
+      "zh": "苏格拉底与著名智者普罗泰戈拉辩论美德能否教授、各种美德是否为一，结尾双方似乎互换了立场。"
+     },
+     "why": {
+      "en": "A lively picture of Athenian intellectual life, and an early statement that nobody does wrong knowingly.",
+      "zh": "生动再现雅典的思想生活，也较早提出无人明知故犯的论点。"
+     }
+    },
+    {
+     "title": "Euthyphro",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "游叙弗伦",
+     "orig": {
+      "text": "Εὐθύφρων",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q648889"
+     },
+     "wiki": {
+      "en": "Euthyphro",
+      "zh": "游叙弗伦篇",
+      "source": "https://www.wikidata.org/wiki/Q648889"
+     },
+     "year": {
+      "en": "Written after 399 BCE",
+      "zh": "公元前 399 年之后写成"
+     },
+     "desc": {
+      "en": "Outside the court before his trial, Socrates asks a confident priest what piety is: do the gods love it because it is pious, or is it pious because they love it?",
+      "zh": "受审前在法庭外，苏格拉底问一位自信的祭司何为虔敬：神爱它是因为它虔敬，还是因为神爱它，它才虔敬？"
+     },
+     "why": {
+      "en": "Its dilemma still frames arguments about whether morality depends on God.",
+      "zh": "文中的两难至今仍是讨论道德是否依赖神意的基本框架。"
+     }
+    },
+    {
+     "title": "Theaetetus",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "泰阿泰德",
+     "orig": {
+      "text": "Θεαίτητος",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q846241"
+     },
+     "wiki": {
+      "en": "Theaetetus (dialogue)",
+      "zh": "泰阿泰德篇",
+      "source": "https://www.wikidata.org/wiki/Q846241"
+     },
+     "year": {
+      "en": "c. 369 BCE or soon after",
+      "zh": "约公元前 369 年或稍后"
+     },
+     "desc": {
+      "en": "An inquiry into what knowledge is, testing perception, true belief, and true belief with an account; each fails, and it ends without an answer.",
+      "zh": "探讨知识是什么，依次检验感知、真信念、附加说明的真信念，都未能成立，以无解告终。"
+     },
+     "why": {
+      "en": "Still the starting point for theories of knowledge, including the definition modern epistemology spent decades revising.",
+      "zh": "至今仍是知识论的起点，现代知识论花了几十年修正的那个定义就出自这里。"
+     }
+    },
+    {
+     "title": "Sophist",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "智者",
+     "orig": {
+      "text": "Σοφιστής",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q471715"
+     },
+     "wiki": {
+      "en": "Sophist (dialogue)",
+      "zh": "智者篇",
+      "source": "https://www.wikidata.org/wiki/Q471715"
+     },
+     "year": {
+      "en": "c. 360–350 BCE",
+      "zh": "约公元前 360—前 350 年"
+     },
+     "desc": {
+      "en": "A visitor from Elea, not Socrates, leads an attempt to define the sophist, which forces the question of how false statements and not-being are possible.",
+      "zh": "由一位来自爱利亚的客人而非苏格拉底主导，试图定义智者，由此追问虚假陈述与非存在如何可能。"
+     },
+     "why": {
+      "en": "Where Plato revises Parmenides and lays groundwork for later logic and theories of meaning.",
+      "zh": "柏拉图在此修正巴门尼德，为后来的逻辑学和意义理论打下基础。"
+     }
+    },
+    {
+     "title": "Statesman",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "政治家",
+     "orig": {
+      "text": "Πολιτικός",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q669911"
+     },
+     "wiki": {
+      "en": "Statesman (dialogue)",
+      "zh": "政治家篇",
+      "source": "https://www.wikidata.org/wiki/Q669911"
+     },
+     "year": {
+      "en": "c. 360–350 BCE",
+      "zh": "约公元前 360—前 350 年"
+     },
+     "desc": {
+      "en": "Continuing from the Sophist, the visitor from Elea defines the true ruler as an expert weaver of citizens, and weighs rule by knowledge against rule by law.",
+      "zh": "接续《智者》，爱利亚客人把真正的统治者定义为编织公民的行家，并权衡依知识统治与依法统治。"
+     },
+     "why": {
+      "en": "A more practical second look at the Republic's rule by experts, with law as the fallback.",
+      "zh": "对《理想国》里专家统治设想的一次更务实的重审，以法律作为退而求其次的办法。"
+     }
+    },
+    {
+     "title": "Parmenides",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "巴门尼德",
+     "orig": {
+      "text": "Παρμενίδης",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q1130762"
+     },
+     "wiki": {
+      "en": "Parmenides (dialogue)",
+      "zh": "巴曼尼得斯篇",
+      "source": "https://www.wikidata.org/wiki/Q1130762"
+     },
+     "year": {
+      "en": "c. 370 BCE",
+      "zh": "约公元前 370 年"
+     },
+     "desc": {
+      "en": "A young Socrates presents the theory of Forms to the aged Parmenides, who raises objections, followed by a long, dense exercise in reasoning about the one.",
+      "zh": "年轻的苏格拉底向年迈的巴门尼德提出理念论，遭到一连串反驳；随后是一段关于一的冗长、艰深的推理练习。"
+     },
+     "why": {
+      "en": "Plato raising the strongest objections to his own central idea, including the one later called the third man.",
+      "zh": "柏拉图亲自提出对自己核心学说最有力的反驳，包括后来所谓的第三人论证。"
+     }
+    },
+    {
+     "title": "Philebus",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "斐莱布",
+     "orig": {
+      "text": "Φίληβος",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q220972"
+     },
+     "wiki": {
+      "en": "Philebus",
+      "zh": "菲力帕斯篇",
+      "source": "https://www.wikidata.org/wiki/Q220972"
+     },
+     "year": {
+      "en": "c. 360–347 BCE",
+      "zh": "约公元前 360—前 347 年"
+     },
+     "desc": {
+      "en": "Socrates and two interlocutors ask whether pleasure or knowledge is the good, concluding that the best life is a measured mixture of both.",
+      "zh": "苏格拉底与两位对话者讨论快乐与知识何者为善，结论是最好的生活是两者有分寸的混合。"
+     },
+     "why": {
+      "en": "One of the most careful ancient analyses of pleasure, including false and mixed pleasures.",
+      "zh": "古代对快乐最细致的分析之一，包括虚假的快乐与混杂的快乐。"
+     }
+    },
+    {
+     "title": "Timaeus",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "蒂迈欧",
+     "orig": {
+      "text": "Τίμαιος",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q371884"
+     },
+     "wiki": {
+      "en": "Timaeus (dialogue)",
+      "zh": "蒂邁歐篇",
+      "source": "https://www.wikidata.org/wiki/Q371884"
+     },
+     "year": {
+      "en": "c. 360 BCE",
+      "zh": "约公元前 360 年"
+     },
+     "desc": {
+      "en": "Mostly one long speech on how a divine craftsman ordered the cosmos, from the elements to the human body; it opens with the story of Atlantis.",
+      "zh": "主体是一篇长讲辞，讲述一位神圣工匠如何安排宇宙，从元素一直讲到人体；开篇引出亚特兰蒂斯的故事。"
+     },
+     "why": {
+      "en": "For much of the Middle Ages it was nearly the only Plato the Latin West could read, and it shaped that era's picture of nature.",
+      "zh": "中世纪很长时间里，拉丁西方能读到的柏拉图几乎只有这一篇，它塑造了那时的自然图景。"
+     }
+    },
+    {
+     "title": "Laws",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "法律篇",
+     "orig": {
+      "text": "Νόμοι",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q752285"
+     },
+     "wiki": {
+      "en": "Laws (dialogue)",
+      "zh": "法律篇",
+      "source": "https://www.wikidata.org/wiki/Q752285"
+     },
+     "year": {
+      "en": "Unfinished at Plato's death, 347 BCE; traditionally edited by Philip of Opus",
+      "zh": "柏拉图公元前 347 年去世时尚未完成，相传由奥普斯的菲利普整理"
+     },
+     "desc": {
+      "en": "His longest work: three old men plan the laws of a new Cretan colony in detail, from marriage to religion to punishment.",
+      "zh": "柏拉图篇幅最长的作品：三位老人为克里特的一个新殖民城邦详细拟定法律，从婚姻、宗教到刑罚。"
+     },
+     "why": {
+      "en": "Shows Plato's politics turning from philosopher-kings to written law, and how far it would go in controlling citizens.",
+      "zh": "可以看到柏拉图的政治思想从哲人王转向成文法，以及它对公民的控制能走多远。"
+     }
+    }
+   ],
+   "lang": "grc"
+  },
+  "p-aristotle": {
+   "agent": "aristotle",
+   "works": [
+    {
+     "title": "Nicomachean Ethics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "尼各马可伦理学",
+     "orig": {
+      "text": "Ἠθικὰ Νικομάχεια",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q474537"
+     },
+     "wiki": {
+      "en": "Nicomachean Ethics",
+      "zh": "尼各马可伦理学",
+      "source": "https://www.wikidata.org/wiki/Q474537"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Aristotle's ethics, probably his lecture notes edited after his death. It argues that a good life is activity in accordance with virtue, built by habit and judged by practical wisdom.",
+      "zh": "亚里士多德的伦理学，很可能是他身后经人整理的讲稿。书中认为，好的生活是合乎德性的活动，德性靠习惯养成，由实践智慧来判断。"
+     },
+     "why": {
+      "en": "Still the plainest account of character as something practised, with a long, careful section on friendship.",
+      "zh": "至今仍是把品格当作练出来的东西讲得最平实的一本，论友爱的部分尤其细致。"
+     }
+    },
+    {
+     "title": "Categories",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "范畴篇",
+     "orig": {
+      "text": "Κατηγορίαι",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q1735826"
+     },
+     "wiki": {
+      "en": "Categories (Aristotle)",
+      "zh": "范畴篇",
+      "source": "https://www.wikidata.org/wiki/Q1735826"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A short treatise sorting everything that can be said into ten kinds, such as substance, quantity, quality and relation. The first work of the Organon; its authenticity has occasionally been questioned.",
+      "zh": "一篇短论，把一切可说之物分为十类，如实体、数量、性质、关系。列《工具论》之首，其真伪偶有争议。"
+     },
+     "why": {
+      "en": "The source of the vocabulary — substance, quality, relation — that Western logic and grammar used for two thousand years.",
+      "zh": "实体、性质、关系这套词汇的源头，西方逻辑和语法沿用了两千年。"
+     }
+    },
+    {
+     "title": "On Interpretation",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "解释篇",
+     "wiki": {
+      "en": "On Interpretation",
+      "zh": "解释篇",
+      "source": "https://www.wikidata.org/wiki/Q648627"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A short treatise in the Organon on names, verbs and statements, and how affirmations and denials oppose each other. Includes the puzzle of whether statements about tomorrow are already true or false.",
+      "zh": "《工具论》中的一篇短论，讨论名词、动词与陈述，以及肯定与否定如何相互对立。其中提出了关于明天的陈述此刻是否已有真假的难题。"
+     },
+     "why": {
+      "en": "The sea-battle chapter is still the standard starting point for arguments about fate, chance and the open future.",
+      "zh": "关于海战的那一章，仍是讨论命运、偶然与开放未来的标准起点。"
+     }
+    },
+    {
+     "title": "Prior Analytics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "前分析篇",
+     "orig": {
+      "text": "Ἀναλυτικὰ Πρότερα",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q485217"
+     },
+     "wiki": {
+      "en": "Prior Analytics",
+      "source": "https://www.wikidata.org/wiki/Q485217"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "The first systematic treatment of deductive reasoning: Aristotle's theory of the syllogism, setting out which forms of two premises necessarily yield a conclusion. Part of the Organon.",
+      "zh": "第一部系统讨论演绎推理的著作，即亚里士多德的三段论理论：哪些由两个前提构成的形式必然得出结论。属《工具论》。"
+     },
+     "why": {
+      "en": "Where formal logic begins: the idea that an argument can be valid by its shape alone, whatever it is about.",
+      "zh": "形式逻辑从这里开始：一个论证可以仅凭形式就有效，无论它讲的是什么。"
+     }
+    },
+    {
+     "title": "Posterior Analytics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "后分析篇",
+     "orig": {
+      "text": "Ἀναλυτικὰ ὕστερα",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q485206"
+     },
+     "wiki": {
+      "en": "Posterior Analytics",
+      "source": "https://www.wikidata.org/wiki/Q485206"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Aristotle's account of scientific knowledge: what counts as demonstration, how it rests on first principles, and how those principles are grasped. Part of the Organon.",
+      "zh": "亚里士多德对科学知识的说明：什么算证明，证明如何建立在第一原理之上，这些原理又如何被把握。属《工具论》。"
+     },
+     "why": {
+      "en": "An early, still-useful separation of knowing that something is so from knowing why it is so.",
+      "zh": "很早就把知道某事如此与知道它为何如此区分开来，这一区分至今仍然好用。"
+     }
+    },
+    {
+     "title": "Topics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论题篇",
+     "orig": {
+      "text": "Τοπικά",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q1095335"
+     },
+     "wiki": {
+      "en": "Topics (Aristotle)",
+      "source": "https://www.wikidata.org/wiki/Q1095335"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A handbook for dialectical debate: how to find arguments for or against a proposition from premises an opponent will accept. Part of the Organon.",
+      "zh": "一部辩证论辩的手册：如何从对手会接受的前提出发，找到支持或反驳某个命题的论证。属《工具论》。"
+     },
+     "why": {
+      "en": "A practical guide to arguing from shared assumptions rather than proofs, which is how most real disagreement goes.",
+      "zh": "教人从共同认可的前提而非证明出发去论辩，现实中的分歧大多正是这样展开的。"
+     }
+    },
+    {
+     "title": "Sophistical Refutations",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "辩谬篇",
+     "orig": {
+      "text": "Σοφιστικοὶ Ἔλεγχοι",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q766539"
+     },
+     "wiki": {
+      "en": "Sophistical Refutations",
+      "zh": "辨谬篇",
+      "source": "https://www.wikidata.org/wiki/Q766539"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A catalogue of arguments that seem to refute but do not, sorted into fallacies of language and fallacies outside language. Often treated as the last book of the Topics.",
+      "zh": "列举那些看似驳倒对方、其实并未驳倒的论证，分为语言造成的谬误和语言之外的谬误。常被视为《论题篇》的最后一卷。"
+     },
+     "why": {
+      "en": "The origin of most named fallacies, from equivocation to begging the question.",
+      "zh": "今天大多数有名称的谬误，从偷换概念到循环论证，都出自这里。"
+     }
+    },
+    {
+     "title": "Physics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "物理学",
+     "orig": {
+      "text": "Φυσικά",
+      "lang": "el",
+      "source": "https://www.wikidata.org/wiki/Q1051198"
+     },
+     "wiki": {
+      "en": "Physics (Aristotle)",
+      "zh": "物理学 (亚里士多德)",
+      "source": "https://www.wikidata.org/wiki/Q1051198"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Eight books on nature and change: the four causes, chance, the infinite, place, time and motion, ending with an argument for an unmoved first mover. Likely assembled from separate lecture courses.",
+      "zh": "八卷，论自然与变化：四因、偶然、无限、处所、时间与运动，最后论证存在一个不动的第一推动者。很可能由几门独立的讲课内容拼合而成。"
+     },
+     "why": {
+      "en": "Shows the questions — what is time, what is a cause — that physics later answered differently but never stopped asking.",
+      "zh": "什么是时间、什么是原因，后来的物理学给出了不同答案，却一直在追问这些问题。"
+     }
+    },
+    {
+     "title": "On the Heavens",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论天",
+     "orig": {
+      "text": "Περὶ οὐρανοῦ",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q331011"
+     },
+     "wiki": {
+      "en": "On the Heavens",
+      "source": "https://www.wikidata.org/wiki/Q331011"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A treatise on the cosmos and the elements: a spherical, eternal universe with the earth at rest at its centre, and the natural motions of earth, water, air, fire and aether.",
+      "zh": "论宇宙与元素：宇宙是球形且永恒的，地球静止于中心；并论土、水、气、火与以太各自的自然运动。"
+     },
+     "why": {
+      "en": "The picture of the universe that Copernicus and Galileo had to take apart, laid out in its own terms.",
+      "zh": "哥白尼和伽利略要拆掉的那幅宇宙图景，在这里按它自己的逻辑完整呈现。"
+     }
+    },
+    {
+     "title": "On the Soul",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论灵魂",
+     "orig": {
+      "text": "Περὶ Ψυχῆς",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q1180576"
+     },
+     "wiki": {
+      "en": "On the Soul",
+      "zh": "论灵魂",
+      "source": "https://www.wikidata.org/wiki/Q1180576"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Aristotle's study of what makes a body alive. The soul is treated as the form of a living body, with nutrition, perception and thought as its powers.",
+      "zh": "亚里士多德研究是什么让身体成为活的。灵魂被视为活体的形式，营养、感知与思想是它的能力。"
+     },
+     "why": {
+      "en": "A view of mind that is neither a ghost in the body nor mere matter, still cited in philosophy of mind.",
+      "zh": "一种既非身体里的幽灵、也非单纯物质的心灵观，心灵哲学至今仍在引用。"
+     }
+    },
+    {
+     "title": "Metaphysics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "形而上学",
+     "orig": {
+      "text": "Τὰ μετὰ τὰ φυσικά",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q661655"
+     },
+     "wiki": {
+      "en": "Metaphysics (Aristotle)",
+      "zh": "形而上学 (亚里士多德)",
+      "source": "https://www.wikidata.org/wiki/Q661655"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Fourteen books on being as such, substance, causes and the unmoved mover, assembled by later editors; the title probably means only the books placed after the Physics.",
+      "zh": "十四卷，论存在本身、实体、原因与不动的推动者，由后世编者汇编而成；书名大概只是指排在《物理学》之后的那几卷。"
+     },
+     "why": {
+      "en": "Gave a whole branch of philosophy its name and its central question: what it means for anything to be.",
+      "zh": "给整整一个哲学分支起了名字，也定下了它的核心问题：一物存在究竟意味着什么。"
+     }
+    },
+    {
+     "title": "Politics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "政治学",
+     "orig": {
+      "text": "Πολιτικά",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q69539"
+     },
+     "wiki": {
+      "en": "Politics (Aristotle)",
+      "zh": "政治学 (亚里士多德)",
+      "source": "https://www.wikidata.org/wiki/Q69539"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "Eight books on the city-state: the household, slavery, citizenship, a comparison of constitutions, and the best regime. It holds that humans are by nature political animals.",
+      "zh": "八卷，论城邦：家庭、奴隶制、公民身份、各种政体的比较，以及最好的政体。书中认为人天生是政治的动物。"
+     },
+     "why": {
+      "en": "A comparative study of real constitutions, alongside a defence of slavery that shows how a sharp mind can rationalise its own era.",
+      "zh": "既有对真实政体的比较研究，也有对奴隶制的辩护，可见敏锐的头脑如何为自己的时代找理由。"
+     }
+    },
+    {
+     "title": "Rhetoric",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "修辞学",
+     "orig": {
+      "text": "Ῥητορική",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q1896045"
+     },
+     "wiki": {
+      "en": "Rhetoric (Aristotle)",
+      "zh": "修辭學 (亞里斯多德)",
+      "source": "https://www.wikidata.org/wiki/Q1896045"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A treatise on persuasion: the speaker's character, the audience's emotions and the argument itself, with long analyses of anger, fear, shame and pity.",
+      "zh": "论说服：演说者的品格、听众的情感与论证本身，并对愤怒、恐惧、羞耻和怜悯作了长篇分析。"
+     },
+     "why": {
+      "en": "The basic toolkit behind every speech, advert and campaign, and an early, careful psychology of the emotions.",
+      "zh": "一切演讲、广告和竞选背后的基本工具，也是一部早期而细致的情感心理学。"
+     }
+    },
+    {
+     "title": "Poetics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "诗学",
+     "orig": {
+      "text": "Περὶ ποιητικῆς",
+      "lang": "grc",
+      "source": "https://www.wikidata.org/wiki/Q264714"
+     },
+     "wiki": {
+      "en": "Poetics (Aristotle)",
+      "zh": "诗学",
+      "source": "https://www.wikidata.org/wiki/Q264714"
+     },
+     "year": {
+      "en": "4th c. BCE",
+      "zh": "公元前 4 世纪"
+     },
+     "desc": {
+      "en": "A short, incomplete treatise on tragedy and epic: plot as the soul of drama, reversal and recognition, and catharsis. A second book, probably on comedy, is lost.",
+      "zh": "一篇简短且不完整的论著，讨论悲剧与史诗：情节是戏剧的灵魂，突转与发现，以及净化。第二卷大概论喜剧，已经失传。"
+     },
+     "why": {
+      "en": "Still the skeleton of most advice on storytelling, from screenwriting manuals to workshop notes.",
+      "zh": "从编剧手册到写作课笔记，大多数讲故事的建议仍以它为骨架。"
+     }
+    }
+   ],
+   "lang": "grc"
+  },
+  "p-epicurus": {
+   "agent": "epicurus",
+   "works": [
+    {
+     "title": "Life, Letters and Principal Doctrines (Diogenes Bk X)",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "名哲言行录·卷十",
+     "year": {
+      "en": "Compiled 3rd c. CE; the letters c. 300 BCE",
+      "zh": "约公元 3 世纪编成；书信约写于公元前 300 年"
+     },
+     "desc": {
+      "en": "Book X of Diogenes Laertius's Lives: a life of Epicurus, three letters preserved under his name, and his forty Principal Doctrines. Nearly all of Epicurus's own surviving words come from here.",
+      "zh": "第欧根尼·拉尔修《名哲言行录》第十卷：伊壁鸠鲁的生平、以他名义传下的三封书信和四十条要说。他本人留存的文字几乎都出自这里。"
+     },
+     "why": {
+      "en": "The shortest route to Epicurus himself: a case that pleasure means the absence of pain and that death is nothing to fear.",
+      "zh": "最直接读到伊壁鸠鲁本人的途径：快乐即无痛苦，死亡不足畏惧。"
+     }
+    }
+   ],
+   "lang": "grc"
+  },
+  "p-epictetus": {
+   "agent": "epictetus",
+   "works": [
+    {
+     "title": "Discourses and Enchiridion",
+     "edition": "English translation (translator not recorded here)",
+     "wiki": {
+      "en": "Discourses of Epictetus",
+      "zh": "爱比克泰德论说集",
+      "source": "manual: https://en.wikipedia.org/wiki/Discourses_of_Epictetus"
+     },
+     "year": {
+      "en": "Early 2nd c. CE, recorded by his student Arrian",
+      "zh": "公元 2 世纪初，由其弟子阿里安记录"
+     },
+     "desc": {
+      "en": "The lectures of a freed slave turned Stoic teacher, written down by his student Arrian, with Arrian's short handbook distilling them. Four of the Discourses' original books survive.",
+      "zh": "一位获释奴隶出身的斯多葛派教师的讲课记录，由弟子阿里安笔录，并附阿里安据此提炼的简短手册。原有各卷今仅存四卷。"
+     },
+     "why": {
+      "en": "The plainest working manual for separating what is up to you from what is not, taught by someone who had owned nothing.",
+      "zh": "区分可控与不可控之事最直白的操作手册，讲授者本人曾一无所有。"
+     }
+    }
+   ],
+   "lang": "grc"
+  },
+  "p-marcus-aurelius": {
+   "agent": "marcus_aurelius",
+   "works": [
+    {
+     "title": "Meditations",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "沉思录",
+     "orig": {
+      "text": "Τὰ εἰς ἑαυτόν",
+      "lang": "grc",
+      "source": "https://en.wikipedia.org/wiki/Meditations"
+     },
+     "wiki": {
+      "en": "Meditations",
+      "zh": "沉思录",
+      "source": "https://www.wikidata.org/wiki/Q1152283"
+     },
+     "year": {
+      "en": "Written c. 170–180 CE; first printed 1559",
+      "zh": "约公元 170—180 年写成，1559 年首次刊印"
+     },
+     "desc": {
+      "en": "Private notes by a Roman emperor on accepting fate and governing himself.",
+      "zh": "一位罗马皇帝写给自己的私人笔记，关于接受命运、管住自己。"
+     },
+     "why": {
+      "en": "A working notebook, not a treatise — you watch someone talk himself into accepting what he cannot control.",
+      "zh": "一本工作笔记而非论著：你会看到一个人如何说服自己接受无法控制之事。"
+     }
+    }
+   ],
+   "lang": "la"
+  },
+  "p-augustine-of-hippo": {
+   "agent": "augustine",
+   "works": [
+    {
+     "title": "Confessions",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "忏悔录",
+     "orig": {
+      "text": "Confessiones",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q372941"
+     },
+     "wiki": {
+      "en": "Confessions (Augustine)",
+      "zh": "忏悔录 (奥古斯丁)",
+      "source": "https://www.wikidata.org/wiki/Q372941"
+     },
+     "year": {
+      "en": "c. 397–400",
+      "zh": "约 397–400 年"
+     },
+     "desc": {
+      "en": "An autobiography addressed to God in thirteen books: Augustine's youth, his long resistance to conversion, and then extended meditations on memory, time and creation.",
+      "zh": "以向上帝倾诉的形式写成的十三卷自传：青年时代、对皈依的长久抗拒，以及其后关于记忆、时间与创世的长篇沉思。"
+     },
+     "why": {
+      "en": "The first long inward account of a self in Western writing, and a hard look at why people want what harms them.",
+      "zh": "西方写作中第一部长篇的内心自述，也冷静审视了人为何渴望伤害自己的东西。"
+     }
+    },
+    {
+     "title": "City of God",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "上帝之城",
+     "orig": {
+      "text": "De civitate Dei contra paganos",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q212318"
+     },
+     "wiki": {
+      "en": "The City of God",
+      "zh": "上帝之城",
+      "source": "https://www.wikidata.org/wiki/Q212318"
+     },
+     "year": {
+      "en": "413–426",
+      "zh": "413–426 年"
+     },
+     "desc": {
+      "en": "Twenty-two books begun after the sack of Rome in 410, answering pagans who blamed Christianity, and setting a heavenly community against every earthly power.",
+      "zh": "410 年罗马遭劫后动笔的二十二卷巨著，回应归罪于基督教的异教徒，并将属天之城与一切尘世权力对举。"
+     },
+     "why": {
+      "en": "The template for thinking about politics as provisional, and about loyalty to something no state can contain.",
+      "zh": "把政治看作暂时之物的思考范本，也讨论了任何国家都容纳不下的那种忠诚。"
+     }
+    },
+    {
+     "title": "On the Trinity",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论三位一体",
+     "orig": {
+      "text": "De Trinitate",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q1180413"
+     },
+     "wiki": {
+      "en": "On the Trinity",
+      "source": "https://www.wikidata.org/wiki/Q1180413"
+     },
+     "year": {
+      "en": "Written over two decades, c. 400–420",
+      "zh": "历时约二十年写成，约 400–420 年"
+     },
+     "desc": {
+      "en": "Fifteen books on the doctrine of one God in three persons, which turn in the second half to the human mind — memory, understanding, will — as an image of it.",
+      "zh": "十五卷论三位一体教义，后半部转向人的心灵——记忆、理解与意志——视之为三一的映像。"
+     },
+     "why": {
+      "en": "An early, detailed study of self-knowledge: how a mind can know and love itself at all.",
+      "zh": "一部早期而细致的自我认识研究：心灵究竟如何认识并爱它自己。"
+     }
+    },
+    {
+     "title": "On Christian Doctrine",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论基督教教义",
+     "orig": {
+      "text": "De doctrina christiana",
+      "lang": "la",
+      "source": "https://en.wikipedia.org/wiki/De_doctrina_Christiana"
+     },
+     "wiki": {
+      "en": "De doctrina Christiana",
+      "zh": "論基督教教義",
+      "source": "https://www.wikidata.org/wiki/Q5244902"
+     },
+     "year": {
+      "en": "Begun c. 397; completed 426–427",
+      "zh": "约 397 年动笔，426–427 年完成"
+     },
+     "desc": {
+      "en": "A handbook on reading scripture and teaching it: signs and things, how to resolve ambiguous passages, and, in a fourth book added decades later, how to speak persuasively.",
+      "zh": "一部关于解读与讲授经文的手册：记号与事物、如何处理含混的段落，以及数十年后补写的第四卷——如何有说服力地讲话。"
+     },
+     "why": {
+      "en": "Founding text of Western hermeneutics, and a reckoning with how much classical rhetoric a Christian teacher should keep.",
+      "zh": "西方诠释学的奠基文本，也权衡了基督教教师应当保留多少古典修辞。"
+     }
+    },
+    {
+     "title": "Enchiridion",
+     "edition": "English translation (translator not recorded here)",
+     "orig": {
+      "text": "Enchiridion ad Laurentium",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q3738236"
+     },
+     "wiki": {
+      "en": "Enchiridion on Faith, Hope and Love",
+      "source": "https://www.wikidata.org/wiki/Q3738236"
+     },
+     "year": {
+      "en": "c. 421",
+      "zh": "约 421 年"
+     },
+     "desc": {
+      "en": "A short handbook written for a layman, Laurentius, summarising Christian belief under faith, hope and charity, with long sections on evil and grace.",
+      "zh": "为平信徒劳伦提乌斯写的简明手册，按信、望、爱概述基督教信仰，其中用较长篇幅讨论恶与恩典。"
+     },
+     "why": {
+      "en": "Augustine's mature theology in its most compact form, written when he was asked for the essentials.",
+      "zh": "奥古斯丁成熟期神学最紧凑的形态，是应人之请写下的要点。"
+     }
+    },
+    {
+     "title": "Soliloquies",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "独语录",
+     "orig": {
+      "text": "Soliloquia",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q11023825"
+     },
+     "wiki": {
+      "en": "Soliloquies of Augustine",
+      "source": "https://www.wikidata.org/wiki/Q11023825"
+     },
+     "year": {
+      "en": "386–387",
+      "zh": "386–387 年"
+     },
+     "desc": {
+      "en": "An unfinished dialogue between Augustine and his own Reason, written just before his baptism, on knowing God and the soul and on whether truth can perish.",
+      "zh": "一部未完成的对话，在受洗前不久写成，由奥古斯丁与他自己的理性对谈，讨论认识上帝与灵魂，以及真理能否消亡。"
+     },
+     "why": {
+      "en": "A convert thinking aloud before the doctrine settled, and a form of self-questioning many later writers borrowed.",
+      "zh": "一位皈依者在教义定型之前的出声思考，这种自我诘问的形式为后来许多作者所借用。"
+     }
+    },
+    {
+     "title": "On Free Will",
+     "edition": "Latin original (Migne, Patrologia Latina 32)",
+     "zh": "论自由意志",
+     "orig": {
+      "text": "De libero arbitrio",
+      "lang": "la",
+      "source": "https://en.wikipedia.org/wiki/On_Free_Choice_of_the_Will"
+     },
+     "wiki": {
+      "en": "De libero arbitrio voluntatis",
+      "zh": "论自由意志",
+      "source": "https://www.wikidata.org/wiki/Q1142681"
+     },
+     "year": {
+      "en": "Begun 388; completed c. 395",
+      "zh": "388 年动笔，约 395 年完成"
+     },
+     "desc": {
+      "en": "A dialogue in three books with his friend Evodius on where evil comes from, arguing that it lies in the misuse of a free will that is itself good.",
+      "zh": "与友人埃伏第乌斯的三卷对话，探讨恶从何而来，主张恶源于对本身为善的自由意志的误用。"
+     },
+     "why": {
+      "en": "The classic statement of the free-will answer to the problem of evil, and the one later critics argue with.",
+      "zh": "以自由意志回应恶之问题的经典表述，也是后来批评者争论的对象。"
+     }
+    },
+    {
+     "title": "Retractations",
+     "edition": "Latin original (Migne, Patrologia Latina 32)",
+     "year": {
+      "en": "c. 426–427",
+      "zh": "约 426–427 年"
+     },
+     "desc": {
+      "en": "Near the end of his life, Augustine reviews his books in order of writing, noting their occasion and correcting what he now thought mistaken. He did not reach the letters and sermons.",
+      "zh": "晚年的奥古斯丁按写作顺序逐一回顾自己的著作，说明缘起，并修正他此时认为有误之处。书信与讲道部分未及完成。"
+     },
+     "why": {
+      "en": "A rare record of a major thinker auditing himself, and the main evidence for dating his works.",
+      "zh": "罕见的一份大思想家自我审核的记录，也是为其著作断代的主要依据。"
+     }
+    }
+   ],
+   "lang": "la"
+  },
+  "p-boethius": {
+   "agent": "boethius",
+   "works": [
+    {
+     "title": "Consolation of Philosophy",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "哲学的慰藉",
+     "orig": {
+      "text": "De consolatione philosophiae",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q861927"
+     },
+     "wiki": {
+      "en": "On the Consolation of Philosophy",
+      "zh": "哲学的慰藉",
+      "source": "https://www.wikidata.org/wiki/Q861927"
+     },
+     "year": {
+      "en": "Written c. 523–524",
+      "zh": "约 523—524 年写成"
+     },
+     "desc": {
+      "en": "A dialogue in alternating prose and verse, written in prison before his execution, in which Philosophy, as a woman, argues him from grief toward the view that fortune cannot touch the good.",
+      "zh": "狱中候刑时所写，散文与诗交替。哲学化身女子与他对话，把他从悲痛引向这样的看法：命运伤不到真正的善。"
+     },
+     "why": {
+      "en": "One of the most-read books of the Middle Ages, and a direct record of reasoning under a death sentence.",
+      "zh": "中世纪读者最多的书之一，也是一份死刑判决之下的推理记录。"
+     }
+    },
+    {
+     "title": "On the Trinity",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "c. 520",
+      "zh": "约 520 年"
+     },
+     "desc": {
+      "en": "A short theological treatise, one of his Opuscula sacra, applying Aristotle's logical categories to the doctrine of three persons in one God.",
+      "zh": "一篇简短的神学论文，属于他的《神学论文集》，用亚里士多德的范畴逻辑来讨论三位一体的教义。"
+     },
+     "why": {
+      "en": "Shows where medieval scholasticism began: doctrine taken as given, then pressed with logic to see what it means.",
+      "zh": "能看到经院哲学的起点：接受教义为前提，再用逻辑追问它究竟意味着什么。"
+     }
+    },
+    {
+     "title": "How Substances are Good",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "c. 520",
+      "zh": "约 520 年"
+     },
+     "desc": {
+      "en": "A brief treatise, also known as De hebdomadibus, asking how things can be good simply by existing without being goodness itself; it distinguishes a thing's being from what it is.",
+      "zh": "一篇短论，又称《七公理论》，追问万物何以因存在而为善、却又不等于善本身；其中区分了事物的存在与事物之所是。"
+     },
+     "why": {
+      "en": "A few pages that set the vocabulary for later debates about being and essence, Aquinas's included.",
+      "zh": "寥寥数页，却为后来关于存在与本质的争论（包括阿奎那）定下了用语。"
+     }
+    }
+   ],
+   "lang": "la"
+  },
+  "p-thomas-aquinas": {
+   "agent": "aquinas",
+   "works": [
+    {
+     "title": "Summa Theologica, Part I",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "神学大全",
+     "orig": {
+      "text": "Summa Theologiae",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q653871"
+     },
+     "wiki": {
+      "en": "Summa Theologica",
+      "zh": "神学大全",
+      "source": "https://www.wikidata.org/wiki/Q653871"
+     },
+     "year": {
+      "en": "Written c. 1265–1268",
+      "zh": "约 1265—1268 年写成"
+     },
+     "desc": {
+      "en": "The first part of his unfinished summary of theology, set out as questions, objections and replies: on God, creation, angels and human nature.",
+      "zh": "他未完成的神学总论的第一部分，以问题、反驳、答复的形式写成，讨论上帝、创造、天使和人的本性。"
+     },
+     "why": {
+      "en": "Contains the five ways of arguing for God and a full account of the soul; the method of stating the strongest objection first is worth learning on its own.",
+      "zh": "包括论证上帝存在的五路和对灵魂的完整论述；先陈述最强反驳的写法本身就值得学。"
+     }
+    },
+    {
+     "title": "Summa contra Gentiles",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "反异教大全",
+     "wiki": {
+      "en": "Summa contra Gentiles",
+      "zh": "哲学大全",
+      "source": "https://www.wikidata.org/wiki/Q604274"
+     },
+     "year": {
+      "en": "Written c. 1259–1265",
+      "zh": "约 1259—1265 年写成"
+     },
+     "desc": {
+      "en": "A treatise in four books defending Christian belief by argument: the first three proceed from reason alone, the fourth turns to doctrines known only through revelation.",
+      "zh": "四卷本论著，以论证为基督教信仰辩护：前三卷只凭理性推进，第四卷才转向只能靠启示得知的教义。"
+     },
+     "why": {
+      "en": "His clearest attempt to show how far reason can go without scripture, and where he thinks it stops.",
+      "zh": "他最清楚地展示了理性不靠经文能走多远，以及他认为理性在哪里止步。"
+     }
+    },
+    {
+     "title": "On Being and Essence",
+     "edition": "Latin original (Corpus Thomisticum)",
+     "zh": "论存在者与本质",
+     "orig": {
+      "text": "De ente et essentia",
+      "lang": "la",
+      "source": "https://en.wikipedia.org/wiki/De_ente_et_essentia"
+     },
+     "wiki": {
+      "en": "De ente et essentia",
+      "source": "https://www.wikidata.org/wiki/Q119823"
+     },
+     "year": {
+      "en": "c. 1252–1256",
+      "zh": "约 1252—1256 年"
+     },
+     "desc": {
+      "en": "A short early treatise defining essence and arguing that in every created thing, what it is differs from the fact that it exists; only in God are the two the same.",
+      "zh": "早年的一篇短论，界定本质，并论证在一切受造物中，其本质与其存在有别，唯有在上帝那里二者同一。"
+     },
+     "why": {
+      "en": "The compact source of his metaphysics; most of his later thinking on God and creatures rests on this distinction.",
+      "zh": "他形而上学的浓缩源头，后来关于上帝与受造物的思考大多建立在这一区分上。"
+     }
+    },
+    {
+     "title": "Disputed Questions on Truth",
+     "edition": "Latin original (Corpus Thomisticum, qq. 1–29)",
+     "zh": "论真理",
+     "orig": {
+      "text": "Quaestiones disputatae de veritate",
+      "lang": "la",
+      "source": "https://en.wikipedia.org/wiki/Quaestiones_Disputatae_de_Veritate"
+     },
+     "wiki": {
+      "en": "Quaestiones Disputatae de Veritate",
+      "source": "https://www.wikidata.org/wiki/Q113018498"
+     },
+     "year": {
+      "en": "Disputed in Paris, 1256–1259",
+      "zh": "1256—1259 年在巴黎论辩"
+     },
+     "desc": {
+      "en": "Twenty-nine questions from his first years teaching in Paris, each worked through as a formal university disputation; the first is on truth, the rest on knowledge, providence, conscience, free choice and grace.",
+      "zh": "他在巴黎任教初年的二十九个论题，每题都按大学正式论辩的格式展开；第一题论真理，其余涉及认识、天意、良知、自由抉择与恩典。"
+     },
+     "why": {
+      "en": "Shows the disputation itself, the medieval university's working method, and holds his fullest early treatment of conscience.",
+      "zh": "能看到中世纪大学的工作方法——论辩本身，也收有他早期对良知最完整的讨论。"
+     }
+    },
+    {
+     "title": "Compendium of Theology",
+     "edition": "Latin original (Corpus Thomisticum)",
+     "zh": "神学纲要",
+     "wiki": {
+      "en": "Compendium Theologiae (Aquinas)",
+      "source": "https://www.wikidata.org/wiki/Q2990401"
+     },
+     "year": {
+      "en": "c. 1265–1273; unfinished",
+      "zh": "约 1265—1273 年，未完成"
+     },
+     "desc": {
+      "en": "A short handbook of Christian doctrine written for his companion Reginald of Piperno, planned around faith, hope and charity; it breaks off early in the part on hope.",
+      "zh": "为同伴雷吉纳德写的基督教教义简明手册，原计划按信、望、爱三部分展开，写到论望德的部分不久便中断。"
+     },
+     "why": {
+      "en": "His theology in brief, for someone who wants the outline before the Summa's thousands of articles.",
+      "zh": "他神学的简本，适合想在读《神学大全》数千条之前先看提纲的人。"
+     }
+    },
+    {
+     "title": "Catena Aurea",
+     "edition": "Latin original (Corpus Thomisticum, 1953)",
+     "year": {
+      "en": "c. 1262–1268",
+      "zh": "约 1262—1268 年"
+     },
+     "desc": {
+      "en": "A continuous commentary on the four Gospels assembled from excerpts of the Greek and Latin Church Fathers, begun at the request of Pope Urban IV.",
+      "zh": "对四福音书的连续注释，由希腊和拉丁教父著作的摘录串联而成，应教宗乌尔班四世之请开始编纂。"
+     },
+     "why": {
+      "en": "A compiler's work rather than his own argument: a guide to how the early Church read each verse.",
+      "zh": "是编纂而非他本人的论证，可以看到早期教会如何逐节解读福音书。"
+     }
+    }
+   ],
+   "lang": "la"
+  },
+  "p-confucius": {
+   "agent": "confucius",
+   "works": [
+    {
+     "title": "Analects",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论语",
+     "orig": {
+      "text": "論語",
+      "lang": "lzh",
+      "source": "https://en.wikipedia.org/wiki/Analects"
+     },
+     "wiki": {
+      "en": "Analects",
+      "zh": "论语",
+      "source": "manual: https://en.wikipedia.org/wiki/Analects"
+     },
+     "year": {
+      "en": "Compiled by later disciples, c. 5th–3rd c. BCE",
+      "zh": "约公元前 5 至前 3 世纪由后学编成"
+     },
+     "desc": {
+      "en": "Short sayings and exchanges attributed to Confucius and his disciples, compiled after his death in layers over generations. Subjects: ritual, learning, government, and what makes a person humane.",
+      "zh": "归于孔子及其弟子的短章与问答，在他身后经数代人分层编成。内容涉及礼、学、为政，以及何以为仁。"
+     },
+     "why": {
+      "en": "Ethics built from small conduct — how you greet, mourn, study — rather than from principles stated in advance.",
+      "zh": "从细小的举止——如何相见、居丧、为学——而非预先立下的原则来建立伦理。"
+     }
+    }
+   ],
+   "lang": "zh"
+  },
+  "p-laozi": {
+   "agent": "laozi",
+   "works": [
+    {
+     "title": "Tao Te Ching",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "道德经",
+     "orig": {
+      "text": "道德經",
+      "lang": "lzh",
+      "source": "https://www.wikidata.org/wiki/Q134425"
+     },
+     "wiki": {
+      "en": "Tao Te Ching",
+      "zh": "老子 (書)",
+      "source": "https://www.wikidata.org/wiki/Q134425"
+     },
+     "year": {
+      "en": "Traditionally 6th c. BCE; earliest manuscripts c. 300 BCE",
+      "zh": "传统说法为公元前 6 世纪；现存最早写本约公元前 300 年"
+     },
+     "desc": {
+      "en": "Eighty-one short verse chapters on the Way and its power, traditionally attributed to Laozi, whose existence is uncertain; most scholars see a compiled text. Central theme: yielding, emptiness, non-action.",
+      "zh": "八十一章短小韵文，论道与德，传统上归于老子，但其人是否存在并无定论，学界多认为此书为汇编而成。核心是柔弱、虚静与无为。"
+     },
+     "why": {
+      "en": "A counterweight to striving: an argument that the soft and the empty do more work than force.",
+      "zh": "对奋力进取的一种制衡：论证柔弱与虚空比强力更能成事。"
+     }
+    }
+   ],
+   "lang": "zh"
+  },
+  "p-zhuangzi": {
+   "agent": "zhuangzi",
+   "works": [
+    {
+     "title": "Zhuangzi",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "庄子",
+     "orig": {
+      "text": "莊子",
+      "lang": "lzh",
+      "source": "https://en.wikipedia.org/wiki/Zhuangzi_%28book%29"
+     },
+     "wiki": {
+      "en": "Zhuangzi (book)",
+      "zh": "莊子 (書)",
+      "source": "manual: https://en.wikipedia.org/wiki/Zhuangzi_%28book%29"
+     },
+     "year": {
+      "en": "From the 4th c. BCE; edited into 33 chapters by Guo Xiang, 3rd c. CE",
+      "zh": "约公元前 4 世纪起陆续成书；公元 3 世纪郭象编定为 33 篇"
+     },
+     "desc": {
+      "en": "A Daoist anthology of stories, dialogues and jokes. Only the seven inner chapters are traditionally attributed to Zhuang Zhou; the outer and miscellaneous chapters come from later hands.",
+      "zh": "道家文集，由寓言、对话和笑话组成。传统上只有内七篇归于庄周本人，外篇与杂篇出自后人之手。"
+     },
+     "why": {
+      "en": "Argues by story rather than proof that fixed categories — useful, useless, life, death — are less fixed than they seem.",
+      "zh": "用故事而非论证说明：有用与无用、生与死这些分类，并不像看起来那样牢固。"
+     }
+    }
+   ],
+   "lang": "zh"
+  },
+  "p-mencius": {
+   "agent": "mencius",
+   "works": [
+    {
+     "title": "Mencius",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "孟子",
+     "orig": {
+      "text": "孟子",
+      "lang": "lzh",
+      "source": "https://www.wikidata.org/wiki/Q1195444"
+     },
+     "wiki": {
+      "en": "Mencius (book)",
+      "zh": "孟子 (書)",
+      "source": "https://www.wikidata.org/wiki/Q1195444"
+     },
+     "year": {
+      "en": "4th c. BCE; compiled by Mencius's disciples, possibly with him",
+      "zh": "公元前 4 世纪；由孟子弟子编成，孟子或曾参与"
+     },
+     "desc": {
+      "en": "Seven books of conversations with rulers, rivals and students, arguing that human nature tends toward goodness and that a ruler who loses the people loses the right to rule.",
+      "zh": "七篇，记孟子与君主、论敌和弟子的对话，主张人性向善，失去民心的君主即失去统治的正当性。"
+     },
+     "why": {
+      "en": "The first sustained case in Chinese thought that morality grows from feelings everyone already has.",
+      "zh": "中国思想中第一次系统论证：道德生长于人人皆有的情感。"
+     }
+    }
+   ],
+   "lang": "zh"
+  },
+  "p-niccolò-machiavelli": {
+   "agent": "machiavelli",
+   "works": [
+    {
+     "title": "The Prince",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "君主论",
+     "orig": {
+      "text": "Il principe",
+      "lang": "it",
+      "source": "https://www.wikidata.org/wiki/Q131719"
+     },
+     "wiki": {
+      "en": "The Prince",
+      "zh": "君主论",
+      "source": "https://www.wikidata.org/wiki/Q131719"
+     },
+     "year": {
+      "en": "Written 1513, published 1532",
+      "zh": "1513 年写成，1532 年出版"
+     },
+     "desc": {
+      "en": "A short handbook for a new ruler on gaining and keeping power, which sets the effects of an action above its morality.",
+      "zh": "写给新君主的简短手册，讲如何获取并保住权力，把行动的效果置于道德之上。"
+     },
+     "why": {
+      "en": "The founding text for thinking about politics as it is practised rather than as it ought to be.",
+      "zh": "把政治当作实际运作之物、而非应然之物来思考的开端之作。"
+     }
+    },
+    {
+     "title": "Discourses on Livy",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论李维",
+     "orig": {
+      "text": "Discorsi sopra la prima deca di Tito Livio",
+      "lang": "it",
+      "source": "https://www.wikidata.org/wiki/Q924424"
+     },
+     "wiki": {
+      "en": "Discourses on Livy",
+      "zh": "李維論",
+      "source": "https://www.wikidata.org/wiki/Q924424"
+     },
+     "year": {
+      "en": "Written c. 1513–1519, published 1531",
+      "zh": "约 1513—1519 年写成，1531 年出版"
+     },
+     "desc": {
+      "en": "A long commentary on Livy's history of early Rome, used to argue that republics last when citizens are free and factions are allowed to contest each other.",
+      "zh": "借评论李维的早期罗马史，论证共和国之所以长久，在于公民自由、各派得以彼此抗衡。"
+     },
+     "why": {
+      "en": "The republican Machiavelli, and the necessary counterweight to reading The Prince alone.",
+      "zh": "共和主义的马基雅维利，单读《君主论》必须有它作平衡。"
+     }
+    },
+    {
+     "title": "The Art of War",
+     "edition": "English translation (translator not recorded here)",
+     "orig": {
+      "text": "Dell’arte della guerra",
+      "lang": "it",
+      "source": "https://en.wikipedia.org/wiki/The_Art_of_War_%28Machiavelli%29"
+     },
+     "wiki": {
+      "en": "The Art of War (Machiavelli book)",
+      "source": "https://www.wikidata.org/wiki/Q610942"
+     },
+     "year": {
+      "en": "1521",
+      "zh": "1521 年"
+     },
+     "desc": {
+      "en": "A dialogue on military organisation that argues for a citizen militia over hired mercenaries; the only one of his major political works printed in his lifetime.",
+      "zh": "一部谈军事组织的对话录，主张以公民民兵取代雇佣军；是他主要政治著作中唯一生前出版的一部。"
+     },
+     "why": {
+      "en": "Shows how closely he tied a state's freedom to who bears its arms.",
+      "zh": "可以看出他如何把一个国家的自由与谁来持有武器紧紧联系在一起。"
+     }
+    },
+    {
+     "title": "History of Florence",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "佛罗伦萨史",
+     "orig": {
+      "text": "Istorie fiorentine",
+      "lang": "it",
+      "source": "https://en.wikipedia.org/wiki/Florentine_Histories"
+     },
+     "wiki": {
+      "en": "Florentine Histories",
+      "zh": "佛罗伦萨史",
+      "source": "https://www.wikidata.org/wiki/Q691766"
+     },
+     "year": {
+      "en": "Commissioned 1520, presented 1525; published 1532",
+      "zh": "1520 年受托撰写，1525 年呈献，1532 年出版"
+     },
+     "desc": {
+      "en": "A history of Florence from its origins to 1492, commissioned by the Medici, which reads the city's past as a sequence of factional conflicts.",
+      "zh": "受美第奇家族委托所写的佛罗伦萨史，从建城写到 1492 年，把这座城市的过去读作一连串派系冲突。"
+     },
+     "why": {
+      "en": "His political theory applied to his own city, written for the family whose rule he had to describe.",
+      "zh": "他把自己的政治理论用在自己的城市上，而且是写给他必须描述其统治的那个家族。"
+     }
+    }
+   ],
+   "lang": "it"
+  },
+  "p-michel-de-montaigne": {
+   "agent": "montaigne",
+   "works": [
+    {
+     "title": "Essays",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "蒙田随笔",
+     "orig": {
+      "text": "Essais",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q624852"
+     },
+     "wiki": {
+      "en": "Essays (Montaigne)",
+      "zh": "隨筆集",
+      "source": "https://www.wikidata.org/wiki/Q624852"
+     },
+     "year": {
+      "en": "1580; expanded 1588; posthumous edition 1595",
+      "zh": "1580 年；1588 年增订；1595 年遗作版"
+     },
+     "desc": {
+      "en": "Three books of essays — the form takes its name from them — in which Montaigne tests his judgement on anything from cannibals to thumbs, with himself as the main subject.",
+      "zh": "三卷随笔——这一文体即由此得名。蒙田就食人族乃至拇指等一切话题试验自己的判断，而他本人是最主要的题材。"
+     },
+     "why": {
+      "en": "A model for thinking on the page without reaching a verdict, and for treating your own inconsistency as evidence.",
+      "zh": "示范了如何在纸上思考而不急于下结论，并把自己的前后矛盾当作证据。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-francis-bacon": {
+   "agent": "bacon",
+   "works": [
+    {
+     "title": "Essays",
+     "edition": "Original English text",
+     "zh": "培根随笔",
+     "wiki": {
+      "en": "Essays (Francis Bacon)",
+      "source": "https://www.wikidata.org/wiki/Q3944819"
+     },
+     "year": {
+      "en": "1597; expanded 1612 and 1625",
+      "zh": "1597 年；1612 年与 1625 年增订"
+     },
+     "desc": {
+      "en": "Short, aphoristic essays on public and private life — ambition, friendship, revenge, studies — grown from ten in the first edition to fifty-eight in the last.",
+      "zh": "关于公共与私人生活的短篇格言式随笔——野心、友谊、复仇、读书——从初版十篇增至末版五十八篇。"
+     },
+     "why": {
+      "en": "Worldly advice from a career politician, compressed hard; useful for how power and self-interest actually operate.",
+      "zh": "一位职业政治家高度压缩的处世之言，有助于看清权力与私利如何实际运作。"
+     }
+    },
+    {
+     "title": "The Advancement of Learning",
+     "edition": "Original English text",
+     "zh": "学术的进展",
+     "wiki": {
+      "en": "The Advancement of Learning",
+      "zh": "学术的进展",
+      "source": "https://www.wikidata.org/wiki/Q7712425"
+     },
+     "year": {
+      "en": "1605",
+      "zh": "1605 年"
+     },
+     "desc": {
+      "en": "A survey of human knowledge in two books, dedicated to James I, defending learning and listing where it falls short and what should be done.",
+      "zh": "两卷本的人类知识总览，献给詹姆斯一世，为学问辩护，并列出其不足之处与应做之事。"
+     },
+     "why": {
+      "en": "An early research agenda: a map of what was not yet known, drawn to get it funded.",
+      "zh": "一份早期的研究议程：为争取支持而绘制的未知之地图。"
+     }
+    },
+    {
+     "title": "Novum Organum",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "新工具",
+     "wiki": {
+      "en": "Novum Organum",
+      "zh": "新工具论：或解释自然的一些指导",
+      "source": "https://www.wikidata.org/wiki/Q585046"
+     },
+     "orig": {
+      "text": "Novum Organum",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q474247"
+     },
+     "year": {
+      "en": "1620",
+      "zh": "1620 年"
+     },
+     "desc": {
+      "en": "Written in Latin as part of an unfinished larger project, it proposes a method of careful induction from observation, and catalogues the idols — habits of mind that distort inquiry.",
+      "zh": "以拉丁文写成，是一项未完成的大计划的一部分。书中提出从观察出发的审慎归纳法，并归纳出扭曲探究的种种心智偶像。"
+     },
+     "why": {
+      "en": "Its list of mental biases still reads as a working checklist for anyone weighing evidence.",
+      "zh": "书中对思维偏差的分类，至今仍可作为权衡证据时的检查清单。"
+     }
+    },
+    {
+     "title": "New Atlantis",
+     "edition": "Original English text",
+     "zh": "新大西岛",
+     "wiki": {
+      "en": "New Atlantis",
+      "zh": "新大西島",
+      "source": "https://www.wikidata.org/wiki/Q1233830"
+     },
+     "year": {
+      "en": "Written c. 1624; published 1627, after his death",
+      "zh": "约 1624 年写成，1627 年于身后出版"
+     },
+     "desc": {
+      "en": "An unfinished utopian fable about sailors who reach an island, Bensalem, governed in part by a state-funded college of natural philosophers.",
+      "zh": "一部未完成的乌托邦寓言：水手们来到本撒冷岛，岛上部分由一所国家供养的自然哲学学院治理。"
+     },
+     "why": {
+      "en": "The first picture of organised, publicly funded science, and of the question who should control it.",
+      "zh": "最早描绘有组织、由公共供养的科学的作品，也引出谁该掌控科学的问题。"
+     }
+    },
+    {
+     "title": "History of Henry VII",
+     "edition": "Original English text",
+     "year": {
+      "en": "Written 1621; published 1622",
+      "zh": "1621 年写成，1622 年出版"
+     },
+     "desc": {
+      "en": "A political history of the first Tudor king, written after Bacon's fall from office, more interested in statecraft and motive than in chronicle.",
+      "zh": "记述都铎王朝首位国王的政治史，写于培根罢官之后，重在治国之术与动机，而非编年记事。"
+     },
+     "why": {
+      "en": "An early analytical history, by a disgraced insider, of how a usurper made his power stick.",
+      "zh": "一部早期的分析性史书，出自一位失势的局内人，讲一位篡位者如何稳住权力。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-john-locke": {
+   "agent": "locke",
+   "works": [
+    {
+     "title": "Second Treatise of Government",
+     "edition": "Original English text",
+     "zh": "政府论（下篇）",
+     "wiki": {
+      "en": "Two Treatises of Government",
+      "zh": "政府論",
+      "source": "manual: https://en.wikipedia.org/wiki/Two_Treatises_of_Government"
+     },
+     "year": {
+      "en": "Published 1689, dated 1690",
+      "zh": "1689 年出版（扉页署 1690 年）"
+     },
+     "desc": {
+      "en": "The second of Locke's Two Treatises, published anonymously. It grounds government in the consent of the governed, defends property as the fruit of labour, and justifies resisting a ruler who breaks trust.",
+      "zh": "洛克《政府论》的下篇，匿名出版。它把政府建立在被统治者的同意之上，认为财产来自劳动，并为反抗失信的统治者辩护。"
+     },
+     "why": {
+      "en": "The argument behind much of the American founding and most liberal ideas of legitimate government.",
+      "zh": "美国建国的许多论证、以及大多数自由主义关于正当政府的观念，都出自这里。"
+     }
+    },
+    {
+     "title": "An Essay Concerning Human Understanding",
+     "edition": "Original English text",
+     "zh": "人类理解论",
+     "wiki": {
+      "en": "An Essay Concerning Human Understanding",
+      "zh": "人類理解論",
+      "source": "https://www.wikidata.org/wiki/Q482438"
+     },
+     "year": {
+      "en": "Published 1689, dated 1690",
+      "zh": "1689 年出版（扉页署 1690 年）"
+     },
+     "desc": {
+      "en": "A long inquiry into where ideas come from and how far knowledge reaches. It argues that the mind has no innate ideas and that all knowledge is built from experience.",
+      "zh": "一部长篇探究，追问观念从何而来、知识能走多远。书中认为心灵没有天赋观念，一切知识都由经验构成。"
+     },
+     "why": {
+      "en": "Founding text of empiricism, and an early account of personal identity as continuity of memory.",
+      "zh": "经验主义的奠基之作，也较早地把个人同一性解释为记忆的连续。"
+     }
+    },
+    {
+     "title": "A Letter Concerning Toleration",
+     "edition": "English translation by William Popple (1689)",
+     "zh": "论宗教宽容",
+     "orig": {
+      "text": "Epistola de Tolerantia",
+      "lang": "la",
+      "source": "https://en.wikipedia.org/wiki/A_Letter_Concerning_Toleration"
+     },
+     "wiki": {
+      "en": "A Letter Concerning Toleration",
+      "source": "https://www.wikidata.org/wiki/Q914139"
+     },
+     "year": {
+      "en": "Written 1685 in Latin; published 1689",
+      "zh": "1685 年以拉丁文写成，1689 年出版"
+     },
+     "desc": {
+      "en": "A letter, written in Latin in Dutch exile and published anonymously, arguing that the state has no business compelling belief, since faith cannot be forced. The English text is William Popple's translation.",
+      "zh": "一封信，洛克流亡荷兰时以拉丁文写成，匿名出版。信中认为信仰无法强迫，国家无权强制人们信什么。英文本是威廉·波普尔的译本。"
+     },
+     "why": {
+      "en": "An early case for separating church and state, with limits — Catholics and atheists were left out — worth noticing.",
+      "zh": "较早主张政教分离的论证，但也有界限：天主教徒和无神论者被排除在外，值得留意。"
+     }
+    },
+    {
+     "title": "Some Thoughts Concerning Education",
+     "edition": "Original English text",
+     "zh": "教育漫话",
+     "wiki": {
+      "en": "Some Thoughts Concerning Education",
+      "zh": "教育漫话",
+      "source": "https://www.wikidata.org/wiki/Q2471642"
+     },
+     "year": {
+      "en": "1693",
+      "zh": "1693 年"
+     },
+     "desc": {
+      "en": "Advice on raising a gentleman's son, grown out of letters to a friend: health, habits, character before learning, and teaching through example and play rather than the rod.",
+      "zh": "由写给朋友的书信整理而成，讲如何教养一位绅士的儿子：健康、习惯、先品格后学问，以榜样和游戏代替棍棒。"
+     },
+     "why": {
+      "en": "Many modern parenting assumptions, such as forming habits early and praise over punishment, appear here in plain form.",
+      "zh": "许多现代育儿观念，如早早养成习惯、多称赞少惩罚，在这里已经以朴素的形式出现。"
+     }
+    },
+    {
+     "title": "The Reasonableness of Christianity",
+     "edition": "Original English text",
+     "zh": "基督教的合理性",
+     "wiki": {
+      "en": "The Reasonableness of Christianity",
+      "source": "manual: https://en.wikipedia.org/wiki/The_Reasonableness_of_Christianity"
+     },
+     "year": {
+      "en": "1695",
+      "zh": "1695 年"
+     },
+     "desc": {
+      "en": "An anonymous argument that Christianity, read from the Gospels, asks little beyond belief that Jesus is the Messiah and a good life, and that this is consistent with reason.",
+      "zh": "匿名发表的论证：从福音书读来，基督教要求的不过是相信耶稣是弥赛亚并好好生活，而这与理性并不冲突。"
+     },
+     "why": {
+      "en": "Shows an empiricist trying to keep faith while stripping it to essentials, a move later liberal religion repeated.",
+      "zh": "可以看到一位经验主义者如何在把信仰削减到最基本时仍保住它，后来的自由派宗教一再重复这一做法。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-gottfried-wilhelm-leibniz": {
+   "agent": "leibniz",
+   "works": [
+    {
+     "title": "Monadology and Other Writings",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "单子论",
+     "orig": {
+      "text": "La Monadologie",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Monadology"
+     },
+     "wiki": {
+      "en": "Monadology",
+      "zh": "單子論",
+      "source": "https://www.wikidata.org/wiki/Q1211539"
+     },
+     "year": {
+      "en": "Monadology written 1714; first published 1720, in German translation",
+      "zh": "《单子论》1714 年写成，1720 年首次以德译本出版"
+     },
+     "desc": {
+      "en": "A collection built around the Monadology, ninety short numbered paragraphs describing a world made of simple, mindlike substances in pre-established harmony, with related late papers.",
+      "zh": "以《单子论》为主的文集。《单子论》由九十段编号短文组成，描绘一个由单纯、类心灵的实体构成、处于前定和谐中的世界，另收相关晚期文章。"
+     },
+     "why": {
+      "en": "His whole system in a few pages; the companion pieces show it being worked out.",
+      "zh": "几页之内就是他的整个体系，附收的文章能看到它如何逐步成形。"
+     }
+    },
+    {
+     "title": "Theodicy",
+     "edition": "French original",
+     "zh": "神义论",
+     "orig": {
+      "text": "Essais de Théodicée",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Th%C3%A9odic%C3%A9e"
+     },
+     "wiki": {
+      "en": "Théodicée",
+      "source": "https://www.wikidata.org/wiki/Q2166858"
+     },
+     "year": {
+      "en": "1710",
+      "zh": "1710 年"
+     },
+     "desc": {
+      "en": "A long defence, written largely in reply to Pierre Bayle, of the claim that a good God is compatible with evil, because this is the best of all possible worlds.",
+      "zh": "一部长篇辩护，主要回应皮埃尔·培尔，论证善的上帝与恶并不矛盾，因为这是一切可能世界中最好的一个。"
+     },
+     "why": {
+      "en": "The source of the problem-of-evil debate in its modern form, and of the optimism Voltaire later mocked in Candide.",
+      "zh": "现代意义上恶的问题之争由此而来，伏尔泰在《老实人》中嘲讽的乐观主义也出自这里。"
+     }
+    },
+    {
+     "title": "New Essays on Human Understanding",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "人类理智新论",
+     "orig": {
+      "text": "Nouveaux essais sur l'entendement humain",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q2720221"
+     },
+     "wiki": {
+      "en": "New Essays on Human Understanding",
+      "source": "https://www.wikidata.org/wiki/Q2720221"
+     },
+     "year": {
+      "en": "Written c. 1703–1705, published 1765",
+      "zh": "约 1703—1705 年写成，1765 年出版"
+     },
+     "desc": {
+      "en": "A chapter-by-chapter dialogue answering Locke's Essay, defending innate ideas and the mind's own activity against the view that it starts as a blank slate. Withheld after Locke's death.",
+      "zh": "以对话形式逐章回应洛克的《人类理解论》，反对心灵生来是一块白板，为天赋观念和心灵自身的能动性辩护。洛克去世后他未予出版。"
+     },
+     "why": {
+      "en": "Empiricism and rationalism argued point by point in one book, which makes both sides easier to see.",
+      "zh": "经验论与理性论在一本书里逐点交锋，两方的立场都因此更清楚。"
+     }
+    },
+    {
+     "title": "Discourse on Metaphysics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "形而上学论",
+     "orig": {
+      "text": "Discours de métaphysique",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q3030194"
+     },
+     "wiki": {
+      "en": "Discourse on Metaphysics",
+      "source": "https://www.wikidata.org/wiki/Q3030194"
+     },
+     "year": {
+      "en": "Written 1686, published 1846",
+      "zh": "1686 年写成，1846 年出版"
+     },
+     "desc": {
+      "en": "A short treatise of thirty-seven sections setting out his early metaphysics: individual substances whose complete concepts contain everything that will happen to them.",
+      "zh": "三十七节的短论，阐述他早期的形而上学：每个个体实体的完整概念已包含将发生在它身上的一切。"
+     },
+     "why": {
+      "en": "The first full statement of his system, sent in summary to Arnauld and argued over in their letters.",
+      "zh": "他体系的第一次完整表述，曾以提要寄给阿尔诺，并在两人通信中反复争论。"
+     }
+    },
+    {
+     "title": "Principles of Nature and Grace",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "Written 1714, published 1718",
+      "zh": "1714 年写成，1718 年出版"
+     },
+     "desc": {
+      "en": "A short essay, written the same year as the Monadology, summarising his metaphysics and asking why there is something rather than nothing.",
+      "zh": "与《单子论》同年写成的短文，概述他的形而上学，并追问为什么有物存在而不是一无所有。"
+     },
+     "why": {
+      "en": "A plainer companion to the Monadology, and an early statement of the question of why anything exists.",
+      "zh": "比《单子论》更平易的姊妹篇，也是为何有物存在这一问题的早期表述。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-george-berkeley": {
+   "agent": "berkeley",
+   "works": [
+    {
+     "title": "Three Dialogues",
+     "edition": "Original English text",
+     "zh": "海拉斯和斐洛诺斯对话三篇",
+     "wiki": {
+      "en": "Three Dialogues Between Hylas and Philonous",
+      "source": "https://www.wikidata.org/wiki/Q3110883"
+     },
+     "year": {
+      "en": "1713",
+      "zh": "1713 年"
+     },
+     "desc": {
+      "en": "Three dialogues in which Philonous persuades the sceptical Hylas that matter does not exist apart from minds; a more readable restatement of the Principles.",
+      "zh": "三篇对话中，斐洛诺斯说服心存怀疑的海拉斯：物质并不独立于心灵而存在。这是《人类知识原理》更易读的重述。"
+     },
+     "why": {
+      "en": "The most accessible way into immaterialism, and a fair test of whether you can say what matter is.",
+      "zh": "进入非物质论最平易的入口，也能检验你是否说得清物质究竟是什么。"
+     }
+    },
+    {
+     "title": "A Treatise Concerning the Principles of Human Knowledge",
+     "edition": "Original English text",
+     "zh": "人类知识原理",
+     "wiki": {
+      "en": "A Treatise Concerning the Principles of Human Knowledge",
+      "source": "https://www.wikidata.org/wiki/Q3267928"
+     },
+     "year": {
+      "en": "1710 (Part I; no further part appeared)",
+      "zh": "1710 年（第一部分；后续部分未出版）"
+     },
+     "desc": {
+      "en": "Berkeley's main statement of immaterialism: to be is to be perceived, abstract ideas are incoherent, and the order of the world comes from God.",
+      "zh": "贝克莱非物质论的主要论述：存在即被感知，抽象观念不融贯，世界的秩序来自上帝。"
+     },
+     "why": {
+      "en": "A short, direct argument that we never encounter anything beyond what we perceive, and a challenge to show otherwise.",
+      "zh": "篇幅不长，直接论证我们从未遇到感知之外的任何东西，并要求反对者拿出理由。"
+     }
+    },
+    {
+     "title": "Alciphron",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Alciphron (book)",
+      "source": "https://www.wikidata.org/wiki/Q4713139"
+     },
+     "year": {
+      "en": "1732",
+      "zh": "1732 年"
+     },
+     "desc": {
+      "en": "Seven dialogues defending Christian belief against the freethinkers of his day, written largely while Berkeley lived in Rhode Island.",
+      "zh": "七篇对话，为基督教信仰辩护，反驳当时的自由思想者；大部分写于贝克莱旅居罗得岛期间。"
+     },
+     "why": {
+      "en": "Includes an early account of how words can be meaningful without standing for clear ideas.",
+      "zh": "书中较早提出：词语即使不对应清晰的观念，也可以有意义。"
+     }
+    },
+    {
+     "title": "Siris",
+     "edition": "Original English text",
+     "year": {
+      "en": "1744",
+      "zh": "1744 年"
+     },
+     "desc": {
+      "en": "Begins as a recommendation of tar-water as a medicine and moves, link by link, into speculation about fire, the soul and God.",
+      "zh": "从推荐松焦油水作为药物开始，一环接一环地推进到关于火、灵魂与上帝的思辨。"
+     },
+     "why": {
+      "en": "A strange late work that holds medicine, chemistry and Neoplatonic metaphysics in one chain of argument.",
+      "zh": "一部奇特的晚期作品，把医学、化学和新柏拉图主义形而上学串在同一条论证链上。"
+     }
+    },
+    {
+     "title": "An Essay Towards a New Theory of Vision",
+     "edition": "Original English text",
+     "zh": "视觉新论",
+     "year": {
+      "en": "1709",
+      "zh": "1709 年"
+     },
+     "desc": {
+      "en": "Argues that we do not see distance directly; we learn to read it from visual cues through their association with touch.",
+      "zh": "论证我们并不能直接看到距离，而是借由视觉线索与触觉的联系，学会判读距离。"
+     },
+     "why": {
+      "en": "An early empirical theory of perception; the Molyneux problem it discusses is still tested in vision science.",
+      "zh": "一部早期的经验主义知觉理论，它讨论的莫利纽兹问题至今仍在视觉科学中被检验。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-blaise-pascal": {
+   "agent": "pascal",
+   "works": [
+    {
+     "title": "Thoughts",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "思想录",
+     "orig": {
+      "text": "Pensées",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Pens%C3%A9es"
+     },
+     "wiki": {
+      "en": "Pensées",
+      "zh": "思想錄",
+      "source": "manual: https://en.wikipedia.org/wiki/Pens%C3%A9es"
+     },
+     "year": {
+      "en": "Notes c. 1657–1662; published 1670, after his death",
+      "zh": "约 1657–1662 年的札记，1670 年于身后出版"
+     },
+     "desc": {
+      "en": "Fragments for a defence of Christianity that Pascal never finished, ordered by later editors; on human misery and greatness, distraction, and the wager on God.",
+      "zh": "帕斯卡为基督教辩护而未完成的残篇，由后世编者整理排序；内容涉及人的悲惨与伟大、消遣，以及关于上帝的赌注。"
+     },
+     "why": {
+      "en": "The sharpest early account of distraction: why people cannot sit quietly in a room with themselves.",
+      "zh": "关于消遣最犀利的早期论述：人为何无法独自安静地待在房间里。"
+     }
+    },
+    {
+     "title": "The Provincial Letters",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "致外省人信札",
+     "wiki": {
+      "en": "Lettres provinciales",
+      "source": "manual: https://en.wikipedia.org/wiki/Lettres_provinciales"
+     },
+     "year": {
+      "en": "1656–1657",
+      "zh": "1656–1657 年"
+     },
+     "desc": {
+      "en": "Eighteen pseudonymous open letters defending the Jansenist Antoine Arnauld and satirising Jesuit casuistry — the art of finding exceptions that excuse almost anything.",
+      "zh": "十八封化名公开信，为冉森派的阿尔诺辩护，讽刺耶稣会的决疑论——一种几乎能为任何事找到例外的技艺。"
+     },
+     "why": {
+      "en": "A classic of polemic, and a lasting case against ethics that bends to suit whoever is asking.",
+      "zh": "论战文字的经典，也是对随求情者而变通的伦理的持久批评。"
+     }
+    },
+    {
+     "title": "De l'esprit geometrique",
+     "edition": "French original (1871 edition)",
+     "year": {
+      "en": "Written c. 1655–1658; published after his death",
+      "zh": "约 1655–1658 年写成，身后出版"
+     },
+     "desc": {
+      "en": "A short unfinished treatise on the method of geometric proof — what must be defined, what can be left undefined — joined to a fragment on the art of persuasion.",
+      "zh": "一篇未完成的短论，讨论几何证明的方法——什么必须定义，什么可以不加定义——并附有一篇论说服之术的残稿。"
+     },
+     "why": {
+      "en": "A clear account of why every argument must rest on terms it cannot itself define.",
+      "zh": "清楚说明了为何每一个论证都必须建立在它自身无法定义的词语之上。"
+     }
+    },
+    {
+     "title": "Traite du triangle arithmetique",
+     "edition": "French original (1923 edition)",
+     "year": {
+      "en": "Written 1654; published 1665, after his death",
+      "zh": "1654 年写成，1665 年于身后出版"
+     },
+     "desc": {
+      "en": "A mathematical treatise on the number triangle now named after Pascal, using it for combinations and for dividing stakes in an interrupted game, with an early explicit use of proof by induction.",
+      "zh": "一部数学论著，研究今以帕斯卡命名的数字三角形，将其用于组合问题和中断赌局的赌注分配，并较早明确使用了数学归纳法。"
+     },
+     "why": {
+      "en": "Where probability starts to become a mathematics, out of a gambling question.",
+      "zh": "概率由一个赌博问题开始成为数学的地方。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-adam-smith": {
+   "agent": "adam_smith",
+   "works": [
+    {
+     "title": "The Theory of Moral Sentiments",
+     "edition": "Original English text",
+     "zh": "道德情操论",
+     "wiki": {
+      "en": "The Theory of Moral Sentiments",
+      "zh": "道德情操論",
+      "source": "https://www.wikidata.org/wiki/Q1438448"
+     },
+     "year": {
+      "en": "1759; much revised 1790",
+      "zh": "1759 年，1790 年大幅修订"
+     },
+     "desc": {
+      "en": "Smith's account of morality as grounded in sympathy: we judge ourselves by imagining how an impartial spectator would see us.",
+      "zh": "斯密认为道德建立在同情之上：我们想象一位公正的旁观者会如何看待自己，并以此评判自己。"
+     },
+     "why": {
+      "en": "The other half of Smith, the one usually missing from talk of self-interest and markets.",
+      "zh": "斯密的另一半，在谈论自利和市场时通常被略去的那一半。"
+     }
+    },
+    {
+     "title": "The Wealth of Nations",
+     "edition": "Original English text",
+     "zh": "国富论",
+     "wiki": {
+      "en": "The Wealth of Nations",
+      "zh": "國富論",
+      "source": "https://www.wikidata.org/wiki/Q233562"
+     },
+     "year": {
+      "en": "1776",
+      "zh": "1776 年"
+     },
+     "desc": {
+      "en": "A long study of what makes nations prosperous: the division of labour, the extent of the market, wages, rent and profit, and a sustained attack on mercantilist trade restrictions.",
+      "zh": "一部长篇研究，探讨国家何以富裕：分工、市场的大小、工资、地租与利润，并对重商主义的贸易限制展开持续批判。"
+     },
+     "why": {
+      "en": "Read whole, it is far more wary of merchants, monopolies and dull factory work than its reputation suggests.",
+      "zh": "完整读下来，它对商人、垄断和单调的工厂劳动远比名声所示更警惕。"
+     }
+    },
+    {
+     "title": "Lectures on Jurisprudence",
+     "edition": "Original English text",
+     "zh": "法理学讲义",
+     "wiki": {
+      "en": "Lectures on Jurisprudence",
+      "source": "https://www.wikidata.org/wiki/Q16386639"
+     },
+     "year": {
+      "en": "Lectures, 1762–64; student notes published 1896 and 1978",
+      "zh": "1762—1764 年讲授；学生笔记于 1896 年和 1978 年出版"
+     },
+     "desc": {
+      "en": "Not a book by Smith but two sets of student notes from his Glasgow lectures on law, government and police. One set surfaced only in 1958.",
+      "zh": "并非斯密写的书，而是他在格拉斯哥讲授法律、政府与治安时两套学生笔记。其中一套直到 1958 年才被发现。"
+     },
+     "why": {
+      "en": "Shows the stages-of-society history and theory of justice that sit behind the Wealth of Nations.",
+      "zh": "可以看到《国富论》背后的社会阶段史观和正义理论。"
+     }
+    },
+    {
+     "title": "Essays on Philosophical Subjects",
+     "edition": "Original English text",
+     "zh": "哲学论文集",
+     "wiki": {
+      "en": "Essays on Philosophical Subjects",
+      "source": "https://www.wikidata.org/wiki/Q5399414"
+     },
+     "year": {
+      "en": "Published 1795, after his death",
+      "zh": "1795 年出版（作者身后）"
+     },
+     "desc": {
+      "en": "Essays published after Smith's death by his executors, Joseph Black and James Hutton. The best known is a history of astronomy that treats science as the mind's search for relief from surprise.",
+      "zh": "斯密去世后由遗嘱执行人约瑟夫·布莱克和詹姆斯·赫顿编辑出版的论文集。最有名的一篇是天文学史，把科学看作心灵为摆脱惊异而作的探求。"
+     },
+     "why": {
+      "en": "An early account of why scientific theories get replaced: they win by seeming to connect things, not only by being true.",
+      "zh": "较早地解释了科学理论为何被取代：它们取胜靠的是看起来把事物连贯起来，而不只是正确。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-jeremy-bentham": {
+   "agent": "bentham",
+   "works": [
+    {
+     "title": "Principles of Morals and Legislation",
+     "edition": "Original English text",
+     "zh": "道德与立法原理导论",
+     "wiki": {
+      "en": "An Introduction to the Principles of Morals and Legislation",
+      "zh": "道德與立法原則概論",
+      "source": "https://www.wikidata.org/wiki/Q19041209"
+     },
+     "year": {
+      "en": "Printed 1780, published 1789",
+      "zh": "1780 年印成，1789 年出版"
+     },
+     "desc": {
+      "en": "The founding statement of utilitarianism: actions and laws are to be judged by the pleasure and pain they produce, and punishment is justified only by the harm it prevents.",
+      "zh": "功利主义的奠基之作：行为与法律以其带来的快乐和痛苦衡量，惩罚只因能防止更大的伤害才正当。"
+     },
+     "why": {
+      "en": "Where cost-benefit reasoning about law and policy begins, including its method for weighing pleasures against each other.",
+      "zh": "法律与政策中成本收益推理的起点，包括他衡量各种快乐轻重的方法。"
+     }
+    },
+    {
+     "title": "A Fragment on Government",
+     "edition": "Original English text",
+     "zh": "政府片论",
+     "year": {
+      "en": "1776, published anonymously",
+      "zh": "1776 年匿名出版"
+     },
+     "desc": {
+      "en": "An attack on a passage of Blackstone's Commentaries, rejecting the social contract and natural law as fictions and proposing utility as the test of government.",
+      "zh": "抨击布莱克斯通《英国法释义》中的一段论述，斥社会契约和自然法为虚构，提出以功利作为检验政府的标准。"
+     },
+     "why": {
+      "en": "His first book, and an example of criticising a respected authority by checking each of its terms.",
+      "zh": "他的第一本书，示范了如何逐个检查术语来批评一位受尊崇的权威。"
+     }
+    },
+    {
+     "title": "The Theory of Legislation",
+     "edition": "Original English text",
+     "year": {
+      "en": "Edited by Étienne Dumont in French, 1802; in English, 1864",
+      "zh": "1802 年由杜蒙以法文编成；1864 年译为英文"
+     },
+     "desc": {
+      "en": "Bentham's principles of civil and penal law, as compiled and rewritten by his Genevan editor Étienne Dumont from Bentham's manuscripts, then translated back into English.",
+      "zh": "边沁关于民法与刑法的原则，由日内瓦编者杜蒙根据他的手稿整理改写成法文，后又译回英文。"
+     },
+     "why": {
+      "en": "The form in which most of the nineteenth century, outside Britain, actually read Bentham.",
+      "zh": "十九世纪英国以外的读者，大多是通过这个版本读到边沁的。"
+     }
+    },
+    {
+     "title": "Panopticon",
+     "edition": "Original English text",
+     "year": {
+      "en": "Letters written 1787, published 1791",
+      "zh": "1787 年写成书信，1791 年出版"
+     },
+     "desc": {
+      "en": "A series of letters proposing a circular building in which one inspector can watch every inmate without being seen, offered as a design for prisons, factories, schools and hospitals.",
+      "zh": "一组书信，提出一种环形建筑：一名看守可看见每个被关押者而自己不被看见，并建议用于监狱、工厂、学校和医院。"
+     },
+     "why": {
+      "en": "The original plan behind Foucault's account of surveillance, and more practical and stranger than that account suggests.",
+      "zh": "福柯论监视时所依据的原始方案，原文比那套论述所暗示的更务实，也更古怪。"
+     }
+    },
+    {
+     "title": "Defence of Usury",
+     "edition": "Original English text",
+     "year": {
+      "en": "1787",
+      "zh": "1787 年"
+     },
+     "desc": {
+      "en": "Letters written from Russia arguing that legal limits on interest rates harm borrowers and innovators; one letter disputes Adam Smith's support for such limits.",
+      "zh": "从俄国寄出的一组书信，论证法定利率上限损害借款人和创新者，其中一封反驳亚当·斯密对利率上限的支持。"
+     },
+     "why": {
+      "en": "A clear case of applying utility to a single economic law, and of a student arguing a master out of his position.",
+      "zh": "把功利原则用于单一经济法规的清楚例子，也是后学以论证纠正前辈的例子。"
+     }
+    },
+    {
+     "title": "The Book of Fallacies",
+     "edition": "Original English text",
+     "year": {
+      "en": "1824; edited from his manuscripts",
+      "zh": "1824 年，据其手稿编成"
+     },
+     "desc": {
+      "en": "A catalogue of the stock arguments used in parliamentary debate to block reform — appeals to ancestors, to authority, to delay — each named and dismantled.",
+      "zh": "一份议会辩论中阻挠改革的惯用论证清单——诉诸祖宗、诉诸权威、主张拖延——逐一命名并拆解。"
+     },
+     "why": {
+      "en": "A field guide to political evasion; most of the moves it names are still in use.",
+      "zh": "一本政治搪塞的辨识手册，书中点名的大多数手法今天仍在使用。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-georg-wilhelm-friedrich-hegel": {
+   "agent": "hegel",
+   "works": [
+    {
+     "title": "Logic of Hegel",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "小逻辑",
+     "year": {
+      "en": "1817; revised 1827 and 1830",
+      "zh": "1817 年；1827 年、1830 年修订"
+     },
+     "desc": {
+      "en": "The first part of Hegel's Encyclopaedia, the shorter Logic: his system of categories in outline, with additions editors compiled from students' lecture notes after his death.",
+      "zh": "《哲学全书》的第一部分，即所谓《小逻辑》：以纲要形式展开他的范畴体系，附有他身后编者据学生听课笔记整理的补充。"
+     },
+     "why": {
+      "en": "The usual way into Hegel's logic; the lecture additions often explain what the bare paragraphs only state.",
+      "zh": "进入黑格尔逻辑学的常见入口；讲课补充往往把正文只作断言的东西讲明白。"
+     }
+    },
+    {
+     "title": "Phenomenology of Spirit",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "精神现象学",
+     "orig": {
+      "text": "System der Wissenschaft. Erster Theil, die Phänomenologie des Geistes",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q877510"
+     },
+     "wiki": {
+      "en": "The Phenomenology of Spirit",
+      "zh": "精神现象学",
+      "source": "https://www.wikidata.org/wiki/Q877510"
+     },
+     "year": {
+      "en": "1807",
+      "zh": "1807 年"
+     },
+     "desc": {
+      "en": "Traces consciousness through a sequence of shapes, from bare sense-certainty to absolute knowing, each failing on its own terms and giving way to the next.",
+      "zh": "追踪意识经历的一系列形态，从单纯的感性确定性直到绝对知识，每一种都按自身的标准失败，让位于下一种。"
+     },
+     "why": {
+      "en": "Home of the master–slave dialectic, which shaped Marx, existentialism and later theories of recognition.",
+      "zh": "主奴辩证法出自这里，它影响了马克思、存在主义以及后来的承认理论。"
+     }
+    },
+    {
+     "title": "Science of Logic",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "逻辑学",
+     "orig": {
+      "text": "Wissenschaft der Logik",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q374811"
+     },
+     "wiki": {
+      "en": "Science of Logic",
+      "zh": "逻辑学 (黑格尔著作)",
+      "source": "https://www.wikidata.org/wiki/Q374811"
+     },
+     "year": {
+      "en": "1812–1816; first book revised 1831, published 1832",
+      "zh": "1812—1816 年；第一卷 1831 年修订，1832 年出版"
+     },
+     "desc": {
+      "en": "Hegel's full logic, deriving the basic categories of thought from pure being onward, each developing out of the contradictions of the last.",
+      "zh": "黑格尔完整的逻辑学，从纯有出发推演思维的基本范畴，每一个都从前一个的矛盾中发展而来。"
+     },
+     "why": {
+      "en": "Dense and long, but the full version of the argument the shorter Encyclopaedia Logic only outlines.",
+      "zh": "艰深冗长，但这是《小逻辑》只给出纲要的那套论证的完整版本。"
+     }
+    },
+    {
+     "title": "Encyclopedia of the Philosophical Sciences",
+     "edition": "Partly in English, partly in the original",
+     "zh": "哲学全书",
+     "orig": {
+      "text": "Enzyklopädie der philosophischen Wissenschaften im Grundrisse",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Encyclopedia_of_the_Philosophical_Sciences"
+     },
+     "wiki": {
+      "en": "Encyclopaedia of the Philosophical Sciences in Basic Outline",
+      "zh": "哲学科学百科全书纲要",
+      "source": "https://www.wikidata.org/wiki/Q919699"
+     },
+     "year": {
+      "en": "1817; revised 1827 and 1830",
+      "zh": "1817 年；1827 年、1830 年修订"
+     },
+     "desc": {
+      "en": "Hegel's whole system in numbered paragraphs, written as a handbook for his lectures: logic, philosophy of nature, philosophy of spirit.",
+      "zh": "以编号段落写成的黑格尔整个体系，原为讲课所用的纲要，分逻辑学、自然哲学、精神哲学三部分。"
+     },
+     "why": {
+      "en": "The only book in which Hegel set out his entire system, including the often-skipped philosophy of nature.",
+      "zh": "黑格尔唯一一部在一书之内呈现整个体系的著作，包括常被略过的自然哲学。"
+     }
+    },
+    {
+     "title": "Philosophy of Right",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "法哲学原理",
+     "orig": {
+      "text": "Grundlinien der Philosophie des Rechts",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Elements_of_the_Philosophy_of_Right"
+     },
+     "wiki": {
+      "en": "Elements of the Philosophy of Right",
+      "zh": "法哲学原理",
+      "source": "https://www.wikidata.org/wiki/Q1486412"
+     },
+     "year": {
+      "en": "1820 (title page dated 1821)",
+      "zh": "1820 年（扉页署 1821 年）"
+     },
+     "desc": {
+      "en": "A compendium for his Berlin lectures on law, morality and ethical life, treating family, civil society and the state as the realisation of freedom.",
+      "zh": "为柏林讲课编写的纲要，讨论法、道德与伦理生活，把家庭、市民社会和国家视为自由的实现。"
+     },
+     "why": {
+      "en": "An early, influential account of civil society as separate from the state; still disputed as liberal or authoritarian.",
+      "zh": "较早且影响深远地把市民社会与国家区分开来；它究竟偏向自由主义还是威权主义，至今仍有争论。"
+     }
+    },
+    {
+     "title": "Philosophy of History",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "历史哲学",
+     "orig": {
+      "text": "Vorlesungen über die Philosophie der Weltgeschichte",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1210941"
+     },
+     "wiki": {
+      "en": "Lectures on the Philosophy of World History",
+      "source": "https://www.wikidata.org/wiki/Q1210941"
+     },
+     "year": {
+      "en": "Lectures, 1822–1831; published 1837",
+      "zh": "1822—1831 年讲授，1837 年出版"
+     },
+     "desc": {
+      "en": "Lectures on world history as the progress of the consciousness of freedom, edited after his death by Eduard Gans from Hegel's and students' notes.",
+      "zh": "把世界历史讲成自由意识进展过程的讲演录，在他身后由爱德华·甘斯根据黑格尔本人及学生的笔记编成。"
+     },
+     "why": {
+      "en": "Source of a grand-narrative view of history, and of its Eurocentrism, that later thinkers adopted or attacked.",
+      "zh": "一种宏大历史叙事及其欧洲中心论的源头，后来者或承袭或抨击。"
+     }
+    },
+    {
+     "title": "Aesthetics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "美学",
+     "orig": {
+      "text": "Vorlesungen über die Ästhetik",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1045336"
+     },
+     "wiki": {
+      "en": "Lectures on Aesthetics",
+      "source": "https://www.wikidata.org/wiki/Q1045336"
+     },
+     "year": {
+      "en": "Lectures, 1818–1829; published 1835–1838",
+      "zh": "1818—1829 年讲授，1835—1838 年出版"
+     },
+     "desc": {
+      "en": "Lectures on art as one way spirit grasps truth, through symbolic, classical and romantic stages; assembled after his death by H. G. Hotho from notes.",
+      "zh": "讲演录，把艺术看作精神把握真理的一种方式，依次经历象征型、古典型和浪漫型；由霍托在他身后据笔记编成。"
+     },
+     "why": {
+      "en": "Holds that art no longer serves as the highest expression of truth, a thesis later art theory keeps arguing with.",
+      "zh": "书中认为艺术已不再是真理的最高表达方式，后来的艺术理论一直在与这一论断争辩。"
+     }
+    },
+    {
+     "title": "Philosophy of Religion",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "宗教哲学讲演录",
+     "wiki": {
+      "en": "Lectures on the Philosophy of Religion",
+      "source": "manual: https://en.wikipedia.org/wiki/Lectures_on_the_Philosophy_of_Religion"
+     },
+     "year": {
+      "en": "Lectures, 1821–1831; published 1832",
+      "zh": "1821—1831 年讲授，1832 年出版"
+     },
+     "desc": {
+      "en": "Lectures treating religion as truth in the form of representation, surveying the world's religions and culminating in Christianity; compiled after his death from manuscripts and students' notes.",
+      "zh": "讲演录，把宗教视为以表象形式出现的真理，纵览各种宗教，以基督教为完成；在他身后据手稿和学生笔记编成。"
+     },
+     "why": {
+      "en": "A philosopher taking religion seriously as thought, without simply defending it or debunking it.",
+      "zh": "一位哲学家把宗教当作思想认真对待，既不单纯辩护，也不简单拆穿。"
+     }
+    }
+   ],
+   "lang": "de"
+  },
+  "p-voltaire": {
+   "agent": "voltaire",
+   "works": [
+    {
+     "title": "A Philosophical Dictionary",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "哲学辞典",
+     "orig": {
+      "text": "Dictionnaire philosophique",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Dictionnaire_philosophique"
+     },
+     "wiki": {
+      "en": "Dictionnaire philosophique",
+      "source": "https://www.wikidata.org/wiki/Q656976"
+     },
+     "year": {
+      "en": "1764; expanded in later editions",
+      "zh": "1764 年；其后多次增订"
+     },
+     "desc": {
+      "en": "Short alphabetical articles, published anonymously, attacking religious dogma, persecution and superstition, and arguing for tolerance and a minimal deism.",
+      "zh": "按字母排列的短篇条目，匿名出版，抨击宗教教条、迫害与迷信，主张宽容与一种极简的自然神论。"
+     },
+     "why": {
+      "en": "Philosophy in pocket form, built to be read quickly and passed around — which is why it was burned.",
+      "zh": "袖珍形态的哲学，便于速读和传阅——这正是它遭焚毁的原因。"
+     }
+    },
+    {
+     "title": "Candide",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "老实人",
+     "orig": {
+      "text": "Candide, ou l’Optimisme",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q215894"
+     },
+     "wiki": {
+      "en": "Candide",
+      "zh": "憨第德",
+      "source": "https://www.wikidata.org/wiki/Q215894"
+     },
+     "year": {
+      "en": "1759",
+      "zh": "1759 年"
+     },
+     "desc": {
+      "en": "A satirical tale in which a naive young man and his optimistic tutor meet war, earthquake, slavery and the Inquisition, testing the idea that all is for the best.",
+      "zh": "一则讽刺故事：天真的年轻人与他的乐观派老师遭遇战争、地震、奴隶制与宗教裁判所，以此检验一切皆为最好的观念。"
+     },
+     "why": {
+      "en": "A fast, funny demolition of explaining suffering away, ending in modest practical work instead of theory.",
+      "zh": "快速而好笑地拆穿为苦难开脱的说辞，最后归于朴素的实际劳作，而非理论。"
+     }
+    },
+    {
+     "title": "Letters on England",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "哲学通信",
+     "orig": {
+      "text": "Lettres philosophiques",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Letters_on_the_English"
+     },
+     "wiki": {
+      "en": "Letters on the English",
+      "zh": "哲学通信",
+      "source": "https://www.wikidata.org/wiki/Q2551373"
+     },
+     "year": {
+      "en": "1733 in English; 1734 in French",
+      "zh": "1733 年英文版；1734 年法文版"
+     },
+     "desc": {
+      "en": "Letters drawn from Voltaire's stay in England on its Quakers, parliament, inoculation, Newton and Locke, implicitly measuring France against them. The French edition was condemned and burned.",
+      "zh": "取材于伏尔泰旅英经历的书信，谈贵格会、议会、种痘、牛顿与洛克，暗中以此衡量法国。法文版遭查禁焚毁。"
+     },
+     "why": {
+      "en": "Shows how describing another country can work as criticism of your own.",
+      "zh": "展示了描写另一个国家如何能成为对本国的批评。"
+     }
+    },
+    {
+     "title": "Treatise on Tolerance",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论宽容",
+     "orig": {
+      "text": "Traité sur la tolérance",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q968588"
+     },
+     "wiki": {
+      "en": "Treatise on Tolerance",
+      "zh": "論寬容",
+      "source": "https://www.wikidata.org/wiki/Q968588"
+     },
+     "year": {
+      "en": "1763",
+      "zh": "1763 年"
+     },
+     "desc": {
+      "en": "Written after the Protestant merchant Jean Calas was tortured and executed in Toulouse in 1762, it argues against religious persecution and helped win his posthumous exoneration.",
+      "zh": "写于新教商人让·卡拉斯 1762 年在图卢兹被酷刑处死之后，反对宗教迫害，并促成了他身后平反。"
+     },
+     "why": {
+      "en": "A case study in a writer using one injustice to change public opinion, and succeeding.",
+      "zh": "一个作家借一桩冤案改变舆论并取得成功的实例。"
+     }
+    },
+    {
+     "title": "Zadig",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "查第格",
+     "orig": {
+      "text": "Zadig ou la Destinée",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q140057"
+     },
+     "wiki": {
+      "en": "Zadig",
+      "source": "https://www.wikidata.org/wiki/Q140057"
+     },
+     "year": {
+      "en": "1747 as Memnon; retitled Zadig, 1748",
+      "zh": "1747 年以《门农》为名出版，1748 年改名"
+     },
+     "desc": {
+      "en": "A philosophical tale set in an imagined Babylon, following a wise man whose good fortune and bad keep reversing, on whether providence governs any of it.",
+      "zh": "一则以想象中的巴比伦为背景的哲理故事，讲一位智者祸福不断反转，追问天意是否在主宰这一切。"
+     },
+     "why": {
+      "en": "An early detective-style reasoning scene, and a lighter first draft of the questions Candide asks.",
+      "zh": "包含早期类似侦探推理的情节，也是《老实人》所提问题较轻快的初稿。"
+     }
+    },
+    {
+     "title": "Micromegas",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "小大人",
+     "orig": {
+      "text": "Micromégas",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Microm%C3%A9gas"
+     },
+     "wiki": {
+      "en": "Micromégas",
+      "zh": "微型巨人",
+      "source": "https://www.wikidata.org/wiki/Q1785978"
+     },
+     "year": {
+      "en": "Published 1752; possibly drafted in the late 1730s",
+      "zh": "1752 年出版，或于 1730 年代末起草"
+     },
+     "desc": {
+      "en": "A short tale in which a giant from Sirius and a companion from Saturn visit Earth and find its tiny philosophers clever about measurement and absurd about the soul.",
+      "zh": "一则短篇故事：一位来自天狼星的巨人与土星同伴造访地球，发现这里渺小的哲学家擅长测量，谈起灵魂却荒唐可笑。"
+     },
+     "why": {
+      "en": "Early science fiction used as a lesson in scale, and in how little size has to do with sense.",
+      "zh": "早期科幻被用来上一堂关于尺度的课：大小与见识几乎无关。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-karl-marx": {
+   "agent": "marx",
+   "works": [
+    {
+     "title": "The Communist Manifesto",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "共产党宣言",
+     "orig": {
+      "text": "Manifest der Kommunistischen Partei",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q40591"
+     },
+     "wiki": {
+      "en": "The Communist Manifesto",
+      "zh": "共产党宣言",
+      "source": "https://www.wikidata.org/wiki/Q40591"
+     },
+     "year": {
+      "en": "1848",
+      "zh": "1848 年"
+     },
+     "desc": {
+      "en": "A short pamphlet written with Friedrich Engels for the Communist League. It presents history as class struggle and describes capitalism as the force that dissolves every older social bond.",
+      "zh": "与恩格斯合写、为共产主义者同盟起草的小册子。它把历史看作阶级斗争，并把资本主义描述为瓦解一切旧社会纽带的力量。"
+     },
+     "why": {
+      "en": "Its description of globalisation and constant upheaval reads as current; its predictions are where the arguments start.",
+      "zh": "它对全球化和持续动荡的描述读来仍像当下；争论则从它的预言开始。"
+     }
+    },
+    {
+     "title": "Capital, Volume I",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "资本论 第一卷",
+     "orig": {
+      "text": "Das Kapital. Kritik der politischen Ökonomie, Band I",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Das_Kapital%2C_Volume_I"
+     },
+     "wiki": {
+      "en": "Das Kapital, Volume I",
+      "source": "https://www.wikidata.org/wiki/Q1169240"
+     },
+     "year": {
+      "en": "1867",
+      "zh": "1867 年"
+     },
+     "desc": {
+      "en": "The only volume of Capital Marx finished himself. It analyses the commodity, labour as the source of value, and surplus value as the basis of profit, with long histories of the English factory.",
+      "zh": "《资本论》中马克思唯一亲自完成的一卷。它分析商品、劳动作为价值的来源、剩余价值作为利润的基础，并有大段英国工厂史。"
+     },
+     "why": {
+      "en": "The chapters on the working day and factory conditions are documentary history, whatever one makes of the value theory.",
+      "zh": "不论如何看待其价值理论，论工作日和工厂状况的章节本身就是纪实史料。"
+     }
+    },
+    {
+     "title": "Capital, Volume II",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "资本论 第二卷",
+     "orig": {
+      "text": "Das Kapital. Kritik der politischen Ökonomie, Band II",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Das_Kapital%2C_Volume_II"
+     },
+     "wiki": {
+      "en": "Das Kapital, Volume II",
+      "source": "https://www.wikidata.org/wiki/Q5035423"
+     },
+     "year": {
+      "en": "Published 1885, edited by Engels",
+      "zh": "1885 年出版，恩格斯编"
+     },
+     "desc": {
+      "en": "Assembled by Engels from Marx's manuscripts after his death. It follows capital through circulation: how money becomes goods and back again, and how the whole economy reproduces itself.",
+      "zh": "马克思去世后由恩格斯根据手稿整理而成。它追踪资本的流通：货币如何变成商品又变回货币，整个经济如何自我再生产。"
+     },
+     "why": {
+      "en": "The least read volume, and the one closest to later economics of growth and turnover.",
+      "zh": "三卷中读的人最少，却最接近后来关于增长与周转的经济学。"
+     }
+    },
+    {
+     "title": "Capital, Volume III",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "资本论 第三卷",
+     "orig": {
+      "text": "Das Kapital. Kritik der politischen Ökonomie, Band III",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Das_Kapital%2C_Volume_III"
+     },
+     "wiki": {
+      "en": "Das Kapital, Volume III",
+      "source": "https://www.wikidata.org/wiki/Q5035426"
+     },
+     "year": {
+      "en": "Published 1894, edited by Engels",
+      "zh": "1894 年出版，恩格斯编"
+     },
+     "desc": {
+      "en": "Edited by Engels from unfinished manuscripts. It turns to profit, interest, rent and credit, and argues that the rate of profit tends to fall.",
+      "zh": "恩格斯根据未完成的手稿编成。它转向利润、利息、地租与信用，并提出利润率趋于下降。"
+     },
+     "why": {
+      "en": "Where Marx deals with banks, credit and speculation, the parts most often reread after a financial crash.",
+      "zh": "马克思在这里讨论银行、信用与投机，每逢金融危机后最常被重读的就是这些部分。"
+     }
+    },
+    {
+     "title": "Grundrisse",
+     "edition": "German original (MEW 42)",
+     "zh": "政治经济学批判大纲",
+     "orig": {
+      "text": "Grundrisse der Kritik der politischen Ökonomie",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Grundrisse"
+     },
+     "wiki": {
+      "en": "Grundrisse",
+      "zh": "政治经济学批判大纲",
+      "source": "https://www.wikidata.org/wiki/Q527370"
+     },
+     "year": {
+      "en": "Written 1857–58; published 1939–41",
+      "zh": "1857—1858 年写成，1939—1941 年出版"
+     },
+     "desc": {
+      "en": "Marx's private notebooks drafting his critique of political economy, never meant for publication. Rough and sprawling, they range further than Capital, including a passage on machinery and automation.",
+      "zh": "马克思起草政治经济学批判时的私人笔记，原不打算出版。粗糙而庞杂，涉及范围比《资本论》更广，包括一段关于机器与自动化的论述。"
+     },
+     "why": {
+      "en": "The notebook passage on machines is widely read today in arguments about automation and knowledge work.",
+      "zh": "其中论机器的那段笔记，如今常被用于讨论自动化与知识劳动。"
+     }
+    },
+    {
+     "title": "Economic and Philosophic Manuscripts",
+     "edition": "German original",
+     "zh": "1844年经济学哲学手稿",
+     "orig": {
+      "text": "Ökonomisch-philosophischen Manuskripte aus dem Jahre 1844",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q295347"
+     },
+     "wiki": {
+      "en": "Economic and Philosophic Manuscripts of 1844",
+      "zh": "1844年经济学哲学手稿",
+      "source": "https://www.wikidata.org/wiki/Q295347"
+     },
+     "year": {
+      "en": "Written 1844; published 1932",
+      "zh": "1844 年写成，1932 年出版"
+     },
+     "desc": {
+      "en": "Unfinished Paris notebooks, published nearly fifty years after Marx's death. They set out the theory of alienation: workers estranged from what they make, from their work, and from each other.",
+      "zh": "未完成的巴黎笔记，在马克思去世近五十年后才出版。其中提出异化理论：劳动者与自己的产品、劳动本身以及彼此相疏离。"
+     },
+     "why": {
+      "en": "The source of the idea of alienated work, still the vocabulary for jobs that feel like they belong to someone else.",
+      "zh": "异化劳动这一概念的源头，至今仍是描述工作像是属于别人的那种感觉的用语。"
+     }
+    },
+    {
+     "title": "The German Ideology",
+     "edition": "German original",
+     "zh": "德意志意识形态",
+     "orig": {
+      "text": "Die deutsche Ideologie",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q470600"
+     },
+     "wiki": {
+      "en": "The German Ideology",
+      "zh": "德意志意識形態",
+      "source": "https://www.wikidata.org/wiki/Q470600"
+     },
+     "year": {
+      "en": "Written 1845–46; published in full 1932",
+      "zh": "1845—1846 年写成，1932 年全文出版"
+     },
+     "desc": {
+      "en": "Manuscripts by Marx and Engels, abandoned unpublished. They first set out the materialist view of history: ideas grow from how people produce their lives. The book's arrangement is largely editors' work.",
+      "zh": "马克思与恩格斯合写、搁置未发表的手稿。书中首次阐述唯物史观：观念源于人们生产自身生活的方式。现行的成书结构很大程度上出自编者之手。"
+     },
+     "why": {
+      "en": "The clearest early statement of the idea that the ruling ideas of an age reflect who holds power in it.",
+      "zh": "最早、最清楚地表述了这样一种观念：一个时代占统治地位的思想反映着谁在掌权。"
+     }
+    },
+    {
+     "title": "The Poverty of Philosophy",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "哲学的贫困",
+     "orig": {
+      "text": "Misère de la philosophie",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/The_Poverty_of_Philosophy"
+     },
+     "wiki": {
+      "en": "The Poverty of Philosophy",
+      "zh": "哲学的贫困",
+      "source": "https://www.wikidata.org/wiki/Q1167658"
+     },
+     "year": {
+      "en": "1847",
+      "zh": "1847 年"
+     },
+     "desc": {
+      "en": "A polemic written in French against Proudhon's System of Economic Contradictions, whose subtitle was The Philosophy of Poverty. Marx attacks Proudhon's economics and his borrowings from Hegel.",
+      "zh": "以法文写成的论战之作，针对蒲鲁东的《经济矛盾的体系》（副题为《贫困的哲学》），批评他的经济学和对黑格尔的借用。"
+     },
+     "why": {
+      "en": "Watch Marx sharpen his own method by tearing apart a rival socialist.",
+      "zh": "可以看到马克思如何在驳斥一位社会主义对手的过程中磨利自己的方法。"
+     }
+    },
+    {
+     "title": "A Contribution to the Critique of Political Economy",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "政治经济学批判",
+     "orig": {
+      "text": "Zur Kritik der Politischen Oekonomie",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q230317"
+     },
+     "wiki": {
+      "en": "A Contribution to the Critique of Political Economy",
+      "zh": "政治经济学批判",
+      "source": "https://www.wikidata.org/wiki/Q230317"
+     },
+     "year": {
+      "en": "1859",
+      "zh": "1859 年"
+     },
+     "desc": {
+      "en": "Marx's first published instalment of his economic theory, on commodities and money, later reworked into Capital. Its preface gives the compact statement of base and superstructure.",
+      "zh": "马克思经济理论首次出版的部分，论商品与货币，后来改写进《资本论》。其序言简明地表述了经济基础与上层建筑。"
+     },
+     "why": {
+      "en": "The preface is the shortest summary of historical materialism Marx himself wrote.",
+      "zh": "序言是马克思本人写下的对唯物史观最简短的概括。"
+     }
+    },
+    {
+     "title": "The Eighteenth Brumaire",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "路易·波拿巴的雾月十八日",
+     "orig": {
+      "text": "Der 18te Brumaire des Louis Napoleon",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/The_Eighteenth_Brumaire_of_Louis_Napoleon"
+     },
+     "wiki": {
+      "en": "The Eighteenth Brumaire of Louis Bonaparte",
+      "zh": "路易·波拿巴的雾月十八日",
+      "source": "https://www.wikidata.org/wiki/Q1198259"
+     },
+     "year": {
+      "en": "1852",
+      "zh": "1852 年"
+     },
+     "desc": {
+      "en": "An essay on Louis Napoleon's 1851 coup in France, first published in a New York German-language journal. It analyses how classes, parties and a bureaucracy let an adventurer seize power.",
+      "zh": "论 1851 年路易·波拿巴政变的长文，最早发表于纽约一份德文刊物。它分析各阶级、政党与官僚机器如何让一个投机者夺得政权。"
+     },
+     "why": {
+      "en": "A case study in how a republic hands itself to a strongman, often reread when that seems to be happening.",
+      "zh": "一份关于共和国如何把自己交给强人的个案研究，每当类似情形似乎正在发生时便会被重读。"
+     }
+    },
+    {
+     "title": "The Civil War in France",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "法兰西内战",
+     "orig": {
+      "text": "Der Bürgerkrieg in Frankreich",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/The_Civil_War_in_France"
+     },
+     "wiki": {
+      "en": "The Civil War in France",
+      "zh": "法蘭西內戰",
+      "source": "https://www.wikidata.org/wiki/Q3047072"
+     },
+     "year": {
+      "en": "1871",
+      "zh": "1871 年"
+     },
+     "desc": {
+      "en": "An address written for the General Council of the International Workingmen's Association, defending the Paris Commune just after its suppression and describing its measures as a model of workers' government.",
+      "zh": "为国际工人协会总委员会起草的宣言，在巴黎公社刚被镇压后为其辩护，并把公社的措施描述为工人政府的样板。"
+     },
+     "why": {
+      "en": "Marx's most concrete picture of what a workers' state might look like, drawn from events weeks old.",
+      "zh": "马克思对工人国家可能样貌最具体的描绘，取材于几周前刚发生的事件。"
+     }
+    }
+   ],
+   "lang": "de"
+  },
+  "p-ralph-waldo-emerson": {
+   "agent": "emerson",
+   "works": [
+    {
+     "title": "Essays: First Series",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Essays: First Series",
+      "source": "https://www.wikidata.org/wiki/Q5399394"
+     },
+     "year": {
+      "en": "1841",
+      "zh": "1841 年"
+     },
+     "desc": {
+      "en": "Twelve essays, including Self-Reliance, Compensation, The Over-Soul and Circles, arguing for trust in one's own intuition over custom and inherited authority.",
+      "zh": "十二篇随笔，包括《自立》《补偿》《超灵》《圆》，主张信赖自己的直觉，而非习俗和承袭的权威。"
+     },
+     "why": {
+      "en": "The core of American individualism in its earliest and least commercial form.",
+      "zh": "美国个人主义的核心，处在它最早、也最少商业气息的形态。"
+     }
+    },
+    {
+     "title": "Nature",
+     "edition": "Original English text",
+     "zh": "论自然",
+     "wiki": {
+      "en": "Nature (essay)",
+      "source": "manual: https://en.wikipedia.org/wiki/Nature_%28essay%29"
+     },
+     "year": {
+      "en": "1836, published anonymously",
+      "zh": "1836 年匿名出版"
+     },
+     "desc": {
+      "en": "A short book arguing that nature is a language of spirit and that each person can have an original relation to the universe; the founding text of Transcendentalism.",
+      "zh": "一本短书，主张自然是精神的语言，每个人都可以与宇宙建立原初的关系；超验主义的奠基之作。"
+     },
+     "why": {
+      "en": "Emerson's first book, and the starting point for Thoreau and much American writing about wilderness.",
+      "zh": "爱默生的第一本书，也是梭罗和许多美国荒野书写的出发点。"
+     }
+    },
+    {
+     "title": "Essays: Second Series",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Essays: Second Series",
+      "source": "https://www.wikidata.org/wiki/Q5399395"
+     },
+     "year": {
+      "en": "1844",
+      "zh": "1844 年"
+     },
+     "desc": {
+      "en": "Nine essays, including The Poet, Experience and Politics; written after his son's death, they are more doubtful than the first series.",
+      "zh": "九篇随笔，包括《诗人》《经验》《政治》；写于他儿子去世之后，比第一辑更多怀疑。"
+     },
+     "why": {
+      "en": "Experience in particular is Emerson admitting that grief and moods may not lead anywhere.",
+      "zh": "尤其是《经验》一篇，爱默生承认悲痛与情绪未必通向任何地方。"
+     }
+    },
+    {
+     "title": "Representative Men",
+     "edition": "Original English text",
+     "zh": "代表人物",
+     "wiki": {
+      "en": "Representative Men",
+      "source": "https://www.wikidata.org/wiki/Q7314242"
+     },
+     "year": {
+      "en": "Lectures, 1845–1846; published 1850",
+      "zh": "1845—1846 年演讲，1850 年出版"
+     },
+     "desc": {
+      "en": "Seven lectures on six figures — Plato, Swedenborg, Montaigne, Shakespeare, Napoleon and Goethe — each taken as a type of human greatness and its limits.",
+      "zh": "七篇演讲，论柏拉图、斯威登堡、蒙田、莎士比亚、拿破仑、歌德六人，各视作一种人类伟大及其局限的类型。"
+     },
+     "why": {
+      "en": "A reply to the hero-worship of his friend Carlyle: great people as useful, not as rulers to obey.",
+      "zh": "对其友卡莱尔英雄崇拜的回应：伟人有用，但不是要服从的统治者。"
+     }
+    },
+    {
+     "title": "English Traits",
+     "edition": "Original English text",
+     "zh": "英国人的特性",
+     "year": {
+      "en": "1856",
+      "zh": "1856 年"
+     },
+     "desc": {
+      "en": "An account of England and the English drawn from his visits of 1833 and 1847–1848: their character, wealth, religion, universities and press.",
+      "zh": "根据 1833 年及 1847—1848 年两次访英的见闻写成，记述英国人的性格、财富、宗教、大学与报刊。"
+     },
+     "why": {
+      "en": "An American measuring the old country at the height of its power, with admiration and unease in roughly equal parts.",
+      "zh": "一个美国人在英国国力鼎盛时打量这个旧国度，钦佩与不安大致各半。"
+     }
+    },
+    {
+     "title": "The Conduct of Life",
+     "edition": "Original English text",
+     "zh": "生活的准则",
+     "wiki": {
+      "en": "The Conduct of Life",
+      "source": "https://www.wikidata.org/wiki/Q3686469"
+     },
+     "year": {
+      "en": "1860",
+      "zh": "1860 年"
+     },
+     "desc": {
+      "en": "Nine essays, beginning with Fate and including Power, Wealth and Culture, weighing individual freedom against circumstance, temperament and limits.",
+      "zh": "九篇随笔，从《命运》开始，包括《力量》《财富》《修养》，在个人自由与环境、气质和限度之间权衡。"
+     },
+     "why": {
+      "en": "The later, more practical Emerson, taking seriously what constrains a life rather than only what frees it.",
+      "zh": "晚期更务实的爱默生，认真对待束缚人生的东西，而不只谈解放。"
+     }
+    },
+    {
+     "title": "Society and Solitude",
+     "edition": "Original English text",
+     "year": {
+      "en": "1870",
+      "zh": "1870 年"
+     },
+     "desc": {
+      "en": "Twelve essays from lectures on ordinary life — civilisation, books, clubs, farming, domestic life, success and old age — weighing time spent with others against time alone.",
+      "zh": "由演讲整理的十二篇随笔，谈文明、读书、社团、农事、家居、成功与老年，权衡与人相处和独处的时间。"
+     },
+     "why": {
+      "en": "Emerson at his most domestic, on how to keep company without losing oneself.",
+      "zh": "最居家的爱默生，谈如何与人相处而不失去自己。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-henry-david-thoreau": {
+   "agent": "thoreau",
+   "works": [
+    {
+     "title": "Walden",
+     "edition": "Original English text",
+     "zh": "瓦尔登湖",
+     "wiki": {
+      "en": "Walden",
+      "zh": "瓦爾登湖 (散文集)",
+      "source": "https://www.wikidata.org/wiki/Q863534"
+     },
+     "year": {
+      "en": "1854",
+      "zh": "1854 年"
+     },
+     "desc": {
+      "en": "An account of two years Thoreau spent living in a cabin he built by Walden Pond, 1845–47, compressed into one year: economy, solitude, reading, the seasons.",
+      "zh": "记述梭罗 1845–47 年在瓦尔登湖畔自建木屋生活的两年，压缩为一年来写：生计、独处、阅读与四季。"
+     },
+     "why": {
+      "en": "Its opening chapter, on what things actually cost in hours of your life, is still a usable piece of accounting.",
+      "zh": "开篇一章算的是东西究竟要花掉多少生命时间，至今仍是一笔可用的账。"
+     }
+    },
+    {
+     "title": "Civil Disobedience",
+     "edition": "Original English text",
+     "zh": "论公民的不服从",
+     "wiki": {
+      "en": "Civil Disobedience (essay)",
+      "zh": "公民抗命論",
+      "source": "https://www.wikidata.org/wiki/Q331092"
+     },
+     "year": {
+      "en": "Lecture 1848; published 1849; present title from 1866",
+      "zh": "1848 年演讲，1849 年发表，1866 年起用今名"
+     },
+     "desc": {
+      "en": "An essay, first printed as Resistance to Civil Government, arising from Thoreau's night in jail for refusing a tax that supported slavery and the Mexican War. It argues that conscience outranks law.",
+      "zh": "一篇随笔，初刊名为《抵抗公民政府》，源于梭罗因拒缴支持奴隶制和美墨战争的税款而入狱一夜。主张良知高于法律。"
+     },
+     "why": {
+      "en": "The source text for principled, nonviolent lawbreaking, read later by Tolstoy, Gandhi and King.",
+      "zh": "有原则的非暴力违法的源头文本，后来为托尔斯泰、甘地与马丁·路德·金所读。"
+     }
+    },
+    {
+     "title": "A Week on the Concord and Merrimack",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "A Week on the Concord and Merrimack Rivers",
+      "zh": "河上一周",
+      "source": "https://www.wikidata.org/wiki/Q4660610"
+     },
+     "year": {
+      "en": "1849",
+      "zh": "1849 年"
+     },
+     "desc": {
+      "en": "Thoreau's first book, based on an 1839 boat trip with his brother John, who died in 1842; seven days on the rivers, with long digressions on friendship, religion and books.",
+      "zh": "梭罗的第一本书，取材于 1839 年与哥哥约翰的一次乘舟之旅（约翰于 1842 年去世）；河上七日，穿插关于友谊、宗教与书籍的长篇题外话。"
+     },
+     "why": {
+      "en": "A travel book that is quietly an elegy, and a commercial failure that shaped how he wrote afterward.",
+      "zh": "一本暗含挽歌的游记，商业上的失败也影响了他此后的写法。"
+     }
+    },
+    {
+     "title": "Cape Cod",
+     "edition": "Original English text",
+     "zh": "科德角",
+     "year": {
+      "en": "Trips 1849–1857; published 1865, after his death",
+      "zh": "1849–1857 年间旅行，1865 年于身后出版"
+     },
+     "desc": {
+      "en": "An account of walks along the outer shore of Cape Cod, opening with a shipwreck and its drowned, and dwelling on the sea's indifference.",
+      "zh": "记述沿科德角外侧海岸的徒步，以一场海难和遇难者开篇，着力写大海的漠然。"
+     },
+     "why": {
+      "en": "Thoreau at his least consoling: nature as something that does not notice you.",
+      "zh": "梭罗最不带慰藉的一面：自然对你毫不在意。"
+     }
+    },
+    {
+     "title": "The Maine Woods",
+     "edition": "Original English text",
+     "zh": "缅因森林",
+     "wiki": {
+      "en": "The Maine Woods",
+      "source": "https://www.wikidata.org/wiki/Q3232742"
+     },
+     "year": {
+      "en": "Trips 1846–1857; published 1864, after his death",
+      "zh": "1846–1857 年间旅行，1864 年于身后出版"
+     },
+     "desc": {
+      "en": "Three essays on excursions into the Maine wilderness, including a climb of Katahdin, with close attention to logging, moose hunting and Penobscot guides.",
+      "zh": "三篇深入缅因荒野的游记，包括攀登卡塔丁山，细致记录伐木、猎驼鹿与佩诺布斯科特族向导。"
+     },
+     "why": {
+      "en": "Where his idea of wildness meets real wilderness, and is unsettled by it.",
+      "zh": "他所设想的野性在此遭遇真正的荒野，并因此动摇。"
+     }
+    },
+    {
+     "title": "Walking",
+     "edition": "Original English text",
+     "zh": "散步",
+     "wiki": {
+      "en": "Walking (essay)",
+      "zh": "散步 (梭罗)",
+      "source": "https://www.wikidata.org/wiki/Q1067239"
+     },
+     "year": {
+      "en": "Lecture from 1851; published 1862, after his death",
+      "zh": "1851 年起作为演讲，1862 年于身后发表"
+     },
+     "desc": {
+      "en": "An essay developed from lectures, on walking as a discipline and on the value of wildness against cultivation and property.",
+      "zh": "由演讲发展而成的随笔，把行走当作一种修习，并主张野性相对于耕作与产权的价值。"
+     },
+     "why": {
+      "en": "An early argument for keeping land wild, and an argument for walking without a destination.",
+      "zh": "较早主张保留荒野的论述，也为漫无目的的行走辩护。"
+     }
+    },
+    {
+     "title": "Life Without Principle",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Life Without Principle",
+      "source": "https://www.wikidata.org/wiki/Q3213710"
+     },
+     "year": {
+      "en": "Lectures from 1854; published 1863, after his death",
+      "zh": "1854 年起作为演讲，1863 年于身后发表"
+     },
+     "desc": {
+      "en": "An essay against spending life on getting a living: on work done only for money, gold rushes, news and gossip as wastes of attention.",
+      "zh": "一篇反对把一生耗在谋生上的随笔：谈只为钱而做的工作、淘金热，以及新闻与闲谈对注意力的浪费。"
+     },
+     "why": {
+      "en": "A compact critique of work and attention, short enough to read in one sitting.",
+      "zh": "对工作与注意力的精炼批评，一口气即可读完。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-john-dewey": {
+   "agent": "dewey",
+   "works": [
+    {
+     "title": "Democracy and Education",
+     "edition": "Original English text",
+     "zh": "民主主义与教育",
+     "wiki": {
+      "en": "Democracy and Education",
+      "source": "https://www.wikidata.org/wiki/Q5255511"
+     },
+     "year": {
+      "en": "1916",
+      "zh": "1916 年"
+     },
+     "desc": {
+      "en": "Argues that education is the continual reconstruction of experience, and that a democracy needs schools built on shared inquiry rather than drill.",
+      "zh": "主张教育是经验的不断改造，民主社会需要以共同探究为基础的学校，而不是机械操练的学校。"
+     },
+     "why": {
+      "en": "Behind most current debates about project-based learning and what schools in a democracy are for.",
+      "zh": "今天关于项目式学习、关于民主社会中学校何用的争论，背后多有它的影子。"
+     }
+    },
+    {
+     "title": "Experience and Nature",
+     "edition": "Original English text",
+     "zh": "经验与自然",
+     "wiki": {
+      "en": "Experience and Nature",
+      "source": "https://www.wikidata.org/wiki/Q42189749"
+     },
+     "year": {
+      "en": "1925; revised 1929",
+      "zh": "1925 年；1929 年修订"
+     },
+     "desc": {
+      "en": "Dewey's main metaphysics: experience is not a veil between us and nature but part of nature, and philosophy should start from ordinary lived situations.",
+      "zh": "杜威的主要形而上学著作：经验不是隔在人与自然之间的帷幕，而是自然的一部分，哲学应从日常的生活情境出发。"
+     },
+     "why": {
+      "en": "The fullest statement of the naturalism that underlies all his other books.",
+      "zh": "他其他著作背后的自然主义，在这里表述得最完整。"
+     }
+    },
+    {
+     "title": "Human Nature and Conduct",
+     "edition": "Original English text",
+     "zh": "人性与行为",
+     "year": {
+      "en": "1922",
+      "zh": "1922 年"
+     },
+     "desc": {
+      "en": "Argues that character is made of habits, not instinct or reason alone, and that morality is the intelligent revision of habit.",
+      "zh": "主张构成品格的是习惯，而非单纯的本能或理性；道德就是对习惯的明智修正。"
+     },
+     "why": {
+      "en": "A social psychology of habit: changing behaviour means changing circumstances, not just resolving harder.",
+      "zh": "一套关于习惯的社会心理学：改变行为要靠改变环境，而不只是下更大的决心。"
+     }
+    },
+    {
+     "title": "How We Think",
+     "edition": "Original English text",
+     "zh": "我们如何思维",
+     "wiki": {
+      "en": "How We Think",
+      "source": "https://www.wikidata.org/wiki/Q5918221"
+     },
+     "year": {
+      "en": "1910; revised 1933",
+      "zh": "1910 年；1933 年修订"
+     },
+     "desc": {
+      "en": "A short book for teachers analysing reflective thought: how a felt difficulty becomes a problem, a hypothesis and a test.",
+      "zh": "一本写给教师的小书，分析反思性思维：一种困惑如何变成问题、假设和检验。"
+     },
+     "why": {
+      "en": "An early, plain source for much of what schools now call critical thinking.",
+      "zh": "学校如今所说的批判性思维，有不少能在这里找到早期而朴素的来源。"
+     }
+    },
+    {
+     "title": "Reconstruction in Philosophy",
+     "edition": "Original English text",
+     "zh": "哲学的改造",
+     "year": {
+      "en": "Lectures, 1919; published 1920",
+      "zh": "1919 年讲授，1920 年出版"
+     },
+     "desc": {
+      "en": "Lectures given in Japan arguing that philosophy should stop seeking fixed truths and become a method for dealing with social problems.",
+      "zh": "在日本所作的系列讲演，主张哲学应放弃追求永恒真理，转而成为处理社会问题的方法。"
+     },
+     "why": {
+      "en": "The clearest short statement of pragmatism's program, given just after the First World War.",
+      "zh": "实用主义纲领最清楚的简短表述，讲于第一次世界大战刚结束时。"
+     }
+    },
+    {
+     "title": "The Quest for Certainty",
+     "edition": "Original English text",
+     "zh": "确定性的寻求",
+     "year": {
+      "en": "1929",
+      "zh": "1929 年"
+     },
+     "desc": {
+      "en": "Gifford Lectures arguing that the search for certainty drew philosophy away from practice, and that knowledge should be judged by the consequences of action.",
+      "zh": "吉福德讲座讲稿，认为对确定性的追求使哲学远离实践，知识应以行动的后果来衡量。"
+     },
+     "why": {
+      "en": "A diagnosis of why thinkers prefer unchanging truths, and what that preference costs.",
+      "zh": "剖析思想者为何偏爱永恒不变的真理，以及这种偏爱让人付出了什么。"
+     }
+    },
+    {
+     "title": "The School and Society",
+     "edition": "Original English text",
+     "zh": "学校与社会",
+     "wiki": {
+      "en": "The School and Society",
+      "source": "https://www.wikidata.org/wiki/Q23022314"
+     },
+     "year": {
+      "en": "1899",
+      "zh": "1899 年"
+     },
+     "desc": {
+      "en": "Three lectures to parents and supporters of his Laboratory School in Chicago, arguing that schools should become small communities built around active occupations.",
+      "zh": "向芝加哥实验学校的家长和支持者所作的三次讲演，主张学校应成为以动手活动为中心的小型社区。"
+     },
+     "why": {
+      "en": "A first-hand record of an actual experimental school, not just a theory of one.",
+      "zh": "这是一所真实实验学校的第一手记录，而不只是一套关于学校的理论。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-henri-bergson": {
+   "agent": "bergson",
+   "works": [
+    {
+     "title": "Creative Evolution",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "创造进化论",
+     "orig": {
+      "text": "L’Évolution créatrice",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/Creative_Evolution_%28book%29"
+     },
+     "wiki": {
+      "en": "Creative Evolution (book)",
+      "zh": "创化论",
+      "source": "https://www.wikidata.org/wiki/Q1132319"
+     },
+     "year": {
+      "en": "1907",
+      "zh": "1907 年"
+     },
+     "desc": {
+      "en": "Bergson's philosophy of life: evolution driven not by mechanism or design but by a creative impulse, the élan vital, with intellect as one tool life evolved.",
+      "zh": "柏格森的生命哲学：进化既非机械推动，也非预先设计，而由一种创造性的冲动即生命冲力推动；理智只是生命演化出的一种工具。"
+     },
+     "why": {
+      "en": "Shows why biologists rejected vitalism, and why so many writers and artists of the time took it up anyway.",
+      "zh": "可以看出生物学家为何拒绝生机论，而同时代那么多作家和艺术家又为何照样接受了它。"
+     }
+    },
+    {
+     "title": "Time and Free Will",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "时间与自由意志",
+     "orig": {
+      "text": "Essai sur les données immédiates de la conscience",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q185825"
+     },
+     "wiki": {
+      "en": "Time and Free Will",
+      "source": "https://www.wikidata.org/wiki/Q185825"
+     },
+     "year": {
+      "en": "1889",
+      "zh": "1889 年"
+     },
+     "desc": {
+      "en": "Bergson's doctoral thesis. It distinguishes lived time, or duration, from clock time measured as space, and argues that free acts come from the whole self in duration.",
+      "zh": "柏格森的博士论文。它把亲历的时间即绵延与被当作空间来度量的钟表时间区分开，并认为自由的行动出自处于绵延中的整个自我。"
+     },
+     "why": {
+      "en": "Names the gap between how long something takes and how long it feels, and builds a case for freedom on it.",
+      "zh": "点出了事情实际所需的时间和感觉上的时间之间的差别，并以此为自由立论。"
+     }
+    },
+    {
+     "title": "Matter and Memory",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "物质与记忆",
+     "orig": {
+      "text": "Matière et mémoire",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q202333"
+     },
+     "wiki": {
+      "en": "Matter and Memory",
+      "source": "https://www.wikidata.org/wiki/Q202333"
+     },
+     "year": {
+      "en": "1896",
+      "zh": "1896 年"
+     },
+     "desc": {
+      "en": "A study of how mind relates to body through memory. Bergson argues the brain selects memories for action rather than storing them, drawing on contemporary studies of aphasia.",
+      "zh": "通过记忆研究心灵与身体的关系。柏格森借助当时对失语症的研究，认为大脑是为行动而选取记忆，而非储存记忆。"
+     },
+     "why": {
+      "en": "An alternative to the brain-as-storage picture of memory, and a direct influence on Deleuze.",
+      "zh": "提供了大脑即仓库之外的另一种记忆观，并直接影响了德勒兹。"
+     }
+    },
+    {
+     "title": "Laughter",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "笑",
+     "orig": {
+      "text": "Le rire. Essai sur la signification du comique",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q2919955"
+     },
+     "wiki": {
+      "en": "Laughter (book)",
+      "source": "https://www.wikidata.org/wiki/Q2919955"
+     },
+     "year": {
+      "en": "1900",
+      "zh": "1900 年"
+     },
+     "desc": {
+      "en": "Three essays, first printed in a magazine in 1899, on what makes things comic. Bergson's answer: we laugh when a living person behaves like a machine, and laughter corrects that rigidity.",
+      "zh": "三篇论文，1899 年先在杂志上刊出，探讨事物为何可笑。柏格森的回答是：活人表现得像机器时我们就会笑，而笑声是在纠正这种僵硬。"
+     },
+     "why": {
+      "en": "A usable theory of slapstick, routine and social embarrassment, and of the quiet cruelty in laughter.",
+      "zh": "一套可用来理解滑稽动作、刻板套路和社交尴尬的理论，也揭示了笑里隐含的冷酷。"
+     }
+    },
+    {
+     "title": "An Introduction to Metaphysics",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "形而上学导言",
+     "orig": {
+      "text": "Introduction à la métaphysique",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q114058144"
+     },
+     "wiki": {
+      "en": "Introduction to Metaphysics (essay)",
+      "source": "https://www.wikidata.org/wiki/Q114058144"
+     },
+     "year": {
+      "en": "1903",
+      "zh": "1903 年"
+     },
+     "desc": {
+      "en": "A long essay contrasting two ways of knowing: analysis, which views a thing from outside through concepts, and intuition, which enters into it. Later collected in The Creative Mind.",
+      "zh": "一篇长文，对比两种认识方式：分析从外部借概念观看事物，直觉则进入事物内部。后收入《思想与运动》。"
+     },
+     "why": {
+      "en": "The shortest way into Bergson, and a clear statement of what concepts and measurement leave out.",
+      "zh": "进入柏格森最短的路径，也清楚说明了概念与测量会遗漏什么。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-bertrand-russell": {
+   "agent": "russell",
+   "works": [
+    {
+     "title": "The Problems of Philosophy",
+     "edition": "Original English text",
+     "zh": "哲学问题",
+     "wiki": {
+      "en": "The Problems of Philosophy",
+      "source": "https://www.wikidata.org/wiki/Q3393210"
+     },
+     "year": {
+      "en": "1912",
+      "zh": "1912 年"
+     },
+     "desc": {
+      "en": "A short introduction for general readers, centred on what we can know: sense-data, the existence of matter, knowledge by acquaintance and by description, and a priori truths.",
+      "zh": "写给一般读者的简短导论，围绕我们能知道什么：感觉材料、物质是否存在、亲知与描述的知识，以及先天真理。"
+     },
+     "why": {
+      "en": "Still one of the best first books in philosophy, and it ends by defending the value of questions that have no settled answer.",
+      "zh": "至今仍是最好的哲学入门书之一，结尾为那些没有定论的问题的价值辩护。"
+     }
+    },
+    {
+     "title": "Our Knowledge of the External World",
+     "edition": "Original English text",
+     "zh": "我们关于外间世界的知识",
+     "year": {
+      "en": "Lowell Lectures, 1914",
+      "zh": "1914 年洛厄尔讲座"
+     },
+     "desc": {
+      "en": "Lectures given in Boston proposing that philosophy should proceed by logical analysis, and that physical objects can be constructed from sense-data.",
+      "zh": "在波士顿发表的系列讲座，主张哲学应以逻辑分析的方法进行，并尝试从感觉材料构造出物理对象。"
+     },
+     "why": {
+      "en": "An early manifesto for analytic philosophy, showing the method and the ambition before either was tempered.",
+      "zh": "分析哲学的早期宣言，能看到这一方法和雄心在尚未收敛时的样子。"
+     }
+    },
+    {
+     "title": "Mysticism and Logic",
+     "edition": "Original English text",
+     "zh": "神秘主义与逻辑",
+     "year": {
+      "en": "1918; essays from 1901–1917",
+      "zh": "1918 年，收录 1901—1917 年间的文章"
+     },
+     "desc": {
+      "en": "A collection of essays, from the title piece on the scientific temper to A Free Man's Worship, on how to live in a universe indifferent to human values.",
+      "zh": "一部文集，从论科学精神的同名文章，到《自由人的崇拜》——讨论如何生活在一个对人类价值漠不关心的宇宙中。"
+     },
+     "why": {
+      "en": "Russell writing as both logician and moralist in one volume, and testing whether the two can be reconciled.",
+      "zh": "罗素在同一本书里既是逻辑学家又是道德家，也在试探两者能否相容。"
+     }
+    },
+    {
+     "title": "The Analysis of Mind",
+     "edition": "Original English text",
+     "zh": "心的分析",
+     "wiki": {
+      "en": "The Analysis of Mind",
+      "source": "https://www.wikidata.org/wiki/Q137177062"
+     },
+     "year": {
+      "en": "1921, from lectures",
+      "zh": "1921 年，据讲座整理"
+     },
+     "desc": {
+      "en": "Lectures arguing for neutral monism: mind and matter are both built from the same neutral events, and consciousness needs no separate substance.",
+      "zh": "系列讲座，主张中立一元论：心灵与物质都由同样的中立事件构成，意识无需另立实体。"
+     },
+     "why": {
+      "en": "An early attempt to reconcile psychology, physics and philosophy of mind that anticipates later debates.",
+      "zh": "调和心理学、物理学与心灵哲学的早期尝试，预示了后来的许多争论。"
+     }
+    },
+    {
+     "title": "Political Ideals",
+     "edition": "Original English text",
+     "zh": "政治理想",
+     "year": {
+      "en": "1917",
+      "zh": "1917 年"
+     },
+     "desc": {
+      "en": "Five short essays written during the First World War, arguing that institutions should foster creative impulses over possessive ones, and setting out a case for liberty against both capitalism and the state.",
+      "zh": "一战期间写成的五篇短文，主张制度应鼓励创造性冲动而非占有性冲动，在资本主义与国家两方面为自由辩护。"
+     },
+     "why": {
+      "en": "A compact statement of his wartime politics, from the years he was prosecuted for opposing the war.",
+      "zh": "他战时政治立场的简明表述，写于他因反战而受到起诉的那几年。"
+     }
+    },
+    {
+     "title": "Why Men Fight",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Why Men Fight",
+      "source": "https://www.wikidata.org/wiki/Q19071207"
+     },
+     "year": {
+      "en": "Lectures, 1915; published 1916",
+      "zh": "1915 年演讲，1916 年出版"
+     },
+     "desc": {
+      "en": "Lectures given during the First World War, published in Britain as Principles of Social Reconstruction, tracing war to impulse rather than reason and proposing institutions that redirect impulse.",
+      "zh": "一战期间的系列演讲，在英国以《社会改造原理》为名出版，认为战争源于冲动而非理性，并提出疏导冲动的制度。"
+     },
+     "why": {
+      "en": "A philosopher's account of why reasonable people go to war, written in the middle of one.",
+      "zh": "一位哲学家在战争进行中解释理性的人为什么会去打仗。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-sigmund-freud": {
+   "agent": "freud",
+   "works": [
+    {
+     "title": "A General Introduction to Psychoanalysis",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "精神分析引论",
+     "orig": {
+      "text": "Vorlesungen zur Einführung in die Psychoanalyse",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q3048122"
+     },
+     "wiki": {
+      "en": "Introduction to Psychoanalysis",
+      "source": "https://www.wikidata.org/wiki/Q3048122"
+     },
+     "year": {
+      "en": "Lectures 1915–1917; published 1916–1917",
+      "zh": "1915–1917 年讲授，1916–1917 年出版"
+     },
+     "desc": {
+      "en": "Twenty-eight lectures given at the University of Vienna, introducing slips, dreams and the neuroses to a general audience.",
+      "zh": "在维也纳大学所作的二十八讲，向普通听众介绍口误、梦与神经症。"
+     },
+     "why": {
+      "en": "Freud's own guided tour of his theory, pitched to doubters; the easiest way in.",
+      "zh": "弗洛伊德亲自为怀疑者导览自己的理论，是最容易的入门途径。"
+     }
+    },
+    {
+     "title": "The Interpretation of Dreams",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "梦的解析",
+     "orig": {
+      "text": "Die Traumdeutung",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q726382"
+     },
+     "wiki": {
+      "en": "The Interpretation of Dreams",
+      "zh": "夢的解析",
+      "source": "https://www.wikidata.org/wiki/Q726382"
+     },
+     "year": {
+      "en": "1899, dated 1900",
+      "zh": "1899 年出版，版权页署 1900 年"
+     },
+     "desc": {
+      "en": "Argues that dreams are disguised fulfilments of wishes, and sets out the mechanisms of disguise, drawing heavily on Freud's own dreams.",
+      "zh": "主张梦是经过伪装的愿望满足，并阐述伪装的机制，大量取材于弗洛伊德本人的梦。"
+     },
+     "why": {
+      "en": "The founding claim that meaning hides in what seems senseless; contested as science, enormous as influence.",
+      "zh": "其奠基性主张是：意义藏在看似无意义之处。作为科学备受争议，影响却极其深远。"
+     }
+    },
+    {
+     "title": "The Psychopathology of Everyday Life",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "日常生活的精神病理学",
+     "orig": {
+      "text": "Zur Psychopathologie des Alltagslebens",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q27592"
+     },
+     "wiki": {
+      "en": "The Psychopathology of Everyday Life",
+      "zh": "日常生活的精神病學",
+      "source": "https://www.wikidata.org/wiki/Q27592"
+     },
+     "year": {
+      "en": "1901; as a book, 1904",
+      "zh": "1901 年刊出，1904 年成书"
+     },
+     "desc": {
+      "en": "A catalogue of forgotten names, slips of the tongue, misreadings and mislaid objects, each read as the work of an unconscious motive.",
+      "zh": "罗列遗忘的名字、口误、误读与放错的物品，并把每一例都解读为潜意识动机的产物。"
+     },
+     "why": {
+      "en": "The source of the Freudian slip, and a test of how far small errors really mean anything.",
+      "zh": "弗洛伊德式口误一说的出处，也让人检验小差错究竟能有多少含义。"
+     }
+    },
+    {
+     "title": "Three Essays on the Theory of Sexuality",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "性学三论",
+     "orig": {
+      "text": "Drei Abhandlungen zur Sexualtheorie",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q673747"
+     },
+     "wiki": {
+      "en": "Three Essays on the Theory of Sexuality",
+      "zh": "性学三论",
+      "source": "https://www.wikidata.org/wiki/Q673747"
+     },
+     "year": {
+      "en": "1905; heavily revised through 1925",
+      "zh": "1905 年；至 1925 年多次大幅修订"
+     },
+     "desc": {
+      "en": "Three essays on sexual aberrations, infantile sexuality and puberty, arguing that sexuality begins in childhood and develops through stages.",
+      "zh": "三篇论文，分别讨论性倒错、婴儿性欲与青春期，主张性欲始于童年并分阶段发展。"
+     },
+     "why": {
+      "en": "Where the developmental theory began; much is now rejected, but the claim that childhood shapes desire remains.",
+      "zh": "发展理论的起点；许多内容今已被否定，但童年塑造欲望这一主张仍在。"
+     }
+    },
+    {
+     "title": "Jokes and their Relation to the Unconscious",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "诙谐及其与潜意识的关系",
+     "orig": {
+      "text": "Der Witz und seine Beziehung zum Unbewußten",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1198113"
+     },
+     "wiki": {
+      "en": "Jokes and Their Relation to the Unconscious",
+      "zh": "诙谐及其与无意识的关系",
+      "source": "https://www.wikidata.org/wiki/Q1198113"
+     },
+     "year": {
+      "en": "1905",
+      "zh": "1905 年"
+     },
+     "desc": {
+      "en": "A study of jokes as working like dreams — condensation, displacement — and of the pleasure they give by briefly releasing what is held back.",
+      "zh": "研究笑话如何像梦一样运作——凝缩与移置——以及笑话如何通过短暂释放被压抑之物而带来快感。"
+     },
+     "why": {
+      "en": "One of the few serious theories of why things are funny, packed with period Viennese jokes.",
+      "zh": "少数严肃讨论事物为何好笑的理论之一，书中满是当年维也纳的笑话。"
+     }
+    },
+    {
+     "title": "Totem and Taboo",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "图腾与禁忌",
+     "orig": {
+      "text": "Totem und Tabu",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q910769"
+     },
+     "wiki": {
+      "en": "Totem and Taboo",
+      "zh": "图腾与禁忌",
+      "source": "https://www.wikidata.org/wiki/Q910769"
+     },
+     "year": {
+      "en": "Essays 1912–1913; as a book, 1913",
+      "zh": "1912–1913 年陆续发表，1913 年成书"
+     },
+     "desc": {
+      "en": "Four essays applying psychoanalysis to the anthropology of his day, ending in a speculative story of a primal murder of the father as the origin of religion and morality.",
+      "zh": "四篇论文，把精神分析用于当时的人类学，最终提出一个推测性的故事：原始部落弑父是宗教与道德的起源。"
+     },
+     "why": {
+      "en": "A clear example of a theory reaching beyond its evidence; read it as speculation, which anthropologists long since rejected.",
+      "zh": "理论越过证据的一个清楚例子；应当作推测来读，人类学界早已不再接受。"
+     }
+    },
+    {
+     "title": "Beyond the Pleasure Principle",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "超越快乐原则",
+     "orig": {
+      "text": "Jenseits des Lustprinzips",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q466271"
+     },
+     "wiki": {
+      "en": "Beyond the Pleasure Principle",
+      "zh": "超越快樂原則",
+      "source": "https://www.wikidata.org/wiki/Q466271"
+     },
+     "year": {
+      "en": "1920",
+      "zh": "1920 年"
+     },
+     "desc": {
+      "en": "Starting from war trauma and a child's repetitive game, Freud proposes that alongside the drive for pleasure runs a drive toward death and stillness.",
+      "zh": "弗洛伊德从战争创伤与一个孩子的重复游戏出发，提出在追求快乐的冲动之外，还有一种趋向死亡与静止的冲动。"
+     },
+     "why": {
+      "en": "The source of the death drive, and a serious attempt to explain why people repeat what hurts them.",
+      "zh": "死亡冲动一说的出处，也认真尝试解释人为何重复令自己痛苦的事。"
+     }
+    },
+    {
+     "title": "The Ego and the Id",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "自我与本我",
+     "orig": {
+      "text": "Das Ich und das Es",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1148588"
+     },
+     "wiki": {
+      "en": "The Ego and the Id",
+      "source": "https://www.wikidata.org/wiki/Q1148588"
+     },
+     "year": {
+      "en": "1923",
+      "zh": "1923 年"
+     },
+     "desc": {
+      "en": "A short book introducing the structural model of the mind: id, ego and superego, with the ego caught between drives, conscience and the world.",
+      "zh": "一本短书，提出心灵的结构模型：本我、自我与超我，自我夹在冲动、良心与外部世界之间。"
+     },
+     "why": {
+      "en": "The vocabulary most people still use for inner conflict, whether or not they accept the theory.",
+      "zh": "无论是否接受这套理论，人们谈论内心冲突时至今仍用这套词汇。"
+     }
+    },
+    {
+     "title": "Civilization and Its Discontents",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "文明及其不满",
+     "orig": {
+      "text": "Das Unbehagen in der Kultur",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1170621"
+     },
+     "wiki": {
+      "en": "Civilization and Its Discontents",
+      "source": "https://www.wikidata.org/wiki/Q1170621"
+     },
+     "year": {
+      "en": "1930",
+      "zh": "1930 年"
+     },
+     "desc": {
+      "en": "An essay arguing that civilisation is built by restraining sexual and aggressive drives, and that guilt is the price, so greater civilisation means greater unhappiness.",
+      "zh": "一篇论文，主张文明建立在对性与攻击冲动的约束之上，代价是罪疚感，因而文明愈进，不幸愈深。"
+     },
+     "why": {
+      "en": "A bleak, compact account of why comfort and order have not made people content.",
+      "zh": "以简练而阴郁的笔调说明，舒适与秩序为何没有让人满足。"
+     }
+    },
+    {
+     "title": "Moses and Monotheism",
+     "edition": "German original",
+     "zh": "摩西与一神教",
+     "orig": {
+      "text": "Der Mann Moses und die monotheistische Religion",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1195449"
+     },
+     "wiki": {
+      "en": "Moses and Monotheism",
+      "zh": "摩西与一神教",
+      "source": "https://www.wikidata.org/wiki/Q1195449"
+     },
+     "year": {
+      "en": "1939; first two parts 1937",
+      "zh": "1939 年；前两部分刊于 1937 年"
+     },
+     "desc": {
+      "en": "Three essays proposing that Moses was an Egyptian follower of Akhenaten's monotheism, killed by the Israelites, with guilt shaping the religion. Speculation, not history.",
+      "zh": "三篇论文，提出摩西是信奉埃赫那顿一神教的埃及人，后被以色列人所杀，罪疚感塑造了这一宗教。属推测，而非史实。"
+     },
+     "why": {
+      "en": "Freud's last book, finished in exile from the Nazis; read for what it shows about him, not about Moses.",
+      "zh": "弗洛伊德的最后一部书，在躲避纳粹的流亡中完成；读它是为了解他，而非摩西。"
+     }
+    }
+   ],
+   "lang": "de"
+  },
+  "p-auguste-comte": {
+   "agent": "comte",
+   "works": [
+    {
+     "title": "A General View of Positivism",
+     "edition": "English translation (translator not recorded here)",
+     "orig": {
+      "text": "Discours sur l’ensemble du positivisme",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/A_General_View_of_Positivism"
+     },
+     "wiki": {
+      "en": "A General View of Positivism",
+      "source": "https://www.wikidata.org/wiki/Q4656951"
+     },
+     "year": {
+      "en": "1848",
+      "zh": "1848 年"
+     },
+     "desc": {
+      "en": "Comte's overview of his later system, reprinted as the introduction to the System of Positive Polity: positivism as a philosophy, a politics and a Religion of Humanity.",
+      "zh": "孔德对其后期体系的总述，后作为《实证政治体系》的绪论重刊：实证主义既是哲学，也是政治，又是一种人道教。"
+     },
+     "why": {
+      "en": "The shortest route into Comte's whole project, including its turn from science to a secular church.",
+      "zh": "进入孔德整体计划的捷径，包括他从科学转向世俗教会的那一步。"
+     }
+    },
+    {
+     "title": "The Course of Positive Philosophy",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "实证哲学教程",
+     "orig": {
+      "text": "Cours de philosophie positive",
+      "lang": "fr",
+      "source": "https://www.wikidata.org/wiki/Q3490518"
+     },
+     "wiki": {
+      "en": "Course of Positive Philosophy",
+      "zh": "實證哲學教程",
+      "source": "https://www.wikidata.org/wiki/Q3490518"
+     },
+     "year": {
+      "en": "1830–1842, six volumes",
+      "zh": "1830—1842 年，共六卷"
+     },
+     "desc": {
+      "en": "Comte's survey of the sciences in order of generality, organised by his law of three stages: theological, metaphysical, positive. His coinage, sociology, appears here.",
+      "zh": "孔德按普遍性次序综述各门科学，以神学、形而上学、实证三阶段法则为纲；他自创的社会学一词即出现于此书。"
+     },
+     "why": {
+      "en": "The founding text of positivism, and of sociology as a named discipline.",
+      "zh": "实证主义的奠基之作，社会学作为一门有名称的学科也由此开始。"
+     }
+    },
+    {
+     "title": "The System of Positive Polity",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "1851–1854, four volumes",
+      "zh": "1851—1854 年，共四卷"
+     },
+     "desc": {
+      "en": "Comte's late system, reorganising society around a Religion of Humanity with its own priesthood, calendar and rites.",
+      "zh": "孔德的晚期体系，以人道教为中心重组社会，设有自己的教士、历法和仪式。"
+     },
+     "why": {
+      "en": "Shows how a project to found society on science ended by founding a church.",
+      "zh": "可以看到一个以科学为社会奠基的计划，如何最终变成创立一个教会。"
+     }
+    },
+    {
+     "title": "A Discourse on the Positive Spirit",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "论实证精神",
+     "year": {
+      "en": "1844",
+      "zh": "1844 年"
+     },
+     "desc": {
+      "en": "A short essay, first printed as the preface to his treatise on popular astronomy, summarising the positive method and the law of three stages.",
+      "zh": "一篇短论，最初作为他通俗天文学论著的序言发表，概括了实证方法和三阶段法则。"
+     },
+     "why": {
+      "en": "The compact version of the Course, readable in an afternoon.",
+      "zh": "《实证哲学教程》的浓缩版，一个下午就能读完。"
+     }
+    },
+    {
+     "title": "The Catechism of Positivism",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "1852",
+      "zh": "1852 年"
+     },
+     "desc": {
+      "en": "The doctrine of the Religion of Humanity set out as dialogues between a priest of Humanity and a woman.",
+      "zh": "以一位人道教教士与一位女性之间对话的形式，阐述人道教的教义。"
+     },
+     "why": {
+      "en": "A revealing record of a nineteenth-century attempt to replace Christianity with organised secular worship.",
+      "zh": "十九世纪试图以有组织的世俗崇拜取代基督教的一份颇能说明问题的记录。"
+     }
+    }
+   ],
+   "lang": "fr"
+  },
+  "p-mary-wollstonecraft": {
+   "agent": "wollstonecraft",
+   "works": [
+    {
+     "title": "A Vindication of the Rights of Woman",
+     "edition": "Original English text",
+     "zh": "女权辩护",
+     "wiki": {
+      "en": "A Vindication of the Rights of Woman",
+      "zh": "女權辯護",
+      "source": "https://www.wikidata.org/wiki/Q300646"
+     },
+     "year": {
+      "en": "1792",
+      "zh": "1792 年"
+     },
+     "desc": {
+      "en": "An argument that women appear less rational than men only because they are educated for ornament and dependence, and that a just society must educate them as reasoning beings.",
+      "zh": "书中认为，女性看起来不如男性理性，只是因为她们被教养成装饰品和依附者；公正的社会必须把她们当作有理性的人来教育。"
+     },
+     "why": {
+      "en": "Founding text of liberal feminism, built on education and reason rather than on any special female nature.",
+      "zh": "自由主义女性主义的奠基之作，立足于教育与理性，而非某种特殊的女性天性。"
+     }
+    },
+    {
+     "title": "A Vindication of the Rights of Men",
+     "edition": "Original English text",
+     "zh": "人权辩护",
+     "wiki": {
+      "en": "A Vindication of the Rights of Men",
+      "zh": "为人权辩护",
+      "source": "https://www.wikidata.org/wiki/Q2638171"
+     },
+     "year": {
+      "en": "1790",
+      "zh": "1790 年"
+     },
+     "desc": {
+      "en": "A fast, angry reply to Edmund Burke's Reflections on the Revolution in France, published anonymously within weeks of it. It defends reason and rights against inherited privilege.",
+      "zh": "对埃德蒙·伯克《法国革命论》的急切而愤怒的回应，在伯克书出后数周内匿名出版。它以理性与权利对抗世袭特权。"
+     },
+     "why": {
+      "en": "One of the first answers to Burke, and the book where Wollstonecraft found her political voice.",
+      "zh": "最早回应伯克的著作之一，也是沃斯通克拉夫特找到自己政治声音的一本书。"
+     }
+    },
+    {
+     "title": "Maria, or The Wrongs of Woman",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Maria: or, The Wrongs of Woman",
+      "zh": "玛丽亚：女人之罪",
+      "source": "manual: https://en.wikipedia.org/wiki/Maria%3A_or%2C_The_Wrongs_of_Woman"
+     },
+     "year": {
+      "en": "Unfinished; published 1798",
+      "zh": "未完成，1798 年出版"
+     },
+     "desc": {
+      "en": "An unfinished novel published by William Godwin after Wollstonecraft's death. A woman confined to an asylum by her husband tells her story, along with her working-class keeper.",
+      "zh": "一部未完成的小说，作者去世后由威廉·戈德温出版。一位被丈夫关进疯人院的女子讲述自己的遭遇，看守她的劳动阶层女子也讲述了自己的故事。"
+     },
+     "why": {
+      "en": "Puts the arguments of the Vindication into a story about marriage law, property and class.",
+      "zh": "把《女权辩护》中的论点放进一个关于婚姻法、财产与阶级的故事里。"
+     }
+    },
+    {
+     "title": "Letters Written in Sweden",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Letters Written in Sweden, Norway, and Denmark",
+      "source": "https://www.wikidata.org/wiki/Q1754997"
+     },
+     "year": {
+      "en": "1796",
+      "zh": "1796 年"
+     },
+     "desc": {
+      "en": "Twenty-five letters from a business journey through Sweden, Norway and Denmark in 1795, mixing landscape, social observation and private grief. Full title: Letters Written during a Short Residence in Sweden, Norway, and Denmark.",
+      "zh": "二十五封书信，记录 1795 年为生意事务穿行瑞典、挪威和丹麦的旅程，融合风景、社会观察与个人哀伤。"
+     },
+     "why": {
+      "en": "Travel writing in which the traveller's own state of mind is part of the subject, unusual for its time.",
+      "zh": "这是一种把旅行者自身心境也写进来的游记，在当时并不多见。"
+     }
+    },
+    {
+     "title": "Thoughts on the Education of Daughters",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Thoughts on the Education of Daughters",
+      "zh": "女教论",
+      "source": "https://www.wikidata.org/wiki/Q3113189"
+     },
+     "year": {
+      "en": "1787",
+      "zh": "1787 年"
+     },
+     "desc": {
+      "en": "Wollstonecraft's first book, a conduct guide on raising girls: practical advice on manners, reading and employment, with an early complaint about how few respectable livings were open to women.",
+      "zh": "沃斯通克拉夫特的第一本书，一部教养女孩的行为指南：关于举止、阅读与谋生的实际建议，并早早抱怨女性能体面谋生的途径太少。"
+     },
+     "why": {
+      "en": "Shows the later arguments in seed form, still inside the conventions of an advice book.",
+      "zh": "可以看到她后来的论点还在萌芽之中，仍包裹在劝诫书的惯例里。"
+     }
+    },
+    {
+     "title": "Original Stories from Real Life",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Original Stories from Real Life",
+      "source": "https://www.wikidata.org/wiki/Q2705647"
+     },
+     "year": {
+      "en": "1788",
+      "zh": "1788 年"
+     },
+     "desc": {
+      "en": "A children's book in which a governess teaches two girls reason and virtue through walks, visits and moral tales. The 1791 edition carried illustrations by William Blake.",
+      "zh": "一本儿童读物：一位女家庭教师通过散步、拜访和道德故事，教导两个女孩理性与德行。1791 年版配有威廉·布莱克的插图。"
+     },
+     "why": {
+      "en": "A glimpse of how eighteenth-century reformers tried to shape children, strict by today's standards.",
+      "zh": "可以一窥十八世纪的改革者如何塑造孩子，按今天的标准相当严厉。"
+     }
+    }
+   ],
+   "lang": "en"
+  },
+  "p-peter-kropotkin": {
+   "agent": "kropotkin",
+   "works": [
+    {
+     "title": "Mutual Aid",
+     "edition": "Original English text",
+     "zh": "互助论",
+     "wiki": {
+      "en": "Mutual Aid: A Factor of Evolution",
+      "zh": "互助论：进化的一个要素",
+      "source": "https://www.wikidata.org/wiki/Q1498315"
+     },
+     "year": {
+      "en": "1902; essays from 1890–1896",
+      "zh": "1902 年，收录 1890—1896 年间的文章"
+     },
+     "desc": {
+      "en": "An argument, drawn from animal behaviour and human history, that cooperation within species is as much a factor in evolution as competition.",
+      "zh": "从动物行为和人类历史中取证，论证物种内部的合作与竞争同样是进化的因素。"
+     },
+     "why": {
+      "en": "The standard reply to social Darwinism, written by a naturalist who had studied Siberian wildlife.",
+      "zh": "对社会达尔文主义的经典回应，作者是一位研究过西伯利亚野生动物的博物学者。"
+     }
+    },
+    {
+     "title": "The Conquest of Bread",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "面包与自由",
+     "orig": {
+      "text": "La Conquête du pain",
+      "lang": "fr",
+      "source": "https://en.wikipedia.org/wiki/The_Conquest_of_Bread"
+     },
+     "wiki": {
+      "en": "The Conquest of Bread",
+      "zh": "面包与自由",
+      "source": "https://www.wikidata.org/wiki/Q3141640"
+     },
+     "year": {
+      "en": "1892",
+      "zh": "1892 年"
+     },
+     "desc": {
+      "en": "A plan for anarchist communism, arguing that a society could share housing, food and work by need, and describing how that might be organised after a revolution.",
+      "zh": "一份无政府共产主义的方案，主张社会可以按需分配住房、食物和劳动，并描述革命之后如何组织。"
+     },
+     "why": {
+      "en": "The most practical book in the anarchist canon, concerned with bread and rent rather than theory.",
+      "zh": "无政府主义经典中最务实的一本，关心的是面包和房租，而不是理论。"
+     }
+    },
+    {
+     "title": "Fields, Factories and Workshops",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Fields, Factories, and Workshops",
+      "source": "https://www.wikidata.org/wiki/Q2955918"
+     },
+     "year": {
+      "en": "1899",
+      "zh": "1899 年"
+     },
+     "desc": {
+      "en": "A study arguing for decentralised economies that combine small industry with intensive agriculture, and for education that joins manual and intellectual work.",
+      "zh": "主张把小型工业与精耕农业结合起来的分散经济，并主张体力劳动与脑力劳动结合的教育。"
+     },
+     "why": {
+      "en": "An early case for local production and against the division of labour, backed with agricultural statistics.",
+      "zh": "以农业统计数据为据，较早地主张本地生产、反对劳动分工。"
+     }
+    },
+    {
+     "title": "Anarchism: Its Philosophy and Ideal",
+     "edition": "English translation (translator not recorded here)",
+     "year": {
+      "en": "1896",
+      "zh": "1896 年"
+     },
+     "desc": {
+      "en": "A short lecture setting out anarchism as a philosophy grounded in the natural sciences, and as an ideal of free association without the state.",
+      "zh": "一篇短讲，把无政府主义阐述为以自然科学为基础的哲学，以及一种没有国家的自由联合理想。"
+     },
+     "why": {
+      "en": "A brief entry point to his thought, short enough to read in one sitting.",
+      "zh": "进入他思想的简短入口，一口气就能读完。"
+     }
+    },
+    {
+     "title": "Ethics: Origin and Development",
+     "edition": "English translation (translator not recorded here)",
+     "zh": "伦理学的起源和发展",
+     "orig": {
+      "text": "Этика",
+      "lang": "ru",
+      "source": "https://www.wikidata.org/wiki/Q51225220"
+     },
+     "wiki": {
+      "en": "Ethics: Origin and Development",
+      "zh": "伦理学的起源和发展",
+      "source": "https://www.wikidata.org/wiki/Q51225220"
+     },
+     "year": {
+      "en": "Unfinished at his death in 1921; published 1922",
+      "zh": "1921 年去世时未完成，1922 年出版"
+     },
+     "desc": {
+      "en": "An unfinished history of moral thought, edited after his death, that traces ethics to the social instincts described in Mutual Aid.",
+      "zh": "一部未完成的道德思想史，在他死后编辑出版，把伦理追溯到《互助论》所描述的社会本能。"
+     },
+     "why": {
+      "en": "His attempt to ground morality in nature rather than religion or the state, left incomplete.",
+      "zh": "他尝试把道德建立在自然而非宗教或国家之上，但没有写完。"
+     }
+    },
+    {
+     "title": "Memoirs of a Revolutionist",
+     "edition": "Original English text",
+     "wiki": {
+      "en": "Memoirs of a Revolutionist",
+      "zh": "我的自传",
+      "source": "https://www.wikidata.org/wiki/Q21524357"
+     },
+     "year": {
+      "en": "1899",
+      "zh": "1899 年"
+     },
+     "desc": {
+      "en": "An autobiography, from a childhood among the Russian nobility through service in Siberia, imprisonment and escape to exile in Western Europe.",
+      "zh": "一部自传，从俄国贵族家庭的童年，到西伯利亚任职、入狱与越狱，再到流亡西欧。"
+     },
+     "why": {
+      "en": "Shows how a prince and geographer became an anarchist, step by step and in his own account.",
+      "zh": "以他自己的叙述，一步步展示一位亲王兼地理学家如何成为无政府主义者。"
+     }
+    }
+   ],
+   "lang": "ru"
+  },
+  "p-immanuel-kant": {
+   "agent": "kant",
+   "works": [
+    {
+     "title": "Critique of Pure Reason",
+     "edition": "English translation by Meiklejohn",
+     "zh": "纯粹理性批判",
+     "orig": {
+      "text": "Kritik der reinen Vernunft",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q220002"
+     },
+     "wiki": {
+      "en": "Critique of Pure Reason",
+      "zh": "纯粹理性批判",
+      "source": "https://www.wikidata.org/wiki/Q220002"
+     },
+     "year": {
+      "en": "1781; second edition 1787",
+      "zh": "1781 年；1787 年第二版"
+     },
+     "desc": {
+      "en": "Asks what reason can know without experience; argues that space, time and the categories are forms the mind brings to experience, and that knowledge cannot reach beyond it.",
+      "zh": "追问理性在经验之外能知道什么；主张空间、时间和范畴是心灵带给经验的形式，知识无法越出经验。"
+     },
+     "why": {
+      "en": "Draws the line most later philosophy works within: what we can know versus what we can only think.",
+      "zh": "划出了此后大部分哲学所遵循的界线：我们能认识的，与我们只能思考的。"
+     }
+    },
+    {
+     "title": "Critique of Practical Reason",
+     "edition": "English translation by Abbott",
+     "zh": "实践理性批判",
+     "orig": {
+      "text": "Critik der practischen Vernunft",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q870851"
+     },
+     "wiki": {
+      "en": "Critique of Practical Reason",
+      "zh": "实践理性批判",
+      "source": "https://www.wikidata.org/wiki/Q870851"
+     },
+     "year": {
+      "en": "1788",
+      "zh": "1788 年"
+     },
+     "desc": {
+      "en": "Argues that pure reason can by itself determine the will, grounding morality in the moral law and freedom, and postulating God and immortality.",
+      "zh": "论证纯粹理性本身就能决定意志，以道德法则和自由为道德奠基，并把上帝与灵魂不朽作为悬设。"
+     },
+     "why": {
+      "en": "A fuller argument than the Groundwork, where freedom, duty and hope are tied together.",
+      "zh": "比《道德形而上学奠基》更完整的论证，自由、义务与希望在这里被系在一起。"
+     }
+    },
+    {
+     "title": "Critique of Judgment",
+     "edition": "English translation by Bernard",
+     "zh": "判断力批判",
+     "orig": {
+      "text": "Kritik der Urteilskraft",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1056332"
+     },
+     "wiki": {
+      "en": "Critique of Judgment",
+      "zh": "判断力批判",
+      "source": "https://www.wikidata.org/wiki/Q1056332"
+     },
+     "year": {
+      "en": "1790",
+      "zh": "1790 年"
+     },
+     "desc": {
+      "en": "Kant's third critique, on judgments of beauty and the sublime and on purpose in living nature, meant to bridge the first two.",
+      "zh": "康德的第三批判，讨论关于美与崇高的判断，以及生命自然中的目的性，意在沟通前两部批判。"
+     },
+     "why": {
+      "en": "A founding text of modern aesthetics, still central to arguments over whether taste can be more than preference.",
+      "zh": "现代美学的奠基文本，关于趣味能否不只是个人偏好的争论，至今仍以它为中心。"
+     }
+    },
+    {
+     "title": "Prolegomena",
+     "edition": "English translation by Carus",
+     "zh": "未来形而上学导论",
+     "orig": {
+      "text": "Prolegomena zu einer jeden künftigen Metaphysik",
+      "lang": "de",
+      "source": "https://en.wikipedia.org/wiki/Prolegomena_to_Any_Future_Metaphysics"
+     },
+     "wiki": {
+      "en": "Prolegomena to Any Future Metaphysics",
+      "zh": "任何一種能夠作為科學出現的未來形而上學導論",
+      "source": "https://www.wikidata.org/wiki/Q1761342"
+     },
+     "year": {
+      "en": "1783",
+      "zh": "1783 年"
+     },
+     "desc": {
+      "en": "A shorter restatement of the Critique of Pure Reason, working analytically rather than systematically, partly in reply to an early hostile review.",
+      "zh": "对《纯粹理性批判》更简短的重述，采用分析法而非综合法，部分是为回应一篇早期的负面书评。"
+     },
+     "why": {
+      "en": "The usual entry to Kant, including his account of how Hume's challenge set the whole project going.",
+      "zh": "进入康德的常见门径，书中也交代了休谟的挑战如何促成他的整个计划。"
+     }
+    }
+   ],
+   "lang": null
+  },
+  "p-friedrich-nietzsche": {
+   "agent": "nietzsche",
+   "works": [
+    {
+     "title": "Beyond Good and Evil",
+     "edition": "English translation by Zimmern",
+     "zh": "善恶的彼岸",
+     "orig": {
+      "text": "Jenseits von Gut und Böse",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q579794"
+     },
+     "wiki": {
+      "en": "Beyond Good and Evil",
+      "zh": "善惡的彼岸",
+      "source": "https://www.wikidata.org/wiki/Q579794"
+     },
+     "year": {
+      "en": "1886",
+      "zh": "1886 年"
+     },
+     "desc": {
+      "en": "Nine parts of aphorisms and short essays attacking philosophers' unexamined faith in truth and morality, and sketching a distinction between master and slave morality.",
+      "zh": "九章格言与短论，抨击哲学家对真理和道德未经审视的信仰，并勾勒出主人道德与奴隶道德的区分。"
+     },
+     "why": {
+      "en": "Asks what motives sit behind a belief in truth, a question psychology and critical theory both inherited.",
+      "zh": "追问对真理的信仰背后藏着什么动机，心理学和批判理论都继承了这个问题。"
+     }
+    },
+    {
+     "title": "Twilight of the Idols",
+     "edition": "English translation by Ludovici",
+     "zh": "偶像的黄昏",
+     "orig": {
+      "text": "Götzen-Dämmerung oder wie man mit dem Hammer philosophirt",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1296318"
+     },
+     "wiki": {
+      "en": "Twilight of the Idols",
+      "zh": "偶像的黄昏",
+      "source": "https://www.wikidata.org/wiki/Q1296318"
+     },
+     "year": {
+      "en": "Written 1888; published 1889",
+      "zh": "1888 年写成，1889 年出版"
+     },
+     "desc": {
+      "en": "A short, rapid book of aphorisms and essays, written in about a week, attacking Socrates, Christianity, German culture and the philosophers' trust in reason. Nietzsche's own summary of his late thought.",
+      "zh": "一本短小急促的格言与短论集，约一周内写成，抨击苏格拉底、基督教、德国文化以及哲学家对理性的信任。尼采本人对晚期思想的概括。"
+     },
+     "why": {
+      "en": "The quickest introduction to late Nietzsche, written just months before his collapse.",
+      "zh": "了解晚期尼采最快的入口，写于他精神崩溃前几个月。"
+     }
+    },
+    {
+     "title": "Ecce Homo",
+     "edition": "English translation by Ludovici",
+     "zh": "瞧，这个人",
+     "orig": {
+      "text": "Ecce Homo",
+      "lang": "la",
+      "source": "https://www.wikidata.org/wiki/Q861527"
+     },
+     "wiki": {
+      "en": "Ecce Homo (book)",
+      "zh": "瞧！这个人",
+      "source": "https://www.wikidata.org/wiki/Q861527"
+     },
+     "year": {
+      "en": "Written 1888; published 1908",
+      "zh": "1888 年写成，1908 年出版"
+     },
+     "desc": {
+      "en": "Nietzsche's autobiography, written weeks before his breakdown and published twenty years later. He reviews his own books chapter by chapter in deliberately grandiose terms.",
+      "zh": "尼采的自传，写于精神崩溃前几周，二十年后才出版。他逐章评点自己的著作，措辞刻意浮夸。"
+     },
+     "why": {
+      "en": "A self-portrait where performance and real self-knowledge are hard to tell apart.",
+      "zh": "一幅自画像，表演与真正的自知难以分辨。"
+     }
+    },
+    {
+     "title": "Human, All Too Human",
+     "edition": "English translation by Zimmern/Cohn",
+     "zh": "人性的，太人性的",
+     "orig": {
+      "text": "Menschliches, Allzumenschliches",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q1364539"
+     },
+     "wiki": {
+      "en": "Human, All Too Human",
+      "zh": "人性的，太人性的",
+      "source": "https://www.wikidata.org/wiki/Q1364539"
+     },
+     "year": {
+      "en": "1878; sequels 1879–80, combined 1886",
+      "zh": "1878 年；续篇 1879—1880 年，1886 年合为一书"
+     },
+     "desc": {
+      "en": "Nietzsche's first book of aphorisms, breaking with Wagner and Schopenhauer. It explains morality, religion and art as human products with histories rather than as revelations.",
+      "zh": "尼采的第一部格言集，标志着他与瓦格纳和叔本华决裂。书中把道德、宗教与艺术解释为有历史的人类产物，而非启示。"
+     },
+     "why": {
+      "en": "The calm, sceptical Nietzsche, and a model of looking for the ordinary origins of lofty ideas.",
+      "zh": "一个冷静、怀疑的尼采，示范了如何为崇高的观念寻找平凡的起源。"
+     }
+    },
+    {
+     "title": "The Antichrist",
+     "edition": "English translation by Ludovici",
+     "zh": "敌基督者",
+     "orig": {
+      "text": "Der Antichrist",
+      "lang": "de",
+      "source": "https://www.wikidata.org/wiki/Q538396"
+     },
+     "wiki": {
+      "en": "The Antichrist (book)",
+      "zh": "反基督 (書籍)",
+      "source": "https://www.wikidata.org/wiki/Q538396"
+     },
+     "year": {
+      "en": "Written 1888; published 1895",
+      "zh": "1888 年写成，1895 年出版"
+     },
+     "desc": {
+      "en": "A polemic against Christianity as an institution, which Nietzsche separates from the figure of Jesus. Written in 1888, it was published after his collapse, with some passages withheld by editors.",
+      "zh": "一部抨击作为体制的基督教的论战之作，尼采把它与耶稣其人区分开来。写于 1888 年，在他崩溃后才出版，部分段落曾被编者删去。"
+     },
+     "why": {
+      "en": "The sharpest form of Nietzsche's argument that Christian values grew from resentment, aimed at the church rather than Jesus.",
+      "zh": "尼采认为基督教价值源于怨恨，这一论点在这里最为尖锐，矛头指向教会而非耶稣。"
+     }
+    }
+   ],
+   "lang": null
+  }
+ },
+ "featuredZh": {
+  "w-meditations": "沉思录",
+  "w-ecclesiastes-book": "传道书",
+  "w-myth-of-sisyphus": "西西弗神话",
+  "w-mans-search": "活出生命的意义",
+  "w-human-condition": "人的境况",
+  "w-denial-of-death": "拒斥死亡",
+  "w-zhuangzi-book": "庄子",
+  "w-analects": "论语",
+  "w-on-liberty": "论自由",
+  "w-two-concepts": "两种自由概念",
+  "w-brothers-karamazov": "卡拉马佐夫兄弟",
+  "w-second-sex": "第二性",
+  "w-presentation-of-self": "日常生活中的自我呈现",
+  "w-reasons-and-persons": "理与人",
+  "w-essay-human-understanding": "人类理解论",
+  "w-anarchy-state-utopia": "无政府、国家和乌托邦",
+  "w-genealogy-of-morals": "论道德的谱系",
+  "w-nicomachean-ethics": "尼各马可伦理学",
+  "w-economic-possibilities": "我们后代的经济前景",
+  "w-theory-leisure-class": "有闲阶级论",
+  "w-economic-philosophic-mss": "1844年经济学哲学手稿",
+  "w-will-to-believe": "信仰的意志",
+  "w-tao-te-ching": "道德经",
+  "w-social-construction-reality": "现实的社会建构",
+  "w-bhagavad-gita": "薄伽梵歌",
+  "w-dynamics-of-faith": "信仰的动力",
+  "w-escape-from-freedom": "逃避自由",
+  "w-marriage-and-morals": "婚姻与道德",
+  "w-theory-moral-sentiments": "道德情操论",
+  "w-essays-montaigne": "蒙田随笔",
+  "w-sceptical-essays": "怀疑论集",
+  "w-mencius-book": "孟子",
+  "w-politics": "政治学",
+  "w-utilitarianism-book": "功利主义",
+  "w-principles-morals": "道德与立法原理导论"
+ },
+ "featuredOrig": {},
+ "featuredWiki": {
+  "w-meditations": {
+   "en": "Meditations",
+   "zh": "沉思录",
+   "source": "https://www.wikidata.org/wiki/Q1152283"
+  },
+  "w-ecclesiastes-book": {
+   "en": "Ecclesiastes",
+   "zh": "傳道書",
+   "source": "https://www.wikidata.org/wiki/Q131072"
+  },
+  "w-myth-of-sisyphus": {
+   "en": "The Myth of Sisyphus",
+   "zh": "西西弗神话",
+   "source": "https://www.wikidata.org/wiki/Q1125903"
+  },
+  "w-human-condition": {
+   "en": "The Human Condition (Arendt book)",
+   "zh": "人的境况",
+   "source": "https://www.wikidata.org/wiki/Q2006866"
+  },
+  "w-denial-of-death": {
+   "en": "The Denial of Death",
+   "source": "https://www.wikidata.org/wiki/Q2841991"
+  },
+  "w-zhuangzi-book": {
+   "en": "Zhuangzi (book)",
+   "zh": "莊子 (書)",
+   "source": "https://www.wikidata.org/wiki/Q1074987"
+  },
+  "w-analects": {
+   "en": "Analects",
+   "zh": "论语",
+   "source": "https://www.wikidata.org/wiki/Q276015"
+  },
+  "w-on-liberty": {
+   "en": "On Liberty",
+   "zh": "论自由",
+   "source": "https://www.wikidata.org/wiki/Q1055881"
+  },
+  "w-two-concepts": {
+   "en": "Two Concepts of Liberty",
+   "zh": "两种自由概念",
+   "source": "https://www.wikidata.org/wiki/Q855216"
+  },
+  "w-brothers-karamazov": {
+   "en": "The Brothers Karamazov",
+   "zh": "卡拉馬佐夫兄弟",
+   "source": "https://www.wikidata.org/wiki/Q183157"
+  },
+  "w-second-sex": {
+   "en": "The Second Sex",
+   "zh": "第二性",
+   "source": "https://www.wikidata.org/wiki/Q470098"
+  },
+  "w-presentation-of-self": {
+   "en": "The Presentation of Self in Everyday Life",
+   "zh": "日常生活中的自我呈現",
+   "source": "https://www.wikidata.org/wiki/Q2265892"
+  },
+  "w-reasons-and-persons": {
+   "en": "Reasons and Persons",
+   "source": "https://www.wikidata.org/wiki/Q7301514"
+  },
+  "w-essay-human-understanding": {
+   "en": "An Essay Concerning Human Understanding",
+   "zh": "人類理解論",
+   "source": "https://www.wikidata.org/wiki/Q482438"
+  },
+  "w-anarchy-state-utopia": {
+   "en": "Anarchy, State, and Utopia",
+   "zh": "無政府、國家與烏托邦",
+   "source": "https://www.wikidata.org/wiki/Q486385"
+  },
+  "w-genealogy-of-morals": {
+   "en": "On the Genealogy of Morality",
+   "zh": "道德譜系學",
+   "source": "https://www.wikidata.org/wiki/Q230302"
+  },
+  "w-nicomachean-ethics": {
+   "en": "Nicomachean Ethics",
+   "zh": "尼各马可伦理学",
+   "source": "https://www.wikidata.org/wiki/Q474537"
+  },
+  "w-theory-leisure-class": {
+   "en": "The Theory of the Leisure Class",
+   "zh": "有閒階級論",
+   "source": "https://www.wikidata.org/wiki/Q1265755"
+  },
+  "w-economic-philosophic-mss": {
+   "en": "Economic and Philosophic Manuscripts of 1844",
+   "zh": "1844年经济学哲学手稿",
+   "source": "https://www.wikidata.org/wiki/Q295347"
+  },
+  "w-will-to-believe": {
+   "en": "The Will to Believe",
+   "source": "https://www.wikidata.org/wiki/Q1666123"
+  },
+  "w-tao-te-ching": {
+   "en": "Tao Te Ching",
+   "zh": "老子 (書)",
+   "source": "https://www.wikidata.org/wiki/Q134425"
+  },
+  "w-social-construction-reality": {
+   "en": "The Social Construction of Reality",
+   "source": "https://www.wikidata.org/wiki/Q1218405"
+  },
+  "w-synchronicity-book": {
+   "en": "Synchronicity",
+   "zh": "共時性",
+   "source": "https://www.wikidata.org/wiki/Q1121101"
+  },
+  "w-bhagavad-gita": {
+   "en": "Bhagavad Gita",
+   "zh": "薄伽梵歌",
+   "source": "https://www.wikidata.org/wiki/Q46802"
+  },
+  "w-escape-from-freedom": {
+   "en": "Escape from Freedom",
+   "zh": "逃避自由",
+   "source": "https://www.wikidata.org/wiki/Q1277598"
+  },
+  "w-marriage-and-morals": {
+   "en": "Marriage and Morals",
+   "source": "https://www.wikidata.org/wiki/Q522520"
+  },
+  "w-theory-moral-sentiments": {
+   "en": "The Theory of Moral Sentiments",
+   "zh": "道德情操論",
+   "source": "https://www.wikidata.org/wiki/Q1438448"
+  },
+  "w-essays-montaigne": {
+   "en": "Essays (Montaigne)",
+   "zh": "隨筆集",
+   "source": "https://www.wikidata.org/wiki/Q624852"
+  },
+  "w-mencius-book": {
+   "en": "Mencius (book)",
+   "zh": "孟子 (書)",
+   "source": "https://www.wikidata.org/wiki/Q1195444"
+  },
+  "w-politics": {
+   "en": "Politics (Aristotle)",
+   "zh": "政治学 (亚里士多德)",
+   "source": "https://www.wikidata.org/wiki/Q69539"
+  },
+  "w-utilitarianism-book": {
+   "en": "Utilitarianism (book)",
+   "zh": "效益主義 (書)",
+   "source": "https://www.wikidata.org/wiki/Q1197767"
+  },
+  "w-principles-morals": {
+   "en": "An Introduction to the Principles of Morals and Legislation",
+   "zh": "道德與立法原則概論",
+   "source": "https://www.wikidata.org/wiki/Q19041209"
+  },
+  "w-opinions-social-pressure": {
+   "en": "Asch conformity experiments",
+   "zh": "阿希从众实验",
+   "source": "https://www.wikidata.org/wiki/Q778684"
+  }
+ }
+}

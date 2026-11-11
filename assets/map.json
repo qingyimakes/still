@@ -1,0 +1,1384 @@
+{
+ "_note": "Links between Pro thinkers for the Explore map. From Wikidata on each thinker's own item: P1066 student of -> taught, P737 influenced by -> influenced, a shared P135 movement that is a school -> same school. 'Argued against' has no Wikidata property, so none are shown. Links where the influencer was born after the person influenced are dropped as data errors. Each link keeps its source.",
+ "nodes": {
+  "p-rené-descartes": {
+   "born": 1596,
+   "died": 1650,
+   "qid": "Q9191"
+  },
+  "p-thomas-hobbes": {
+   "born": 1588,
+   "died": 1679,
+   "qid": "Q37621"
+  },
+  "p-david-hume": {
+   "born": 1711,
+   "died": 1776,
+   "qid": "Q37160"
+  },
+  "p-immanuel-kant": {
+   "born": 1724,
+   "died": 1804,
+   "qid": "Q9312"
+  },
+  "p-john-stuart-mill": {
+   "born": 1806,
+   "died": 1873,
+   "qid": "Q50020"
+  },
+  "p-friedrich-nietzsche": {
+   "born": 1844,
+   "died": 1900,
+   "qid": "Q9358"
+  },
+  "p-jean-jacques-rousseau": {
+   "born": 1712,
+   "died": 1778,
+   "qid": "Q6527"
+  },
+  "p-arthur-schopenhauer": {
+   "born": 1788,
+   "died": 1860,
+   "qid": "Q38193"
+  },
+  "p-baruch-spinoza": {
+   "born": 1632,
+   "died": 1677,
+   "qid": "Q35802"
+  },
+  "p-william-james": {
+   "born": 1842,
+   "died": 1910,
+   "qid": "Q125249"
+  },
+  "p-plato": {
+   "born": -427,
+   "died": -347,
+   "qid": "Q859"
+  },
+  "p-aristotle": {
+   "born": -384,
+   "died": -322,
+   "qid": "Q868"
+  },
+  "p-epicurus": {
+   "born": -342,
+   "died": -270,
+   "qid": "Q43216"
+  },
+  "p-epictetus": {
+   "born": 50,
+   "died": 138,
+   "qid": "Q183144"
+  },
+  "p-marcus-aurelius": {
+   "born": 121,
+   "died": 180,
+   "qid": "Q1430"
+  },
+  "p-augustine-of-hippo": {
+   "born": 354,
+   "died": 430,
+   "qid": "Q8018"
+  },
+  "p-boethius": {
+   "born": 480,
+   "died": 525,
+   "qid": "Q102851"
+  },
+  "p-thomas-aquinas": {
+   "born": 1225,
+   "died": 1274,
+   "qid": "Q9438"
+  },
+  "p-confucius": {
+   "born": -552,
+   "died": -479,
+   "qid": "Q4604"
+  },
+  "p-laozi": {
+   "born": -604,
+   "died": -500,
+   "qid": "Q9333"
+  },
+  "p-zhuangzi": {
+   "born": null,
+   "died": null,
+   "qid": "Q9390899"
+  },
+  "p-mencius": {
+   "born": -372,
+   "died": -289,
+   "qid": "Q188903"
+  },
+  "p-niccolò-machiavelli": {
+   "born": 1469,
+   "died": 1527,
+   "qid": "Q1399"
+  },
+  "p-michel-de-montaigne": {
+   "born": 1533,
+   "died": 1592,
+   "qid": "Q41568"
+  },
+  "p-francis-bacon": {
+   "born": 1561,
+   "died": 1626,
+   "qid": "Q37388"
+  },
+  "p-john-locke": {
+   "born": 1632,
+   "died": 1704,
+   "qid": "Q9353"
+  },
+  "p-gottfried-wilhelm-leibniz": {
+   "born": 1646,
+   "died": 1716,
+   "qid": "Q9047"
+  },
+  "p-george-berkeley": {
+   "born": 1685,
+   "died": 1753,
+   "qid": "Q82049"
+  },
+  "p-blaise-pascal": {
+   "born": 1623,
+   "died": 1662,
+   "qid": "Q1290"
+  },
+  "p-adam-smith": {
+   "born": 1723,
+   "died": 1790,
+   "qid": "Q9381"
+  },
+  "p-jeremy-bentham": {
+   "born": 1749,
+   "died": 1832,
+   "qid": "Q60887"
+  },
+  "p-georg-wilhelm-friedrich-hegel": {
+   "born": 1770,
+   "died": 1831,
+   "qid": "Q9235"
+  },
+  "p-voltaire": {
+   "born": 1694,
+   "died": 1778,
+   "qid": "Q9068"
+  },
+  "p-karl-marx": {
+   "born": 1818,
+   "died": 1883,
+   "qid": "Q9061"
+  },
+  "p-ralph-waldo-emerson": {
+   "born": 1803,
+   "died": 1882,
+   "qid": "Q48226"
+  },
+  "p-henry-david-thoreau": {
+   "born": 1817,
+   "died": 1862,
+   "qid": "Q131149"
+  },
+  "p-john-dewey": {
+   "born": 1859,
+   "died": 1952,
+   "qid": "Q131805"
+  },
+  "p-henri-bergson": {
+   "born": 1859,
+   "died": 1941,
+   "qid": "Q42156"
+  },
+  "p-bertrand-russell": {
+   "born": 1872,
+   "died": 1970,
+   "qid": "Q33760"
+  },
+  "p-sigmund-freud": {
+   "born": 1856,
+   "died": 1939,
+   "qid": "Q9215"
+  },
+  "p-auguste-comte": {
+   "born": 1798,
+   "died": 1857,
+   "qid": "Q12718"
+  },
+  "p-mary-wollstonecraft": {
+   "born": 1759,
+   "died": 1797,
+   "qid": "Q101638"
+  },
+  "p-peter-kropotkin": {
+   "born": 1842,
+   "died": 1921,
+   "qid": "Q5752"
+  }
+ },
+ "edges": [
+  {
+   "from": "p-plato",
+   "to": "p-rené-descartes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9191#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on René Descartes.",
+    "zh": "维基数据把柏拉图列为勒内·笛卡儿所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-rené-descartes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9191#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on René Descartes.",
+    "zh": "维基数据把亚里士多德列为勒内·笛卡儿所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-thomas-aquinas",
+   "to": "p-rené-descartes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9191#P737",
+   "note": {
+    "en": "Wikidata lists Thomas Aquinas among the influences on René Descartes.",
+    "zh": "维基数据把托马斯·阿奎那列为勒内·笛卡儿所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-thomas-hobbes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q37621#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Thomas Hobbes.",
+    "zh": "维基数据把柏拉图列为托马斯·霍布斯所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-thomas-hobbes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q37621#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Thomas Hobbes.",
+    "zh": "维基数据把亚里士多德列为托马斯·霍布斯所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-francis-bacon",
+   "to": "p-thomas-hobbes",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q37621#P737",
+   "note": {
+    "en": "Wikidata lists Francis Bacon among the influences on Thomas Hobbes.",
+    "zh": "维基数据把弗朗西斯·培根列为托马斯·霍布斯所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-george-berkeley",
+   "to": "p-david-hume",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q37160#P737",
+   "note": {
+    "en": "Wikidata lists George Berkeley among the influences on David Hume.",
+    "zh": "维基数据把乔治·贝克莱列为休谟所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-david-hume",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q37160#P737",
+   "note": {
+    "en": "Wikidata lists John Locke among the influences on David Hume.",
+    "zh": "维基数据把洛克列为休谟所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-david-hume",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists David Hume among the influences on Immanuel Kant.",
+    "zh": "维基数据把休谟列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-george-berkeley",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists George Berkeley among the influences on Immanuel Kant.",
+    "zh": "维基数据把乔治·贝克莱列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-jean-jacques-rousseau",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists Jean-Jacques Rousseau among the influences on Immanuel Kant.",
+    "zh": "维基数据把让-雅克·卢梭列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Immanuel Kant.",
+    "zh": "维基数据把柏拉图列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-michel-de-montaigne",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists Michel de Montaigne among the influences on Immanuel Kant.",
+    "zh": "维基数据把蒙田列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Immanuel Kant.",
+    "zh": "维基数据把勒内·笛卡儿列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-gottfried-wilhelm-leibniz",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists Gottfried Wilhelm Leibniz among the influences on Immanuel Kant.",
+    "zh": "维基数据把哥特弗里德·威廉·莱布尼茨列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists John Locke among the influences on Immanuel Kant.",
+    "zh": "维基数据把洛克列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-immanuel-kant",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9312#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Immanuel Kant.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为伊曼努尔·康德所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-jeremy-bentham",
+   "to": "p-john-stuart-mill",
+   "type": "taught",
+   "source": "https://www.wikidata.org/wiki/Q50020#P1066",
+   "note": {
+    "en": "John Stuart Mill studied under Jeremy Bentham.",
+    "zh": "密尔曾师从边沁。"
+   }
+  },
+  {
+   "from": "p-arthur-schopenhauer",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Arthur Schopenhauer among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把亚瑟·叔本华列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-ralph-waldo-emerson",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Ralph Waldo Emerson among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把拉尔夫·沃尔多·爱默生列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-auguste-comte",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Auguste Comte among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把奥古斯特·孔德列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-blaise-pascal",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Blaise Pascal among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把布莱兹·帕斯卡列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-niccolò-machiavelli",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Niccolò Machiavelli among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把尼科洛·马基雅维利列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-michel-de-montaigne",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Michel de Montaigne among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把蒙田列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-epicurus",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Epicurus among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把伊壁鸠鲁列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-jean-jacques-rousseau",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Jean-Jacques Rousseau among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把让-雅克·卢梭列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把柏拉图列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把亚里士多德列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-gottfried-wilhelm-leibniz",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Gottfried Wilhelm Leibniz among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把哥特弗里德·威廉·莱布尼茨列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-voltaire",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Voltaire among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把伏尔泰列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-georg-wilhelm-friedrich-hegel",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Georg Wilhelm Friedrich Hegel among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把格奥尔格·威廉·弗里德里希·黑格尔列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-immanuel-kant",
+   "to": "p-friedrich-nietzsche",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9358#P737",
+   "note": {
+    "en": "Wikidata lists Immanuel Kant among the influences on Friedrich Nietzsche.",
+    "zh": "维基数据把伊曼努尔·康德列为尼采所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-arthur-schopenhauer",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q38193#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Arthur Schopenhauer.",
+    "zh": "维基数据把柏拉图列为亚瑟·叔本华所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-arthur-schopenhauer",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q38193#P737",
+   "note": {
+    "en": "Wikidata lists John Locke among the influences on Arthur Schopenhauer.",
+    "zh": "维基数据把洛克列为亚瑟·叔本华所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-arthur-schopenhauer",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q38193#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Arthur Schopenhauer.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为亚瑟·叔本华所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-david-hume",
+   "to": "p-arthur-schopenhauer",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q38193#P737",
+   "note": {
+    "en": "Wikidata lists David Hume among the influences on Arthur Schopenhauer.",
+    "zh": "维基数据把休谟列为亚瑟·叔本华所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-immanuel-kant",
+   "to": "p-arthur-schopenhauer",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q38193#P737",
+   "note": {
+    "en": "Wikidata lists Immanuel Kant among the influences on Arthur Schopenhauer.",
+    "zh": "维基数据把伊曼努尔·康德列为亚瑟·叔本华所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Baruch Spinoza.",
+    "zh": "维基数据把勒内·笛卡儿列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-niccolò-machiavelli",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Niccolò Machiavelli among the influences on Baruch Spinoza.",
+    "zh": "维基数据把尼科洛·马基雅维利列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-francis-bacon",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Francis Bacon among the influences on Baruch Spinoza.",
+    "zh": "维基数据把弗朗西斯·培根列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-thomas-hobbes",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Thomas Hobbes among the influences on Baruch Spinoza.",
+    "zh": "维基数据把托马斯·霍布斯列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-epicurus",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Epicurus among the influences on Baruch Spinoza.",
+    "zh": "维基数据把伊壁鸠鲁列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Baruch Spinoza.",
+    "zh": "维基数据把柏拉图列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-baruch-spinoza",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q35802#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Baruch Spinoza.",
+    "zh": "维基数据把亚里士多德列为巴鲁赫·斯宾诺莎所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-blaise-pascal",
+   "to": "p-william-james",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q125249#P737",
+   "note": {
+    "en": "Wikidata lists Blaise Pascal among the influences on William James.",
+    "zh": "维基数据把布莱兹·帕斯卡列为威廉·詹姆斯所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-ralph-waldo-emerson",
+   "to": "p-william-james",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q125249#P737",
+   "note": {
+    "en": "Wikidata lists Ralph Waldo Emerson among the influences on William James.",
+    "zh": "维基数据把拉尔夫·沃尔多·爱默生列为威廉·詹姆斯所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-aristotle",
+   "type": "taught",
+   "source": "https://www.wikidata.org/wiki/Q868#P1066",
+   "note": {
+    "en": "Aristotle studied under Plato.",
+    "zh": "亚里士多德曾师从柏拉图。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-augustine-of-hippo",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q8018#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Augustine of Hippo.",
+    "zh": "维基数据把柏拉图列为希波的奥古斯丁所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-augustine-of-hippo",
+   "to": "p-boethius",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q102851#P737",
+   "note": {
+    "en": "Wikidata lists Augustine of Hippo among the influences on Boethius.",
+    "zh": "维基数据把希波的奥古斯丁列为波伊提乌所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-boethius",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q102851#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Boethius.",
+    "zh": "维基数据把亚里士多德列为波伊提乌所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-boethius",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q102851#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Boethius.",
+    "zh": "维基数据把柏拉图列为波伊提乌所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-boethius",
+   "to": "p-thomas-aquinas",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9438#P737",
+   "note": {
+    "en": "Wikidata lists Boethius among the influences on Thomas Aquinas.",
+    "zh": "维基数据把波伊提乌列为托马斯·阿奎那所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-augustine-of-hippo",
+   "to": "p-thomas-aquinas",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9438#P737",
+   "note": {
+    "en": "Wikidata lists Augustine of Hippo among the influences on Thomas Aquinas.",
+    "zh": "维基数据把希波的奥古斯丁列为托马斯·阿奎那所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-thomas-aquinas",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9438#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Thomas Aquinas.",
+    "zh": "维基数据把柏拉图列为托马斯·阿奎那所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-thomas-aquinas",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9438#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Thomas Aquinas.",
+    "zh": "维基数据把亚里士多德列为托马斯·阿奎那所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-confucius",
+   "to": "p-mencius",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q188903#P737",
+   "note": {
+    "en": "Wikidata lists Confucius among the influences on Mencius.",
+    "zh": "维基数据把孔子列为孟子所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-thomas-hobbes",
+   "to": "p-john-locke",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9353#P737",
+   "note": {
+    "en": "Wikidata lists Thomas Hobbes among the influences on John Locke.",
+    "zh": "维基数据把托马斯·霍布斯列为洛克所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-john-locke",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9353#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on John Locke.",
+    "zh": "维基数据把勒内·笛卡儿列为洛克所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把柏拉图列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-blaise-pascal",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Blaise Pascal among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把布莱兹·帕斯卡列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-thomas-aquinas",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Thomas Aquinas among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把托马斯·阿奎那列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-thomas-hobbes",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Thomas Hobbes among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把托马斯·霍布斯列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把亚里士多德列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-confucius",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Confucius among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把孔子列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把勒内·笛卡儿列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-augustine-of-hippo",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9047#P737",
+   "note": {
+    "en": "Wikidata lists Augustine of Hippo among the influences on Gottfried Wilhelm Leibniz.",
+    "zh": "维基数据把希波的奥古斯丁列为哥特弗里德·威廉·莱布尼茨所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-george-berkeley",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q82049#P737",
+   "note": {
+    "en": "Wikidata lists John Locke among the influences on George Berkeley.",
+    "zh": "维基数据把洛克列为乔治·贝克莱所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-augustine-of-hippo",
+   "to": "p-blaise-pascal",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q1290#P737",
+   "note": {
+    "en": "Wikidata lists Augustine of Hippo among the influences on Blaise Pascal.",
+    "zh": "维基数据把希波的奥古斯丁列为布莱兹·帕斯卡所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-michel-de-montaigne",
+   "to": "p-blaise-pascal",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q1290#P737",
+   "note": {
+    "en": "Wikidata lists Michel de Montaigne among the influences on Blaise Pascal.",
+    "zh": "维基数据把蒙田列为布莱兹·帕斯卡所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-blaise-pascal",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q1290#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Blaise Pascal.",
+    "zh": "维基数据把勒内·笛卡儿列为布莱兹·帕斯卡所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-epictetus",
+   "to": "p-blaise-pascal",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q1290#P737",
+   "note": {
+    "en": "Wikidata lists Epictetus among the influences on Blaise Pascal.",
+    "zh": "维基数据把爱比克泰德列为布莱兹·帕斯卡所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-immanuel-kant",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists Immanuel Kant among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把伊曼努尔·康德列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把亚里士多德列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把柏拉图列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把勒内·笛卡儿列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-jean-jacques-rousseau",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9235#P737",
+   "note": {
+    "en": "Wikidata lists Jean-Jacques Rousseau among the influences on Georg Wilhelm Friedrich Hegel.",
+    "zh": "维基数据把让-雅克·卢梭列为格奥尔格·威廉·弗里德里希·黑格尔所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-blaise-pascal",
+   "to": "p-voltaire",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9068#P737",
+   "note": {
+    "en": "Wikidata lists Blaise Pascal among the influences on Voltaire.",
+    "zh": "维基数据把布莱兹·帕斯卡列为伏尔泰所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-confucius",
+   "to": "p-voltaire",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9068#P737",
+   "note": {
+    "en": "Wikidata lists Confucius among the influences on Voltaire.",
+    "zh": "维基数据把孔子列为伏尔泰所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-voltaire",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9068#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Voltaire.",
+    "zh": "维基数据把柏拉图列为伏尔泰所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-voltaire",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9068#P737",
+   "note": {
+    "en": "Wikidata lists John Locke among the influences on Voltaire.",
+    "zh": "维基数据把洛克列为伏尔泰所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-georg-wilhelm-friedrich-hegel",
+   "to": "p-karl-marx",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q9061#P737",
+   "note": {
+    "en": "Wikidata lists Georg Wilhelm Friedrich Hegel among the influences on Karl Marx.",
+    "zh": "维基数据把格奥尔格·威廉·弗里德里希·黑格尔列为马克思所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-michel-de-montaigne",
+   "to": "p-ralph-waldo-emerson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q48226#P737",
+   "note": {
+    "en": "Wikidata lists Michel de Montaigne among the influences on Ralph Waldo Emerson.",
+    "zh": "维基数据把蒙田列为拉尔夫·沃尔多·爱默生所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-georg-wilhelm-friedrich-hegel",
+   "to": "p-ralph-waldo-emerson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q48226#P737",
+   "note": {
+    "en": "Wikidata lists Georg Wilhelm Friedrich Hegel among the influences on Ralph Waldo Emerson.",
+    "zh": "维基数据把格奥尔格·威廉·弗里德里希·黑格尔列为拉尔夫·沃尔多·爱默生所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-ralph-waldo-emerson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q48226#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Ralph Waldo Emerson.",
+    "zh": "维基数据把柏拉图列为拉尔夫·沃尔多·爱默生所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-ralph-waldo-emerson",
+   "to": "p-henry-david-thoreau",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q131149#P737",
+   "note": {
+    "en": "Wikidata lists Ralph Waldo Emerson among the influences on Henry David Thoreau.",
+    "zh": "维基数据把拉尔夫·沃尔多·爱默生列为亨利·戴维·梭罗所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-henry-david-thoreau",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q131149#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Henry David Thoreau.",
+    "zh": "维基数据把亚里士多德列为亨利·戴维·梭罗所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-plato",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Plato among the influences on Henri Bergson.",
+    "zh": "维基数据把柏拉图列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-aristotle",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Aristotle among the influences on Henri Bergson.",
+    "zh": "维基数据把亚里士多德列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists René Descartes among the influences on Henri Bergson.",
+    "zh": "维基数据把勒内·笛卡儿列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Henri Bergson.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-gottfried-wilhelm-leibniz",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Gottfried Wilhelm Leibniz among the influences on Henri Bergson.",
+    "zh": "维基数据把哥特弗里德·威廉·莱布尼茨列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-george-berkeley",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists George Berkeley among the influences on Henri Bergson.",
+    "zh": "维基数据把乔治·贝克莱列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-david-hume",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists David Hume among the influences on Henri Bergson.",
+    "zh": "维基数据把休谟列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-immanuel-kant",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Immanuel Kant among the influences on Henri Bergson.",
+    "zh": "维基数据把伊曼努尔·康德列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-blaise-pascal",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Blaise Pascal among the influences on Henri Bergson.",
+    "zh": "维基数据把布莱兹·帕斯卡列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-arthur-schopenhauer",
+   "to": "p-henri-bergson",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q42156#P737",
+   "note": {
+    "en": "Wikidata lists Arthur Schopenhauer among the influences on Henri Bergson.",
+    "zh": "维基数据把亚瑟·叔本华列为亨利·柏格森所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-john-stuart-mill",
+   "to": "p-bertrand-russell",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q33760#P737",
+   "note": {
+    "en": "Wikidata lists John Stuart Mill among the influences on Bertrand Russell.",
+    "zh": "维基数据把密尔列为伯特兰·罗素所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-bertrand-russell",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q33760#P737",
+   "note": {
+    "en": "Wikidata lists Baruch Spinoza among the influences on Bertrand Russell.",
+    "zh": "维基数据把巴鲁赫·斯宾诺莎列为伯特兰·罗素所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-david-hume",
+   "to": "p-bertrand-russell",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q33760#P737",
+   "note": {
+    "en": "Wikidata lists David Hume among the influences on Bertrand Russell.",
+    "zh": "维基数据把休谟列为伯特兰·罗素所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-gottfried-wilhelm-leibniz",
+   "to": "p-bertrand-russell",
+   "type": "influenced",
+   "source": "https://www.wikidata.org/wiki/Q33760#P737",
+   "note": {
+    "en": "Wikidata lists Gottfried Wilhelm Leibniz among the influences on Bertrand Russell.",
+    "zh": "维基数据把哥特弗里德·威廉·莱布尼茨列为伯特兰·罗素所受的影响之一。"
+   }
+  },
+  {
+   "from": "p-rené-descartes",
+   "to": "p-baruch-spinoza",
+   "type": "same school",
+   "school": {
+    "en": "Rationalism",
+    "zh": "理性主义"
+   },
+   "note": {
+    "en": "Both are counted in Rationalism (Wikidata, movement).",
+    "zh": "两人都被归入理性主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q483024"
+  },
+  {
+   "from": "p-baruch-spinoza",
+   "to": "p-gottfried-wilhelm-leibniz",
+   "type": "same school",
+   "school": {
+    "en": "Rationalism",
+    "zh": "理性主义"
+   },
+   "note": {
+    "en": "Both are counted in Rationalism (Wikidata, movement).",
+    "zh": "两人都被归入理性主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q483024"
+  },
+  {
+   "from": "p-francis-bacon",
+   "to": "p-thomas-hobbes",
+   "type": "same school",
+   "school": {
+    "en": "Empiricism",
+    "zh": "经验主义"
+   },
+   "note": {
+    "en": "Both are counted in Empiricism (Wikidata, movement).",
+    "zh": "两人都被归入经验主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q83368"
+  },
+  {
+   "from": "p-thomas-hobbes",
+   "to": "p-john-locke",
+   "type": "same school",
+   "school": {
+    "en": "Empiricism",
+    "zh": "经验主义"
+   },
+   "note": {
+    "en": "Both are counted in Empiricism (Wikidata, movement).",
+    "zh": "两人都被归入经验主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q83368"
+  },
+  {
+   "from": "p-john-locke",
+   "to": "p-george-berkeley",
+   "type": "same school",
+   "school": {
+    "en": "Empiricism",
+    "zh": "经验主义"
+   },
+   "note": {
+    "en": "Both are counted in Empiricism (Wikidata, movement).",
+    "zh": "两人都被归入经验主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q83368"
+  },
+  {
+   "from": "p-george-berkeley",
+   "to": "p-david-hume",
+   "type": "same school",
+   "school": {
+    "en": "Empiricism",
+    "zh": "经验主义"
+   },
+   "note": {
+    "en": "Both are counted in Empiricism (Wikidata, movement).",
+    "zh": "两人都被归入经验主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q83368"
+  },
+  {
+   "from": "p-immanuel-kant",
+   "to": "p-georg-wilhelm-friedrich-hegel",
+   "type": "same school",
+   "school": {
+    "en": "German idealism",
+    "zh": "德国观念论"
+   },
+   "note": {
+    "en": "Both are counted in German idealism (Wikidata, movement).",
+    "zh": "两人都被归入德国观念论（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q679842"
+  },
+  {
+   "from": "p-jeremy-bentham",
+   "to": "p-john-stuart-mill",
+   "type": "same school",
+   "school": {
+    "en": "Utilitarianism",
+    "zh": "功利主义"
+   },
+   "note": {
+    "en": "Both are counted in Utilitarianism (Wikidata, movement).",
+    "zh": "两人都被归入功利主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q160590"
+  },
+  {
+   "from": "p-epictetus",
+   "to": "p-marcus-aurelius",
+   "type": "same school",
+   "school": {
+    "en": "Stoicism",
+    "zh": "斯多葛主义"
+   },
+   "note": {
+    "en": "Both are counted in Stoicism (Wikidata, movement).",
+    "zh": "两人都被归入斯多葛主义（维基数据，所属运动）。"
+   },
+   "source": "https://www.wikidata.org/wiki/Q48235"
+  }
+ ],
+ "dropped": [
+  "Epicurus -> Aristotle (influenced): influencer born after",
+  "movement Age of Enlightenment: too broad to be a school",
+  "movement Western philosophy: too broad to be a school",
+  "movement freethought: too broad to be a school"
+ ]
+}

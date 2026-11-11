@@ -47,18 +47,49 @@
      },
      "url": "https://www.marxists.org/archive/marx/works/1844/manuscripts/labour.htm"
     }
-   ]
+   ],
+   "nameZh": "马克思",
+   "born": 1818,
+   "died": 1883,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q9061"
   },
   {
    "id": "p-noam-chomsky",
    "name": "Noam Chomsky",
    "wiki": "Noam_Chomsky",
    "rank": 2,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-noam-chomsky.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-noam-chomsky.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "credit": "Augusto Starita / Ministerio de Cultura de la Nación",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Noam_Chomsky_portrait_2015.jpg"
+   },
+   "nameZh": "诺姆·乔姆斯基",
+   "born": 1928,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q9049"
   },
   {
    "id": "p-marcus-aurelius",
@@ -71,7 +102,7 @@
     "en": "Rome, c. 175",
     "zh": "罗马，约 175 年"
    },
-   "image": null,
+   "image": "roster-marcus-aurelius.jpg",
    "quotes": [
     {
      "text": {
@@ -95,7 +126,26 @@
      },
      "url": "https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus/Book_V"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-marcus-aurelius.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Daniel Martin",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MSR-ra-61-b-1-DM.jpg"
+   },
+   "nameZh": "马可·奥勒留",
+   "born": 121,
+   "died": 180,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ancient Rome",
+    "zh": "古罗马"
+   },
+   "wikidata": "Q1430"
   },
   {
    "id": "p-friedrich-nietzsche",
@@ -165,7 +215,19 @@
      },
      "url": "https://www.gutenberg.org/cache/epub/52263/pg52263.txt"
     }
-   ]
+   ],
+   "nameZh": "尼采",
+   "born": 1844,
+   "died": 1900,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q9358"
   },
   {
    "id": "p-sigmund-freud",
@@ -175,8 +237,52 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-sigmund-freud.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Love of comfort is really not compatible with consideration for others.",
+      "zh": "Love of comfort is really not compatible with consideration for others."
+     },
+     "label": {
+      "en": "Sigmund Freud, The Interpretation of Dreams, trans. A. A. Brill",
+      "zh": "弗洛伊德《梦的解析》，布里尔 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/66048",
+     "poolId": "ap-freud-interpretation_of_dreams-mvp-00224-2203"
+    },
+    {
+     "text": {
+      "en": "It is in the nature of every censorship that it permits the telling of untruth about forbidden things rather than truth.",
+      "zh": "It is in the nature of every censorship that it permits the telling of untruth about forbidden things rather than truth."
+     },
+     "label": {
+      "en": "Sigmund Freud, The Interpretation of Dreams, trans. A. A. Brill",
+      "zh": "弗洛伊德《梦的解析》，布里尔 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/66048",
+     "poolId": "ap-freud-interpretation_of_dreams-mvp-00684-783"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-sigmund-freud.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Max Halberstadt",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sigmund_Freud%2C_by_Max_Halberstadt_(cropped).jpg"
+   },
+   "nameZh": "西格蒙德·弗洛伊德",
+   "born": 1856,
+   "died": 1939,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Austrian Empire",
+    "zh": "奥地利帝国"
+   },
+   "wikidata": "Q9215"
   },
   {
    "id": "p-aristotle",
@@ -257,25 +363,56 @@
      },
      "url": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html"
     }
-   ]
+   ],
+   "nameZh": "亚里士多德",
+   "born": -384,
+   "died": -322,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Stageira",
+    "zh": "斯塔伊拉"
+   },
+   "wikidata": "Q868"
   },
   {
    "id": "p-socrates",
    "name": "Socrates",
    "wiki": "Socrates",
    "rank": 7,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-socrates.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-socrates.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Copy of Lysippos (?)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg"
+   },
+   "nameZh": "苏格拉底",
+   "born": -470,
+   "died": -399,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Classical Athens",
+    "zh": "古雅典"
+   },
+   "wikidata": "Q913"
   },
   {
    "id": "p-carl-jung",
    "name": "Carl Jung",
    "wiki": "Carl_Jung",
    "rank": 8,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-jung",
    "origin": {
     "en": "Zurich, 1952",
@@ -294,7 +431,19 @@
      },
      "url": "https://en.wikipedia.org/wiki/Synchronicity"
     }
-   ]
+   ],
+   "nameZh": "荣格",
+   "born": 1875,
+   "died": 1961,
+   "field": {
+    "en": "Psychologist",
+    "zh": "心理学家"
+   },
+   "country": {
+    "en": "Switzerland",
+    "zh": "瑞士"
+   },
+   "wikidata": "Q41532"
   },
   {
    "id": "p-plato",
@@ -304,19 +453,94 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-plato.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "…the unexamined life is not worth living",
+      "zh": "…the unexamined life is not worth living"
+     },
+     "label": {
+      "en": "Plato, Apology, trans. Benjamin Jowett",
+      "zh": "柏拉图《苏格拉底的申辩》，乔伊特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1656",
+     "poolId": "ap-plato-apology-mvp-00038-550"
+    },
+    {
+     "text": {
+      "en": "Let parents, then, bequeath to their children not a heap of riches, but the spirit of reverence.",
+      "zh": "Let parents, then, bequeath to their children not a heap of riches, but the spirit of reverence."
+     },
+     "label": {
+      "en": "Plato, Laws, trans. Benjamin Jowett",
+      "zh": "柏拉图《法律篇》，乔伊特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1750",
+     "poolId": "ap-plato-laws-mvp-00275-1862"
+    },
+    {
+     "text": {
+      "en": "…the beginning is the most important part of any work, especially in the case of a young and tender thing",
+      "zh": "…the beginning is the most important part of any work, especially in the case of a young and tender thing"
+     },
+     "label": {
+      "en": "Plato, The Republic, trans. Benjamin Jowett",
+      "zh": "柏拉图《理想国》，乔伊特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1497",
+     "poolId": "ap-plato-republic-mvp-00147-96"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-plato.jpg",
+    "licence": "CC BY 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+    "credit": "Marie-Lan Nguyen",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plato_Silanion_Musei_Capitolini_MC1377.jpg"
+   },
+   "nameZh": "柏拉图",
+   "born": -428,
+   "died": -348,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Classical Athens",
+    "zh": "古雅典"
+   },
+   "wikidata": "Q859"
   },
   {
    "id": "p-ayn-rand",
    "name": "Ayn Rand",
    "wiki": "Ayn_Rand",
    "rank": 10,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-ayn-rand.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-ayn-rand.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Photo portrait credited to \"Talbot\" (though not on original dust jacket). Published by the Bobbs-Merrill Company .",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayn_Rand_(1943_Talbot_portrait).jpg"
+   },
+   "nameZh": "安·兰德",
+   "born": 1905,
+   "died": 1982,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Russian Empire",
+    "zh": "俄罗斯帝国"
+   },
+   "wikidata": "Q132524"
   },
   {
    "id": "p-augustine-of-hippo",
@@ -326,8 +550,64 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-augustine-of-hippo.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "It is the decided opinion of all who use their brains, that all men desire to be happy.",
+      "zh": "It is the decided opinion of all who use their brains, that all men desire to be happy."
+     },
+     "label": {
+      "en": "Augustine of Hippo, The City of God, trans. Marcus Dods",
+      "zh": "奥古斯丁《上帝之城》，多兹 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/45304",
+     "poolId": "ap-augustine-city_of_god-mvp-00402-0"
+    },
+    {
+     "text": {
+      "en": "The mind commands the mind, its own self, to will, and yet it doth not.",
+      "zh": "The mind commands the mind, its own self, to will, and yet it doth not."
+     },
+     "label": {
+      "en": "Augustine of Hippo, Confessions, trans. E. B. Pusey",
+      "zh": "奥古斯丁《忏悔录》，普西 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3296",
+     "poolId": "ap-augustine-confessions-mvp-00194-488"
+    },
+    {
+     "text": {
+      "en": "No man loves what he endures, though he love to endure.",
+      "zh": "No man loves what he endures, though he love to endure."
+     },
+     "label": {
+      "en": "Augustine of Hippo, Confessions, trans. E. B. Pusey",
+      "zh": "奥古斯丁《忏悔录》，普西 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3296",
+     "poolId": "ap-augustine-confessions-mvp-00279-735"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-augustine-of-hippo.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Philippe de Champaigne",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg"
+   },
+   "nameZh": "希波的奥古斯丁",
+   "born": 354,
+   "died": 430,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ancient Rome",
+    "zh": "古罗马"
+   },
+   "wikidata": "Q8018"
   },
   {
    "id": "p-niccolò-machiavelli",
@@ -337,15 +617,71 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-niccolo-machiavelli.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Every one sees what you appear to be, few really know what you are",
+      "zh": "Every one sees what you appear to be, few really know what you are"
+     },
+     "label": {
+      "en": "Niccolò Machiavelli, The Prince, trans. W. K. Marriott",
+      "zh": "马基雅维利《君主论》，马里奥特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1232",
+     "poolId": "ap-machiavelli-the_prince-mvp-00125-478"
+    },
+    {
+     "text": {
+      "en": "He who believes that new benefits will cause great personages to forget old injuries is deceived.",
+      "zh": "He who believes that new benefits will cause great personages to forget old injuries is deceived."
+     },
+     "label": {
+      "en": "Niccolò Machiavelli, The Prince, trans. W. K. Marriott",
+      "zh": "马基雅维利《君主论》，马里奥特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1232",
+     "poolId": "ap-machiavelli-the_prince-mvp-00053-886"
+    },
+    {
+     "text": {
+      "en": "Every one admits how praiseworthy it is in a prince to keep faith, and to live with integrity and not with craft.",
+      "zh": "Every one admits how praiseworthy it is in a prince to keep faith, and to live with integrity and not with craft."
+     },
+     "label": {
+      "en": "Niccolò Machiavelli, The Prince, trans. W. K. Marriott",
+      "zh": "马基雅维利《君主论》，马里奥特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/1232",
+     "poolId": "ap-machiavelli-the_prince-mvp-00119-205"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-niccolo-machiavelli.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Santi di Tito",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Niccol%C3%B2_Machiavelli_by_Santi_di_Tito.jpg"
+   },
+   "nameZh": "尼科洛·马基雅维利",
+   "born": 1469,
+   "died": 1527,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Republic of Florence",
+    "zh": "佛罗伦萨共和国"
+   },
+   "wikidata": "Q1399"
   },
   {
    "id": "p-albert-camus",
    "name": "Albert Camus",
    "wiki": "Albert_Camus",
    "rank": 13,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-camus",
    "origin": {
     "en": "France, 1942",
@@ -364,7 +700,19 @@
      },
      "url": "https://en.wikipedia.org/wiki/The_Myth_of_Sisyphus"
     }
-   ]
+   ],
+   "nameZh": "加缪",
+   "born": 1913,
+   "died": 1960,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q34670"
   },
   {
    "id": "p-immanuel-kant",
@@ -374,8 +722,63 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-immanuel-kant.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nothing can possibly be conceived in the world, or even out of it, which can be called good, without qualification, except a good will.",
+      "zh": "Nothing can possibly be conceived in the world, or even out of it, which can be called good, without qualification, except a good will."
+     },
+     "label": {
+      "en": "Immanuel Kant, Fundamental Principles of the Metaphysic of Morals, trans. T. K. Abbott",
+      "zh": "康德《道德形而上学原理》，阿博特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/5682",
+     "poolId": "ap-kant-groundwork_en-pg5682-00019-0"
+    },
+    {
+     "text": {
+      "en": "We must be able to will that a maxim of our action should be a universal law.",
+      "zh": "We must be able to will that a maxim of our action should be a universal law."
+     },
+     "label": {
+      "en": "Immanuel Kant, Fundamental Principles of the Metaphysic of Morals, trans. T. K. Abbott",
+      "zh": "康德《道德形而上学原理》，阿博特 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/5682",
+     "poolId": "ap-kant-groundwork_en-pg5682-00096-162"
+    },
+    {
+     "text": {
+      "en": "All ignorance is either ignorance of things or of the limits of knowledge.",
+      "zh": "All ignorance is either ignorance of things or of the limits of knowledge."
+     },
+     "label": {
+      "en": "Immanuel Kant, Critique of Pure Reason, trans. J. M. D. Meiklejohn",
+      "zh": "康德《纯粹理性批判》，米克尔约翰 英译"
+     },
+     "poolId": "ap-kant-krv_en-tr-00882-203"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-immanuel-kant.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Becker",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Immanuel_Kant_-_Gemaelde_2.jpg"
+   },
+   "nameZh": "伊曼努尔·康德",
+   "born": 1724,
+   "died": 1804,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q9312"
   },
   {
    "id": "p-thomas-aquinas",
@@ -385,8 +788,27 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-thomas-aquinas.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-thomas-aquinas.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Carlo Crivelli",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:St-thomas-aquinasFXD.jpg"
+   },
+   "nameZh": "托马斯·阿奎那",
+   "born": 1225,
+   "died": 1274,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "castle of the counts of Aquino",
+    "zh": "castle of the counts of Aquino"
+   },
+   "wikidata": "Q9438"
   },
   {
    "id": "p-voltaire",
@@ -396,8 +818,27 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-voltaire.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-voltaire.jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "credit": "Nicolas de Largillière",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_de_Largilli%C3%A8re_-_Portrait_de_Voltaire_(1694-1778)_en_1718_-_P208_-_mus%C3%A9e_Carnavalet_-_5_(cropped).jpg"
+   },
+   "nameZh": "伏尔泰",
+   "born": 1694,
+   "died": 1778,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q9068"
   },
   {
    "id": "p-confucius",
@@ -445,18 +886,49 @@
      },
      "url": "https://zh.wikisource.org/zh-hant/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
     }
-   ]
+   ],
+   "nameZh": "孔子",
+   "born": -551,
+   "died": -479,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Lu",
+    "zh": "鲁国"
+   },
+   "wikidata": "Q4604"
   },
   {
    "id": "p-michel-foucault",
    "name": "Michel Foucault",
    "wiki": "Michel_Foucault",
    "rank": 18,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-michel-foucault.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-michel-foucault.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michel_Foucault_1974_Brasil.jpg"
+   },
+   "nameZh": "米歇尔·福柯",
+   "born": 1926,
+   "died": 1984,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q44272"
   },
   {
    "id": "p-john-locke",
@@ -482,20 +954,32 @@
      },
      "url": "https://en.wikisource.org/wiki/An_Essay_Concerning_Human_Understanding"
     }
-   ]
+   ],
+   "nameZh": "洛克",
+   "born": 1632,
+   "died": 1704,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q9353"
   },
   {
    "id": "p-hannah-arendt",
    "name": "Hannah Arendt",
    "wiki": "Hannah_Arendt",
    "rank": 20,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-arendt",
    "origin": {
     "en": "United States, 1958",
     "zh": "美国，1958 年"
    },
-   "image": null,
+   "image": "roster-hannah-arendt.jpg",
    "quotes": [
     {
      "text": {
@@ -519,7 +1003,26 @@
      },
      "url": "https://archive.org/details/humancondition00aren"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-hannah-arendt.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannah_Arendt_1975_(cropped).jpg"
+   },
+   "nameZh": "汉娜·阿伦特",
+   "born": 1906,
+   "died": 1975,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Prussia",
+    "zh": "普魯士"
+   },
+   "wikidata": "Q60025"
   },
   {
    "id": "p-bertrand-russell",
@@ -578,42 +1081,92 @@
      },
      "url": "https://libcom.org/article/praise-idleness-bertrand-russell"
     }
-   ]
+   ],
+   "nameZh": "伯特兰·罗素",
+   "born": 1872,
+   "died": 1970,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q33760"
   },
   {
    "id": "p-rumi",
    "name": "Rumi",
    "wiki": "Rumi",
    "rank": 22,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-rumi.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-rumi.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Hossein Behzad",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_(cropped).jpg"
+   },
+   "nameZh": "鲁米",
+   "born": 1207,
+   "died": 1273,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Iran",
+    "zh": "伊朗"
+   },
+   "wikidata": "Q43347"
   },
   {
    "id": "p-diogenes",
    "name": "Diogenes",
    "wiki": "Diogenes",
    "rank": 23,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-diogenes.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-diogenes.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "Diogenes-statue-Sinop.JPG : Tony f derivative work: Singinglemon ( talk )",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diogenes-statue-Sinop-enhanced.jpg"
+   },
+   "nameZh": "锡诺普的第欧根尼",
+   "born": -400,
+   "died": -323,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Sinope",
+    "zh": "Sinope"
+   },
+   "wikidata": "Q59180"
   },
   {
    "id": "p-jean-paul-sartre",
    "name": "Jean-Paul Sartre",
    "wiki": "Jean-Paul_Sartre",
    "rank": 24,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-sartre",
    "origin": {
     "en": "France, 1946",
     "zh": "法国，1946 年"
    },
-   "image": null,
+   "image": "roster-jean-paul-sartre.jpg",
    "quotes": [
     {
      "text": {
@@ -637,7 +1190,26 @@
      },
      "url": "https://www.marxists.org/reference/archive/sartre/works/exist/sartre.htm"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-jean-paul-sartre.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "User:T1980",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1967.jpg"
+   },
+   "nameZh": "萨特",
+   "born": 1905,
+   "died": 1980,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q9364"
   },
   {
    "id": "p-rené-descartes",
@@ -647,8 +1219,52 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-rene-descartes.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Good sense is, of all things among men, the most equally distributed",
+      "zh": "Good sense is, of all things among men, the most equally distributed"
+     },
+     "label": {
+      "en": "René Descartes, Discourse on the Method, trans. John Veitch",
+      "zh": "笛卡儿《谈谈方法》，维奇 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/59",
+     "poolId": "ap-descartes-discourse_en-pg59-00002-0"
+    },
+    {
+     "text": {
+      "en": "…to divide each of the difficulties under examination into as many parts as possible, and as might be necessary for its adequate solution.",
+      "zh": "…to divide each of the difficulties under examination into as many parts as possible, and as might be necessary for its adequate solution."
+     },
+     "label": {
+      "en": "René Descartes, Discourse on the Method, trans. John Veitch",
+      "zh": "笛卡儿《谈谈方法》，维奇 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/59",
+     "poolId": "ap-descartes-discourse_en-pg59-00026-860"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-rene-descartes.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "After Frans Hals",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg"
+   },
+   "nameZh": "勒内·笛卡儿",
+   "born": 1596,
+   "died": 1650,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q9191"
   },
   {
    "id": "p-henry-david-thoreau",
@@ -658,19 +1274,94 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-henry-david-thoreau.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Let your life be a counter friction to stop the machine.",
+      "zh": "Let your life be a counter friction to stop the machine."
+     },
+     "label": {
+      "en": "Henry David Thoreau, On the Duty of Civil Disobedience",
+      "zh": "梭罗《论公民的不服从》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/71",
+     "poolId": "ap-thoreau-civil_disobedience-mvp-00015-464"
+    },
+    {
+     "text": {
+      "en": "Men do not fail commonly for want of knowledge, but for want of prudence to give wisdom the preference.",
+      "zh": "Men do not fail commonly for want of knowledge, but for want of prudence to give wisdom the preference."
+     },
+     "label": {
+      "en": "Henry David Thoreau, A Week on the Concord and Merrimack Rivers",
+      "zh": "梭罗，A Week on the Concord and Merrimack Rivers"
+     },
+     "url": "https://www.gutenberg.org/ebooks/4232",
+     "poolId": "ap-thoreau-a_week_on_the_concord_and_merrimack-mvp-00182-0"
+    },
+    {
+     "text": {
+      "en": "Our life without love is like coke and ashes.",
+      "zh": "Our life without love is like coke and ashes."
+     },
+     "label": {
+      "en": "Henry David Thoreau, A Week on the Concord and Merrimack Rivers",
+      "zh": "梭罗，A Week on the Concord and Merrimack Rivers"
+     },
+     "url": "https://www.gutenberg.org/ebooks/4232",
+     "poolId": "ap-thoreau-a_week_on_the_concord_and_merrimack-mvp-00436-265"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-henry-david-thoreau.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "B. D. Maxham",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored_-_greyscale_-_straightened.jpg"
+   },
+   "nameZh": "亨利·戴维·梭罗",
+   "born": 1817,
+   "died": 1862,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q131149"
   },
   {
    "id": "p-ludwig-wittgenstein",
    "name": "Ludwig Wittgenstein",
    "wiki": "Ludwig_Wittgenstein",
    "rank": 27,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-ludwig-wittgenstein.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-ludwig-wittgenstein.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Moritz Nähr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludwig_Wittgenstein.jpg"
+   },
+   "nameZh": "路德维希·维特根斯坦",
+   "born": 1889,
+   "died": 1951,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q9391"
   },
   {
    "id": "p-arthur-schopenhauer",
@@ -680,19 +1371,57 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-arthur-schopenhauer.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-arthur-schopenhauer.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Johann Schäfer",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer%2C_1859b.jpg"
+   },
+   "nameZh": "亚瑟·叔本华",
+   "born": 1788,
+   "died": 1860,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q38193"
   },
   {
    "id": "p-søren-kierkegaard",
    "name": "Søren Kierkegaard",
    "wiki": "Søren_Kierkegaard",
    "rank": 29,
-   "tier": "pro",
-   "voiceId": null,
+   "tier": "basic",
+   "voiceId": "v-kierkegaard",
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-sren-kierkegaard.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-sren-kierkegaard.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "La Biblioteca Real de Dinamarca",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%B8ren_Kierkegaard_(1813-1855)_-_(cropped).jpg"
+   },
+   "nameZh": "克尔凯郭尔",
+   "born": 1813,
+   "died": 1855,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Denmark",
+    "zh": "丹麦王国"
+   },
+   "wikidata": "Q6512"
   },
   {
    "id": "p-baruch-spinoza",
@@ -702,8 +1431,64 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-baruch-spinoza.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "He who is led by fear, and does good in order to escape evil, is not led by reason.",
+      "zh": "He who is led by fear, and does good in order to escape evil, is not led by reason."
+     },
+     "label": {
+      "en": "Baruch Spinoza, Ethics, trans. R. H. M. Elwes",
+      "zh": "斯宾诺莎《伦理学》，埃尔维斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3800",
+     "poolId": "ap-spinoza-ethics_en-pg3800-00529-1327"
+    },
+    {
+     "text": {
+      "en": "The mind's absolute virtue is therefore to understand.",
+      "zh": "The mind's absolute virtue is therefore to understand."
+     },
+     "label": {
+      "en": "Baruch Spinoza, Ethics, trans. R. H. M. Elwes",
+      "zh": "斯宾诺莎《伦理学》，埃尔维斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3800",
+     "poolId": "ap-spinoza-ethics_en-pg3800-00454-1204"
+    },
+    {
+     "text": {
+      "en": "Love is pleasure, accompanied by the idea of an external cause.",
+      "zh": "Love is pleasure, accompanied by the idea of an external cause."
+     },
+     "label": {
+      "en": "Baruch Spinoza, Ethics, trans. R. H. M. Elwes",
+      "zh": "斯宾诺莎《伦理学》，埃尔维斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3800",
+     "poolId": "ap-spinoza-ethics_en-pg3800-00369-331"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-baruch-spinoza.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "anonymous",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spinoza.jpg"
+   },
+   "nameZh": "巴鲁赫·斯宾诺莎",
+   "born": 1632,
+   "died": 1677,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Dutch Republic",
+    "zh": "荷兰共和国"
+   },
+   "wikidata": "Q35802"
   },
   {
    "id": "p-jean-jacques-rousseau",
@@ -713,21 +1498,53 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jean-jacques-rousseau.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "He who prefers truth to fame, may hope to prefer it to life itself.",
+      "zh": "He who prefers truth to fame, may hope to prefer it to life itself."
+     },
+     "label": {
+      "en": "Jean-Jacques Rousseau, Eloisa (Julie, or the New Heloise), trans. William Kenrick",
+      "zh": "卢梭《新爱洛伊丝》，肯里克 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/76639",
+     "poolId": "ap-rousseau-eloisa_en-pg76639-00058-896"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-jean-jacques-rousseau.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Maurice Quentin de La Tour",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean-Jacques_Rousseau_(painted_portrait).jpg"
+   },
+   "nameZh": "让-雅克·卢梭",
+   "born": 1712,
+   "died": 1778,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Republic of Geneva",
+    "zh": "日内瓦共和国"
+   },
+   "wikidata": "Q6527"
   },
   {
    "id": "p-simone-de-beauvoir",
    "name": "Simone de Beauvoir",
    "wiki": "Simone_de_Beauvoir",
    "rank": 32,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-beauvoir",
    "origin": {
     "en": "France, 1949",
     "zh": "法国，1949 年"
    },
-   "image": null,
+   "image": "roster-simone-de-beauvoir.jpg",
    "quotes": [
     {
      "text": {
@@ -751,7 +1568,26 @@
      },
      "url": "https://en.wikipedia.org/wiki/The_Second_Sex"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-simone-de-beauvoir.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Moshe Milner",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simone_de_Beauvoir2.png"
+   },
+   "nameZh": "西蒙娜·德·波伏娃",
+   "born": 1908,
+   "died": 1986,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q7197"
   },
   {
    "id": "p-georg-wilhelm-friedrich-hegel",
@@ -761,8 +1597,51 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-georg-wilhelm-friedrich-hegel.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nature in like manner is not without mind, nor mind without nature.",
+      "zh": "Nature in like manner is not without mind, nor mind without nature."
+     },
+     "label": {
+      "en": "G. W. F. Hegel, The Logic of Hegel (Encyclopaedia), trans. William Wallace",
+      "zh": "黑格尔《小逻辑》，华莱士 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/55108",
+     "poolId": "ap-hegel-logic-mvp-00376-1510"
+    },
+    {
+     "text": {
+      "en": "True thoughts and scientific insight can only be won by the labour of the notion.",
+      "zh": "True thoughts and scientific insight can only be won by the labour of the notion."
+     },
+     "label": {
+      "en": "G. W. F. Hegel, The Phenomenology of Mind, trans. J. B. Baillie",
+      "zh": "黑格尔《精神现象学》，贝利 英译"
+     },
+     "poolId": "ap-hegel-phenomenology_of_spirit-mvp-00093-1128"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-georg-wilhelm-friedrich-hegel.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Jakob Schlesinger",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jakob_Schlesinger_-_Hegel_1831.jpg"
+   },
+   "nameZh": "格奥尔格·威廉·弗里德里希·黑格尔",
+   "born": 1770,
+   "died": 1831,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Württemberg",
+    "zh": "符腾堡王国"
+   },
+   "wikidata": "Q9235"
   },
   {
    "id": "p-adam-smith",
@@ -821,7 +1700,19 @@
      },
      "url": "https://en.wikisource.org/wiki/The_Wealth_of_Nations/Book_I/Chapter_2"
     }
-   ]
+   ],
+   "nameZh": "亚当·斯密",
+   "born": 1723,
+   "died": 1790,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Great Britain",
+    "zh": "大不列颠王国"
+   },
+   "wikidata": "Q9381"
   },
   {
    "id": "p-francis-bacon",
@@ -831,30 +1722,124 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-francis-bacon.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "A wise man will make more opportunities, than he finds.",
+      "zh": "A wise man will make more opportunities, than he finds."
+     },
+     "label": {
+      "en": "Francis Bacon, Essays, or Counsels Civil and Moral",
+      "zh": "弗朗西斯·培根《培根随笔》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/575",
+     "poolId": "ap-bacon-essays-mvp-00170-2719"
+    },
+    {
+     "text": {
+      "en": "Whosoever is out of patience, is out of possession of his soul.",
+      "zh": "Whosoever is out of patience, is out of possession of his soul."
+     },
+     "label": {
+      "en": "Francis Bacon, Essays, or Counsels Civil and Moral",
+      "zh": "弗朗西斯·培根《培根随笔》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/575",
+     "poolId": "ap-bacon-essays-mvp-00181-363"
+    },
+    {
+     "text": {
+      "en": "Seek not proud riches, but such as thou mayest get justly, use soberly, distribute cheerfully, and leave contentedly.",
+      "zh": "Seek not proud riches, but such as thou mayest get justly, use soberly, distribute cheerfully, and leave contentedly."
+     },
+     "label": {
+      "en": "Francis Bacon, Essays, or Counsels Civil and Moral",
+      "zh": "弗朗西斯·培根《培根随笔》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/575",
+     "poolId": "ap-bacon-essays-mvp-00129-1203"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-francis-bacon.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Paul van Somer I / Formerly attributed to Frans Pourbus the Younger",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Somer_Francis_Bacon.jpg"
+   },
+   "nameZh": "弗朗西斯·培根",
+   "born": 1561,
+   "died": 1626,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q37388"
   },
   {
    "id": "p-slavoj-žižek",
    "name": "Slavoj Žižek",
    "wiki": "Slavoj_Žižek",
    "rank": 36,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-slavoj-zizek.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-slavoj-zizek.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Amrei-Marie",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Slavoj_%C5%BDi%C5%BEek_2015_(cropped).jpg"
+   },
+   "nameZh": "斯拉沃热·齐泽克",
+   "born": 1949,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Slovenia",
+    "zh": "斯洛文尼亚"
+   },
+   "wikidata": "Q184750"
   },
   {
    "id": "p-adi-shankara",
    "name": "Adi Shankara",
    "wiki": "Adi_Shankara",
    "rank": 37,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-adi-shankara.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-adi-shankara.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Raja Ravi Varma",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg"
+   },
+   "nameZh": "阿迪·商羯罗",
+   "born": 788,
+   "died": 820,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kalady",
+    "zh": "Kalady"
+   },
+   "wikidata": "Q180967"
   },
   {
    "id": "p-mary-wollstonecraft",
@@ -864,8 +1849,64 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-mary-wollstonecraft.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Always determine, on every occasion, to speak the truth, and you will never be at a loss for words.",
+      "zh": "Always determine, on every occasion, to speak the truth, and you will never be at a loss for words."
+     },
+     "label": {
+      "en": "Mary Wollstonecraft, Original Stories from Real Life",
+      "zh": "沃斯通克拉夫特，Original Stories from Real Life"
+     },
+     "url": "https://www.gutenberg.org/ebooks/36507",
+     "poolId": "ap-wollstonecraft-original_stories-mvp-00038-541"
+    },
+    {
+     "text": {
+      "en": "Let people but watch their own hearts, and act rightly as far as they can judge, and they may patiently wait till the opinion of the world comes round.",
+      "zh": "Let people but watch their own hearts, and act rightly as far as they can judge, and they may patiently wait till the opinion of the world comes round."
+     },
+     "label": {
+      "en": "Mary Wollstonecraft, A Vindication of the Rights of Woman",
+      "zh": "沃斯通克拉夫特《女权辩护》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/3420",
+     "poolId": "ap-wollstonecraft-vindication_of_the_rights_of_woman-mvp-00303-256"
+    },
+    {
+     "text": {
+      "en": "Love gilds all the prospects of life, and though it cannot always exclude apathy, it makes many cares appear trifling.",
+      "zh": "Love gilds all the prospects of life, and though it cannot always exclude apathy, it makes many cares appear trifling."
+     },
+     "label": {
+      "en": "Mary Wollstonecraft, Thoughts on the Education of Daughters",
+      "zh": "沃斯通克拉夫特，Thoughts on the Education of Daughters"
+     },
+     "url": "https://www.gutenberg.org/ebooks/67466",
+     "poolId": "ap-wollstonecraft-thoughts_on_the_education_of_daughters-mvp-00067-1379"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-mary-wollstonecraft.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "John Opie",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Wollstonecraft_by_John_Opie_(c._1797).jpg"
+   },
+   "nameZh": "玛丽·沃斯通克拉夫特",
+   "born": 1759,
+   "died": 1797,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Great Britain",
+    "zh": "大不列颠王国"
+   },
+   "wikidata": "Q101638"
   },
   {
    "id": "p-ralph-waldo-emerson",
@@ -875,21 +1916,77 @@
    "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-ralph-waldo-emerson.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nothing is at last sacred but the integrity of your own mind.",
+      "zh": "Nothing is at last sacred but the integrity of your own mind."
+     },
+     "label": {
+      "en": "Ralph Waldo Emerson, Essays: First Series",
+      "zh": "爱默生《随笔·第一辑》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/2944",
+     "poolId": "ap-emerson-essays_first_series-mvp-00045-164"
+    },
+    {
+     "text": {
+      "en": "Nothing can bring you peace but yourself.",
+      "zh": "Nothing can bring you peace but yourself."
+     },
+     "label": {
+      "en": "Ralph Waldo Emerson, Essays: First Series",
+      "zh": "爱默生《随笔·第一辑》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/2944",
+     "poolId": "ap-emerson-essays_first_series-mvp-00084-558"
+    },
+    {
+     "text": {
+      "en": "Do your work, respecting the excellence of the work, and not its acceptableness.",
+      "zh": "Do your work, respecting the excellence of the work, and not its acceptableness."
+     },
+     "label": {
+      "en": "Ralph Waldo Emerson, The Conduct of Life",
+      "zh": "爱默生《生活的准则》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/39827",
+     "poolId": "ap-emerson-conduct_of_life-mvp-00122-544"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-ralph-waldo-emerson.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "User:Scewing derivative work: 2009",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Waldo_Emerson_ca1857_retouched.jpg"
+   },
+   "nameZh": "拉尔夫·沃尔多·爱默生",
+   "born": 1803,
+   "died": 1882,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q48226"
   },
   {
    "id": "p-viktor-frankl",
    "name": "Viktor Frankl",
    "wiki": "Viktor_Frankl",
    "rank": 40,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": "v-frankl",
    "origin": {
     "en": "Vienna, 1946",
     "zh": "维也纳，1946 年"
    },
-   "image": null,
+   "image": "roster-viktor-frankl.jpg",
    "quotes": [
     {
      "text": {
@@ -913,62 +2010,169 @@
      },
      "url": "https://en.wikipedia.org/wiki/Man%27s_Search_for_Meaning"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-viktor-frankl.jpg",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "credit": "Prof. Dr. Franz Vesely",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viktor_Frankl2.jpg"
+   },
+   "nameZh": "弗兰克尔",
+   "born": 1905,
+   "died": 1997,
+   "field": {
+    "en": "Psychologist",
+    "zh": "心理学家"
+   },
+   "country": {
+    "en": "Austria",
+    "zh": "奥地利"
+   },
+   "wikidata": "Q154723"
   },
   {
    "id": "p-pythagoras",
    "name": "Pythagoras",
    "wiki": "Pythagoras",
    "rank": 41,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-pythagoras.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-pythagoras.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "credit": "The original uploader was Galilea at German Wikipedia .",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kapitolinischer_Pythagoras.jpg"
+   },
+   "nameZh": "毕达哥拉斯",
+   "born": -582,
+   "died": -490,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Samos",
+    "zh": "Samos"
+   },
+   "wikidata": "Q10261"
   },
   {
    "id": "p-seneca-the-younger",
    "name": "Seneca the Younger",
    "wiki": "Seneca_the_Younger",
    "rank": 42,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "塞內卡",
+   "born": -4,
+   "died": 65,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ancient Rome",
+    "zh": "古罗马"
+   },
+   "wikidata": "Q2054"
   },
   {
    "id": "p-friedrich-engels",
    "name": "Friedrich Engels",
    "wiki": "Friedrich_Engels",
    "rank": 43,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-friedrich-engels.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-friedrich-engels.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "William Hall (1826–ca. 1898) (cropped and sepia tone removed)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich_Engels_portrait_(cropped).jpg"
+   },
+   "nameZh": "弗里德里希·恩格斯",
+   "born": 1820,
+   "died": 1895,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q34787"
   },
   {
    "id": "p-martin-heidegger",
    "name": "Martin Heidegger",
    "wiki": "Martin_Heidegger",
    "rank": 44,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-martin-heidegger.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-martin-heidegger.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Willy Pragher",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heidegger_2_(1960).jpg"
+   },
+   "nameZh": "马丁·海德格尔",
+   "born": 1889,
+   "died": 1976,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Weimar Republic",
+    "zh": "魏瑪共和国"
+   },
+   "wikidata": "Q48301"
   },
   {
    "id": "p-avicenna",
    "name": "Avicenna",
    "wiki": "Avicenna",
    "rank": 45,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-avicenna.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-avicenna.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Adam Jones from Kelowna, BC, Canada",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_(Avicenna)_Mausoleum_-_Hamadan_-_Western_Iran_(7423560860).jpg"
+   },
+   "nameZh": "伊本·西那",
+   "born": 980,
+   "died": 1037,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Afshona",
+    "zh": "Afshona"
+   },
+   "wikidata": "Q8011"
   },
   {
    "id": "p-david-hume",
@@ -1049,51 +2253,139 @@
      },
      "url": "https://www.gutenberg.org/cache/epub/4705/pg4705.txt"
     }
-   ]
+   ],
+   "nameZh": "休谟",
+   "born": 1711,
+   "died": 1776,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Great Britain",
+    "zh": "大不列颠王国"
+   },
+   "wikidata": "Q37160"
   },
   {
    "id": "p-antonio-gramsci",
    "name": "Antonio Gramsci",
    "wiki": "Antonio_Gramsci",
    "rank": 47,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-antonio-gramsci.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-antonio-gramsci.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gramsci.png"
+   },
+   "nameZh": "安东尼奥·葛兰西",
+   "born": 1891,
+   "died": 1937,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Italy",
+    "zh": "意大利王国"
+   },
+   "wikidata": "Q83003"
   },
   {
    "id": "p-jürgen-habermas",
    "name": "Jürgen Habermas",
    "wiki": "Jürgen_Habermas",
    "rank": 48,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jurgen-habermas.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-jurgen-habermas.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "photographer: Wolfram Huke at en.wikipedia , http://wolframhuke.de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JuergenHabermas_retouched.jpg"
+   },
+   "nameZh": "于尔根·哈贝马斯",
+   "born": 1929,
+   "died": 2026,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Germany",
+    "zh": "德国"
+   },
+   "wikidata": "Q76357"
   },
   {
    "id": "p-frantz-fanon",
    "name": "Frantz Fanon",
    "wiki": "Frantz_Fanon",
    "rank": 49,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-frantz-fanon.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-frantz-fanon.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_Frantz_Fanon_from_Black_Skin_White_Masks_(1967)_dust_jacket.webp"
+   },
+   "nameZh": "弗朗茨·法农",
+   "born": 1925,
+   "died": 1961,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Fort-de-France",
+    "zh": "法兰西堡"
+   },
+   "wikidata": "Q193670"
   },
   {
    "id": "p-hypatia",
    "name": "Hypatia",
    "wiki": "Hypatia",
    "rank": 50,
-   "tier": "pro",
+   "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-hypatia.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-hypatia.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Elbert Hubbard (June 19, 1856 – May 7, 1915)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hipatia67.jpg"
+   },
+   "nameZh": "希帕蒂娅",
+   "born": 360,
+   "died": 415,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Byzantine Empire",
+    "zh": "拜占庭帝国"
+   },
+   "wikidata": "Q11903"
   },
   {
    "id": "p-erasmus",
@@ -1103,59 +2395,265 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-erasmus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-erasmus.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Hans Holbein the Younger",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Holbein-erasmus.jpg"
+   },
+   "nameZh": "德西德里乌斯·伊拉斯谟",
+   "born": 1466,
+   "died": 1536,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Seventeen Provinces",
+    "zh": "17個省"
+   },
+   "wikidata": "Q43499"
   },
   {
    "id": "p-gottfried-wilhelm-leibniz",
    "name": "Gottfried Wilhelm Leibniz",
    "wiki": "Gottfried_Wilhelm_Leibniz",
    "rank": 52,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-gottfried-wilhelm-leibniz.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-gottfried-wilhelm-leibniz.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Christoph Bernhard Francke",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg"
+   },
+   "nameZh": "哥特弗里德·威廉·莱布尼茨",
+   "born": 1646,
+   "died": 1716,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Electorate of Saxony",
+    "zh": "萨克森选侯国"
+   },
+   "wikidata": "Q9047"
   },
   {
    "id": "p-blaise-pascal",
    "name": "Blaise Pascal",
    "wiki": "Blaise_Pascal",
    "rank": 53,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-blaise-pascal.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Time heals all pain and misunderstanding, because we change and are no longer the same persons.",
+      "zh": "Time heals all pain and misunderstanding, because we change and are no longer the same persons."
+     },
+     "label": {
+      "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+      "zh": "帕斯卡《思想录》，基根·保罗 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/46921",
+     "poolId": "ap-pascal-thoughts-mvp-00176-0"
+    },
+    {
+     "text": {
+      "en": "It is false piety to keep peace to the prejudice of the truth.",
+      "zh": "It is false piety to keep peace to the prejudice of the truth."
+     },
+     "label": {
+      "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+      "zh": "帕斯卡《思想录》，基根·保罗 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/46921",
+     "poolId": "ap-pascal-thoughts-mvp-00818-229"
+    },
+    {
+     "text": {
+      "en": "Nothing fortifies scepticism more than that there are some who are not sceptics.",
+      "zh": "Nothing fortifies scepticism more than that there are some who are not sceptics."
+     },
+     "label": {
+      "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+      "zh": "帕斯卡《思想录》，基根·保罗 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/46921",
+     "poolId": "ap-pascal-thoughts-mvp-00010-0"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-blaise-pascal.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Gérard Edelinck",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FR-631136102_GRA_6025_Portrait_de_Blaise_Pascal_par_Edelinck_(cropped).jpg"
+   },
+   "nameZh": "布莱兹·帕斯卡",
+   "born": 1623,
+   "died": 1662,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of France",
+    "zh": "法兰西王国"
+   },
+   "wikidata": "Q1290"
   },
   {
    "id": "p-thomas-hobbes",
    "name": "Thomas Hobbes",
    "wiki": "Thomas_Hobbes",
    "rank": 54,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-thomas-hobbes.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nature dictates the seeking after peace.",
+      "zh": "Nature dictates the seeking after peace."
+     },
+     "label": {
+      "en": "Thomas Hobbes, The English Works of Thomas Hobbes of Malmesbury, Vol. II",
+      "zh": "霍布斯《霍布斯英文著作集》第二卷"
+     },
+     "url": "https://www.gutenberg.org/ebooks/73906",
+     "poolId": "ap-hobbes-english_works_v2-pg73906-00046-886"
+    },
+    {
+     "text": {
+      "en": "Time, and industry, produce every day new knowledge.",
+      "zh": "Time, and industry, produce every day new knowledge."
+     },
+     "label": {
+      "en": "Thomas Hobbes, The English Works of Thomas Hobbes of Malmesbury, Vol. III",
+      "zh": "霍布斯《霍布斯英文著作集》第三卷"
+     },
+     "url": "https://www.gutenberg.org/ebooks/73957",
+     "poolId": "ap-hobbes-english_works_v3-pg73957-00757-933"
+    },
+    {
+     "text": {
+      "en": "Courage may be virtue, when the daring is extreme, if the cause be good, and extreme fear no vice when the danger is extreme.",
+      "zh": "Courage may be virtue, when the daring is extreme, if the cause be good, and extreme fear no vice when the danger is extreme."
+     },
+     "label": {
+      "en": "Thomas Hobbes, The English Works of Thomas Hobbes of Malmesbury, Vol. IV",
+      "zh": "霍布斯《霍布斯英文著作集》第四卷"
+     },
+     "url": "https://www.gutenberg.org/ebooks/74236",
+     "poolId": "ap-hobbes-english_works_v4-pg74236-00258-145"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-thomas-hobbes.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "John Michael Wright",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Hobbes_(portrait).jpg"
+   },
+   "nameZh": "托马斯·霍布斯",
+   "born": 1588,
+   "died": 1679,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q37621"
   },
   {
    "id": "p-laozi",
    "name": "Laozi",
    "wiki": "Laozi",
    "rank": 55,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-laozi.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "He who knows other men is discerning; he who knows himself is intelligent.",
+      "zh": "He who knows other men is discerning; he who knows himself is intelligent."
+     },
+     "label": {
+      "en": "Laozi, Tao Te Ching, trans. James Legge",
+      "zh": "老子《道德经》，理雅各 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/216",
+     "poolId": "ap-laozi-tao_teh_king-mvp-00049-7"
+    },
+    {
+     "text": {
+      "en": "…the journey of a thousand li commenced with a single step.",
+      "zh": "…the journey of a thousand li commenced with a single step."
+     },
+     "label": {
+      "en": "Laozi, Tao Te Ching, trans. James Legge",
+      "zh": "老子《道德经》，理雅各 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/216",
+     "poolId": "ap-laozi-tao_teh_king-mvp-00099-124"
+    },
+    {
+     "text": {
+      "en": "All difficult things in the world are sure to arise from a previous state in which they were easy, and all great things from one in which they were small.",
+      "zh": "All difficult things in the world are sure to arise from a previous state in which they were easy, and all great things from one in which they were small."
+     },
+     "label": {
+      "en": "Laozi, Tao Te Ching, trans. James Legge",
+      "zh": "老子《道德经》，理雅各 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/216",
+     "poolId": "ap-laozi-tao_teh_king-mvp-00097-143"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-laozi.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Zhang Lu",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhang_Lu-Laozi_Riding_an_Ox_(cropped).jpg"
+   },
+   "nameZh": "老子",
+   "born": -579,
+   "died": -500,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Zhou dynasty",
+    "zh": "周朝"
+   },
+   "wikidata": "Q9333"
   },
   {
    "id": "p-john-stuart-mill",
    "name": "John Stuart Mill",
    "wiki": "John_Stuart_Mill",
    "rank": 56,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-mill",
    "origin": {
     "en": "United Kingdom, 1859",
@@ -1218,7 +2716,19 @@
      },
      "url": "https://en.wikisource.org/wiki/On_Liberty/Chapter_1"
     }
-   ]
+   ],
+   "nameZh": "密尔",
+   "born": 1806,
+   "died": 1873,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom of Great Britain and Ireland",
+    "zh": "大不列颠及爱尔兰联合王国"
+   },
+   "wikidata": "Q50020"
   },
   {
    "id": "p-simone-weil",
@@ -1228,8 +2738,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-simone-weil.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-simone-weil.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simone_Weil_1943.jpg"
+   },
+   "nameZh": "西蒙娜·韦伊",
+   "born": 1909,
+   "died": 1943,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q157309"
   },
   {
    "id": "p-maimonides",
@@ -1239,8 +2768,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-maimonides.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-maimonides.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Blaisio Ugolino",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maimonides-2.jpg"
+   },
+   "nameZh": "迈蒙尼德",
+   "born": 1138,
+   "died": 1204,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "al-Andalus",
+    "zh": "安达卢斯"
+   },
+   "wikidata": "Q127398"
   },
   {
    "id": "p-judith-butler",
@@ -1250,8 +2798,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-judith-butler.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-judith-butler.jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "credit": "University of California, Berkeley",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JudithButler2013.jpg"
+   },
+   "nameZh": "朱迪丝·巴特勒",
+   "born": 1956,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q219368"
   },
   {
    "id": "p-heraclitus",
@@ -1261,15 +2828,34 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-heraclitus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-heraclitus.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Didier Descouens",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ca'_Rezzonico_-_Eraclito_1705_-_Giuseppe_Torretti.jpg"
+   },
+   "nameZh": "赫拉克利特",
+   "born": -535,
+   "died": -470,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ephesus",
+    "zh": "以弗所"
+   },
+   "wikidata": "Q41155"
   },
   {
    "id": "p-jeremy-bentham",
    "name": "Jeremy Bentham",
    "wiki": "Jeremy_Bentham",
    "rank": 61,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-bentham",
    "origin": {
     "en": "Britain, 1789",
@@ -1288,7 +2874,19 @@
      },
      "url": "https://en.wikisource.org/wiki/An_Introduction_to_the_Principles_of_Morals_and_Legislation"
     }
-   ]
+   ],
+   "nameZh": "边沁",
+   "born": 1748,
+   "died": 1832,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Great Britain",
+    "zh": "大不列颠王国"
+   },
+   "wikidata": "Q60887"
   },
   {
    "id": "p-karl-popper",
@@ -1299,18 +2897,86 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "卡尔·波普尔",
+   "born": 1902,
+   "died": 1994,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Cisleithania",
+    "zh": "內萊塔尼亞"
+   },
+   "wikidata": "Q81244"
   },
   {
    "id": "p-john-dewey",
    "name": "John Dewey",
    "wiki": "John_Dewey",
    "rank": 63,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-john-dewey.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Love of certainty is a demand for guarantees in advance of action.",
+      "zh": "Love of certainty is a demand for guarantees in advance of action."
+     },
+     "label": {
+      "en": "John Dewey, Human Nature and Conduct",
+      "zh": "杜威《人性与行为》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/41386",
+     "poolId": "ap-dewey-human_nature_and_conduct-mvp-00280-1133"
+    },
+    {
+     "text": {
+      "en": "Nothing is more tragic than failure to discover one's true business in life, or to find that one has drifted or been forced by circumstance into an uncongenial calling.",
+      "zh": "Nothing is more tragic than failure to discover one's true business in life, or to find that one has drifted or been forced by circumstance into an uncongenial calling."
+     },
+     "label": {
+      "en": "John Dewey, Democracy and Education",
+      "zh": "杜威《民主主义与教育》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/852",
+     "poolId": "ap-dewey-democracy_and_education-mvp-00455-485"
+    },
+    {
+     "text": {
+      "en": "Always our old habits and dispositions carry us into new fields.",
+      "zh": "Always our old habits and dispositions carry us into new fields."
+     },
+     "label": {
+      "en": "John Dewey, Human Nature and Conduct",
+      "zh": "杜威《人性与行为》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/41386",
+     "poolId": "ap-dewey-human_nature_and_conduct-mvp-00250-578"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-john-dewey.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Eva Watson-Schütze",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Dewey_in_1902.jpg"
+   },
+   "nameZh": "约翰·杜威",
+   "born": 1859,
+   "died": 1952,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q131805"
   },
   {
    "id": "p-edward-said",
@@ -1321,31 +2987,97 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "爱德华·萨义德",
+   "born": 1935,
+   "died": 2003,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q201538"
   },
   {
    "id": "p-auguste-comte",
    "name": "Auguste Comte",
    "wiki": "Auguste_Comte",
    "rank": 65,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-auguste-comte.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Our life is really destined to be a compound of resignation and action.",
+      "zh": "Our life is really destined to be a compound of resignation and action."
+     },
+     "label": {
+      "en": "Auguste Comte, The Catechism of Positive Religion, trans. Richard Congreve",
+      "zh": "孔德，The Catechism of Positive Religion，康格里夫 英译"
+     },
+     "poolId": "ap-comte-catechism_of_positivism-mvp-00090-188"
+    },
+    {
+     "text": {
+      "en": "Love cannot be deep unless it remains constant to a fixed object.",
+      "zh": "Love cannot be deep unless it remains constant to a fixed object."
+     },
+     "label": {
+      "en": "Auguste Comte, A General View of Positivism, trans. J. H. Bridges",
+      "zh": "孔德，A General View of Positivism，布里奇斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/53799",
+     "poolId": "ap-comte-general_view_of_positivism-mvp-00313-713"
+    },
+    {
+     "text": {
+      "en": "All practical work requires as the first condition of its success that each one who co-operates should be honest, intelligent, and courageous.",
+      "zh": "All practical work requires as the first condition of its success that each one who co-operates should be honest, intelligent, and courageous."
+     },
+     "label": {
+      "en": "Auguste Comte, The Catechism of Positive Religion, trans. Richard Congreve",
+      "zh": "孔德，The Catechism of Positive Religion，康格里夫 英译"
+     },
+     "poolId": "ap-comte-catechism_of_positivism-mvp-00497-889"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-auguste-comte.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "credit": "Jean-Pierre Dalbéra from Paris, France",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_dAuguste_Comte_(maison_dA._Comte%2C_Paris)_(2424895050).jpg"
+   },
+   "nameZh": "奥古斯特·孔德",
+   "born": 1798,
+   "died": 1857,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q12718"
   },
   {
    "id": "p-epictetus",
    "name": "Epictetus",
    "wiki": "Epictetus",
    "rank": 66,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-epictetus",
    "origin": {
     "en": "Nicopolis, c. 125 CE",
     "zh": "尼科波利斯，约公元 125 年"
    },
-   "image": null,
+   "image": "roster-epictetus.jpg",
    "quotes": [
     {
      "text": {
@@ -1358,14 +3090,33 @@
      },
      "url": "https://classics.mit.edu/Epictetus/epicench.html"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-epictetus.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Theodoor Galle",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Epictetus_from_L._Annaei_Senecae_philosophi_Opera%2C_1605%2C_title_page_detail.png"
+   },
+   "nameZh": "爱比克泰德",
+   "born": 50,
+   "died": 138,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ancient Rome",
+    "zh": "古罗马"
+   },
+   "wikidata": "Q183144"
   },
   {
    "id": "p-william-james",
    "name": "William James",
    "wiki": "William_James",
    "rank": 67,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-william-james",
    "origin": {
     "en": "Harvard, 1896",
@@ -1417,7 +3168,19 @@
      },
      "url": "https://en.wikisource.org/wiki/The_Moral_Equivalent_of_War"
     }
-   ]
+   ],
+   "nameZh": "威廉·詹姆斯",
+   "born": 1842,
+   "died": 1910,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q125249"
   },
   {
    "id": "p-gilles-deleuze",
@@ -1427,8 +3190,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-gilles-deleuze.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-gilles-deleuze.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Tintinades",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AVT_Gilles-Deleuze_6342.webp"
+   },
+   "nameZh": "吉尔·德勒兹",
+   "born": 1925,
+   "died": 1995,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q184226"
   },
   {
    "id": "p-jacques-derrida",
@@ -1438,8 +3220,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jacques-derrida.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-jacques-derrida.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "Pablosecca",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Derrida-by-Pablo-Secca.jpg"
+   },
+   "nameZh": "雅克·德里达",
+   "born": 1930,
+   "died": 2004,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q130631"
   },
   {
    "id": "p-jean-baudrillard",
@@ -1449,8 +3250,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jean-baudrillard.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-jean-baudrillard.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "http://en.wikipedia.org/wiki/User:Ayaleila",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:WikipediaBaudrillard20040612-cropped.png"
+   },
+   "nameZh": "让·鲍德里亚",
+   "born": 1929,
+   "died": 2007,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q182847"
   },
   {
    "id": "p-walter-benjamin",
@@ -1460,8 +3280,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-walter-benjamin.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-walter-benjamin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Photo d'identité sans auteur, 1928",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walter_Benjamin_vers_1928.jpg"
+   },
+   "nameZh": "瓦尔特·本雅明",
+   "born": 1892,
+   "died": 1940,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Prussia",
+    "zh": "普鲁士王国"
+   },
+   "wikidata": "Q61078"
   },
   {
    "id": "p-cornel-west",
@@ -1471,15 +3310,34 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-cornel-west.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-cornel-west.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "DarrellNance",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornel_West_by_DW_Nance_5_(cropped).jpg"
+   },
+   "nameZh": "康奈尔·韦斯特",
+   "born": 1953,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q712469"
   },
   {
    "id": "p-epicurus",
    "name": "Epicurus",
    "wiki": "Epicurus",
    "rank": 73,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-epicurus",
    "origin": {
     "en": "Athens, c. 300 BCE",
@@ -1520,7 +3378,19 @@
      },
      "url": "https://en.wikisource.org/wiki/Letter_to_Menoeceus"
     }
-   ]
+   ],
+   "nameZh": "伊壁鸠鲁",
+   "born": -342,
+   "died": -270,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Classical Athens",
+    "zh": "古雅典"
+   },
+   "wikidata": "Q43216"
   },
   {
    "id": "p-jacques-lacan",
@@ -1530,8 +3400,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jacques-lacan.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-jacques-lacan.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Foto Moisio",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacques_Lacan_during_an_interview_1969.jpg"
+   },
+   "nameZh": "雅各·拉冈",
+   "born": 1901,
+   "died": 1981,
+   "field": {
+    "en": "Psychoanalyst",
+    "zh": "精神分析学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q169906"
   },
   {
    "id": "p-al-ghazali",
@@ -1541,8 +3430,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-al-ghazali.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-al-ghazali.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Kahlil Gibran",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Ghazali_by_Khalil_Gibran.png"
+   },
+   "nameZh": "安萨里",
+   "born": 1058,
+   "died": 1111,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Seljuk Empire",
+    "zh": "塞尔柱帝国"
+   },
+   "wikidata": "Q9546"
   },
   {
    "id": "p-montesquieu",
@@ -1552,8 +3460,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-montesquieu.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-montesquieu.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "After Jacques-Antoine Dassier",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Montesquieu_1.png"
+   },
+   "nameZh": "孟德斯鸠",
+   "born": 1689,
+   "died": 1755,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of France",
+    "zh": "法兰西王国"
+   },
+   "wikidata": "Q15975"
   },
   {
    "id": "p-ibn-khaldun",
@@ -1563,8 +3490,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-ibn-khaldun.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-ibn-khaldun.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Reda Kerbush",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bust_of_Ibn_Khaldun_(Casbah_of_Bejaia%2C_Algeria).jpg"
+   },
+   "nameZh": "伊本·赫勒敦",
+   "born": 1332,
+   "died": 1406,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Tunis",
+    "zh": "突尼斯市"
+   },
+   "wikidata": "Q9294"
   },
   {
    "id": "p-peter-singer",
@@ -1574,8 +3520,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-peter-singer.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-peter-singer.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "credit": "Ula Zarosa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Singer_2017_(cropped).jpg"
+   },
+   "nameZh": "彼得·辛格",
+   "born": 1946,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Australia",
+    "zh": "澳大利亚"
+   },
+   "wikidata": "Q211539"
   },
   {
    "id": "p-gautama-buddha",
@@ -1585,8 +3550,16 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-gautama-buddha.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-gautama-buddha.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "พระมหาเทวประภาส วชิรญาณเมธี (ผู้ถ่าย-ปล่อยสัญญาอนุญาตภาพให้นำไปใช้ได้เพื่อการศึกษาโดยอยู่ภา่ยใต้ cc-by-sa-3.0) ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg"
+   },
+   "nameZh": "释迦牟尼"
   },
   {
    "id": "p-daniel-dennett",
@@ -1596,15 +3569,34 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-daniel-dennett.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-daniel-dennett.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Dmitry Rozhkov",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daniel_Dennett_2.jpg"
+   },
+   "nameZh": "丹尼尔·丹尼特",
+   "born": 1942,
+   "died": 2024,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q215263"
   },
   {
    "id": "p-michel-de-montaigne",
    "name": "Michel de Montaigne",
    "wiki": "Michel_de_Montaigne",
    "rank": 81,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-montaigne",
    "origin": {
     "en": "France, 1580",
@@ -1634,7 +3626,19 @@
      },
      "url": "https://en.wikisource.org/wiki/Essays_of_Michel_de_Montaigne"
     }
-   ]
+   ],
+   "nameZh": "蒙田",
+   "born": 1533,
+   "died": 1592,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of France",
+    "zh": "法兰西王国"
+   },
+   "wikidata": "Q41568"
   },
   {
    "id": "p-marshall-mcluhan",
@@ -1644,8 +3648,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-marshall-mcluhan.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-marshall-mcluhan.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Josephine Smith",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marshall_McLuhan.jpg"
+   },
+   "nameZh": "马素·麦克鲁汉",
+   "born": 1911,
+   "died": 1980,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Canada",
+    "zh": "加拿大"
+   },
+   "wikidata": "Q193871"
   },
   {
    "id": "p-theodor-w-adorno",
@@ -1655,8 +3678,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-theodor-w-adorno.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-theodor-w-adorno.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "credit": "Jeremy J. Shapiro",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theodor_W._Adorno.jpg"
+   },
+   "nameZh": "狄奥多·阿多诺",
+   "born": 1903,
+   "died": 1969,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q152388"
   },
   {
    "id": "p-thales-of-miletus",
@@ -1666,8 +3708,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-thales-of-miletus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-thales-of-miletus.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Wilhelm Meyer",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illustrerad_Verldshistoria_band_I_Ill_107.svg"
+   },
+   "nameZh": "泰勒斯",
+   "born": -625,
+   "died": -545,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Miletus",
+    "zh": "米利都"
+   },
+   "wikidata": "Q36303"
   },
   {
    "id": "p-john-rawls",
@@ -1677,19 +3738,70 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-john-rawls.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-john-rawls.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Published by the Belknap Press of Harvard University Press . Photograph taken by Alec Rawls, John's son. The portrait was uncredited on the original dust jacket, but Alec is identified as its photographer on the copyright page of the 1994 German-language first edition of the book John Rawls by Thomas Pogge .",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Rawls_(1971_photo_portrait).jpg"
+   },
+   "nameZh": "约翰·罗尔斯",
+   "born": 1921,
+   "died": 2002,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q172544"
   },
   {
    "id": "p-peter-kropotkin",
    "name": "Peter Kropotkin",
    "wiki": "Peter_Kropotkin",
    "rank": 86,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-peter-kropotkin.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "There are not many joys in human life equal to the joy of the sudden birth of a generalization, illuminating the mind after a long period of patient research.",
+      "zh": "There are not many joys in human life equal to the joy of the sudden birth of a generalization, illuminating the mind after a long period of patient research."
+     },
+     "label": {
+      "en": "Peter Kropotkin, Memoirs of a Revolutionist",
+      "zh": "克鲁泡特金，Memoirs of a Revolutionist"
+     },
+     "url": "https://www.gutenberg.org/ebooks/73882",
+     "poolId": "ap-kropotkin-memoirs_of_a_revolutionist-mvp-00534-0"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-peter-kropotkin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kropotkin1.jpg"
+   },
+   "nameZh": "彼得·阿列克谢耶维奇·克鲁泡特金",
+   "born": 1842,
+   "died": 1921,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Russian Empire",
+    "zh": "俄罗斯帝国"
+   },
+   "wikidata": "Q5752"
   },
   {
    "id": "p-mikhail-bakunin",
@@ -1699,8 +3811,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-mikhail-bakunin.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-mikhail-bakunin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Nadar",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bakunin_Nadar.jpg"
+   },
+   "nameZh": "米哈伊尔·巴枯宁",
+   "born": 1814,
+   "died": 1876,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Russian Empire",
+    "zh": "俄罗斯帝国"
+   },
+   "wikidata": "Q27645"
   },
   {
    "id": "p-iris-murdoch",
@@ -1711,7 +3842,19 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "艾瑞斯·梅铎",
+   "born": 1919,
+   "died": 1999,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ireland",
+    "zh": "爱尔兰"
+   },
+   "wikidata": "Q217495"
   },
   {
    "id": "p-democritus",
@@ -1721,8 +3864,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-democritus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-democritus.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Original uploader was Odysses",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bust_of_an_unknown_Greek_-_Museo_archeologico_nazionale_di_Napoli.jpg"
+   },
+   "nameZh": "德谟克利特",
+   "born": -460,
+   "died": -360,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Greece",
+    "zh": "希腊"
+   },
+   "wikidata": "Q41980"
   },
   {
    "id": "p-averroes",
@@ -1732,19 +3894,94 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-averroes.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-averroes.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "Saleemzohaib",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg"
+   },
+   "nameZh": "伊本·鲁世德",
+   "born": 1126,
+   "died": 1198,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Córdoba",
+    "zh": "科尔多瓦"
+   },
+   "wikidata": "Q39837"
   },
   {
    "id": "p-boethius",
    "name": "Boethius",
    "wiki": "Boethius",
    "rank": 91,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-boethius.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Nature is content with few things, and with a very little of these.",
+      "zh": "Nature is content with few things, and with a very little of these."
+     },
+     "label": {
+      "en": "Boethius, The Consolation of Philosophy, trans. H. R. James",
+      "zh": "波伊提乌《哲学的慰藉》，詹姆斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/14328",
+     "poolId": "ap-boethius-consolation_of_philosophy-mvp-00043-813"
+    },
+    {
+     "text": {
+      "en": "Never will fortune make thine that which the nature of things has excluded from thy ownership.",
+      "zh": "Never will fortune make thine that which the nature of things has excluded from thy ownership."
+     },
+     "label": {
+      "en": "Boethius, The Consolation of Philosophy, trans. H. R. James",
+      "zh": "波伊提乌《哲学的慰藉》，詹姆斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/14328",
+     "poolId": "ap-boethius-consolation_of_philosophy-mvp-00043-515"
+    },
+    {
+     "text": {
+      "en": "Look upon the infinitude, the solidity, the swift motion, of the heavens, and for once cease to admire things mean and worthless.",
+      "zh": "Look upon the infinitude, the solidity, the swift motion, of the heavens, and for once cease to admire things mean and worthless."
+     },
+     "label": {
+      "en": "Boethius, The Consolation of Philosophy, trans. H. R. James",
+      "zh": "波伊提乌《哲学的慰藉》，詹姆斯 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/14328",
+     "poolId": "ap-boethius-consolation_of_philosophy-mvp-00085-1265"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-boethius.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boethius_initial_consolation_philosophy.jpg"
+   },
+   "nameZh": "波伊提乌",
+   "born": 480,
+   "died": 524,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ostrogothic Kingdom",
+    "zh": "東哥德王國"
+   },
+   "wikidata": "Q102851"
   },
   {
    "id": "p-ramanuja",
@@ -1754,8 +3991,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-ramanuja.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-ramanuja.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Kasyap",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_Of_Equality_Samatha_Murthy.jpg"
+   },
+   "nameZh": "罗摩奴阇",
+   "born": 1017,
+   "died": 1137,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "India",
+    "zh": "印度"
+   },
+   "wikidata": "Q1741798"
   },
   {
    "id": "p-herbert-marcuse",
@@ -1765,8 +4021,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-herbert-marcuse.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-herbert-marcuse.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "credit": "Copyright holder: Marcuse family, represented by Harold Marcuse",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herbert_Marcuse_in_Newton%2C_Massachusetts_1955.jpeg"
+   },
+   "nameZh": "赫伯特·马尔库塞",
+   "born": 1898,
+   "died": 1979,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Weimar Republic",
+    "zh": "魏瑪共和国"
+   },
+   "wikidata": "Q60030"
   },
   {
    "id": "p-roland-barthes",
@@ -1776,8 +4051,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-roland-barthes.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-roland-barthes.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roland_Barthes_1969.jpg"
+   },
+   "nameZh": "罗兰·巴特",
+   "born": 1915,
+   "died": 1980,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q179109"
   },
   {
    "id": "p-edmund-husserl",
@@ -1787,8 +4081,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-edmund-husserl.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-edmund-husserl.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown (Mondadori Publishers)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edmund_Husserl_1910s.jpg"
+   },
+   "nameZh": "埃德蒙·胡塞尔",
+   "born": 1859,
+   "died": 1938,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Austrian Empire",
+    "zh": "奥地利帝国"
+   },
+   "wikidata": "Q58586"
   },
   {
    "id": "p-william-of-ockham",
@@ -1798,8 +4111,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-william-of-ockham.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-william-of-ockham.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "self-created (Moscarlop)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:William_of_Ockham.png"
+   },
+   "nameZh": "奥卡姆的威廉",
+   "born": 1287,
+   "died": 1349,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q43936"
   },
   {
    "id": "p-nagarjuna",
@@ -1809,8 +4141,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-nagarjuna.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-nagarjuna.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown | Recovered from Himalayan Art Resources",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nagarjuna_with_84_mahasiddha_cropped.jpg"
+   },
+   "nameZh": "龙树菩萨",
+   "born": 150,
+   "died": 250,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "South India",
+    "zh": "印度南部"
+   },
+   "wikidata": "Q171195"
   },
   {
    "id": "p-plotinus",
@@ -1820,8 +4171,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-plotinus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-plotinus.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Paolo Monti",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_(Roma%2C_1969)_-_BEIC_6353762.jpg"
+   },
+   "nameZh": "普罗提诺",
+   "born": 205,
+   "died": 270,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ancient Rome",
+    "zh": "古罗马"
+   },
+   "wikidata": "Q134189"
   },
   {
    "id": "p-louis-althusser",
@@ -1831,8 +4201,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-louis-althusser.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-louis-althusser.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "credit": "Arturo Espinosa from barcelona, Cataluña (España)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louis_Althusser_sketch_(8420987781)_(cropped).jpg"
+   },
+   "nameZh": "路易·皮埃尔·阿尔都塞",
+   "born": 1918,
+   "died": 1990,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q184169"
   },
   {
    "id": "p-anselm-of-canterbury",
@@ -1842,30 +4231,160 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-anselm-of-canterbury.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-anselm-of-canterbury.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anselm_of_Canterbury.jpg"
+   },
+   "nameZh": "坎特伯雷的安瑟伦",
+   "born": 1033,
+   "died": 1109,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of France",
+    "zh": "法兰西王国"
+   },
+   "wikidata": "Q43939"
   },
   {
    "id": "p-henri-bergson",
    "name": "Henri Bergson",
    "wiki": "Henri_Bergson",
    "rank": 101,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-henri-bergson.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "All that is serious in life comes from our freedom.",
+      "zh": "All that is serious in life comes from our freedom."
+     },
+     "label": {
+      "en": "Henri Bergson, Laughter, trans. Cloudesley Brereton and Fred Rothwell",
+      "zh": "柏格森《笑》，布雷顿、罗思韦尔 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/4352",
+     "poolId": "ap-bergson-laughter-mvp-00067-0"
+    },
+    {
+     "text": {
+      "en": "To act is to re-adapt oneself.",
+      "zh": "To act is to re-adapt oneself."
+     },
+     "label": {
+      "en": "Henri Bergson, Creative Evolution, trans. Arthur Mitchell",
+      "zh": "柏格森《创造进化论》，米切尔 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/26163",
+     "poolId": "ap-bergson-creative_evolution-mvp-00387-1606"
+    },
+    {
+     "text": {
+      "en": "Our intellect has been cast in the mold of action.",
+      "zh": "Our intellect has been cast in the mold of action."
+     },
+     "label": {
+      "en": "Henri Bergson, Creative Evolution, trans. Arthur Mitchell",
+      "zh": "柏格森《创造进化论》，米切尔 英译"
+     },
+     "url": "https://www.gutenberg.org/ebooks/26163",
+     "poolId": "ap-bergson-creative_evolution-mvp-00037-418"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-henri-bergson.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Henri Manuel",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henri_Bergson_02.jpg"
+   },
+   "nameZh": "亨利·柏格森",
+   "born": 1859,
+   "died": 1941,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q42156"
   },
   {
    "id": "p-george-berkeley",
    "name": "George Berkeley",
    "wiki": "George_Berkeley",
    "rank": 102,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-george-berkeley.jpg",
+   "quotes": [
+    {
+     "text": {
+      "en": "Few men think; yet all have opinions.",
+      "zh": "Few men think; yet all have opinions."
+     },
+     "label": {
+      "en": "George Berkeley, Three Dialogues between Hylas and Philonous",
+      "zh": "贝克莱《海拉斯和斐洛诺斯对话三篇》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/4724",
+     "poolId": "ap-berkeley-three_dialogues-mvp-00159-138"
+    },
+    {
+     "text": {
+      "en": "…we have first raised a dust and then complain we cannot see.",
+      "zh": "…we have first raised a dust and then complain we cannot see."
+     },
+     "label": {
+      "en": "George Berkeley, A Treatise Concerning the Principles of Human Knowledge",
+      "zh": "贝克莱《人类知识原理》"
+     },
+     "url": "https://www.gutenberg.org/ebooks/4723",
+     "poolId": "ap-berkeley-principles_of_human_knowledge-mvp-00003-931"
+    },
+    {
+     "text": {
+      "en": "The more doubt the more room there is for faith, a sceptic of all men having the least right to demand evidence.",
+      "zh": "The more doubt the more room there is for faith, a sceptic of all men having the least right to demand evidence."
+     },
+     "label": {
+      "en": "George Berkeley, Alciphron, or The Minute Philosopher",
+      "zh": "贝克莱，Alciphron, or The Minute Philosopher"
+     },
+     "poolId": "ap-berkeley-alciphron-mvp-01001-565"
+    }
+   ],
+   "imageLicence": {
+    "file": "roster-george-berkeley.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "John Smibert",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Berkeley_by_Jonh_Smibert.jpg"
+   },
+   "nameZh": "乔治·贝克莱",
+   "born": 1685,
+   "died": 1753,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Ireland",
+    "zh": "爱尔兰王国"
+   },
+   "wikidata": "Q82049"
   },
   {
    "id": "p-alfred-north-whitehead",
@@ -1875,8 +4394,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-alfred-north-whitehead.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-alfred-north-whitehead.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "unknown",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ANWhitehead.jpg"
+   },
+   "nameZh": "阿尔弗雷德·诺思·怀特黑德",
+   "born": 1861,
+   "died": 1947,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q183372"
   },
   {
    "id": "p-martha-nussbaum",
@@ -1886,8 +4424,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-martha-nussbaum.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-martha-nussbaum.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Robin Holland ( website )",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martha_Nussbaum_wikipedia_10-10.jpg"
+   },
+   "nameZh": "玛莎·努斯鲍姆",
+   "born": 1947,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q235470"
   },
   {
    "id": "p-zeno-of-citium",
@@ -1897,8 +4454,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-zeno-of-citium.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-zeno-of-citium.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Paolo Monti",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_(Napoli%2C_1969)_-_BEIC_6353768.jpg"
+   },
+   "nameZh": "季蒂昂的芝诺",
+   "born": -334,
+   "died": -263,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kition",
+    "zh": "基提翁"
+   },
+   "wikidata": "Q171303"
   },
   {
    "id": "p-parmenides",
@@ -1908,8 +4484,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-parmenides.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-parmenides.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Sergio Spolti",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Busto_di_Parmenide_(cropped).jpg"
+   },
+   "nameZh": "巴门尼德",
+   "born": -515,
+   "died": -470,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Velia",
+    "zh": "韦利亚"
+   },
+   "wikidata": "Q125551"
   },
   {
    "id": "p-isaiah-berlin",
@@ -1935,7 +4530,19 @@
      },
      "url": "https://en.wikipedia.org/wiki/Two_Concepts_of_Liberty"
     }
-   ]
+   ],
+   "nameZh": "以赛亚·伯林",
+   "born": 1909,
+   "died": 1997,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q205162"
   },
   {
    "id": "p-charles-sanders-peirce",
@@ -1945,8 +4552,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-charles-sanders-peirce.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-charles-sanders-peirce.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Napoleon Sarony",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Sanders_Peirce.jpg"
+   },
+   "nameZh": "查尔斯·桑德斯·皮尔士",
+   "born": 1839,
+   "died": 1914,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q187520"
   },
   {
    "id": "p-thomas-kuhn",
@@ -1956,8 +4582,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-thomas-kuhn.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-thomas-kuhn.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Bob Bielk",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Kuhn_(1977)_(cropped).jpg"
+   },
+   "nameZh": "托马斯·库恩",
+   "born": 1922,
+   "died": 1996,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q184980"
   },
   {
    "id": "p-robert-nozick",
@@ -1994,7 +4639,19 @@
      },
      "url": "https://en.wikipedia.org/wiki/Experience_machine"
     }
-   ]
+   ],
+   "nameZh": "诺齐克",
+   "born": 1938,
+   "died": 2002,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q205927"
   },
   {
    "id": "p-alasdair-macintyre",
@@ -2004,8 +4661,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-alasdair-macintyre.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-alasdair-macintyre.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "credit": "Sean O'Connor",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alasdair_MacIntyre.jpg"
+   },
+   "nameZh": "阿拉斯代尔·麦金泰尔",
+   "born": 1929,
+   "died": 2025,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q310178"
   },
   {
    "id": "p-charles-taylor-(philosopher)",
@@ -2015,8 +4691,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-charles-taylor-philosopher.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-charles-taylor-philosopher.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Lëa-Kim Châteauneuf",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Taylor_(2019).jpg"
+   },
+   "nameZh": "查尔斯·泰勒",
+   "born": 1931,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Canada",
+    "zh": "加拿大"
+   },
+   "wikidata": "Q311757"
   },
   {
    "id": "p-duns-scotus",
@@ -2026,8 +4721,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-duns-scotus.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-duns-scotus.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Justus van Gent / Pedro Berruguete",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scoto_(Duns_Scoto).jpg"
+   },
+   "nameZh": "邓斯·司各脱",
+   "born": 1266,
+   "died": 1308,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Scotland",
+    "zh": "苏格兰王国"
+   },
+   "wikidata": "Q190089"
   },
   {
    "id": "p-thorstein-veblen",
@@ -2053,7 +4767,19 @@
      },
      "url": "https://en.wikisource.org/wiki/The_Theory_of_the_Leisure_Class"
     }
-   ]
+   ],
+   "nameZh": "凡勃伦",
+   "born": 1857,
+   "died": 1929,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q73646"
   },
   {
    "id": "p-john-searle",
@@ -2063,8 +4789,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-john-searle.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-john-searle.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "FranksValli",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Searle_speaking_at_Google_1.jpg"
+   },
+   "nameZh": "约翰·罗杰斯·希尔勒",
+   "born": 1932,
+   "died": 2025,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q295012"
   },
   {
    "id": "p-david-chalmers",
@@ -2074,8 +4819,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-david-chalmers.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-david-chalmers.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "HerbertErwin",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Chalmers_2011_(cropped).jpg"
+   },
+   "nameZh": "戴维·查默斯",
+   "born": 1966,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Australia",
+    "zh": "澳大利亚"
+   },
+   "wikidata": "Q366123"
   },
   {
    "id": "p-patanjali",
@@ -2085,15 +4849,34 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-patanjali.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-patanjali.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "credit": "en:Rpba",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Patanjali.jpg"
+   },
+   "nameZh": "波颠阇利",
+   "born": null,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "India",
+    "zh": "印度"
+   },
+   "wikidata": "Q231680"
   },
   {
    "id": "p-mencius",
    "name": "Mencius",
    "wiki": "Mencius",
    "rank": 118,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-mencius",
    "origin": {
     "en": "China, c. 300 BCE",
@@ -2112,7 +4895,19 @@
      },
      "url": "https://en.wikisource.org/wiki/The_Works_of_Mencius"
     }
-   ]
+   ],
+   "nameZh": "孟子",
+   "born": -372,
+   "died": -289,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Zhu",
+    "zh": "邾国"
+   },
+   "wikidata": "Q188903"
   },
   {
    "id": "p-al-farabi",
@@ -2122,8 +4917,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-al-farabi.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-al-farabi.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Iraninhk",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Farabi.jpg"
+   },
+   "nameZh": "法拉比",
+   "born": 870,
+   "died": 951,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Abbasid Caliphate",
+    "zh": "阿拔斯王朝"
+   },
+   "wikidata": "Q160460"
   },
   {
    "id": "p-maurice-merleau-ponty",
@@ -2133,8 +4947,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-maurice-merleau-ponty.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-maurice-merleau-ponty.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "http://www.philosophical-investigations.org/Users/PerigGouanvic",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maurice_Merleau-Ponty.jpg"
+   },
+   "nameZh": "莫里斯·梅洛-庞蒂",
+   "born": 1908,
+   "died": 1961,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q212639"
   },
   {
    "id": "p-gottlob-frege",
@@ -2144,8 +4977,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-gottlob-frege.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-gottlob-frege.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_frege.jpg"
+   },
+   "nameZh": "戈特洛布·弗雷格",
+   "born": 1848,
+   "died": 1925,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Germany",
+    "zh": "德国"
+   },
+   "wikidata": "Q60028"
   },
   {
    "id": "p-thomas-nagel",
@@ -2155,8 +5007,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-thomas-nagel.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-thomas-nagel.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "credit": "en:User:Jmd442",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Nagel_teaching_Ethics.JPG"
+   },
+   "nameZh": "汤玛斯·内格尔",
+   "born": 1937,
+   "died": null,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q350239"
   },
   {
    "id": "p-saul-kripke",
@@ -2166,8 +5037,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-saul-kripke.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-saul-kripke.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Oursipan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kripke.JPG"
+   },
+   "nameZh": "索尔·阿伦·克里普克",
+   "born": 1940,
+   "died": 2022,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q298521"
   },
   {
    "id": "p-erving-goffman",
@@ -2193,7 +5083,19 @@
      },
      "url": "https://en.wikipedia.org/wiki/The_Presentation_of_Self_in_Everyday_Life"
     }
-   ]
+   ],
+   "nameZh": "戈夫曼",
+   "born": 1922,
+   "died": 1982,
+   "field": {
+    "en": "Sociologist",
+    "zh": "社会学者"
+   },
+   "country": {
+    "en": "Canada",
+    "zh": "加拿大"
+   },
+   "wikidata": "Q314471"
   },
   {
    "id": "p-richard-rorty",
@@ -2203,8 +5105,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-richard-rorty.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-richard-rorty.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Richard_Rorty_in_1959.png"
+   },
+   "nameZh": "理查德·罗蒂",
+   "born": 1931,
+   "died": 2007,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q215258"
   },
   {
    "id": "p-johann-gottlieb-fichte",
@@ -2214,8 +5135,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-johann-gottlieb-fichte.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-johann-gottlieb-fichte.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Albrecht Fürchtegott Schultheiß",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johann_Gottlieb_Fichte_by_Friedrich_Bury.jpg"
+   },
+   "nameZh": "约翰·戈特利布·费希特",
+   "born": 1762,
+   "died": 1814,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Germany",
+    "zh": "德国"
+   },
+   "wikidata": "Q102585"
   },
   {
    "id": "p-willard-van-orman-quine",
@@ -2225,8 +5165,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-willard-van-orman-quine.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-willard-van-orman-quine.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "credit": "Maryclaire Quine",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Willard_Van_Orman_Quine_on_Bluenose_II_in_Halifax_NS_harbor_1980.jpg"
+   },
+   "nameZh": "威拉德·范奥曼·蒯因",
+   "born": 1908,
+   "died": 2000,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q214969"
   },
   {
    "id": "p-derek-parfit",
@@ -2239,7 +5198,7 @@
     "en": "Oxford, 1984",
     "zh": "牛津，1984 年"
    },
-   "image": null,
+   "image": "roster-derek-parfit.jpg",
    "quotes": [
     {
      "text": {
@@ -2252,7 +5211,26 @@
      },
      "url": "https://en.wikipedia.org/wiki/Reasons_and_Persons"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-derek-parfit.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Anna Riedl",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Derek_Parfit_at_Harvard-April_21%2C_2015-Effective_Altruism_(cropped).jpg"
+   },
+   "nameZh": "帕菲特",
+   "born": 1942,
+   "died": 2017,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q962160"
   },
   {
    "id": "p-mozi",
@@ -2262,8 +5240,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-mozi.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-mozi.jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "credit": "Vjacheslav Rublevskiy",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84_%D0%9C%D0%BE-%D0%A6%D0%B7%D1%8B.jpg"
+   },
+   "nameZh": "墨子",
+   "born": -470,
+   "died": -391,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Zhou dynasty",
+    "zh": "周朝"
+   },
+   "wikidata": "Q272411"
   },
   {
    "id": "p-max-horkheimer",
@@ -2274,7 +5271,19 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "马克斯·霍克海默",
+   "born": 1895,
+   "died": 1973,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Germany",
+    "zh": "德国"
+   },
+   "wikidata": "Q76826"
   },
   {
    "id": "p-emmanuel-levinas",
@@ -2284,8 +5293,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-emmanuel-levinas.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-emmanuel-levinas.jpg",
+    "licence": "CC BY-SA 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "credit": "Bracha L. Ettinger",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmanuel_Levinas.jpg"
+   },
+   "nameZh": "伊曼纽尔·列维纳斯",
+   "born": 1906,
+   "died": 1995,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q153034"
   },
   {
    "id": "p-friedrich-wilhelm-joseph-schelling",
@@ -2295,8 +5323,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-friedrich-wilhelm-joseph-schelling.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-friedrich-wilhelm-joseph-schelling.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Hermann Biow (1804–1850), Berlin",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich_Wilhelm_Joseph_Schelling%2C_1848_daguerreotype_-_cropped.jpg"
+   },
+   "nameZh": "弗里德里希·谢林",
+   "born": 1775,
+   "died": 1854,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Kingdom of Württemberg",
+    "zh": "符腾堡王国"
+   },
+   "wikidata": "Q60070"
   },
   {
    "id": "p-hans-georg-gadamer",
@@ -2306,8 +5353,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-hans-georg-gadamer.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-hans-georg-gadamer.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "Leena Ruuskanen",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hans-Georg_Gadamer.jpg"
+   },
+   "nameZh": "汉斯-格奥尔格·伽达默尔",
+   "born": 1900,
+   "died": 2002,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Germany",
+    "zh": "德国"
+   },
+   "wikidata": "Q76356"
   },
   {
    "id": "p-hilary-putnam",
@@ -2318,7 +5384,19 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "希拉里·怀特霍尔·帕特南",
+   "born": 1926,
+   "died": 2016,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q221697"
   },
   {
    "id": "p-g-e-m-anscombe",
@@ -2328,8 +5406,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-g-e-m-anscombe.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-g-e-m-anscombe.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "credit": "Albarluque",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elisabeth_Anscombe.jpg"
+   },
+   "nameZh": "伊丽莎白·安斯康姆",
+   "born": 1919,
+   "died": 2001,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q229646"
   },
   {
    "id": "p-jean-françois-lyotard",
@@ -2339,8 +5436,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-jean-francois-lyotard.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-jean-francois-lyotard.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "credit": "Bracha L. Ettinger, retouched by AM ( talk )",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean-Francois_Lyotard_cropped.jpg"
+   },
+   "nameZh": "让-弗朗索瓦·利奥塔",
+   "born": 1924,
+   "died": 1998,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "France",
+    "zh": "法国"
+   },
+   "wikidata": "Q193257"
   },
   {
    "id": "p-g-e-moore",
@@ -2350,8 +5466,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-g-e-moore.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-g-e-moore.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Ray Strachey, born Rachel Pearsall Conn Costelloe (4 June 1887 London – 16 July 1940)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1914_George_Edward_Moore_(cropped).jpg"
+   },
+   "nameZh": "乔治·爱德华·摩尔",
+   "born": 1873,
+   "died": 1958,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q295386"
   },
   {
    "id": "p-bernard-williams",
@@ -2362,7 +5497,19 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "伯纳德·威廉姆斯",
+   "born": 1929,
+   "died": 2003,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q345641"
   },
   {
    "id": "p-rudolf-carnap",
@@ -2372,8 +5519,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-rudolf-carnap.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-rudolf-carnap.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rudolf_Carnap_1895.jpeg"
+   },
+   "nameZh": "鲁道夫·卡尔纳普",
+   "born": 1891,
+   "died": 1970,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "German Empire",
+    "zh": "德意志帝国"
+   },
+   "wikidata": "Q76519"
   },
   {
    "id": "p-zhu-xi",
@@ -2383,8 +5549,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-zhu-xi.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-zhu-xi.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "向史公哲曰",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%94%AF%E4%B8%80%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%9C%B1%E7%86%B9%E7%94%BB%E5%83%8F.jpg"
+   },
+   "nameZh": "朱熹",
+   "born": 1130,
+   "died": 1200,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Song dynasty",
+    "zh": "宋朝"
+   },
+   "wikidata": "Q9397"
   },
   {
    "id": "p-ernest-becker",
@@ -2397,7 +5582,7 @@
     "en": "United States, 1973",
     "zh": "美国，1973 年"
    },
-   "image": null,
+   "image": "roster-ernest-becker.jpg",
    "quotes": [
     {
      "text": {
@@ -2421,7 +5606,26 @@
      },
      "url": "https://en.wikipedia.org/wiki/The_Denial_of_Death"
     }
-   ]
+   ],
+   "imageLicence": {
+    "file": "roster-ernest-becker.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Bain News Service, publisher",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ernest_Becker_LCCN2014701399.jpg"
+   },
+   "nameZh": "厄内斯特·贝克尔",
+   "born": 1924,
+   "died": 1974,
+   "field": {
+    "en": "Psychologist",
+    "zh": "心理学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q938094"
   },
   {
    "id": "p-han-fei",
@@ -2431,8 +5635,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-han-fei.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-han-fei.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "credit": "Sabinowitz",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_Of_Han_Fei.png"
+   },
+   "nameZh": "韩非",
+   "born": -279,
+   "died": -232,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Han",
+    "zh": "韩国"
+   },
+   "wikidata": "Q28959"
   },
   {
    "id": "p-wang-yangming",
@@ -2442,8 +5665,27 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-wang-yangming.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-wang-yangming.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Cai Shixin",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%94%A1%E4%B8%96%E6%96%B0_%E7%8E%8B%E9%98%B3%E6%98%8E%E8%82%96%E5%83%8F%E8%BD%B4_(cropped).jpg"
+   },
+   "nameZh": "王阳明",
+   "born": 1472,
+   "died": 1529,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "Ming dynasty",
+    "zh": "明朝"
+   },
+   "wikidata": "Q378462"
   },
   {
    "id": "p-harry-frankfurt",
@@ -2453,15 +5695,34 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-harry-frankfurt.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-harry-frankfurt.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "credit": "American Council of Learned Societies (ACLS)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harry_Frankfurt_at_2017_ACLS_Annual_Meeting.jpg"
+   },
+   "nameZh": "哈里·法兰克福",
+   "born": 1929,
+   "died": 2023,
+   "field": {
+    "en": "Philosopher",
+    "zh": "哲学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q740969"
   },
   {
    "id": "p-zhuangzi",
    "name": "Zhuangzi",
    "wiki": "Zhuangzi",
    "rank": 145,
-   "tier": "basic",
+   "tier": "pro",
    "voiceId": "v-zhuangzi",
    "origin": {
     "en": "China, c. 4th c. BCE",
@@ -2491,7 +5752,11 @@
      },
      "url": "https://en.wikisource.org/wiki/Zhuangzi"
     }
-   ]
+   ],
+   "nameZh": "庄子",
+   "born": null,
+   "died": null,
+   "wikidata": "Q9390899"
   },
   {
    "id": "p-paul-ricoeur",
@@ -2501,8 +5766,16 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-paul-ricoeur.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-paul-ricoeur.jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "credit": "Juerg Mueller / Scanpix.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Ricoeur_Balzan.png"
+   },
+   "nameZh": "保罗·利科"
   },
   {
    "id": "p-dogen",
@@ -2512,8 +5785,16 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-dogen.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-dogen.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Shii",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dogen.jpg"
+   },
+   "nameZh": "道元"
   },
   {
    "id": "p-xunzi",
@@ -2524,7 +5805,11 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "荀子",
+   "born": null,
+   "died": null,
+   "wikidata": "Q21072863"
   },
   {
    "id": "p-nishida-kitaro",
@@ -2534,8 +5819,16 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-nishida-kitaro.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-nishida-kitaro.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown author",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait-of-Kitaro-Nishida.png"
+   },
+   "nameZh": "西田几多郎"
   },
   {
    "id": "p-donald-davidson",
@@ -2546,7 +5839,11 @@
    "voiceId": null,
    "origin": null,
    "image": null,
-   "quotes": []
+   "quotes": [],
+   "nameZh": "唐纳德·戴维森",
+   "born": null,
+   "died": null,
+   "wikidata": "Q1184078"
   },
   {
    "id": "p-bell-hooks",
@@ -2556,8 +5853,16 @@
    "tier": "basic",
    "voiceId": null,
    "origin": null,
-   "image": null,
-   "quotes": []
+   "image": "roster-bell-hooks.jpg",
+   "quotes": [],
+   "imageLicence": {
+    "file": "roster-bell-hooks.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Cmongirl",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellhooks.jpg"
+   },
+   "nameZh": "贝尔·胡克斯"
   }
  ]
 }

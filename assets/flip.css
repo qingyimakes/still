@@ -1,0 +1,171 @@
+/* The Book of Answers and its flip (the Answers tab, index.html). The mechanics are the founder's reference,
+   Design/reference/book-flip-2b.html ("steady page turns, relaxed"):
+
+   1. Shut, the book is centred.
+   2. Tap: the cover and then the pages turn right to left, one after
+      another (.open). Where the green area is wider than tall (.fits,
+      set by flip.js), the book slides right by half
+      a page as they turn, so the open spread ends centred on its spine.
+      Otherwise the book does not move: the last page is centred
+      and the left page runs off the screen edge.
+   3. Page fronts carry a passage; page backs carry a line drawing; the
+      inside of the cover is a blank endpaper.
+   4. Tap again: the pages turn back, faster; where it slid, the shut book
+      then slides back to the centre.
+
+   Every leaf is hinged on its left edge and turns 0 → -180deg. Its depth,
+   translateZ((n + 1 - i) * .8px), comes AFTER the rotation, so a turned
+   leaf's stacking order reverses by itself. Both faces hide their backs.
+
+   Every value worth tuning is a variable below; flip.js reads the timings
+   for its timers, so a change here is the whole change.
+   Relies on the page's tokens (--book-page, --dapple-img, --ink, …). */
+:root{
+  /* Size, from the green area (flip.js measure() reads these). */
+  --flip-fill:.7;                        /* book height, × the area's height */
+  --flip-min-h:360px;                    /* … never shorter than this */
+  --flip-max-h:1200px;                   /* … nor taller than this */
+  --flip-margin:48px;                    /* desktop: room either side of the open spread */
+  --flip-mobile-width:.78;               /* mobile: one page at most this × the area's width */
+  --flip-edge:16px;                      /* never closer than this to the area's top or bottom */
+  /* Type, from one base that grows with the page; everything on the pages
+     is in em of it. */
+  --flip-type:3.2;                       /* base, in % of the page's width */
+  --flip-type-min:11px;
+  --flip-type-max:21px;
+  --flip-depth:6.4;                      /* 3D depth, in page widths (perspective) */
+  --flip-count:10;                       /* pages that turn after the cover (flip.js reads it) */
+  --flip-turn:.8s;                       /* one page turn */
+  --flip-gap-open:.2s;                   /* stagger between turns, opening */
+  --flip-gap-close:.07s;                 /* stagger between turns, closing */
+  /* Wide screens only (.fits): the slide that centres the open spread. */
+  --flip-slide-open:.8s;                 /* slide right as the pages turn (2b: max(turn, .45s)) */
+  --flip-slide-close:.45s;               /* slide back to centre once the book is shut (2b: closedSlide) */
+  --flip-slide-close-delay:0s;           /* … starting this long after the last page has turned back */
+  --flip-ease-slide:cubic-bezier(.4,0,.2,1); /* 2b's slideEase */
+  --flip-ease-turn:cubic-bezier(.6,0,.3,1);
+  --flip-hinge:.25;                      /* hinge shadow on each page front */
+  --flip-shade:.38;                      /* leaf shade strength */
+  --flip-drift:70s;                      /* leaf shade drift, one way */
+  --flip-paper-back:#ECE7DC;             /* page backs, a shade under --book-page */
+  --flip-gutter:#DCD5C6;                 /* page backs, darkening into the spine */
+  --flip-board:#C9C0AE;                  /* the back board under the page block */
+}
+@keyframes dappleDrift{from{background-position:30% 20%}to{background-position:62% 58%}}
+
+/* The book is one page in layout; .shift inside it places the pages, so
+   layout around it never changes. flip.js sets --book-h from the green
+   area; until it has measured, a phone-sized book. */
+.book2{position:relative;height:var(--book-h, calc(min(320px,78vw) * 763 / 494));aspect-ratio:494/763;
+  cursor:pointer;container-type:inline-size;
+  perspective:calc(var(--flip-depth) * var(--book-w, 304px));
+  -webkit-tap-highlight-color:transparent}
+.book2 .shift{font-size:clamp(var(--flip-type-min), calc(var(--flip-type) * 1cqw), var(--flip-type-max))}
+.book2 .shift,.book2 .leaves,.book2 .fl{position:absolute;inset:0;transform-style:preserve-3d}
+.book2 .fl{transform-origin:left center}
+/* Only the last page and the back board take clicks. The 3D layers in
+   front of the last page — .shift's own plane at z 0 (the page is at
+   -2px) and the leaves' wrapper — would otherwise swallow the clicks on
+   its links in a real 3D hit test (founder: "the links under the
+   interpretation and chat with doesn't work"). A click anywhere else on
+   the book still bubbles to #book. */
+.book2 .shift,.book2 .leaves,.book2 .leaves *{pointer-events:none}
+.book2 .final,.book2 .board{pointer-events:auto}
+
+/* Where it sits. Shut, centred. Open where the whole spread fits, half a
+   page right, so the spread is centred on its spine: it slides there as the
+   pages start to turn, and slides back once they have all turned back. */
+.book2 .shift{transform:translateX(0);
+  transition:transform var(--flip-slide-close) var(--flip-ease-slide)
+    calc(var(--n) * var(--flip-gap-close) + var(--flip-turn) + var(--flip-slide-close-delay))}
+.book2.fits.open .shift{transform:translateX(50%);
+  transition:transform var(--flip-slide-open) var(--flip-ease-slide) 0s}
+
+/* The turns. Leaf 0 is the cover, 1…n the pages. */
+.book2 .fl{transform:rotateY(0) translateZ(calc((var(--n) + 1 - var(--i)) * .8px));
+  transition:transform var(--flip-turn) var(--flip-ease-turn)
+    calc((var(--n) - var(--i)) * var(--flip-gap-close))}
+.book2.open .fl{transform:rotateY(-180deg) translateZ(calc((var(--n) + 1 - var(--i)) * .8px));
+  transition-delay:calc(var(--i) * var(--flip-gap-open))}
+
+/* Back board, carrying the book's shadow, and the last page. */
+.book2 .board{position:absolute;inset:-3px -3px -3px 0;border-radius:0 4px 4px 0;background:var(--flip-board);
+  transform:translateZ(-8px);box-shadow:18px 26px 40px rgba(0,0,0,.42)}
+.book2 .final{position:absolute;inset:0;border-radius:0 3px 3px 0;background:var(--book-page);transform:translateZ(-2px);
+  display:flex;flex-direction:column;justify-content:space-between;padding:9cqw 9cqw 6cqw;text-align:left;
+  box-shadow:inset 8px 0 12px -10px rgba(36,50,53,.5)}
+/* Shut, the last page's words and links are not there at all — only once
+   the closing turns are done, so they stay in place under the cover. */
+.book2 .final > *{visibility:hidden;
+  transition:visibility 0s linear calc(var(--n) * var(--flip-gap-close) + var(--flip-turn))}
+.book2.open .final > *{visibility:visible;transition:none}
+
+/* Faces. */
+.book2 .face{position:absolute;inset:0;box-sizing:border-box;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.book2 .face.front{background:var(--book-page);border-radius:0 3px 3px 0;
+  display:flex;flex-direction:column;justify-content:center;gap:7cqw;padding:9cqw;
+  box-shadow:inset 6px 0 10px -8px rgba(36,50,53,var(--flip-hinge))}
+.book2 .face.back{border-radius:3px 0 0 3px;color:var(--ink);transform:rotateY(180deg) translateZ(.3px);
+  background:linear-gradient(90deg,var(--flip-paper-back) 84%,var(--flip-gutter));
+  display:flex;align-items:center;justify-content:center}
+.book2 .face.back svg{width:46cqw;height:46cqw;display:block;fill:none;stroke:currentColor;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.78}
+
+/* The cover overhangs the page block by 3px top, bottom and fore-edge.
+   Two layers from the founder: the cream cover with the figure cut out,
+   over the willow-pond painting that shows through the figure. */
+.book2 .cover .face{inset:-3px -3px -3px 0}
+.book2 .face.front.cover2{border-radius:0 4px 4px 0;
+  background:url(img/answers-cover-cutout.png) center/100% 100% no-repeat,
+             url(img/answers-cover-bg.jpg) center/cover no-repeat,#f2ebe1;
+  display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:7cqw;overflow:hidden;box-shadow:none}
+.book2 .cover .back{background:var(--flip-board);border-radius:4px 0 0 4px}
+.book2 .endpaper{position:absolute;inset:3px 0 3px 3px;border-radius:2px 0 0 2px;
+  background:linear-gradient(90deg,var(--flip-paper-back) 84%,var(--flip-gutter))}
+.cover2 h2{margin:0;font-family:var(--sans);font-weight:700;font-size:3.9em;
+  line-height:.95;letter-spacing:-.02em;color:#111}
+.cover2 .cta{margin-top:auto;display:flex;align-items:center;justify-content:flex-end;gap:3.5cqw;
+  text-align:right;font-style:italic;font-size:1.44em;line-height:1.25;color:#111}
+.cover2 .go{flex:none;width:max(44px,4.06em);height:max(44px,4.06em);border-radius:50%;
+  background:#111;color:#fff;display:grid;place-items:center}
+.cover2 .go svg{width:45%;height:45%}
+
+/* The passages. The last page reads like a page of a book, not a poster:
+   left-set, a comfortable measure, size stepped down for a long passage. */
+.book2 .passage{font-family:var(--serif);margin:0;overflow-wrap:break-word;
+  font-size:1.62em;line-height:1.5;color:var(--ink);
+  font-weight:460;font-optical-sizing:none;font-variation-settings:"opsz" 14;letter-spacing:.003em;
+  hanging-punctuation:first}
+.book2 .attrib{font-family:var(--serif);font-style:italic;margin:0;
+  font-size:1.31em;text-align:right;color:var(--ink-tertiary)}
+.book2 .leaf-text.long .passage,.book2 .front .passage{font-size:1.44em;line-height:1.5}
+.book2 .attrib .linkish{font:inherit;color:var(--ink);text-decoration:underline;
+  text-decoration-color:var(--hairline-strong);text-underline-offset:.2em}
+/* Centred when it fits; when it does not, it starts at the top and the
+   page scrolls. */
+.leaf-text{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-start;
+  gap:5cqw;scrollbar-width:none}
+.leaf-text > :first-child{margin-top:auto}
+.leaf-text > :last-child{margin-bottom:auto}
+.leaf-acts{flex:none;display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 var(--sp-m);
+  padding-top:4cqw;margin-top:4cqw;border-top:1px solid var(--hairline)}
+.leaf-acts .linkish{font-family:var(--sans);font-size:max(14px,1.19em);color:var(--ink);
+  text-decoration:underline;text-underline-offset:.25em;text-decoration-color:var(--ink-tertiary);
+  min-height:44px;white-space:nowrap}
+.leaf-acts .linkish[aria-expanded="true"]{font-weight:600}
+
+/* Shade from leaves overhead, the app's Dappled (AnswersShaders.metal): soft
+   pools at most ~13% darker, multiplied over the paper so the type stays
+   full ink. It drifts very slowly unless motion is reduced. */
+.book2 .final::before,.book2 .cover2::before{content:"";position:absolute;inset:0;z-index:0;
+  pointer-events:none;mix-blend-mode:multiply;border-radius:inherit;
+  background-image:var(--dapple-img);background-size:180% auto;background-position:30% 20%;opacity:var(--flip-shade);
+  animation:dappleDrift var(--flip-drift) ease-in-out infinite alternate}
+.book2 .final > *,.book2 .cover2 > *{position:relative;z-index:1}
+
+/* Reduced motion: the page still changes, at once. flip.js skips its
+   waits too. */
+@media (prefers-reduced-motion:reduce){
+  .book2 .shift,.book2 .fl,.book2 .final > *{transition-duration:0s!important;transition-delay:0s!important}
+  .book2 .final::before,.book2 .cover2::before{animation:none}
+}

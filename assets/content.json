@@ -69,8 +69,1315 @@
  },
  "questions": [
   {
-   "id": "q-nobody-remember",
+   "id": "q-nothing-to-hide",
    "index": 0,
+   "date": "2026-11-10",
+   "status": "published",
+   "title": {
+    "en": "If You Have Nothing to Hide, Should You Mind Being Watched?",
+    "zh": "如果你没有什么可隐瞒的，你还会介意被监视吗？"
+   },
+   "why": {
+    "en": "'If you've done nothing wrong, you have nothing to fear' is the standard defence of cameras, data collection and monitoring. Is privacy only for people with something to hide?",
+    "zh": "「没做坏事就不用怕」是为摄像头、数据收集和监控辩护的标准说法。隐私只属于有东西要藏的人吗？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "No — being seen keeps everyone honest",
+      "zh": "不——被看见让每个人都诚实"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Yes — under watching eyes you start to perform",
+      "zh": "会——在注视下你会开始表演"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Yes — watched people stop choosing for themselves",
+      "zh": "会——被注视的人不再为自己选择"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Yes — being let alone is the point of government",
+      "zh": "会——不被打扰本就是政府存在的意义"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-nothing-to-hide.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-nothing-to-hide.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-nothing-to-hide.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-nothing-to-hide.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "tech",
+    "trust"
+   ]
+  },
+  {
+   "id": "q-good-or-effective-leader",
+   "index": 1,
+   "date": "2026-11-09",
+   "status": "published",
+   "title": {
+    "en": "Would You Rather Be Led by Someone Good, or Someone Who Gets Things Done?",
+    "zh": "你宁愿被一个好人领导，还是被一个能办成事的人领导？"
+   },
+   "why": {
+    "en": "We are often offered a trade: a leader with clean hands who may achieve little, or one who delivers but cuts moral corners. Is that a real choice — or a false one?",
+    "zh": "我们常常被摆在一个交换面前：一个双手干净却可能一事无成的领导，或者一个能出成绩却在道德上走捷径的领导。这是真实的选择，还是一个伪命题？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Someone good — character is how a leader leads",
+      "zh": "选好人——品格本身就是领导力"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Someone effective — even if it means doing wrong",
+      "zh": "选能办事的——哪怕要做些不好的事"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Judge only by whether people are safe",
+      "zh": "只看人民是否安全"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "False choice — real wisdom is both",
+      "zh": "这是个伪命题——真正的智慧二者兼有"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-good-or-effective-leader.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-good-or-effective-leader.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-good-or-effective-leader.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-good-or-effective-leader.D.0",
+      "q-good-or-effective-leader.D.1"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "power"
+   ]
+  },
+  {
+   "id": "q-billionaire-earned-or-luck",
+   "index": 2,
+   "date": "2026-11-08",
+   "status": "published",
+   "title": {
+    "en": "Is a Billionaire's Success Earned, or Just Luck Dressed Up as Genius?",
+    "zh": "亿万富翁的成功是挣来的，还是被包装成天才的运气？"
+   },
+   "why": {
+    "en": "Some fortunes come from rare talent and years of work; others from being in the right place when a market took off. From the outside they look the same, and the story told afterwards is always about genius. Which is it, usually?",
+    "zh": "有些财富来自罕见的才能和多年的努力；另一些则来自在市场起飞时恰好站对了位置。从外面看，两者一模一样，而事后讲的故事总是关于天才。通常是哪一种？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Earned — results follow from conduct",
+      "zh": "挣来的——结果来自所作所为"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "We can't tell — we're built to admire the rich",
+      "zh": "我们看不清——人天生就仰慕富人"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Neither — it's built on everyone's work",
+      "zh": "都不是——建立在所有人的劳动之上"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Taken — from others' labour",
+      "zh": "拿来的——来自他人的劳动"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-billionaire-earned-or-luck.A.0",
+      "q-billionaire-earned-or-luck.A.1"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-billionaire-earned-or-luck.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-billionaire-earned-or-luck.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-billionaire-earned-or-luck.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "money",
+    "society"
+   ]
+  },
+  {
+   "id": "q-partner-secrets",
+   "index": 3,
+   "date": "2026-11-07",
+   "status": "published",
+   "title": {
+    "en": "Would You Want to Know Everything Your Partner Hides From You?",
+    "zh": "你想知道伴侣对你隐瞒的一切吗？"
+   },
+   "why": {
+    "en": "Phones, messages and shared accounts make it newly possible to know almost everything about a partner. Would complete knowledge make love safer, or make it impossible?",
+    "zh": "手机、消息和共享账户让人们第一次几乎可以知道伴侣的一切。完全的了解会让爱更安全，还是让爱变得不可能？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — knowing beats imagining",
+      "zh": "想——知道比猜想好"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "No — love survives on not knowing",
+      "zh": "不想——爱靠一点不知道才得以维持"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "No — everyone needs a room of their own",
+      "zh": "不想——每个人都需要自己的一间屋"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "You couldn't — they don't know it all themselves",
+      "zh": "做不到——他们自己也不全知道"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-partner-secrets.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-partner-secrets.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-partner-secrets.C.0",
+      "q-partner-secrets.C.1"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-partner-secrets.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "love",
+    "trust"
+   ]
+  },
+  {
+   "id": "q-make-the-smartest-lead",
+   "index": 4,
+   "date": "2026-11-06",
+   "status": "published",
+   "title": {
+    "en": "If the Smartest Person in the Country Doesn't Want to Be President, Should We Make Them?",
+    "zh": "如果全国最聪明的人不想当总统，我们该逼他上任吗？"
+   },
+   "why": {
+    "en": "Some of the people best suited to lead want nothing to do with it, and the people who want it most are not always the ones you would pick. Should a society be able to draft its best minds into office — or is the right to say no part of what makes them free?",
+    "zh": "最适合领导的人里，有些人对此毫无兴趣；而最想当领导的人，又未必是你会选的人。一个社会能不能把最优秀的头脑征召上任？还是说，说「不」的权利本身就是自由的一部分？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — the best should be made to serve",
+      "zh": "应该——最合适的人有义务出来"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "No — you can't draft a free person",
+      "zh": "不应该——不能强迫一个自由的人"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Only if the country deserves them",
+      "zh": "要看这个国家值不值得他出来"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Smart isn't the test — consent is",
+      "zh": "聪明不是标准——民众的认可才是"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-make-the-smartest-lead.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-make-the-smartest-lead.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-make-the-smartest-lead.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-make-the-smartest-lead.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "power"
+   ]
+  },
+  {
+   "id": "q-everyone-cuts-corners",
+   "index": 5,
+   "date": "2026-11-05",
+   "status": "published",
+   "title": {
+    "en": "If Everyone in Your Industry Cuts Corners, Are You a Fool for Not Doing It?",
+    "zh": "如果你所在的行业人人都走捷径，你不这么做是不是傻？"
+   },
+   "why": {
+    "en": "In some industries cutting corners is so normal that refusing looks naïve: you lose bids, promotions or customers to people who don't. If everyone does it, are you principled, or just losing?",
+    "zh": "在某些行业里，走捷径如此普遍，拒绝反而显得天真：你会把投标、升职或客户输给那些不在乎的人。如果人人都这么做，你是有原则，还是只是在输？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "No — some things are worth more than winning",
+      "zh": "不——有些东西比赢更重要"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "No — 'everyone does it' changes nothing",
+      "zh": "不——「大家都这样」改变不了什么"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "You pay a price, and you keep something",
+      "zh": "你付出代价，也保住了东西"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "The fault is the missing referee, not you",
+      "zh": "问题在于缺少裁判，而不在你"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-everyone-cuts-corners.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-everyone-cuts-corners.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-everyone-cuts-corners.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-everyone-cuts-corners.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "work"
+   ]
+  },
+  {
+   "id": "q-spy-on-your-country",
+   "index": 6,
+   "date": "2026-11-04",
+   "status": "published",
+   "title": {
+    "en": "Is It Betrayal to Spy on Your Own Country to Save It?",
+    "zh": "为了拯救自己的国家而暗中对它下手，算不算背叛？"
+   },
+   "why": {
+    "en": "History has people who spied on, leaked from or worked against their own government because they believed it was heading for disaster. Were they traitors, or the most loyal people in the room?",
+    "zh": "历史上有人因为相信自己的政府正走向灾难，而对它刺探、泄密或暗中反对。他们是叛徒，还是在场最忠诚的人？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "No — saving the country outranks every rule",
+      "zh": "不是——救国高于一切规则"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Yes — no private person may judge for the state",
+      "zh": "是——私人无权替国家判断善恶"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Persuade it or obey it — there is no third way",
+      "zh": "要么说服，要么服从——没有第三条路"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Oppose it openly, never in secret",
+      "zh": "要反对就当面反对，不能暗中进行"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-spy-on-your-country.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-spy-on-your-country.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-spy-on-your-country.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-spy-on-your-country.D.0",
+      "q-spy-on-your-country.D.1"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "trust",
+    "power"
+   ]
+  },
+  {
+   "id": "q-wanting-power-disqualifies",
+   "index": 7,
+   "date": "2026-11-03",
+   "status": "published",
+   "title": {
+    "en": "Is Wanting Power the Thing That Should Disqualify You From Having It?",
+    "zh": "想要权力，是否正是你不该拥有它的理由？"
+   },
+   "why": {
+    "en": "We distrust people who chase power, yet almost no one gets power without chasing it. Should ambition for office count against the person who has it?",
+    "zh": "我们不信任追逐权力的人，可几乎没有人不追逐就能得到权力。对公职的野心，应该成为扣分项吗？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — the reluctant rule best",
+      "zh": "是——不情愿的人治理得最好"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Grasping for it ruins the ruler and the ruled",
+      "zh": "执意去抓，会毁了权力，也毁了自己"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "No — wanting power is just being alive",
+      "zh": "不——想要权力就是生命本身"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Wanting isn't the danger — holding it is",
+      "zh": "危险不在于想要，而在于握在手里"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-wanting-power-disqualifies.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-wanting-power-disqualifies.B.0",
+      "q-wanting-power-disqualifies.B.1"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-wanting-power-disqualifies.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-wanting-power-disqualifies.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "power"
+   ]
+  },
+  {
+   "id": "q-better-or-ruthless",
+   "index": 8,
+   "date": "2026-11-02",
+   "status": "published",
+   "title": {
+    "en": "Do the Most Successful Companies Win by Being Better, or by Being Ruthless?",
+    "zh": "最成功的公司，是靠更好赢的，还是靠更狠赢的？"
+   },
+   "why": {
+    "en": "We like to think the market rewards the best product. But the history of business also includes price-fixing, crushed rivals and borrowed ideas. When a company comes out on top, what usually got it there?",
+    "zh": "我们愿意相信市场奖励最好的产品。但商业史里也有操纵价格、碾压对手和借用他人创意。当一家公司登上顶峰，通常是什么把它送到那里的？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Better — while competition stays open",
+      "zh": "靠更好——只要竞争保持开放"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Ruthless — the system forces it",
+      "zh": "靠狠——是制度逼的"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Ruthless — and that's how life grows",
+      "zh": "靠狠——生命本来就是这样扩张的"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Neither — the ones that last cooperate",
+      "zh": "都不是——长久的赢家靠合作"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-better-or-ruthless.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-better-or-ruthless.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-better-or-ruthless.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-better-or-ruthless.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "money",
+    "work"
+   ]
+  },
+  {
+   "id": "q-lying-for-your-country",
+   "index": 9,
+   "date": "2026-11-01",
+   "status": "published",
+   "title": {
+    "en": "Is Lying for Your Country Different From Lying for Yourself?",
+    "zh": "为国家说谎，和为自己说谎有区别吗？"
+   },
+   "why": {
+    "en": "Diplomats, spies and officials sometimes lie as part of the job, and we often call it duty. The same lie told for personal gain we call wrong. Does the reason change what the lie is?",
+    "zh": "外交官、间谍和官员有时把说谎当作工作的一部分，我们常称之为职责。同样的谎话若是为了私利，我们就说它错了。理由会改变谎言的性质吗？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — rulers may lie where citizens may not",
+      "zh": "是——统治者可以说谎，公民不行"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Yes — keeping faith can ruin a state",
+      "zh": "是——守信可能毁掉一个国家"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "No — a lie is a lie",
+      "zh": "不——谎言就是谎言"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "It may be needed — but it still stains",
+      "zh": "也许必要——但仍会留下污点"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-lying-for-your-country.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-lying-for-your-country.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-lying-for-your-country.C.0",
+      "q-lying-for-your-country.C.1"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-lying-for-your-country.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "trust",
+    "power"
+   ]
+  },
+  {
+   "id": "q-leader-like-you-or-better",
+   "index": 10,
+   "date": "2026-10-31",
+   "status": "published",
+   "title": {
+    "en": "Should a Leader Be Like You, or Better Than You?",
+    "zh": "领导者应该像你，还是比你更好？"
+   },
+   "why": {
+    "en": "Some voters want a leader who talks, lives and thinks like them. Others want someone wiser, more expert or more disciplined than they are. Which makes a better leader — and a better democracy?",
+    "zh": "有些选民希望领导者说话、生活、思考都和自己一样；另一些人想要一个比自己更有智慧、更专业、更自律的人。哪一种会是更好的领导者——又会成就更好的民主？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Better than you — leading takes expertise",
+      "zh": "比你更强——领导需要专长"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Like you — ordinary people together judge well",
+      "zh": "像你——普通人合起来判断得更好"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Neither — a leader should carry out your will",
+      "zh": "都不是——领导只应执行你的意志"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "One of you, chosen by you",
+      "zh": "从你们中间来，由你们选出"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-leader-like-you-or-better.A.0",
+      "q-leader-like-you-or-better.A.1"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-leader-like-you-or-better.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-leader-like-you-or-better.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-leader-like-you-or-better.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "power",
+    "society"
+   ]
+  },
+  {
+   "id": "q-market-winner-best",
+   "index": 11,
+   "date": "2026-10-30",
+   "status": "published",
+   "title": {
+    "en": "When a Product Wins the Market, Does That Prove It's the Best One?",
+    "zh": "一个产品赢得了市场，就证明它是最好的吗？"
+   },
+   "why": {
+    "en": "The product everyone uses is not always the one experts rate highest. Network effects, timing and marketing all play a part. Is winning the market the best test of quality we have, or a measure of something else?",
+    "zh": "人人都在用的产品，未必是专家评价最高的那个。网络效应、时机和营销都在起作用。赢得市场是我们衡量质量的最好方法，还是在衡量别的东西？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — buyers are the judges",
+      "zh": "是——买家就是裁判"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Not necessarily — ask those who've tried both",
+      "zh": "不一定——要问两样都试过的人"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "No — the market measures price, not worth",
+      "zh": "不是——市场衡量价格，而非价值"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Only if it keeps working over time",
+      "zh": "只有经得起时间考验才算"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-market-winner-best.A.0"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-market-winner-best.B.0"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-market-winner-best.C.0"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-market-winner-best.D.0"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "money"
+   ]
+  },
+  {
+   "id": "q-ai-better-than-you",
+   "index": 12,
+   "date": "2026-09-05",
+   "status": "published",
+   "title": {
+    "en": "If AI Can Do Your Job Better Than You, What Was All That Effort For?",
+    "zh": "如果 AI 比你更会做你的工作，那这些年的努力是为了什么？"
+   },
+   "why": {
+    "en": "You may have spent twenty years getting unusually good at writing, coding or design — and now a machine does part of it in seconds. If technology takes away a skill's economic value, does it take away the value of having mastered it?",
+    "zh": "你也许花了二十年，才在写作、编程或设计上变得格外出色——如今机器几秒钟就能完成其中一部分。如果技术拿走了一项技能的经济价值，它是否也拿走了掌握它的价值？"
+   },
+   "baselinePct": {
+    "A": 34,
+    "B": 27,
+    "C": 16,
+    "D": 23
+   },
+   "joined": 28412,
+   "votesArePlaceholder": true,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Nothing was wasted — mastery changes who you become",
+      "zh": "什么都没白费 — 精通会改变你成为怎样的人"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Work matters when it makes something genuinely useful",
+      "zh": "只有真正做出有用的东西，工作才有意义"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "We were wrong to build identity on work at all",
+      "zh": "把身份建立在工作之上，本身就是错的"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Something real is being lost",
+      "zh": "确实有真实的东西正在失去"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-ai-better-than-you.A.0",
+      "q-ai-better-than-you.A.1"
+     ],
+     "workIds": [
+      "w-nicomachean-ethics"
+     ]
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-ai-better-than-you.B.0",
+      "q-ai-better-than-you.B.1"
+     ],
+     "workIds": [
+      "w-economic-possibilities"
+     ]
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-ai-better-than-you.C.0",
+      "q-ai-better-than-you.C.1"
+     ],
+     "workIds": [
+      "w-ecclesiastes-book"
+     ]
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-ai-better-than-you.D.0",
+      "q-ai-better-than-you.D.1"
+     ],
+     "workIds": [
+      "w-economic-philosophic-mss"
+     ]
+    }
+   }
+  },
+  {
+   "id": "q-glp1-real-self",
+   "index": 13,
+   "date": "2026-09-04",
+   "status": "published",
+   "title": {
+    "en": "If a GLP-1 Changes Your Personality, Which Version Is the Real You?",
+    "zh": "如果 GLP-1 改变了你的性格，哪个才是真正的你？"
+   },
+   "why": {
+    "en": "GLP-1 drugs were made to change appetite, but early research suggests they can reach craving and impulse too. If a pill makes you calmer and less driven, is that your real self emerging — or a sign there was never one fixed self to find?",
+    "zh": "GLP-1 药物原本用来改变食欲，但早期研究显示，它们也可能影响渴望与冲动。如果一种药让你更平静、更少被欲望驱使，那是真正的你浮现了——还是说明从来就没有一个固定的“真正的我”？"
+   },
+   "baselinePct": {
+    "A": 22,
+    "B": 31,
+    "C": 29,
+    "D": 18
+   },
+   "joined": 19877,
+   "votesArePlaceholder": true,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "The unmedicated me is more authentic",
+      "zh": "没用药的我更接近真正的我"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "If I prefer who I am on it, that self is just as real",
+      "zh": "如果我更喜欢用药后的自己，那也同样是真实的我"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Neither — there is no fixed 'real me' underneath",
+      "zh": "都不是，根本没有一个固定不变的「真正的我」"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Wrong question — judge the person I become",
+      "zh": "天然还是人工不是重点，应该看我最终变成了怎样的人"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-glp1-real-self.A.0"
+     ],
+     "workIds": [
+      "w-meditations"
+     ]
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-glp1-real-self.B.0",
+      "q-glp1-real-self.B.1"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-glp1-real-self.C.0",
+      "q-glp1-real-self.C.1"
+     ],
+     "workIds": []
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-glp1-real-self.D.0"
+     ],
+     "workIds": []
+    }
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm",
+   "index": 14,
+   "date": "2026-09-03",
+   "status": "published",
+   "title": {
+    "en": "Should people be allowed to sell their eggs or sperm?",
+    "zh": "人应该可以合法买卖自己的卵子或精子吗？"
+   },
+   "why": {
+    "en": "Many places already let donors be paid. But once eggs and sperm have a price, it is not only about your body: money shapes who takes the medical risk, and a future person never agreed to the deal. Where should freedom over your own body end?",
+    "zh": "许多地方已经允许捐赠者获得报酬。但一旦卵子和精子有了价格，问题就不只关乎你的身体：金钱会影响谁去承担医疗风险，而未来的那个人从未同意这笔交易。你对自己身体的自由，边界在哪里？"
+   },
+   "baselinePct": {
+    "A": 18,
+    "B": 41,
+    "C": 26,
+    "D": 15
+   },
+   "joined": 24306,
+   "votesArePlaceholder": true,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "They are yours, so you should be free to sell them",
+      "zh": "它们属于你的身体，你应该有权出售"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Allow payment, but regulate prices and protect donors",
+      "zh": "可以付钱，但价格和捐赠者保护必须受到监管"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "Donation is fine, but they should not become commodities",
+      "zh": "可以捐赠，但生殖细胞不应该成为商品"
+     }
+    },
+    {
+     "key": "D",
+     "label": {
+      "en": "Creating a future person involves more than the seller's body",
+      "zh": "创造一个未来的人，涉及的不只是出售者自己的身体"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-sell-eggs-sperm.A.0",
+      "q-sell-eggs-sperm.A.1"
+     ],
+     "workIds": [
+      "w-on-liberty"
+     ]
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-sell-eggs-sperm.B.0",
+      "q-sell-eggs-sperm.B.1"
+     ],
+     "workIds": [
+      "w-politics"
+     ]
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-sell-eggs-sperm.C.0",
+      "q-sell-eggs-sperm.C.1"
+     ],
+     "workIds": [
+      "w-analects"
+     ]
+    },
+    "D": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-sell-eggs-sperm.D.0"
+     ],
+     "workIds": [
+      "w-human-condition"
+     ]
+    }
+   }
+  },
+  {
+   "id": "q-nobody-remember",
+   "index": 15,
    "date": "2026-09-01",
    "status": "published",
    "title": {
@@ -181,7 +1488,7 @@
   },
   {
    "id": "q-beliefs-chosen",
-   "index": 1,
+   "index": 16,
    "date": "2026-08-31",
    "status": "published",
    "title": {
@@ -290,7 +1597,7 @@
   },
   {
    "id": "q-nothing-happens-reason",
-   "index": 2,
+   "index": 17,
    "date": "2026-08-30",
    "status": "published",
    "title": {
@@ -400,7 +1707,7 @@
   },
   {
    "id": "q-belief-not-true",
-   "index": 3,
+   "index": 18,
    "date": "2026-08-29",
    "status": "published",
    "title": {
@@ -509,7 +1816,7 @@
   },
   {
    "id": "q-unlimited-freedom",
-   "index": 4,
+   "index": 19,
    "date": "2026-08-28",
    "status": "published",
    "title": {
@@ -622,7 +1929,7 @@
   },
   {
    "id": "q-personality-performed",
-   "index": 5,
+   "index": 20,
    "date": "2026-08-27",
    "status": "published",
    "title": {
@@ -735,7 +2042,7 @@
   },
   {
    "id": "q-born-500-years-ago",
-   "index": 6,
+   "index": 21,
    "date": "2026-08-26",
    "status": "published",
    "title": {
@@ -847,7 +2154,7 @@
   },
   {
    "id": "q-everyone-thinks-wrong",
-   "index": 7,
+   "index": 22,
    "date": "2026-08-25",
    "status": "published",
    "title": {
@@ -955,7 +2262,7 @@
   },
   {
    "id": "q-remove-painful-emotion",
-   "index": 8,
+   "index": 23,
    "date": "2026-08-24",
    "status": "published",
    "title": {
@@ -1068,7 +2375,7 @@
   },
   {
    "id": "q-solved-survival",
-   "index": 9,
+   "index": 24,
    "date": "2026-08-23",
    "status": "published",
    "title": {
@@ -1177,294 +2484,2365 @@
      ]
     }
    }
-  },
-  {
-   "id": "q-sell-eggs-sperm",
-   "index": 10,
-   "date": "2026-09-03",
-   "status": "published",
-   "title": {
-    "en": "Should people be allowed to sell their eggs or sperm?",
-    "zh": "人应该可以合法买卖自己的卵子或精子吗？"
-   },
-   "why": {
-    "en": "Many places already let donors be paid. But once eggs and sperm have a price, it is not only about your body: money shapes who takes the medical risk, and a future person never agreed to the deal. Where should freedom over your own body end?",
-    "zh": "许多地方已经允许捐赠者获得报酬。但一旦卵子和精子有了价格，问题就不只关乎你的身体：金钱会影响谁去承担医疗风险，而未来的那个人从未同意这笔交易。你对自己身体的自由，边界在哪里？"
-   },
-   "options": [
-    {
-     "key": "A",
-     "label": {
-      "en": "They are yours, so you should be free to sell them",
-      "zh": "它们属于你的身体，你应该有权出售"
-     }
-    },
-    {
-     "key": "B",
-     "label": {
-      "en": "Allow payment, but regulate prices and protect donors",
-      "zh": "可以付钱，但价格和捐赠者保护必须受到监管"
-     }
-    },
-    {
-     "key": "C",
-     "label": {
-      "en": "Donation is fine, but they should not become commodities",
-      "zh": "可以捐赠，但生殖细胞不应该成为商品"
-     }
-    },
-    {
-     "key": "D",
-     "label": {
-      "en": "Creating a future person involves more than the seller's body",
-      "zh": "创造一个未来的人，涉及的不只是出售者自己的身体"
-     }
-    }
-   ],
-   "answers": {
-    "A": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-sell-eggs-sperm.A.0",
-      "q-sell-eggs-sperm.A.1"
-     ],
-     "workIds": [
-      "w-on-liberty"
-     ]
-    },
-    "B": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-sell-eggs-sperm.B.0",
-      "q-sell-eggs-sperm.B.1"
-     ],
-     "workIds": [
-      "w-politics"
-     ]
-    },
-    "C": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-sell-eggs-sperm.C.0",
-      "q-sell-eggs-sperm.C.1"
-     ],
-     "workIds": [
-      "w-analects"
-     ]
-    },
-    "D": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-sell-eggs-sperm.D.0"
-     ],
-     "workIds": [
-      "w-human-condition"
-     ]
-    }
-   },
-   "baselinePct": {
-    "A": 18,
-    "B": 41,
-    "C": 26,
-    "D": 15
-   },
-   "joined": 24306,
-   "votesArePlaceholder": true
-  },
-  {
-   "id": "q-glp1-real-self",
-   "index": 11,
-   "date": "2026-09-04",
-   "status": "published",
-   "title": {
-    "en": "If a GLP-1 Changes Your Personality, Which Version Is the Real You?",
-    "zh": "如果 GLP-1 改变了你的性格，哪个才是真正的你？"
-   },
-   "why": {
-    "en": "GLP-1 drugs were made to change appetite, but early research suggests they can reach craving and impulse too. If a pill makes you calmer and less driven, is that your real self emerging — or a sign there was never one fixed self to find?",
-    "zh": "GLP-1 药物原本用来改变食欲，但早期研究显示，它们也可能影响渴望与冲动。如果一种药让你更平静、更少被欲望驱使，那是真正的你浮现了——还是说明从来就没有一个固定的“真正的我”？"
-   },
-   "options": [
-    {
-     "key": "A",
-     "label": {
-      "en": "The unmedicated me is more authentic",
-      "zh": "没用药的我更接近真正的我"
-     }
-    },
-    {
-     "key": "B",
-     "label": {
-      "en": "If I prefer who I am on it, that self is just as real",
-      "zh": "如果我更喜欢用药后的自己，那也同样是真实的我"
-     }
-    },
-    {
-     "key": "C",
-     "label": {
-      "en": "Neither — there is no fixed 'real me' underneath",
-      "zh": "都不是，根本没有一个固定不变的「真正的我」"
-     }
-    },
-    {
-     "key": "D",
-     "label": {
-      "en": "Wrong question — judge the person I become",
-      "zh": "天然还是人工不是重点，应该看我最终变成了怎样的人"
-     }
-    }
-   ],
-   "answers": {
-    "A": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-glp1-real-self.A.0"
-     ],
-     "workIds": [
-      "w-meditations"
-     ]
-    },
-    "B": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-glp1-real-self.B.0",
-      "q-glp1-real-self.B.1"
-     ],
-     "workIds": []
-    },
-    "C": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-glp1-real-self.C.0",
-      "q-glp1-real-self.C.1"
-     ],
-     "workIds": []
-    },
-    "D": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-glp1-real-self.D.0"
-     ],
-     "workIds": []
-    }
-   },
-   "baselinePct": {
-    "A": 22,
-    "B": 31,
-    "C": 29,
-    "D": 18
-   },
-   "joined": 19877,
-   "votesArePlaceholder": true
-  },
-  {
-   "id": "q-ai-better-than-you",
-   "index": 12,
-   "date": "2026-09-05",
-   "status": "published",
-   "title": {
-    "en": "If AI Can Do Your Job Better Than You, What Was All That Effort For?",
-    "zh": "如果 AI 比你更会做你的工作，那这些年的努力是为了什么？"
-   },
-   "why": {
-    "en": "You may have spent twenty years getting unusually good at writing, coding or design — and now a machine does part of it in seconds. If technology takes away a skill's economic value, does it take away the value of having mastered it?",
-    "zh": "你也许花了二十年，才在写作、编程或设计上变得格外出色——如今机器几秒钟就能完成其中一部分。如果技术拿走了一项技能的经济价值，它是否也拿走了掌握它的价值？"
-   },
-   "options": [
-    {
-     "key": "A",
-     "label": {
-      "en": "Nothing was wasted — mastery changes who you become",
-      "zh": "什么都没白费 — 精通会改变你成为怎样的人"
-     }
-    },
-    {
-     "key": "B",
-     "label": {
-      "en": "Work matters when it makes something genuinely useful",
-      "zh": "只有真正做出有用的东西，工作才有意义"
-     }
-    },
-    {
-     "key": "C",
-     "label": {
-      "en": "We were wrong to build identity on work at all",
-      "zh": "把身份建立在工作之上，本身就是错的"
-     }
-    },
-    {
-     "key": "D",
-     "label": {
-      "en": "Something real is being lost",
-      "zh": "确实有真实的东西正在失去"
-     }
-    }
-   ],
-   "answers": {
-    "A": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-ai-better-than-you.A.0",
-      "q-ai-better-than-you.A.1"
-     ],
-     "workIds": [
-      "w-nicomachean-ethics"
-     ]
-    },
-    "B": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-ai-better-than-you.B.0",
-      "q-ai-better-than-you.B.1"
-     ],
-     "workIds": [
-      "w-economic-possibilities"
-     ]
-    },
-    "C": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-ai-better-than-you.C.0",
-      "q-ai-better-than-you.C.1"
-     ],
-     "workIds": [
-      "w-ecclesiastes-book"
-     ]
-    },
-    "D": {
-     "verdict": null,
-     "verdictSub": null,
-     "responseIds": [
-      "q-ai-better-than-you.D.0",
-      "q-ai-better-than-you.D.1"
-     ],
-     "workIds": [
-      "w-economic-philosophic-mss"
-     ]
-    }
-   },
-   "baselinePct": {
-    "A": 34,
-    "B": 27,
-    "C": 16,
-    "D": 23
-   },
-   "joined": 28412,
-   "votesArePlaceholder": true
   }
  ],
  "responses": [
+  {
+   "id": "q-nothing-to-hide.A.0",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "A",
+   "voiceId": "v-bentham",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Bentham's Panopticon was built on the feeling of being watched, and he proposed it for prisons, schools, hospitals and workhouses alike. On this view, visibility improves conduct, and the well-behaved lose nothing.",
+    "zh": "边沁的圆形监狱建立在「被注视感」之上，他把它推荐给监狱、学校、医院和济贫院。照此看法，可见性会改善行为，而守规矩的人什么也不会失去。"
+   },
+   "detail": {
+    "en": "That is the strongest version of the 'nothing to hide' case. The cost is that Bentham's own design works through constant self-monitoring, which is exactly the change in the innocent that critics fear.",
+    "zh": "这是「没什么可藏」论证最有力的版本。代价是：边沁自己的设计正是通过持续的自我监控来运作的，而这恰恰是批评者担心的、发生在无辜者身上的改变。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the persons to be inspected should always feel themselves as if under inspection, at least as standing a great chance of being so",
+    "zh": "the persons to be inspected should always feel themselves as if under inspection, at least as standing a great chance of being so"
+   },
+   "origin": {
+    "en": "Britain, 1791",
+    "zh": "英国，1791 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jeremy Bentham, Panopticon; or, The Inspection-House (1791)",
+     "zh": "边沁《圆形监狱》（1791）"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-nothing-to-hide.B.0",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "B",
+   "voiceId": "v-rousseau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Rousseau traced a loss in social life: people come to live in others' eyes rather than their own. Being watched more closely deepens that shift whether or not you have anything to hide.",
+    "zh": "卢梭追溯了社会生活中的一种丧失：人们开始活在他人的眼光里，而不是自己的感受里。被更紧密地注视，会加深这种转变——无论你有没有东西要藏。"
+   },
+   "detail": {
+    "en": "On this reading the harm of watching is not exposure but performance: you start living for the viewer. The cost is that Rousseau's 'savage' is an idealised figure, and the argument tells you what is lost without saying how much watching is too much.",
+    "zh": "照这个读法，被注视的伤害不在于暴露，而在于表演：你开始为观看者而活。代价是：卢梭的「野蛮人」是一个理想化的形象，这个论证告诉你失去了什么，却没说多少注视才算太多。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the savage lives within himself, whereas the citizen, constantly beside himself, knows only how to live in the opinion of others",
+    "zh": "the savage lives within himself, whereas the citizen, constantly beside himself, knows only how to live in the opinion of others"
+   },
+   "origin": {
+    "en": "Geneva and France, 1755",
+    "zh": "日内瓦与法国，1755 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jean-Jacques Rousseau, Discourse on the Origin of Inequality, Part II",
+     "zh": "卢梭《论人类不平等的起源和基础》第二部分"
+    },
+    "url": "https://www.gutenberg.org/ebooks/11136"
+   }
+  },
+  {
+   "id": "q-nothing-to-hide.C.0",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "C",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mill described a society where everyone lives as if under a hostile censor, so people stop asking what they prefer and ask what is expected. He meant public opinion, not cameras, but the mechanism is the same.",
+    "zh": "密尔描述了一个人人都像生活在敌意审查者眼皮底下的社会，于是人们不再问自己喜欢什么，而是问别人期待什么。他说的是舆论而非摄像头，但机制相同。"
+   },
+   "detail": {
+    "en": "By this argument the innocent lose something real: the habit of choosing for themselves. The cost is that Mill also accepted that society may watch and punish harm to others, so the line between protection and censorship is still to be drawn.",
+    "zh": "照这个论证，无辜者失去了真实的东西：为自己做选择的习惯。代价是：密尔也承认社会可以监督并惩罚对他人的伤害，因此保护与审查之间的界线仍有待划定。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "In our times, from the highest class of society down to the lowest, every one lives as under the eye of a hostile and dreaded censorship. Not only in what concerns others, but in what concerns only themselves, the individual, or the family, do not ask themselves--what do I prefer?",
+    "zh": "In our times, from the highest class of society down to the lowest, every one lives as under the eye of a hostile and dreaded censorship. Not only in what concerns others, but in what concerns only themselves, the individual, or the family, do not ask themselves--what do I prefer?"
+   },
+   "origin": {
+    "en": "Britain, 1859",
+    "zh": "英国，1859 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, On Liberty, ch. III",
+     "zh": "约翰·斯图亚特·密尔《论自由》第三章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/34901"
+   }
+  },
+  {
+   "id": "q-nothing-to-hide.D.0",
+   "questionId": "q-nothing-to-hide",
+   "optionKey": "D",
+   "voiceId": "v-thoreau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Thoreau describes government as a device for letting people alone. On his terms, a government that watches the innocent has reversed its purpose — whether or not they have anything to hide.",
+    "zh": "梭罗把政府描述为一种让人们彼此不受打扰的手段。按他的说法，一个监视无辜者的政府已经背离了自己的目的——无论他们有没有东西要藏。"
+   },
+   "detail": {
+    "en": "This puts the burden on the watcher, not the watched. The cost is that Thoreau's ideal of minimal government offers little guidance on threats that really do require looking, such as violence planned in private.",
+    "zh": "这把举证责任放在了监视者身上，而不是被监视者。代价是：梭罗的最小政府理想，对于那些确实需要察看的威胁——比如私下策划的暴力——几乎没有指导。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "For government is an expedient, by which men would fain succeed in letting one another alone; and, as has been said, when it is most expedient, the governed are most let alone by it.",
+    "zh": "For government is an expedient, by which men would fain succeed in letting one another alone; and, as has been said, when it is most expedient, the governed are most let alone by it."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1849",
+    "zh": "马萨诸塞州康科德，1849 年"
+   },
+   "source": {
+    "label": {
+     "en": "Henry David Thoreau, \"Civil Disobedience\" (1849)",
+     "zh": "梭罗〈论公民的不服从〉（1849）"
+    },
+    "url": "https://www.gutenberg.org/ebooks/71"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.A.0",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "A",
+   "voiceId": "v-confucius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The Analects picture a ruler whose virtue does the work: people orient themselves around a good character the way stars turn around the pole star.",
+    "zh": "《论语》描绘的统治者，是靠德行本身发挥作用：人们围绕一个好品格而定向，就像众星环绕北极星。"
+   },
+   "detail": {
+    "en": "On this view goodness is not a constraint on effectiveness; it is the mechanism. The cost is that the Analects assume a society that already shares ideas of propriety — in a divided country, a leader's virtue may attract half the sky and repel the other half.",
+    "zh": "按这种看法，德行不是对效率的限制，而是效率的来源。代价是：《论语》预设了一个共享礼义观念的社会——在一个分裂的国家，领导者的德行可能吸引一半的星空，同时推开另一半。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "He who exercises government by means of his virtue may be compared to the north polar star, which keeps its place and all the stars turn towards it.",
+    "zh": "爲政以德，譬如北辰，居其所，而眾星共之。"
+   },
+   "origin": {
+    "en": "China, c. 500 BCE",
+    "zh": "中国，约公元前 500 年"
+   },
+   "source": {
+    "label": {
+     "en": "Confucius, Analects 2.1, trans. James Legge",
+     "zh": "《论语·为政》2.1，理雅各 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3330"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.B.0",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "B",
+   "voiceId": "v-machiavelli",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The Prince argues that a ruler who acts only as a good person ought to will be destroyed among people who do not — so the leader you need must know how to do wrong.",
+    "zh": "《君主论》认为，一个只按好人标准行事的统治者，在不守规矩的人中间必然毁灭——所以你需要的领导者，必须懂得如何作恶。"
+   },
+   "detail": {
+    "en": "Machiavelli was describing princes holding fragile Italian states, not elected officials. The cost of carrying his argument over is that it licenses any wrong a leader can call necessary, and gives the people no way to tell necessity from convenience.",
+    "zh": "马基雅维利描述的是守着脆弱意大利城邦的君主，而不是民选官员。把他的论证照搬过来的代价是：领导者只要声称「必要」，就可以做任何坏事，而人民没有办法分辨那是必要还是方便。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "how one lives is so far distant from how one ought to live, that he who neglects what is done for what ought to be done, sooner effects his ruin than his preservation; for a man who wishes to act entirely up to his professions of virtue soon meets with what destroys him among so much that is evil.",
+    "zh": "how one lives is so far distant from how one ought to live, that he who neglects what is done for what ought to be done, sooner effects his ruin than his preservation; for a man who wishes to act entirely up to his professions of virtue soon meets with what destroys him among so much that is evil."
+   },
+   "origin": {
+    "en": "Florence, 1513",
+    "zh": "佛罗伦萨，1513 年"
+   },
+   "source": {
+    "label": {
+     "en": "Niccolò Machiavelli, The Prince, ch. XV, trans. W. K. Marriott",
+     "zh": "马基雅维利《君主论》第十五章，马里奥特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1232"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.C.0",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "C",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes sets one test for whoever holds power: the safety of the people — which he says includes life's other contentments too, not bare survival. Private virtue is beside the point.",
+    "zh": "霍布斯给掌权者设了唯一的标准：人民的安全——他说这还包括生活中的其他满足，而不只是活着。私人品德无关紧要。"
+   },
+   "detail": {
+    "en": "By this standard the 'good versus effective' question dissolves: you judge a leader by outcomes for the governed. The cost is that Hobbes makes the sovereign answerable to God alone, so the people get a standard to judge by but no way to enforce it.",
+    "zh": "按这个标准，「好人还是能人」的问题就消失了：你根据被统治者的结果来评价领导者。代价是：霍布斯让主权者只对上帝负责，于是人民有了评判标准，却没有执行它的手段。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The OFFICE of the Soveraign, (be it a Monarch, or an Assembly,) consisteth in the end, for which he was trusted with the Soveraign Power, namely the procuration of the Safety Of The People",
+    "zh": "The OFFICE of the Soveraign, (be it a Monarch, or an Assembly,) consisteth in the end, for which he was trusted with the Soveraign Power, namely the procuration of the Safety Of The People"
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XXX",
+     "zh": "霍布斯《利维坦》第三十章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3207"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.D.0",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "D",
+   "voiceId": "v-aristotle",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Aristotle's name for what a good leader has is practical wisdom, and his example is a working statesman: someone who can see what is good and also how to bring it about.",
+    "zh": "亚里士多德把好领导所具有的东西称为实践智慧，他举的例子正是一位实干的政治家：既能看清什么是好的，也知道如何把它实现。"
+   },
+   "detail": {
+    "en": "On this account, goodness without the skill to act is not yet the virtue, and skill aimed at the wrong ends is mere cleverness — so the trade-off is false. The cost is that real leaders are rarely both, and the theory says little about which to prefer when you must choose.",
+    "zh": "照这个说法，不会行动的善还不是德性，而用错地方的本事只是机巧——所以这个取舍是假的。代价是：现实中的领导者很少两者兼备，而这个理论对「非选不可时该选哪个」几乎没有回答。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "For this reason we think Pericles and men of that stamp to be Practically Wise, because they can see what is good for themselves and for men in general",
+    "zh": "For this reason we think Pericles and men of that stamp to be Practically Wise, because they can see what is good for themselves and for men in general"
+   },
+   "origin": {
+    "en": "Athens, c. 340 BCE",
+    "zh": "雅典，约公元前 340 年"
+   },
+   "source": {
+    "label": {
+     "en": "Aristotle, Nicomachean Ethics, Book VI, ch. 5, trans. D. P. Chase",
+     "zh": "亚里士多德《尼各马可伦理学》第六卷第五章，蔡斯 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/8438"
+   }
+  },
+  {
+   "id": "q-good-or-effective-leader.D.1",
+   "questionId": "q-good-or-effective-leader",
+   "optionKey": "D",
+   "voiceId": "v-marcus-aurelius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "An emperor's own notebook: do what the moment requires, don't wait for an ideal state, and count small improvements as real ones.",
+    "zh": "一位皇帝写给自己的笔记：做此刻该做的事，不要等待理想国，把微小的进步也当作真正的进步。"
+   },
+   "detail": {
+    "en": "Read as advice to leaders, it joins the two halves: goodness is shown in getting ordinary, imperfect things done. The cost is that Marcus' modest gradualism was written by a man with absolute power; patience with small progress is easier for the one who sets the pace.",
+    "zh": "把它当作给领导者的建议来读，它把两半连在了一起：善体现在把平凡而不完美的事情办成。代价是：马可·奥勒留这种温和的渐进主义，出自一个握有绝对权力的人；对小进步保持耐心，对掌控节奏的人来说更容易。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Do what thy nature doth now require. Resolve upon it, if thou mayest: and take no thought, whether anybody shall know it or no. Yea, but sayest thou, I must not expect a Plato's commonwealth. If they profit though never so little, I must be content; and think much even of that little progress.",
+    "zh": "Do what thy nature doth now require. Resolve upon it, if thou mayest: and take no thought, whether anybody shall know it or no. Yea, but sayest thou, I must not expect a Plato's commonwealth. If they profit though never so little, I must be content; and think much even of that little progress."
+   },
+   "origin": {
+    "en": "Rome, c. 175",
+    "zh": "罗马，约 175 年"
+   },
+   "source": {
+    "label": {
+     "en": "Marcus Aurelius, Meditations, Book IX, 29, trans. Meric Casaubon",
+     "zh": "马可·奥勒留《沉思录》第九卷第 29 节，卡索邦 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/2680"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.A.0",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "A",
+   "voiceId": "v-emerson",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Emerson dismisses luck as the explanation shallow people reach for. In his view fortunes are fruits: what happens to a person grows out of what they think and do.",
+    "zh": "爱默生把运气斥为浅薄之人的解释。在他看来，财富是果实：一个人遭遇的事，从他的所思所为中生长出来。"
+   },
+   "detail": {
+    "en": "It is a bracing view and a flattering one for the successful. The cost is that it has no room for the lottery of birth, timing or health, and it quietly implies the unlucky are shallow.",
+    "zh": "这是一种令人振奋的看法，也很讨成功者欢心。代价是：它没有给出身、时机或健康的偶然性留下位置，还暗含着不走运的人就是浅薄的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Shallow men believe in luck, believe in circumstances: It was somebody's name, or he happened to be there at the time, or, it was so then, and another day it would have been otherwise. Strong men believe in cause and effect.",
+    "zh": "Shallow men believe in luck, believe in circumstances: It was somebody's name, or he happened to be there at the time, or, it was so then, and another day it would have been otherwise. Strong men believe in cause and effect."
+   },
+   "origin": {
+    "en": "Concord, Massachusetts, 1860",
+    "zh": "马萨诸塞州康科德，1860 年"
+   },
+   "source": {
+    "label": {
+     "en": "Ralph Waldo Emerson, The Conduct of Life, \"Worship\"",
+     "zh": "爱默生《生活的准则》〈崇拜〉"
+    },
+    "url": "https://www.gutenberg.org/ebooks/39827"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.A.1",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "A",
+   "voiceId": "v-spencer",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Spencer's formula for justice is that each person should receive the good and bad results of their own nature and conduct. A great fortune, on this view, is what justice looks like when the conduct was effective.",
+    "zh": "斯宾塞的正义公式是：每个人都应承受自己天性和行为所带来的好与坏的结果。照此看法，巨额财富正是行为卓有成效时正义的样子。"
+   },
+   "detail": {
+    "en": "Spencer's view grew out of the biology that gave us 'survival of the fittest', a phrase he coined, and it was widely used to defend inequality. The cost: 'his own nature' includes inheritance he did nothing to earn, which the formula counts as his anyway.",
+    "zh": "斯宾塞的观点源自催生「适者生存」一词的生物学——这个说法正是他创造的——并被广泛用来为不平等辩护。代价是：「他自己的天性」包括他毫无功劳的遗传，而公式照样把这些算作他的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "ethically considered, this law implies that each individual ought to receive the benefits and the evils of his own nature and consequent conduct",
+    "zh": "ethically considered, this law implies that each individual ought to receive the benefits and the evils of his own nature and consequent conduct"
+   },
+   "origin": {
+    "en": "Britain, 1891",
+    "zh": "英国，1891 年"
+   },
+   "source": {
+    "label": {
+     "en": "Herbert Spencer, The Principles of Ethics, vol. II, Part IV \"Justice\", ch. III",
+     "zh": "斯宾塞《伦理学原理》第二卷第四部分〈正义〉第三章"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.B.0",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "B",
+   "voiceId": "v-smith",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Smith noticed that we defer to the rich not because we expect anything from them but because we admire their situation. That admiration comes first; the story of their merit comes after.",
+    "zh": "斯密注意到，我们顺从富人，并不是因为指望从他们那里得到什么，而是因为仰慕他们的处境。仰慕在先，关于他们才德的故事在后。"
+   },
+   "detail": {
+    "en": "If he is right, the question 'earned or luck?' is one we are badly placed to answer, because our judgement is tilted before we look. The cost is that this explains our bias without settling the case either way.",
+    "zh": "如果他是对的，「挣来的还是运气」就是一个我们很难回答的问题，因为在我们审视之前，判断已经倾斜了。代价是：这解释了我们的偏见，却没有对问题本身作出裁决。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Our obsequiousness to our superiors more frequently arises from our admiration for the advantages of their situation, than from any private expectations of benefit from their good-will.",
+    "zh": "Our obsequiousness to our superiors more frequently arises from our admiration for the advantages of their situation, than from any private expectations of benefit from their good-will."
+   },
+   "origin": {
+    "en": "Scotland, 1759",
+    "zh": "苏格兰，1759 年"
+   },
+   "source": {
+    "label": {
+     "en": "Adam Smith, The Theory of Moral Sentiments, Part I, sect. III, ch. 2",
+     "zh": "亚当·斯密《道德情操论》第一卷第三篇第二章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/67363"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.C.0",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "C",
+   "voiceId": "v-kropotkin",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Kropotkin argued that no invention is anyone's alone: each rests on the work of millions, known and unknown, past and present. A single fortune claims a shared inheritance.",
+    "zh": "克鲁泡特金认为，没有哪项发明完全属于某一个人：每一项都建立在千百万已知与未知、过去与现在的人的劳动之上。一笔个人财富，占有的是一份共同遗产。"
+   },
+   "detail": {
+    "en": "This sidesteps both 'earned' and 'luck': the fortune may reflect real skill, but the ground it stands on belongs to everyone. The cost is that it gives no account of why some people combine that inheritance far better than others.",
+    "zh": "这绕开了「挣来」与「运气」两种答案：财富也许反映了真实的才能，但它所立足的土地属于所有人。代价是：它无法解释为什么有些人能把这份遗产组合得比别人好得多。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "There is not even a thought, or an invention, which is not common property, born of the past and the present.",
+    "zh": "There is not even a thought, or an invention, which is not common property, born of the past and the present."
+   },
+   "origin": {
+    "en": "London, 1906",
+    "zh": "伦敦，1906 年"
+   },
+   "source": {
+    "label": {
+     "en": "Peter Kropotkin, The Conquest of Bread, ch. I",
+     "zh": "克鲁泡特金《面包与自由》第一章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/23428"
+   }
+  },
+  {
+   "id": "q-billionaire-earned-or-luck.D.0",
+   "questionId": "q-billionaire-earned-or-luck",
+   "optionKey": "D",
+   "voiceId": "v-marx",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Marx's answer is neither merit nor chance: capital grows by drawing on the labour of others. A fortune is, on this account, mostly other people's work in stored form.",
+    "zh": "马克思的回答既不是才德也不是运气：资本靠汲取他人的劳动而增长。照此说法，一笔财富大体上是以储存形式存在的他人劳动。"
+   },
+   "detail": {
+    "en": "This is the most contested answer here, resting on the labour theory of value that most economists reject. The cost is that it leaves no space for value created by organising, risking or inventing, which many would say is exactly what founders do.",
+    "zh": "这是这里最具争议的回答，它建立在大多数经济学家都不接受的劳动价值论之上。代价是：它没有给组织、冒险或发明所创造的价值留下空间，而许多人会说，创始人做的恰恰是这些。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Capital is dead labour, that vampire-like, only lives by sucking living labour, and lives the more, the more labour it sucks.",
+    "zh": "Capital is dead labour, that vampire-like, only lives by sucking living labour, and lives the more, the more labour it sucks."
+   },
+   "origin": {
+    "en": "London, 1867",
+    "zh": "伦敦，1867 年"
+   },
+   "source": {
+    "label": {
+     "en": "Karl Marx, Capital, vol. I, ch. X, trans. Samuel Moore and Edward Aveling",
+     "zh": "马克思《资本论》第一卷第十章，穆尔与艾威林 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-partner-secrets.A.0",
+   "questionId": "q-partner-secrets",
+   "optionKey": "A",
+   "voiceId": "v-spinoza",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Spinoza held that a feeling that rules us loses its grip once we understand it clearly. On this view, suspicion feeds on half-knowledge, and clearer knowledge would free you from it.",
+    "zh": "斯宾诺莎认为，一种支配我们的情感，一旦被我们清楚地理解，就会失去控制力。照此看法，猜疑以一知半解为食，更清楚的认识会让你摆脱它。"
+   },
+   "detail": {
+    "en": "Spinoza meant understanding the causes of your own emotion, not reading someone's messages; the inference is ours. The cost is that some facts, once known, produce new passions instead of dissolving old ones.",
+    "zh": "斯宾诺莎说的是理解自身情感的成因，而不是查看别人的消息；推论是我们的。代价是：有些事实一旦知道，产生的是新的激情，而不是消解旧的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "An emotion, which is a passion, ceases to be a passion, as soon as we form a clear and distinct idea thereof.",
+    "zh": "An emotion, which is a passion, ceases to be a passion, as soon as we form a clear and distinct idea thereof."
+   },
+   "origin": {
+    "en": "Netherlands, 1677",
+    "zh": "荷兰，1677 年"
+   },
+   "source": {
+    "label": {
+     "en": "Baruch Spinoza, Ethics, Part V, Prop. III, trans. R. H. M. Elwes",
+     "zh": "斯宾诺莎《伦理学》第五部分命题三，埃尔维斯 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3800"
+   }
+  },
+  {
+   "id": "q-partner-secrets.B.0",
+   "questionId": "q-partner-secrets",
+   "optionKey": "B",
+   "voiceId": "v-pascal",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Pascal thought that if everyone knew what everyone else said about them, friendship would barely survive. Some not-knowing is part of what holds people together.",
+    "zh": "帕斯卡认为，如果每个人都知道别人在背后怎么说自己，友谊就几乎无法存活。某种程度的不知道，正是把人们维系在一起的东西。"
+   },
+   "detail": {
+    "en": "He wrote about friends, not partners; the extension is ours. The cost is that this can excuse real deception, and it leaves the person kept in the dark with no say in the bargain.",
+    "zh": "他写的是朋友，不是伴侣；延伸是我们的推论。代价是：这可能为真正的欺骗开脱，而且被蒙在鼓里的人在这笔交易中毫无发言权。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I put it down as a fact that if all men knew what each said of the other, there would not be four friends in the world.",
+    "zh": "I put it down as a fact that if all men knew what each said of the other, there would not be four friends in the world."
+   },
+   "origin": {
+    "en": "France, c. 1660",
+    "zh": "法国，约 1660 年"
+   },
+   "source": {
+    "label": {
+     "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+     "zh": "帕斯卡《思想录》，凯根·保罗 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/46921"
+   }
+  },
+  {
+   "id": "q-partner-secrets.C.0",
+   "questionId": "q-partner-secrets",
+   "optionKey": "C",
+   "voiceId": "v-montaigne",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Montaigne, who loved his family, still kept a back room of the mind entirely his own — free, private, closed to everyone, spouse included.",
+    "zh": "蒙田爱他的家人，却依然为自己保留一间完全属于自己的心灵后屋——自由、私密，对所有人关闭，包括配偶。"
+   },
+   "detail": {
+    "en": "On this view a partner's privacy is not a threat to love but a condition of a self worth loving. The cost is that Montaigne doesn't say where a private room ends and a hidden life begins.",
+    "zh": "照此看法，伴侣的隐私不是对爱的威胁，而是一个值得被爱的自我得以存在的条件。代价是：蒙田没有说明，私人空间在哪里结束，隐秘生活又从哪里开始。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "we must reserve a backshop, wholly our own and entirely free, wherein to settle our true liberty, our principal solitude and retreat.",
+    "zh": "we must reserve a backshop, wholly our own and entirely free, wherein to settle our true liberty, our principal solitude and retreat."
+   },
+   "origin": {
+    "en": "France, 1580",
+    "zh": "法国，1580 年"
+   },
+   "source": {
+    "label": {
+     "en": "Michel de Montaigne, Essays, Book I, ch. 38 \"Of Solitude\", trans. Charles Cotton, ed. W. C. Hazlitt",
+     "zh": "蒙田《随笔集》第一卷第三十八章〈论孤独〉，科顿 英译，黑兹利特 编"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3600"
+   }
+  },
+  {
+   "id": "q-partner-secrets.C.1",
+   "questionId": "q-partner-secrets",
+   "optionKey": "C",
+   "voiceId": "v-nietzsche",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Nietzsche thought depth and concealment go together: what is deepest in a person hides even from likeness. Demanding total transparency would flatten the very thing you love.",
+    "zh": "尼采认为深度与掩藏相伴：一个人身上最深的东西，甚至连形象和比喻都躲避。要求完全透明，会把你所爱的东西本身压平。"
+   },
+   "detail": {
+    "en": "Nietzsche was not writing about couples; the application is ours. The cost is that 'everything profound loves the mask' is also what everyone with something shabby to hide would like to believe.",
+    "zh": "尼采写的不是伴侣关系；应用是我们的推论。代价是：「一切深刻的东西都爱面具」，也正是每个藏着见不得人之事的人乐于相信的话。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Everything that is profound loves the mask: the profoundest things have a hatred even of figure and likeness.",
+    "zh": "Everything that is profound loves the mask: the profoundest things have a hatred even of figure and likeness."
+   },
+   "origin": {
+    "en": "Germany, 1886",
+    "zh": "德国，1886 年"
+   },
+   "source": {
+    "label": {
+     "en": "Friedrich Nietzsche, Beyond Good and Evil, §40, trans. Helen Zimmern",
+     "zh": "尼采《善恶的彼岸》第 40 节，齐默恩 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4363"
+   }
+  },
+  {
+   "id": "q-partner-secrets.D.0",
+   "questionId": "q-partner-secrets",
+   "optionKey": "D",
+   "voiceId": "v-freud",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Freud's claim is that the self is not master in its own house: much of what drives us is unconscious. A partner cannot show you everything they hide, because they do not know it all themselves.",
+    "zh": "弗洛伊德的观点是，自我并不是自己家中的主人：驱动我们的很多东西是无意识的。伴侣无法把隐藏的一切都给你看，因为他们自己也并不全知道。"
+   },
+   "detail": {
+    "en": "This reframes the question from secrecy to self-knowledge. The cost is that psychoanalysis is contested as science, and 'they don't know themselves' can become a way to dismiss what a partner does say.",
+    "zh": "这把问题从保密转向了自我认识。代价是：精神分析作为科学是有争议的，而「他们自己也不知道」可能成为无视伴侣真实表达的说辞。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "it is not even master in its own home, but is dependent upon the most scanty information concerning all that goes on unconsciously in its psychic life.",
+    "zh": "it is not even master in its own home, but is dependent upon the most scanty information concerning all that goes on unconsciously in its psychic life."
+   },
+   "origin": {
+    "en": "Vienna, 1917",
+    "zh": "维也纳，1917 年"
+   },
+   "source": {
+    "label": {
+     "en": "Sigmund Freud, A General Introduction to Psychoanalysis, Lecture 18 (1920 English edition)",
+     "zh": "弗洛伊德《精神分析引论》第十八讲（1920 年英译本）"
+    },
+    "url": "https://www.gutenberg.org/ebooks/38219"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.A.0",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "A",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Plato's argument runs the other way from ours: good people will never seek office for money or honour, so they have to be compelled, and the compulsion is simply the prospect of being ruled by someone worse.",
+    "zh": "柏拉图的论证与我们的直觉相反：好人不会为了钱或名声去求官，所以必须有所强迫，而这种强迫就是——不上任，就会被更差的人统治。"
+   },
+   "detail": {
+    "en": "On this reading, reluctance is close to a qualification rather than a disqualification. The cost is that the argument assumes someone can reliably tell who the 'best' are, and Plato's rulers had been trained for decades for the job; a gifted person pressed into office untrained may rule badly and resentfully.",
+    "zh": "照这个读法，不情愿几乎是一种资格，而不是失格。代价是：这个论证假定有人能可靠地认出谁是「最好的人」，而柏拉图笔下的统治者为此受过几十年的训练；一个未经训练、被硬推上任的天才，可能治理得既差又心怀怨气。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Now the worst part of the punishment is that he who refuses to rule is liable to be ruled by one who is worse than himself.",
+    "zh": "Now the worst part of the punishment is that he who refuses to rule is liable to be ruled by one who is worse than himself."
+   },
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Republic, Book I (347c), trans. Benjamin Jowett",
+     "zh": "柏拉图《理想国》第一卷（347c），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1497"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.B.0",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "B",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mill's harm principle, read strictly, leaves no room to conscript someone into office: declining to rule does not harm others in the sense Mill meant, so power over that person has no warrant.",
+    "zh": "严格按密尔的「伤害原则」来读，就没有理由把一个人征召上任：拒绝当领导，并不构成密尔所说的对他人的伤害，因此对这个人施加权力就没有正当依据。"
+   },
+   "detail": {
+    "en": "The inference is ours, not Mill's — he never discussed drafting a president. The cost is real: elsewhere Mill wanted the most capable to carry more weight in public life, and a society that respects every refusal may watch its best people choose private life.",
+    "zh": "这是我们的推论，不是密尔的原话——他从未讨论过征召总统。代价也是真实的：密尔在别处希望最有能力的人在公共生活中有更大分量，而一个尊重每一次拒绝的社会，可能眼看着最优秀的人退回私人生活。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "That the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others.",
+    "zh": "That the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others."
+   },
+   "origin": {
+    "en": "Britain, 1859",
+    "zh": "英国，1859 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, On Liberty, ch. I",
+     "zh": "约翰·斯图亚特·密尔《论自由》第一章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/34901"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.C.0",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "C",
+   "voiceId": "v-confucius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The Analects treat stepping forward or staying out of sight as a judgement about the state of the country — not a duty owed to it on demand.",
+    "zh": "《论语》把出仕还是隐退看作对国家状况的判断，而不是国家一开口就必须履行的义务。"
+   },
+   "detail": {
+    "en": "Applied to today, a capable person who declines may be passing a verdict on the system they would have to serve; forcing them answers the wrong question. The cost is that anyone can decide the country is badly governed and stay out for good.",
+    "zh": "放到今天，一个有能力却拒绝出来的人，可能是在对他将要服务的体制下判断；强迫他上任，回答的是错误的问题。代价是：任何人都可以认定国家治理不善，从而永远置身事外。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "When right principles of government prevail in the kingdom, he will show himself; when they are prostrated, he will keep concealed.",
+    "zh": "天下有道則見，無道則隱。"
+   },
+   "origin": {
+    "en": "China, c. 500 BCE",
+    "zh": "中国，约公元前 500 年"
+   },
+   "source": {
+    "label": {
+     "en": "Confucius, Analects 8.13, trans. James Legge",
+     "zh": "《论语·泰伯》8.13，理雅各 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3330"
+   }
+  },
+  {
+   "id": "q-make-the-smartest-lead.D.0",
+   "questionId": "q-make-the-smartest-lead",
+   "optionKey": "D",
+   "voiceId": "v-mencius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "In Mencius' account even a sage-king could not hand over the empire: he could only put a candidate forward, and Heaven and the people had to accept him. Talent nominates; acceptance decides.",
+    "zh": "在孟子的叙述里，即使是圣王也不能私相授受天下：他只能推荐人选，必须由天与民接受。才能只是提名，认可才是决定。"
+   },
+   "detail": {
+    "en": "Read across 2,300 years, this suggests nobody becomes a rightful ruler by being drafted for their brilliance. The cost is that Mencius reads 'the people accepted him' from signs and conduct, not a count — a claim that is easy for any ruler to make.",
+    "zh": "跨越两千三百年来读，这意味着没有人会因为聪明被征召就成为正当的统治者。代价是：孟子说的「民受之」是从迹象和行事中看出来的，不是点票的结果——任何统治者都很容易这样宣称。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Anciently Yaou presented Shun to Heaven, and Heaven accepted him; he displayed him to the people, and the people accepted him.",
+    "zh": "昔者堯薦舜於天而天受之，暴之於民而民受之。"
+   },
+   "origin": {
+    "en": "China, c. 300 BCE",
+    "zh": "中国，约公元前 300 年"
+   },
+   "source": {
+    "label": {
+     "en": "Mencius 5A.5, trans. James Legge, The Life and Works of Mencius (1875)",
+     "zh": "《孟子·万章上》5A.5，理雅各 英译（1875）"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.A.0",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "A",
+   "voiceId": "v-mencius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mencius admits plainly that he wants both things. When they can't be had together, he gives up the lesser for the greater — even life for what is right.",
+    "zh": "孟子坦白承认两样他都想要。当二者不可兼得时，他舍弃较轻的，选择较重的——甚至为义舍生。"
+   },
+   "detail": {
+    "en": "Applied to work, the honest person is not a fool who misread the game but someone who ranked what they wanted. The cost is that the passage is about life and death; most corner-cutting is grey, and Mencius gives little help with small, frequent compromises.",
+    "zh": "用在工作上，诚实的人不是看不懂游戏规则的傻子，而是把自己想要的东西排了序。代价是：这段话讲的是生死；大多数走捷径是灰色的，而对于那些小而频繁的妥协，孟子帮不上太多忙。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I like fish, and I also like bears' paws. If I cannot get both together, I will let the fish go, and take the bears' paws. So I like life, and I also like righteousness. If I cannot keep the two together, I will let life go, and choose righteousness.",
+    "zh": "魚，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍魚而取熊掌者也。生，亦我所欲也；義，亦我所欲也。二者不可得兼，舍生而取義者也。"
+   },
+   "origin": {
+    "en": "China, c. 300 BCE",
+    "zh": "中国，约公元前 300 年"
+   },
+   "source": {
+    "label": {
+     "en": "Mencius 6A.10, trans. James Legge, The Life and Works of Mencius (1875)",
+     "zh": "《孟子·告子上》6A.10，理雅各 英译（1875）"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.B.0",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "B",
+   "voiceId": "v-kant",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Kant's test asks whether you could will your rule to be everyone's. 'Everyone cuts corners' is not an excuse under it; it is the test already failed, out in the open.",
+    "zh": "康德的检验是：你能否意愿自己的准则成为所有人的法则。在这个检验下，「大家都走捷径」不是借口，而是这个检验已经公开失败的样子。"
+   },
+   "detail": {
+    "en": "On this view, how many others break the rule has no bearing on whether you should. The cost is that the test is silent about consequences: you may keep your integrity and lose your job, and Kant offers no comfort for that.",
+    "zh": "照此看法，有多少人违规，与你该不该违规毫无关系。代价是：这个检验对后果保持沉默——你可能保住了正直却丢了工作，而康德对此不提供任何安慰。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I am never to act otherwise than so that I could also will that my maxim should become a universal law.",
+    "zh": "I am never to act otherwise than so that I could also will that my maxim should become a universal law."
+   },
+   "origin": {
+    "en": "Königsberg, 1785",
+    "zh": "柯尼斯堡，1785 年"
+   },
+   "source": {
+    "label": {
+     "en": "Immanuel Kant, Groundwork of the Metaphysic of Morals, First Section, trans. T. K. Abbott",
+     "zh": "康德《道德形而上学奠基》第一章，阿博特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/5682"
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.C.0",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "C",
+   "voiceId": "v-epictetus",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Epictetus treats every advantage as having a price. The one who flattered got the dinner; you kept what you would have paid. You did not lose the deal — you declined it.",
+    "zh": "爱比克泰德认为每一种好处都有价码。奉承的人得到了晚宴；你保住了本要付出的东西。你不是输了这笔交易，而是拒绝了它。"
+   },
+   "detail": {
+    "en": "This recasts 'losing' as a trade made with open eyes, not foolishness. The cost is that Stoic accounting can feel thin when the price is your rent; it tells you what you kept, not how to live on it.",
+    "zh": "这把「输」重新理解为一次清醒的交换，而不是愚蠢。代价是：当代价是你的房租时，斯多葛式的算账可能显得单薄；它告诉你保住了什么，却没告诉你靠什么生活。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "If then a man gives up the obolus, and receives the lettuces, and if you do not give up the obolus and do not obtain the lettuces, do not suppose that you receive less than he who has got the lettuces; for as he has the lettuces, so you have the obolus which you did not give.",
+    "zh": "If then a man gives up the obolus, and receives the lettuces, and if you do not give up the obolus and do not obtain the lettuces, do not suppose that you receive less than he who has got the lettuces; for as he has the lettuces, so you have the obolus which you did not give."
+   },
+   "origin": {
+    "en": "Nicopolis, c. 125 CE",
+    "zh": "尼科波利斯，约公元 125 年"
+   },
+   "source": {
+    "label": {
+     "en": "Epictetus, Enchiridion 25, trans. George Long",
+     "zh": "爱比克泰德《手册》第 25 节，朗 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/10661"
+   }
+  },
+  {
+   "id": "q-everyone-cuts-corners.D.0",
+   "questionId": "q-everyone-cuts-corners",
+   "optionKey": "D",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes saw that keeping a bargain alone, where nobody enforces it, only exposes you to those who won't. Where corners are cut everywhere, the real failure is the absence of a power that makes rules binding.",
+    "zh": "霍布斯看到，在没有人强制执行的地方，独自守约只会让你暴露在不守约的人面前。在人人都走捷径的地方，真正的失败是缺少一个能让规则生效的权力。"
+   },
+   "detail": {
+    "en": "On this reading you are not a fool for keeping the rules, but neither are you obliged to be the only one — the fix is enforcement, not heroism. Hobbes also argued elsewhere that breaking covenants is against reason once a common power exists. The cost: waiting for a referee can become an excuse to join in.",
+    "zh": "照这个读法，守规矩不是傻，但你也没有义务做唯一守规矩的人——解决办法是执法，而不是英雄主义。霍布斯在别处也论证过，一旦存在共同权力，背约就违背理性。代价是：等待裁判，可能变成随波逐流的借口。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "For he that performeth first, has no assurance the other will performe after; because the bonds of words are too weak to bridle mens ambition, avarice, anger, and other Passions, without the feare of some coerceive Power",
+    "zh": "For he that performeth first, has no assurance the other will performe after; because the bonds of words are too weak to bridle mens ambition, avarice, anger, and other Passions, without the feare of some coerceive Power"
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XIV",
+     "zh": "霍布斯《利维坦》第十四章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3207"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.A.0",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "A",
+   "voiceId": "v-machiavelli",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Machiavelli puts the country's survival above every other consideration — just or unjust, praiseworthy or shameful. By that standard, an act that truly saves the country cannot be betrayal of it.",
+    "zh": "马基雅维利把国家的存续置于一切考量之上——无论正义与否、光彩与否。按这个标准，一个真正拯救了国家的行为，不可能是对国家的背叛。"
+   },
+   "detail": {
+    "en": "He was advising citizens who counsel their country, not spies; the extension is ours. The cost is that everyone who has ever betrayed a state has believed, or claimed, they were saving it — the standard has no way to tell them apart in advance.",
+    "zh": "他是在给为国家出谋划策的公民提建议，不是给间谍；延伸是我们的推论。代价是：每一个背叛过国家的人都相信或声称自己在拯救它——这个标准无法事先把他们区分开来。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "when the entire safety of our country is at stake, no consideration of what is just or unjust, merciful or cruel, praiseworthy or shameful, must intervene. On the contrary, every other consideration being set aside, that course alone must be taken which preserves the existence of the country and maintains its liberty.",
+    "zh": "when the entire safety of our country is at stake, no consideration of what is just or unjust, merciful or cruel, praiseworthy or shameful, must intervene. On the contrary, every other consideration being set aside, that course alone must be taken which preserves the existence of the country and maintains its liberty."
+   },
+   "origin": {
+    "en": "Florence, c. 1517",
+    "zh": "佛罗伦萨，约 1517 年"
+   },
+   "source": {
+    "label": {
+     "en": "Niccolò Machiavelli, Discourses on Livy, Book III, ch. 41, trans. Ninian Hill Thomson",
+     "zh": "马基雅维利《论李维》第三卷第四十一章，汤姆森 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/10827"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.B.0",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "B",
+   "voiceId": "v-hobbes",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Hobbes lists the belief that each private person may judge good and evil for the state as a poison that kills commonwealths. A citizen who secretly overrides the state on their own judgement is, on this view, the disease, not the cure.",
+    "zh": "霍布斯把「每个私人都可以为国家判断善恶」的信念列为致使国家衰亡的毒药。照此看法，一个按自己判断暗中凌驾于国家之上的公民，是病，而不是药。"
+   },
+   "detail": {
+    "en": "Hobbes wrote after a civil war fought between people each sure they were saving England. The cost is that his answer leaves no remedy against a sovereign who is the one heading for disaster.",
+    "zh": "霍布斯写作于一场内战之后——交战双方都确信自己在拯救英格兰。代价是：如果走向灾难的正是主权者本身，他的回答没有给出任何补救。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I observe the Diseases of a Common-wealth, that proceed from the poyson of seditious doctrines; whereof one is, \"That every private man is Judge of Good and Evill actions.\"",
+    "zh": "I observe the Diseases of a Common-wealth, that proceed from the poyson of seditious doctrines; whereof one is, \"That every private man is Judge of Good and Evill actions.\""
+   },
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "source": {
+    "label": {
+     "en": "Thomas Hobbes, Leviathan, ch. XXIX",
+     "zh": "霍布斯《利维坦》第二十九章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3207"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.C.0",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "C",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "In the Crito, the Laws tell Socrates he has two honest options: persuade the city it is wrong, or do what it orders. Socrates, condemned to death, chose to stay rather than escape.",
+    "zh": "在《克力同篇》中，法律对苏格拉底说，他只有两条正当的路：说服城邦它错了，或者服从它的命令。被判死刑的苏格拉底选择留下，而不是逃走。"
+   },
+   "detail": {
+    "en": "By this standard, working against your country in secret is ruled out — not because it is never right, but because it skips persuasion. The cost is that persuasion can be impossible when the state hides what it is doing.",
+    "zh": "照这个标准，暗中对抗自己的国家是被排除的——不是因为它永远不对，而是因为它跳过了说服。代价是：当国家隐瞒自己所做的事情时，说服可能根本无从谈起。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "whether in battle or in a court of law, or in any other place, he must do what his city and his country order him; or he must change their view of what is just",
+    "zh": "whether in battle or in a court of law, or in any other place, he must do what his city and his country order him; or he must change their view of what is just"
+   },
+   "origin": {
+    "en": "Athens, c. 360s BCE",
+    "zh": "雅典，约公元前 4 世纪 60 年代"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Crito (51b–c), trans. Benjamin Jowett",
+     "zh": "柏拉图《克力同篇》（51b–c），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1657"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.D.0",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "D",
+   "voiceId": "v-confucius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Asked how to serve a ruler, Confucius gives two rules: do not deceive him, and oppose him to his face. Loyalty, here, includes open resistance and excludes deception.",
+    "zh": "被问到如何侍奉君主，孔子给出两条：不要欺骗他，要当面冒犯他。在这里，忠诚包括公开的抗争，而排除欺骗。"
+   },
+   "detail": {
+    "en": "Read today, a loyal dissenter speaks up rather than works in the dark. The cost is that open opposition is easy to punish; this standard asks for a courage that secret action was invented to avoid.",
+    "zh": "放到今天来读，忠诚的异议者会站出来发声，而不是在暗处行动。代价是：公开反对很容易遭到惩罚；这个标准要求的勇气，正是秘密行动想要回避的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Tsze-lu asked how a ruler should be served. The Master said, 'Do not impose on him, and, moreover, withstand him to his face.'",
+    "zh": "子路問事君，子曰：「勿欺也，而犯之。」"
+   },
+   "origin": {
+    "en": "China, c. 500 BCE",
+    "zh": "中国，约公元前 500 年"
+   },
+   "source": {
+    "label": {
+     "en": "Confucius, Analects 14.23, trans. James Legge",
+     "zh": "《论语·宪问》14.23，理雅各 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3330"
+   }
+  },
+  {
+   "id": "q-spy-on-your-country.D.1",
+   "questionId": "q-spy-on-your-country",
+   "optionKey": "D",
+   "voiceId": "v-kant",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Kant listed making subjects into spies among the means a state may never use, even in war, because such perfidious methods destroy the trust that any later peace needs.",
+    "zh": "康德把让臣民充当间谍列为国家即使在战争中也绝不可使用的手段，因为这类背信的手段会摧毁日后和平所需要的信任。"
+   },
+   "detail": {
+    "en": "Kant was writing about states using spies, not citizens spying on their own state; the inference is ours: if secret betrayal corrodes trust between nations, it corrodes it within one too. The cost is that his framework offers dissenters little beyond public argument.",
+    "zh": "康德讨论的是国家使用间谍，而不是公民刺探自己的国家；推论是我们的：如果秘密背叛会侵蚀国与国之间的信任，它同样会侵蚀一国之内的信任。代价是：除了公开论辩，他的框架几乎没有给异议者留下别的办法。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Among these forbidden means are to be reckoned the appointment of Subjects to act as spies",
+    "zh": "Among these forbidden means are to be reckoned the appointment of Subjects to act as spies"
+   },
+   "origin": {
+    "en": "Königsberg, 1797",
+    "zh": "柯尼斯堡，1797 年"
+   },
+   "source": {
+    "label": {
+     "en": "Immanuel Kant, The Metaphysics of Morals, Doctrine of Right, §57, trans. W. Hastie",
+     "zh": "康德《道德形而上学·法权论》第 57 节，黑斯蒂 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.A.0",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "A",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Plato puts it as a rule: the city whose rulers least want to rule is governed best and most quietly; the one whose rulers are most eager, worst.",
+    "zh": "柏拉图把它当作一条规律：统治者最不想统治的城邦，治理得最好、最安定；统治者最急切的城邦，最糟。"
+   },
+   "detail": {
+    "en": "Taken today, eagerness is a warning sign rather than a credential. The cost is practical: in any system where office must be sought, the reluctant rarely stand, so the rule can leave power to exactly the people it distrusts.",
+    "zh": "放到今天来看，急切是一个警示，而不是资格。代价很实际：在任何需要主动争取职位的制度里，不情愿的人很少参选，于是这条规律可能恰恰把权力留给了它不信任的人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the State in which the rulers are most reluctant to govern is always the best and most quietly governed, and the State in which they are most eager, the worst.",
+    "zh": "the State in which the rulers are most reluctant to govern is always the best and most quietly governed, and the State in which they are most eager, the worst."
+   },
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Republic, Book VII (520d), trans. Benjamin Jowett",
+     "zh": "柏拉图《理想国》第七卷（520d），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1497"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.B.0",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "B",
+   "voiceId": "v-daoism",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The Tao Te Ching treats the realm as something that cannot be seized: whoever grabs for it spoils it, and whoever grips it loses it.",
+    "zh": "《道德经》认为天下不能强取：为之者败之，执之者失之。"
+   },
+   "detail": {
+    "en": "This is less a ban on ambition than a prediction about it — the wanting itself distorts what is wanted. The cost is that the text offers no procedure: it tells you who will fail, not who should be chosen instead.",
+    "zh": "这与其说是禁止野心，不如说是对野心的预言——想要本身就会扭曲所想要的东西。代价是：这段文字没有提供任何程序；它告诉你谁会失败，却没说该选谁。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "If any one should wish to get the kingdom for himself, and to effect this by what he does, I see that he will not succeed. The kingdom is a spirit-like thing, and cannot be got by active doing. He who would so win it destroys it; he who would hold it in his grasp loses it.",
+    "zh": "將欲取天下而為之，吾見其不得已。天下神器，不可為也，為者敗之，執者失之。"
+   },
+   "origin": {
+    "en": "China, c. 4th c. BCE",
+    "zh": "中国，约公元前 4 世纪"
+   },
+   "source": {
+    "label": {
+     "en": "Laozi, Tao Te Ching, ch. 29, trans. James Legge",
+     "zh": "《道德经》第二十九章，理雅各 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/216"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.B.1",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "B",
+   "voiceId": "v-zhuangzi",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Offered high office, Zhuangzi answers with a sacred tortoise: honoured on an altar and dead. The story suggests that power, once taken, consumes the person who takes it.",
+    "zh": "有人请庄子出任高官，他用一只神龟作答：供在庙堂之上，却早已死去。这个故事暗示，权力一旦接过来，就会吞噬接受它的人。"
+   },
+   "detail": {
+    "en": "It is a story about refusing, not a theory of who should govern; and the refusal assumes you can afford a quiet life in the mud. The cost is that if everyone wise follows the tortoise, the altar is left to those who want it.",
+    "zh": "这是一个关于拒绝的故事，而不是关于谁该治理的理论；而且这种拒绝预设了你负担得起在泥里自在的生活。代价是：如果所有明智的人都效法那只龟，庙堂就留给了想要它的人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Now would this tortoise rather be dead and have its remains venerated, or be alive and wagging its tail in the mud?",
+    "zh": "此龜者，寧其死爲留骨而貴乎？寧其生而曳尾於塗中乎？"
+   },
+   "origin": {
+    "en": "China, c. 4th c. BCE",
+    "zh": "中国，约公元前 4 世纪"
+   },
+   "source": {
+    "label": {
+     "en": "Zhuangzi, ch. 17 \"Autumn Floods\", trans. Herbert A. Giles",
+     "zh": "《庄子·秋水》，翟理斯 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/59709"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.C.0",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "C",
+   "voiceId": "v-nietzsche",
+   "kind": "philosophy",
+   "claim": {
+    "en": "For Nietzsche the drive toward more power is not a defect in some people; it is what living things do. Disqualifying the ambitious would mean disqualifying life.",
+    "zh": "在尼采看来，追求更多权力的冲动不是某些人的缺陷，而是一切生命的本性。取消有野心者的资格，就等于取消生命的资格。"
+   },
+   "detail": {
+    "en": "Read this way, the honest question is what a person's will to power aims at, not whether they have one. The cost is that the framework gives no brake: it explains ambition without telling you how to stop it from trampling others.",
+    "zh": "这样读，诚实的问题是一个人的权力意志指向什么，而不是他有没有。代价是：这个框架没有刹车；它解释了野心，却没告诉你如何阻止它践踏他人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "the struggle, be it great or small, turns everywhere on predominance, on increase and expansion, on power, in conformity to the will to power, which is just the will to live.",
+    "zh": "the struggle, be it great or small, turns everywhere on predominance, on increase and expansion, on power, in conformity to the will to power, which is just the will to live."
+   },
+   "origin": {
+    "en": "Germany, 1887",
+    "zh": "德国，1887 年"
+   },
+   "source": {
+    "label": {
+     "en": "Friedrich Nietzsche, The Joyful Wisdom (The Gay Science), §349, trans. Thomas Common",
+     "zh": "尼采《快乐的科学》第 349 节，科蒙 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/52881"
+   }
+  },
+  {
+   "id": "q-wanting-power-disqualifies.D.0",
+   "questionId": "q-wanting-power-disqualifies",
+   "optionKey": "D",
+   "voiceId": "v-russell",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Russell located the danger after the wanting: holding power breeds the love of it. His remedy was not to screen out the ambitious but to spread power widely.",
+    "zh": "罗素认为危险出现在想要之后：握有权力会滋生对权力的迷恋。他的对策不是筛掉有野心的人，而是把权力广泛分散。"
+   },
+   "detail": {
+    "en": "By this argument, a humble candidate becomes a different person after years in office, so character tests at the door matter less than limits once inside. The cost is that diffusing power also diffuses responsibility, and slows down decisions that sometimes need speed.",
+    "zh": "照这个论证，一个谦逊的候选人在位多年后也会变成另一个人，所以门口的品格审查，不如进门后的权力限制重要。代价是：分散权力也分散了责任，并拖慢那些有时需要速度的决定。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The mere possession of power tends to produce a love of power, which is a very dangerous motive, because the only sure proof of power consists in preventing others from doing what they wish to do. The essential theory of democracy is the diffusion of power among the whole people",
+    "zh": "The mere possession of power tends to produce a love of power, which is a very dangerous motive, because the only sure proof of power consists in preventing others from doing what they wish to do. The essential theory of democracy is the diffusion of power among the whole people"
+   },
+   "origin": {
+    "en": "Britain, 1917",
+    "zh": "英国，1917 年"
+   },
+   "source": {
+    "label": {
+     "en": "Bertrand Russell, Political Ideals (1917), ch. I",
+     "zh": "罗素《政治理想》（1917）第一章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4776"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.A.0",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "A",
+   "voiceId": "v-smith",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Smith trusted competition to push sellers toward serving buyers — and expected sellers to escape that pressure whenever they could. On his account, being better wins only while rivals can still undercut you.",
+    "zh": "斯密相信竞争会迫使卖家为买家服务——同时也预料卖家一有机会就会逃避这种压力。按他的说法，「更好」只有在对手还能压价竞争时才能胜出。"
+   },
+   "detail": {
+    "en": "So the honest answer is conditional: better products win in open markets, and winners then try to close them. The cost is that the same passage warns the law can't simply ban such meetings, leaving no clean remedy.",
+    "zh": "所以诚实的回答是有条件的：在开放市场中更好的产品会赢，而赢家随后会试图关闭市场。代价是：同一段话还警告说，法律无法简单地禁止这类聚会，因此并没有干净利落的补救办法。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices.",
+    "zh": "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices."
+   },
+   "origin": {
+    "en": "Scotland, 1776",
+    "zh": "苏格兰，1776 年"
+   },
+   "source": {
+    "label": {
+     "en": "Adam Smith, The Wealth of Nations, Book I, ch. X, part II",
+     "zh": "亚当·斯密《国富论》第一卷第十章第二节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3300"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.B.0",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "B",
+   "voiceId": "v-marx",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Marx's point is impersonal: the owner who refuses to squeeze harder is undersold by one who doesn't. Ruthlessness is not a personality type but a law the market imposes from outside.",
+    "zh": "马克思的观点是非个人化的：不肯压榨得更狠的老板，会被肯这么做的人挤垮。冷酷不是一种性格，而是市场从外部强加的法则。"
+   },
+   "detail": {
+    "en": "This shifts blame from individual executives to the structure, which is the argument's strength and its weakness. The cost: if competition compels everything, it is hard to explain firms in the same market that behave very differently.",
+    "zh": "这把责任从个别高管转移到了结构上，这既是论证的长处，也是它的弱点。代价是：如果竞争决定一切，就很难解释同一市场中行为迥异的企业。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Free competition brings out the inherent laws of capitalist production, in the shape of external coercive laws having power over every individual capitalist.",
+    "zh": "Free competition brings out the inherent laws of capitalist production, in the shape of external coercive laws having power over every individual capitalist."
+   },
+   "origin": {
+    "en": "London, 1867",
+    "zh": "伦敦，1867 年"
+   },
+   "source": {
+    "label": {
+     "en": "Karl Marx, Capital, vol. I, ch. X, trans. Samuel Moore and Edward Aveling",
+     "zh": "马克思《资本论》第一卷第十章，穆尔与艾威林 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.C.0",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "C",
+   "voiceId": "v-nietzsche",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Nietzsche refuses to treat exploitation as a corruption of healthy life; growth itself means taking ground from others. On this view the winners were ruthless, and calling it a vice is a moral story told afterwards.",
+    "zh": "尼采拒绝把剥削视为健康生命的堕落；成长本身就意味着从他人那里夺取地盘。按这种看法，赢家确实狠，而把这称为恶，只是事后讲的道德故事。"
+   },
+   "detail": {
+    "en": "Nietzsche was writing about life and culture, not commerce; the application to companies is ours. The cost is plain: it is a description that can be used as permission. (Capitals mark emphasis in this translation.)",
+    "zh": "尼采谈的是生命与文化，不是商业；把它用于公司是我们的推论。代价很明显：这是一种可以被当作许可来用的描述。（大写字母是该译本表示强调的方式。）"
+   },
+   "extra": null,
+   "quote": {
+    "en": "life itself is ESSENTIALLY appropriation, injury, conquest of the strange and weak, suppression, severity, obtrusion of peculiar forms, incorporation, and at the least, putting it mildest, exploitation",
+    "zh": "life itself is ESSENTIALLY appropriation, injury, conquest of the strange and weak, suppression, severity, obtrusion of peculiar forms, incorporation, and at the least, putting it mildest, exploitation"
+   },
+   "origin": {
+    "en": "Germany, 1886",
+    "zh": "德国，1886 年"
+   },
+   "source": {
+    "label": {
+     "en": "Friedrich Nietzsche, Beyond Good and Evil, §259, trans. Helen Zimmern",
+     "zh": "尼采《善恶的彼岸》第 259 节，齐默恩 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4363"
+   }
+  },
+  {
+   "id": "q-better-or-ruthless.D.0",
+   "questionId": "q-better-or-ruthless",
+   "optionKey": "D",
+   "voiceId": "v-kropotkin",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Kropotkin read nature's record as favouring the species that cooperate, not those that fight hardest. Carried to business, the firms that endure would be the ones that build trust with workers, suppliers and customers.",
+    "zh": "克鲁泡特金从自然史中读出，被青睐的是合作的物种，而不是斗得最凶的。延伸到商业，能长久存续的企业，会是那些与员工、供应商和顾客建立信任的企业。"
+   },
+   "detail": {
+    "en": "The extension to markets is our inference; Kropotkin was arguing against the use of Darwin to justify cutthroat competition. The cost is that in the short run the ruthless often do win, and 'the ones that last' can be a long wait.",
+    "zh": "延伸到市场是我们的推论；克鲁泡特金当时是在反驳用达尔文来为残酷竞争辩护。代价是：在短期内狠的一方往往确实会赢，而「长久的赢家」可能要等很久。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "\"Don't compete!--competition is always injurious to the species, and you have plenty of resources to avoid it!\"",
+    "zh": "\"Don't compete!--competition is always injurious to the species, and you have plenty of resources to avoid it!\""
+   },
+   "origin": {
+    "en": "England, 1902",
+    "zh": "英国，1902 年"
+   },
+   "source": {
+    "label": {
+     "en": "Peter Kropotkin, Mutual Aid, ch. II",
+     "zh": "克鲁泡特金《互助论》第二章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4341"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.A.0",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "A",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The Republic grants the privilege of lying to rulers alone, for the public good — and denies it to everyone else. The reason does change the lie.",
+    "zh": "《理想国》只把说谎的特权给统治者，且仅为公共利益——其他人一概不许。理由确实改变了谎言。"
+   },
+   "detail": {
+    "en": "This is the origin of the 'noble lie' debate. The cost is obvious and old: it hands the decision about what counts as the public good to the people doing the lying.",
+    "zh": "这正是「高贵的谎言」之争的源头。代价显而易见且古老：它把「什么算公共利益」的决定权，交给了说谎的人自己。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Then if any one at all is to have the privilege of lying, the rulers of the State should be the persons; and they, in their dealings either with enemies or with their own citizens, may be allowed to lie for the public good.",
+    "zh": "Then if any one at all is to have the privilege of lying, the rulers of the State should be the persons; and they, in their dealings either with enemies or with their own citizens, may be allowed to lie for the public good."
+   },
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Republic, Book III (389b), trans. Benjamin Jowett",
+     "zh": "柏拉图《理想国》第三卷（389b），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1497"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.B.0",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "B",
+   "voiceId": "v-machiavelli",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Machiavelli holds that a ruler cannot keep faith when doing so would be turned against the state, because others will not keep faith either. The standard for a prince is not the standard for a person.",
+    "zh": "马基雅维利认为，当守信会被用来对付国家时，统治者不能守信，因为别人也不会守信。君主的标准不同于个人的标准。"
+   },
+   "detail": {
+    "en": "He adds, tellingly, that if men were good the rule would not hold. The cost is that the argument works equally well for a ruler protecting himself, and Machiavelli does not much distinguish the two.",
+    "zh": "他还意味深长地补充说，如果人都是好的，这条规则就不成立。代价是：这个论证同样适用于一个保护自己的统治者，而马基雅维利并没有认真区分二者。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Therefore a wise lord cannot, nor ought he to, keep faith when such observance may be turned against him, and when the reasons that caused him to pledge it exist no longer. If men were entirely good this precept would not hold, but because they are bad, and will not keep faith with you, you too are not bound to observe it with them.",
+    "zh": "Therefore a wise lord cannot, nor ought he to, keep faith when such observance may be turned against him, and when the reasons that caused him to pledge it exist no longer. If men were entirely good this precept would not hold, but because they are bad, and will not keep faith with you, you too are not bound to observe it with them."
+   },
+   "origin": {
+    "en": "Florence, 1513",
+    "zh": "佛罗伦萨，1513 年"
+   },
+   "source": {
+    "label": {
+     "en": "Niccolò Machiavelli, The Prince, ch. XVIII, trans. W. K. Marriott",
+     "zh": "马基雅维利《君主论》第十八章，马里奥特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1232"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.C.0",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "C",
+   "voiceId": "v-kant",
+   "kind": "philosophy",
+   "claim": {
+    "en": "For Kant a lying promise uses the other person merely as a means, and no purpose — private or national — changes that. The person deceived cannot consent to how they are being used.",
+    "zh": "在康德看来，虚假的承诺把对方仅仅当作手段，任何目的——无论是个人的还是国家的——都改变不了这一点。被欺骗的人无法同意自己被这样利用。"
+   },
+   "detail": {
+    "en": "The extension to state lies is ours, though Kant elsewhere refused even a lie to a murderer at the door. The cost is that this rigour leaves officials no room in situations where silence is impossible and truth would cost lives.",
+    "zh": "延伸到国家谎言是我们的推论，尽管康德在别处连对门口的凶手说谎都不允许。代价是：这种严格，让官员在无法沉默、说真话又会害死人的处境中毫无余地。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "He who is thinking of making a lying promise to others will see at once that he would be using another man merely as a mean, without the latter containing at the same time the end in himself.",
+    "zh": "He who is thinking of making a lying promise to others will see at once that he would be using another man merely as a mean, without the latter containing at the same time the end in himself."
+   },
+   "origin": {
+    "en": "Königsberg, 1785",
+    "zh": "柯尼斯堡，1785 年"
+   },
+   "source": {
+    "label": {
+     "en": "Immanuel Kant, Groundwork of the Metaphysic of Morals, Second Section, trans. T. K. Abbott",
+     "zh": "康德《道德形而上学奠基》第二章，阿博特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/5682"
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.C.1",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "C",
+   "voiceId": "v-augustine",
+   "kind": "religiousTeaching",
+   "claim": {
+    "en": "Augustine holds that every lie is a sin, while granting that a lie told to help someone is less grave than one told to harm. The reason changes how serious the lie is, not whether it is one.",
+    "zh": "奥古斯丁认为每一个谎言都是罪，同时承认为帮助他人而说的谎，比为伤害他人而说的谎轻一些。理由改变的是谎言的轻重，而不是它是否为谎言。"
+   },
+   "detail": {
+    "en": "This is a religious teaching about sin, not a theory of statecraft. The cost is that it gives a government no permission at all — useful as a check, hard to live by in a war.",
+    "zh": "这是一条关于罪的宗教教导，而不是治国理论。代价是：它没有给政府任何许可——作为制约很有用，在战争中却很难践行。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "To me, however, it seems certain that every lie is a sin, though it makes a great difference with what intention and on what subject one lies.",
+    "zh": "To me, however, it seems certain that every lie is a sin, though it makes a great difference with what intention and on what subject one lies."
+   },
+   "origin": {
+    "en": "Hippo, North Africa, c. 421",
+    "zh": "北非希波，约 421 年"
+   },
+   "source": {
+    "label": {
+     "en": "Augustine, Enchiridion, ch. 18, trans. J. F. Shaw",
+     "zh": "奥古斯丁《教义手册》第十八章，肖 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-lying-for-your-country.D.0",
+   "questionId": "q-lying-for-your-country",
+   "optionKey": "D",
+   "voiceId": "v-montaigne",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Montaigne grants that the public good may require betrayal and lies — and wants no part of it. Let others, more pliable, take that work on.",
+    "zh": "蒙田承认公共利益也许需要背叛和谎言——但他自己不想沾手。让那些更顺从、更圆滑的人去做吧。"
+   },
+   "detail": {
+    "en": "He does not pretend the lie becomes honest because it serves the state; he calls it a vice the state happens to need. The cost is that stepping aside leaves the dirty work to whoever is willing, which is not obviously better.",
+    "zh": "他并不假装谎言因为服务国家就变得正当；他称之为国家恰好需要的恶。代价是：袖手旁观，等于把脏活留给愿意干的人，而这显然未必更好。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The public weal requires that men should betray, and lie, and massacre; let us leave this commission to men who are more obedient and more supple.",
+    "zh": "The public weal requires that men should betray, and lie, and massacre; let us leave this commission to men who are more obedient and more supple."
+   },
+   "origin": {
+    "en": "France, 1588",
+    "zh": "法国，1588 年"
+   },
+   "source": {
+    "label": {
+     "en": "Michel de Montaigne, Essays, Book III, ch. 1 \"Of Profit and Honesty\", trans. Charles Cotton, ed. W. C. Hazlitt",
+     "zh": "蒙田《随笔集》第三卷第一章〈论利与义〉，科顿 英译，黑兹利特 编"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3600"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.A.0",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "A",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "In the ship-of-state passage, steering takes knowledge most passengers lack, and a real navigator does not campaign for the wheel. Plato's ideal leader is not like you; they know what you don't.",
+    "zh": "在「国家之船」一段中，掌舵需要大多数乘客所不具备的知识，而真正的舵手不会去拉票争舵。柏拉图理想中的领导者并不像你；他们懂得你不懂的东西。"
+   },
+   "detail": {
+    "en": "The cost is the one critics have pressed for two thousand years: who certifies the expert, and what stops expertise from serving itself? Plato's answer was a philosopher class with no private property — a price no modern state has paid.",
+    "zh": "代价正是两千年来批评者一再追问的：谁来认证专家？又有什么能阻止专长为自己服务？柏拉图的回答是一个没有私产的哲人阶层——没有哪个现代国家付出过这样的代价。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The ruler who is good for anything ought not to beg his subjects to be ruled by him",
+    "zh": "The ruler who is good for anything ought not to beg his subjects to be ruled by him"
+   },
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, Republic, Book VI (489b–c), trans. Benjamin Jowett",
+     "zh": "柏拉图《理想国》第六卷（489b–c），乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1497"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.A.1",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "A",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mill, a democrat, still held that the wiser judgement deserves more weight in common affairs — and admitted the hard part is knowing whose it is.",
+    "zh": "密尔虽是民主派，仍认为在共同事务中，更明智的判断应当占更大分量——同时承认难点在于确认那是谁的判断。"
+   },
+   "detail": {
+    "en": "Mill's own remedy was extra votes for the educated, an idea later democrats rejected. The cost is visible in the quote itself: a leader 'better than you' needs some test of betterness, and every test so far has favoured those who wrote it.",
+    "zh": "密尔自己的方案是给受过教育者更多选票，这个主张后来被民主派抛弃了。代价就写在引文里：「比你更好」的领导需要某种衡量「更好」的标准，而迄今每一种标准都偏向制定它的人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "One of the two, as the wiser or better man, has a claim to superior weight: the difficulty is in ascertaining which of the two it is",
+    "zh": "One of the two, as the wiser or better man, has a claim to superior weight: the difficulty is in ascertaining which of the two it is"
+   },
+   "origin": {
+    "en": "Britain, 1861",
+    "zh": "英国，1861 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, Considerations on Representative Government, ch. VIII",
+     "zh": "约翰·斯图亚特·密尔《代议制政府》第八章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/5669"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.B.0",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "B",
+   "voiceId": "v-aristotle",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Aristotle's case for ordinary people: no single person, however able, matches a whole people pooling their judgement, as a shared feast beats one person's portion.",
+    "zh": "亚里士多德为普通人辩护：任何一个人，无论多能干，都比不上全体民众集合起来的判断，正如众人合办的宴席胜过一个人的一份饭。"
+   },
+   "detail": {
+    "en": "This argues for leaders who stay close to the people and answerable to them, not for leaders who are average. The cost is that Aristotle limited 'the people' to free male citizens, and the argument works only when the many actually deliberate together rather than simply vote apart.",
+    "zh": "这论证的是领导者应贴近民众、向民众负责，而不是领导者应当平庸。代价是：亚里士多德所说的「民众」只包括自由的男性公民，而且这个论证只有在多数人真正一起商议、而不是各自投票时才成立。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "one individual, be he who he will, will be found, upon comparison, inferior to a whole people taken collectively: but this is what a city is, as a public entertainment is better than one man's portion: for this reason the multitude judge of many things better than any one single person.",
+    "zh": "one individual, be he who he will, will be found, upon comparison, inferior to a whole people taken collectively: but this is what a city is, as a public entertainment is better than one man's portion: for this reason the multitude judge of many things better than any one single person."
+   },
+   "origin": {
+    "en": "Athens, c. 340 BCE",
+    "zh": "雅典，约公元前 340 年"
+   },
+   "source": {
+    "label": {
+     "en": "Aristotle, Politics, Book III, ch. 15, trans. William Ellis",
+     "zh": "亚里士多德《政治学》第三卷第十五章，埃利斯 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/6762"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.C.0",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "C",
+   "voiceId": "v-rousseau",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Rousseau denies the premise: sovereignty belongs to the people and cannot be handed to anyone. A leader may hold power, but never your will — so the question of whether they resemble you misses the point.",
+    "zh": "卢梭否定了这个前提：主权属于人民，不能转让给任何人。领导者可以掌握权力，但永远不能代表你的意志——所以他们像不像你，问错了问题。"
+   },
+   "detail": {
+    "en": "On this reading, the right leader is a servant carrying out what the people decided, whether wiser than you or not. The cost is that Rousseau's model fits a small republic where citizens can assemble; scaled to a large country, it is hard to say who speaks for the general will.",
+    "zh": "照这个读法，合适的领导者是执行人民决定的仆人，无论他比你聪明与否。代价是：卢梭的模式适合公民能够集会的小共和国；放大到一个大国，很难说谁在为公意发声。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I hold then that Sovereignty, being nothing less than the exercise of the general will, can never be alienated, and that the Sovereign, who is no less than a collective being, cannot be represented except by himself: the power indeed may be transmitted, but not the will.",
+    "zh": "I hold then that Sovereignty, being nothing less than the exercise of the general will, can never be alienated, and that the Sovereign, who is no less than a collective being, cannot be represented except by himself: the power indeed may be transmitted, but not the will."
+   },
+   "origin": {
+    "en": "Geneva and France, 1762",
+    "zh": "日内瓦与法国，1762 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jean-Jacques Rousseau, The Social Contract, Book II, ch. 1, trans. G. D. H. Cole",
+     "zh": "卢梭《社会契约论》第二卷第一章，柯尔 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/46333"
+   }
+  },
+  {
+   "id": "q-leader-like-you-or-better.D.0",
+   "questionId": "q-leader-like-you-or-better",
+   "optionKey": "D",
+   "voiceId": "v-du-bois",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Du Bois counted it a real loss when a group's leader was effectively chosen for it from outside. A community learns by searching for, criticising and commissioning its own leaders.",
+    "zh": "杜波依斯认为，当一个群体的领袖实际上由外人替它选定时，这是真正的损失。一个群体正是在寻找、批评并委任自己的领袖时学会成长。"
+   },
+   "detail": {
+    "en": "By this measure the question is less 'like you or better' than 'whose choice'. A leader can be more gifted than the people they lead and still be theirs, if they rose from them and answer to them. The cost is that search and criticism take time and conflict, and Du Bois wrote this in open disagreement with the most powerful Black leader of his day.",
+    "zh": "照这个标准，问题与其说是「像你还是比你强」，不如说是「由谁来选」。一个领导者可以比他所领导的人更有天赋，只要他从这些人中产生并对他们负责，他仍属于他们。代价是：寻找与批评需要时间，也会带来冲突，而杜波依斯写下这段话时，正与当时最有权势的黑人领袖公开争论。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "a loss of that peculiarly valuable education which a group receives when by search and criticism it finds and commissions its own leaders.",
+    "zh": "a loss of that peculiarly valuable education which a group receives when by search and criticism it finds and commissions its own leaders."
+   },
+   "origin": {
+    "en": "United States, 1903",
+    "zh": "美国，1903 年"
+   },
+   "source": {
+    "label": {
+     "en": "W. E. B. Du Bois, The Souls of Black Folk, ch. III",
+     "zh": "杜波依斯《黑人的灵魂》第三章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/408"
+   }
+  },
+  {
+   "id": "q-market-winner-best.A.0",
+   "questionId": "q-market-winner-best",
+   "optionKey": "A",
+   "voiceId": "v-smith",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Smith made the consumer the point of the whole economy. If production exists to serve buyers, then what buyers choose is the nearest thing to a verdict on what serves them.",
+    "zh": "斯密把消费者当作整个经济的目的。如果生产是为了服务买家，那么买家的选择，就是对什么最能服务他们的最接近的裁决。"
+   },
+   "detail": {
+    "en": "Smith wrote this against merchants who rigged trade rules for themselves, so the claim is about whose interest counts, not a proof that the winner is best. The cost: buyers choose under limited information and switching costs, which Smith's sentence does not address.",
+    "zh": "斯密写这句话，是为了反对那些为自己操纵贸易规则的商人，所以它讲的是谁的利益应被优先，而不是证明赢家最好。代价是：买家是在信息有限、转换成本存在的情况下做选择的，而斯密这句话并未处理这一点。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer.",
+    "zh": "Consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer."
+   },
+   "origin": {
+    "en": "Scotland, 1776",
+    "zh": "苏格兰，1776 年"
+   },
+   "source": {
+    "label": {
+     "en": "Adam Smith, The Wealth of Nations, Book IV, ch. VIII",
+     "zh": "亚当·斯密《国富论》第四卷第八章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3300"
+   }
+  },
+  {
+   "id": "q-market-winner-best.B.0",
+   "questionId": "q-market-winner-best",
+   "optionKey": "B",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Mill's test for higher quality is the preference of people who know both options. A head count of buyers, most of whom have tried only one, is not that test.",
+    "zh": "密尔判断质量高低的标准，是熟悉两种选择的人的偏好。一群买家的人头数——其中大多数只试过一种——并不是这个标准。"
+   },
+   "detail": {
+    "en": "Mill was writing about pleasures, not products; the extension is ours. The cost is that 'competent judges' can become a polite word for snobs, and Mill gives no easy way to tell an expert from a taste-maker.",
+    "zh": "密尔谈的是快乐，不是产品；延伸是我们的推论。代价是：「有资格的评判者」可能变成势利者的体面说法，而密尔没有给出简单的方法，来分辨专家和引领品味的人。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Of two pleasures, if there be one to which all or almost all who have experience of both give a decided preference, irrespective of any feeling of moral obligation to prefer it, that is the more desirable pleasure.",
+    "zh": "Of two pleasures, if there be one to which all or almost all who have experience of both give a decided preference, irrespective of any feeling of moral obligation to prefer it, that is the more desirable pleasure."
+   },
+   "origin": {
+    "en": "Britain, 1863",
+    "zh": "英国，1863 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, Utilitarianism, ch. II",
+     "zh": "约翰·斯图亚特·密尔《功利主义》第二章"
+    },
+    "url": "https://www.gutenberg.org/ebooks/11224"
+   }
+  },
+  {
+   "id": "q-market-winner-best.C.0",
+   "questionId": "q-market-winner-best",
+   "optionKey": "C",
+   "voiceId": "v-marx",
+   "kind": "contestedArgument",
+   "claim": {
+    "en": "Marx's evidence comes from a London inquiry into bakers: the cheapest bread won customers because it was adulterated. The market rewarded the price, and the price hid the product.",
+    "zh": "马克思的证据来自伦敦对面包业的一项调查：最便宜的面包之所以赢得顾客，是因为掺了假。市场奖励的是价格，而价格掩盖了产品本身。"
+   },
+   "detail": {
+    "en": "For Marx this is the general case: the market sees exchange value, not usefulness. The cost is that the example is from 1860s London before food-safety law; regulation and reputation now catch some of what the market alone missed, which complicates the general claim.",
+    "zh": "在马克思看来，这是普遍情况：市场看见的是交换价值，而不是有用性。代价是：这个例子来自食品安全立法之前的 1860 年代伦敦；如今监管和声誉能捕捉到一部分单靠市场看不见的东西，这让他的普遍论断更复杂。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The undersellers, almost without exception, sell bread adulterated with alum, soap, pearl ashes, chalk, Derbyshire stone-dust",
+    "zh": "The undersellers, almost without exception, sell bread adulterated with alum, soap, pearl ashes, chalk, Derbyshire stone-dust"
+   },
+   "origin": {
+    "en": "London, 1867",
+    "zh": "伦敦，1867 年"
+   },
+   "source": {
+    "label": {
+     "en": "Karl Marx, Capital, vol. I, ch. X, trans. Samuel Moore and Edward Aveling",
+     "zh": "马克思《资本论》第一卷第十章，穆尔与艾威林 英译"
+    },
+    "url": null
+   }
+  },
+  {
+   "id": "q-market-winner-best.D.0",
+   "questionId": "q-market-winner-best",
+   "optionKey": "D",
+   "voiceId": "v-william-james",
+   "kind": "philosophy",
+   "claim": {
+    "en": "James defined truth by what works — but in the long run and on the whole. On that account, today's market win is one early report, not the verdict.",
+    "zh": "詹姆斯以「行得通」来定义真理——但要从长远和整体来看。照此，今天的市场胜利只是一份早期报告，而不是定论。"
+   },
+   "detail": {
+    "en": "The extension from ideas to products is ours, though James himself used money metaphors freely. The cost is that 'the long run' never arrives on a date, so the pragmatist can always defer judgement.",
+    "zh": "把它从观念延伸到产品是我们的推论，虽然詹姆斯本人常用金钱作比喻。代价是：「长远」永远不会在某个确定日期到来，所以实用主义者总可以推迟判断。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "'The true,' to put it very briefly, is only the expedient in the way of our thinking, just as 'the right' is only the expedient in the way of our behaving. Expedient in almost any fashion; and expedient in the long run and on the whole of course",
+    "zh": "'The true,' to put it very briefly, is only the expedient in the way of our thinking, just as 'the right' is only the expedient in the way of our behaving. Expedient in almost any fashion; and expedient in the long run and on the whole of course"
+   },
+   "origin": {
+    "en": "Harvard, 1907",
+    "zh": "哈佛，1907 年"
+   },
+   "source": {
+    "label": {
+     "en": "William James, Pragmatism, Lecture VI",
+     "zh": "威廉·詹姆斯《实用主义》第六讲"
+    },
+    "url": "https://www.gutenberg.org/ebooks/5116"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.A.0",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "A",
+   "voiceId": "v-aristotle",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Repeating an activity does not only produce a result; it produces the person doing it. The years did not go into the artefact — they went into you.",
+    "zh": "反复做一件事，产出的不只是结果，还有做这件事的人。那些年并没有进入你交付的成品，而是进入了你自己。"
+   },
+   "detail": {
+    "en": "Years spent learning judgement, patience and precision therefore have not become meaningless because a machine can produce the final artefact faster. The cost is that this separates personal development from economic usefulness entirely: your expertise may genuinely have shaped you while becoming much less valuable in the labour market.",
+    "zh": "因此，用来学习判断力、耐心与精确度的岁月，并不会因为机器能更快做出成品而失去意义。它的代价是把人的成长与经济价值彻底分开：你的专业也许真的塑造了你，同时在劳动市场上大幅贬值。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts.",
+    "zh": "我们因做公正的事而成为公正的人，因做节制的事而成为节制的人，因做勇敢的事而成为勇敢的人。"
+   },
+   "origin": {
+    "en": "Athens, c. 340 BCE",
+    "zh": "雅典，约公元前 340 年"
+   },
+   "source": {
+    "label": {
+     "en": "Aristotle, Nicomachean Ethics, Book II, Chapter 1, trans. W. D. Ross",
+     "zh": "亚里士多德《尼各马可伦理学》第二卷第一章，罗斯 英译"
+    },
+    "url": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.A.1",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "A",
+   "voiceId": "v-nietzsche",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Do not price your past effort at today's market rate. Difficulty, failure and discipline changed the person who went through them, whatever happened to the skill.",
+    "zh": "不要用今天的市场价来给你过去的努力定价。困难、失败与自律改变了经历它们的那个人，无论那项技能后来怎样。"
+   },
+   "detail": {
+    "en": "Nietzsche would resist treating a decade of work as an investment whose worth can be read off a current price. The cost is that this can romanticise struggle: someone whose livelihood is disappearing may reasonably care far more about rent than about whether the training improved their character.",
+    "zh": "尼采会反对把十年的努力当成一笔可以按当下价格清算的投资。它的代价是容易美化苦难：一个正在失去生计的人，完全有理由更关心房租，而不是这些训练是否让自己的品格变好。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "From the military school of life.—That which does not kill me, makes me stronger.",
+    "zh": "出自人生的军事学校 — 那些杀不死我的，使我更强。"
+   },
+   "origin": {
+    "en": "Germany, 1888",
+    "zh": "德国，1888 年"
+   },
+   "source": {
+    "label": {
+     "en": "Friedrich Nietzsche, The Twilight of the Idols, \"Maxims and Arrows\" §8, trans. Anthony M. Ludovici",
+     "zh": "弗里德里希·尼采《偶像的黄昏》〈箴言与箭〉第 8 节，卢多维奇 英译"
+    },
+    "url": "https://www.gutenberg.org/cache/epub/52263/pg52263.txt"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.B.0",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "B",
+   "voiceId": "v-william-morris",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Work is not good merely because a human used to do it. Some work is close to a blessing and some is a curse, and only the first is worth defending.",
+    "zh": "工作并不因为「过去由人来做」就是好的。有的劳动接近祝福，有的只是诅咒，值得捍卫的只有前者。"
+   },
+   "detail": {
+    "en": "Morris held that worthwhile work carries hope of useful output, of rest, and of pleasure in the activity itself. If AI removes labour that has none of those, protecting it to keep people busy gets the problem backwards. The cost is that AI may remove work people do find meaningful alongside the work they hate — and someone has to decide which is which.",
+    "zh": "莫里斯认为值得做的劳动包含三种希望：有用的产出、休息，以及活动本身的乐趣。如果 AI 拿走的正是三者皆无的劳动，为了让人有事可做而保护它，就把问题弄反了。代价是：AI 可能连人们真正觉得有意义的工作一起拿走，而由谁来判断哪些该留，仍然没有答案。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Here, you see, are two kinds of work—one good, the other bad; one not far removed from a blessing, a lightening of life; the other a mere curse, a burden to life.",
+    "zh": "你看，这里有两种劳动 — 一种好，一种坏；一种近乎祝福，让生命轻盈；另一种纯是诅咒，是生命的负担。"
+   },
+   "origin": {
+    "en": "London, 1884",
+    "zh": "伦敦，1884 年"
+   },
+   "source": {
+    "label": {
+     "en": "William Morris, Useful Work versus Useless Toil, 1884",
+     "zh": "威廉·莫里斯《有用的劳动与无用的苦役》，1884 年"
+    },
+    "url": "https://www.marxists.org/archive/morris/works/1884/useful.htm"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.B.1",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "B",
+   "voiceId": "v-keynes",
+   "kind": "speculation",
+   "claim": {
+    "en": "Machines doing in minutes what took you a day is not evidence your life was wasted. It is the thing technological progress was supposed to achieve.",
+    "zh": "机器用几分钟完成你过去要做一天的事，并不证明你的人生被浪费了。这正是技术进步本该带来的结果。"
+   },
+   "detail": {
+    "en": "Keynes expected rising productivity to make much human labour unnecessary, and treated that as the victory rather than the catastrophe. His famous miss exposes the unresolved half: productivity can remove the need for someone's labour without giving that person any share of the abundance it creates.",
+    "zh": "凯恩斯预期生产率上升终将让大量人类劳动变得不必要，并且把这看作胜利而非灾难。他这个著名的失准预测暴露了未解决的另一半：生产率可以取消对某个人劳动的需要，却不给这个人分配由此产生的富足。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Three-hour shifts or a fifteen-hour week may put off the problem for a great while.",
+    "zh": "三小时轮班，或者每周十五小时，也许能把这个问题推迟很久。"
+   },
+   "origin": {
+    "en": "United Kingdom, 1930",
+    "zh": "英国，1930 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Maynard Keynes, \"Economic Possibilities for our Grandchildren\", 1930",
+     "zh": "约翰·梅纳德·凯恩斯〈我们后代的经济前景〉，1930 年"
+    },
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.C.0",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "C",
+   "voiceId": "v-russell",
+   "kind": "philosophy",
+   "claim": {
+    "en": "The anxiety rests on a belief worth doubting: that work is what makes a person virtuous. Drop it, and less labour stops looking like a loss.",
+    "zh": "这种焦虑建立在一个值得怀疑的信念上：劳动使人有德。放下它，劳动变少就不再像是一种损失。"
+   },
+   "detail": {
+    "en": "If society can produce what people need with far less labour, asking how humans stay equally busy may be the wrong question; the opening is leisure, curiosity, friendship and things done for their own sake. Russell concedes the difficulty himself: people who organised a whole life around work do not automatically know how to use time that is free.",
+    "zh": "如果社会能用少得多的劳动生产出人们所需的东西，那么「如何让人继续一样忙」也许根本就是错的问题；真正的机会在于闲暇、好奇、友谊与那些为自身而做的事。罗素自己也承认困难：把整个人生围绕工作组织起来的人，并不会自动知道如何使用空出来的时间。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "A great deal of harm is being done in the modern world by belief in the virtuousness of work.",
+    "zh": "现代世界正因为相信「劳动是美德」而造成大量伤害。"
+   },
+   "origin": {
+    "en": "United Kingdom, 1932",
+    "zh": "英国，1932 年"
+   },
+   "source": {
+    "label": {
+     "en": "Bertrand Russell, \"In Praise of Idleness\", 1932",
+     "zh": "伯特兰·罗素〈闲散颂〉，1932 年"
+    },
+    "url": "https://libcom.org/article/praise-idleness-bertrand-russell"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.C.1",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "C",
+   "voiceId": "v-ecclesiastes",
+   "kind": "religiousTeaching",
+   "claim": {
+    "en": "People were asking what all the work was for long before any machine could do it for them. Achievement never did buy the security it promised.",
+    "zh": "早在任何机器能替人做事之前，人们就已经在问这一切劳作究竟为了什么。成就从来没有买到它所承诺的安稳。"
+   },
+   "detail": {
+    "en": "You can become excellent, wealthy and admired and still lose control of everything you made. AI does not create that instability; it makes it visible far earlier in a career. The cost is that loosening identity from achievement says nothing about how to build a satisfying day once the work is gone.",
+    "zh": "你可以变得出色、富有、受人尊敬，最终仍然失去对自己所造之物的控制。AI 并没有制造这种不稳定，只是让它在职业生涯中更早显形。代价是：把身份从成就上松开，并不能告诉一个人在工作消失之后如何过好每一天。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "For what hath man of all his labour, and of the vexation of his heart, wherein he hath laboured under the sun?",
+    "zh": "人在日光之下劳碌累心，所得的是什么呢？"
+   },
+   "origin": {
+    "en": "Judea, c. 3rd century BCE",
+    "zh": "犹地亚，约公元前 3 世纪"
+   },
+   "source": {
+    "label": {
+     "en": "Ecclesiastes 2:22, King James Version",
+     "zh": "《传道书》2:22，钦定本"
+    },
+    "url": "https://en.wikisource.org/wiki/Bible_(King_James)/Ecclesiastes"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.D.0",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "D",
+   "voiceId": "v-marx",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Losing the ability to contribute is not only losing a wage. People make themselves real by shaping the world; take that away and something goes with it.",
+    "zh": "失去贡献的能力，失去的不只是工资。人是通过改造世界来确认自己的；把这件事拿走，被拿走的不只是收入。"
+   },
+   "detail": {
+    "en": "Marx's charge against industrial work was never only low pay. When control over productive activity is taken from the person doing it, alienation follows. AI could rebuild the same problem in a new shape: society still makes extraordinary things, and fewer and fewer people experience themselves as necessary to making them. Preserving inefficient jobs would not answer him either.",
+    "zh": "马克思对工业劳动的指控从来不只是工资低。当一个人对自己生产活动的控制被拿走，异化随之而来。AI 可能以新的形式重建同一个问题：社会依然造出非凡的东西，而越来越少的人觉得自己是其中必要的一环。仅仅保留低效的岗位，同样回答不了他。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The worker therefore only feels himself outside his work, and in his work feels outside himself.",
+    "zh": "因此，工人只有在工作之外才感到自在，而在工作之中却感到不自在。"
+   },
+   "origin": {
+    "en": "Paris, 1844",
+    "zh": "巴黎，1844 年"
+   },
+   "source": {
+    "label": {
+     "en": "Karl Marx, Economic and Philosophic Manuscripts of 1844, \"Estranged Labour\"",
+     "zh": "卡尔·马克思《1844 年经济学哲学手稿》〈异化劳动〉"
+    },
+    "url": "https://www.marxists.org/archive/marx/works/1844/manuscripts/labour.htm"
+   }
+  },
+  {
+   "id": "q-ai-better-than-you.D.1",
+   "questionId": "q-ai-better-than-you",
+   "optionKey": "D",
+   "voiceId": "v-william-james",
+   "kind": "philosophy",
+   "claim": {
+    "en": "A life needs something that asks something of it. Remove every arena that demands concentration and nerve, and comfort alone will not fill the gap.",
+    "zh": "人生需要一些对自己有所要求的东西。如果把所有需要专注与胆量的场域都移除，仅靠舒适是填不满那个空缺的。"
+   },
+   "detail": {
+    "en": "James doubted that a society organised purely for ease could hold. Applied to AI, removing difficult intellectual work may free us, but a world in which nothing calls on our persistence or competence also removes the occasions through which people find out what they can do. This is not an argument for keeping unnecessary jobs — it is an argument for deliberately making new arenas when the old ones close.",
+    "zh": "詹姆斯怀疑一个纯粹为舒适而组织起来的社会能否维持。应用到 AI：取消困难的智力劳动也许让人自由，但一个没有任何事情要求毅力与能力的世界，也取消了人借以发现自己能做什么的场合。这不是主张保留不必要的岗位，而是主张在旧场域关闭时，刻意去造出新的。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "A permanently successful peace-economy can not be a simple pleasure-economy.",
+    "zh": "一个能够长久成立的和平经济，不可能只是一种享乐经济。"
+   },
+   "origin": {
+    "en": "United States, 1910",
+    "zh": "美国，1910 年"
+   },
+   "source": {
+    "label": {
+     "en": "William James, \"The Moral Equivalent of War\", 1910",
+     "zh": "威廉·詹姆斯〈战争的道德等价物〉，1910 年"
+    },
+    "url": "https://en.wikisource.org/wiki/The_Moral_Equivalent_of_War"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.A.0",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "A",
+   "voiceId": "v-marcus-aurelius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Do not identify yourself with every appetite or bodily signal that passes through you. What is most yours is the part that examines those impulses and decides how to respond.",
+    "zh": "不要把每一种欲望和身体信号都当成自己。更接近「你」的，是那个能够观察这些冲动，并决定如何回应它们的部分。"
+   },
+   "detail": {
+    "en": "A Stoic reading creates a reason to be suspicious when a drug changes desire itself: fewer cravings may make life easier without necessarily revealing a truer character. The cost is that this draws a sharp line between reason and bodily states even though modern neuroscience shows that judgment and motivation are themselves embodied.",
+    "zh": "从斯多葛主义出发，当一种药直接改变欲望本身时，我们有理由保持警惕：欲望减少可能让生活更轻松，却不一定代表一个更真实的性格。这个立场的代价是，它把理性与身体状态分得很开，而现代神经科学恰恰显示，判断和动机本身也依赖身体。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Things themselves touch not the soul, not in the least degree; nor have they admission to the soul, nor can they turn or move the soul: but the soul turns and moves itself alone.",
+    "zh": "事物本身完全触碰不到灵魂，它们进不了灵魂，也无法扭转或推动灵魂；灵魂只由它自己扭转、自己推动。"
+   },
+   "origin": {
+    "en": "Rome, c. 175 CE",
+    "zh": "罗马，约公元 175 年"
+   },
+   "source": {
+    "label": {
+     "en": "Marcus Aurelius, Meditations, Book V, §19, trans. George Long",
+     "zh": "马可·奥勒留《沉思录》第五卷第 19 节，朗 英译"
+    },
+    "url": "https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus/Book_V"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.B.0",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "B",
+   "voiceId": "v-nietzsche",
+   "kind": "philosophy",
+   "claim": {
+    "en": "You do not owe loyalty to an earlier version of yourself merely because it came first. Becoming someone you can affirm may be more important than preserving whatever temperament biology happened to give you.",
+    "zh": "你并不因为过去的自己出现得更早，就必须永远忠于那个版本。成为一个你能够真正认同的人，可能比保存生物偶然赋予你的性格更重要。"
+   },
+   "detail": {
+    "en": "A GLP-1 can make this uncomfortable because self-transformation is no longer achieved only through discipline, experience or struggle; chemistry can participate too. The price of this view is accepting that intentionally changing desire may count as self-creation rather than corruption of an original self.",
+    "zh": "GLP-1 让这个问题变得不舒服，是因为人的改变不再只能通过自律、经历或挣扎完成，化学也可以参与其中。接受这个立场意味着：主动改变自己的欲望，也可能属于自我塑造，而不是对原本自我的破坏。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "What saith thy conscience?—'Thou shalt become what thou art.'",
+    "zh": "你的良心说什么？——「你应当成为你之所是。」"
+   },
+   "origin": {
+    "en": "Germany, 1882",
+    "zh": "德国，1882 年"
+   },
+   "source": {
+    "label": {
+     "en": "Friedrich Nietzsche, The Joyful Wisdom, §270, trans. Thomas Common",
+     "zh": "弗里德里希·尼采《快乐的科学》第 270 节，康芒 英译"
+    },
+    "url": "https://www.gutenberg.org/cache/epub/52881/pg52881.txt"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.B.1",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "B",
+   "voiceId": "v-sartre",
+   "kind": "philosophy",
+   "claim": {
+    "en": "There is no finished personality hidden inside you that must be protected from change. Who you are emerges through the life you make, including what you choose to do with the biological conditions you were given.",
+    "zh": "你的身体里并没有一个已经完成、必须保护起来不受改变的固定人格。你是谁，是在生活和选择中逐渐形成的，也包括你如何处理自己被给予的生物条件。"
+   },
+   "detail": {
+    "en": "Sartre makes the question 'Which version was there first?' much less important. If medication changes the field in which you make choices, the harder question becomes whether you take responsibility for the life you construct with that changed condition.",
+    "zh": "萨特会让「哪个版本先出现」这件事变得没那么重要。如果药物改变了你做选择时所处的心理条件，更困难的问题反而是：你是否愿意为自己在这个新条件下创造出来的生活负责。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Man first of all exists, encounters himself, surges up in the world – and defines himself afterwards.",
+    "zh": "人首先存在，遇见自己，在世界中涌现 — 然后才定义自己。"
+   },
+   "origin": {
+    "en": "France, 1946",
+    "zh": "法国，1946 年"
+   },
+   "source": {
+    "label": {
+     "en": "Jean-Paul Sartre, Existentialism is a Humanism, 1946",
+     "zh": "让-保罗·萨特《存在主义是一种人道主义》，1946 年"
+    },
+    "url": "https://www.marxists.org/reference/archive/sartre/works/exist/sartre.htm"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.C.0",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "C",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Look for a permanent self underneath hunger, pleasure, anxiety and motivation and you may never find one. What you call yourself may simply be the changing collection of experiences happening now.",
+    "zh": "如果你试图在饥饿、快乐、焦虑和欲望背后寻找一个永恒不变的自己，你可能永远找不到。所谓的「我」，也许本来就是此刻不断变化的一组经验。"
+   },
+   "detail": {
+    "en": "On this view, GLP-1 does not replace a true personality with a fake one; it changes some of the perceptions and motivations making up the current person. The unsettling cost is that there may be no final baseline to which you can return and say, 'This one was really me.'",
+    "zh": "按照这种理解，GLP-1 并不是用一个假的人格替换真正的人格，而只是改变了组成当前这个人的部分感受和动机。令人不安的代价是：也许根本不存在一个最终基准，让你可以回去指着它说，「这个才是真正的我。」"
+   },
+   "extra": null,
+   "quote": {
+    "en": "I never can catch myself at any time without a perception, and never can observe any thing but the perception.",
+    "zh": "我从来不能在没有任何知觉的时候捕捉到自己，也从来观察不到知觉之外的任何东西。"
+   },
+   "origin": {
+    "en": "Scotland, 1739",
+    "zh": "苏格兰，1739 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, A Treatise of Human Nature, Book I, Part IV, §VI",
+     "zh": "大卫·休谟《人性论》第一卷第四部分第六节"
+    },
+    "url": "https://www.gutenberg.org/cache/epub/4705/pg4705.txt"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.C.1",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "C",
+   "voiceId": "v-buddhist-anatta",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Your appetite is not your self, but neither are your feelings, perceptions or consciousness. Asking which chemically conditioned version is the real you may begin from the mistaken assumption that one permanent owner exists behind these changing states.",
+    "zh": "你的食欲不是「我」，但感受、认知乃至意识本身也都不是一个永恒的「我」。追问哪个受化学影响的版本才是真正的你，可能从一开始就假设错了：这些不断变化的状态背后，未必存在一个固定的主人。"
+   },
+   "detail": {
+    "en": "Early Buddhist teaching treats bodily form, feeling, perception, volitional formations and consciousness as impermanent and not-self. A drug changing craving is therefore another striking demonstration that desires arise from conditions; the cost is giving up the comforting idea that your untreated desires reveal an essential identity.",
+    "zh": "早期佛教把色、受、想、行、识都看作无常、非我。药物能够改变渴望，反而非常直接地展示了欲望依条件而生；这个观点的代价，是放弃一个很令人安心的想法 — 未经药物影响的欲望能够揭示一个本质性的自我。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "This is not mine, this I am not, this is not my self.",
+    "zh": "这不是我的，这不是我，这不是我的自我。"
+   },
+   "origin": {
+    "en": "India, c. 5th century BCE",
+    "zh": "印度，约公元前 5 世纪"
+   },
+   "source": {
+    "label": {
+     "en": "Saṃyutta Nikāya 22.59, Anattalakkhaṇa Sutta, trans. Bhikkhu Bodhi (Pali: netaṁ mama, nesohamasmi, na meso attā)",
+     "zh": "《相应部》22.59〈无我相经〉，菩提比丘 英译（巴利原文：netaṁ mama, nesohamasmi, na meso attā）"
+    },
+    "url": "https://suttacentral.net/sn22.59/en/bodhi"
+   }
+  },
+  {
+   "id": "q-glp1-real-self.D.0",
+   "questionId": "q-glp1-real-self",
+   "optionKey": "D",
+   "voiceId": "v-william-james",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Do not decide whether a mental state is genuine by tracing it back to chemistry. Every thought and feeling has a biological condition; what matters is what that state produces in the person's life.",
+    "zh": "不要因为一个心理状态可以追溯到化学作用，就判断它是不真实的。所有思想和感受都有生物学条件；真正值得判断的是，这个状态最终让一个人的生活变成了什么样。"
+   },
+   "detail": {
+    "en": "James made this argument against what he called medical materialism: explaining an experience through nerves, disease or physiology does not settle its value. Applied to GLP-1, discovering that calmness or reduced craving comes from a receptor agonist tells us how the change happened, not whether the resulting life is better, worse or more authentic.",
+    "zh": "詹姆斯用这个观点反对他所谓的「医学唯物主义」：即使我们能够用神经、疾病或生理机制解释一种体验，也不能因此决定它的价值。应用到 GLP-1，知道平静或欲望降低来自受体激动剂，只能解释变化是怎么发生的，并不能回答改变后的生活更好、更坏，还是更真实。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "By their fruits ye shall know them, not by their roots.",
+    "zh": "看它们结出的果实来认识它们，而不是看它们的根。"
+   },
+   "origin": {
+    "en": "United States, 1902",
+    "zh": "美国，1902 年"
+   },
+   "source": {
+    "label": {
+     "en": "William James, The Varieties of Religious Experience, Lecture I: Religion and Neurology",
+     "zh": "威廉·詹姆斯《宗教经验之种种》第一讲「宗教与神经学」"
+    },
+    "url": "https://en.wikisource.org/wiki/The_Varieties_of_Religious_Experience/Lecture_I"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.A.0",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "A",
+   "voiceId": "v-mill",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Your body is not the state's property. If a competent adult freely chooses to sell reproductive cells and does not harm someone else, disgust or paternalism alone is not enough reason to stop them.",
+    "zh": "你的身体不是国家的财产。如果一个有自主判断能力的成年人自愿出售自己的生殖细胞，又没有伤害他人，仅仅因为别人觉得不舒服或认为这是「为你好」，并不足以成为禁止的理由。"
+   },
+   "detail": {
+    "en": "Mill's principle strongly protects voluntary bodily choices, but it contains its own limit: harm to others. The unresolved question is whether exploitation of donors or consequences for donor-conceived children count as enough harm to justify restrictions.",
+    "zh": "密尔的原则强烈保护成年人自愿支配身体的选择，但它本身也有一个边界：对他人的伤害。因此真正的争议是，捐赠者受到经济剥削、或通过捐赠出生的孩子所受到的影响，是否已经构成足够的伤害来限制这种自由。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Over himself, over his own body and mind, the individual is sovereign.",
+    "zh": "对于他自己，对于他自己的身体和心灵，个人是最高主权者。"
+   },
+   "origin": {
+    "en": "United Kingdom, 1859",
+    "zh": "英国，1859 年"
+   },
+   "source": {
+    "label": {
+     "en": "John Stuart Mill, On Liberty, Chapter I",
+     "zh": "约翰·斯图亚特·密尔《论自由》第一章"
+    },
+    "url": "https://en.wikisource.org/wiki/On_Liberty/Chapter_1"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.A.1",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "A",
+   "voiceId": "v-smith",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Payment does not automatically corrupt an exchange. People routinely cooperate with strangers because each side has something the other values.",
+    "zh": "金钱并不会自动让一场交换变得不道德。陌生人每天都因为彼此拥有对方需要的东西而合作，市场正是这样运作的。"
+   },
+   "detail": {
+    "en": "Smith gives the strongest economic intuition behind a legal market: recipients want scarce reproductive material and donors bear time, inconvenience or risk. But his argument about exchange does not establish that everything people value should be for sale, so regulation remains an open question.",
+    "zh": "斯密提供了支持合法市场最直接的经济逻辑：接受者需要稀缺的生殖材料，而捐赠者承担时间、不便甚至风险。但交换能够互利，并不能证明所有有价值的东西都应该自由出售，因此监管问题仍然存在。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "We address ourselves, not to their humanity, but to their self-love, and never talk to them of our own necessities, but of their advantages.",
+    "zh": "我们不是诉诸他们的仁慈，而是诉诸他们的自利；我们从不向他们诉说自己的需要，而只谈他们的利益。"
+   },
+   "origin": {
+    "en": "Scotland, 1776",
+    "zh": "苏格兰，1776 年"
+   },
+   "source": {
+    "label": {
+     "en": "Adam Smith, An Inquiry into the Nature and Causes of the Wealth of Nations, Book I, Chapter II",
+     "zh": "亚当·斯密《国富论》第一卷第二章"
+    },
+    "url": "https://en.wikisource.org/wiki/The_Wealth_of_Nations/Book_I/Chapter_2"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.B.0",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "B",
+   "voiceId": "v-epictetus",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Do not confuse bodily control with complete personal freedom. Money, health and even the body itself are vulnerable to forces outside your control, so a supposedly free bargain can still leave someone dependent or exposed.",
+    "zh": "不要把支配身体等同于完全的个人自由。金钱、健康甚至身体本身都会受到外部力量影响，所以一笔看起来完全自愿的交易，仍然可能让一个人陷入依赖或风险。"
+   },
+   "detail": {
+    "en": "A Stoic approach would put less moral weight on maximizing what the body can earn and more on whether the choice is deliberate and consistent with character. That points toward permission with safeguards rather than treating reproductive material as an ordinary unrestricted commodity.",
+    "zh": "斯多葛主义不会把重点放在身体能够卖多少钱，而更关注一个选择是否经过理性判断、是否符合一个人的品格。这更接近允许交易但设置保护，而不是把生殖材料当作完全不受限制的普通商品。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Things not in our control are body, property, reputation, command, and, in one word, whatever are not our own actions.",
+    "zh": "不在我们控制之中的，是身体、财产、名声、权位，总之，是一切并非我们自己行为的东西。"
+   },
+   "origin": {
+    "en": "Nicopolis, c. 125 CE",
+    "zh": "尼科波利斯，约公元 125 年"
+   },
+   "source": {
+    "label": {
+     "en": "Epictetus, Enchiridion §1, trans. Elizabeth Carter",
+     "zh": "爱比克泰德《手册》第 1 节，卡特 英译"
+    },
+    "url": "https://classics.mit.edu/Epictetus/epicench.html"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.B.1",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "B",
+   "voiceId": "v-aristotle",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Private responsibility matters. A system involving reproduction needs identifiable duties and incentives, not a situation where everyone participates but no one feels responsible for what follows.",
+    "zh": "明确的个人责任很重要。一个涉及生育的制度需要清楚的责任和激励，而不能让很多人都参与其中，却没有人真正对之后发生的事情负责。"
+   },
+   "detail": {
+    "en": "Aristotle was discussing common families and property, not gamete markets, so this is an application of his argument rather than his view on sperm or eggs. His warning matters here because donors, clinics, intended parents and future children create overlapping responsibilities that a simple buyer-seller contract may not settle.",
+    "zh": "亚里士多德讨论的是共有家庭和财产，并不是精子或卵子市场，因此这里是在应用他的原则，而不是声称他讨论过现代辅助生殖。他的警告仍然相关：捐赠者、诊所、准父母和未来的孩子之间存在重叠责任，一张简单的买卖合同未必能够解决。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "For that which is common to the greatest number has the least care bestowed upon it.",
+    "zh": "由最多人共同拥有的东西，往往得到最少的照料。"
+   },
+   "origin": {
+    "en": "Athens, c. 340 BCE",
+    "zh": "雅典，约公元前 340 年"
+   },
+   "source": {
+    "label": {
+     "en": "Aristotle, Politics, Book II, Chapter III, 1261b, trans. Benjamin Jowett",
+     "zh": "亚里士多德《政治学》第二卷第三章 1261b，乔伊特 英译"
+    },
+    "url": "https://archive.org/details/aristotlespoliti00aris"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.C.0",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "C",
+   "voiceId": "v-confucius",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Not every decision should begin with the question of profit. Reproduction belongs inside a network of duties and relationships, so turning genetic material into a price competition risks letting gain determine something that should first be judged by what is right.",
+    "zh": "不是每件事都应该先问能赚多少钱。生育存在于一整套责任和关系之中，如果把遗传材料变成价格竞争，就可能让利益决定原本应该先由「义」判断的事情。"
+   },
+   "detail": {
+    "en": "Confucius never discussed gamete donation, so this applies his distinction between yi, what is fitting or right, and li, profit. The cost of this position is that it restricts transactions even when both adults consent, because some relationships are understood to carry obligations that cannot be reduced to individual advantage.",
+    "zh": "孔子当然没有讨论过配子捐赠；这里应用的是他对「义」和「利」的区分。这个立场的代价是，即使两个成年人都同意，一些交易仍可能受到限制，因为某些关系包含不能简化为个人利益的责任。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The superior man understands what is right; the inferior man understands what is profitable.",
+    "zh": "君子喻於義，小人喻於利。"
+   },
+   "origin": {
+    "en": "China, c. 500 BCE",
+    "zh": "中国，约公元前 500 年"
+   },
+   "source": {
+    "label": {
+     "en": "Confucius, Analects 4.16, trans. based on James Legge",
+     "zh": "《论语·里仁》4.16，理雅各 英译"
+    },
+    "url": "https://zh.wikisource.org/zh-hant/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.C.1",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "C",
+   "voiceId": "v-marx",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Calling a sale voluntary does not tell you enough. When people have radically unequal resources, the market can turn economic necessity into a choice that looks free on paper.",
+    "zh": "把一笔交易称为「自愿」还远远不够。当人们拥有的经济资源极不平等时，市场可以把经济压力变成一种纸面上看起来完全自由的选择。"
+   },
+   "detail": {
+    "en": "Applied to egg markets, Marx would push us to ask who is usually paying and who is taking hormones, undergoing procedures and accepting risk for money. The cost of refusing commodification is real too: restricting payment can reduce the supply of donor eggs and limit reproductive choices for people who need them.",
+    "zh": "应用到卵子市场，马克思式的问题会是：通常是谁付钱，又是谁为了钱接受激素、医疗操作和身体风险？但拒绝商品化同样有代价：限制报酬可能减少卵子供给，也会限制需要捐赠卵子的人实现生育的机会。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "It is not the consciousness of men that determines their existence, but their social existence that determines their consciousness.",
+    "zh": "不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。"
+   },
+   "origin": {
+    "en": "Germany, 1859",
+    "zh": "德国，1859 年"
+   },
+   "source": {
+    "label": {
+     "en": "Karl Marx, A Contribution to the Critique of Political Economy, Preface, trans. S. W. Ryazanskaya",
+     "zh": "卡尔·马克思《政治经济学批判》序言，梁赞斯卡娅 英译"
+    },
+    "url": "https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm"
+   }
+  },
+  {
+   "id": "q-sell-eggs-sperm.D.0",
+   "questionId": "q-sell-eggs-sperm",
+   "optionKey": "D",
+   "voiceId": "v-arendt",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Birth is not merely the transfer of biological material. Every birth introduces a new person into a shared human world, so reproduction cannot be understood only as a private transaction between existing adults.",
+    "zh": "出生并不只是生物材料的转移。每一次出生都会让一个全新的人进入共同的人类世界，因此生育不能只被理解为现有成年人之间的一笔私人交易。"
+   },
+   "detail": {
+    "en": "Arendt's concept of natality treats each birth as the appearance of someone genuinely new, not as the production of an object. Applied here, the future child creates moral interests that a pure property-right model misses; the cost is limiting adults' reproductive freedom for the sake of someone who does not yet exist.",
+    "zh": "阿伦特的「诞生性」把每一个出生的人理解为真正的新开始，而不是被生产出来的物品。应用到这里，未来孩子本身带来了纯粹财产权模型无法涵盖的利益；代价则是为了一个尚未存在的人，限制现有成年人的生殖自由。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The miracle that saves the world, the realm of human affairs, from its normal, 'natural' ruin is ultimately the fact of natality.",
+    "zh": "最终把世界 — 这个人类事务的领域 — 从其正常的、「自然的」毁灭中拯救出来的奇迹，就是诞生这一事实。"
+   },
+   "origin": {
+    "en": "United States, 1958",
+    "zh": "美国，1958 年"
+   },
+   "source": {
+    "label": {
+     "en": "Hannah Arendt, The Human Condition, Chapter V, §34",
+     "zh": "汉娜·阿伦特《人的境况》第五章第 34 节"
+    },
+    "url": "https://archive.org/details/humancondition00aren"
+   }
+  },
   {
    "id": "q-nobody-remember.A.0",
    "questionId": "q-nobody-remember",
@@ -3634,657 +7012,6 @@
     },
     "url": "https://en.wikipedia.org/wiki/Economic_and_Philosophic_Manuscripts_of_1844"
    }
-  },
-  {
-   "id": "q-sell-eggs-sperm.A.0",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "A",
-   "voiceId": "v-mill",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Your body is not the state's property. If a competent adult freely chooses to sell reproductive cells and does not harm someone else, disgust or paternalism alone is not enough reason to stop them.",
-    "zh": "你的身体不是国家的财产。如果一个有自主判断能力的成年人自愿出售自己的生殖细胞，又没有伤害他人，仅仅因为别人觉得不舒服或认为这是「为你好」，并不足以成为禁止的理由。"
-   },
-   "detail": {
-    "en": "Mill's principle strongly protects voluntary bodily choices, but it contains its own limit: harm to others. The unresolved question is whether exploitation of donors or consequences for donor-conceived children count as enough harm to justify restrictions.",
-    "zh": "密尔的原则强烈保护成年人自愿支配身体的选择，但它本身也有一个边界：对他人的伤害。因此真正的争议是，捐赠者受到经济剥削、或通过捐赠出生的孩子所受到的影响，是否已经构成足够的伤害来限制这种自由。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Over himself, over his own body and mind, the individual is sovereign.",
-    "zh": "对于他自己，对于他自己的身体和心灵，个人是最高主权者。"
-   },
-   "origin": {
-    "en": "United Kingdom, 1859",
-    "zh": "英国，1859 年"
-   },
-   "source": {
-    "label": {
-     "en": "John Stuart Mill, On Liberty, Chapter I",
-     "zh": "约翰·斯图亚特·密尔《论自由》第一章"
-    },
-    "url": "https://en.wikisource.org/wiki/On_Liberty/Chapter_1"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.A.1",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "A",
-   "voiceId": "v-smith",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Payment does not automatically corrupt an exchange. People routinely cooperate with strangers because each side has something the other values.",
-    "zh": "金钱并不会自动让一场交换变得不道德。陌生人每天都因为彼此拥有对方需要的东西而合作，市场正是这样运作的。"
-   },
-   "detail": {
-    "en": "Smith gives the strongest economic intuition behind a legal market: recipients want scarce reproductive material and donors bear time, inconvenience or risk. But his argument about exchange does not establish that everything people value should be for sale, so regulation remains an open question.",
-    "zh": "斯密提供了支持合法市场最直接的经济逻辑：接受者需要稀缺的生殖材料，而捐赠者承担时间、不便甚至风险。但交换能够互利，并不能证明所有有价值的东西都应该自由出售，因此监管问题仍然存在。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "We address ourselves, not to their humanity, but to their self-love, and never talk to them of our own necessities, but of their advantages.",
-    "zh": "我们不是诉诸他们的仁慈，而是诉诸他们的自利；我们从不向他们诉说自己的需要，而只谈他们的利益。"
-   },
-   "origin": {
-    "en": "Scotland, 1776",
-    "zh": "苏格兰，1776 年"
-   },
-   "source": {
-    "label": {
-     "en": "Adam Smith, An Inquiry into the Nature and Causes of the Wealth of Nations, Book I, Chapter II",
-     "zh": "亚当·斯密《国富论》第一卷第二章"
-    },
-    "url": "https://en.wikisource.org/wiki/The_Wealth_of_Nations/Book_I/Chapter_2"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.B.0",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "B",
-   "voiceId": "v-epictetus",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Do not confuse bodily control with complete personal freedom. Money, health and even the body itself are vulnerable to forces outside your control, so a supposedly free bargain can still leave someone dependent or exposed.",
-    "zh": "不要把支配身体等同于完全的个人自由。金钱、健康甚至身体本身都会受到外部力量影响，所以一笔看起来完全自愿的交易，仍然可能让一个人陷入依赖或风险。"
-   },
-   "detail": {
-    "en": "A Stoic approach would put less moral weight on maximizing what the body can earn and more on whether the choice is deliberate and consistent with character. That points toward permission with safeguards rather than treating reproductive material as an ordinary unrestricted commodity.",
-    "zh": "斯多葛主义不会把重点放在身体能够卖多少钱，而更关注一个选择是否经过理性判断、是否符合一个人的品格。这更接近允许交易但设置保护，而不是把生殖材料当作完全不受限制的普通商品。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Things not in our control are body, property, reputation, command, and, in one word, whatever are not our own actions.",
-    "zh": "不在我们控制之中的，是身体、财产、名声、权位，总之，是一切并非我们自己行为的东西。"
-   },
-   "origin": {
-    "en": "Nicopolis, c. 125 CE",
-    "zh": "尼科波利斯，约公元 125 年"
-   },
-   "source": {
-    "label": {
-     "en": "Epictetus, Enchiridion §1, trans. Elizabeth Carter",
-     "zh": "爱比克泰德《手册》第 1 节，卡特 英译"
-    },
-    "url": "https://classics.mit.edu/Epictetus/epicench.html"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.B.1",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "B",
-   "voiceId": "v-aristotle",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Private responsibility matters. A system involving reproduction needs identifiable duties and incentives, not a situation where everyone participates but no one feels responsible for what follows.",
-    "zh": "明确的个人责任很重要。一个涉及生育的制度需要清楚的责任和激励，而不能让很多人都参与其中，却没有人真正对之后发生的事情负责。"
-   },
-   "detail": {
-    "en": "Aristotle was discussing common families and property, not gamete markets, so this is an application of his argument rather than his view on sperm or eggs. His warning matters here because donors, clinics, intended parents and future children create overlapping responsibilities that a simple buyer-seller contract may not settle.",
-    "zh": "亚里士多德讨论的是共有家庭和财产，并不是精子或卵子市场，因此这里是在应用他的原则，而不是声称他讨论过现代辅助生殖。他的警告仍然相关：捐赠者、诊所、准父母和未来的孩子之间存在重叠责任，一张简单的买卖合同未必能够解决。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "For that which is common to the greatest number has the least care bestowed upon it.",
-    "zh": "由最多人共同拥有的东西，往往得到最少的照料。"
-   },
-   "origin": {
-    "en": "Athens, c. 340 BCE",
-    "zh": "雅典，约公元前 340 年"
-   },
-   "source": {
-    "label": {
-     "en": "Aristotle, Politics, Book II, Chapter III, 1261b, trans. Benjamin Jowett",
-     "zh": "亚里士多德《政治学》第二卷第三章 1261b，乔伊特 英译"
-    },
-    "url": "https://archive.org/details/aristotlespoliti00aris"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.C.0",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "C",
-   "voiceId": "v-confucius",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Not every decision should begin with the question of profit. Reproduction belongs inside a network of duties and relationships, so turning genetic material into a price competition risks letting gain determine something that should first be judged by what is right.",
-    "zh": "不是每件事都应该先问能赚多少钱。生育存在于一整套责任和关系之中，如果把遗传材料变成价格竞争，就可能让利益决定原本应该先由「义」判断的事情。"
-   },
-   "detail": {
-    "en": "Confucius never discussed gamete donation, so this applies his distinction between yi, what is fitting or right, and li, profit. The cost of this position is that it restricts transactions even when both adults consent, because some relationships are understood to carry obligations that cannot be reduced to individual advantage.",
-    "zh": "孔子当然没有讨论过配子捐赠；这里应用的是他对「义」和「利」的区分。这个立场的代价是，即使两个成年人都同意，一些交易仍可能受到限制，因为某些关系包含不能简化为个人利益的责任。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "The superior man understands what is right; the inferior man understands what is profitable.",
-    "zh": "君子喻於義，小人喻於利。"
-   },
-   "origin": {
-    "en": "China, c. 500 BCE",
-    "zh": "中国，约公元前 500 年"
-   },
-   "source": {
-    "label": {
-     "en": "Confucius, Analects 4.16, trans. based on James Legge",
-     "zh": "《论语·里仁》4.16，理雅各 英译"
-    },
-    "url": "https://zh.wikisource.org/zh-hant/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.C.1",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "C",
-   "voiceId": "v-marx",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Calling a sale voluntary does not tell you enough. When people have radically unequal resources, the market can turn economic necessity into a choice that looks free on paper.",
-    "zh": "把一笔交易称为「自愿」还远远不够。当人们拥有的经济资源极不平等时，市场可以把经济压力变成一种纸面上看起来完全自由的选择。"
-   },
-   "detail": {
-    "en": "Applied to egg markets, Marx would push us to ask who is usually paying and who is taking hormones, undergoing procedures and accepting risk for money. The cost of refusing commodification is real too: restricting payment can reduce the supply of donor eggs and limit reproductive choices for people who need them.",
-    "zh": "应用到卵子市场，马克思式的问题会是：通常是谁付钱，又是谁为了钱接受激素、医疗操作和身体风险？但拒绝商品化同样有代价：限制报酬可能减少卵子供给，也会限制需要捐赠卵子的人实现生育的机会。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "It is not the consciousness of men that determines their existence, but their social existence that determines their consciousness.",
-    "zh": "不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。"
-   },
-   "origin": {
-    "en": "Germany, 1859",
-    "zh": "德国，1859 年"
-   },
-   "source": {
-    "label": {
-     "en": "Karl Marx, A Contribution to the Critique of Political Economy, Preface, trans. S. W. Ryazanskaya",
-     "zh": "卡尔·马克思《政治经济学批判》序言，梁赞斯卡娅 英译"
-    },
-    "url": "https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm"
-   }
-  },
-  {
-   "id": "q-sell-eggs-sperm.D.0",
-   "questionId": "q-sell-eggs-sperm",
-   "optionKey": "D",
-   "voiceId": "v-arendt",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Birth is not merely the transfer of biological material. Every birth introduces a new person into a shared human world, so reproduction cannot be understood only as a private transaction between existing adults.",
-    "zh": "出生并不只是生物材料的转移。每一次出生都会让一个全新的人进入共同的人类世界，因此生育不能只被理解为现有成年人之间的一笔私人交易。"
-   },
-   "detail": {
-    "en": "Arendt's concept of natality treats each birth as the appearance of someone genuinely new, not as the production of an object. Applied here, the future child creates moral interests that a pure property-right model misses; the cost is limiting adults' reproductive freedom for the sake of someone who does not yet exist.",
-    "zh": "阿伦特的「诞生性」把每一个出生的人理解为真正的新开始，而不是被生产出来的物品。应用到这里，未来孩子本身带来了纯粹财产权模型无法涵盖的利益；代价则是为了一个尚未存在的人，限制现有成年人的生殖自由。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "The miracle that saves the world, the realm of human affairs, from its normal, 'natural' ruin is ultimately the fact of natality.",
-    "zh": "最终把世界 — 这个人类事务的领域 — 从其正常的、「自然的」毁灭中拯救出来的奇迹，就是诞生这一事实。"
-   },
-   "origin": {
-    "en": "United States, 1958",
-    "zh": "美国，1958 年"
-   },
-   "source": {
-    "label": {
-     "en": "Hannah Arendt, The Human Condition, Chapter V, §34",
-     "zh": "汉娜·阿伦特《人的境况》第五章第 34 节"
-    },
-    "url": "https://archive.org/details/humancondition00aren"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.A.0",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "A",
-   "voiceId": "v-marcus-aurelius",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Do not identify yourself with every appetite or bodily signal that passes through you. What is most yours is the part that examines those impulses and decides how to respond.",
-    "zh": "不要把每一种欲望和身体信号都当成自己。更接近「你」的，是那个能够观察这些冲动，并决定如何回应它们的部分。"
-   },
-   "detail": {
-    "en": "A Stoic reading creates a reason to be suspicious when a drug changes desire itself: fewer cravings may make life easier without necessarily revealing a truer character. The cost is that this draws a sharp line between reason and bodily states even though modern neuroscience shows that judgment and motivation are themselves embodied.",
-    "zh": "从斯多葛主义出发，当一种药直接改变欲望本身时，我们有理由保持警惕：欲望减少可能让生活更轻松，却不一定代表一个更真实的性格。这个立场的代价是，它把理性与身体状态分得很开，而现代神经科学恰恰显示，判断和动机本身也依赖身体。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Things themselves touch not the soul, not in the least degree; nor have they admission to the soul, nor can they turn or move the soul: but the soul turns and moves itself alone.",
-    "zh": "事物本身完全触碰不到灵魂，它们进不了灵魂，也无法扭转或推动灵魂；灵魂只由它自己扭转、自己推动。"
-   },
-   "origin": {
-    "en": "Rome, c. 175 CE",
-    "zh": "罗马，约公元 175 年"
-   },
-   "source": {
-    "label": {
-     "en": "Marcus Aurelius, Meditations, Book V, §19, trans. George Long",
-     "zh": "马可·奥勒留《沉思录》第五卷第 19 节，朗 英译"
-    },
-    "url": "https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus/Book_V"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.B.0",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "B",
-   "voiceId": "v-nietzsche",
-   "kind": "philosophy",
-   "claim": {
-    "en": "You do not owe loyalty to an earlier version of yourself merely because it came first. Becoming someone you can affirm may be more important than preserving whatever temperament biology happened to give you.",
-    "zh": "你并不因为过去的自己出现得更早，就必须永远忠于那个版本。成为一个你能够真正认同的人，可能比保存生物偶然赋予你的性格更重要。"
-   },
-   "detail": {
-    "en": "A GLP-1 can make this uncomfortable because self-transformation is no longer achieved only through discipline, experience or struggle; chemistry can participate too. The price of this view is accepting that intentionally changing desire may count as self-creation rather than corruption of an original self.",
-    "zh": "GLP-1 让这个问题变得不舒服，是因为人的改变不再只能通过自律、经历或挣扎完成，化学也可以参与其中。接受这个立场意味着：主动改变自己的欲望，也可能属于自我塑造，而不是对原本自我的破坏。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "What saith thy conscience?—'Thou shalt become what thou art.'",
-    "zh": "你的良心说什么？——「你应当成为你之所是。」"
-   },
-   "origin": {
-    "en": "Germany, 1882",
-    "zh": "德国，1882 年"
-   },
-   "source": {
-    "label": {
-     "en": "Friedrich Nietzsche, The Joyful Wisdom, §270, trans. Thomas Common",
-     "zh": "弗里德里希·尼采《快乐的科学》第 270 节，康芒 英译"
-    },
-    "url": "https://www.gutenberg.org/cache/epub/52881/pg52881.txt"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.B.1",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "B",
-   "voiceId": "v-sartre",
-   "kind": "philosophy",
-   "claim": {
-    "en": "There is no finished personality hidden inside you that must be protected from change. Who you are emerges through the life you make, including what you choose to do with the biological conditions you were given.",
-    "zh": "你的身体里并没有一个已经完成、必须保护起来不受改变的固定人格。你是谁，是在生活和选择中逐渐形成的，也包括你如何处理自己被给予的生物条件。"
-   },
-   "detail": {
-    "en": "Sartre makes the question 'Which version was there first?' much less important. If medication changes the field in which you make choices, the harder question becomes whether you take responsibility for the life you construct with that changed condition.",
-    "zh": "萨特会让「哪个版本先出现」这件事变得没那么重要。如果药物改变了你做选择时所处的心理条件，更困难的问题反而是：你是否愿意为自己在这个新条件下创造出来的生活负责。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Man first of all exists, encounters himself, surges up in the world – and defines himself afterwards.",
-    "zh": "人首先存在，遇见自己，在世界中涌现 — 然后才定义自己。"
-   },
-   "origin": {
-    "en": "France, 1946",
-    "zh": "法国，1946 年"
-   },
-   "source": {
-    "label": {
-     "en": "Jean-Paul Sartre, Existentialism is a Humanism, 1946",
-     "zh": "让-保罗·萨特《存在主义是一种人道主义》，1946 年"
-    },
-    "url": "https://www.marxists.org/reference/archive/sartre/works/exist/sartre.htm"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.C.0",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "C",
-   "voiceId": "v-hume",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Look for a permanent self underneath hunger, pleasure, anxiety and motivation and you may never find one. What you call yourself may simply be the changing collection of experiences happening now.",
-    "zh": "如果你试图在饥饿、快乐、焦虑和欲望背后寻找一个永恒不变的自己，你可能永远找不到。所谓的「我」，也许本来就是此刻不断变化的一组经验。"
-   },
-   "detail": {
-    "en": "On this view, GLP-1 does not replace a true personality with a fake one; it changes some of the perceptions and motivations making up the current person. The unsettling cost is that there may be no final baseline to which you can return and say, 'This one was really me.'",
-    "zh": "按照这种理解，GLP-1 并不是用一个假的人格替换真正的人格，而只是改变了组成当前这个人的部分感受和动机。令人不安的代价是：也许根本不存在一个最终基准，让你可以回去指着它说，「这个才是真正的我。」"
-   },
-   "extra": null,
-   "quote": {
-    "en": "I never can catch myself at any time without a perception, and never can observe any thing but the perception.",
-    "zh": "我从来不能在没有任何知觉的时候捕捉到自己，也从来观察不到知觉之外的任何东西。"
-   },
-   "origin": {
-    "en": "Scotland, 1739",
-    "zh": "苏格兰，1739 年"
-   },
-   "source": {
-    "label": {
-     "en": "David Hume, A Treatise of Human Nature, Book I, Part IV, §VI",
-     "zh": "大卫·休谟《人性论》第一卷第四部分第六节"
-    },
-    "url": "https://www.gutenberg.org/cache/epub/4705/pg4705.txt"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.C.1",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "C",
-   "voiceId": "v-buddhist-anatta",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Your appetite is not your self, but neither are your feelings, perceptions or consciousness. Asking which chemically conditioned version is the real you may begin from the mistaken assumption that one permanent owner exists behind these changing states.",
-    "zh": "你的食欲不是「我」，但感受、认知乃至意识本身也都不是一个永恒的「我」。追问哪个受化学影响的版本才是真正的你，可能从一开始就假设错了：这些不断变化的状态背后，未必存在一个固定的主人。"
-   },
-   "detail": {
-    "en": "Early Buddhist teaching treats bodily form, feeling, perception, volitional formations and consciousness as impermanent and not-self. A drug changing craving is therefore another striking demonstration that desires arise from conditions; the cost is giving up the comforting idea that your untreated desires reveal an essential identity.",
-    "zh": "早期佛教把色、受、想、行、识都看作无常、非我。药物能够改变渴望，反而非常直接地展示了欲望依条件而生；这个观点的代价，是放弃一个很令人安心的想法 — 未经药物影响的欲望能够揭示一个本质性的自我。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "This is not mine, this I am not, this is not my self.",
-    "zh": "这不是我的，这不是我，这不是我的自我。"
-   },
-   "origin": {
-    "en": "India, c. 5th century BCE",
-    "zh": "印度，约公元前 5 世纪"
-   },
-   "source": {
-    "label": {
-     "en": "Saṃyutta Nikāya 22.59, Anattalakkhaṇa Sutta, trans. Bhikkhu Bodhi (Pali: netaṁ mama, nesohamasmi, na meso attā)",
-     "zh": "《相应部》22.59〈无我相经〉，菩提比丘 英译（巴利原文：netaṁ mama, nesohamasmi, na meso attā）"
-    },
-    "url": "https://suttacentral.net/sn22.59/en/bodhi"
-   }
-  },
-  {
-   "id": "q-glp1-real-self.D.0",
-   "questionId": "q-glp1-real-self",
-   "optionKey": "D",
-   "voiceId": "v-william-james",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Do not decide whether a mental state is genuine by tracing it back to chemistry. Every thought and feeling has a biological condition; what matters is what that state produces in the person's life.",
-    "zh": "不要因为一个心理状态可以追溯到化学作用，就判断它是不真实的。所有思想和感受都有生物学条件；真正值得判断的是，这个状态最终让一个人的生活变成了什么样。"
-   },
-   "detail": {
-    "en": "James made this argument against what he called medical materialism: explaining an experience through nerves, disease or physiology does not settle its value. Applied to GLP-1, discovering that calmness or reduced craving comes from a receptor agonist tells us how the change happened, not whether the resulting life is better, worse or more authentic.",
-    "zh": "詹姆斯用这个观点反对他所谓的「医学唯物主义」：即使我们能够用神经、疾病或生理机制解释一种体验，也不能因此决定它的价值。应用到 GLP-1，知道平静或欲望降低来自受体激动剂，只能解释变化是怎么发生的，并不能回答改变后的生活更好、更坏，还是更真实。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "By their fruits ye shall know them, not by their roots.",
-    "zh": "看它们结出的果实来认识它们，而不是看它们的根。"
-   },
-   "origin": {
-    "en": "United States, 1902",
-    "zh": "美国，1902 年"
-   },
-   "source": {
-    "label": {
-     "en": "William James, The Varieties of Religious Experience, Lecture I: Religion and Neurology",
-     "zh": "威廉·詹姆斯《宗教经验之种种》第一讲「宗教与神经学」"
-    },
-    "url": "https://en.wikisource.org/wiki/The_Varieties_of_Religious_Experience/Lecture_I"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.A.0",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "A",
-   "voiceId": "v-aristotle",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Repeating an activity does not only produce a result; it produces the person doing it. The years did not go into the artefact — they went into you.",
-    "zh": "反复做一件事，产出的不只是结果，还有做这件事的人。那些年并没有进入你交付的成品，而是进入了你自己。"
-   },
-   "detail": {
-    "en": "Years spent learning judgement, patience and precision therefore have not become meaningless because a machine can produce the final artefact faster. The cost is that this separates personal development from economic usefulness entirely: your expertise may genuinely have shaped you while becoming much less valuable in the labour market.",
-    "zh": "因此，用来学习判断力、耐心与精确度的岁月，并不会因为机器能更快做出成品而失去意义。它的代价是把人的成长与经济价值彻底分开：你的专业也许真的塑造了你，同时在劳动市场上大幅贬值。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts.",
-    "zh": "我们因做公正的事而成为公正的人，因做节制的事而成为节制的人，因做勇敢的事而成为勇敢的人。"
-   },
-   "origin": {
-    "en": "Athens, c. 340 BCE",
-    "zh": "雅典，约公元前 340 年"
-   },
-   "source": {
-    "label": {
-     "en": "Aristotle, Nicomachean Ethics, Book II, Chapter 1, trans. W. D. Ross",
-     "zh": "亚里士多德《尼各马可伦理学》第二卷第一章，罗斯 英译"
-    },
-    "url": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.A.1",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "A",
-   "voiceId": "v-nietzsche",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Do not price your past effort at today's market rate. Difficulty, failure and discipline changed the person who went through them, whatever happened to the skill.",
-    "zh": "不要用今天的市场价来给你过去的努力定价。困难、失败与自律改变了经历它们的那个人，无论那项技能后来怎样。"
-   },
-   "detail": {
-    "en": "Nietzsche would resist treating a decade of work as an investment whose worth can be read off a current price. The cost is that this can romanticise struggle: someone whose livelihood is disappearing may reasonably care far more about rent than about whether the training improved their character.",
-    "zh": "尼采会反对把十年的努力当成一笔可以按当下价格清算的投资。它的代价是容易美化苦难：一个正在失去生计的人，完全有理由更关心房租，而不是这些训练是否让自己的品格变好。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "From the military school of life.—That which does not kill me, makes me stronger.",
-    "zh": "出自人生的军事学校 — 那些杀不死我的，使我更强。"
-   },
-   "origin": {
-    "en": "Germany, 1888",
-    "zh": "德国，1888 年"
-   },
-   "source": {
-    "label": {
-     "en": "Friedrich Nietzsche, The Twilight of the Idols, \"Maxims and Arrows\" §8, trans. Anthony M. Ludovici",
-     "zh": "弗里德里希·尼采《偶像的黄昏》〈箴言与箭〉第 8 节，卢多维奇 英译"
-    },
-    "url": "https://www.gutenberg.org/cache/epub/52263/pg52263.txt"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.B.0",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "B",
-   "voiceId": "v-william-morris",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Work is not good merely because a human used to do it. Some work is close to a blessing and some is a curse, and only the first is worth defending.",
-    "zh": "工作并不因为「过去由人来做」就是好的。有的劳动接近祝福，有的只是诅咒，值得捍卫的只有前者。"
-   },
-   "detail": {
-    "en": "Morris held that worthwhile work carries hope of useful output, of rest, and of pleasure in the activity itself. If AI removes labour that has none of those, protecting it to keep people busy gets the problem backwards. The cost is that AI may remove work people do find meaningful alongside the work they hate — and someone has to decide which is which.",
-    "zh": "莫里斯认为值得做的劳动包含三种希望：有用的产出、休息，以及活动本身的乐趣。如果 AI 拿走的正是三者皆无的劳动，为了让人有事可做而保护它，就把问题弄反了。代价是：AI 可能连人们真正觉得有意义的工作一起拿走，而由谁来判断哪些该留，仍然没有答案。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Here, you see, are two kinds of work—one good, the other bad; one not far removed from a blessing, a lightening of life; the other a mere curse, a burden to life.",
-    "zh": "你看，这里有两种劳动 — 一种好，一种坏；一种近乎祝福，让生命轻盈；另一种纯是诅咒，是生命的负担。"
-   },
-   "origin": {
-    "en": "London, 1884",
-    "zh": "伦敦，1884 年"
-   },
-   "source": {
-    "label": {
-     "en": "William Morris, Useful Work versus Useless Toil, 1884",
-     "zh": "威廉·莫里斯《有用的劳动与无用的苦役》，1884 年"
-    },
-    "url": "https://www.marxists.org/archive/morris/works/1884/useful.htm"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.B.1",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "B",
-   "voiceId": "v-keynes",
-   "kind": "speculation",
-   "claim": {
-    "en": "Machines doing in minutes what took you a day is not evidence your life was wasted. It is the thing technological progress was supposed to achieve.",
-    "zh": "机器用几分钟完成你过去要做一天的事，并不证明你的人生被浪费了。这正是技术进步本该带来的结果。"
-   },
-   "detail": {
-    "en": "Keynes expected rising productivity to make much human labour unnecessary, and treated that as the victory rather than the catastrophe. His famous miss exposes the unresolved half: productivity can remove the need for someone's labour without giving that person any share of the abundance it creates.",
-    "zh": "凯恩斯预期生产率上升终将让大量人类劳动变得不必要，并且把这看作胜利而非灾难。他这个著名的失准预测暴露了未解决的另一半：生产率可以取消对某个人劳动的需要，却不给这个人分配由此产生的富足。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "Three-hour shifts or a fifteen-hour week may put off the problem for a great while.",
-    "zh": "三小时轮班，或者每周十五小时，也许能把这个问题推迟很久。"
-   },
-   "origin": {
-    "en": "United Kingdom, 1930",
-    "zh": "英国，1930 年"
-   },
-   "source": {
-    "label": {
-     "en": "John Maynard Keynes, \"Economic Possibilities for our Grandchildren\", 1930",
-     "zh": "约翰·梅纳德·凯恩斯〈我们后代的经济前景〉，1930 年"
-    },
-    "url": "https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.C.0",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "C",
-   "voiceId": "v-russell",
-   "kind": "philosophy",
-   "claim": {
-    "en": "The anxiety rests on a belief worth doubting: that work is what makes a person virtuous. Drop it, and less labour stops looking like a loss.",
-    "zh": "这种焦虑建立在一个值得怀疑的信念上：劳动使人有德。放下它，劳动变少就不再像是一种损失。"
-   },
-   "detail": {
-    "en": "If society can produce what people need with far less labour, asking how humans stay equally busy may be the wrong question; the opening is leisure, curiosity, friendship and things done for their own sake. Russell concedes the difficulty himself: people who organised a whole life around work do not automatically know how to use time that is free.",
-    "zh": "如果社会能用少得多的劳动生产出人们所需的东西，那么「如何让人继续一样忙」也许根本就是错的问题；真正的机会在于闲暇、好奇、友谊与那些为自身而做的事。罗素自己也承认困难：把整个人生围绕工作组织起来的人，并不会自动知道如何使用空出来的时间。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "A great deal of harm is being done in the modern world by belief in the virtuousness of work.",
-    "zh": "现代世界正因为相信「劳动是美德」而造成大量伤害。"
-   },
-   "origin": {
-    "en": "United Kingdom, 1932",
-    "zh": "英国，1932 年"
-   },
-   "source": {
-    "label": {
-     "en": "Bertrand Russell, \"In Praise of Idleness\", 1932",
-     "zh": "伯特兰·罗素〈闲散颂〉，1932 年"
-    },
-    "url": "https://libcom.org/article/praise-idleness-bertrand-russell"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.C.1",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "C",
-   "voiceId": "v-ecclesiastes",
-   "kind": "religiousTeaching",
-   "claim": {
-    "en": "People were asking what all the work was for long before any machine could do it for them. Achievement never did buy the security it promised.",
-    "zh": "早在任何机器能替人做事之前，人们就已经在问这一切劳作究竟为了什么。成就从来没有买到它所承诺的安稳。"
-   },
-   "detail": {
-    "en": "You can become excellent, wealthy and admired and still lose control of everything you made. AI does not create that instability; it makes it visible far earlier in a career. The cost is that loosening identity from achievement says nothing about how to build a satisfying day once the work is gone.",
-    "zh": "你可以变得出色、富有、受人尊敬，最终仍然失去对自己所造之物的控制。AI 并没有制造这种不稳定，只是让它在职业生涯中更早显形。代价是：把身份从成就上松开，并不能告诉一个人在工作消失之后如何过好每一天。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "For what hath man of all his labour, and of the vexation of his heart, wherein he hath laboured under the sun?",
-    "zh": "人在日光之下劳碌累心，所得的是什么呢？"
-   },
-   "origin": {
-    "en": "Judea, c. 3rd century BCE",
-    "zh": "犹地亚，约公元前 3 世纪"
-   },
-   "source": {
-    "label": {
-     "en": "Ecclesiastes 2:22, King James Version",
-     "zh": "《传道书》2:22，钦定本"
-    },
-    "url": "https://en.wikisource.org/wiki/Bible_(King_James)/Ecclesiastes"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.D.0",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "D",
-   "voiceId": "v-marx",
-   "kind": "philosophy",
-   "claim": {
-    "en": "Losing the ability to contribute is not only losing a wage. People make themselves real by shaping the world; take that away and something goes with it.",
-    "zh": "失去贡献的能力，失去的不只是工资。人是通过改造世界来确认自己的；把这件事拿走，被拿走的不只是收入。"
-   },
-   "detail": {
-    "en": "Marx's charge against industrial work was never only low pay. When control over productive activity is taken from the person doing it, alienation follows. AI could rebuild the same problem in a new shape: society still makes extraordinary things, and fewer and fewer people experience themselves as necessary to making them. Preserving inefficient jobs would not answer him either.",
-    "zh": "马克思对工业劳动的指控从来不只是工资低。当一个人对自己生产活动的控制被拿走，异化随之而来。AI 可能以新的形式重建同一个问题：社会依然造出非凡的东西，而越来越少的人觉得自己是其中必要的一环。仅仅保留低效的岗位，同样回答不了他。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "The worker therefore only feels himself outside his work, and in his work feels outside himself.",
-    "zh": "因此，工人只有在工作之外才感到自在，而在工作之中却感到不自在。"
-   },
-   "origin": {
-    "en": "Paris, 1844",
-    "zh": "巴黎，1844 年"
-   },
-   "source": {
-    "label": {
-     "en": "Karl Marx, Economic and Philosophic Manuscripts of 1844, \"Estranged Labour\"",
-     "zh": "卡尔·马克思《1844 年经济学哲学手稿》〈异化劳动〉"
-    },
-    "url": "https://www.marxists.org/archive/marx/works/1844/manuscripts/labour.htm"
-   }
-  },
-  {
-   "id": "q-ai-better-than-you.D.1",
-   "questionId": "q-ai-better-than-you",
-   "optionKey": "D",
-   "voiceId": "v-william-james",
-   "kind": "philosophy",
-   "claim": {
-    "en": "A life needs something that asks something of it. Remove every arena that demands concentration and nerve, and comfort alone will not fill the gap.",
-    "zh": "人生需要一些对自己有所要求的东西。如果把所有需要专注与胆量的场域都移除，仅靠舒适是填不满那个空缺的。"
-   },
-   "detail": {
-    "en": "James doubted that a society organised purely for ease could hold. Applied to AI, removing difficult intellectual work may free us, but a world in which nothing calls on our persistence or competence also removes the occasions through which people find out what they can do. This is not an argument for keeping unnecessary jobs — it is an argument for deliberately making new arenas when the old ones close.",
-    "zh": "詹姆斯怀疑一个纯粹为舒适而组织起来的社会能否维持。应用到 AI：取消困难的智力劳动也许让人自由，但一个没有任何事情要求毅力与能力的世界，也取消了人借以发现自己能做什么的场合。这不是主张保留不必要的岗位，而是主张在旧场域关闭时，刻意去造出新的。"
-   },
-   "extra": null,
-   "quote": {
-    "en": "A permanently successful peace-economy can not be a simple pleasure-economy.",
-    "zh": "一个能够长久成立的和平经济，不可能只是一种享乐经济。"
-   },
-   "origin": {
-    "en": "United States, 1910",
-    "zh": "美国，1910 年"
-   },
-   "source": {
-    "label": {
-     "en": "William James, \"The Moral Equivalent of War\", 1910",
-     "zh": "威廉·詹姆斯〈战争的道德等价物〉，1910 年"
-    },
-    "url": "https://en.wikisource.org/wiki/The_Moral_Equivalent_of_War"
-   }
   }
  ],
  "voices": [
@@ -5484,6 +8211,7 @@
      "zh": "《手册》流传十九个世纪未曾绝版，也是斯多葛思想进入现代自助读物的主要来源"
     }
    },
+   "image": null,
    "workIds": []
   },
   {
@@ -5506,6 +8234,245 @@
      "zh": "工艺美术运动的奠基者，也是工业劳动的社会主义批评者 — 少数把技术、手艺与劳动意义放在同一个论证里的人"
     }
    },
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-kropotkin",
+   "name": {
+    "en": "Kropotkin",
+    "zh": "克鲁泡特金"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Russia and England, 1902",
+    "zh": "俄国与英国，1902 年"
+   },
+   "wiki": "Peter_Kropotkin",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-emerson",
+   "name": {
+    "en": "Emerson",
+    "zh": "爱默生"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Concord, Massachusetts, 1860",
+    "zh": "马萨诸塞州康科德，1860 年"
+   },
+   "wiki": "Ralph_Waldo_Emerson",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-spencer",
+   "name": {
+    "en": "Herbert Spencer",
+    "zh": "赫伯特·斯宾塞"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Britain, 1893",
+    "zh": "英国，1893 年"
+   },
+   "wiki": "Herbert_Spencer",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-hobbes",
+   "name": {
+    "en": "Hobbes",
+    "zh": "霍布斯"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "England, 1651",
+    "zh": "英格兰，1651 年"
+   },
+   "wiki": "Thomas_Hobbes",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-kant",
+   "name": {
+    "en": "Kant",
+    "zh": "康德"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Königsberg, 1785",
+    "zh": "柯尼斯堡，1785 年"
+   },
+   "wiki": "Immanuel_Kant",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-machiavelli",
+   "name": {
+    "en": "Machiavelli",
+    "zh": "马基雅维利"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Florence, 1513",
+    "zh": "佛罗伦萨，1513 年"
+   },
+   "wiki": "Niccolò_Machiavelli",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-du-bois",
+   "name": {
+    "en": "W. E. B. Du Bois",
+    "zh": "杜波依斯"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "United States, 1903",
+    "zh": "美国，1903 年"
+   },
+   "wiki": "W._E._B._Du_Bois",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-plato",
+   "name": {
+    "en": "Plato",
+    "zh": "柏拉图"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "wiki": "Plato",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-rousseau",
+   "name": {
+    "en": "Rousseau",
+    "zh": "卢梭"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Geneva and France, 1762",
+    "zh": "日内瓦与法国，1762 年"
+   },
+   "wiki": "Jean-Jacques_Rousseau",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-augustine",
+   "name": {
+    "en": "Augustine",
+    "zh": "奥古斯丁"
+   },
+   "kind": "religiousTeaching",
+   "type": "person",
+   "origin": {
+    "en": "Hippo, North Africa, c. 420",
+    "zh": "北非希波，约 420 年"
+   },
+   "wiki": "Augustine_of_Hippo",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-thoreau",
+   "name": {
+    "en": "Thoreau",
+    "zh": "梭罗"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Concord, Massachusetts, 1849",
+    "zh": "马萨诸塞州康科德，1849 年"
+   },
+   "wiki": "Henry_David_Thoreau",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-freud",
+   "name": {
+    "en": "Freud",
+    "zh": "弗洛伊德"
+   },
+   "kind": "contestedArgument",
+   "type": "person",
+   "origin": {
+    "en": "Vienna, 1917",
+    "zh": "维也纳，1917 年"
+   },
+   "wiki": "Sigmund_Freud",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-pascal",
+   "name": {
+    "en": "Pascal",
+    "zh": "帕斯卡"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "France, c. 1660",
+    "zh": "法国，约 1660 年"
+   },
+   "wiki": "Blaise_Pascal",
+   "reach": null,
+   "image": null,
+   "workIds": []
+  },
+  {
+   "id": "v-spinoza",
+   "name": {
+    "en": "Spinoza",
+    "zh": "斯宾诺莎"
+   },
+   "kind": "philosophy",
+   "type": "person",
+   "origin": {
+    "en": "Netherlands, 1677",
+    "zh": "荷兰，1677 年"
+   },
+   "wiki": "Baruch_Spinoza",
+   "reach": null,
+   "image": null,
    "workIds": []
   }
  ],

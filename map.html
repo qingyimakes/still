@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Still · Full map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap">
+<style>
+/* ---------------------------------------------------------------------------
+   The full influence map: every philosopher in Still's roster, linked where
+   Wikidata records that one influenced or taught another.
+
+   A companion to index.html, opened from Explore ▸ Full map. Same tokens as
+   index.html (which lifts them from PastLives/Theme/Theme.swift): change a
+   token there and change it here. Light only, like the app.
+
+   Data: the nodes and edges are inline below (#data), written by
+   Tools/fetch-influence.py from Wikidata P737 "influenced by" and P1066
+   "student of". Chinese names and portraits come from assets/philosophers.json
+   when it loads; the page still draws without it.
+--------------------------------------------------------------------------- */
+:root{
+  color-scheme: light;
+  --bg:#FAFAFA; --surface:#FFFFFF; --parchment:#E0D5C7; --room:#EDEBE7;
+  --chip:rgba(36,50,53,.07); --chip-soft:rgba(36,50,53,.045);
+  --ink:#243235; --ink-secondary:#6B6B6B; --ink-tertiary:#5F5B54;
+  --text-body-soft:#5A5A5A; --initials:#8A867E; --on-ink:#FFFFFF;
+  --accent:#DBFEAA;
+  --hairline:rgba(36,50,53,.09); --hairline-strong:rgba(36,50,53,.14);
+  --hairline-card:rgba(36,50,53,.16);
+  --r-card:24px; --r-inner:16px; --r-chip:14px; --r-pill:999px;
+  --sp-xs:4px; --sp-s:8px; --sp-m:12px; --sp-l:16px; --sp-xl:20px; --sp-xxl:24px;
+  --serif:ui-serif,"New York","Newsreader","Songti SC",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,system-ui,"DM Sans","PingFang SC",sans-serif;
+  /* The map's own: a dimmed node and edge (sigma reads hex, not rgba). */
+  --node-dim:#E4E0D8; --edge-dim:#2432351A; --isolate:#BDB5A8;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--room);font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+
+.app{max-width:1240px;margin:0 auto;min-height:100vh;background:var(--bg)}
+@media (min-width:1240px){ .app{box-shadow:0 1px 40px rgba(36,50,53,.10)} }
+
+/* Top bar: the same glass bar as index.html, with its back button. */
+.bar{position:sticky;top:0;z-index:20;height:52px;display:flex;align-items:center;justify-content:center;
+     padding-top:env(safe-area-inset-top,0px);box-sizing:content-box;
+     background:rgba(250,250,250,.72);backdrop-filter:blur(20px) saturate(180%);
+     -webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--hairline)}
+.brand{font-family:var(--serif);font-style:italic;font-size:17px;text-decoration:none}
+.back{position:absolute;left:12px;bottom:4px;width:44px;height:44px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.92);
+      box-shadow:0 1px 6px rgba(36,50,53,.10)}
+.back svg{width:22px;height:22px}
+
+.page{padding:16px 0 40px}
+.page-head{padding:8px 20px 4px}
+.page-title{font-family:var(--serif);font-weight:400;font-size:34px;margin:0}
+.page-sub{font-size:15px;line-height:1.4;color:var(--ink-tertiary);margin:8px 0 0;max-width:36em}
+.tools{padding:0 20px;margin-top:var(--sp-l)}
+.tools input{width:100%;max-width:420px;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);
+             border:1px solid var(--hairline-strong);border-radius:var(--r-pill);padding:10px 16px}
+
+.layout{display:grid;gap:var(--sp-l);padding:var(--sp-l) 20px 0}
+@media (min-width:900px){ .layout{grid-template-columns:minmax(0,1fr) 340px;align-items:start} }
+
+.card{background:var(--surface);border-radius:var(--r-card);border:1px solid var(--hairline-card)}
+#map{position:relative;height:min(68vh,720px);min-height:380px;overflow:hidden}
+@media (min-width:900px){ #map{height:calc(100vh - 52px - 190px);min-height:520px;position:sticky;top:68px} }
+.ring-label{position:absolute;left:var(--sp-l);bottom:var(--sp-m);font-size:12px;color:var(--ink-secondary);pointer-events:none}
+.zoom{position:absolute;right:var(--sp-m);bottom:var(--sp-m);display:flex;flex-direction:column;gap:6px}
+.zoom button{width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--hairline-strong);
+             display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 1px 2px rgba(36,50,53,.06)}
+
+.panel{padding:var(--sp-xl);display:flex;flex-direction:column;gap:var(--sp-l)}
+.label{font-size:13px;font-weight:600;margin:0}
+.label span{font-weight:400;color:var(--ink-secondary)}
+.who{display:flex;align-items:center;gap:var(--sp-m)}
+.av{width:56px;height:56px;flex:none;border-radius:50%;background:var(--parchment);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;color:var(--initials)}
+.av img{width:100%;height:100%;object-fit:cover}
+.who h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;margin:0;text-wrap:balance}
+.who p{font-size:14.5px;color:var(--ink-secondary);margin:2px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:var(--sp-s)}
+.links a{font-size:13px;font-weight:500;text-decoration:none;padding:6px 12px;border-radius:var(--r-pill);background:var(--chip)}
+.links a.chat-go{background:var(--ink);color:var(--on-ink)}
+.group{display:flex;flex-direction:column;gap:var(--sp-s)}
+.list{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:14px;font-weight:500;padding:6px 12px 6px 10px;border-radius:var(--r-chip);background:var(--chip);
+      display:inline-flex;align-items:center;gap:6px}
+.chip:hover{background:rgba(36,50,53,.11)}
+.chip .tag{font-size:12px;font-weight:400;color:var(--ink-secondary)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.empty{font-size:14px;color:var(--ink-secondary);margin:0}
+.pill{font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--r-pill);background:var(--chip);
+      display:inline-flex;align-items:center;gap:8px}
+.pill .count{font-weight:400;color:var(--ink-secondary);font-variant-numeric:tabular-nums}
+.pill.on{background:var(--ink);color:var(--accent)}
+.pill.on .count{color:var(--accent);opacity:.8}
+.stats{display:flex;gap:var(--sp-xxl)}
+.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--ink-secondary)}
+.disclaim{background:var(--chip);border-radius:var(--r-inner);padding:var(--sp-l);display:flex;flex-direction:column;gap:var(--sp-xs)}
+.disclaim b{font-size:14px;font-weight:500}
+.disclaim p{font-size:13.5px;line-height:1.45;color:var(--ink-tertiary);margin:0}
+#fail{padding:24px;color:var(--ink-secondary)}
+</style>
+
+<div class="app">
+  <header class="bar">
+    <a class="back" href="./" aria-label="Back to Still" id="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <a class="brand" href="./">Still</a>
+  </header>
+  <main class="page">
+    <div class="page-head">
+      <h1 class="page-title" id="title">Full map</h1>
+      <p class="page-sub" id="sub"></p>
+    </div>
+    <div class="tools">
+      <input id="q" type="search" list="names" autocomplete="off">
+      <datalist id="names"></datalist>
+    </div>
+    <div class="layout">
+      <div id="map" class="card">
+        <div class="ring-label" id="ring"></div>
+        <div class="zoom"><button id="zin" type="button">+</button><button id="zout" type="button">−</button><button id="zreset" type="button">↺</button></div>
+      </div>
+      <aside id="panel" class="card panel" aria-live="polite"></aside>
+    </div>
+  </main>
+</div>
+
+<script type="application/json" id="data">{"fetched":"2026-11-09","nodes":[{"id":"p-karl-marx","name":"Karl Marx","wiki":"Karl_Marx","qid":"Q9061","tier":"pro","rank":1,"origin":"Germany, 1844"},{"id":"p-noam-chomsky","name":"Noam Chomsky","wiki":"Noam_Chomsky","qid":"Q9049","tier":"pro","rank":2,"origin":""},{"id":"p-marcus-aurelius","name":"Marcus Aurelius","wiki":"Marcus_Aurelius","qid":"Q1430","tier":"pro","rank":3,"origin":"Rome, c. 175"},{"id":"p-friedrich-nietzsche","name":"Friedrich Nietzsche","wiki":"Friedrich_Nietzsche","qid":"Q9358","tier":"pro","rank":4,"origin":"Germany, 1887"},{"id":"p-sigmund-freud","name":"Sigmund Freud","wiki":"Sigmund_Freud","qid":"Q9215","tier":"pro","rank":5,"origin":""},{"id":"p-aristotle","name":"Aristotle","wiki":"Aristotle","qid":"Q868","tier":"pro","rank":6,"origin":"Athens, c. 340 BCE"},{"id":"p-socrates","name":"Socrates","wiki":"Socrates","qid":"Q913","tier":"pro","rank":7,"origin":""},{"id":"p-carl-jung","name":"Carl Jung","wiki":"Carl_Jung","qid":"Q41532","tier":"pro","rank":8,"origin":"Zurich, 1952"},{"id":"p-plato","name":"Plato","wiki":"Plato","qid":"Q859","tier":"pro","rank":9,"origin":""},{"id":"p-ayn-rand","name":"Ayn Rand","wiki":"Ayn_Rand","qid":"Q132524","tier":"pro","rank":10,"origin":""},{"id":"p-augustine-of-hippo","name":"Augustine of Hippo","wiki":"Augustine_of_Hippo","qid":"Q8018","tier":"pro","rank":11,"origin":""},{"id":"p-niccolò-machiavelli","name":"Niccolò Machiavelli","wiki":"Niccolò_Machiavelli","qid":"Q1399","tier":"pro","rank":12,"origin":""},{"id":"p-albert-camus","name":"Albert Camus","wiki":"Albert_Camus","qid":"Q34670","tier":"pro","rank":13,"origin":"France, 1942"},{"id":"p-immanuel-kant","name":"Immanuel Kant","wiki":"Immanuel_Kant","qid":"Q9312","tier":"pro","rank":14,"origin":""},{"id":"p-thomas-aquinas","name":"Thomas Aquinas","wiki":"Thomas_Aquinas","qid":"Q9438","tier":"pro","rank":15,"origin":""},{"id":"p-voltaire","name":"Voltaire","wiki":"Voltaire","qid":"Q9068","tier":"pro","rank":16,"origin":""},{"id":"p-confucius","name":"Confucius","wiki":"Confucius","qid":"Q4604","tier":"pro","rank":17,"origin":"China, c. 500 BCE"},{"id":"p-michel-foucault","name":"Michel Foucault","wiki":"Michel_Foucault","qid":"Q44272","tier":"pro","rank":18,"origin":""},{"id":"p-john-locke","name":"John Locke","wiki":"John_Locke","qid":"Q9353","tier":"pro","rank":19,"origin":"England, 1689"},{"id":"p-hannah-arendt","name":"Hannah Arendt","wiki":"Hannah_Arendt","qid":"Q60025","tier":"pro","rank":20,"origin":"United States, 1958"},{"id":"p-bertrand-russell","name":"Bertrand Russell","wiki":"Bertrand_Russell","qid":"Q33760","tier":"pro","rank":21,"origin":"Britain, 1929"},{"id":"p-rumi","name":"Rumi","wiki":"Rumi","qid":"Q43347","tier":"pro","rank":22,"origin":""},{"id":"p-diogenes","name":"Diogenes","wiki":"Diogenes","qid":"Q59180","tier":"pro","rank":23,"origin":""},{"id":"p-jean-paul-sartre","name":"Jean-Paul Sartre","wiki":"Jean-Paul_Sartre","qid":"Q9364","tier":"pro","rank":24,"origin":"France, 1946"},{"id":"p-rené-descartes","name":"René Descartes","wiki":"René_Descartes","qid":"Q9191","tier":"pro","rank":25,"origin":""},{"id":"p-henry-david-thoreau","name":"Henry David Thoreau","wiki":"Henry_David_Thoreau","qid":"Q131149","tier":"pro","rank":26,"origin":""},{"id":"p-ludwig-wittgenstein","name":"Ludwig Wittgenstein","wiki":"Ludwig_Wittgenstein","qid":"Q9391","tier":"pro","rank":27,"origin":""},{"id":"p-arthur-schopenhauer","name":"Arthur Schopenhauer","wiki":"Arthur_Schopenhauer","qid":"Q38193","tier":"pro","rank":28,"origin":""},{"id":"p-søren-kierkegaard","name":"Søren Kierkegaard","wiki":"Søren_Kierkegaard","qid":"Q6512","tier":"pro","rank":29,"origin":""},{"id":"p-baruch-spinoza","name":"Baruch Spinoza","wiki":"Baruch_Spinoza","qid":"Q35802","tier":"pro","rank":30,"origin":""},{"id":"p-jean-jacques-rousseau","name":"Jean-Jacques Rousseau","wiki":"Jean-Jacques_Rousseau","qid":"Q6527","tier":"pro","rank":31,"origin":""},{"id":"p-simone-de-beauvoir","name":"Simone de Beauvoir","wiki":"Simone_de_Beauvoir","qid":"Q7197","tier":"pro","rank":32,"origin":"France, 1949"},{"id":"p-georg-wilhelm-friedrich-hegel","name":"Georg Wilhelm Friedrich Hegel","wiki":"Georg_Wilhelm_Friedrich_Hegel","qid":"Q9235","tier":"pro","rank":33,"origin":""},{"id":"p-adam-smith","name":"Adam Smith","wiki":"Adam_Smith","qid":"Q9381","tier":"pro","rank":34,"origin":"Scotland, 1759"},{"id":"p-francis-bacon","name":"Francis Bacon","wiki":"Francis_Bacon","qid":"Q37388","tier":"pro","rank":35,"origin":""},{"id":"p-slavoj-žižek","name":"Slavoj Žižek","wiki":"Slavoj_Žižek","qid":"Q184750","tier":"pro","rank":36,"origin":""},{"id":"p-adi-shankara","name":"Adi Shankara","wiki":"Adi_Shankara","qid":"Q180967","tier":"pro","rank":37,"origin":""},{"id":"p-mary-wollstonecraft","name":"Mary Wollstonecraft","wiki":"Mary_Wollstonecraft","qid":"Q101638","tier":"pro","rank":38,"origin":""},{"id":"p-ralph-waldo-emerson","name":"Ralph Waldo Emerson","wiki":"Ralph_Waldo_Emerson","qid":"Q48226","tier":"pro","rank":39,"origin":""},{"id":"p-viktor-frankl","name":"Viktor Frankl","wiki":"Viktor_Frankl","qid":"Q154723","tier":"pro","rank":40,"origin":"Vienna, 1946"},{"id":"p-pythagoras","name":"Pythagoras","wiki":"Pythagoras","qid":"Q10261","tier":"pro","rank":41,"origin":""},{"id":"p-seneca-the-younger","name":"Seneca the Younger","wiki":"Seneca_the_Younger","qid":"Q2054","tier":"pro","rank":42,"origin":""},{"id":"p-friedrich-engels","name":"Friedrich Engels","wiki":"Friedrich_Engels","qid":"Q34787","tier":"pro","rank":43,"origin":""},{"id":"p-martin-heidegger","name":"Martin Heidegger","wiki":"Martin_Heidegger","qid":"Q48301","tier":"pro","rank":44,"origin":""},{"id":"p-avicenna","name":"Avicenna","wiki":"Avicenna","qid":"Q8011","tier":"pro","rank":45,"origin":""},{"id":"p-david-hume","name":"David Hume","wiki":"David_Hume","qid":"Q37160","tier":"pro","rank":46,"origin":"Scotland, 1739"},{"id":"p-antonio-gramsci","name":"Antonio Gramsci","wiki":"Antonio_Gramsci","qid":"Q83003","tier":"pro","rank":47,"origin":""},{"id":"p-jürgen-habermas","name":"Jürgen Habermas","wiki":"Jürgen_Habermas","qid":"Q76357","tier":"pro","rank":48,"origin":""},{"id":"p-frantz-fanon","name":"Frantz Fanon","wiki":"Frantz_Fanon","qid":"Q193670","tier":"pro","rank":49,"origin":""},{"id":"p-hypatia","name":"Hypatia","wiki":"Hypatia","qid":"Q11903","tier":"pro","rank":50,"origin":""},{"id":"p-erasmus","name":"Erasmus","wiki":"Erasmus","qid":"Q43499","tier":"basic","rank":51,"origin":""},{"id":"p-gottfried-wilhelm-leibniz","name":"Gottfried Wilhelm Leibniz","wiki":"Gottfried_Wilhelm_Leibniz","qid":"Q9047","tier":"basic","rank":52,"origin":""},{"id":"p-blaise-pascal","name":"Blaise Pascal","wiki":"Blaise_Pascal","qid":"Q1290","tier":"basic","rank":53,"origin":""},{"id":"p-thomas-hobbes","name":"Thomas Hobbes","wiki":"Thomas_Hobbes","qid":"Q37621","tier":"basic","rank":54,"origin":""},{"id":"p-laozi","name":"Laozi","wiki":"Laozi","qid":"Q9333","tier":"basic","rank":55,"origin":""},{"id":"p-john-stuart-mill","name":"John Stuart Mill","wiki":"John_Stuart_Mill","qid":"Q50020","tier":"basic","rank":56,"origin":"United Kingdom, 1859"},{"id":"p-simone-weil","name":"Simone Weil","wiki":"Simone_Weil","qid":"Q157309","tier":"basic","rank":57,"origin":""},{"id":"p-maimonides","name":"Maimonides","wiki":"Maimonides","qid":"Q127398","tier":"basic","rank":58,"origin":""},{"id":"p-judith-butler","name":"Judith Butler","wiki":"Judith_Butler","qid":"Q219368","tier":"basic","rank":59,"origin":""},{"id":"p-heraclitus","name":"Heraclitus","wiki":"Heraclitus","qid":"Q41155","tier":"basic","rank":60,"origin":""},{"id":"p-jeremy-bentham","name":"Jeremy Bentham","wiki":"Jeremy_Bentham","qid":"Q60887","tier":"basic","rank":61,"origin":"Britain, 1789"},{"id":"p-karl-popper","name":"Karl Popper","wiki":"Karl_Popper","qid":"Q81244","tier":"basic","rank":62,"origin":""},{"id":"p-john-dewey","name":"John Dewey","wiki":"John_Dewey","qid":"Q131805","tier":"basic","rank":63,"origin":""},{"id":"p-edward-said","name":"Edward Said","wiki":"Edward_Said","qid":"Q201538","tier":"basic","rank":64,"origin":""},{"id":"p-auguste-comte","name":"Auguste Comte","wiki":"Auguste_Comte","qid":"Q12718","tier":"basic","rank":65,"origin":""},{"id":"p-epictetus","name":"Epictetus","wiki":"Epictetus","qid":"Q183144","tier":"basic","rank":66,"origin":"Nicopolis, c. 125 CE"},{"id":"p-william-james","name":"William James","wiki":"William_James","qid":"Q125249","tier":"basic","rank":67,"origin":"Harvard, 1896"},{"id":"p-gilles-deleuze","name":"Gilles Deleuze","wiki":"Gilles_Deleuze","qid":"Q184226","tier":"basic","rank":68,"origin":""},{"id":"p-jacques-derrida","name":"Jacques Derrida","wiki":"Jacques_Derrida","qid":"Q130631","tier":"basic","rank":69,"origin":""},{"id":"p-jean-baudrillard","name":"Jean Baudrillard","wiki":"Jean_Baudrillard","qid":"Q182847","tier":"basic","rank":70,"origin":""},{"id":"p-walter-benjamin","name":"Walter Benjamin","wiki":"Walter_Benjamin","qid":"Q61078","tier":"basic","rank":71,"origin":""},{"id":"p-cornel-west","name":"Cornel West","wiki":"Cornel_West","qid":"Q712469","tier":"basic","rank":72,"origin":""},{"id":"p-epicurus","name":"Epicurus","wiki":"Epicurus","qid":"Q43216","tier":"basic","rank":73,"origin":"Athens, c. 300 BCE"},{"id":"p-jacques-lacan","name":"Jacques Lacan","wiki":"Jacques_Lacan","qid":"Q169906","tier":"basic","rank":74,"origin":""},{"id":"p-al-ghazali","name":"Al-Ghazali","wiki":"Al-Ghazali","qid":"Q9546","tier":"basic","rank":75,"origin":""},{"id":"p-montesquieu","name":"Montesquieu","wiki":"Montesquieu","qid":"Q15975","tier":"basic","rank":76,"origin":""},{"id":"p-ibn-khaldun","name":"Ibn Khaldun","wiki":"Ibn_Khaldun","qid":"Q9294","tier":"basic","rank":77,"origin":""},{"id":"p-peter-singer","name":"Peter Singer","wiki":"Peter_Singer","qid":"Q211539","tier":"basic","rank":78,"origin":""},{"id":"p-gautama-buddha","name":"Gautama Buddha","wiki":"Gautama_Buddha","qid":"Q9441","tier":"basic","rank":79,"origin":""},{"id":"p-daniel-dennett","name":"Daniel Dennett","wiki":"Daniel_Dennett","qid":"Q215263","tier":"basic","rank":80,"origin":""},{"id":"p-michel-de-montaigne","name":"Michel de Montaigne","wiki":"Michel_de_Montaigne","qid":"Q41568","tier":"basic","rank":81,"origin":"France, 1580"},{"id":"p-marshall-mcluhan","name":"Marshall McLuhan","wiki":"Marshall_McLuhan","qid":"Q193871","tier":"basic","rank":82,"origin":""},{"id":"p-theodor-w-adorno","name":"Theodor W. Adorno","wiki":"Theodor_W._Adorno","qid":"Q152388","tier":"basic","rank":83,"origin":""},{"id":"p-thales-of-miletus","name":"Thales of Miletus","wiki":"Thales_of_Miletus","qid":"Q36303","tier":"basic","rank":84,"origin":""},{"id":"p-john-rawls","name":"John Rawls","wiki":"John_Rawls","qid":"Q172544","tier":"basic","rank":85,"origin":""},{"id":"p-peter-kropotkin","name":"Peter Kropotkin","wiki":"Peter_Kropotkin","qid":"Q5752","tier":"basic","rank":86,"origin":""},{"id":"p-mikhail-bakunin","name":"Mikhail Bakunin","wiki":"Mikhail_Bakunin","qid":"Q27645","tier":"basic","rank":87,"origin":""},{"id":"p-iris-murdoch","name":"Iris Murdoch","wiki":"Iris_Murdoch","qid":"Q217495","tier":"basic","rank":88,"origin":""},{"id":"p-democritus","name":"Democritus","wiki":"Democritus","qid":"Q41980","tier":"basic","rank":89,"origin":""},{"id":"p-averroes","name":"Averroes","wiki":"Averroes","qid":"Q39837","tier":"basic","rank":90,"origin":""},{"id":"p-boethius","name":"Boethius","wiki":"Boethius","qid":"Q102851","tier":"basic","rank":91,"origin":""},{"id":"p-ramanuja","name":"Ramanuja","wiki":"Ramanuja","qid":"Q1741798","tier":"basic","rank":92,"origin":""},{"id":"p-herbert-marcuse","name":"Herbert Marcuse","wiki":"Herbert_Marcuse","qid":"Q60030","tier":"basic","rank":93,"origin":""},{"id":"p-roland-barthes","name":"Roland Barthes","wiki":"Roland_Barthes","qid":"Q179109","tier":"basic","rank":94,"origin":""},{"id":"p-edmund-husserl","name":"Edmund Husserl","wiki":"Edmund_Husserl","qid":"Q58586","tier":"basic","rank":95,"origin":""},{"id":"p-william-of-ockham","name":"William of Ockham","wiki":"William_of_Ockham","qid":"Q43936","tier":"basic","rank":96,"origin":""},{"id":"p-nagarjuna","name":"Nagarjuna","wiki":"Nagarjuna","qid":"Q171195","tier":"basic","rank":97,"origin":""},{"id":"p-plotinus","name":"Plotinus","wiki":"Plotinus","qid":"Q134189","tier":"basic","rank":98,"origin":""},{"id":"p-louis-althusser","name":"Louis Althusser","wiki":"Louis_Althusser","qid":"Q184169","tier":"basic","rank":99,"origin":""},{"id":"p-anselm-of-canterbury","name":"Anselm of Canterbury","wiki":"Anselm_of_Canterbury","qid":"Q43939","tier":"basic","rank":100,"origin":""},{"id":"p-henri-bergson","name":"Henri Bergson","wiki":"Henri_Bergson","qid":"Q42156","tier":"basic","rank":101,"origin":""},{"id":"p-george-berkeley","name":"George Berkeley","wiki":"George_Berkeley","qid":"Q82049","tier":"basic","rank":102,"origin":""},{"id":"p-alfred-north-whitehead","name":"Alfred North Whitehead","wiki":"Alfred_North_Whitehead","qid":"Q183372","tier":"basic","rank":103,"origin":""},{"id":"p-martha-nussbaum","name":"Martha Nussbaum","wiki":"Martha_Nussbaum","qid":"Q235470","tier":"basic","rank":104,"origin":""},{"id":"p-zeno-of-citium","name":"Zeno of Citium","wiki":"Zeno_of_Citium","qid":"Q171303","tier":"basic","rank":105,"origin":""},{"id":"p-parmenides","name":"Parmenides","wiki":"Parmenides","qid":"Q125551","tier":"basic","rank":106,"origin":""},{"id":"p-isaiah-berlin","name":"Isaiah Berlin","wiki":"Isaiah_Berlin","qid":"Q205162","tier":"basic","rank":107,"origin":"Oxford, 1958"},{"id":"p-charles-sanders-peirce","name":"Charles Sanders Peirce","wiki":"Charles_Sanders_Peirce","qid":"Q187520","tier":"basic","rank":108,"origin":""},{"id":"p-thomas-kuhn","name":"Thomas Kuhn","wiki":"Thomas_Kuhn","qid":"Q184980","tier":"basic","rank":109,"origin":""},{"id":"p-robert-nozick","name":"Robert Nozick","wiki":"Robert_Nozick","qid":"Q205927","tier":"basic","rank":110,"origin":"Harvard, 1974"},{"id":"p-alasdair-macintyre","name":"Alasdair MacIntyre","wiki":"Alasdair_MacIntyre","qid":"Q310178","tier":"basic","rank":111,"origin":""},{"id":"p-charles-taylor-(philosopher)","name":"Charles Taylor","wiki":"Charles_Taylor_(philosopher)","qid":"Q311757","tier":"basic","rank":112,"origin":""},{"id":"p-duns-scotus","name":"Duns Scotus","wiki":"Duns_Scotus","qid":"Q190089","tier":"basic","rank":113,"origin":""},{"id":"p-thorstein-veblen","name":"Thorstein Veblen","wiki":"Thorstein_Veblen","qid":"Q73646","tier":"basic","rank":114,"origin":"United States, 1899"},{"id":"p-john-searle","name":"John Searle","wiki":"John_Searle","qid":"Q295012","tier":"basic","rank":115,"origin":""},{"id":"p-david-chalmers","name":"David Chalmers","wiki":"David_Chalmers","qid":"Q366123","tier":"basic","rank":116,"origin":""},{"id":"p-patanjali","name":"Patanjali","wiki":"Patanjali","qid":"Q231680","tier":"basic","rank":117,"origin":""},{"id":"p-mencius","name":"Mencius","wiki":"Mencius","qid":"Q188903","tier":"basic","rank":118,"origin":"China, c. 300 BCE"},{"id":"p-al-farabi","name":"Al-Farabi","wiki":"Al-Farabi","qid":"Q160460","tier":"basic","rank":119,"origin":""},{"id":"p-maurice-merleau-ponty","name":"Maurice Merleau-Ponty","wiki":"Maurice_Merleau-Ponty","qid":"Q212639","tier":"basic","rank":120,"origin":""},{"id":"p-gottlob-frege","name":"Gottlob Frege","wiki":"Gottlob_Frege","qid":"Q60028","tier":"basic","rank":121,"origin":""},{"id":"p-thomas-nagel","name":"Thomas Nagel","wiki":"Thomas_Nagel","qid":"Q350239","tier":"basic","rank":122,"origin":""},{"id":"p-saul-kripke","name":"Saul Kripke","wiki":"Saul_Kripke","qid":"Q298521","tier":"basic","rank":123,"origin":""},{"id":"p-erving-goffman","name":"Erving Goffman","wiki":"Erving_Goffman","qid":"Q314471","tier":"basic","rank":124,"origin":"United States, 1959"},{"id":"p-richard-rorty","name":"Richard Rorty","wiki":"Richard_Rorty","qid":"Q215258","tier":"basic","rank":125,"origin":""},{"id":"p-johann-gottlieb-fichte","name":"Johann Gottlieb Fichte","wiki":"Johann_Gottlieb_Fichte","qid":"Q102585","tier":"basic","rank":126,"origin":""},{"id":"p-willard-van-orman-quine","name":"Willard Van Orman Quine","wiki":"Willard_Van_Orman_Quine","qid":"Q214969","tier":"basic","rank":127,"origin":""},{"id":"p-derek-parfit","name":"Derek Parfit","wiki":"Derek_Parfit","qid":"Q962160","tier":"basic","rank":128,"origin":"Oxford, 1984"},{"id":"p-mozi","name":"Mozi","wiki":"Mozi","qid":"Q272411","tier":"basic","rank":129,"origin":""},{"id":"p-max-horkheimer","name":"Max Horkheimer","wiki":"Max_Horkheimer","qid":"Q76826","tier":"basic","rank":130,"origin":""},{"id":"p-emmanuel-levinas","name":"Emmanuel Levinas","wiki":"Emmanuel_Levinas","qid":"Q153034","tier":"basic","rank":131,"origin":""},{"id":"p-friedrich-wilhelm-joseph-schelling","name":"Friedrich Wilhelm Joseph Schelling","wiki":"Friedrich_Wilhelm_Joseph_Schelling","qid":"Q60070","tier":"basic","rank":132,"origin":""},{"id":"p-hans-georg-gadamer","name":"Hans-Georg Gadamer","wiki":"Hans-Georg_Gadamer","qid":"Q76356","tier":"basic","rank":133,"origin":""},{"id":"p-hilary-putnam","name":"Hilary Putnam","wiki":"Hilary_Putnam","qid":"Q221697","tier":"basic","rank":134,"origin":""},{"id":"p-g-e-m-anscombe","name":"G. E. M. Anscombe","wiki":"G._E._M._Anscombe","qid":"Q229646","tier":"basic","rank":135,"origin":""},{"id":"p-jean-françois-lyotard","name":"Jean-François Lyotard","wiki":"Jean-François_Lyotard","qid":"Q193257","tier":"basic","rank":136,"origin":""},{"id":"p-g-e-moore","name":"G. E. Moore","wiki":"G._E._Moore","qid":"Q295386","tier":"basic","rank":137,"origin":""},{"id":"p-bernard-williams","name":"Bernard Williams","wiki":"Bernard_Williams","qid":"Q345641","tier":"basic","rank":138,"origin":""},{"id":"p-rudolf-carnap","name":"Rudolf Carnap","wiki":"Rudolf_Carnap","qid":"Q76519","tier":"basic","rank":139,"origin":""},{"id":"p-zhu-xi","name":"Zhu Xi","wiki":"Zhu_Xi","qid":"Q9397","tier":"basic","rank":140,"origin":""},{"id":"p-ernest-becker","name":"Ernest Becker","wiki":"Ernest_Becker","qid":"Q938094","tier":"basic","rank":141,"origin":"United States, 1973"},{"id":"p-han-fei","name":"Han Fei","wiki":"Han_Fei","qid":"Q28959","tier":"basic","rank":142,"origin":""},{"id":"p-wang-yangming","name":"Wang Yangming","wiki":"Wang_Yangming","qid":"Q378462","tier":"basic","rank":143,"origin":""},{"id":"p-harry-frankfurt","name":"Harry Frankfurt","wiki":"Harry_Frankfurt","qid":"Q740969","tier":"basic","rank":144,"origin":""},{"id":"p-zhuangzi","name":"Zhuangzi","wiki":"Zhuangzi","qid":"Q9390899","tier":"basic","rank":145,"origin":"China, c. 4th c. BCE"},{"id":"p-paul-ricoeur","name":"Paul Ricoeur","wiki":"Paul_Ricoeur","qid":"Q192066","tier":"basic","rank":146,"origin":""},{"id":"p-dogen","name":"Dogen","wiki":"Dogen","qid":"Q318064","tier":"basic","rank":147,"origin":""},{"id":"p-xunzi","name":"Xunzi","wiki":"Xunzi","qid":"Q21072863","tier":"basic","rank":148,"origin":""},{"id":"p-nishida-kitaro","name":"Nishida Kitaro","wiki":"Nishida_Kitaro","qid":"Q45125","tier":"basic","rank":149,"origin":""},{"id":"p-donald-davidson","name":"Donald Davidson","wiki":"Donald_Davidson","qid":"Q1184078","tier":"basic","rank":150,"origin":""},{"id":"p-bell-hooks","name":"bell hooks","wiki":"bell_hooks","qid":"Q259507","tier":"basic","rank":151,"origin":""}],"edges":[{"s":"p-socrates","t":"p-plato","p":["P737","P1066"]},{"s":"p-pythagoras","t":"p-plato","p":["P737"]},{"s":"p-heraclitus","t":"p-plato","p":["P737"]},{"s":"p-parmenides","t":"p-plato","p":["P737"]},{"s":"p-plato","t":"p-aristotle","p":["P737","P1066"]},{"s":"p-socrates","t":"p-aristotle","p":["P737"]},{"s":"p-heraclitus","t":"p-aristotle","p":["P737"]},{"s":"p-democritus","t":"p-aristotle","p":["P737"]},{"s":"p-epicurus","t":"p-aristotle","p":["P737"]},{"s":"p-parmenides","t":"p-aristotle","p":["P737"]},{"s":"p-augustine-of-hippo","t":"p-blaise-pascal","p":["P737"]},{"s":"p-rené-descartes","t":"p-blaise-pascal","p":["P737"]},{"s":"p-michel-de-montaigne","t":"p-blaise-pascal","p":["P737"]},{"s":"p-epictetus","t":"p-blaise-pascal","p":["P737"]},{"s":"p-mikhail-bakunin","t":"p-peter-kropotkin","p":["P737"]},{"s":"p-aristotle","t":"p-søren-kierkegaard","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-søren-kierkegaard","p":["P737"]},{"s":"p-immanuel-kant","t":"p-søren-kierkegaard","p":["P737"]},{"s":"p-friedrich-wilhelm-joseph-schelling","t":"p-søren-kierkegaard","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-simone-de-beauvoir","p":["P737"]},{"s":"p-aristotle","t":"p-avicenna","p":["P737"]},{"s":"p-plotinus","t":"p-avicenna","p":["P737"]},{"s":"p-al-farabi","t":"p-avicenna","p":["P737"]},{"s":"p-plato","t":"p-augustine-of-hippo","p":["P737"]},{"s":"p-plato","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-aristotle","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-blaise-pascal","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-confucius","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-augustine-of-hippo","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-rené-descartes","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-thomas-aquinas","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-hypatia","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-thomas-hobbes","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-anselm-of-canterbury","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-maimonides","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-plotinus","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-duns-scotus","t":"p-gottfried-wilhelm-leibniz","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-karl-marx","p":["P737"]},{"s":"p-plato","t":"p-voltaire","p":["P737"]},{"s":"p-blaise-pascal","t":"p-voltaire","p":["P737"]},{"s":"p-confucius","t":"p-voltaire","p":["P737"]},{"s":"p-john-locke","t":"p-voltaire","p":["P737"]},{"s":"p-plato","t":"p-rené-descartes","p":["P737"]},{"s":"p-aristotle","t":"p-rené-descartes","p":["P737"]},{"s":"p-thomas-aquinas","t":"p-rené-descartes","p":["P737"]},{"s":"p-william-of-ockham","t":"p-rené-descartes","p":["P737"]},{"s":"p-anselm-of-canterbury","t":"p-rené-descartes","p":["P737"]},{"s":"p-plato","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-aristotle","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-rené-descartes","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-immanuel-kant","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-montesquieu","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-heraclitus","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-anselm-of-canterbury","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-friedrich-wilhelm-joseph-schelling","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-johann-gottlieb-fichte","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-plotinus","t":"p-georg-wilhelm-friedrich-hegel","p":["P737"]},{"s":"p-averroes","t":"p-ibn-khaldun","p":["P737"]},{"s":"p-plato","t":"p-immanuel-kant","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-immanuel-kant","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-immanuel-kant","p":["P737"]},{"s":"p-rené-descartes","t":"p-immanuel-kant","p":["P737"]},{"s":"p-john-locke","t":"p-immanuel-kant","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-immanuel-kant","p":["P737"]},{"s":"p-david-hume","t":"p-immanuel-kant","p":["P737"]},{"s":"p-michel-de-montaigne","t":"p-immanuel-kant","p":["P737"]},{"s":"p-george-berkeley","t":"p-immanuel-kant","p":["P737"]},{"s":"p-rené-descartes","t":"p-john-locke","p":["P737"]},{"s":"p-thomas-hobbes","t":"p-john-locke","p":["P737"]},{"s":"p-plato","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-aristotle","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-socrates","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-blaise-pascal","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-niccolò-machiavelli","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-voltaire","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-immanuel-kant","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-auguste-comte","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-arthur-schopenhauer","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-heraclitus","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-michel-de-montaigne","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-democritus","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-epicurus","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-ralph-waldo-emerson","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-parmenides","t":"p-friedrich-nietzsche","p":["P737"]},{"s":"p-karl-marx","t":"p-jean-paul-sartre","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-jean-paul-sartre","p":["P737"]},{"s":"p-martin-heidegger","t":"p-jean-paul-sartre","p":["P737"]},{"s":"p-edmund-husserl","t":"p-jean-paul-sartre","p":["P737"]},{"s":"p-emmanuel-levinas","t":"p-jean-paul-sartre","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-ludwig-wittgenstein","p":["P737"]},{"s":"p-bertrand-russell","t":"p-ludwig-wittgenstein","p":["P737"]},{"s":"p-arthur-schopenhauer","t":"p-ludwig-wittgenstein","p":["P737"]},{"s":"p-gottlob-frege","t":"p-ludwig-wittgenstein","p":["P737"]},{"s":"p-plato","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-aristotle","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-avicenna","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-augustine-of-hippo","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-al-ghazali","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-averroes","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-anselm-of-canterbury","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-boethius","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-maimonides","t":"p-thomas-aquinas","p":["P737"]},{"s":"p-thales-of-miletus","t":"p-pythagoras","p":["P737","P1066"]},{"s":"p-plato","t":"p-hypatia","p":["P737"]},{"s":"p-aristotle","t":"p-hypatia","p":["P737"]},{"s":"p-plotinus","t":"p-hypatia","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-mikhail-bakunin","p":["P737"]},{"s":"p-karl-marx","t":"p-mikhail-bakunin","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-mikhail-bakunin","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-bertrand-russell","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-bertrand-russell","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-bertrand-russell","p":["P737"]},{"s":"p-david-hume","t":"p-bertrand-russell","p":["P737"]},{"s":"p-john-stuart-mill","t":"p-bertrand-russell","p":["P737"]},{"s":"p-gottlob-frege","t":"p-bertrand-russell","p":["P737"]},{"s":"p-alfred-north-whitehead","t":"p-bertrand-russell","p":["P737"]},{"s":"p-g-e-moore","t":"p-bertrand-russell","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-albert-camus","p":["P737"]},{"s":"p-simone-de-beauvoir","t":"p-albert-camus","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-albert-camus","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-albert-camus","p":["P737"]},{"s":"p-martin-heidegger","t":"p-albert-camus","p":["P737"]},{"s":"p-plotinus","t":"p-albert-camus","p":["P737"]},{"s":"p-karl-marx","t":"p-friedrich-engels","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-friedrich-engels","p":["P737"]},{"s":"p-adam-smith","t":"p-friedrich-engels","p":["P737"]},{"s":"p-heraclitus","t":"p-friedrich-engels","p":["P737"]},{"s":"p-plato","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-aristotle","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-niccolò-machiavelli","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-avicenna","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-rené-descartes","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-francis-bacon","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-thomas-hobbes","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-averroes","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-democritus","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-epicurus","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-parmenides","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-maimonides","t":"p-baruch-spinoza","p":["P737"]},{"s":"p-john-locke","t":"p-david-hume","p":["P737"]},{"s":"p-george-berkeley","t":"p-david-hume","p":["P737"]},{"s":"p-plato","t":"p-thomas-hobbes","p":["P737"]},{"s":"p-aristotle","t":"p-thomas-hobbes","p":["P737"]},{"s":"p-francis-bacon","t":"p-thomas-hobbes","p":["P737"]},{"s":"p-plato","t":"p-arthur-schopenhauer","p":["P737"]},{"s":"p-immanuel-kant","t":"p-arthur-schopenhauer","p":["P737"]},{"s":"p-john-locke","t":"p-arthur-schopenhauer","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-arthur-schopenhauer","p":["P737"]},{"s":"p-david-hume","t":"p-arthur-schopenhauer","p":["P737"]},{"s":"p-plato","t":"p-averroes","p":["P737"]},{"s":"p-aristotle","t":"p-averroes","p":["P737"]},{"s":"p-avicenna","t":"p-averroes","p":["P737"]},{"s":"p-al-ghazali","t":"p-averroes","p":["P737"]},{"s":"p-plotinus","t":"p-averroes","p":["P737"]},{"s":"p-al-farabi","t":"p-averroes","p":["P737"]},{"s":"p-plato","t":"p-henri-bergson","p":["P737"]},{"s":"p-aristotle","t":"p-henri-bergson","p":["P737"]},{"s":"p-blaise-pascal","t":"p-henri-bergson","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-henri-bergson","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-henri-bergson","p":["P737"]},{"s":"p-rené-descartes","t":"p-henri-bergson","p":["P737"]},{"s":"p-immanuel-kant","t":"p-henri-bergson","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-henri-bergson","p":["P737"]},{"s":"p-david-hume","t":"p-henri-bergson","p":["P737"]},{"s":"p-arthur-schopenhauer","t":"p-henri-bergson","p":["P737"]},{"s":"p-gottlob-frege","t":"p-henri-bergson","p":["P737"]},{"s":"p-george-berkeley","t":"p-henri-bergson","p":["P737"]},{"s":"p-plotinus","t":"p-henri-bergson","p":["P737"]},{"s":"p-democritus","t":"p-epicurus","p":["P737"]},{"s":"p-aristotle","t":"p-william-of-ockham","p":["P737"]},{"s":"p-thomas-aquinas","t":"p-william-of-ockham","p":["P737"]},{"s":"p-anselm-of-canterbury","t":"p-william-of-ockham","p":["P737"]},{"s":"p-duns-scotus","t":"p-william-of-ockham","p":["P1066"]},{"s":"p-plato","t":"p-michel-foucault","p":["P737"]},{"s":"p-karl-marx","t":"p-michel-foucault","p":["P737"]},{"s":"p-sigmund-freud","t":"p-michel-foucault","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-michel-foucault","p":["P737"]},{"s":"p-immanuel-kant","t":"p-michel-foucault","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-michel-foucault","p":["P737"]},{"s":"p-martin-heidegger","t":"p-michel-foucault","p":["P737"]},{"s":"p-edmund-husserl","t":"p-michel-foucault","p":["P737"]},{"s":"p-jacques-lacan","t":"p-michel-foucault","p":["P737"]},{"s":"p-louis-althusser","t":"p-michel-foucault","p":["P737","P1066"]},{"s":"p-gilles-deleuze","t":"p-michel-foucault","p":["P737"]},{"s":"p-maurice-merleau-ponty","t":"p-michel-foucault","p":["P737","P1066"]},{"s":"p-plato","t":"p-ralph-waldo-emerson","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-ralph-waldo-emerson","p":["P737"]},{"s":"p-michel-de-montaigne","t":"p-ralph-waldo-emerson","p":["P737"]},{"s":"p-plato","t":"p-martin-heidegger","p":["P737"]},{"s":"p-aristotle","t":"p-martin-heidegger","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-martin-heidegger","p":["P737"]},{"s":"p-immanuel-kant","t":"p-martin-heidegger","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-martin-heidegger","p":["P737"]},{"s":"p-thomas-aquinas","t":"p-martin-heidegger","p":["P737"]},{"s":"p-heraclitus","t":"p-martin-heidegger","p":["P737"]},{"s":"p-edmund-husserl","t":"p-martin-heidegger","p":["P737","P1066"]},{"s":"p-parmenides","t":"p-martin-heidegger","p":["P737"]},{"s":"p-duns-scotus","t":"p-martin-heidegger","p":["P737"]},{"s":"p-jeremy-bentham","t":"p-john-stuart-mill","p":["P1066"]},{"s":"p-immanuel-kant","t":"p-edmund-husserl","p":["P737"]},{"s":"p-gottlob-frege","t":"p-edmund-husserl","p":["P737"]},{"s":"p-plato","t":"p-hannah-arendt","p":["P737"]},{"s":"p-aristotle","t":"p-hannah-arendt","p":["P737"]},{"s":"p-socrates","t":"p-hannah-arendt","p":["P737"]},{"s":"p-niccolò-machiavelli","t":"p-hannah-arendt","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-hannah-arendt","p":["P737"]},{"s":"p-augustine-of-hippo","t":"p-hannah-arendt","p":["P737"]},{"s":"p-karl-marx","t":"p-hannah-arendt","p":["P737"]},{"s":"p-immanuel-kant","t":"p-hannah-arendt","p":["P737"]},{"s":"p-montesquieu","t":"p-hannah-arendt","p":["P737"]},{"s":"p-martin-heidegger","t":"p-hannah-arendt","p":["P737","P1066"]},{"s":"p-edmund-husserl","t":"p-hannah-arendt","p":["P737"]},{"s":"p-walter-benjamin","t":"p-hannah-arendt","p":["P737"]},{"s":"p-duns-scotus","t":"p-hannah-arendt","p":["P737"]},{"s":"p-plato","t":"p-friedrich-wilhelm-joseph-schelling","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-friedrich-wilhelm-joseph-schelling","p":["P737"]},{"s":"p-immanuel-kant","t":"p-friedrich-wilhelm-joseph-schelling","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-friedrich-wilhelm-joseph-schelling","p":["P737"]},{"s":"p-johann-gottlieb-fichte","t":"p-friedrich-wilhelm-joseph-schelling","p":["P737","P1066"]},{"s":"p-karl-marx","t":"p-walter-benjamin","p":["P737"]},{"s":"p-plato","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-aristotle","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-immanuel-kant","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-martin-heidegger","t":"p-hans-georg-gadamer","p":["P737","P1066"]},{"s":"p-edmund-husserl","t":"p-hans-georg-gadamer","p":["P737"]},{"s":"p-karl-marx","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-sigmund-freud","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-immanuel-kant","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-friedrich-engels","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-edmund-husserl","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-hannah-arendt","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-herbert-marcuse","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-friedrich-wilhelm-joseph-schelling","t":"p-jürgen-habermas","p":["P737"]},{"s":"p-max-horkheimer","t":"p-jürgen-habermas","p":["P737","P1066"]},{"s":"p-theodor-w-adorno","t":"p-jürgen-habermas","p":["P737","P1066"]},{"s":"p-immanuel-kant","t":"p-rudolf-carnap","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-rudolf-carnap","p":["P737"]},{"s":"p-edmund-husserl","t":"p-rudolf-carnap","p":["P737"]},{"s":"p-gottlob-frege","t":"p-rudolf-carnap","p":["P737"]},{"s":"p-aristotle","t":"p-karl-popper","p":["P737"]},{"s":"p-socrates","t":"p-karl-popper","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-karl-popper","p":["P737"]},{"s":"p-rené-descartes","t":"p-karl-popper","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-karl-popper","p":["P737"]},{"s":"p-arthur-schopenhauer","t":"p-karl-popper","p":["P737"]},{"s":"p-john-locke","t":"p-george-berkeley","p":["P737"]},{"s":"p-niccolò-machiavelli","t":"p-antonio-gramsci","p":["P737"]},{"s":"p-karl-marx","t":"p-antonio-gramsci","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-antonio-gramsci","p":["P737"]},{"s":"p-friedrich-engels","t":"p-antonio-gramsci","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-johann-gottlieb-fichte","p":["P737"]},{"s":"p-immanuel-kant","t":"p-johann-gottlieb-fichte","p":["P737","P1066"]},{"s":"p-baruch-spinoza","t":"p-johann-gottlieb-fichte","p":["P737"]},{"s":"p-plato","t":"p-boethius","p":["P737"]},{"s":"p-aristotle","t":"p-boethius","p":["P737"]},{"s":"p-seneca-the-younger","t":"p-boethius","p":["P737"]},{"s":"p-augustine-of-hippo","t":"p-boethius","p":["P737"]},{"s":"p-plotinus","t":"p-boethius","p":["P737"]},{"s":"p-blaise-pascal","t":"p-william-james","p":["P737"]},{"s":"p-ralph-waldo-emerson","t":"p-william-james","p":["P737"]},{"s":"p-heraclitus","t":"p-parmenides","p":["P737"]},{"s":"p-aristotle","t":"p-maimonides","p":["P737"]},{"s":"p-avicenna","t":"p-maimonides","p":["P737"]},{"s":"p-averroes","t":"p-maimonides","p":["P737"]},{"s":"p-al-farabi","t":"p-maimonides","p":["P737"]},{"s":"p-plato","t":"p-jacques-derrida","p":["P737"]},{"s":"p-jean-jacques-rousseau","t":"p-jacques-derrida","p":["P737"]},{"s":"p-karl-marx","t":"p-jacques-derrida","p":["P737"]},{"s":"p-sigmund-freud","t":"p-jacques-derrida","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-jacques-derrida","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-jacques-derrida","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-jacques-derrida","p":["P737"]},{"s":"p-michel-foucault","t":"p-jacques-derrida","p":["P737","P1066"]},{"s":"p-martin-heidegger","t":"p-jacques-derrida","p":["P737"]},{"s":"p-edmund-husserl","t":"p-jacques-derrida","p":["P737"]},{"s":"p-walter-benjamin","t":"p-jacques-derrida","p":["P737"]},{"s":"p-emmanuel-levinas","t":"p-jacques-derrida","p":["P737"]},{"s":"p-louis-althusser","t":"p-jacques-derrida","p":["P737","P1066"]},{"s":"p-aristotle","t":"p-henry-david-thoreau","p":["P737"]},{"s":"p-ralph-waldo-emerson","t":"p-henry-david-thoreau","p":["P737"]},{"s":"p-aristotle","t":"p-ayn-rand","p":["P737"]},{"s":"p-thomas-aquinas","t":"p-ayn-rand","p":["P737"]},{"s":"p-karl-marx","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-immanuel-kant","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-walter-benjamin","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-max-horkheimer","t":"p-theodor-w-adorno","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-emmanuel-levinas","p":["P737"]},{"s":"p-martin-heidegger","t":"p-emmanuel-levinas","p":["P737","P1066"]},{"s":"p-sigmund-freud","t":"p-viktor-frankl","p":["P737"]},{"s":"p-plato","t":"p-al-farabi","p":["P737"]},{"s":"p-aristotle","t":"p-al-farabi","p":["P737"]},{"s":"p-plotinus","t":"p-al-farabi","p":["P737"]},{"s":"p-sigmund-freud","t":"p-jacques-lacan","p":["P737"]},{"s":"p-martin-heidegger","t":"p-jacques-lacan","p":["P737"]},{"s":"p-socrates","t":"p-zeno-of-citium","p":["P737"]},{"s":"p-immanuel-kant","t":"p-john-rawls","p":["P737"]},{"s":"p-john-locke","t":"p-john-rawls","p":["P737"]},{"s":"p-karl-marx","t":"p-roland-barthes","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-roland-barthes","p":["P737"]},{"s":"p-albert-camus","t":"p-roland-barthes","p":["P737"]},{"s":"p-karl-marx","t":"p-jean-baudrillard","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-jean-baudrillard","p":["P737"]},{"s":"p-walter-benjamin","t":"p-jean-baudrillard","p":["P737"]},{"s":"p-roland-barthes","t":"p-jean-baudrillard","p":["P737"]},{"s":"p-marshall-mcluhan","t":"p-jean-baudrillard","p":["P737"]},{"s":"p-karl-marx","t":"p-louis-althusser","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-louis-althusser","p":["P737"]},{"s":"p-antonio-gramsci","t":"p-louis-althusser","p":["P737"]},{"s":"p-gottfried-wilhelm-leibniz","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-karl-marx","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-sigmund-freud","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-immanuel-kant","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-baruch-spinoza","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-david-hume","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-henri-bergson","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-michel-foucault","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-jacques-lacan","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-alfred-north-whitehead","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-louis-althusser","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-charles-sanders-peirce","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-duns-scotus","t":"p-gilles-deleuze","p":["P737"]},{"s":"p-søren-kierkegaard","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-karl-marx","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-sigmund-freud","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-georg-wilhelm-friedrich-hegel","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-immanuel-kant","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-martin-heidegger","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-friedrich-wilhelm-joseph-schelling","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-walter-benjamin","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-theodor-w-adorno","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-jacques-lacan","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-louis-althusser","t":"p-slavoj-žižek","p":["P737"]},{"s":"p-george-berkeley","t":"p-charles-sanders-peirce","p":["P737"]},{"s":"p-confucius","t":"p-mencius","p":["P737"]},{"s":"p-martin-heidegger","t":"p-jean-françois-lyotard","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-frantz-fanon","p":["P737"]},{"s":"p-jean-paul-sartre","t":"p-edward-said","p":["P737"]},{"s":"p-michel-foucault","t":"p-edward-said","p":["P737"]},{"s":"p-karl-marx","t":"p-maurice-merleau-ponty","p":["P737"]},{"s":"p-martin-heidegger","t":"p-maurice-merleau-ponty","p":["P737"]},{"s":"p-edmund-husserl","t":"p-maurice-merleau-ponty","p":["P737"]},{"s":"p-martin-heidegger","t":"p-richard-rorty","p":["P737"]},{"s":"p-john-dewey","t":"p-richard-rorty","p":["P737"]},{"s":"p-bertrand-russell","t":"p-daniel-dennett","p":["P737"]},{"s":"p-willard-van-orman-quine","t":"p-daniel-dennett","p":["P737"]},{"s":"p-michel-foucault","t":"p-judith-butler","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-hilary-putnam","p":["P737"]},{"s":"p-william-james","t":"p-hilary-putnam","p":["P737"]},{"s":"p-john-dewey","t":"p-hilary-putnam","p":["P737"]},{"s":"p-aristotle","t":"p-g-e-m-anscombe","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-g-e-m-anscombe","p":["P737","P1066"]},{"s":"p-thomas-aquinas","t":"p-g-e-m-anscombe","p":["P737"]},{"s":"p-aristotle","t":"p-martha-nussbaum","p":["P737"]},{"s":"p-john-stuart-mill","t":"p-martha-nussbaum","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-john-searle","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-saul-kripke","p":["P737"]},{"s":"p-david-hume","t":"p-saul-kripke","p":["P737"]},{"s":"p-gottlob-frege","t":"p-saul-kripke","p":["P737"]},{"s":"p-willard-van-orman-quine","t":"p-saul-kripke","p":["P737"]},{"s":"p-hilary-putnam","t":"p-saul-kripke","p":["P737"]},{"s":"p-friedrich-nietzsche","t":"p-bernard-williams","p":["P737"]},{"s":"p-bertrand-russell","t":"p-david-chalmers","p":["P737"]},{"s":"p-richard-rorty","t":"p-cornel-west","p":["P737"]},{"s":"p-rené-descartes","t":"p-harry-frankfurt","p":["P737"]},{"s":"p-immanuel-kant","t":"p-harry-frankfurt","p":["P737"]},{"s":"p-ludwig-wittgenstein","t":"p-harry-frankfurt","p":["P737"]}]}</script>
+<script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sigma@2.4.0/build/sigma.min.js"></script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+// The reader's language, as index.html stores it.
+const LANG = (() => { try{ return localStorage.getItem('still.lang') === 'zh' ? 'zh' : 'en'; }catch(e){ return 'en'; } })();
+const t = (en, zh) => LANG === 'zh' ? zh : en;
+document.documentElement.lang = LANG === 'zh' ? 'zh-Hans' : 'en';
+
+// Cluster colours: muted, earthy, chosen to sit on Still's paper. The first is
+// the ink's own teal; the terracotta is the same as the Explore map's school line.
+const PALETTE = ['#2F6F6A','#B06A3B','#6E7F3E','#7A5C99','#3F6496','#A8842C','#9C4A5A','#5E7C88','#8A6A4F','#4F7F5C'];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const byId = Object.fromEntries(DATA.nodes.map(n => [n.id, n]));
+const panel = document.getElementById('panel');
+const nameOf = id => (LANG === 'zh' && byId[id].nameZh) || byId[id].name;
+const el = (tag, cls, text) => { const e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; };
+function seeded(seed){ return () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646; }
+
+document.title = t('Still · Full map', 'Still · 完整关系图');
+document.getElementById('title').textContent = t('Full map', '完整关系图');
+document.getElementById('sub').textContent = t(
+  `All ${DATA.nodes.length} philosophers in Still, linked where Wikidata records that one influenced or taught another. A bigger dot has more links; a colour is a cluster the layout found.`,
+  `Still 中全部 ${DATA.nodes.length} 位哲学家，凡 Wikidata 记载一人影响或教过另一人，便连一条线。圆点越大，连线越多；颜色是布局算出的群落。`);
+document.getElementById('ring').textContent = t('Outer ring: no recorded link', '外圈：没有记载的连线');
+document.getElementById('q').placeholder = t('Find a philosopher…', '查找哲学家…');
+document.getElementById('q').setAttribute('aria-label', t('Find a philosopher', '查找哲学家'));
+document.getElementById('back').setAttribute('aria-label', t('Back to Still', '返回 Still'));
+[['zin', t('Zoom in','放大')], ['zout', t('Zoom out','缩小')], ['zreset', t('Reset view','复位')]]
+  .forEach(([id, l]) => document.getElementById(id).setAttribute('aria-label', l));
+
+try {
+  const Graph = graphology.Graph || graphology;
+  const lib = graphologyLibrary;
+  const SigmaCtor = window.Sigma && (window.Sigma.Sigma || window.Sigma.default || window.Sigma);
+  const g = new Graph({ type: 'directed', multi: false });
+  DATA.nodes.forEach(n => g.addNode(n.id, { label: n.name }));
+  DATA.edges.forEach(e => g.addDirectedEdge(e.s, e.t, { props: e.p }));
+
+  // Clusters on the linked part only; the unlinked get a neutral colour.
+  const sub = g.copy();
+  DATA.nodes.forEach(n => { if(!g.degree(n.id)) sub.dropNode(n.id); });
+  const comm = lib.communitiesLouvain(sub, { rng: seeded(7) });
+  const groups = {};
+  sub.forEachNode(id => (groups[comm[id]] ||= []).push(id));
+  const clusterOf = {}, clusters = [];
+  Object.values(groups).sort((a, b) => b.length - a.length).forEach((ids, i) => {
+    ids.sort((a, b) => g.degree(b) - g.degree(a));
+    const c = { color: PALETTE[i % PALETTE.length], ids, head: ids[0] };
+    clusters.push(c); ids.forEach(id => clusterOf[id] = c);
+  });
+
+  // Layout: seeded start, ForceAtlas2, the unlinked on a ring outside.
+  const rnd = seeded(42), ISOLATE = css('--isolate');
+  g.forEachNode((id, a) => {
+    const deg = g.degree(id);
+    a.size = deg ? 3 + Math.sqrt(deg) * 2.4 : 2.6;
+    a.color = deg ? clusterOf[id].color : ISOLATE;
+    a.x = rnd() * 100; a.y = rnd() * 100;
+  });
+  sub.forEachNode(id => sub.mergeNodeAttributes(id, g.getNodeAttributes(id)));
+  const fa = lib.layoutForceAtlas2.inferSettings(sub);
+  lib.layoutForceAtlas2.assign(sub, { iterations: 900, settings: { ...fa, gravity: 0.6, scalingRatio: 14, outboundAttractionDistribution: true } });
+  let cx = 0, cy = 0, r = 0;
+  sub.forEachNode((id, a) => { cx += a.x; cy += a.y; });
+  cx /= sub.order; cy /= sub.order;
+  sub.forEachNode((id, a) => { r = Math.max(r, Math.hypot(a.x - cx, a.y - cy)); g.mergeNodeAttributes(id, { x: a.x, y: a.y }); });
+  const iso = DATA.nodes.filter(n => !g.degree(n.id)).map(n => n.id);
+  iso.forEach((id, i) => {
+    const a = (i / iso.length) * Math.PI * 2 - Math.PI / 2;
+    g.mergeNodeAttributes(id, { x: cx + Math.cos(a) * r * 1.18, y: cy + Math.sin(a) * r * 1.18 });
+  });
+
+  let hovered = null, selected = null, focus = null;
+  const near = new Set();
+  const setNear = id => { near.clear(); if(id){ near.add(id); g.forEachNeighbor(id, n => near.add(n)); } };
+  const colorOf = id => g.getNodeAttribute(id, 'color');
+
+  const renderer = new SigmaCtor(g, document.getElementById('map'), {
+    defaultEdgeType: 'arrow',
+    labelFont: 'DM Sans, -apple-system, system-ui, sans-serif',
+    labelSize: 12, labelWeight: '500', labelColor: { color: css('--ink') },
+    labelDensity: 0.9, labelGridCellSize: 70, labelRenderedSizeThreshold: 9,
+    zIndex: true,
+    hoverRenderer: (ctx, d, s) => {
+      const size = s.labelSize + 1;
+      ctx.font = `600 ${size}px ${s.labelFont}`;
+      const w = ctx.measureText(d.label).width + 16, h = size + 12;
+      ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = 'rgba(36,50,53,.14)'; ctx.shadowBlur = 8;
+      ctx.beginPath(); ctx.roundRect(d.x + d.size + 4, d.y - h / 2, w, h, h / 2); ctx.fill();
+      ctx.shadowBlur = 0; ctx.fillStyle = css('--ink');
+      ctx.fillText(d.label, d.x + d.size + 12, d.y + size / 3);
+    },
+    nodeReducer: (id, a) => {
+      const res = { ...a, label: nameOf(id) };
+      const active = hovered || selected;
+      if(focus && clusterOf[id] !== focus){ res.color = css('--node-dim'); res.label = ''; }
+      if(active){
+        if(near.has(id)){ res.zIndex = 2; res.forceLabel = true; }
+        else { res.color = css('--node-dim'); res.label = ''; res.zIndex = 0; }
+      }
+      if(id === selected) res.highlighted = true;
+      return res;
+    },
+    edgeReducer: (id, a) => {
+      const s = g.source(id), tt = g.target(id), active = hovered || selected;
+      const res = { ...a, size: 0.6, color: css('--edge-dim') };
+      if(active && (s === active || tt === active)){ res.color = colorOf(s); res.size = 1.6; res.zIndex = 1; }
+      else if(active) res.hidden = true;
+      else if(focus){
+        if(clusterOf[s] === focus && clusterOf[tt] === focus){ res.color = focus.color + '99'; res.size = 1; }
+        else res.hidden = true;
+      } else res.color = colorOf(s) + '3D';
+      return res;
+    },
+  });
+
+  renderer.on('enterNode', ({ node }) => { hovered = node; setNear(node); renderer.refresh(); });
+  renderer.on('leaveNode', () => { hovered = null; setNear(selected); renderer.refresh(); });
+  renderer.on('clickNode', ({ node }) => select(node, false));
+  renderer.on('clickStage', () => { selected = null; focus = null; setNear(null); renderer.refresh(); overview(); });
+  const cam = renderer.getCamera();
+  document.getElementById('zin').onclick = () => cam.animatedZoom({ duration: 300 });
+  document.getElementById('zout').onclick = () => cam.animatedUnzoom({ duration: 300 });
+  document.getElementById('zreset').onclick = () => cam.animatedReset({ duration: 300 });
+
+  function chip(id, tag){
+    const b = el('button', 'chip'); b.type = 'button';
+    const d = el('span', 'dot'); d.style.background = colorOf(id);
+    b.append(d, document.createTextNode(nameOf(id)));
+    if(tag) b.append(el('span', 'tag', tag));
+    b.onclick = () => select(id, true);
+    return b;
+  }
+  function group(title, ids, tagFor, keepOrder){
+    const w = el('div', 'group');
+    const h = el('p', 'label', title + ' '); h.append(el('span', null, String(ids.length)));
+    const list = el('div', 'list');
+    if(!ids.length) list.append(el('p', 'empty', t('None recorded.', '没有记载。')));
+    (keepOrder ? ids : ids.slice().sort((a, b) => byId[a].rank - byId[b].rank))
+      .forEach(id => list.append(chip(id, tagFor && tagFor(id))));
+    w.append(h, list);
+    return w;
+  }
+  const taught = (s, tt) => (g.getEdgeAttribute(s, tt, 'props') || []).includes('P1066');
+  function source(){
+    const d = el('div', 'disclaim');
+    d.append(el('b', null, t('Where the lines come from', '连线从哪里来')),
+      el('p', null, t(
+        `Wikidata's "influenced by" (P737) and "student of" (P1066), read ${DATA.fetched}, kept only where both people are in Still. These are volunteer-edited claims, not Still's, and they are thin outside Europe: most Chinese, Indian and recent thinkers sit on the outer ring for lack of data, not lack of influence.`,
+        `来自 Wikidata 的“受……影响”（P737）与“师从”（P1066），读取于 ${DATA.fetched}，只保留两端都在 Still 中的连线。这些是志愿者编辑的说法，不是 Still 的判断，而且欧洲以外记载很少：多数中国、印度和近代思想家位于外圈，是因为缺少数据，而不是缺少影响。`)));
+    return d;
+  }
+  function avatar(id){
+    const n = byId[id], a = el('div', 'av');
+    if(n.image){ const img = el('img'); img.alt = ''; img.src = 'assets/img/' + n.image; img.onerror = () => { img.remove(); a.textContent = n.name[0]; }; a.append(img); }
+    else a.textContent = (nameOf(id) || '?')[0];
+    return a;
+  }
+
+  function select(id, fly){
+    selected = id; focus = null; setNear(id); renderer.refresh();
+    if(fly){ const p = renderer.getNodeDisplayData(id); cam.animate({ x: p.x, y: p.y, ratio: Math.min(cam.ratio, 0.6) }, { duration: 450 }); }
+    const n = byId[id], linked = g.degree(id) > 0;
+    const who = el('div', 'who'), txt = el('div');
+    txt.append(el('h2', null, nameOf(id)), el('p', null,
+      [(LANG === 'zh' && n.originZh) || n.origin,
+       linked ? t(`Cluster around ${nameOf(clusterOf[id].head)}`, `${nameOf(clusterOf[id].head)} 群落`) : t('No recorded link', '没有记载的连线')]
+        .filter(Boolean).join(' · ')));
+    who.append(avatar(id), txt);
+    const links = el('div', 'links');
+    const wp = el('a', null, 'Wikipedia ↗'); wp.href = `https://en.wikipedia.org/wiki/${n.wiki}`;
+    const wd = el('a', null, `Wikidata ↗`); wd.href = `https://www.wikidata.org/wiki/${n.qid}#P737`;
+    [wp, wd].forEach(a => { a.target = '_blank'; a.rel = 'noopener'; links.append(a); });
+    // Same label as the profile page; ./?chat=<id> opens the chat in Still.
+    const go = el('a', 'chat-go', t(`Chat with ${nameOf(id)}`, `和${nameOf(id)}聊聊`));
+    go.href = `./?chat=${encodeURIComponent(id)}`;
+    links.prepend(go);
+    panel.replaceChildren(who, links,
+      group(t('Drew on', '受其影响'), g.inNeighbors(id), s => taught(s, id) ? t('teacher', '老师') : ''),
+      group(t('Passed on to', '影响了'), g.outNeighbors(id), x => taught(id, x) ? t('student', '学生') : ''));
+    if(!linked) panel.append(el('p', 'empty', t(
+      'Wikidata records no influence or teacher link between this philosopher and anyone else in Still. That is a gap in the data, not a finding that there was none.',
+      'Wikidata 没有记载此人与 Still 中任何人之间的影响或师承关系。这是数据的空白，并不说明没有影响。')));
+    panel.append(source());
+  }
+
+  function overview(){
+    const stats = el('div', 'stats');
+    [[DATA.nodes.length, t('philosophers', '位哲学家')], [DATA.edges.length, t('links', '条连线')], [iso.length, t('unlinked', '无连线')]]
+      .forEach(([v, l]) => { const d = el('div'); d.append(el('b', null, String(v)), el('span', null, l)); stats.append(d); });
+    const cl = el('div', 'group'); cl.append(el('p', 'label', t('Clusters', '群落')));
+    const pills = el('div', 'list');
+    clusters.forEach(c => {
+      const b = el('button', 'pill' + (focus === c ? ' on' : '')); b.type = 'button';
+      b.setAttribute('aria-pressed', String(focus === c));
+      const d = el('span', 'dot'); d.style.background = c.color;
+      b.append(d, document.createTextNode(t(`Around ${nameOf(c.head)}`, `${nameOf(c.head)} 一带`)), el('span', 'count', String(c.ids.length)));
+      b.onclick = () => { focus = focus === c ? null : c; selected = null; setNear(null); renderer.refresh(); overview(); };
+      pills.append(b);
+    });
+    cl.append(pills);
+    const top = DATA.nodes.map(n => n.id).filter(id => g.outDegree(id))
+      .sort((a, b) => g.outDegree(b) - g.outDegree(a)).slice(0, 8);
+    panel.replaceChildren(stats, cl, group(t('Most often drawn on', '最常被借鉴'), top, id => String(g.outDegree(id)), true), source());
+  }
+  overview();
+
+  // Search, over both names.
+  const dl = document.getElementById('names'), q = document.getElementById('q');
+  function fillNames(){
+    dl.replaceChildren(...DATA.nodes.map(n => n.id).sort((a, b) => nameOf(a).localeCompare(nameOf(b)))
+      .map(id => { const o = el('option'); o.value = nameOf(id); return o; }));
+  }
+  fillNames();
+  const find = exact => {
+    const v = q.value.trim().toLowerCase(); if(!v) return;
+    const names = n => [n.name, n.nameZh].filter(Boolean).map(s => s.toLowerCase());
+    const hit = DATA.nodes.find(n => names(n).includes(v)) || (!exact && DATA.nodes.find(n => names(n).some(s => s.includes(v))));
+    if(hit && hit.id !== selected) select(hit.id, true);
+  };
+  q.addEventListener('input', () => find(true));
+  q.addEventListener('keydown', e => { if(e.key === 'Enter') find(false); });
+
+  // Chinese names, origins and portraits from the roster the app ships. Optional.
+  fetch('assets/philosophers.json').then(r => r.ok ? r.json() : null).then(d => {
+    if(!d) return;
+    (d.philosophers || []).forEach(p => {
+      const n = byId[p.id]; if(!n) return;
+      if(p.nameZh) n.nameZh = p.nameZh;
+      if(p.image) n.image = p.image;
+      if(p.origin && typeof p.origin === 'object'){ n.origin = p.origin.en || n.origin; n.originZh = p.origin.zh; }
+    });
+    fillNames(); renderer.refresh();
+    selected ? select(selected, false) : overview();
+  }).catch(() => {});
+} catch(err){
+  const m = document.getElementById('map');
+  m.replaceChildren(el('p', null, t('The map could not draw: ', '关系图无法绘制：') + err.message));
+  m.firstChild.id = 'fail';
+  console.error(err);
+}
+</script>
+</html>
