@@ -950,6 +950,15 @@ body.resizing{cursor:col-resize;user-select:none}
                          font-size:var(--body-size);line-height:var(--leading-read);
                          color:var(--ink)}
 .bubble p{margin:0}
+/* Long-press on what anyone wrote starts a range selection with handles and
+   the system menu (Copy, Look Up, Translate, Share), as in Claude's app.
+   Said outright so no rule inherited from a control can switch it off. The
+   controls beside the text are the opposite: a long press on an icon should
+   not select its label or pop the link callout. */
+.msgs .bubble,.msgs .vblock,.msgs .said q,.msgs .said .src,.msgs .sysline{
+  -webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+.msgs button,.msgs summary,.msg-acts,.cfoot .chat-acts,.cfoot .inbox-row{
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .bubble p + p,.bubble p + blockquote,.bubble blockquote + p{margin-top:.75em}
 .msg:not(.mine){max-width:100%}
 .msg-body .bubble,.msg-body .derived,.msg-body .said,.msg-body .said-more{max-width:var(--measure)}
@@ -1253,6 +1262,13 @@ body.resizing{cursor:col-resize;user-select:none}
       background:var(--chip);color:var(--ink);cursor:pointer}
 .up-row{padding:var(--sp-m) var(--sp-l);border-radius:var(--r-inner);background:var(--chip-soft, var(--chip))}
 .up-row + .up-row{margin-top:var(--sp-s)}
+/* The access step under the use. */
+.up-acc{margin-top:var(--sp-m)}
+.up-acc .acc-go{width:100%}
+.up-code{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-s)}
+.up-code .up-line{flex:1;min-width:0;margin:0;justify-content:flex-start}
+.up-mask{letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.up-code .linkish{flex:none;font-size:13.5px;min-height:36px}
 /* Moved to <body> when open (see render), so the tab bar never covers it and
    a phone gets the full width. */
 .uback.portal{z-index:60}
@@ -1282,16 +1298,29 @@ body.resizing{cursor:col-resize;user-select:none}
          text-decoration:underline dotted;text-underline-offset:2px}
 .simlink:hover{color:var(--ink)}
 .simlink svg{width:11px;height:11px}
-.how-body{overflow-y:auto;padding:0 20px 20px;font-size:14.5px;line-height:1.5;
-          color:var(--text-body)}
-.how-body h3{margin:var(--sp-l) 0 var(--sp-xs);font-size:13px;font-weight:600;
-             color:var(--ink)}
+.how-body{overflow-y:auto;padding:0 20px var(--sp-xxl);font-size:14px;
+          line-height:1.55;color:var(--text-body)}
+/* 14px, with air between sections (founder: not jammed, not big). The
+   derivation sheet below uses exactly the same scale. */
+.how-body h3{margin:var(--sp-xl) 0 var(--sp-xs);font-size:14px;font-weight:600;
+             line-height:1.3;color:var(--ink)}
 .how-body h3:first-child{margin-top:0}
+.how-lede{color:var(--ink)}
 .how-body p,.how-body ol{margin:0}
 .how-body ol{padding-left:20px}
-.how-body li + li{margin-top:var(--sp-xs)}
-.how-body dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:var(--sp-xs) var(--sp-m)}
-.how-body dt{font-weight:600;color:var(--ink);font-size:13.5px}
+.how-body li + li{margin-top:var(--sp-s)}
+.how-body dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:var(--sp-m) var(--sp-l)}
+.how-body dt{font-weight:600;color:var(--ink);font-size:14px;line-height:1.55}
+/* The derivation sheet: the same reading size and spacing, each label a
+   heading over its paragraph rather than a line jammed against the last. */
+.how-body .derived{font-size:inherit;line-height:inherit}
+.how-body .derived > *{margin:var(--sp-xl) 0 0}
+.how-body .derived > :first-child{margin-top:0}
+.how-body .derived > p{color:var(--text-body)}
+.how-body .derived .tag{font-size:14px;line-height:1.3;color:var(--ink);margin-bottom:var(--sp-xs)}
+.how-body .derived .tag.warn{color:var(--danger)}
+.how-body .derived ol.checks li{margin-top:var(--sp-m)}
+.how-body .derived .s-lab{font-size:12.5px}
 .how-body dd{margin:0}
 .how-hosts{margin-top:var(--sp-l) !important;font-size:12px;color:var(--ink-tertiary)}
 .mchip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;
@@ -1316,13 +1345,28 @@ body.resizing{cursor:col-resize;user-select:none}
 .mi.back .nm{font-weight:500}
 .msep{height:1px;background:var(--hairline);margin:var(--sp-xs) var(--sp-s)}
 .mlock{margin:0;padding:var(--sp-s) var(--sp-m);font-size:13px;line-height:1.45;color:var(--ink-secondary)}
+.mi .nm small{display:block;margin-top:2px;font-size:12.5px;line-height:1.35;color:var(--ink-secondary)}
+.mhead{display:none}
+.mgroup-more{border-top:1px solid var(--hairline);margin-top:var(--sp-xs);padding-top:var(--sp-xs)}
+.mback.portal{z-index:60}
+.mmenu.portal{z-index:61}
 @media (max-width:639px){
   /* A phone: a sheet from the bottom, thumb-sized rows, not a tiny popover. */
   .mback{background:rgba(36,50,53,.32)}
-  .mmenu{position:fixed;left:0;right:0;bottom:0;width:auto;max-height:70dvh;
-         border-radius:22px 22px 0 0;border:0;
-         padding:var(--sp-m) var(--sp-s) calc(var(--sp-l) + env(safe-area-inset-bottom,0px))}
-  .mi{min-height:48px;font-size:16px}
+  .mmenu{position:fixed;left:0;right:0;bottom:0;width:auto;max-height:80dvh;
+         border-radius:22px 22px 0 0;border:0;background:var(--bg);
+         padding:var(--sp-xs) var(--sp-l) calc(var(--sp-xxl) + env(safe-area-inset-bottom,0px))}
+  .mhead{display:grid;grid-template-columns:36px 1fr 36px;align-items:center;margin:var(--sp-s) 0 var(--sp-l)}
+  .mhead b{text-align:center;font-size:16px;font-weight:600;color:var(--ink)}
+  .mgroup{background:var(--surface);border-radius:var(--r-inner);overflow:hidden}
+  .mgroup .mi{border-radius:0;min-height:60px;padding:var(--sp-m) var(--sp-l)}
+  .mgroup .mi + .mi{border-top:1px solid var(--hairline)}
+  .mgroup-more{border-top:0;margin-top:var(--sp-m);padding-top:0}
+  .mmenu .mlock{padding:var(--sp-m) var(--sp-xs) 0}
+  .mmenu .mi.back{margin-bottom:var(--sp-s)}
+  .mi{font-size:16px}
+  .mi .nm small{font-size:13.5px}
+  .mi .chk{font-size:16px}
 }
 .ring{width:22px;height:22px;display:grid;place-items:center;border-radius:50%}
 .ring svg{width:18px;height:18px}
@@ -1811,6 +1855,9 @@ addEventListener('popstate', () => {
   let s = null;
   document.addEventListener('touchstart', ev => {
     if(!standalone() || navReduced() || OB.open || document.querySelector('.modal')) return;
+    // Dragging a selection handle near the edge is not a swipe back.
+    const sel = window.getSelection && getSelection();
+    if(sel && !sel.isCollapsed) return;
     const t = ev.touches[0];
     const canBack = stack.length > 1 || (chat.open && stack[0].tab === 'chat');
     if(!canBack || t.clientX > 24) return;
@@ -2888,14 +2935,28 @@ const SWIPE_W = 168;
     r.classList.remove('dragging');
     SWIPE_FIRED = Date.now();
     const id = r.dataset.crow;
+    const hadMenu = CROW.menu, hadConfirm = CROW.confirm;
     ROWSWIPE.open = at < -SWIPE_W / 2.5 ? id : null;
     if(ROWSWIPE.open !== id) CROW.confirm = null;
-    CROW.menu = null; render();
+    CROW.menu = null;
+    // Only the row moves (B34): a full render rebuilt the whole page on
+    // every swipe, which blinked it, and the new row jumped to its place
+    // instead of sliding there. Render only if a menu or a confirm closed.
+    if(hadMenu || hadConfirm !== CROW.confirm) render(); else syncRowSwipe();
   };
   document.addEventListener('touchend', end, { passive: true });
   document.addEventListener('touchcancel', end, { passive: true });
 })();
 let SWIPE_FIRED = 0, HOLD_FIRED = 0;
+/* Show ROWSWIPE.open on the rows already in the page, without a render. */
+function syncRowSwipe(){
+  document.querySelectorAll('.crow[data-crow]').forEach(r => {
+    const on = r.dataset.crow === ROWSWIPE.open;
+    r.classList.toggle('swiped', on);
+    const acts = r.querySelector('.crow-acts');
+    if(acts){ if(on) acts.removeAttribute('aria-hidden'); else acts.setAttribute('aria-hidden', 'true'); }
+  });
+}
 const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 3h6l-1 7 4 4H6l4-4z"/></svg>';
 
 function emptyPane(){
@@ -3028,39 +3089,28 @@ function howPanel(){
       <header><b id="how-title">${t('How this works','这是如何运作的')}</b>
         <button class="x" type="button" data-how-close="1" aria-label="${t('Close','关闭')}">×</button></header>
       <div class="how-body">
-        ${sec(t('How a reply is made','回应是怎样写成的'), `<ol>
-          <li>${t("The thinker agent looks up passages in that thinker's own texts that bear on what you said.",
-                  '思想者代理在这位思想家本人的文本中查找与你所说相关的段落。')}</li>
-          <li>${t('An AI model writes a reply in the first person from those passages.',
-                  'AI 模型依据这些段落，以第一人称写出回应。')}</li>
-          <li>${t('Every quotation is checked word for word against the passage. Anything that does not match loses its quotation marks.',
-                  '每一处引文都与段落逐字核对。对不上的会被去掉引号。')}</li></ol>`)}
-        ${toGate() ? `
-        ${sec(t('Which models','使用哪些模型'), `<p>${t(
-          "Replies are written by free open models through Groq. Claude is off on the public site.",
-          '回应由开源模型经 Groq 写成。公开网站上不使用 Claude。')}</p>`)}
-        ${sec(t('What is sent where','什么会被发送到哪里'), `<p>${t(
-          "What you type goes to Still's server on Cloudflare, then to the thinker agent on Hugging Face, then to Groq, whose model writes the reply. Your first message needs nothing; after that, an access code. If you leave your email, Still keeps it, your answers and your country to give you access.",
-          '你输入的内容先到 Still 在 Cloudflare 上的服务器，再到 Hugging Face 上的思想者代理，然后到 Groq，由其模型写出回应。第一条消息无需任何东西；之后需要访问码。若你留下邮箱，Still 会保存邮箱、你的回答和所在国家，用于发送访问权限。')}</p>`)}` : `
-        ${sec(t('Which models','使用哪些模型'), `<p>${t(
-          'Auto uses Groq first (free), then Claude when Groq cannot answer. You can pick a model under the message box; each has a daily limit, shown by the ring beside it.',
-          '“自动”先用 Groq（免费），Groq 无法回应时改用 Claude。你可以在输入框下方选择模型；每个模型都有每日上限，旁边的圆环显示用量。')}</p>`)}
-        ${sec(t('What is sent where','什么会被发送到哪里'), `<p>${t(
-          "What you type, with the passages found, is sent to the model that writes the reply. If you use the mic, the recording is sent to Groq to turn it into text and is not stored. The agent keeps a log of each question and reply on the computer it runs on. Still has no server and keeps no other copy.",
-          '你输入的内容连同找到的段落，会发送给写回应的模型。若使用麦克风，录音会发送给 Groq 转成文字，不会被保存。代理会在它运行的电脑上记录每个问题和回应。Still 没有服务器，也不保留其他副本。')}</p>`)}`}
+        <p class="how-lede">${t(
+          "Ask an ordinary chatbot to play a philosopher and it improvises from a general impression of them. Still does four things differently.",
+          '让普通聊天机器人扮演一位哲学家，它只会凭对这个人的大致印象即兴发挥。Still 有四点不同。')}</p>
+        ${sec(t('It reads before it speaks','先读，再说'), `<p>${t(
+          "Every reply starts from the thinker's own writings: the passages that bear on what you said are found first, and the reply is written from them.",
+          '每条回应都从思想家本人的著作出发：先找出与你所说相关的段落，再依据这些段落写出回应。')}</p>`)}
+        ${sec(t('A quote is only a quote if they wrote it','只有他们写过的，才算引文'), `<p>${t(
+          "Quotation marks are kept only on words that match the source word for word. Anything else loses them, so nothing invented can pass as their words. The passage is under the reply, in Sources.",
+          '只有与原文逐字相符的文字才保留引号；其余一律去掉，编造的话不会冒充他们的原话。原文段落就在回应下方的“来源”里。')}</p>`)}
+        ${sec(t('It says how far it reaches','它会说明推得有多远'), `<p>${t(
+          "Each reply is labelled: whether a passage bears on it directly, or whether it reasons from their ideas to a view they never stated.",
+          '每条回应都有标注：是有段落直接涉及，还是从他们的思想推出一个他们从未表达过的观点。')}</p>`)}
+        ${sec(t('It never pretends they answered you','它从不假装他们在回答你'), `<p>${t(
+          "These thinkers wrote for their own time, not for your question. The voice is software; the texts are theirs.",
+          '这些思想家是为他们自己的时代而写，不是为你的问题。声音来自软件，文本属于他们。')}</p>`)}
         ${sec(t('What the labels mean','标签的含义'), `<dl>
           <dt>${t('Simulated','模拟')}</dt><dd>${t("Written by software in the thinker's voice. Not their words.",'由软件以思想家的口吻写成，不是他们的原话。')}</dd>
-          <dt>${t('Agent · model','代理 · 模型')}</dt><dd>${t('Made by the thinker agent; the model named wrote it.','由思想者代理生成；所列模型写成。')}</dd>
-          <dt>${t('Rests on a passage','以文本段落为据')}</dt><dd>${t("A passage from the thinker's texts bears on it directly.",'思想家文本中有段落直接涉及这一点。')}</dd>
-          <dt>${t('Inference…','推论…')}</dt><dd>${t("Reasoned from the thinker's principles. Not a view they stated.",'从思想家的原则推出，不是他们陈述过的观点。')}</dd>
-          <dt>${t('Quotation marks','引号')}</dt><dd>${t('Only words matched word for word to a numbered passage.','只用于与编号段落逐字相符的文字。')}</dd></dl>`)}
+          <dt>${t('From a passage','以段落为据')}</dt><dd>${t("A passage from their writings bears on it directly.",'他们著作中有段落直接涉及这一点。')}</dd>
+          <dt>${t('Inferred','推论')}</dt><dd>${t("Reasoned from their ideas. Not a view they stated.",'从他们的思想推出，不是他们陈述过的观点。')}</dd>
+          <dt>${t('Quotation marks','引号')}</dt><dd>${t('Only words matched word for word to a passage in Sources.','只用于与“来源”中段落逐字相符的文字。')}</dd></dl>`)}
         ${AGENT_KEY ? `<p class="how-hosts"><button type="button" class="linkish" data-forget-key="1">${
           t('Forget access code','忘记访问码')}</button></p>` : ''}
-        <p class="how-hosts">${toGate()
-          ? t('Hosts: Cloudflare (this site), Hugging Face (the agent), api.groq.com (Groq).',
-              '服务：Cloudflare（本站）、Hugging Face（代理）、api.groq.com（Groq）。')
-          : t('Model hosts: api.groq.com (Groq), api.anthropic.com (Claude).',
-              '模型服务：api.groq.com（Groq）、api.anthropic.com（Claude）。')}</p>
       </div>
     </div>`;
 }
@@ -3074,6 +3124,7 @@ function composerMeta(){
 }
 /* The model pill and today's-use ring, inside the box on the left of its
    bottom row (founder: the composer should look like Claude's). */
+let HEALTH_ASKED = false;
 function modelControls(){
   // Shown whenever the agent answers, even with a single model: without an
   // access code the Claude models drop out, and the pill and today's-use
@@ -3084,7 +3135,10 @@ function modelControls(){
   if(!AGENT_URL) return '';
   const cur = AGENT_STATE === 'ok' && agentChoices().length ? agentChoice() : null;
   if(!cur){
-    if(AGENT_STATE === 'unknown') setTimeout(agentReady);
+    // Once, not on every render: a health check answering "auth" leaves the
+    // state unknown, and re-asking from here re-rendered the chat on every
+    // reply, wiping any selection in it.
+    if(AGENT_STATE === 'unknown' && !HEALTH_ASKED){ HEALTH_ASKED = true; setTimeout(agentReady); }
     return `<span class="mchip mchip--wait">${t('Auto','自动')}</span>`;
   }
   const name = cur.id === 'auto' ? t('Auto','自动') : modelName(cur.id);
@@ -3147,6 +3201,21 @@ function usagePanel(){
             ? t('Your access code gives 60 messages a day. They reset at midnight.','你的访问码每天可发 60 条消息，午夜重置。')
             : t('Your first message is free. After that, an access code gives 60 messages a day.','第一条消息免费。之后，访问码每天可发 60 条消息。')}</p>
         </div>`}
+      ${usageAccess()}
+    </div>`;
+}
+/* Under the use: the way to more of it. No code yet, the request-access
+   flow; a code saved, the code (masked) and a way to change it, through the
+   same code sheet and the same re-check as the first time. */
+function usageAccess(){
+  if(!AGENT_KEY) return `<div class="up-acc">
+      <button type="button" class="acc-go" data-up-acc="1">${t('Request access','申请访问')}</button>
+    </div>`;
+  const shown = '•'.repeat(Math.min(8, Math.max(4, AGENT_KEY.length - 2))) + AGENT_KEY.slice(-2);
+  return `<div class="up-acc up-row up-code">
+      <div class="up-line"><span>${t('Access code','访问码')}</span>
+        <span class="up-mask" aria-label="${t('Saved, hidden','已保存，已隐藏')}">${esc(shown)}</span></div>
+      <button type="button" class="linkish" data-up-key-edit="1">${t('Edit','编辑')}</button>
     </div>`;
 }
 function closeUsage(){
@@ -3337,13 +3406,15 @@ function msgRow(m, i, c){
     <div class="msg-body">
       <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
       <div class="bubble">${paras(m.text)}</div>
-      ${q ? `<div class="said">
+      ${q ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
+        <summary><span>${t('Sources','来源')} · 1</span>${FOLD_CHEV}</summary>
+        <div class="said">
         <span class="tag">${t('What he actually wrote','他真正写下的')}</span>
         <q>${esc(L(q.text))}</q>
         <span class="src">— ${q.url
           ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(L(q.label))}</a>`
           : esc(L(q.label))}</span>
-      </div>` : ''}
+      </div></details>` : ''}
       ${msgFoot(m, last, [t('Simulated','模拟')].concat(m.demo ? [t('Demo','演示')] : []))}
     </div>
   </article>`;
@@ -4241,6 +4312,16 @@ function menuSide(r){
   const g = usageGroups()[groupOf(r.id)] || {};
   return g.replies_left != null ? t(`${g.replies_left} left`, `剩 ${g.replies_left} 条`) : '';
 }
+/* One plain line under each model's name: what it is for, never how it runs. */
+function menuBlurb(r){
+  const id = r.id || '';
+  if(id === 'auto') return t('Picks the best available for you', '自动为你选择可用的最佳模型');
+  if(/gpt-oss/i.test(id)) return t('Free and open', '免费、开源');
+  if(/sonnet/i.test(id)) return t('Most careful replies', '回应最细致');
+  if(/haiku/i.test(id)) return t('Fastest replies', '回应最快');
+  if(/opus/i.test(id)) return t('Deepest replies', '回应最深入');
+  return '';
+}
 function modelMenu(){
   const rows = agentChoices();
   const cur = agentChoice();
@@ -4249,27 +4330,31 @@ function modelMenu(){
   const item = r => {
     const off = !r.available || overMessageCap(r);
     const on = cur && cur.id === r.id;
+    const side = menuSide(r), blurb = menuBlurb(r);
     return `<button type="button" class="mi${off ? ' off' : ''}" role="menuitemradio"
         aria-checked="${on ? 'true' : 'false'}"${off ? ' aria-disabled="true"' : ''}
         tabindex="-1" data-mi="${esc(r.id)}">
-        <span class="nm">${esc(menuName(r))}</span>
-        <span class="side">${esc(menuSide(r))}</span>
+        <span class="nm">${esc(menuName(r))}${blurb || (off && side) ? `<small>${esc(off && side ? side : blurb)}</small>` : ''}</span>
+        <span class="side">${off ? '' : esc(side)}</span>
         <span class="chk" aria-hidden="true">${on ? '&#10003;' : ''}</span></button>`;
   };
+  // On a phone a sheet like Claude's: a titled header with close, the
+  // models in one grouped card, More models as its own row beneath.
+  const head = `<div class="mhead"><button type="button" class="up-x" data-mclose="1" aria-label="${t('Close','关闭')}">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <b>${MENU.sub ? t('More models','更多模型') : t('Select model','选择模型')}</b><span class="up-x-pad"></span></div>`;
   const body = MENU.sub
-    ? `<button type="button" class="mi back" role="menuitem" tabindex="-1" data-mback="1">
-         <span class="nm">&#8249; ${t('More models','更多模型')}</span></button>
-       <div class="msep" role="separator"></div>
-       ${more.map(item).join('')}`
-    : `${main.map(item).join('')}
-       ${more.length ? `<div class="msep" role="separator"></div>
+    ? `${head}<button type="button" class="mi back" role="menuitem" tabindex="-1" data-mback="1">
+         <span class="nm">&#8249; ${t('Back','返回')}</span></button>
+       <div class="mgroup">${more.map(item).join('')}</div>`
+    : `${head}<div class="mgroup">${main.map(item).join('')}</div>
+       ${more.length ? `<div class="mgroup mgroup-more">
        <button type="button" class="mi" role="menuitem" aria-haspopup="menu" tabindex="-1" data-mmore="1">
          <span class="nm">${t('More models','更多模型')}</span>
-         <span class="side" aria-hidden="true">&#8250;</span><span class="chk"></span></button>` : ''}`;
+         <span class="side" aria-hidden="true">&#8250;</span><span class="chk"></span></button></div>` : ''}`;
   const locked = !AGENT_KEY && ((AGENT_INFO && AGENT_INFO.choices) || []).some(r => r.family === 'claude' || /^claude/i.test(r.id || ''));
   return `<div class="mback" data-mclose="1"></div>
     <div class="mmenu" id="mmenu" role="menu" aria-label="${t('Model','模型')}">${body}${locked ? `
-      <div class="msep" role="separator"></div>
       <p class="mlock">${t('Claude models need an access code.','Claude 模型需要访问码。')} ${codeLink()}</p>` : ''}</div>`;
 }
 function closeDerive(){
@@ -4752,19 +4837,19 @@ function agentBubble(a, fallback){
       const n = nums[part.q.evidence_id], src = byId[part.q.evidence_id];
       if(part.t.length >= BLOCK_QUOTE_CHARS){
         // Drop the colon or dash that led into it; the block makes the break.
-        if(para.length) para[para.length - 1] = para[para.length - 1].replace(/[\s:—–-]+$/, '');
+        if(para.length) para[para.length - 1] = para[para.length - 1].replace(/[\s:\uFF1A—–-]+$/, '');
         flush();
         const raw = src && (src.title || src.work_id || '');
         const title = cleanTitle(raw);
         const loc = [headingOf(raw), src && src.locator && !String(raw).includes(src.locator) ? locText(src.locator) : '']
           .filter(Boolean).join(', ');
         out.push(`<blockquote class="vblock"><p>${ital(esc(part.t))}</p>${src ? `<footer>${
-          esc(title)}${loc ? ', ' + esc(loc) : ''}${
+          ital(esc(title))}${loc ? ', ' + ital(esc(loc)) : ''}${
           n ? ` · ${t('passage','第')} ${n}${lang === 'zh' ? ' 段' : ''}` : ''}</footer>` : ''}</blockquote>`);
         afterBlock = true;
       }else{
         afterBlock = false;
-        para.push(`<q class="vq">${esc(part.t)}</q>${n ? `<sup class="vref">${n}</sup>` : ''}`);
+        para.push(`<q class="vq">${ital(esc(part.t))}</q>${n ? `<sup class="vref">${n}</sup>` : ''}`);
       }
     }
     if(!afterBlock) para.push(' ');
@@ -4828,7 +4913,7 @@ function headingOf(s){
 function cleanLoc(l){
   l = String(l || '')
     .replace(/\bprofile\s+/ig, '')
-    .replace(/\binterval\s+main\b\s*(\[[^\])]*[\])])?/ig, '')
+    .replace(/\binterval\s+[\w.-]+\s*(\[[^\])]*[\])])?/ig, '')
     .replace(/\b(body|segment)\s*(\[[^\])]*[\])]|\d+)/ig, '')
     .replace(/\bheading:\s*[^/\[]+/ig, '')
     .replace(/[\s/,]+$|^[\s/,]+/g, '').replace(/\s*\/\s*/g, ' ').replace(/\s{2,}/g, ' ');
@@ -4856,10 +4941,11 @@ function agentPassage(p, n, who){
     <span class="tag">${p.cited ? t('From the text','出自文本') : t('Read, not cited','读过，未引用')}
       <span class="num">· ${n}</span></span>
     <q>${ital(esc(p.text))}</q>
-    <span class="src">— ${target ? `<a href="#" class="linkish src-link" ${target}>${esc(title)}</a>` : esc(title)}${esc(loc)}</span>
+    <span class="src">— ${target ? `<a href="#" class="linkish src-link" ${target}>${ital(esc(title))}</a>` : ital(esc(title))}${ital(esc(loc))}</span>
   </div>`;
 }
 
+const FOLD_CHEV = '<svg class="chev" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 /* Which replies have their passages open survives a re-render. */
 const FOLD_OPEN = new Set();
 document.addEventListener('toggle', ev => {
@@ -4876,7 +4962,7 @@ function agentRow(m, p, cont, last){
       <div class="bubble">${agentBubble(a, m.text)}</div>
       ${passages.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
         <summary><span>${t('Sources','来源')} · ${passages.length}</span>
-          <svg class="chev" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+          ${FOLD_CHEV}</summary>
         ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
       </details>` : ''}
       ${msgFoot(m, last, [
@@ -5663,7 +5749,12 @@ function render(){
   //   unless you were already at the bottom.
   // Today's use opens over everything: lift it out of the chat's foot (which
   // sits under the tab bar and narrows a fixed sheet) to <body>.
-  document.querySelectorAll('body > .uback.portal, body > .upanel.portal').forEach(e => e.remove());
+  document.querySelectorAll('body > .uback.portal, body > .upanel.portal, body > .mback.portal, body > .mmenu.portal').forEach(e => e.remove());
+  // The model sheet too, on a phone: inside the foot the tab bar covered it
+  // and it was squeezed to the foot's width (founder).
+  if(matchMedia('(max-width:639px)').matches){
+    const mm = document.querySelector('.cmodel #mmenu'), mb = document.querySelector('.cmodel .mback:not(.uback)');
+    if(mm){ if(mb){ mb.classList.add('portal'); document.body.append(mb); } mm.classList.add('portal'); document.body.append(mm); } }
   { const up = document.querySelector('.cmodel .upanel'), bk = document.querySelector('.cmodel .uback');
     if(up){ if(bk){ bk.classList.add('portal'); document.body.append(bk); } up.classList.add('portal'); document.body.append(up); } }
   const list = document.getElementById('msgs');
@@ -5760,7 +5851,8 @@ document.addEventListener('click', ev => {
     setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
   }
   if(ROWSWIPE.open && !hit('.crow-acts')){
-    ROWSWIPE.open = null; CROW.confirm = null; render();
+    ROWSWIPE.open = null;
+    if(CROW.confirm){ CROW.confirm = null; render(); } else syncRowSwipe();
     if(hit('.crow')){ ev.preventDefault(); return; }
   }
   if((el = hit('[data-rp]'))){ RP_OPEN = !RP_OPEN; return render(); }
@@ -5801,6 +5893,16 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-acc-close]'))){ ACCESS.sheet = false; ACCESS.codeOpen = false; return render(); }
   if((el = hit('[data-af-close]'))){ ANSWER_FIRST = false; return render(); }
   if((el = hit('[data-lede]'))){ LEDE_OPEN = !LEDE_OPEN; return render(); }
+  // From Today's use: close it, then the same request flow or code sheet.
+  if((el = hit('[data-up-acc]'))){
+    chat.usageOpen = false; ACCESS.sheet = 'chat'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
+  if((el = hit('[data-up-key-edit]'))){
+    chat.usageOpen = false; ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
+    setTimeout(() => { const k = document.getElementById('agent-key'); if(!k) return;
+      k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = !k.value.trim();
+      k.focus(); k.select(); });
+    return;
+  }
   if((el = hit('[data-acc-code]'))){
     ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
     setTimeout(() => { const k = document.getElementById('agent-key'); if(k) k.focus(); });
@@ -6160,8 +6262,10 @@ document.addEventListener('pointerdown', ev => {
   document.body.classList.add('resizing');
   const move = e => setPane(which, e.clientX - left);
   const up = () => { document.body.classList.remove('resizing');
-    removeEventListener('pointermove', move); removeEventListener('pointerup', up); };
+    removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+    removeEventListener('pointercancel', up); };
   addEventListener('pointermove', move); addEventListener('pointerup', up);
+  addEventListener('pointercancel', up, { once: true });
 });
 document.addEventListener('dblclick', ev => {
   const h = ev.target.closest && ev.target.closest('[data-resize]'); if(h) setPane(h.dataset.resize, null);
