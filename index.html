@@ -202,6 +202,7 @@ img{max-width:100%}
 .set-row{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-s);width:100%;min-height:48px;
   padding:0;border:0;border-bottom:1px solid var(--hairline);background:none;font:inherit;font-size:15.5px;
   color:var(--ink);text-align:left;text-decoration:none;cursor:pointer}
+.set-danger{color:var(--danger)}
 .set-row span{font-size:13.5px;color:var(--ink-secondary)}
 .set-fold summary{display:flex;align-items:center;justify-content:space-between;min-height:48px;list-style:none;cursor:pointer}
 .set-fold summary::-webkit-details-marker{display:none}
@@ -2384,12 +2385,12 @@ function confirmDialog(){
   if(!CONFIRM) return '';
   const convoAsk = CONFIRM.kind === 'convo', acct = CONFIRM.kind === 'account';
   const title = acct ? t('Delete your account?','删除你的账户？')
-    : convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Erase what this browser remembers?','清除这个浏览器记住的内容？');
+    : convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Clear data on this browser?','清除此浏览器上的数据？');
   const body = acct ? t("Still deletes your account and what it keeps with it, and you're signed out. This can't be undone.",
                         'Still 会删除你的账户及其保存的内容，并让你退出登录。此操作无法撤销。')
     : convoAsk ? t("It's removed from this browser. This can't be undone.",'它会从这个浏览器中移除，且无法撤销。')
-               : t("Your answers and likes. This can't be undone.",'你的回答与喜欢。此操作无法撤销。');
-  const act = acct ? t('Delete','删除') : convoAsk ? t('Delete','删除') : t('Erase','清除');
+               : t("Your answers, likes, name and photo on this browser. This can't be undone.",'此浏览器上的回答、喜欢、名字和照片。此操作无法撤销。');
+  const act = acct ? t('Delete','删除') : convoAsk ? t('Delete','删除') : t('Clear','清除');
   return `<div class="backdrop" data-confirm-cancel="1"></div>
     <div class="af af--confirm" role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-d">
       <b id="cf-t">${title}</b>
@@ -4891,7 +4892,7 @@ function accountSection(){
   if(!googleOn()) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Sign-in is not available on this page.','此页面暂不支持登录。')}</p></section>`;
   if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
-      <p>${t('Sign in to keep talking with the thinkers. Once signed in, you can sign out or delete your account here.','登录后可以继续与思想家对话。登录后，可以在这里退出或删除账户。')}</p>
+      <p>${t('Sign in to keep talking with the thinkers.','登录后可以继续与思想家对话。')}</p>
       ${googleButton()}</section>`;
   return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b>${
@@ -4900,7 +4901,6 @@ function accountSection(){
       ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
       <div class="me-acct-row">
         <button type="button" class="ghost" data-sign-out="1"${AUTH.busy ? ' disabled' : ''}>${t('Sign out','退出登录')}</button>
-        <button type="button" class="ghost me-acct-del" data-account-delete="1"${AUTH.busy ? ' disabled' : ''}>${t('Delete account','删除账户')}</button>
       </div></section>`;
 }
 let AGENT_STATE = AGENT_URL ? 'unknown' : 'off';   // off | unknown | ok | down
@@ -6491,6 +6491,12 @@ function meSettings(){
           <a class="set-row" href="terms?lang=${lang}" target="_blank" rel="noopener">${t('Terms','条款')}</a>
           <a class="set-row" href="mailto:support@stillasking.app">${t('Contact support','联系客服')}<span>support@stillasking.app</span></a>
         </div></section>
+      <section><h3>${t('Your data','你的数据')}</h3>
+        <div class="set-list">
+          ${googleOn() && AUTH.session ? `<button type="button" class="set-row set-danger" data-account-delete="1"${AUTH.busy ? ' disabled' : ''}>${t('Delete account','删除账户')}</button>` : ''}
+          <button type="button" class="set-row set-danger" id="reset">${t('Clear data on this browser','清除此浏览器上的数据')}</button>
+        </div>
+        <p>${t('Clearing removes your answers, likes, name and photo from this browser. It cannot be undone.','清除会删除此浏览器上的回答、喜欢、名字和照片，且无法撤销。')}</p></section>
     </div>
   </div>`;
 }
@@ -7017,7 +7023,8 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-confirm-cancel]'))){ CONFIRM = null; return render(); }
   if((el = hit('[data-confirm-ok]'))){
     const c = CONFIRM; CONFIRM = null;
-    if(c && c.kind === 'erase'){ state = { votes:{}, likes:{} }; save(); }
+    if(c && c.kind === 'erase'){ state = { votes:{}, likes:{} }; save();
+      ME_NAME = ''; ME_PHOTO = ''; try{ localStorage.removeItem('still.name'); localStorage.removeItem('still.photo'); }catch(e){} }
     else if(c && c.kind === 'account'){ deleteAccount(); return; }
     else if(c && c.kind === 'convo'){
       chat.convos = chat.convos.filter(x => x.id !== c.id);
