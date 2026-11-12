@@ -207,7 +207,12 @@ img{max-width:100%}
 .set-fold summary::-webkit-details-marker{display:none}
 .set-fold{display:block}
 .set-fold[open] .chev{transform:rotate(180deg)}
-.set-fold .rule{margin:0 0 var(--sp-m)}
+/* In Settings the rule reads as plain text on the page, never grey on a dark
+   panel (founder: contrast is a hard rule). */
+.set-fold .rule{margin:0 0 var(--sp-m);padding:0;background:none;color:var(--ink);gap:6px}
+.me-sheet-body .set-fold .rule b{color:var(--ink);font-size:18px}
+.me-sheet-body .set-fold .rule p{margin:0;opacity:1;color:var(--ink);font-size:15px;line-height:1.45}
+.set-fold .rule .kind{background:var(--chip);color:var(--ink)}
 .set-note{margin:0 0 var(--sp-m);font-size:14px;line-height:1.5;color:var(--ink-secondary)}
 .me-ob-again{display:inline-block;margin-top:var(--sp-m);font-size:14px;min-height:32px}
 .me-data dt{font-size:13px;font-weight:600;color:var(--ink);margin-top:var(--sp-s)}
@@ -6479,8 +6484,7 @@ function meSettings(){
               <b>${t('The rule that outranks other rules','高于其他一切的规则')}</b>
               <p>${t('Never fabricate a quotation, and never imply a historical person answered a modern question. Every reply carries a visible claim kind, and a quote is only a quote if it has a source you can follow.','绝不虚构引文，也绝不暗示某位历史人物回答了现代问题。每一条发言都标明主张的类型，而引文只有在能追溯到来源时才算引文。')}</p>
               <div class="kinds">${Object.keys(C.kinds||{}).map(k =>
-                `<span class="kind" style="background:rgba(255,255,255,.12);color:#fff">${
-                  esc(kindLabel(k))}</span>`).join('')}</div>
+                `<span class="kind">${esc(kindLabel(k))}</span>`).join('')}</div>
             </div><p class="set-note">${esc(S('footer'))}</p></details>
           <button type="button" class="set-row" data-ob-again="1">${t('Show the welcome again','再看一次欢迎页')}</button>
           <a class="set-row" href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy policy','隐私政策')}</a>
