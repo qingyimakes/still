@@ -143,10 +143,11 @@ img{max-width:100%}
 .me-av{flex:none;width:52px;height:52px;font-size:20px}
 .me-photo{object-fit:cover;padding:0}
 .page--me.me-gated{position:relative}
-.me-gated .me-under{filter:blur(2.5px);opacity:.6;pointer-events:none;user-select:none}
+.me-gated .me-under{pointer-events:none;user-select:none}
 /* The empty state's dark button would smear under the card: hidden there. */
 .me-gated .me-under .me-empty .wide{visibility:hidden}
-.me-pop-wrap{position:fixed;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;padding:var(--sp-l);pointer-events:none}
+/* No blur: just a 10% white veil over the page (founder). */
+.me-pop-wrap{position:fixed;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;padding:var(--sp-l);pointer-events:none;background:rgba(255,255,255,.1)}
 .me-pop{pointer-events:auto;width:100%;max-width:320px;background:var(--surface);border-radius:24px;
   padding:28px 24px 22px;text-align:center;box-shadow:0 10px 30px rgba(36,50,53,.10),0 0 0 1px var(--hairline)}
 .me-pop h2{margin:0;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.25;color:var(--ink)}
