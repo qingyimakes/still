@@ -142,11 +142,14 @@ img{max-width:100%}
 .me-head{display:flex;align-items:center;gap:var(--sp-l);padding-top:var(--sp-xl)}
 .me-av{flex:none;width:52px;height:52px;font-size:20px}
 .me-photo{object-fit:cover;padding:0}
-.me-head--gate{justify-content:space-between}
-.me-gate{max-width:360px;margin:var(--sp-xl) auto 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--sp-s)}
-.me-gate h2{margin:0;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
-.me-gate p{margin:0 0 var(--sp-m);font-size:15.5px;line-height:1.5;color:var(--ink-secondary)}
-.me-gate .gsi{width:100%;display:flex;flex-direction:column;align-items:center}
+.page--me.me-gated{position:relative}
+.me-gated .me-under{filter:blur(6px);opacity:.55;pointer-events:none;user-select:none}
+.me-pop-wrap{position:fixed;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;padding:var(--sp-l);pointer-events:none}
+.me-pop{pointer-events:auto;width:100%;max-width:340px;background:var(--surface);border-radius:var(--r-card,20px);
+  padding:var(--sp-xl) var(--sp-l);text-align:center;box-shadow:0 12px 40px rgba(36,50,53,.16),0 0 0 1px var(--hairline)}
+.me-pop h2{margin:0 0 6px;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2;color:var(--ink)}
+.me-pop p{margin:0 0 var(--sp-l);font-size:15px;line-height:1.45;color:var(--ink-secondary)}
+.me-pop .gsi{display:flex;flex-direction:column;align-items:center}
 .me-photo-row{display:flex;align-items:center;gap:var(--sp-m);margin:var(--sp-s) 0 var(--sp-l)}
 .me-photo-big{flex:none;width:64px;height:64px;font-size:24px}
 .me-photo-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 var(--sp-l);cursor:pointer}
@@ -2211,6 +2214,24 @@ function closeConvo(){
 }
 const navReduced = () => matchMedia('(prefers-reduced-motion:reduce)').matches;
 const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+/* Safari's status-bar colour (founder, 12 Nov: it lagged one page behind,
+   white on the green Answers and green on Home). Safari reads theme-color
+   reliably only when the tag is new, and it can sample the page while the
+   slide's ghost still covers the top. So the tag is replaced, not edited,
+   and set again once the move has finished. It matches each page's own
+   background (html.on-answers paints #5B8352). */
+let THEME_TIMER = 0;
+function setThemeColor(c){
+  const put = () => {
+    const old = document.querySelector('meta[name="theme-color"]');
+    if(old && old.getAttribute('content') === c && !THEME_TIMER) return;
+    const m = document.createElement('meta'); m.name = 'theme-color'; m.content = c;
+    if(old) old.replaceWith(m); else document.head.appendChild(m);
+  };
+  put();
+  clearTimeout(THEME_TIMER);
+  THEME_TIMER = setTimeout(() => { THEME_TIMER = 0; put(); }, 420);
+}
 function navSnapshot(view){
   const r = view.getBoundingClientRect();
   const g = document.createElement('div');
@@ -6353,26 +6374,19 @@ function meTile(q){
       ${opt ? `<span class="me-pick" style="background:${esc(p.bg)};color:${esc(p.text)}"><span>${esc(key)} · ${esc(L(opt.label))}</span></span>` : ''}
     </button>`;
 }
-/* Me is for members (founder, 12 Nov): a guest who opens it is asked to
-   sign up. Settings stay reachable, so language can always be changed. */
+/* Me is for members (founder, 12 Nov): a guest sees their Me page as it
+   would be, softly blurred, under a small sign-in card. Short copy; the
+   gear in the bar still opens Settings. */
 function meGate(){
-  return `<div class="page page--me">
-    <div class="me-gate">
-      <svg class="me-empty-art" viewBox="0 0 220 150" aria-hidden="true">
-        <rect x="40" y="18" width="140" height="114" rx="16" fill="var(--surface)" stroke="var(--hairline-card)"/>
-        <circle cx="110" cy="58" r="20" fill="var(--chip)"/>
-        <rect x="74" y="90" width="72" height="9" rx="4.5" fill="var(--ink)" opacity=".75"/>
-        <rect x="86" y="106" width="48" height="8" rx="4" fill="var(--accent)"/>
-      </svg>
-      <h2>${t('Keep track of your thinking','记录你的思考')}</h2>
-      <p>${t('Sign up to see your answers and likes here, and keep talking with the thinkers. Free, 15 messages a day.',
-        '注册后，你的回答与喜欢都会出现在这里，还能继续与思想家对话。免费，每天 15 条消息。')}</p>
+  return `<div class="me-pop-wrap">
+    <div class="me-pop" role="dialog" aria-modal="false" aria-labelledby="me-pop-t">
+      <h2 id="me-pop-t">${t('Keep track of your thinking','记录你的思考')}</h2>
+      <p>${t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
       ${googleButton()}
-    </div>
-  </div>${ME_SETTINGS ? meSettings() : ''}`;
+    </div></div>`;
 }
 function meView(){
-  if(googleOn() && !AUTH.session) return meGate();
+  const gated = googleOn() && !AUTH.session;
   const qs = questions();
   const voted = qs.filter(q => state.votes[q.id]);
   const liked = qs.filter(q => state.likes['question:' + q.id]);
@@ -6380,7 +6394,8 @@ function meView(){
   const shown = ME_TAB === 'likes' ? liked : voted;
   const tab = (k, label) => `<button type="button" role="tab" class="me-tab" data-me-tab="${k}"
       aria-selected="${ME_TAB === k}">${label}</button>`;
-  return `<div class="page page--me">
+  return `<div class="page page--me${gated ? ' me-gated' : ''}">
+    <div class="me-under"${gated ? ' aria-hidden="true" inert' : ''}>
     <header class="me-head">
       ${meAvatar('me-av')}
       <div class="me-id"><h1>${esc(name)}</h1><p>${t('Your answers, likes and settings','你的回答、喜欢与设置')}</p></div>
@@ -6392,6 +6407,7 @@ function meView(){
     <div class="me-tabs" role="tablist">${tab('votes', t('My answers','我的回答'))}${tab('likes', t('Liked','喜欢'))}</div>
     <p class="me-lock">${ME_LOCK}${t('Private. Only you can see your answers and likes.','仅自己可见：你的回答与喜欢只有你能看到。')}</p>
     ${shown.length ? `<div class="me-grid">${shown.map(meTile).join('')}</div>` : meEmpty()}
+    </div>${gated ? meGate() : ''}
   </div>${ME_SETTINGS ? meSettings() : ''}`;
 }
 const ME_LOCK = '<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="3.2" y="7" width="9.6" height="6.6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
@@ -6525,8 +6541,7 @@ function render(){
   document.documentElement.classList.toggle('on-answers', !!view.querySelector('.page--answers'));
   StillFlip.measure(document.getElementById('book'));
   mountGoogle();
-  { const tc = document.querySelector('meta[name="theme-color"]');
-    if(tc) tc.setAttribute('content', view.querySelector('.page--answers') ? '#60845C' : '#FAFAFA'); }
+  setThemeColor(view.querySelector('.page--answers') ? '#5B8352' : '#FAFAFA');
   document.documentElement.classList.toggle('in-convo', !!view.querySelector('.chat-wrap.has-open'));
 
   // Scrolling, the way a messenger does it (founder: long replies landed
