@@ -2399,10 +2399,10 @@ function answerFirstDialog(){
   if(!ANSWER_FIRST) return '';
   return `<div class="backdrop" data-af-close="1"></div>
     <div class="af" role="alertdialog" aria-modal="true" aria-labelledby="af-t" aria-describedby="af-d">
-      <b id="af-t">${t('Answer first','先作答')}</b>
-      <p id="af-d">${t('Choose an answer and the thread opens. Nobody is scoring you, and you can change your answer any time.',
-        '选一个答案，讨论就会展开。没有人在给你打分，你也可以随时更改答案。')}</p>
-      <button type="button" data-af-close="1">${t('OK','好')}</button>
+      <b id="af-t">${t('What’s your take?','你怎么看？')}</b>
+      <p id="af-d">${t('Pick an answer, then see what the thinkers say. You can change it anytime.',
+        '先选一个答案，再看看思想家们怎么说。之后随时可以改。')}</p>
+      <button type="button" data-af-close="1">${t('Got it','好的')}</button>
     </div>`;
 }
 document.addEventListener('keydown', ev => {
