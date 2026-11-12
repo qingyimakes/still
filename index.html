@@ -1255,6 +1255,9 @@ body.resizing{cursor:col-resize;user-select:none}
 .acc-f small{display:block;margin-top:var(--sp-xs);font-size:13px;line-height:1.4;color:var(--ink-secondary)}
 .acc-next{width:100%}
 .acc-back{align-self:flex-start;min-height:32px;font-size:14.5px;color:var(--ink-secondary)}
+.bar .bar-set{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--ink)}
+.bar .bar-set[hidden]{display:none}
 .bar .bar-acc{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12.5px;
   padding:var(--sp-xs) var(--sp-m);min-height:32px;color:var(--ink);background:rgba(255,255,255,.92);
   backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
@@ -1649,6 +1652,7 @@ button.sim-tag:hover{color:var(--ink)}
   .bar.scrolled{border-bottom-color:transparent}
   .bar .brand{display:none}
   .bar .back{position:static;transform:none}
+  .bar .bar-set{position:static;transform:none;margin-left:auto;margin-right:16px}
   .bar-empty .bar{display:none}
   .bar-empty .chat-wrap{height:100dvh}
 
@@ -1758,6 +1762,7 @@ button.sim-tag:hover{color:var(--ink)}
     </button>
     <span class="brand">Still</span>
     <button type="button" class="rp-pill bar-acc" id="bar-acc" data-acc-open="1" hidden></button>
+    <button type="button" class="bar-set" id="bar-set" data-me-settings="1" aria-label="Settings" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
   </header>
 
   <main id="view"></main>
@@ -6352,11 +6357,6 @@ function meTile(q){
    sign up. Settings stay reachable, so language can always be changed. */
 function meGate(){
   return `<div class="page page--me">
-    <header class="me-head me-head--gate">
-      <span></span>
-      <button type="button" class="me-menu" data-me-settings="1" aria-label="${t('Settings','设置')}">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-    </header>
     <div class="me-gate">
       <svg class="me-empty-art" viewBox="0 0 220 150" aria-hidden="true">
         <rect x="40" y="18" width="140" height="114" rx="16" fill="var(--surface)" stroke="var(--hairline-card)"/>
@@ -6384,8 +6384,6 @@ function meView(){
     <header class="me-head">
       ${meAvatar('me-av')}
       <div class="me-id"><h1>${esc(name)}</h1><p>${t('Your answers, likes and settings','你的回答、喜欢与设置')}</p></div>
-      <button type="button" class="me-menu" data-me-settings="1" aria-label="${t('Settings','设置')}">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </header>
     <div class="me-figs">
       <span><b>${voted.length}</b>${t('Voted','已投票')}</span>
@@ -6615,7 +6613,11 @@ function render(){
   const showAcc = e.tab === 'home' && stack.length <= 1 && !!accessUrl() && !AGENT_KEY;
   accBtn.hidden = !showAcc;
   accBtn.textContent = t('Request full access', '申请完整权限');
-  document.body.classList.toggle('bar-empty', noBack && wide && !showAcc);
+  // Settings: a gear at the bar's right on Me, signed in or not (founder).
+  const setBtn = document.getElementById('bar-set');
+  const showSet = e.tab === 'me' && stack.length <= 1;
+  setBtn.hidden = !showSet; setBtn.setAttribute('aria-label', t('Settings','设置'));
+  document.body.classList.toggle('bar-empty', noBack && wide && !showAcc && !showSet);
   revealFresh();
   navBar();
 }
