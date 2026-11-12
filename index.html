@@ -202,22 +202,27 @@ img{max-width:100%}
 .nav-ghost-in{position:absolute;left:0;right:0;top:0}
 .nav-ghost::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--dim,0)}
 .nav-ghost.under{z-index:0}
-.nav-ghost.over{z-index:3;box-shadow:-10px 0 30px rgba(36,50,53,.12)}
+.nav-ghost.over{z-index:3}
 /* The page sliding in covers the whole screen: a short page (a thinker
    with a few lines) let the old page show below it, half-drawn, while it
    slid (founder, B21). */
 html.nav-busy #view{position:relative;z-index:2;background:var(--bg);min-height:100dvh}
 html.nav-busy.on-answers #view{background:transparent}
-html.nav-drag #view{box-shadow:-10px 0 30px rgba(36,50,53,.12)}
-.nav-ghost.push-out{animation:navUnder .36s cubic-bezier(.2,.8,.2,1) both}
+.nav-ghost.push-out{animation:navOutLeft .36s cubic-bezier(.2,.8,.2,1) both}
 .nav-ghost.pop-out{animation:navOutRight .32s cubic-bezier(.2,.8,.2,1) both}
 .nav-ghost.fade-out{animation:navFade .2s ease both}
-#view.nav-in-right{animation:navInRight .36s cubic-bezier(.2,.8,.2,1) both;box-shadow:-10px 0 30px rgba(36,50,53,.12)}
+#view.nav-in-right{animation:navInRight .36s cubic-bezier(.2,.8,.2,1) both}
 #view.nav-in-left{animation:navInLeft .32s cubic-bezier(.2,.8,.2,1) both}
 @keyframes navInRight{from{transform:translateX(100%)}to{transform:none}}
 @keyframes navUnder{from{transform:none;--dim:0}to{transform:translateX(-30%);--dim:.1}}
 @keyframes navOutRight{from{transform:none}to{transform:translateX(100%)}}
-@keyframes navInLeft{from{transform:translateX(-30%);filter:brightness(.92)}to{transform:none;filter:none}}
+@keyframes navInLeft{from{transform:translateX(-100%)}to{transform:none}}
+@keyframes navOutLeft{from{transform:none}to{transform:translateX(-100%)}}
+/* The top bar moves with the page: its back button fades in or out across
+   the same move, instead of switching before the page arrives (founder). */
+@keyframes barIn{from{opacity:0}to{opacity:1}}
+#bar.nav-bar-in .back:not([hidden]){animation:barIn .36s ease both}
+html.nav-busy{overflow-x:hidden}
 @keyframes navFade{from{opacity:1}to{opacity:0}}
 @property --dim{syntax:'<number>';inherits:true;initial-value:0}
 
@@ -2007,9 +2012,11 @@ function worksFor(q){
 const here = () => stack[stack.length - 1];
 /* Moving deeper slides the new page in from the right; going back brings
    the previous one in from the left; switching tabs does not slide. */
-/* NAVIGATION, the way iOS does it. Going deeper, the new page slides in
-   from the right over the current one, which drifts a little left and dims;
-   going back is the reverse. Tabs do not slide. With reduced motion, a
+/* NAVIGATION. Going deeper, the new page comes in from the right and the
+   current one leaves to the left, side by side, like turning to the next
+   page: no shadow or dimming, so it never reads as a drawer over the page
+   (founder, 12 Nov). The bar's back button fades in across the same move.
+   Going back is the reverse. Tabs do not slide. With reduced motion, a
    crossfade. Every push is a browser history entry, so the back button and
    Safari's own edge swipe go back too (Safari animates its swipe itself, so
    a back that arrives from the browser is drawn without ours). Full screen
@@ -2038,7 +2045,10 @@ function navSnapshot(view){
 function navAnimate(ghost, kind){
   const view = document.getElementById('view');
   const html = document.documentElement;
-  if(navReduced()){
+  // With the sidebar (900px and up) the page sits in a column: sliding it
+  // would cross the sidebar, so the page changes with a quick crossfade.
+  const fade = navReduced() || matchMedia('(min-width:900px)').matches;
+  if(fade){
     ghost.classList.add('over', 'fade-out');
   } else if(kind === 'push'){
     ghost.classList.add('under', 'push-out'); view.classList.add('nav-in-right');
@@ -2046,9 +2056,12 @@ function navAnimate(ghost, kind){
     ghost.classList.add('over', 'pop-out'); view.classList.add('nav-in-left');
   }
   html.classList.add('nav-busy');
+  const bar = document.getElementById('bar');
+  if(bar && !fade){ bar.classList.remove('nav-bar-in'); void bar.offsetWidth; bar.classList.add('nav-bar-in'); }
   document.body.appendChild(ghost);
-  setTimeout(() => { ghost.remove(); view.classList.remove('nav-in-right', 'nav-in-left'); html.classList.remove('nav-busy'); },
-    navReduced() ? 220 : 380);
+  setTimeout(() => { ghost.remove(); view.classList.remove('nav-in-right', 'nav-in-left'); html.classList.remove('nav-busy');
+    if(bar) bar.classList.remove('nav-bar-in'); },
+    fade ? 220 : 380);
 }
 function go(entry){ reported = null; stack.push(entry); NAV = 'push';
   // In the editor's iframe, history is the editor's: back must not leave it.
@@ -2099,8 +2112,7 @@ addEventListener('popstate', () => {
     s.dx = Math.max(0, dx);
     const w = innerWidth, f = Math.min(1, s.dx / w);
     document.getElementById('view').style.transform = `translateX(${s.dx}px)`;
-    s.ghost.style.transform = `translateX(${-30 * (1 - f)}%)`;
-    s.ghost.style.setProperty('--dim', String(.1 * (1 - f)));
+    s.ghost.style.transform = `translateX(${-100 * (1 - f)}%)`;
   }, { passive: false });
   const end = () => {
     if(!s || !s.on){ s = null; return; }
@@ -2109,7 +2121,7 @@ addEventListener('popstate', () => {
     const done = s.dx > w * .4 || (fast && s.dx > 40);
     view.style.transition = g.style.transition = 'transform .24s cubic-bezier(.2,.8,.2,1)';
     view.style.transform = done ? `translateX(${w}px)` : 'translateX(0)';
-    g.style.transform = done ? 'translateX(0)' : 'translateX(-30%)';
+    g.style.transform = done ? 'translateX(0)' : 'translateX(-100%)';
     s = null;
     setTimeout(() => {
       view.style.transition = view.style.transform = '';
