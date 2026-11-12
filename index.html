@@ -142,6 +142,11 @@ img{max-width:100%}
 .me-head{display:flex;align-items:center;gap:var(--sp-l);padding-top:var(--sp-xl)}
 .me-av{flex:none;width:52px;height:52px;font-size:20px}
 .me-photo{object-fit:cover;padding:0}
+.me-head--gate{justify-content:space-between}
+.me-gate{max-width:360px;margin:var(--sp-xl) auto 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--sp-s)}
+.me-gate h2{margin:0;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15;color:var(--ink)}
+.me-gate p{margin:0 0 var(--sp-m);font-size:15.5px;line-height:1.5;color:var(--ink-secondary)}
+.me-gate .gsi{width:100%;display:flex;flex-direction:column;align-items:center}
 .me-photo-row{display:flex;align-items:center;gap:var(--sp-m);margin:var(--sp-s) 0 var(--sp-l)}
 .me-photo-big{flex:none;width:64px;height:64px;font-size:24px}
 .me-photo-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 var(--sp-l);cursor:pointer}
@@ -6166,7 +6171,31 @@ function meTile(q){
       ${opt ? `<span class="me-pick" style="background:${esc(p.bg)};color:${esc(p.text)}"><span>${esc(key)} · ${esc(L(opt.label))}</span></span>` : ''}
     </button>`;
 }
+/* Me is for members (founder, 12 Nov): a guest who opens it is asked to
+   sign up. Settings stay reachable, so language can always be changed. */
+function meGate(){
+  return `<div class="page page--me">
+    <header class="me-head me-head--gate">
+      <span></span>
+      <button type="button" class="me-menu" data-me-settings="1" aria-label="${t('Settings','设置')}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </header>
+    <div class="me-gate">
+      <svg class="me-empty-art" viewBox="0 0 220 150" aria-hidden="true">
+        <rect x="40" y="18" width="140" height="114" rx="16" fill="var(--surface)" stroke="var(--hairline-card)"/>
+        <circle cx="110" cy="58" r="20" fill="var(--chip)"/>
+        <rect x="74" y="90" width="72" height="9" rx="4.5" fill="var(--ink)" opacity=".75"/>
+        <rect x="86" y="106" width="48" height="8" rx="4" fill="var(--accent)"/>
+      </svg>
+      <h2>${t('Keep track of your thinking','记录你的思考')}</h2>
+      <p>${t('Sign up to see your answers and likes here, and keep talking with the thinkers. Free, 15 messages a day.',
+        '注册后，你的回答与喜欢都会出现在这里，还能继续与思想家对话。免费，每天 15 条消息。')}</p>
+      ${googleButton()}
+    </div>
+  </div>${ME_SETTINGS ? meSettings() : ''}`;
+}
 function meView(){
+  if(googleOn() && !AUTH.session) return meGate();
   const qs = questions();
   const voted = qs.filter(q => state.votes[q.id]);
   const liked = qs.filter(q => state.likes['question:' + q.id]);
