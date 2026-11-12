@@ -1583,6 +1583,24 @@ button.sim-tag:hover{color:var(--ink)}
 .rep-add input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 .rep-shot{display:flex;align-items:center;gap:var(--sp-m)}
 .rep-shot img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--hairline)}
+/* Editors (Docs/editor-role.md): the drafts strip, the draft tag and banner,
+   and the rating sheet's stars. Same tokens as the app's Theme.swift. */
+.ed-drafts{display:flex;flex-direction:column;gap:inherit;padding-bottom:var(--sp-l);
+           border-bottom:1px solid var(--hairline-strong);margin-bottom:var(--sp-s)}
+.ed-drafts .section-h{margin:0;padding:0 var(--sp-xs)}
+.ed-lede{margin:0;padding:0 var(--sp-xs);font-size:13.5px;line-height:1.45;color:var(--ink-secondary)}
+.ed-tag{display:inline-block;vertical-align:1px;margin-left:var(--sp-xs);padding:2px 8px;font-size:11px;
+        font-weight:600;letter-spacing:.02em;border-radius:var(--r-pill);background:var(--ink);color:var(--accent)}
+.ed-banner{margin:0 16px var(--sp-m);padding:10px 12px;font-size:13.5px;line-height:1.45;
+           color:var(--ink);background:var(--chip);border-radius:var(--r-chip)}
+.ed-stars{display:flex;gap:var(--sp-xs)}
+.ed-stars button{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-pill);
+                 color:var(--ink-tertiary)}
+.ed-stars button svg{width:28px;height:28px}
+.ed-stars button.on{color:var(--ink)}
+.ed-stars button.on svg{fill:currentColor}
+.ed-stars button:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.ed-word{margin:calc(-1 * var(--sp-xs)) 0 0;font-size:14px;color:var(--ink-secondary)}
 .empty{padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-tertiary)}
 
 /* ---------------------------------------------------------------------------
@@ -1880,6 +1898,8 @@ const FLAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
    fills its flag, remembered on this device. */
 let REPORTS_SENT = (() => { try{ return new Set(JSON.parse(localStorage.getItem('still.reportsSent') || '[]')); }catch(e){ return new Set(); } })();
 const reportBtn = key => {
+  // On a draft, an editor's flag rates it instead (EDITOR, below).
+  if(isDraftKey(key)) return rateBtn(key);
   const sent = REPORTS_SENT.has(key);
   return `<button class="icon-btn${sent ? ' on' : ''}" data-report="${esc(key)}" aria-haspopup="dialog"
   aria-label="${sent ? t('Reported','已举报') : t('Report','举报')}">${sent ? FLAG.replace('<path d="M5 4h11', '<path fill="currentColor" d="M5 4h11') : FLAG}</button>`;
@@ -1979,6 +1999,152 @@ document.addEventListener('change', async ev => {
   catch(e){ f.err = t("That image couldn't be read.", '无法读取这张图片。'); }
   if(REPORT === f) render();
 });
+/* --- Editors (Docs/editor-role.md) ---------------------------------------
+   A few trusted accounts rate the AI-drafted posts before they go live. An
+   editor signed in here gets the drafts from the gate (GET /v1/editor/drafts,
+   editors only; never in assets/), sees them above Home's feed, and on a
+   draft the flag opens the rating sheet: 1-5 stars for the question and an
+   optional note (POST /v1/editor/feedback). Drafts are kept in memory only,
+   never in this browser's storage, and stay out of the Answers book and the
+   thinkers' pages. Everyone else, and every published post, is unchanged. */
+let EDITOR = { on: false, drafts: [], mine: {} };
+const isDraftQ = id => EDITOR.on && EDITOR.drafts.includes(id);
+function isDraftKey(key){
+  const [kind, id] = String(key).split(/:(.*)/s);
+  if(kind === 'question') return isDraftQ(id);
+  const r = kind === 'response' ? (C.responses || []).find(x => x.id === id) : null;
+  return !!(r && r.draft && isDraftQ(r.questionId));
+}
+const STAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"'
+  + ' stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9'
+  + ' 6.8 19.6l1-5.8-4.3-4.1 5.9-.9z"/></svg>';
+function rateBtn(key){
+  const [kind, id] = String(key).split(/:(.*)/s);
+  const qid = kind === 'question' ? id : ((C.responses || []).find(x => x.id === id) || {}).questionId;
+  const rated = !!EDITOR.mine[qid];
+  return `<button class="icon-btn${rated ? ' on' : ''}" data-rate="${esc(key)}" aria-haspopup="dialog"
+    aria-label="${rated ? t('Rated — change your rating','已评分，修改评分') : t('Rate this draft','给这篇草稿评分')}">${
+    rated ? FLAG.replace('<path d="M5 4h11', '<path fill="currentColor" d="M5 4h11') : FLAG}</button>`;
+}
+/* Take out any drafts merged earlier, then merge these: the question as
+   status "draft", its replies marked draft, and voices and works only where
+   the published content lacks them. */
+function setDrafts(list){
+  C.questions = C.questions.filter(q => q.status !== 'draft');
+  C.responses = C.responses.filter(r => !r.draft);
+  EDITOR.drafts = []; EDITOR.mine = {};
+  for(const d of list || []){
+    const b = d && d.bundle; if(!b || !b.question) continue;
+    // Already published (the drafts table catches up on the next upload): the reader's copy wins.
+    if(byId(C.questions, b.question.id)) continue;
+    C.questions.push({ ...b.question, status: 'draft' });
+    for(const r of b.responses || []) C.responses.push({ ...r, draft: true });
+    for(const v of b.voices || []) if(!byId(C.voices, v.id)) C.voices.push(v);
+    for(const w of b.works || []) if(!byId(C.works, w.id)) C.works.push(w);
+    EDITOR.drafts.push(b.question.id);
+    if(d.mine) EDITOR.mine[b.question.id] = d.mine;
+  }
+}
+async function refreshEditor(){
+  if(!AGENT_URL || PREVIEW || !C) return;
+  if(!AUTH.session){ if(EDITOR.on || EDITOR.drafts.length){ setDrafts([]); EDITOR.on = false; render(); } return; }
+  try{
+    const me = await fetch(AGENT_URL + '/v1/me', { headers: agentHeaders({}) }).then(r => r.ok ? r.json() : null);
+    const on = !!(me && me.account && me.account.editor);
+    let list = [];
+    if(on){
+      const r = await fetch(AGENT_URL + '/v1/editor/drafts', { headers: agentHeaders({}) });
+      if(r.ok) list = ((await r.json()).drafts) || [];
+    }
+    EDITOR.on = on; setDrafts(on ? list : []);
+    render();
+  }catch(e){ /* offline: no drafts, nothing else changes */ }
+}
+const RATE_WORDS = () => [t('Not for Still','不适合 Still'), t('Weak','偏弱'), t('Fine','还行'),
+  t('Good','不错'), t('Excellent','非常好')];
+let RATE = null;   // { key, qid, rid, stars, comment, sending, err }
+function openRate(key){
+  const [kind, id] = String(key).split(/:(.*)/s);
+  const rid = kind === 'response' ? id : null;
+  const qid = rid ? ((C.responses || []).find(x => x.id === rid) || {}).questionId : id;
+  const mine = EDITOR.mine[qid];
+  RATE = { key, qid, rid, stars: mine ? mine.stars : 0, comment: rid ? '' : ((mine && mine.comment) || ''),
+           sending: false, err: '' };
+  render();
+  setTimeout(() => { const b = document.querySelector('.ed-stars button'); if(b) b.focus(); }, 300);
+}
+function rateDialog(){
+  if(!RATE) return '';
+  const f = RATE, words = RATE_WORDS();
+  const r = f.rid ? (C.responses || []).find(x => x.id === f.rid) : null;
+  const v = r ? byId(C.voices, r.voiceId) : null;
+  return `<div class="backdrop" data-rate-cancel="1"></div>
+    <div class="modal sheet fb-sheet ed-sheet" role="dialog" aria-modal="true" aria-labelledby="ed-t">
+      <header><b id="ed-t">${t('Rate this draft','给这篇草稿评分')}</b></header>
+      <div class="fb-body">
+        ${v ? `<p class="fb-note">${t(`About ${esc(L(v.name))}'s reply. Your stars still rate the whole question.`,
+          `关于${esc(L(v.name))}的回复。星级仍是给整个问题的评分。`)}</p>` : ''}
+        <div class="ed-stars" role="radiogroup" aria-label="${t('How good is this question?','这个问题有多好？')}">
+          ${[1,2,3,4,5].map(n => `<button type="button" role="radio" data-rate-star="${n}"
+            class="${n <= f.stars ? 'on' : ''}" aria-checked="${n === f.stars}"
+            aria-label="${n} · ${esc(words[n - 1])}">${STAR}</button>`).join('')}
+        </div>
+        <p class="ed-word" aria-hidden="true">${f.stars ? esc(words[f.stars - 1]) : t('How good is this question?','这个问题有多好？')}</p>
+        <textarea id="ed-comment" rows="4" maxlength="2000"
+          placeholder="${t("What works, what doesn't? (optional)",'哪里好，哪里不好？（可选）')}"
+          aria-label="${t("What works, what doesn't? (optional)",'哪里好，哪里不好？（可选）')}">${esc(f.comment)}</textarea>
+        <p class="fb-note">${t('Only editors see drafts. Your stars and note go to Still and shape the drafts to come.',
+          '只有编辑能看到草稿。你的评分和说明会发送给 Still，用来改进之后的草稿。')}</p>
+        ${f.err ? `<p class="fb-err" role="alert">${esc(f.err)}</p>` : ''}
+      </div>
+      <footer class="fb-row">
+        <button type="button" class="fb-cancel" data-rate-cancel="1">${t('Cancel','取消')}</button>
+        <button type="button" class="fb-send" data-rate-send="1"${f.sending || !f.stars ? ' disabled' : ''}>${
+          f.sending ? t('Sending…','发送中…') : t('Send rating','提交评分')}</button>
+      </footer>
+    </div>`;
+}
+async function sendRate(){
+  const f = RATE; if(!f || f.sending || !f.stars) return;
+  const box = document.getElementById('ed-comment'); if(box) f.comment = box.value;
+  const body = { post_id: f.qid, response_id: f.rid, stars: f.stars, comment: f.comment.trim(),
+    platform: 'web', lang };
+  f.sending = true; f.err = ''; render();
+  let status = 0;
+  try{
+    const r = await fetch(AGENT_URL + '/v1/editor/feedback', { method: 'POST',
+      headers: agentHeaders({ 'content-type': 'application/json' }), body: JSON.stringify(body) });
+    status = r.status;
+    if(!r.ok) throw new Error('rate ' + r.status);
+  }catch(e){
+    if(RATE !== f) return;
+    f.sending = false;
+    f.err = status === 403 ? t('This account is no longer an editor.','这个账户已不再是编辑。')
+      : status === 404 ? t('This draft has changed or been published. Reload to see the latest.','这篇草稿已更改或已发布。请刷新查看最新版本。')
+      : t("Couldn't send it. Check your connection and try again.", '没能发送。请检查网络后再试。');
+    return render();
+  }
+  if(!f.rid) EDITOR.mine[f.qid] = { stars: f.stars, comment: f.comment.trim() || null, at: new Date().toISOString() };
+  else if(!EDITOR.mine[f.qid]) EDITOR.mine[f.qid] = { stars: f.stars, comment: null, at: new Date().toISOString() };
+  RATE = null; reported = f.key; render();
+  setTimeout(() => { if(reported === f.key){ reported = null; render(); } }, 2400);
+}
+document.addEventListener('keydown', ev => {
+  if(RATE && ev.key === 'Escape' && !RATE.sending){ ev.preventDefault(); RATE = null; render(); }
+});
+document.addEventListener('input', ev => {
+  if(ev.target.id === 'ed-comment' && RATE) RATE.comment = ev.target.value;
+});
+/* Home's drafts strip, editors only. */
+function draftsSection(){
+  const qs = EDITOR.on ? EDITOR.drafts.map(id => byId(C.questions, id)).filter(Boolean) : [];
+  if(!qs.length) return '';
+  return `<section class="ed-drafts" aria-labelledby="ed-h">
+      <h3 class="section-h" id="ed-h">${t('Drafts · editors only','草稿 · 仅编辑可见')}</h3>
+      <p class="ed-lede">${t('Not public yet. Open one, then rate it with the flag.','尚未公开。打开一篇，再用旗子给它评分。')}</p>
+      ${qs.map(q => questionCard(q, false)).join('')}
+    </section>`;
+}
 document.addEventListener('input', ev => {
   if(ev.target.id !== 'rep-comment' || !REPORT) return;
   REPORT.comment = ev.target.value;
@@ -2217,7 +2383,9 @@ function questionCard(q, flat){
   const chosen = state.votes[q.id] ?? null;
   const liked = !!state.likes['question:'+q.id];
   const joined = q.joined || 0;
-  const close = joined > 0
+  const close = q.status === 'draft'
+    ? t('Read every reply, then rate the draft with the flag.','读完所有回复，再用旗子给草稿评分。')
+    : joined > 0
     ? (chosen == null
         ? t(`Answer to open the thread. ${num(joined)} living have already answered.`,
             `作答后即可展开讨论。已有 ${num(joined)} 位在世的人作答。`)
@@ -2228,7 +2396,8 @@ function questionCard(q, flat){
   return `
   <article class="card ${flat?'card--flat':''} q ${flat?'q--flat':''}" data-open="${flat?'':esc(q.id)}">
     <div class="q-top">
-      <span class="q-date">${esc(dateLabel(q.date))}</span>
+      <span class="q-date">${esc(dateLabel(q.date))}${q.status === 'draft'
+        ? ` <span class="ed-tag">${t('Draft','草稿')}</span>` : ''}</span>
       <button class="icon-btn ${liked?'on':''}" data-like="question:${esc(q.id)}"
               aria-label="${t('Like','喜欢')}" aria-pressed="${liked}">
         <svg viewBox="0 0 24 24" fill="${liked?'currentColor':'none'}" stroke="currentColor"
@@ -2248,7 +2417,7 @@ function questionCard(q, flat){
     <div class="opts">${q.options.map(o => optionRow(q,o,chosen)).join('')}</div>
     <p class="q-close">${esc(close)}</p>
     ${reportNote('question:'+q.id)}
-    ${chosen != null && !flat
+    ${(chosen != null || q.status === 'draft') && !flat
       ? `<button class="wide" data-open="${esc(q.id)}">${t('Open the thread','打开讨论')}</button>` : ''}
   </article>`;
 }
@@ -2345,6 +2514,7 @@ function homeView(){
   // The question under review leads the preview's feed, whatever its date.
   if(PREVIEW && PV) qs = qs.filter(q => q.id === PV.open).concat(qs.filter(q => q.id !== PV.open));
   return `<div class="page"><div class="feed">
+    ${PREVIEW ? '' : draftsSection()}
     ${qs.map(q => questionCard(q,false)).join('')}
   </div></div>`;
 }
@@ -2369,6 +2539,8 @@ function threadView(id, filter){
   // Wide screens: the question and its vote pinned on the left, the
   // comments scrolling beside it. Narrower, one column as before.
   return `<div class="page page--thread"><div class="t-left">
+    ${q.status === 'draft' ? `<p class="ed-banner" role="note">${t('Draft — not public. Only editors see it; the flag rates it.',
+      '草稿——尚未公开。只有编辑能看到；用旗子给它评分。')}</p>` : ''}
     <div style="padding:0 16px">${questionCard(q,true)}</div>
     </div><div class="t-right">
 
@@ -2582,7 +2754,7 @@ function passageOf(r){
 }
 
 function quotable(){
-  return C.responses.filter(r => r.quote && L(r.quote) && r.source && r.source.label);
+  return C.responses.filter(r => !r.draft && r.quote && L(r.quote) && r.source && r.source.label);
 }
 let INTERP_OPEN = false;
 /* The person behind a voice who can be talked to: a roster entry for a
@@ -3000,7 +3172,7 @@ function philView(id){
         <p class="meta">${t("Their texts are in Still's library. A full page is not written yet.",'他们的著作已收入 Still 的文库。完整介绍尚未写成。')}</p></div></div>
       ${chatButton(p)}</div></div>`;
   const v = p.voiceId ? byId(C.voices, p.voiceId) : null;
-  const said = v ? C.responses.filter(r => r.voiceId === v.id) : [];
+  const said = v ? C.responses.filter(r => r.voiceId === v.id && !r.draft) : [];
   const threads = [...new Set(said.map(r => r.questionId))];
   const works = v ? (v.workIds || []).map(w => byId(C.works, w)).filter(Boolean) : [];
   const wiki = `https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki)}`;
@@ -3245,9 +3417,9 @@ function emptyPane(){
    they "focus on"), then the newest questions. Picking one sends it. */
 function suggestions(cast){
   const vids = new Set(cast.map(p => p.voiceId).filter(Boolean));
-  const theirs = [...new Set(C.responses.filter(r => vids.has(r.voiceId))
+  const theirs = [...new Set(C.responses.filter(r => vids.has(r.voiceId) && !r.draft)
     .map(r => r.questionId))];
-  const qs = theirs.concat(C.questions.map(q => q.id))
+  const qs = theirs.concat(C.questions.filter(q => q.status !== 'draft').map(q => q.id))
     .filter((id, i, a) => a.indexOf(id) === i)
     .map(id => byId(C.questions, id)).filter(Boolean).slice(0, 3);
   if(!qs.length) return '';
@@ -4566,7 +4738,10 @@ const AUTH = (() => {
 })();
 const googleOn = () => !!GOOGLE_WEB_CLIENT_ID && !!AGENT_URL;
 function setSession(s){
+  const was = AUTH.session;
   AUTH.session = (s && s.session) || ''; AUTH.email = (s && s.email) || ''; AUTH.name = (s && s.name) || '';
+  // Signed in or out: an editor's drafts come or go with the session.
+  if(was !== AUTH.session) setTimeout(refreshEditor);
   try{ AUTH.session ? localStorage.setItem('still.session', JSON.stringify(
       { session: AUTH.session, email: AUTH.email, name: AUTH.name })) : localStorage.removeItem('still.session'); }catch(e){}
 }
@@ -4684,7 +4859,9 @@ function accountSection(){
       <p>${t('Sign in to keep talking with the thinkers. Once signed in, you can sign out or delete your account here.','登录后可以继续与思想家对话。登录后，可以在这里退出或删除账户。')}</p>
       ${googleButton()}</section>`;
   return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
-      <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b></p>
+      <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b>${
+        EDITOR.on ? ` <span class="ed-tag">${t('Editor','编辑')}</span>` : ''}</p>
+      ${EDITOR.on ? `<p class="fb-note">${t('Drafts waiting for review appear at the top of Home.','待评审的草稿显示在首页顶部。')}</p>` : ''}
       ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
       <div class="me-acct-row">
         <button type="button" class="ghost" data-sign-out="1"${AUTH.busy ? ' disabled' : ''}>${t('Sign out','退出登录')}</button>
@@ -6055,7 +6232,7 @@ function mapList(){
 function voiceView(id){
   const v = byId(C.voices, id);
   if(!v) return `<div class="empty">${t('Not found','没有找到')}</div>`;
-  const said = C.responses.filter(r => r.voiceId === v.id);
+  const said = C.responses.filter(r => r.voiceId === v.id && !r.draft);
   const threads = [...new Set(said.map(r => r.questionId))];
   const works = (v.workIds||[]).map(w => byId(C.works, w)).filter(Boolean);
   const img = v.image;
@@ -6342,7 +6519,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog();
+  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -6777,6 +6954,17 @@ document.addEventListener('click', ev => {
                + 'have just said. Do not address the reader.');
   }
 
+  if((el = hit('[data-rate]'))){ reported = null; openRate(el.dataset.rate); return; }
+  if((el = hit('[data-rate-cancel]'))){ if(RATE && !RATE.sending){ RATE = null; render(); } return; }
+  if((el = hit('[data-rate-send]'))){ sendRate(); return; }
+  if((el = hit('[data-rate-star]'))){
+    if(RATE && !RATE.sending){
+      const box = document.getElementById('ed-comment'); if(box) RATE.comment = box.value;
+      RATE.stars = +el.dataset.rateStar; render();
+      setTimeout(() => { const b = document.querySelector(`[data-rate-star="${RATE && RATE.stars}"]`); if(b) b.focus(); });
+    }
+    return;
+  }
   if((el = hit('[data-report]'))){ reported = null; openReport(el.dataset.report); return; }
   if((el = hit('[data-rep-cancel]'))){ if(REPORT && !REPORT.sending){ REPORT = null; render(); } return; }
   if((el = hit('[data-rep-send]'))){ sendReport(); return; }
@@ -6810,7 +6998,8 @@ document.addEventListener('click', ev => {
 
   if((el = hit('[data-open]')) && el.dataset.open){
     // Unanswered, the card says why it will not open yet, as the app does.
-    if(state.votes[el.dataset.open] == null){ ANSWER_FIRST = true; render();
+    // A draft opens straight away: an editor reads it before deciding.
+    if(state.votes[el.dataset.open] == null && !isDraftQ(el.dataset.open)){ ANSWER_FIRST = true; render();
       setTimeout(() => { const b = document.querySelector('.af button'); if(b) b.focus(); }); return; }
     LEDE_OPEN = false;
     return go({tab:stack[0].tab, thread:el.dataset.open});
@@ -7166,6 +7355,7 @@ Promise.all([
   // A first visit lands straight on Home: the welcome waits for a sign-up
   // (openOnboarding, founder, B44).
   render(); model();
+  refreshEditor();
   // ./?chat=<philosopher id> opens a chat with them (map.html links here).
   // The parameter is dropped so a reload does not start a second chat.
   const want = new URLSearchParams(location.search).get('chat');
