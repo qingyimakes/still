@@ -141,6 +141,11 @@ img{max-width:100%}
 .page--me{padding-left:16px;padding-right:16px}
 .me-head{display:flex;align-items:center;gap:var(--sp-l);padding-top:var(--sp-xl)}
 .me-av{flex:none;width:52px;height:52px;font-size:20px}
+.me-photo{object-fit:cover;padding:0}
+.me-photo-row{display:flex;align-items:center;gap:var(--sp-m);margin:var(--sp-s) 0 var(--sp-l)}
+.me-photo-big{flex:none;width:64px;height:64px;font-size:24px}
+.me-photo-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 var(--sp-l);cursor:pointer}
+.me-field-k{display:block;margin:0 0 6px;font-size:14px;font-weight:600;color:var(--ink)}
 .me-id{flex:1;min-width:0}
 .me-id h1{margin:0;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15}
 .me-id p{margin:2px 0 0;font-size:14.5px;color:var(--ink-secondary)}
@@ -4668,9 +4673,10 @@ function googleButton(){
 /* The Me page's account section: sign in, or who is signed in, Sign out
    and Delete account. */
 function accountSection(){
-  if(!googleOn()) return '';
+  if(!googleOn()) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
+      <p>${t('Sign-in is not available on this page.','此页面暂不支持登录。')}</p></section>`;
   if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
-      <p>${t('Sign in to keep talking with the thinkers.','登录后可以继续与思想家对话。')}</p>
+      <p>${t('Sign in to keep talking with the thinkers. Once signed in, you can sign out or delete your account here.','登录后可以继续与思想家对话。登录后，可以在这里退出或删除账户。')}</p>
       ${googleButton()}</section>`;
   return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b></p>
@@ -6127,8 +6133,29 @@ function workView(id){ return bookView('w:' + id); }
 /* Me, as the app has it: who you are on this device, what you have done,
    and your answers as tiles. The settings (name, language, topics, the
    rule, erase) sit behind the menu button, as the app's Settings sheet. */
-let ME_TAB = 'votes', ME_SETTINGS = false, ME_NAME = '';
-try{ ME_NAME = localStorage.getItem('still.name') || ''; }catch(e){}
+let ME_TAB = 'votes', ME_SETTINGS = false, ME_NAME = '', ME_PHOTO = '';
+try{ ME_NAME = localStorage.getItem('still.name') || ''; ME_PHOTO = localStorage.getItem('still.photo') || ''; }catch(e){}
+/* The reader's picture: chosen here, kept in this browser only (a small
+   square JPEG), never uploaded. The initial stands in without one. */
+function meAvatar(cls){
+  const name = ME_NAME.trim() || t('Reader','读者');
+  return ME_PHOTO ? `<img class="av ${cls} me-photo" src="${esc(ME_PHOTO)}" alt="">`
+    : `<span class="av ${cls}" aria-hidden="true">${esc(name[0].toUpperCase())}</span>`;
+}
+function setPhotoFrom(file){
+  if(!file || !/^image\//.test(file.type)) return;
+  const img = new Image(), url = URL.createObjectURL(file);
+  img.onload = () => {
+    const n = 192, c = document.createElement('canvas'); c.width = c.height = n;
+    const k = Math.min(img.width, img.height);
+    c.getContext('2d').drawImage(img, (img.width - k) / 2, (img.height - k) / 2, k, k, 0, 0, n, n);
+    URL.revokeObjectURL(url);
+    ME_PHOTO = c.toDataURL('image/jpeg', .85);
+    try{ localStorage.setItem('still.photo', ME_PHOTO); }catch(e){}
+    render();
+  };
+  img.src = url;
+}
 function meTile(q){
   const key = state.votes[q.id];
   const opt = key && (q.options || []).find(o => o.key === key);
@@ -6149,7 +6176,7 @@ function meView(){
       aria-selected="${ME_TAB === k}">${label}</button>`;
   return `<div class="page page--me">
     <header class="me-head">
-      <span class="av me-av" aria-hidden="true">${esc(name[0].toUpperCase())}</span>
+      ${meAvatar('me-av')}
       <div class="me-id"><h1>${esc(name)}</h1><p>${t('Your answers, likes and settings','你的回答、喜欢与设置')}</p></div>
       <button type="button" class="me-menu" data-me-settings="1" aria-label="${t('Settings','设置')}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
@@ -6195,11 +6222,15 @@ function meSettings(){
       <button class="x" type="button" data-me-close="1" aria-label="${t('Close','关闭')}">×</button></header>
     <div class="me-sheet-body">
       ${accountSection()}
-      <section><h3>${t('Your name','你的名字')}</h3>
-        <p>${t('How Still greets you.','Still 用来称呼你。')}</p>
+      <section><h3>${t('Profile','个人资料')}</h3>
+        <div class="me-photo-row">${meAvatar('me-photo-big')}
+          <label class="ghost me-photo-btn">${ME_PHOTO ? t('Change photo','更换照片') : t('Add a photo','添加照片')}
+            <input id="me-photo-file" type="file" accept="image/*" hidden></label>
+          ${ME_PHOTO ? `<button type="button" class="linkish" data-photo-remove="1">${t('Remove','移除')}</button>` : ''}</div>
+        <label class="me-field-k" for="me-name">${t('Your name','你的名字')}</label>
         <input id="me-name" type="text" maxlength="40" autocomplete="off" placeholder="${t('Reader','读者')}" value="${esc(ME_NAME)}"></section>
       <section><h3>${t('Language','语言')}</h3>
-        <p>${t('Interface and all explanations','界面与全部释义的语言')}</p>
+        <p>${t('Interface and all explanations. When you chat, the thinkers reply in the language you write in.','界面与全部释义的语言。聊天时，思想家会用你输入的语言回复。')}</p>
         <div class="seg">
           <button data-lang="en" aria-pressed="${lang==='en'}">English</button>
           <button data-lang="zh" aria-pressed="${lang==='zh'}">中文</button>
@@ -6411,6 +6442,7 @@ document.addEventListener('click', ev => {
   }
   if((el = hit('[data-rp]'))){ RP_OPEN = !RP_OPEN; return render(); }
   if((el = hit('[data-ob-skip]'))) return finishOnboarding(null);
+  if(hit('[data-photo-remove]')){ ME_PHOTO = ''; try{ localStorage.removeItem('still.photo'); }catch(e){} return render(); }
   if((el = hit('[data-ob-again]'))){ ME_SETTINGS = false; openOnboarding(true); return render(); }
   if((el = hit('[data-ob-topic]'))){
     const id = el.dataset.obTopic;
@@ -6908,6 +6940,7 @@ document.addEventListener('keydown', ev => {
 });
 
 document.addEventListener('input', ev => {
+  if(ev.target.id === 'me-photo-file'){ setPhotoFrom(ev.target.files && ev.target.files[0]); return; }
   if(ev.target.id === 'me-name'){ ME_NAME = ev.target.value; try{ localStorage.setItem('still.name', ME_NAME.trim()); }catch(e){} return; }
   if(ev.target.id === 'agent-key'){
     const s = ev.target.form && ev.target.form.querySelector('.key-save');
