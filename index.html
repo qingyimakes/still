@@ -2160,7 +2160,7 @@ document.addEventListener('input', ev => {
 });
 function avatar(name, image, cls){
   const inner = image && image.file
-    ? `<img src="${IMG}${esc(image.file)}" alt="" loading="lazy">`
+    ? `<img src="${IMG}${esc(image.file)}" alt="" ${lazy(IMG + image.file)}>`
     : esc(initial(name));
   return `<div class="av ${cls||''}">${inner}</div>`;
 }
@@ -2654,7 +2654,7 @@ function subTitle(orig, shown, en, tag){
    from a book Still does not have shows nothing (founder, B38). */
 function refBook(w, v){
   const face = w.image && w.image.file
-    ? `<img src="${IMG}${esc(w.image.file)}" alt="" loading="lazy">`
+    ? `<img src="${IMG}${esc(w.image.file)}" alt="" ${lazy(IMG + w.image.file)}>`
     : `<span>${esc(initial(workTitle(w)))}</span>`;
   // The author in full, as the reply header gives it: "Mill" read as
   // someone else (founder, B38).
@@ -2670,7 +2670,7 @@ const workTitle = w => (lang === 'zh' && w.title && (!w.title.zh || w.title.zh =
 function bookCard(w){
   return `<button class="card book-card" data-work="${esc(w.id)}">
     <div class="cover">${w.image && w.image.file
-      ? `<img src="${IMG}${esc(w.image.file)}" alt="" loading="lazy">`
+      ? `<img src="${IMG}${esc(w.image.file)}" alt="" ${lazy(IMG + w.image.file)}>`
       : `<span>${esc(workTitle(w))}</span>`}</div>
     <div><h4>${esc(workTitle(w))}</h4>${subTitle(FEATURED_ORIG[w.id], workTitle(w), w.title.en, 'p')}<p class="by">${esc(L(w.author))}</p></div>
     <p>${esc(L(w.why))}</p>
@@ -2917,7 +2917,7 @@ function linkAvatar(p, cls){
 }
 
 function castAvatar(p, cls){
-  const img = p.image ? `<img src="${IMG}${esc(p.image)}" alt="" loading="lazy">` : esc(initial(p.name));
+  const img = p.image ? `<img src="${IMG}${esc(p.image)}" alt="" ${lazy(IMG + p.image)}>` : esc(initial(p.name));
   return `<div class="av ${cls||''}">${img}</div>`;
 }
 
@@ -5915,6 +5915,14 @@ function exploreRows(){
                new: (a, b) => (b.born ?? -1e9) - (a.born ?? -1e9), az: (a, b) => pn(a).localeCompare(pn(b), lang) };
   return rows.sort(by[EF.sort] || by.rank);
 }
+/* Pictures load lazily the first time; once one has loaded, every later
+   draw of it is eager, so returning to a page doesn't blank and re-show it
+   (founder, 12 Nov: Explore portraits blinked on every return). */
+function imgSeen(){ return window.__imgSeen || (window.__imgSeen = new Set()); }
+document.addEventListener('load', ev => {
+  const t = ev.target; if(t && t.tagName === 'IMG') imgSeen().add(t.getAttribute('src'));
+}, true);
+function lazy(src){ return imgSeen().has(src) ? 'decoding="sync"' : 'loading="lazy"'; }
 function exploreTile(row){
   // A roster person with thread content opens their page; anyone else
   // opens a conversation with them.
@@ -6040,7 +6048,7 @@ function booksSection(p, v){
   };
   const cover = w => {
     const img = w.work && w.work.image && w.work.image.file;
-    const face = img ? `<img src="${IMG}${esc(img)}" alt="" loading="lazy">` : `<span>${esc(title(w))}</span>`;
+    const face = img ? `<img src="${IMG}${esc(img)}" alt="" ${lazy(IMG + img)}>` : `<span>${esc(title(w))}</span>`;
     return `<span class="cover">${face}</span>`;
   };
   const toggle = `<div class="seg books-view" role="group" aria-label="${t('Show works as','著作显示方式')}">
