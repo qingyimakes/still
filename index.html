@@ -121,13 +121,15 @@ img{max-width:100%}
   left:0;right:0;top:calc(-1 * env(safe-area-inset-top,0px));bottom:-14px;
   background:linear-gradient(var(--bg) 70%,rgba(250,250,250,0))}
 .brand{font-family:var(--serif);font-style:italic;font-size:17px}
-.bar .back{position:absolute;left:12px;top:50%;transform:translateY(-50%);
-           width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
-           justify-content:center;background:rgba(255,255,255,.92);
+/* Every back button is the same round chevron, as the app's system back:
+   no words, the label is for screen readers. */
+.bar .back,.rback{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
+           justify-content:center;flex:none;color:var(--ink);background:rgba(255,255,255,.92);
            backdrop-filter:blur(20px) saturate(180%);
            -webkit-backdrop-filter:blur(20px) saturate(180%);
            box-shadow:0 1px 6px rgba(36,50,53,.10)}
-.bar .back svg{width:22px;height:22px}
+.bar .back{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+.bar .back svg,.rback svg{width:22px;height:22px}
 
 /* --- Page scaffold ------------------------------------------------------- */
 .page{padding:16px 0 calc(96px + var(--nav-lift))}
@@ -164,6 +166,18 @@ img{max-width:100%}
 .me-sheet-body section h3{margin:0;font-size:16px;font-weight:700}
 .me-sheet-body section p{margin:4px 0 var(--sp-s);font-size:14.5px;color:var(--ink-secondary)}
 .me-data dl{margin:var(--sp-xs) 0 0}
+/* Sign in with Google: Google draws the button; we keep its row. */
+.gsi{display:flex;flex-direction:column;align-items:center;gap:var(--sp-xs);margin-top:var(--sp-m)}
+.gsi-slot{width:100%;max-width:400px;min-height:44px;display:flex;justify-content:center}
+.gsi-note,.gsi-err{margin:0;font-size:13px;line-height:1.45;text-align:center;color:var(--ink-secondary)}
+.gsi-err{color:var(--danger)}
+.acc-or-code{display:block;margin:var(--sp-s) auto 0;font-size:14px}
+.acc-or{margin:var(--sp-l) 0 0;font-size:12.5px;color:var(--ink-tertiary);text-align:center}
+.me-acct p b{color:var(--ink);font-weight:600}
+.me-acct-row{display:flex;gap:var(--sp-s);margin-top:var(--sp-m);flex-wrap:wrap}
+.me-acct-row .ghost{min-height:44px;padding:0 var(--sp-l)}
+.me-acct-del{color:var(--danger)}
+.me-ob-again{display:inline-block;margin-top:var(--sp-m);font-size:14px;min-height:32px}
 .me-data dt{font-size:13px;font-weight:600;color:var(--ink);margin-top:var(--sp-s)}
 .me-data dd{margin:2px 0 0;font-size:14.5px;line-height:1.45;color:var(--ink-secondary)}
 .me-sheet input#me-name{margin:0;width:100%;font-size:16px}
@@ -370,7 +384,7 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .row-body > .reach{margin-top:var(--sp-l)}
 /* B16: label the reach note so it isn't read as part of the reply (matches the app's meta style). */
 .reach-k{font-family:var(--sans);font-style:normal;font-size:13px}
-.row-body > .readmore{margin-top:var(--sp-xs)}
+.row-body > .ref-book{margin-top:var(--sp-m)}
 .row-body > .row-foot{margin-top:var(--sp-m)}
 .row-name{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .row-name b{font-size:16.5px;font-weight:700}
@@ -382,6 +396,7 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .quotebox q{font-family:var(--serif);font-size:19px;line-height:1.516;quotes:"\201C" "\201D"}
 .quotebox .src{font-size:13.5px;font-weight:500;color:var(--ink-secondary)}
 .quotebox .src u{text-underline-offset:2px}
+.quotebox .src button{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer}
 .claim{font-size:17px;font-weight:500;line-height:1.494;margin:0}
 .detail{font-size:16.5px;line-height:1.564;color:var(--text-body-soft);margin:0}
 .reach{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.4;
@@ -396,6 +411,16 @@ html.ob-open,html.ob-open body{overflow:hidden}
        scrollbar-width:none}
 
 .shelf::-webkit-scrollbar{display:none}
+/* A quoted Still book under a reply: Explore's cover, compact, in a row. */
+.ref-book{display:flex;align-items:center;gap:var(--sp-m);width:100%;min-height:44px;text-align:left;
+  padding:var(--sp-s) var(--sp-m) var(--sp-s) var(--sp-s);border:1px solid var(--hairline-strong);
+  border-radius:var(--r-inner);background:var(--surface);color:inherit;font:inherit;cursor:pointer}
+.ref-book .cover{width:40px;flex:none;padding:0}
+.ref-book .cover span{font-size:19px}
+.ref-book .ref-t{flex:1;min-width:0}
+.ref-book b{display:block;font-size:15px;font-weight:500;line-height:1.35;color:var(--ink)}
+.ref-book small{display:block;margin-top:2px;font-size:13px;line-height:1.35;color:var(--ink-secondary)}
+.ref-book .ref-go{flex:none;font-size:20px;color:var(--ink-tertiary)}
 .book-card{flex:none;width:196px;padding:16px;display:flex;flex-direction:column;
            gap:12px;text-align:left}
 .cover{aspect-ratio:2/3;border-radius:4px;background:var(--parchment);overflow:hidden;
@@ -644,10 +669,20 @@ html.on-answers .page--answers{overflow-x:clip}
 .ml summary b{flex:1}
 .ml summary span{font-size:12.5px;color:var(--ink-secondary)}
 .ml ul{font-size:14px;line-height:1.5;padding-bottom:var(--sp-m)}
+/* Zoom: only a phone gets it. A wider screen fits the graph to its width. */
+.map-box{position:relative}
+.map-zoom{display:none;position:absolute;right:var(--sp-s);bottom:var(--sp-s);gap:var(--sp-xs)}
+.map-zoom button{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  color:var(--ink);background:var(--surface);border:1px solid var(--hairline-strong)}
+.map-zoom svg{width:18px;height:18px}
 @media (max-width:639px){
-  /* A phone: the graph would be unreadable, so the same links as a list. */
-  .map-scroll,.map-legend,.map-card{display:none}
-  .map-list{display:block}
+  /* A phone, as the app: the graph in a box you scroll both ways, with
+     zoom buttons, the tapped thinker's card under it, then every thinker's
+     links as a list. */
+  .map-scroll{max-height:420px;overscroll-behavior:contain}
+  .map{width:calc(1180px * var(--mz,.55));min-width:0}
+  .map-zoom{display:flex}
+  .map-list{display:block;margin-top:var(--sp-l)}
 }
 .explore-h{padding:0 20px;margin:28px 0 0;display:flex;align-items:center;gap:var(--sp-s)}
 .books-head{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-m);
@@ -885,8 +920,9 @@ body.resizing{cursor:col-resize;user-select:none}
 .empty-pane h3{font-family:var(--serif);font-size:24px;margin:0;font-weight:400}
 .empty-pane p{font-size:14.5px;line-height:1.5;color:var(--ink-tertiary);margin:0;
               max-width:34ch}
-.cback{flex:none;width:32px;height:32px;display:grid;place-items:center;
-       margin-left:-6px;color:var(--ink)}
+.cback{flex:none;width:36px;height:36px;display:grid;place-items:center;
+       border-radius:50%;color:var(--ink);background:rgba(255,255,255,.92);
+       box-shadow:0 1px 6px rgba(36,50,53,.10)}
 .cback svg{width:20px;height:20px}
 
 /* Conversation header */
@@ -1035,6 +1071,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .said-fold .chev{flex:none;transition:transform .15s ease}
 .said-fold[open] .chev{transform:rotate(180deg)}
 .said-fold .said{margin-top:6px}
+.note-fold .detail{margin-top:6px}
 .said-more summary{font-size:12.5px;font-weight:500;color:var(--ink-secondary);cursor:pointer;
                    list-style:none;padding:2px 0}
 .said-more summary::-webkit-details-marker{display:none}
@@ -1172,6 +1209,8 @@ body.resizing{cursor:col-resize;user-select:none}
 .code-head .ghost{justify-self:start}
 .acc-sheet--code .keyform{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-s);padding-top:var(--sp-xs)}
 .acc-sheet--code .keyform input{margin:0;width:100%;flex:none;font-size:16px;padding:12px 16px}
+/* One ring on focus, not the page's outline around the field's own border. */
+.keyform input:focus,.keyform input:focus-visible{outline:0;border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
 .acc-sheet--code .keyform p{margin:0}
 .key-save{min-height:40px;padding:0 var(--sp-xl);border-radius:var(--r-pill);background:var(--ink);
   color:var(--on-ink);font-size:15px;font-weight:500}
@@ -1294,6 +1333,9 @@ button.sim-tag:hover{color:var(--ink)}
   html.modal-typing .modal{top:calc(var(--vv-top, 0px) + var(--sp-s));bottom:auto;left:var(--sp-s);right:var(--sp-s);
     border-radius:20px;max-height:calc(var(--vv-h, 100dvh) - var(--sp-l))}
   html.modal-typing .modal::before{display:none}
+  /* A card, not a sheet: no home-bar room under it, so no empty band. */
+  html.modal-typing .modal{padding-bottom:0}
+  html.modal-typing .modal .acc-sheet-body{padding-bottom:var(--sp-l)}
   .mmenu.upanel{padding:var(--sp-l) var(--sp-xl) calc(var(--sp-xxl) + env(safe-area-inset-bottom,0px))}
 }
 /* The conversation's first line, in the meta style; it scrolls away. */
@@ -1439,6 +1481,19 @@ button.sim-tag:hover{color:var(--ink)}
   .modal.pick{top:0;max-height:none;border-radius:0;padding-top:env(safe-area-inset-top,0px);box-shadow:none}
 }
 .modal footer .wide{margin:0}
+/* The new-chat sheet's three ways in (B46). */
+.pick-seg{flex:none;margin:0 20px 12px}
+.askpane{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.askpane textarea{font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);resize:vertical;
+  background:var(--surface);border:1px solid var(--hairline-strong);border-radius:var(--r-inner,16px);padding:12px 14px}
+.askpane .ghost{align-self:flex-start}
+.askpane .ghost[disabled]{opacity:.4}
+.srow{display:flex;align-items:flex-start;gap:12px;padding:9px 4px;border-bottom:1px solid var(--hairline)}
+.srow .meta{flex:1;min-width:0}
+.srow b{font-size:16px;font-weight:500;display:block}
+.srow .meta > span{font-size:13.5px;line-height:1.4;color:var(--ink-secondary)}
+.srow .sdrop{flex:none;width:28px;height:28px;border-radius:50%;background:var(--chip);
+  color:var(--ink-secondary);font-size:16px;line-height:28px;text-align:center}
 .modal footer .wide[disabled]{opacity:.35}
 
 .prow{display:flex;align-items:center;gap:12px;width:100%;padding:9px 4px;
@@ -1484,6 +1539,20 @@ button.sim-tag:hover{color:var(--ink)}
              /* Brought into view when it opens (see [data-report]): clear of the
                 top bar and of the tab bar floating over the bottom. */
              scroll-margin:72px 0 calc(96px + var(--nav-lift))}
+.me-privacy{margin-top:var(--sp-m);display:flex;gap:var(--sp-l)}
+.agree{margin:var(--sp-xs) 0 0;font-size:12px;line-height:1.45;color:var(--ink-tertiary);text-align:center}
+.agree a{color:inherit;text-underline-offset:2px}
+.keyform .agree{text-align:left;align-self:stretch}
+.cfoot .agree{padding:0 var(--sp-xs)}
+.me-privacy a{font-size:14px;color:var(--ink);text-underline-offset:2px}
+.report-note--ok{color:var(--ink-secondary);background:var(--chip-soft)}
+.icon-btn.on[data-report]{color:var(--ink)}
+.rep-add{display:flex;align-items:baseline;gap:var(--sp-xs);font-size:14.5px;color:var(--ink);cursor:pointer;
+        text-decoration:underline;text-underline-offset:2px}
+.rep-add small{font-size:13px;color:var(--ink-secondary);text-decoration:none}
+.rep-add input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.rep-shot{display:flex;align-items:center;gap:var(--sp-m)}
+.rep-shot img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--hairline)}
 .empty{padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-tertiary)}
 
 /* ---------------------------------------------------------------------------
@@ -1567,13 +1636,13 @@ button.sim-tag:hover{color:var(--ink)}
 @media (pointer:coarse){
   .icon-btn,.cback,.avlink,.add,.crow-more,.how,.ring,.mchip,.simlink,.x,
   .derive-link,.fpill,.selchip,.pill,.readmore,.kind,.books-view button,
-  .bk-links a,.books .get a,.linkish,.said .src a,.quotebox .src a,.tile-books,
+  .bk-links a,.books .get a,.linkish,.said .src a,.quotebox .src a,.quotebox .src button,.tile-books,
   .seg button,.credit a{position:relative}
   .icon-btn::after,.cback::after,.avlink::after,.add::after,.crow-more::after,.how::after,
   .ring::after,.mchip::after,.simlink::after,.x::after,.derive-link::after,.fpill::after,
   .selchip::after,.pill::after,.readmore::after,.kind::after,.books-view button::after,
   .bk-links a::after,.books .get a::after,.linkish::after,.said .src a::after,
-  .quotebox .src a::after,.seg button::after,.credit a::after{
+  .quotebox .src a::after,.quotebox .src button::after,.seg button::after,.credit a::after{
     content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);
     transform:translate(-50%,-50%)}
   /* Grown outright where the size reads fine. */
@@ -1635,8 +1704,8 @@ button.sim-tag:hover{color:var(--ink)}
 
 <div class="app">
   <header class="bar" id="bar">
-    <button class="back" id="back" hidden>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    <button class="back" id="back" type="button" aria-label="Back" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
            stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <span class="brand">Still</span>
@@ -1663,6 +1732,10 @@ button.sim-tag:hover{color:var(--ink)}
 --------------------------------------------------------------------------- */
 
 const IMG = 'assets/img/';
+/* ?preview, inside an iframe: the editor's preview (see "Preview" by Boot).
+   The content comes from the editor instead of assets/content.json, and
+   nothing is read from or written to this browser's storage. */
+const PREVIEW = new URLSearchParams(location.search).has('preview') && window.parent !== window;
 let C = null;                 // content.json
 let lang = 'en';
 let state = { votes:{}, likes:{} };
@@ -1691,7 +1764,11 @@ const OB = { open: false, step: 0, sel: [], moved: false };
    cast, its own history, and its own record of which philosophers have
    already shown a real passage. */
 let chat = { convos: [], open: null, busy:false, query:'', filter:'all',
-             picking:false, pending: [], typing:null, draft:'', seeded:false };
+             picking:false, pending: [], typing:null, draft:'', seeded:false,
+             // The new-chat sheet (B46): one / several / ask, the question,
+             // the suggestions (null, 'finding' or a list), and a question
+             // carried into picking when suggest failed.
+             newMode:'one', askQ:'', suggest:null, carried:null };
 
 /* --- Storage. Every access can throw (private windows, blocked site data),
        and the page has to render correctly when it does. ------------------ */
@@ -1724,12 +1801,14 @@ function load(){
   }catch(e){ ONBOARDED = true; /* storage blocked: never trap anyone in a welcome */ }
 }
 function saveTopics(){
+  if(PREVIEW) return;
   try{
     localStorage.setItem('still.topics', JSON.stringify(PICKS));
     if(ONBOARDED) localStorage.setItem('still.onboarded', new Date().toISOString());
   }catch(e){}
 }
 function save(){
+  if(PREVIEW) return;
   try{
     localStorage.setItem('still.state', JSON.stringify(state));
     localStorage.setItem('still.lang', lang);
@@ -1766,13 +1845,115 @@ const initial = name => (name || '?').trim()[0] || '?';
 const FLAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"'
   + ' stroke-linecap="round" stroke-linejoin="round">'
   + '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>';
-/* The app logs a report on the device and can hand it to Mail. The web port
-   has neither, so the button says so rather than pretending to send. */
-const reportBtn = key => `<button class="icon-btn" data-report="${esc(key)}"
-  aria-label="${t('Report','举报')}">${FLAG}</button>`;
+/* Report: the flag opens a sheet (B39) that sends a note, an optional
+   screenshot and which item it is to Still (/v1/report). A sent report
+   fills its flag, remembered on this device. */
+let REPORTS_SENT = (() => { try{ return new Set(JSON.parse(localStorage.getItem('still.reportsSent') || '[]')); }catch(e){ return new Set(); } })();
+const reportBtn = key => {
+  const sent = REPORTS_SENT.has(key);
+  return `<button class="icon-btn${sent ? ' on' : ''}" data-report="${esc(key)}" aria-haspopup="dialog"
+  aria-label="${sent ? t('Reported','已举报') : t('Report','举报')}">${sent ? FLAG.replace('<path d="M5 4h11', '<path fill="currentColor" d="M5 4h11') : FLAG}</button>`;
+};
 const reportNote = key => reported === key
-  ? `<p class="report-note">${t('Reporting is in the app — it logs on the device and can be handed to Mail. This page cannot send anything.','举报功能在 App 内：记录在设备上，并可通过邮件发送。此页面无法发送任何内容。')}</p>`
+  ? `<p class="report-note report-note--ok" role="status">${t('Thanks — sent','谢谢，已发送')}</p>`
   : '';
+let REPORT = null;   // { key, kind, id, comment, shot, sending, err }
+function openReport(key){
+  const [kind, id] = String(key).split(/:(.*)/s);
+  REPORT = { key, kind, id, comment: '', shot: '', sending: false, err: '' };
+  render();
+  setTimeout(() => { const b = document.getElementById('rep-comment'); if(b) b.focus(); }, 300);
+}
+function reportDialog(){
+  if(!REPORT) return '';
+  const f = REPORT, q = f.kind === 'question';
+  return `<div class="backdrop" data-rep-cancel="1"></div>
+    <div class="modal sheet fb-sheet rep-sheet" role="dialog" aria-modal="true" aria-labelledby="rep-t">
+      <header><b id="rep-t">${q ? t('Report this question','举报这个问题') : t('Report this reply','举报这条回复')}</b></header>
+      <div class="fb-body">
+        <textarea id="rep-comment" rows="4" maxlength="2000" required
+          placeholder="${t("What's wrong?",'哪里有问题？')}"
+          aria-label="${t("What's wrong?",'哪里有问题？')}">${esc(f.comment)}</textarea>
+        ${f.shot ? `<div class="rep-shot"><img src="${esc(f.shot)}" alt="${t('Screenshot','截图')}">
+            <button type="button" class="linkish" data-rep-shot-remove="1">${t('Remove','移除')}</button></div>`
+          : `<label class="rep-add"><input type="file" accept="image/*" id="rep-file">
+            <span>${t('Add a screenshot','添加截图')}</span> <small>${t('(optional)','（可选）')}</small></label>`}
+        <p class="fb-note">${q ? t('This sends your note, the screenshot and which question it is to Still.',
+          '这会把你的说明、截图和对应问题发送给 Still。') : t('This sends your note, the screenshot and which reply it is to Still.',
+          '这会把你的说明、截图和对应回复发送给 Still。')}</p>
+        ${f.err ? `<p class="fb-err" role="alert">${esc(f.err)}</p>` : ''}
+      </div>
+      <footer class="fb-row">
+        <button type="button" class="fb-cancel" data-rep-cancel="1">${t('Cancel','取消')}</button>
+        <button type="button" class="fb-send" data-rep-send="1"${f.sending || !f.comment.trim() ? ' disabled' : ''}>${
+          f.sending ? t('Sending…','发送中…') : t('Send report','发送举报')}</button>
+      </footer>
+    </div>`;
+}
+/* A screenshot, made small on the device: at most 1600px on its long side,
+   JPEG, under 500 KB (the server's limit). Quality steps down first, then
+   the size, until it fits. */
+async function shrinkShot(file){
+  const url = URL.createObjectURL(file);
+  try{
+    const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = url; });
+    let k = Math.min(1, 1600 / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement('canvas');
+    for(let pass = 0; pass < 4; pass++, k *= .75){
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      for(let q = .85; q >= .35; q -= .1){
+        const d = c.toDataURL('image/jpeg', q);
+        if(d.length * .75 <= 5e5) return d;
+      }
+    }
+    return '';
+  }finally{ URL.revokeObjectURL(url); }
+}
+async function sendReport(){
+  const f = REPORT; if(!f || f.sending) return;
+  const box = document.getElementById('rep-comment'); if(box) f.comment = box.value;
+  if(!f.comment.trim()) return;
+  if(!AGENT_URL){ f.err = t("Reports can't be sent from this page.", '这个页面无法发送举报。'); return render(); }
+  let questionId = null, voice = null;
+  if(f.kind === 'question') questionId = f.id;
+  else { const rr = (C.responses || []).find(x => x.id === f.id);
+    if(rr){ questionId = rr.questionId || null; voice = rr.voiceId || null; } }
+  const body = { platform: 'web', lang, target: { kind: f.kind, id: f.id, questionId, voice },
+    comment: f.comment.trim(), screenshot: f.shot || null, page: location.href };
+  f.sending = true; f.err = ''; render();
+  try{
+    const r = await fetch(AGENT_URL + '/v1/report', { method: 'POST',
+      headers: agentHeaders({ 'content-type': 'application/json' }), body: JSON.stringify(body) });
+    if(!r.ok) throw new Error('report ' + r.status);
+  }catch(e){
+    if(REPORT !== f) return;
+    f.sending = false;
+    f.err = t("Couldn't send it. Check your connection and try again.", '没能发送。请检查网络后再试。');
+    return render();
+  }
+  REPORTS_SENT.add(f.key);
+  try{ localStorage.setItem('still.reportsSent', JSON.stringify([...REPORTS_SENT])); }catch(e){}
+  REPORT = null; reported = f.key; render();
+  setTimeout(() => { if(reported === f.key){ reported = null; render(); } }, 2400);
+}
+document.addEventListener('keydown', ev => {
+  if(REPORT && ev.key === 'Escape' && !REPORT.sending){ ev.preventDefault(); REPORT = null; render(); }
+});
+document.addEventListener('change', async ev => {
+  if(ev.target.id !== 'rep-file' || !REPORT) return;
+  const file = ev.target.files && ev.target.files[0]; if(!file) return;
+  const box = document.getElementById('rep-comment'); if(box) REPORT.comment = box.value;
+  const f = REPORT;
+  try{ f.shot = await shrinkShot(file); if(!f.shot) f.err = t('That image is too large.', '图片太大。'); }
+  catch(e){ f.err = t("That image couldn't be read.", '无法读取这张图片。'); }
+  if(REPORT === f) render();
+});
+document.addEventListener('input', ev => {
+  if(ev.target.id !== 'rep-comment' || !REPORT) return;
+  REPORT.comment = ev.target.value;
+  const b = document.querySelector('[data-rep-send]'); if(b && !REPORT.sending) b.disabled = !ev.target.value.trim();
+});
 function avatar(name, image, cls){
   const inner = image && image.file
     ? `<img src="${IMG}${esc(image.file)}" alt="" loading="lazy">`
@@ -1855,7 +2036,8 @@ function navAnimate(ghost, kind){
     navReduced() ? 220 : 380);
 }
 function go(entry){ reported = null; stack.push(entry); NAV = 'push';
-  try{ history.pushState({ still: stack.length }, ''); }catch(e){}
+  // In the editor's iframe, history is the editor's: back must not leave it.
+  if(!PREVIEW) try{ history.pushState({ still: stack.length }, ''); }catch(e){}
   render(); window.scrollTo(0,0); }
 addEventListener('popstate', () => {
   if(NAV_SKIP_POP){ NAV_SKIP_POP--; return; }
@@ -1933,7 +2115,7 @@ function back(){ reported = null;
   if(chat.picking){ chat.picking = false; return render(); }
   if(chat.open && stack[0].tab === 'chat' && stack.length === 1){ closeConvo(); return; }
   if(stack.length > 1){ stack.pop(); NAV = 'pop';
-    NAV_SKIP_POP++; try{ history.back(); }catch(e){ NAV_SKIP_POP--; }
+    if(!PREVIEW){ NAV_SKIP_POP++; try{ history.back(); }catch(e){ NAV_SKIP_POP--; } }
     render(); } }
 
 /* --- Views --------------------------------------------------------------- */
@@ -1959,14 +2141,17 @@ function optionRow(q, o, chosen){
 /* A destructive step asks first, in a centred dialog with Cancel and a red
    action (founder, B24): deleting a conversation, erasing this browser's
    answers. Never an anchored popover, never window.confirm. */
-let CONFIRM = null;   // { kind: 'convo', id } | { kind: 'erase' }
+let CONFIRM = null;   // { kind: 'convo', id } | { kind: 'erase' } | { kind: 'account' }
 function confirmDialog(){
   if(!CONFIRM) return '';
-  const convoAsk = CONFIRM.kind === 'convo';
-  const title = convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Erase what this browser remembers?','清除这个浏览器记住的内容？');
-  const body = convoAsk ? t("It's removed from this browser. This can't be undone.",'它会从这个浏览器中移除，且无法撤销。')
-                        : t("Your answers and likes. This can't be undone.",'你的回答与喜欢。此操作无法撤销。');
-  const act = convoAsk ? t('Delete','删除') : t('Erase','清除');
+  const convoAsk = CONFIRM.kind === 'convo', acct = CONFIRM.kind === 'account';
+  const title = acct ? t('Delete your account?','删除你的账户？')
+    : convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Erase what this browser remembers?','清除这个浏览器记住的内容？');
+  const body = acct ? t("Still deletes your account and what it keeps with it, and you're signed out. This can't be undone.",
+                        'Still 会删除你的账户及其保存的内容，并让你退出登录。此操作无法撤销。')
+    : convoAsk ? t("It's removed from this browser. This can't be undone.",'它会从这个浏览器中移除，且无法撤销。')
+               : t("Your answers and likes. This can't be undone.",'你的回答与喜欢。此操作无法撤销。');
+  const act = acct ? t('Delete','删除') : convoAsk ? t('Delete','删除') : t('Erase','清除');
   return `<div class="backdrop" data-confirm-cancel="1"></div>
     <div class="af af--confirm" role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-d">
       <b id="cf-t">${title}</b>
@@ -2058,13 +2243,11 @@ function onboardSheet(){
   const body = OB.step === 0 ? `
       <p class="ob-brand">Still</p>
       <h1 class="ob-h" id="ob-title">${t("Old voices. Today's questions.", '旧的声音，今天的问题。')}</h1>
-      <p class="ob-p">${t('Every day, one question from modern life, taken to thinkers, writers and traditions of the past — what they argued, in their own words, with the sources.',
-        '每天，一个来自现代生活的问题，被带到过去的思想家、作者与传统面前 — 他们主张什么，用他们自己的原话，附上出处。')}</p>
-      <p class="ob-note">${t('Nobody is brought back to life, and nobody is impersonated. These are their ideas, carried into a question they never saw.',
-        '这里没有人被复活，也没有人被模仿。这些是他们的思想，被带到一个他们从未见过的问题面前。')}</p>
+      <p class="ob-p">${t('One modern question a day, and what past thinkers wrote that bears on it.',
+        '每天一个现代问题，以及过去思想家写下的相关文字。')}</p>
       ${AGENT_URL ? `<div class="ob-rp"><span class="ob-rp-tag">${t('Research preview','研究预览')}</span><p>${t(
-        "The thinkers' replies are generated from their texts and can be wrong. Sourced lines are quoted; everything else is simulation.",
-        '思想家的回复由其著作生成，可能出错。有出处的是原文引用，其余为模拟。')}</p></div>` : ''}`
+        "Replies are AI-written from their texts and can be wrong. Only sourced lines are quotes.",
+        '回复由 AI 依据其著作写成，可能出错。只有标注出处的才是原文。')}</p></div>` : ''}`
     : `
       <h1 class="ob-h" id="ob-title">${t('What do you want to think about?', '你想思考什么？')}</h1>
       <p class="ob-p">${t('Pick at least three. They only change the order of Home — nothing is hidden, because the point is often the question you did not pick.',
@@ -2107,14 +2290,25 @@ document.addEventListener('keydown', ev => {
 function finishOnboarding(picks){
   if(picks) PICKS = picks.slice();
   ONBOARDED = true; OB.open = false; saveTopics();
-  stack = [{ tab: 'home' }]; render(); window.scrollTo(0, 0);
+  // It opens over wherever the reader signed up (often a chat) or from Me:
+  // closing it leaves them there. Skipping keeps the default topics.
+  render();
+}
+/* The welcome (Welcome, then Topics) shows once, right after a sign-up:
+   the first Google sign-in that creates an account, or, while sign-in is
+   off, the first access code entered here. `again` is Me's "Show the
+   welcome again", which opens it whatever happened before. */
+function openOnboarding(again){
+  if(!again && ONBOARDED) return;
+  OB.open = true; OB.step = 0; OB.moved = false; OB.sel = PICKS.slice();
 }
 
 function homeView(){
-  const qs = homeOrder(questions());
+  let qs = homeOrder(questions());
+  // The question under review leads the preview's feed, whatever its date.
+  if(PREVIEW && PV) qs = qs.filter(q => q.id === PV.open).concat(qs.filter(q => q.id !== PV.open));
   return `<div class="page"><div class="feed">
     ${qs.map(q => questionCard(q,false)).join('')}
-    <p class="footer-note" style="padding:8px 8px 0">${esc(S('footer'))}</p>
   </div></div>`;
 }
 
@@ -2142,6 +2336,7 @@ function threadView(id, filter){
     </div><div class="t-right">
 
     <h3 class="section-h" style="padding-left:24px">${t('What the thinkers say','思想家们怎么说')}</h3>
+    <p class="footer-note" style="padding:0 24px;margin:-4px 0 8px">${t('Positions inferred from their writings and summarised by AI. Quotations are their own, sourced.','立场据其著作推断、由 AI 概述；引文为原话，注明出处。')}</p>
     <div class="pills">
       ${pill('all', t('All','全部'))}
       ${q.options.map(o => pill(o.key, o.key)).join('')}
@@ -2153,8 +2348,6 @@ function threadView(id, filter){
     ${books.length ? `
       <h3 class="section-h" style="padding-left:24px">${esc(S('books'))}</h3>
       <div class="shelf">${books.map(bookCard).join('')}</div>` : ''}
-
-    <p class="footer-note">${esc(S('footer'))}</p>
   </div></div>`;
 }
 
@@ -2163,14 +2356,15 @@ function responseRow({r, v}, q){
   const opt = (q.options.find(o => o.key === r.optionKey) || {});
   const liked = !!state.likes['response:'+r.id];
   const src = r.source || {};
-  const link = src.url || (v.wiki ? `https://en.wikipedia.org/wiki/${encodeURIComponent(v.wiki)}` : null);
+  // The source opens one of Still's books, or is plain text (founder, B38).
+  const book = src.label ? quotedWork(src.label, v) : null;
 
   return `
   <article class="row">
     <button data-voice="${esc(v.id)}" aria-label="${esc(L(v.name))}">${avatar(L(v.name), v.image)}</button>
     <div class="row-body">
       <div class="row-name">
-        <b>${esc(L(v.name))}</b><span>${esc(kindLabel(r.kind))}</span>
+        <b>${esc(fullName(v))}</b><span>${esc(kindLabel(r.kind))}</span>
       </div>
       <span class="voted" style="background:${esc(p.bg)};color:${esc(p.text)}">${
         t('Voted for ','投给 ')}${esc(r.optionKey)} · ${esc(L(opt.label))}</span>
@@ -2178,17 +2372,19 @@ function responseRow({r, v}, q){
       ${r.quote && L(r.quote) && src.label ? `
         <div class="quotebox">
           <q>${esc(L(r.quote))}</q>
-          <span class="src">— ${src.url
-            ? `<a href="${esc(src.url)}" target="_blank" rel="noopener"><u>${esc(L(src.label))}</u></a>`
-            : `<u>${esc(L(src.label))}</u>`}</span>
+          <span class="src">— ${book
+            ? `<button type="button" data-work="${esc(book.id)}"><u>${esc(L(src.label))}</u></button>`
+            : esc(L(src.label))}</span>
         </div>` : ''}
 
       <p class="claim">${esc(L(r.claim))}</p>
-      ${r.detail ? `<p class="detail">${esc(L(r.detail))}</p>` : ''}
-      ${r.extra ? `<p class="detail">${esc(L(r.extra))}</p>` : ''}
+      ${(r.detail || r.extra) ? `<details class="said-fold note-fold" data-k="${esc('note:'+r.id)}"${FOLD_OPEN.has('note:'+r.id) ? ' open' : ''}>
+        <summary><span>${t('Editor’s note','编者按')}</span>${FOLD_CHEV}</summary>
+        ${r.detail ? `<p class="detail">${esc(L(r.detail))}</p>` : ''}
+        ${r.extra ? `<p class="detail">${esc(L(r.extra))}</p>` : ''}
+      </details>` : ''}
       ${v.reach ? `<p class="reach"><span class="reach-k">${t('Known for: ','代表性贡献：')}</span>${esc(L(v.reach.note))}</p>` : ''}
-      ${link ? `<a class="readmore" href="${esc(link)}" target="_blank" rel="noopener">${
-        esc(S('readMore'))}</a>` : ''}
+      ${book ? refBook(book, v) : ''}
 
       <div class="row-foot">
         <span class="origin">${esc(L(r.origin))}</span>
@@ -2217,6 +2413,22 @@ function subTitle(orig, shown, en, tag){
   if(!t2 || t2 === shown) return '';
   const el = tag || 'span';
   return `<${el} class="orig-t"${orig && orig.lang ? ` lang="${esc(orig.lang)}"` : ''}>${esc(t2)}</${el}>`;
+}
+/* Under a reply: the Still book its quote comes from, as a small card that
+   opens the book's page. Replaces the old outside "read more" link; a quote
+   from a book Still does not have shows nothing (founder, B38). */
+function refBook(w, v){
+  const face = w.image && w.image.file
+    ? `<img src="${IMG}${esc(w.image.file)}" alt="" loading="lazy">`
+    : `<span>${esc(initial(workTitle(w)))}</span>`;
+  // The author in full, as the reply header gives it: "Mill" read as
+  // someone else (founder, B38).
+  const by = [(v && fullName(v)) || L(w.author), L(w.year)].filter(Boolean).join(' · ');
+  return `<button type="button" class="ref-book" data-work="${esc(w.id)}">
+    <span class="cover">${face}</span>
+    <span class="ref-t"><b>${esc(workTitle(w))}</b>${by ? `<small>${esc(by)}</small>` : ''}</span>
+    <span class="ref-go" aria-hidden="true">›</span>
+  </button>`;
 }
 const workTitle = w => (lang === 'zh' && w.title && (!w.title.zh || w.title.zh === w.title.en) && FEATURED_ZH[w.id])
   ? FEATURED_ZH[w.id] : L(w.title);
@@ -2351,6 +2563,17 @@ function draw(){
 
 /* A voice's full name: the roster's (Hume → David Hume), else its
    Wikipedia title for a person, else the voice's own name (texts, schools). */
+/* The Still book a reply's source line quotes, if it is one: a work of this
+   voice (listed on it, or by the same author) whose title the source names.
+   The longest title wins. Same rule as the app's ContentStore.quotedWork. */
+function quotedWork(label, v){
+  const source = String((label && label.en) || '').toLowerCase();
+  const author = String((v && v.name && v.name.en) || '').toLowerCase();
+  return (C.works || [])
+    .filter(w => (v.workIds || []).includes(w.id) || String((w.author && w.author.en) || '').toLowerCase().includes(author))
+    .filter(w => w.title && w.title.en && source.includes(w.title.en.toLowerCase()))
+    .sort((a, b) => b.title.en.length - a.title.en.length)[0] || null;
+}
 function fullName(v){
   if(!v) return '';
   const p = PHIL.find(x => x.voiceId === v.id);
@@ -2807,9 +3030,6 @@ function philView(id){
         }).join('')}
       </div>` : ''}
 
-    <a class="readmore" style="display:inline-block;margin-top:20px"
-       href="${esc(wiki)}" target="_blank" rel="noopener">${
-       t('Read about them on Wikipedia','在维基百科上了解他们')} ↗</a>
 
     ${pic ? `<p class="credit">${esc(t('Image','图片'))}: ${esc(pic.licence||'')}${
       pic.credit ? ' · ' + esc(pic.credit) : ''}${pic.sourceUrl
@@ -3136,7 +3356,24 @@ function howPanel(){
    active model's cap. Tapping the ring shows the usage line. */
 function composerMeta(){
   const note = micLine();
-  return note ? `<div class="cmeta">${note}</div>` : '';
+  return (note ? `<div class="cmeta">${note}</div>` : '') + guestAgree();
+}
+/* Agreeing to the Terms (founder, replacing the consent sheet): one quiet
+   line beside the sign-in and the access-code Save, and, for a guest who has
+   not sent anything yet, under the message box. No checkbox, no sheet, and
+   nothing waits on it. */
+const TERMS_LINKS = () => [`<a href="terms?lang=${lang}" target="_blank" rel="noopener">${t('Terms','条款')}</a>`,
+  `<a href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy Policy','隐私政策')}</a>`];
+function agreeLine(verb){
+  const [tm, pv] = TERMS_LINKS();
+  return `<p class="agree">${verb === 'send'
+    ? t(`By sending, you agree to the ${tm} and ${pv}.`, `发送即表示你同意${tm}和${pv}。`)
+    : t(`By continuing you agree to the ${tm} and ${pv}.`, `继续即表示你同意${tm}和${pv}。`)}</p>`;
+}
+let SENT_ONCE = (() => { try{ return localStorage.getItem('still.sentOnce') === '1'; }catch(e){ return false; } })();
+function guestAgree(){
+  if(!AGENT_URL || SENT_ONCE || AGENT_KEY || AUTH.session) return '';
+  return agreeLine('send');
 }
 /* The model pill and today's-use ring, inside the box on the left of its
    bottom row (founder: the composer should look like Claude's). */
@@ -3158,7 +3395,7 @@ function modelControls(){
     return `<span class="mchip mchip--wait">${t('Auto','自动')}</span>`;
   }
   const name = cur.id === 'auto' ? t('Auto','自动') : modelName(cur.id);
-  const frac = usageFraction(cur.id);
+  const frac = myFraction();
   const r = 7, len = 2 * Math.PI * r;
   return `
       <button type="button" class="mchip" data-mchip="1" aria-haspopup="menu"
@@ -3185,40 +3422,53 @@ function modelControls(){
    row per limit that applies to the current choice, in messages, with a
    bar and when it resets. */
 function usagePanel(){
-  const cur = agentChoice(); if(!cur) return '';
-  const groups = usageGroups();
-  const ids = cur.id === 'auto'
-    ? (cur.chain || []).map(groupOf).filter((v, i, a) => a.indexOf(v) === i)
-    : [groupOf(cur.id)];
-  const rows = ids.map(g => ({ g, u: groups[g] })).filter(x => x.u && x.u.replies_cap);
-  const name = g => g === 'claude' ? 'Claude' : modelName(g);
+  const m = MY, guest = m && /^(guest|free)$/.test(m.kind || '');
   const resets = (() => {
-    const at = rows[0] && rows[0].u.resets_at; if(!at) return '';
-    const d = new Date(at);
+    if(!m || !m.resets_at) return '';
+    const d = new Date(m.resets_at);
     return isNaN(d) ? '' : d.toLocaleTimeString(lang === 'zh' ? 'zh-CN' : 'en-US', { hour:'numeric', minute:'2-digit' });
   })();
+  const f = myFraction();
+  const line = !m ? t('Checking…','正在查询…')
+    : guest ? t(`${m.used} of ${m.cap} free messages`, `已用 ${m.used}/${m.cap} 条免费消息`)
+    : m.cap ? t(`${m.used} of ${m.cap} messages used today`, `今天已用 ${m.used}/${m.cap} 条消息`)
+    : t(`${m.used} messages today`, `今天 ${m.used} 条消息`);
   return `<div class="mback uback" data-usage-close="1"></div>
     <div class="mmenu upanel" role="dialog" aria-label="${t("Today's use","今日用量")}">
       <div class="up-top"><button type="button" class="up-x" data-usage-close="1" aria-label="${t('Close','关闭')}">
         <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         <b>${t("Today's use","今日用量")}</b><span class="up-x-pad"></span></div>
-      ${resets ? `<div class="up-head"><span>${t(`Resets ${resets}`, `${resets} 重置`)}</span></div>` : ''}
-      ${rows.length ? rows.map(({ g, u }) => {
-        const f = Math.min(1, u.replies / u.replies_cap);
-        return `<div class="up-row">
-          <div class="up-line"><span>${esc(name(g))}</span>
-            <span>${t(`${u.replies_left} of ${u.replies_cap} messages left`, `剩 ${u.replies_left}/${u.replies_cap} 条`)}</span></div>
-          <div class="up-bar${f >= .9 ? ' low' : ''}"><i style="width:${(f * 100).toFixed(1)}%"></i></div>
-        </div>`;
-      }).join('') : `<div class="up-row">
-          <div class="up-line"><span>${t('Nothing used yet today','今天还没有使用')}</span></div>
-          <div class="up-bar"><i style="width:0%"></i></div>
-          <p class="up-none">${AGENT_KEY
-            ? t('Your access code gives 60 messages a day. They reset at midnight.','你的访问码每天可发 60 条消息，午夜重置。')
-            : t('Your first message is free. After that, an access code gives 60 messages a day.','第一条消息免费。之后，访问码每天可发 60 条消息。')}</p>
-        </div>`}
+      <div class="up-row">
+        <div class="up-line"><span>${line}</span>${resets ? `<span>${t(`Resets ${resets}`, `${resets} 重置`)}</span>` : ''}</div>
+        <div class="up-bar${f >= .9 ? ' low' : ''}"><i style="width:${(f * 100).toFixed(1)}%"></i></div>
+        ${guest ? `<p class="up-none">${t('After that, an access code gives 15 messages a day.','之后，访问码每天可发 15 条消息。')}</p>` : ''}
+      </div>
       ${usageAccess()}
     </div>`;
+}
+/* The reader's own count, never the agent's per-model totals (founder,
+   B45: it said "Nothing used yet today" after real chats). From GET /v1/me
+   when the panel opens, and from the x-still-used / x-still-cap headers on
+   every /v1/ask. Accepts {kind, used, cap, resets_at} and the signed-in
+   {account, usage:{used, cap, resets_at}}. */
+let MY = null;
+function myFraction(){ return MY && MY.cap ? Math.min(1, (MY.used || 0) / MY.cap) : 0; }
+function noteMyUse(h){
+  const used = h.get('x-still-used'), cap = h.get('x-still-cap');
+  if(used == null || used === '') return;
+  MY = Object.assign({}, MY || {}, { used: +used }, cap != null && cap !== '' ? { cap: +cap } : {});
+}
+async function refreshMe(){
+  if(!AGENT_URL) return;
+  try{
+    const r = await fetch(AGENT_URL + '/v1/me', { headers: agentHeaders({}) });
+    if(!r.ok) return;
+    const j = await r.json();
+    const u = j && (j.usage || j);
+    if(u && u.used != null) MY = { kind: j.kind || u.kind || (j.account ? 'account' : ''),
+      used: +u.used || 0, cap: u.cap == null ? null : +u.cap, resets_at: u.resets_at || '' };
+    render();
+  }catch(e){}
 }
 /* Under the use: the way to more of it. No code yet, the request-access
    flow; a code saved, the code (masked) and a way to change it, through the
@@ -3239,25 +3489,6 @@ function closeUsage(){
   setTimeout(() => { const b = document.querySelector('[data-usage]'); if(b) b.focus(); });
 }
 
-/* The tighter of the active model's caps: Groq replies, or Claude's replies
-   and dollars, whichever is nearer. Auto shows the first model with room. */
-function usageFraction(id){
-  const groups = usageGroups();
-  const frac = g => {
-    if(!g) return 0;
-    const a = g.replies_cap ? g.replies / g.replies_cap : 0;
-    const b = g.usd_cap ? g.usd / g.usd_cap : 0;
-    const c = g.period_cap ? g.period_usd / g.period_cap : 0;
-    return Math.min(1, Math.max(a, b, c));
-  };
-  if(id === 'auto'){
-    const ids = ((agentChoices().find(r => r.id === 'auto') || {}).chain || [])
-      .map(groupOf).filter((v, i, a) => a.indexOf(v) === i);
-    const open = ids.find(g => frac(groups[g]) < 1);
-    return frac(groups[open || ids[ids.length - 1]]);
-  }
-  return frac(groups[groupOf(id)]);
-}
 
 /* Dictation goes through the agent: the clip is sent to Groq Whisper at
    /v1/transcribe and the text lands in the box; the reader still presses
@@ -3727,6 +3958,9 @@ const FILTERS = [
 function pickerModal(){
   const q = chat.query.trim().toLowerCase();
   const target = convo() ? convo().cast : chat.pending;
+  // A new chat has three ways in (B46); adding people to a room has one.
+  const fresh = !convo();
+  const mode = fresh ? (chat.newMode || 'one') : 'several';
 
   // With the agent on, only the people it has texts for can be added.
   const only = agentRoster();
@@ -3761,9 +3995,48 @@ function pickerModal(){
           AGENT_URL && p.tier !== 'pro' ? ' · ' + t('no texts yet', '暂无著作') : ''}${
           p.quotes.length ? ' · ' + t(`${p.quotes.length} sourced`, `${p.quotes.length} 条有出处`) : ''}</span>
       </div>
-      <span class="tick">${on ? '✓' : '+'}</span>
+      ${mode === 'one' ? '' : `<span class="tick">${on ? '✓' : '+'}</span>`}
     </button>`;
   };
+
+  const seg = fresh ? `<div class="seg pick-seg" role="group" aria-label="${t('How to start','开始方式')}">${
+    [['one', t('One','一位')], ['several', t('Several','多位')], ['ask', t('Ask','提问')]].map(([k, lab]) =>
+      `<button type="button" data-new-mode="${k}" aria-pressed="${mode === k}">${lab}</button>`).join('')}</div>` : '';
+  const carried = fresh && chat.carried && mode !== 'ask' ? `<p class="notice">${t(
+    "Couldn't suggest anyone just now. Pick who to ask; your question opens the chat.",
+    '暂时无法推荐。请自己选择要问谁；你的问题会作为对话的第一句。')}</p>` : '';
+
+  if(mode === 'ask'){
+    const sug = chat.suggest;
+    const rows = Array.isArray(sug) ? sug.map(x => {
+      const p = philById(x.id); if(!p) return '';
+      return `<div class="srow">${castAvatar(p)}
+        <div class="meta"><b>${esc(pn(p))}</b>${x.why ? `<span>${esc(x.why[lang] || x.why.en || '')}</span>` : ''}</div>
+        <button type="button" class="sdrop" data-sug-drop="${esc(p.id)}" aria-label="${t('Remove','移除')} ${esc(pn(p))}">×</button>
+      </div>`; }).join('') : '';
+    return `<div class="backdrop" data-pick-cancel="1"></div>
+  <div class="modal pick" role="dialog" aria-modal="true" aria-label="${t('New conversation','新建对话')}">
+    <header>
+      <b>${t('New conversation','新建对话')}</b>
+      <button class="x" data-pick-cancel="1" aria-label="${t('Close','关闭')}">×</button>
+    </header>
+    ${seg}
+    <div class="plist askpane">
+      <textarea id="askq" rows="3" placeholder="${t('Ask a question…','提一个问题…')}"
+        aria-label="${t('Your question','你的问题')}">${esc(chat.askQ)}</textarea>
+      ${sug === 'finding' ? `<p class="notice" role="status">${t('Finding thinkers…','正在寻找思想家…')}</p>`
+        : Array.isArray(sug) ? `<p class="notice">${t(
+            "Suggested for your question. Remove anyone you don't want; your question opens the chat.",
+            '根据你的问题推荐。可以移除任何一位；你的问题会作为对话的第一句。')}</p>${rows}`
+        : `<button type="button" class="ghost" data-suggest="1" ${chat.askQ.trim() ? '' : 'disabled'}>${
+            t('Find thinkers','找思想家')}</button>`}
+    </div>
+    <footer>
+      <button class="wide" data-ask-start="1" ${Array.isArray(sug) && sug.length && chat.askQ.trim() ? '' : 'disabled'}>${
+        t('Start conversation','开始对话')}</button>
+    </footer>
+  </div>`;
+  }
 
   return `<div class="backdrop" data-pick-cancel="1"></div>
   <div class="modal pick" role="dialog" aria-modal="true" aria-label="${t('Add philosophers','添加哲学家')}">
@@ -3772,6 +4045,8 @@ function pickerModal(){
                    : t('New conversation','新建对话')}</b>
       <button class="x" data-pick-cancel="1" aria-label="${t('Close','关闭')}">×</button>
     </header>
+    ${seg}
+    ${carried}
 
     <input id="pq" placeholder="${t(`Search ${pool.length} philosophers…`,`搜索 ${pool.length} 位哲学家…`)}"
            value="${esc(chat.query)}" autocomplete="off">
@@ -3783,19 +4058,19 @@ function pickerModal(){
       `<button class="fpill${f === k ? ' on' : ''}" data-filter-pick="${k}">${
         esc(lab()[lang] || lab().en)}</button>`).join('')}</div>
 
-    ${target.length ? `<div class="selected">${target.map(chip).join('')}</div>` : ''}
+    ${target.length && mode !== 'one' ? `<div class="selected">${target.map(chip).join('')}</div>` : ''}
 
     <div class="plist">
       ${list.length ? list.map(row).join('')
         : `<p class="list-empty">${t('Nobody by that name.','没有这个名字。')}</p>`}
     </div>
 
-    <footer>
+    ${mode === 'one' ? '' : `<footer>
       <button class="wide" data-pick-done="1" ${target.length ? '' : 'disabled'}>${
         convo() ? t('Done','完成')
                 : t(`Start conversation${target.length ? ' · ' + target.length : ''}`,
                     `开始对话${target.length ? ' · ' + target.length : ''}`)}</button>
-    </footer>
+    </footer>`}
   </div>`;
 }
 
@@ -4016,7 +4291,7 @@ function accessRequired(reason){
   ACCESS.required = true; ACCESS.reason = reason || '';
   try{ localStorage.setItem('still.accessRequired', '1'); }catch(e){}
 }
-const accessBlocked = () => !!AGENT_URL && ACCESS.required && !AGENT_KEY;
+const accessBlocked = () => !!AGENT_URL && ACCESS.required && !AGENT_KEY && !AUTH.session;
 /* A rejected code reopens the code sheet with the error, never an inline
    field in the conversation. */
 function keyRejected(){ setAgentKey(''); AGENT_NEEDS_KEY = true; AGENT_KEY_BAD = true; ACCESS.sheet = 'code'; }
@@ -4030,6 +4305,7 @@ function keyForm(){
         placeholder="${t('Access code','访问码')}" aria-label="${t('Access code','访问码')}">
       <p>${t('Kept in this browser only.', '只保存在这个浏览器里。')}</p>
       <button type="submit" class="key-save"${AGENT_KEY ? '' : ' disabled'}>${t('Save','保存')}</button>
+      ${agreeLine('continue')}
     </form>`;
 }
 
@@ -4058,7 +4334,7 @@ const ACCESS_HEARD = () => [['friend', t('Friend','朋友')], ['social', t('Soci
 const codeLink = () => `<button type="button" class="linkish acc-code" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>`;
 /* The card (source "chat_limit") and the Home sheet (source "home") share
    one form. */
-/* At the end of the conversation once the free message is used: one
+/* At the end of the conversation once the 3 free messages are used: one
    centred column — a title, one line, the request button, the code, then a
    hairline and the footnote. The form itself is a bottom sheet
    (accessSheet), opened when it happens and again from here. */
@@ -4073,7 +4349,7 @@ function accessCard(){
       ${code}${note}</section>`;
   return `<section class="acc-in card">
       <h3 class="acc-in-title">${ACCESS.reason === 'free_closed' ? t('Free messages are closed for today.', '今天的免费消息已关闭。')
-          : t("You've used your free message.", '你的免费消息已用完。')}</h3>
+          : t("You've used your 3 free messages.", '你的 3 条免费消息已用完。')}</h3>
       <p class="acc-in-line">${t('Still is in research preview. Request access to keep talking.',
           'Still 正在研究预览中。申请访问即可继续对话。')}</p>
       <button type="button" class="acc-go acc-in-go" data-acc-open="chat">${t('Request access','申请访问')}</button>
@@ -4105,7 +4381,10 @@ function accessSheet(){
                   '今天的免费消息已关闭。Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')
               : t("Still is in research preview — leave your email and we'll send you full access.",
               'Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')}</p>
-              <button type="button" class="ghost acc-have" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>` : ''}
+              ${googleOn() ? `${googleButton()}
+              <button type="button" class="linkish acc-or-code" data-acc-code="1">${t('or enter an access code','或输入访问码')}</button>
+              <p class="acc-or">${t('or request access','或申请访问')}</p>`
+              : `<button type="button" class="ghost acc-have" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>`}` : ''}
             ${accessForm(ACCESS.sheet === 'chat' ? 'chat_limit' : 'home')}`}
       </div>
     </div>`;
@@ -4137,7 +4416,8 @@ function accessForm(source){
   const opt = `<i>${t('optional','选填')}</i>`;
   const body = step === 0 ? `<label class="acc-f"><span>${t('Email','邮箱')}</span>
         <input type="email" data-acc="email" value="${esc(ACCESS.email)}" autocomplete="email" required>
-        <small>${t('We use your email only to send you access.','我们只用你的邮箱来发送访问权限。')}</small></label>`
+        <small>${t('We use your email only to send you access.','我们只用你的邮箱来发送访问权限。')}
+          <a href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy','隐私')}</a></small></label>`
     : step === 1 ? `<fieldset class="acc-f"><legend>${t('You are…','你是…')} ${opt}</legend>${opts('role', ACCESS_ROLES())}</fieldset>`
     : step === 2 ? `<fieldset class="acc-f"><legend>${t('How did you hear about Still?','你是怎么知道 Still 的？')} ${opt}</legend>${opts('heard', ACCESS_HEARD())}</fieldset>`
     : step === 3 ? `<label class="acc-f"><span>${t('What question would you ask a thinker?','你想问思想家什么问题？')} ${opt}</span>
@@ -4223,7 +4503,150 @@ async function submitAccess(source){
 const toGate = () => { try{ return !!AGENT_GATE && !!AGENT_URL && new URL(AGENT_URL).origin === new URL(AGENT_GATE).origin; }catch(e){ return false; } };
 const agentHeaders = extra => Object.assign({}, extra,
   DEVICE_ID && toGate() ? { 'x-still-device': DEVICE_ID } : {},
-  AGENT_KEY ? { 'x-still-key': AGENT_KEY } : {});
+  AGENT_KEY ? { 'x-still-key': AGENT_KEY } : {},
+  AUTH.session ? { authorization: 'Bearer ' + AUTH.session } : {});
+
+/* --- Sign in with Google (B42) -------------------------------------------
+   Google Identity Services gives this page an ID token; the gate's
+   /v1/auth/google turns it into a Still session, kept in this browser and
+   sent as a Bearer token with every agent request. Signing in sends your
+   Google email and name to Still, and the Me page says so. Nothing here
+   shows until the founder fills in the client id. */
+const GOOGLE_WEB_CLIENT_ID = '122414017379-bhft9q10gps0l00ousuf0o3bbbpbib9u.apps.googleusercontent.com';
+const AUTH = (() => {
+  try{
+    const s = JSON.parse(localStorage.getItem('still.session') || 'null');
+    if(s && s.session) return { session: s.session, email: s.email || '', name: s.name || '', busy: false, err: '' };
+  }catch(e){}
+  return { session: '', email: '', name: '', busy: false, err: '' };
+})();
+const googleOn = () => !!GOOGLE_WEB_CLIENT_ID && !!AGENT_URL;
+function setSession(s){
+  AUTH.session = (s && s.session) || ''; AUTH.email = (s && s.email) || ''; AUTH.name = (s && s.name) || '';
+  try{ AUTH.session ? localStorage.setItem('still.session', JSON.stringify(
+      { session: AUTH.session, email: AUTH.email, name: AUTH.name })) : localStorage.removeItem('still.session'); }catch(e){}
+}
+async function authPost(path, body){
+  const r = await fetch(AGENT_URL + path, { method: 'POST',
+    headers: agentHeaders({ 'content-type': 'application/json' }), body: JSON.stringify(body || {}) });
+  const out = await r.json().catch(() => null);
+  if(!r.ok) throw new Error((out && (out.error || out.status)) || ('auth ' + r.status));
+  return out || {};
+}
+async function googleSignedIn(resp){
+  if(!resp || !resp.credential) return;
+  AUTH.busy = true; AUTH.err = ''; render();
+  try{
+    const out = await authPost('/v1/auth/google', { id_token: resp.credential, platform: 'web' });
+    const u = out.user || out;
+    const session = out.session || out.token;
+    if(!session) throw new Error('no session');
+    setSession({ session, email: u.email, name: u.name });
+    // A sign-up, not a returning sign-in: the welcome. If the server does
+    // not say which, the first sign-in in this browser counts as one.
+    const created = out.created ?? out.new_user ?? out.is_new ?? u.created ?? u.is_new;
+    if(created === true || (created == null && !ONBOARDED)) openOnboarding();
+    // Signed in counts as access: the request card and sheet stand down.
+    ACCESS.required = false; ACCESS.sheet = false;
+    try{ localStorage.removeItem('still.accessRequired'); }catch(e){}
+  }catch(e){
+    AUTH.err = t("Couldn't sign you in. Please try again.", '没能登录，请再试一次。');
+  }
+  AUTH.busy = false; render();
+  // A nonce is good for one sign-in: get the next one ready.
+  if(!AUTH.session) initGoogle();
+}
+/* Every sign-in carries a fresh nonce from the gate (POST /v1/auth/nonce),
+   which Google puts in the ID token; the gate accepts each once, within 10
+   minutes. So Google is set up again with a new one after every attempt and
+   before the old one expires, and the buttons are redrawn with it. */
+let NONCE_TIMER = null;
+async function initGoogle(){
+  clearTimeout(NONCE_TIMER);
+  let nonce = '';
+  try{ nonce = (await authPost('/v1/auth/nonce')).nonce || ''; }catch(e){}
+  if(!nonce){ GSI = 'failed'; return render(); }
+  try{
+    google.accounts.id.initialize({ client_id: GOOGLE_WEB_CLIENT_ID, callback: googleSignedIn, nonce,
+      ux_mode: 'popup', auto_select: false, cancel_on_tap_outside: true });
+    GSI = 'ready';
+  }catch(e){ GSI = 'failed'; return render(); }
+  document.querySelectorAll('.gsi-slot').forEach(el => { el.innerHTML = ''; });
+  mountGoogle();
+  NONCE_TIMER = setTimeout(() => { if(!AUTH.session) initGoogle(); }, 9 * 60 * 1000);
+}
+async function signOut(){
+  const had = AUTH.session;
+  if(had){ try{ await authPost('/v1/auth/logout'); }catch(e){} }
+  setSession(null);
+  try{ window.google && google.accounts.id.disableAutoSelect(); }catch(e){}
+  render();
+}
+async function deleteAccount(){
+  AUTH.busy = true; AUTH.err = ''; render();
+  try{ await authPost('/v1/account/delete'); }
+  catch(e){
+    AUTH.busy = false;
+    AUTH.err = t("Couldn't delete your account. Please try again.", '没能删除账户，请再试一次。');
+    return render();
+  }
+  AUTH.busy = false;
+  setSession(null);
+  try{ window.google && google.accounts.id.disableAutoSelect(); }catch(e){}
+  render();
+}
+/* Google's script loads only when there is a client id, and only once.
+   Its button is drawn into each empty .gsi-slot after every render. */
+let GSI = 'idle';   // idle | loading | nonce | ready | failed
+function mountGoogle(){
+  if(!googleOn() || AUTH.session) return;
+  const slots = [...document.querySelectorAll('.gsi-slot:empty')];
+  if(!slots.length) return;
+  if(GSI === 'idle'){
+    GSI = 'loading';
+    const s = document.createElement('script');
+    s.src = 'https://accounts.google.com/gsi/client'; s.async = true;
+    s.onload = () => { GSI = 'nonce'; initGoogle(); };
+    s.onerror = () => { GSI = 'failed'; render(); };
+    document.head.appendChild(s);
+    return;
+  }
+  if(GSI !== 'ready') return;
+  for(const el of slots){
+    google.accounts.id.renderButton(el, { type: 'standard', theme: 'outline', size: 'large',
+      text: 'signin_with', shape: 'pill', logo_alignment: 'center',
+      width: Math.min(400, Math.max(200, Math.round(el.getBoundingClientRect().width) || 280)),
+      locale: lang === 'zh' ? 'zh_CN' : 'en' });
+  }
+}
+/* The Google button, where it is offered. Empty without a client id. */
+function googleButton(){
+  if(!googleOn() || AUTH.session) return '';
+  return `<div class="gsi">
+      <div class="gsi-slot" aria-label="${t('Sign in with Google','使用 Google 登录')}"></div>
+      ${agreeLine('continue')}
+      ${GSI === 'failed' ? `<p class="gsi-err" role="alert">${t("Google sign-in didn't load. Check your connection or content blocker.",
+        'Google 登录没有加载出来。请检查网络或内容拦截器。')}</p>` : ''}
+      ${AUTH.busy ? `<p class="gsi-note" role="status">${t('Signing in…','正在登录…')}</p>` : ''}
+      ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
+    </div>`;
+}
+/* The Me page's account section: sign in, or who is signed in, Sign out
+   and Delete account. */
+function accountSection(){
+  if(!googleOn()) return '';
+  if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
+      <p>${t('Sign in to keep talking with the thinkers. Your answers and likes still stay in this browser.',
+        '登录后可以继续与思想家对话。你的回答与喜欢仍然只留在这个浏览器里。')}</p>
+      ${googleButton()}</section>`;
+  return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
+      <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b></p>
+      ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
+      <div class="me-acct-row">
+        <button type="button" class="ghost" data-sign-out="1"${AUTH.busy ? ' disabled' : ''}>${t('Sign out','退出登录')}</button>
+        <button type="button" class="ghost me-acct-del" data-account-delete="1"${AUTH.busy ? ' disabled' : ''}>${t('Delete account','删除账户')}</button>
+      </div></section>`;
+}
 let AGENT_STATE = AGENT_URL ? 'unknown' : 'off';   // off | unknown | ok | down
 let AGENT_INFO = null;   // /v1/health: provider, model, provider_host, thinkers, choices
 // The reader's pick among the agent's models. Groq is the default, and the
@@ -4576,6 +4999,8 @@ async function agentFetch(path, body, ms){
       ? { method:'POST', headers: agentHeaders({'content-type':'application/json'}),
           body: JSON.stringify(body), signal: ctl.signal }
       : { signal: ctl.signal });   // health stays open: no passcode, no preflight
+    // The reader's own count rides on every ask reply, refusals included.
+    if(path === '/v1/ask') noteMyUse(r.headers);
     if(r.status === 429){
       // A daily cap or a burst limit: a status to name, not a failure.
       const body = await r.json().catch(() => null);
@@ -4593,6 +5018,9 @@ async function agentFetch(path, body, ms){
     if(r.status === 503){
       const b = await r.json().catch(() => null);
       if(b && b.status === 'starting'){ wakeUp(); throw new Error('starting'); }
+      // Busy for a moment (Groq's per-minute limit): not an error, and not
+      // counted against the reader.
+      if(b && b.status === 'busy') return { busy: b };
     }
     if(!r.ok) throw new Error('agent ' + r.status);
     return await r.json();
@@ -4628,6 +5056,7 @@ async function agentReady(){
       AGENT_INFO = h;
       AGENT_STATE = h && h.ready > 0 ? 'ok' : 'down';
       applyTiers();
+      if(AGENT_STATE === 'ok') refreshMe();   // the ring shows the reader's own count from the start
     }catch(e){ AGENT_STATE = e.message === 'starting' ? 'starting'
       : (e.message === 'auth' || e.message === 'access') ? 'unknown' : 'down'; }
     render();
@@ -4699,6 +5128,22 @@ async function agentSpeak(c, cast){
   const ctxMsg = c.msgs.find(m => m.context && m.quote);
   const askCtx = !ctxMsg ? null : ctxMsg.ask || { quote: ctxMsg.quote.en || L(ctxMsg.quote), work: '',
     author: (ctxMsg.source && ctxMsg.source.label && String(ctxMsg.source.label.en || '').split(',')[0]) || '', passageId: '' };
+  let answered = 0;
+  // Busy: one calm line. If no one has answered yet, the reader's message
+  // goes back into the box, so trying again is one tap.
+  const busyLine = (b, restore) => {
+    chat.typing = null;
+    const mine = restore && !answered && c.msgs[c.msgs.length - 1];
+    if(mine && mine.mine){
+      c.msgs.pop();
+      chat.draft = mine.text;
+      setTimeout(() => { const box = document.getElementById('say'); if(box){ box.value = mine.text; grow(box); syncSend(); } });
+    }
+    c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text: lang === 'zh'
+      ? '现在提问的人很多，请过一分钟再试。'
+      : String((b && b.detail) || 'Lots of people are asking right now. Try again in a minute.') });
+    save(); render();
+  };
   for(const p of cast.filter(x => AGENT_IDS[x.id])){
     if(ROUND.ctl.signal.aborted){ stopped(); return; }
     // Nothing runs in a tab nobody is looking at. The round stops here and
@@ -4719,6 +5164,7 @@ async function agentSpeak(c, cast){
           lang: questionLang(question),
           ...(askCtx ? { context: askCtx } : {}),
           ...(pick ? { choice: pick.id } : {}) }, 90000);
+      if(out && out.busy){ busyLine(out.busy, true); return; }
       if(out && out.rated){
         chat.typing = null;
         c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text: t(
@@ -4729,7 +5175,7 @@ async function agentSpeak(c, cast){
         chat.typing = null;
         c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text: out.limit.reason === 'site_daily'
           ? t("Still has reached today's limit for everyone. It resets at midnight.", 'Still 今天的总额度已用完，午夜重置。')
-          : t("Your code's 60 messages for today are used up. They reset at midnight.", '你的访问码今天的 60 条消息已用完，午夜重置。') });
+          : t("Your code's 15 messages for today are used up. They reset at midnight.", '你的访问码今天的 15 条消息已用完，午夜重置。') });
         save(); render(); return;
       }
       if(out && out.limit){
@@ -4755,6 +5201,8 @@ async function agentSpeak(c, cast){
         return;   // the rest of the round would hit the same cap
       }
       row = out && out.answers && out.answers[0];
+      // One thinker busy inside a 200: say so for them, and go on.
+      if(row && (row.busy || (out && out.busy === true))){ busyLine(row, false); continue; }
     }catch(e){
       if(ROUND && ROUND.ctl.signal.aborted){ chat.typing = null; stopped(); return; }
       // The agent wants its passcode: stop the round and ask for it.
@@ -4824,6 +5272,7 @@ async function agentSpeak(c, cast){
     const served = agentChoices().find(r => r.id === why.served_by);
     why.provider_host = (served && served.provider_host)
       || (AGENT_INFO && AGENT_INFO.provider_host) || '';
+    answered++;
     c.msgs.push({ id:p.id, name:p.name, text:String(row.answer), said:null,
                   at: Date.now(), agent: why, round: ROUND && ROUND.id });
     markFresh(c.msgs[c.msgs.length - 1]);
@@ -5363,7 +5812,6 @@ function booksSection(p, v){
         lang === 'zh' && w.zh && w.zh !== w.title ? ` <span class="orig">${esc(w.title)}</span>` : ''}
       ${w.work && (w.work.why || w.work.desc) ? `<span class="ed">${esc(L(w.work.why || w.work.desc))}</span>` : ''}
       ${w.edition ? `<span class="ed">${esc(editionText(w.edition))}</span>` : ''}
-      ${wiki(w) ? `<a class="bk-wiki" href="${esc(wiki(w))}" target="_blank" rel="noopener">${t('Open in Wikipedia','在维基百科打开')}<span aria-hidden="true"> ↗</span></a>` : ''}
 </li>`).join('')}</ul>`;
   return `<div class="books-head"><h3 class="section-h" style="padding-left:0;margin:0">${t('Works','著作')}</h3>${toggle}</div>
     ${BOOKS_VIEW === 'list' ? list : grid}`;
@@ -5402,7 +5850,9 @@ function efDrop(key, label, opts){
 }
 function exploreView(){
   if(EXPLORE_MODE === 'map' && MAP) return `<div class="page page--map">
-    <div class="page-head map-head"><button type="button" class="ghost" data-emode="list">‹ ${t('Explore','浏览')}</button>
+    <div class="page-head map-head"><button type="button" class="rback" data-emode="list"
+        aria-label="${t('Back to Explore','返回浏览')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
       <h1 class="page-title">${t('Map','关系图')}</h1></div>${mapView()}</div>`;
   // A third entry is the phone's short form for the trigger; the menu
   // always lists the full name.
@@ -5440,9 +5890,25 @@ function exploreView(){
 
 /* --- The map: who taught, influenced, or shared a school with whom ------
    Pro thinkers only, links from Wikidata (map.json), each with its note
-   and source. Wide screens get the graph, time running left to right;
-   a phone gets the same links as a list per thinker. */
+   and source. The graph runs time left to right. A wide screen fits it to
+   the width; a phone, as the app, shows it in a box you scroll and zoom,
+   with every thinker's links as a list under it. */
 let MAP = null, EXPLORE_MODE = 'list', MAP_SEL = null;
+/* The phone's zoom, as the app's (Theme.Size.mapZoom*). */
+const MAP_ZMIN = 0.3, MAP_ZMAX = 1.8;
+let MAP_ZOOM = 0.55;
+/* A tap re-renders the page; the graph keeps where it was scrolled to.
+   `f` scales the offsets round the box's centre (a zoom). */
+function mapRender(f){
+  const sc = document.querySelector('.map-scroll');
+  const at = sc && { l: sc.scrollLeft, t: sc.scrollTop, w: sc.clientWidth, h: sc.clientHeight };
+  render();
+  const nx = document.querySelector('.map-scroll');
+  if(!at || !nx) return;
+  const k = f || 1;
+  nx.scrollLeft = (at.l + at.w / 2) * k - at.w / 2;
+  nx.scrollTop = (at.t + at.h / 2) * k - at.h / 2;
+}
 /* On hold (founder deciding on the published map artifact): the Map view
    is only offered with ?map=1. */
 const MAP_ON = (() => { try{ return new URLSearchParams(location.search).get('map') === '1'; }catch(e){ return false; } })();   // MAP_SEL: {node} or {edge}
@@ -5497,8 +5963,15 @@ function mapView(){
     <p class="map-note">${t("The Pro thinkers and how they're linked: who taught whom, who influenced whom, who shared a school. From Wikidata; each link shows its source. Tap a thinker to see their links.",
       'Pro 思想家之间的关系：师承、影响、同一学派。来自维基数据，每条关系都附出处。轻点思想家查看关系。')}</p>
     <div class="map-legend">${legend}</div>
-    <div class="map-scroll"><svg class="map" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img"
+    <div class="map-box"><div class="map-scroll"><svg class="map" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"
+      style="--mz:${MAP_ZOOM}" role="img"
       aria-label="${t('Map of links between thinkers','思想家关系图')}">${ticks}${edges}${nodes}</svg></div>
+      <div class="map-zoom">
+        <button type="button" data-mzoom="out" aria-label="${t('Zoom out','缩小')}"${MAP_ZOOM <= MAP_ZMIN ? ' disabled' : ''}><svg viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+        <button type="button" data-mzoom="in" aria-label="${t('Zoom in','放大')}"${MAP_ZOOM >= MAP_ZMAX ? ' disabled' : ''}><svg viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button>
+      </div></div>
     ${mapCard()}
     <div class="map-list">${mapList()}</div>
   </div>`;
@@ -5525,7 +5998,7 @@ function mapCard(){
     <ul>${links.map(e => `<li><b>${esc(pn(philById(e.from === sel.node ? e.to : e.from)))}</b> — ${esc(MAP_TYPES()[e.type])}.
       ${esc(L(e.note))} <a href="${esc(e.source)}" target="_blank" rel="noopener">${t('source','出处')}</a></li>`).join('')}</ul></div>`;
 }
-/* The phone version: every Pro thinker with their links, as text. */
+/* Under the graph on a phone: every Pro thinker with their links, as text. */
 function mapList(){
   const ids = Object.keys(MAP.nodes).filter(id => philById(id) && mapLinks(id).length)
     .sort((a, b) => (MAP.nodes[a].born ?? -369) - (MAP.nodes[b].born ?? -369));
@@ -5607,7 +6080,6 @@ function bookView(key){
     ${why ? `<p class="label label--sm bp-label">${t('Why read it','为什么读它')}</p><p class="body bp-why">${esc(L(why))}</p>` : ''}
     ${w.edition ? `<p class="meta bp-ed">${p && p.tier === 'pro' ? t("The edition Still's thinker agent reads: ", 'Still 思想者代理所读的版本：') : ''}${esc(editionText(w.edition))}</p>` : ''}
     <div class="bp-links">
-      ${wk ? go(wk, t('Wikipedia','维基百科')) : ''}
       ${go(amazon, t('Find it on Amazon','在亚马逊查找'))}
       ${weread ? go(weread, '微信读书') : ''}
     </div>
@@ -5656,6 +6128,8 @@ function meView(){
     <div class="me-tabs" role="tablist">${tab('votes', t('My answers','我的回答'))}${tab('likes', t('Liked','喜欢'))}</div>
     ${shown.length ? `<div class="me-grid">${shown.map(meTile).join('')}</div>`
       : `<p class="me-empty">${t('Nothing here yet.','这里还没有内容。')}</p>`}
+    <!-- How Still works: once here, not under every thread (founder, 11 Nov). Each reply keeps its own claim label. -->
+    <p class="footer-note" style="margin-top:var(--sp-xxl)">${esc(S('footer'))}</p>
   </div>${ME_SETTINGS ? meSettings() : ''}`;
 }
 /* The app's Settings sheet, on the web. */
@@ -5665,8 +6139,10 @@ function meSettings(){
     <header><b id="me-set-title">${t('Settings','设置')}</b>
       <button class="x" type="button" data-me-close="1" aria-label="${t('Close','关闭')}">×</button></header>
     <div class="me-sheet-body">
+      ${accountSection()}
       <section><h3>${t('Name in this browser','这个浏览器里的名字')}</h3>
-        <p>${t('Local only — there are no accounts, so nobody else sees it.','仅保存在本机 — 没有账号，其他人看不到。')}</p>
+        <p>${googleOn() ? t('Local only — nobody else sees it.','仅保存在本机 — 其他人看不到。')
+          : t('Local only — there are no accounts, so nobody else sees it.','仅保存在本机 — 没有账号，其他人看不到。')}</p>
         <input id="me-name" type="text" maxlength="40" autocomplete="off" placeholder="${t('Reader','读者')}" value="${esc(ME_NAME)}"></section>
       <section><h3>${t('Language','语言')}</h3>
         <p>${t('Interface and all explanations','界面与全部释义的语言')}</p>
@@ -5677,7 +6153,8 @@ function meSettings(){
       <section><h3>${t('Topics','话题')}</h3>
         <p>${t('Orders Home. Nothing is hidden.','决定首页的顺序，不会隐藏任何内容。')}</p>
         <div class="ob-chips ob-chips--me" role="group" aria-label="${t('Topics','话题')}">${
-          TOPICS.map(([id]) => topicChip(id, PICKS.includes(id), 'data-me-topic')).join('')}</div></section>
+          TOPICS.map(([id]) => topicChip(id, PICKS.includes(id), 'data-me-topic')).join('')}</div>
+        <button type="button" class="linkish me-ob-again" data-ob-again="1">${t('Show the welcome again','再看一次欢迎页')}</button></section>
       <div class="rule">
         <b>${t('The rule that outranks other rules','高于其他一切的规则')}</b>
         <p>${t('Never fabricate a quotation, and never imply a historical person answered a modern question. Every reply carries a visible claim kind, and a quote is only a quote if it has a source you can follow.','绝不虚构引文，也绝不暗示某位历史人物回答了现代问题。每一条发言都标明主张的类型，而引文只有在能追溯到来源时才算引文。')}</p>
@@ -5692,9 +6169,13 @@ function meSettings(){
           <dt>${t("Sent to Still's AI",'发送给 Still 的 AI')}</dt>
           <dd>${t('What you type in chat, kept without your name.','你在聊天中输入的内容，保存时不含你的名字。')}</dd>
           <dd>${t('If you submit feedback on a reply, the conversation it came from.','如果你对某条回应提交反馈，会发送它所在的整段对话。')}</dd>
-        </dl></section>
+          ${googleOn() ? `<dd>${t('If you sign in with Google, your Google email and name.','如果你使用 Google 登录，会发送你的 Google 邮箱和名字。')}</dd>` : ''}
+        </dl>
+        <p class="me-privacy"><a href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy policy','隐私政策')}</a>
+          <a href="terms?lang=${lang}" target="_blank" rel="noopener">${t('Terms','条款')}</a></p></section>
       <section><h3>${t('Erase what this browser remembers','清除这个浏览器记住的内容')}</h3>
-        <p>${t('Your answers and likes. There is no account, so this is the whole of it and it cannot be undone.','你的回答与喜欢。没有账号，所以这就是全部，且无法撤销。')}</p>
+        <p>${googleOn() ? t('Your answers and likes in this browser. It cannot be undone.','这个浏览器里的回答与喜欢，且无法撤销。')
+          : t('Your answers and likes. There is no account, so this is the whole of it and it cannot be undone.','你的回答与喜欢。没有账号，所以这就是全部，且无法撤销。')}</p>
         <button class="wide" id="reset" style="background:var(--chip);color:var(--danger)">${t('Erase','清除')}</button></section>
     </div>
   </div>`;
@@ -5754,13 +6235,14 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog();
+  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
   OB.moved = false;
   document.documentElement.classList.toggle('on-answers', !!view.querySelector('.page--answers'));
   StillFlip.measure(document.getElementById('book'));
+  mountGoogle();
   { const tc = document.querySelector('meta[name="theme-color"]');
     if(tc) tc.setAttribute('content', view.querySelector('.page--answers') ? '#60845C' : '#FAFAFA'); }
   document.documentElement.classList.toggle('in-convo', !!view.querySelector('.chat-wrap.has-open'));
@@ -5842,6 +6324,7 @@ function render(){
   const wide = matchMedia('(min-width:900px)').matches;
   const noBack = stack.length <= 1 && !chat.picking;
   document.getElementById('back').hidden = noBack;
+  document.getElementById('back').setAttribute('aria-label', t('Back','返回'));
   // "Request full access" on Home, while there is a gate to send it to and
   // no working code on this device.
   const accBtn = document.getElementById('bar-acc');
@@ -5881,6 +6364,7 @@ document.addEventListener('click', ev => {
   }
   if((el = hit('[data-rp]'))){ RP_OPEN = !RP_OPEN; return render(); }
   if((el = hit('[data-ob-skip]'))) return finishOnboarding(null);
+  if((el = hit('[data-ob-again]'))){ ME_SETTINGS = false; openOnboarding(true); return render(); }
   if((el = hit('[data-ob-topic]'))){
     const id = el.dataset.obTopic;
     OB.sel = OB.sel.includes(id) ? OB.sel.filter(x => x !== id) : OB.sel.concat(id);
@@ -6008,6 +6492,7 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-new]'))){
     chat.open = null; chat.pending = []; chat.picking = true;
     chat.query = ''; chat.filter = 'all';
+    chat.newMode = 'one'; chat.askQ = ''; chat.suggest = null; chat.carried = null;
     return render();
   }
   if((el = hit('[data-phil]'))){
@@ -6058,15 +6543,28 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-filter-pick]'))){
     chat.filter = el.dataset.filterPick; return render();
   }
+  if((el = hit('[data-new-mode]'))){
+    chat.newMode = el.dataset.newMode; render();
+    if(chat.newMode === 'ask') setTimeout(() => { const a = document.getElementById('askq'); if(a){ a.focus(); a.setSelectionRange(a.value.length, a.value.length); } });
+    return;
+  }
+  if((el = hit('[data-suggest]'))){ findThinkers(); return; }
+  if((el = hit('[data-sug-drop]'))){
+    if(Array.isArray(chat.suggest)) chat.suggest = chat.suggest.filter(x => x.id !== el.dataset.sugDrop);
+    return render();
+  }
+  if((el = hit('[data-ask-start]'))){
+    if(Array.isArray(chat.suggest) && chat.suggest.length)
+      startNewChat(chat.suggest.map(x => x.id), chat.askQ.trim());
+    return;
+  }
   if((el = hit('[data-pick-done]'))){
-    if(!convo() && chat.pending.length){
-      const c = { id: 'c' + Date.now(), cast: chat.pending.slice(), msgs: [],
-                  said: {}, at: Date.now() };
-      chat.convos.push(c); chat.open = c.id; chat.pending = [];
-      // On a phone the new conversation slides in like any opened one.
-      if(innerWidth < 900){ NAV = 'push'; CONVO_PUSHED = true; try{ history.pushState({ still: 'convo' }, ''); }catch(e){} }
-    }
+    if(!convo() && chat.pending.length) return startNewChat(chat.pending.slice(), chat.carried);
     chat.picking = false; save(); return render();
+  }
+  // One thinker: a tap on the row starts the chat.
+  if(!convo() && chat.picking && chat.newMode === 'one' && (el = hit('.modal.pick [data-toggle]'))){
+    return startNewChat([el.dataset.toggle], chat.carried);
   }
   if((el = hit('[data-toggle]'))){
     const id = el.dataset.toggle;
@@ -6135,9 +6633,14 @@ document.addEventListener('click', ev => {
     setTimeout(() => { const x = document.querySelector('.howp .x'); if(x) x.focus(); }); return; }
   if((el = hit('[data-tierpop-close]'))){ TIER_POP = false; return render(); }
   if((el = hit('[data-mnode]'))){ const id = el.dataset.mnode;
-    MAP_SEL = MAP_SEL && MAP_SEL.node === id ? null : { node: id }; return render(); }
+    MAP_SEL = MAP_SEL && MAP_SEL.node === id ? null : { node: id }; return mapRender(); }
   if((el = hit('[data-medge]'))){ const i = +el.dataset.medge;
-    MAP_SEL = MAP_SEL && MAP_SEL.edge === i ? null : { edge: i }; return render(); }
+    MAP_SEL = MAP_SEL && MAP_SEL.edge === i ? null : { edge: i }; return mapRender(); }
+  if((el = hit('[data-mzoom]'))){
+    const was = MAP_ZOOM;
+    MAP_ZOOM = Math.min(MAP_ZMAX, Math.max(MAP_ZMIN, MAP_ZOOM * (el.dataset.mzoom === 'in' ? 1.4 : 1 / 1.4)));
+    mapRender(MAP_ZOOM / was);
+    const b = document.querySelector(`[data-mzoom="${el.dataset.mzoom}"]`); if(b) b.focus(); return; }
   if((el = hit('[data-tierinfo]'))){
     const k = el.dataset.tierinfo; TIER_OPEN[k] = !TIER_OPEN[k]; return render();
   }
@@ -6157,7 +6660,7 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-mback]'))){ MENU.sub = false; render(); menuFocus(); return; }
   if((el = hit('[data-mi]'))){ pickModel(el); return; }
   if(MENU.open && !hit('#mmenu')){ MENU.open = false; MENU.sub = false; render(); }
-  if((el = hit('[data-usage]'))){ chat.usageOpen ? closeUsage() : (chat.usageOpen = true, render()); return; }
+  if((el = hit('[data-usage]'))){ if(chat.usageOpen) closeUsage(); else { chat.usageOpen = true; render(); refreshMe(); } return; }
   if(chat.usageOpen && !hit('.upanel')){ chat.usageOpen = false; render(); }
   if((el = hit('[data-talk]'))){
     // Another round among themselves: each speaks once more, to each other
@@ -6166,17 +6669,18 @@ document.addEventListener('click', ev => {
                + 'have just said. Do not address the reader.');
   }
 
-  if((el = hit('[data-report]'))){
-    reported = reported === el.dataset.report ? null : el.dataset.report;
-    render();
-    // On a question card the note sits under the options, far below the
-    // flag: on a phone it opened off the screen, under the tab bar, and the
-    // tap seemed to do nothing.
-    const note = reported && document.querySelector('.report-note');
-    if(note) note.scrollIntoView({ block:'nearest', behavior: navReduced() ? 'auto' : 'smooth' });
-    return;
-  }
+  if((el = hit('[data-report]'))){ reported = null; openReport(el.dataset.report); return; }
+  if((el = hit('[data-rep-cancel]'))){ if(REPORT && !REPORT.sending){ REPORT = null; render(); } return; }
+  if((el = hit('[data-rep-send]'))){ sendReport(); return; }
+  if((el = hit('[data-rep-shot-remove]'))){
+    const box = document.getElementById('rep-comment'); if(box && REPORT) REPORT.comment = box.value;
+    if(REPORT){ REPORT.shot = ''; REPORT.err = ''; render(); } return; }
 
+  if((el = hit('[data-sign-out]'))){ signOut(); return; }
+  if((el = hit('[data-account-delete]'))){
+    CONFIRM = { kind: 'account' }; render();
+    setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
+  }
   if((el = hit('#reset'))){
     CONFIRM = { kind: 'erase' }; render();
     setTimeout(() => { const b = document.querySelector('.af--confirm [data-confirm-cancel]'); if(b) b.focus(); }); return;
@@ -6185,6 +6689,7 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-confirm-ok]'))){
     const c = CONFIRM; CONFIRM = null;
     if(c && c.kind === 'erase'){ state = { votes:{}, likes:{} }; save(); }
+    else if(c && c.kind === 'account'){ deleteAccount(); return; }
     else if(c && c.kind === 'convo'){
       chat.convos = chat.convos.filter(x => x.id !== c.id);
       if(chat.open === c.id) chat.open = null;
@@ -6221,9 +6726,53 @@ function send(){
   chat.draft = ''; if(box){ box.value = ''; grow(box); }
   sendText(text);
 }
+/* B46: a new chat from the sheet, with the question (if any) as its first
+   line, sent for the reader once the room is open. */
+function startNewChat(cast, question){
+  const c = { id: 'c' + Date.now(), cast: cast.slice(), msgs: [], said: {}, at: Date.now() };
+  chat.convos.push(c); chat.open = c.id; chat.pending = [];
+  chat.picking = false; chat.suggest = null; chat.carried = null; chat.askQ = '';
+  // On a phone the new conversation slides in like any opened one.
+  if(innerWidth < 900){ NAV = 'push'; CONVO_PUSHED = true; try{ history.pushState({ still: 'convo' }, ''); }catch(e){} }
+  save(); render();
+  if(question) sendText(question);
+}
+
+/* Ask: POST /v1/suggest {question, lang, limit: 3}. Read loosely while the
+   endpoint settles (the app's GateClient.suggest reads the same): a list
+   under thinkers / suggestions / results (or the body), each item's
+   thinker / id / agentId as an agent or roster id, why / reason as a string
+   or {en, zh}. Busy, failed or nobody on the roster: pick instead, and the
+   question still opens the chat. */
+async function findThinkers(){
+  const q = chat.askQ.trim(); if(!q || chat.suggest === 'finding') return;
+  chat.suggest = 'finding'; render();
+  let found = [];
+  try{
+    if(!AGENT_URL) throw new Error('no agent');
+    const out = await agentFetch('/v1/suggest', { question: q, lang: questionLang(q), limit: 3 }, 30000);
+    const items = Array.isArray(out) ? out : (out && (out.thinkers || out.suggestions || out.results)) || [];
+    const roster = {}; Object.entries(AGENT_IDS).forEach(([r, a]) => { roster[a] = r; });
+    const seen = new Set();
+    found = items.map(x => {
+      const raw = x && (x.thinker || x.id || x.agentId); if(typeof raw !== 'string') return null;
+      const id = roster[raw] || (philById(raw) ? raw : null);
+      if(!id || seen.has(id)) return null; seen.add(id);
+      const w = x.why || x.reason;
+      const why = typeof w === 'string' ? { en: w, zh: w } : (w && typeof w === 'object') ? { en: w.en || w.zh || '', zh: w.zh || w.en || '' } : null;
+      return { id, why };
+    }).filter(Boolean).slice(0, 3);
+  }catch(e){ found = []; }
+  if(!chat.picking) return;               // closed while waiting
+  if(found.length){ chat.suggest = found; }
+  else { chat.suggest = null; chat.carried = q; chat.pending = []; chat.newMode = 'several'; }
+  render();
+}
+
 function sendText(text){
   const c = convo(); if(!c || !text || chat.busy) return;
   if(accessBlocked()) return render();
+  if(!SENT_ONCE){ SENT_ONCE = true; try{ localStorage.setItem('still.sentOnce', '1'); }catch(e){} }
   c.msgs.push({ mine:true, text, at: Date.now() });
   c.at = Date.now();
   save(); render();
@@ -6242,6 +6791,8 @@ document.addEventListener('submit', ev => {
     if(!v.trim() && !AGENT_KEY) return;
     // Empty: the saved code is removed, as Forget access code does.
     setAgentKey(v.trim()); AGENT_NEEDS_KEY = false; AGENT_KEY_BAD = false; ACCESS.codeOpen = false;
+    // With sign-in off, the first code entered is the sign-up.
+    if(!googleOn()) openOnboarding();
     ACCESS.sheet = false; AGENT_STATE = 'unknown';
     agentReady().then(render);
     return;
@@ -6329,6 +6880,14 @@ document.addEventListener('input', ev => {
   }
   if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); syncSend(); return; }
   if(ev.target.id === 'pq'){ chat.query = ev.target.value; render(); }
+  // The question box: no redraw while typing; only the Find button follows,
+  // and a changed question drops suggestions made for the old one.
+  if(ev.target.id === 'askq'){
+    chat.askQ = ev.target.value;
+    if(Array.isArray(chat.suggest)){ chat.suggest = null; render();
+      const a = document.getElementById('askq'); if(a){ a.focus(); a.setSelectionRange(a.value.length, a.value.length); } return; }
+    const b = document.querySelector('[data-suggest]'); if(b) b.disabled = !chat.askQ.trim();
+  }
   // Only the results redraw, so the search box keeps focus and caret.
   if(ev.target.id === 'eq'){ exploreQuery = ev.target.value;
     const g = document.getElementById('egrid'); if(g) g.innerHTML = exploreGrid(); }
@@ -6396,7 +6955,9 @@ if(window.visualViewport){
     de.style.setProperty('--vv-h', Math.round(vv.height) + 'px');
   };
   vv.addEventListener('resize', lift); vv.addEventListener('scroll', lift);
-  document.addEventListener('focusin', () => { lift(); setTimeout(lift, 60); setTimeout(lift, 400); });
+  // Never in the same moment as the focus: a tap focuses on press, and moving
+  // the sheet before its click lands put the click on the backdrop, closing it.
+  document.addEventListener('focusin', () => { setTimeout(lift, 120); setTimeout(lift, 400); });
   document.addEventListener('focusout', () => setTimeout(lift, 120));
 }
 
@@ -6428,10 +6989,56 @@ document.addEventListener('touchend', () => {
   else sheet.style.transform = '';
 });
 
+/* --- Preview ---------------------------------------------------------------
+   The editor (Editor/) embeds this page as ./?preview and posts it
+   { type:'still-preview', content, open, view, lang }: a content.json built
+   by the editor with the same rules as Content/build.py, holding the
+   published questions plus the one under review, whatever its status. The
+   page opens on that question's thread (view 'thread') or the feed (view
+   'feed'); a later message with the same question and view redraws in place,
+   so an edit shows where the reader is. { type:'still-preview-focus',
+   response } scrolls to one reply. Messages are taken only from the parent
+   frame, and only from this origin, qingyimakes.github.io or localhost.
+   Without ?preview, or outside a frame, none of this runs. */
+let PV = null;
+const PREVIEW_FROM = /^(https:\/\/qingyimakes\.github\.io|https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?)$/;
+function previewContent(){
+  return new Promise(resolve => {
+    let first = true;
+    addEventListener('message', ev => {
+      if(ev.source !== window.parent) return;
+      if(ev.origin !== location.origin && !PREVIEW_FROM.test(ev.origin)) return;
+      const m = ev.data || {};
+      if(m.type === 'still-preview-focus') return previewFocus(m.response);
+      if(m.type !== 'still-preview' || !m.content) return;
+      if(m.lang === 'en' || m.lang === 'zh') lang = m.lang;
+      if(first){ first = false; PV = m; resolve(m.content); return; }
+      const moved = m.open !== PV.open || m.view !== PV.view;
+      PV = m; C = m.content;
+      if(moved) previewStart();
+      else { if(here().thread && !byId(C.questions, here().thread)) stack = [{tab:'home'}]; render(); }
+    });
+    window.parent.postMessage({ type:'still-preview-ready' }, '*');
+  });
+}
+function previewStart(){
+  reported = null; LEDE_OPEN = false;
+  stack = PV.view === 'feed' || !byId(C.questions, PV.open)
+    ? [{tab:'home'}] : [{tab:'home'}, {tab:'home', thread:PV.open}];
+  render(); window.scrollTo(0,0);
+}
+function previewFocus(id){
+  const b = id && document.querySelector(`[data-like="response:${CSS.escape(id)}"]`);
+  const row = b && b.closest('article');
+  // Clear of the bar that floats over the top of the page.
+  if(row) window.scrollTo({ top: row.getBoundingClientRect().top + scrollY - 72,
+                            behavior: navReduced() ? 'auto' : 'smooth' });
+}
+
 /* --- Boot ---------------------------------------------------------------- */
-load();
+if(!PREVIEW) load();
 Promise.all([
-  fetch('assets/content.json').then(r => r.json()),
+  PREVIEW ? previewContent() : fetch('assets/content.json').then(r => r.json()),
   fetch('assets/philosophers.json').then(r => r.json()).catch(() => ({philosophers:[]})),
   fetch('assets/library.json').then(r => r.json()).catch(() => ({thinkers:{}})),
   fetch('assets/map.json').then(r => r.json()).catch(() => null),
@@ -6446,8 +7053,9 @@ Promise.all([
   FEATURED_WIKI = library.featuredWiki || {};
   applyTiers();
   seedExamples();
-  // A first visit opens on the welcome, unless it came by a chat link.
-  if(!ONBOARDED && !new URLSearchParams(location.search).get('chat')){ OB.open = true; OB.sel = PICKS.slice(); }
+  if(PREVIEW) return previewStart();
+  // A first visit lands straight on Home: the welcome waits for a sign-up
+  // (openOnboarding, founder, B44).
   render(); model();
   // ./?chat=<philosopher id> opens a chat with them (map.html links here).
   // The parameter is dropped so a reload does not start a second chat.
@@ -6470,7 +7078,8 @@ Promise.all([
      Annotations stay in this browser until you copy them out. -->
 <script type="module">
 const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-if (local && new URLSearchParams(location.search).get('feedback') !== '0') {
+const q = new URLSearchParams(location.search);
+if (local && q.get('feedback') !== '0' && !q.has('preview')) {
   const [{ createElement }, { createRoot }, { Agentation }] = await Promise.all([
     import('https://esm.sh/react@18.3.1'),
     import('https://esm.sh/react-dom@18.3.1/client'),

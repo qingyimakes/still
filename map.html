@@ -70,6 +70,10 @@ a{color:inherit}
 
 .card{background:var(--surface);border-radius:var(--r-card);border:1px solid var(--hairline-card)}
 #map{position:relative;height:min(68vh,720px);min-height:380px;overflow:hidden}
+/* B41: the graph is round, so on a phone the frame is a square the column's
+   width; a tall frame only added empty space above and below it. Sigma fits
+   the graph to whatever box it is given, so it stays centred. */
+@media (max-width:639px){ #map{height:auto;min-height:0;aspect-ratio:1/1} }
 @media (min-width:900px){ #map{height:calc(100vh - 52px - 190px);min-height:520px;position:sticky;top:68px} }
 .ring-label{position:absolute;left:var(--sp-l);bottom:var(--sp-m);font-size:12px;color:var(--ink-secondary);pointer-events:none}
 .zoom{position:absolute;right:var(--sp-m);bottom:var(--sp-m);display:flex;flex-direction:column;gap:6px}
