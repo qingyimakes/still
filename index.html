@@ -4636,8 +4636,7 @@ function googleButton(){
 function accountSection(){
   if(!googleOn()) return '';
   if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
-      <p>${t('Sign in to keep talking with the thinkers. Your answers and likes still stay in this browser.',
-        '登录后可以继续与思想家对话。你的回答与喜欢仍然只留在这个浏览器里。')}</p>
+      <p>${t('Sign in to keep talking with the thinkers.','登录后可以继续与思想家对话。')}</p>
       ${googleButton()}</section>`;
   return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b></p>
@@ -6140,9 +6139,8 @@ function meSettings(){
       <button class="x" type="button" data-me-close="1" aria-label="${t('Close','关闭')}">×</button></header>
     <div class="me-sheet-body">
       ${accountSection()}
-      <section><h3>${t('Name in this browser','这个浏览器里的名字')}</h3>
-        <p>${googleOn() ? t('Local only — nobody else sees it.','仅保存在本机 — 其他人看不到。')
-          : t('Local only — there are no accounts, so nobody else sees it.','仅保存在本机 — 没有账号，其他人看不到。')}</p>
+      <section><h3>${t('Your name','你的名字')}</h3>
+        <p>${t('How Still greets you.','Still 用来称呼你。')}</p>
         <input id="me-name" type="text" maxlength="40" autocomplete="off" placeholder="${t('Reader','读者')}" value="${esc(ME_NAME)}"></section>
       <section><h3>${t('Language','语言')}</h3>
         <p>${t('Interface and all explanations','界面与全部释义的语言')}</p>
