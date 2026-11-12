@@ -5775,7 +5775,7 @@
     "en": "China, c. 4th c. BCE",
     "zh": "中国，约公元前 4 世纪"
    },
-   "image": null,
+   "image": "roster-zhuangzi.jpg",
    "quotes": [
     {
      "text": {
@@ -5803,7 +5803,14 @@
    "nameZh": "庄子",
    "born": null,
    "died": null,
-   "wikidata": "Q9390899"
+   "wikidata": "Q9390899",
+   "imageLicence": {
+    "file": "roster-zhuangzi.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Hua Zuli, 1326 — imagined some 1,600 years after Zhuangzi; no likeness of him survives",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hui_Zuli_%E8%8F%AF%E7%A5%96%E7%AB%8B%E2%80%94Zhuang_Zhou_%E8%8E%8A%E5%AD%90_(1326).jpg"
+   }
   },
   {
    "id": "p-paul-ricoeur",

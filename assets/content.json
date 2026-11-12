@@ -11880,7 +11880,13 @@
    },
    "wiki": "Herbert_Spencer",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "spencer.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unidentified photographer, before 1903",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herbert_Spencer.jpg"
+   },
    "workIds": []
   },
   {
@@ -11948,7 +11954,13 @@
    },
    "wiki": "W._E._B._Du_Bois",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "du-bois.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "James E. Purdy (photographer), 1907",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
+   },
    "workIds": []
   },
   {
@@ -12084,7 +12096,13 @@
    },
    "wiki": "Charlotte_Perkins_Gilman",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "gilman.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Charles Fletcher Lummis (photographer), c. 1900",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charlotte_Perkins_Gilman_c._1900.jpg"
+   },
    "workIds": []
   },
   {
@@ -12101,7 +12119,13 @@
    },
    "wiki": "William_Godwin",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "godwin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Henry William Pickersgill, 1830",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:William_Godwin_by_Henry_William_Pickersgill.jpg"
+   },
    "workIds": []
   },
   {
@@ -12118,7 +12142,13 @@
    },
    "wiki": "Benedetto_Croce",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "croce.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Mario Nunes Vais (photographer), 1909",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benedetto_Croce_01.jpg"
+   },
    "workIds": []
   },
   {
@@ -12135,7 +12165,13 @@
    },
    "wiki": "Jane_Addams",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "addams.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Bain News Service, c. 1924–26",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Addams_-_Bain_News_Service.jpg"
+   },
    "workIds": []
   },
   {
@@ -12169,7 +12205,13 @@
    },
    "wiki": "George_Santayana",
    "reach": null,
-   "image": null,
+   "image": {
+    "file": "santayana.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Denman Ross, 1909 (Harvard Art Museums)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Denman_Waldo_Ross_-_George_Santayana_(1863-1952)_-_H361_-_Harvard_Art_Museums.jpg"
+   },
    "workIds": []
   },
   {
