@@ -1546,6 +1546,7 @@ button.sim-tag:hover{color:var(--ink)}
 .askpane textarea{font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);resize:vertical;
   background:var(--surface);border:1px solid var(--hairline-strong);border-radius:var(--r-inner,16px);padding:12px 14px}
 .askpane .ghost{align-self:flex-start}
+.ask-note{flex:none;margin:0 20px 12px}
 .askpane .ghost[disabled]{opacity:.4}
 .srow{display:flex;align-items:flex-start;gap:12px;padding:9px 4px;border-bottom:1px solid var(--hairline)}
 .srow .meta{flex:1;min-width:0}
@@ -3488,7 +3489,7 @@ function convoPane(c){
         || `<div class="av">?</div>`}</div>
       <div class="who">
         <div class="who-row"><b>${esc(convoTitle(c))}</b>${AGENT_URL ? rpPill() : ''}</div>
-        <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open room', '开放房间') + ' · ' : ''}${
+        <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open', '开放') + ' · ' : ''}${
             cast.length ? t(`${cast.length} in the room`, `${cast.length} 人在场`) + ' · ' : ''}<button
             type="button" class="simlink" data-how="1" aria-haspopup="dialog"
             aria-label="${t('Simulated. How this works','模拟。这是如何运作的')}">${
@@ -4225,15 +4226,10 @@ const FILTERS = [
    conversation: c.room = {open, auto: [ids that joined by themselves],
    quiet: {agent id: turns without ranking}}. */
 const ROOM_MAX = 5, ROOM_AUTO = 3;
-function roomOpen(c){ return !!(c && c.room && c.room.open); }
-function openRoomSwitch(on){
-  return `<button type="button" class="openroom" role="switch" aria-checked="${on}" data-open-room="1">
-    <span class="sw" aria-hidden="true"></span>
-    <span><b>${t('Open room','开放房间')}</b><span class="ex">${t(
-      'Anyone can join or leave as the topic moves. Up to 5 reply, the most relevant first.',
-      '话题变化时，任何人都可以加入或离开。最多 5 位回应，最相关的先说。')}</span></span>
-  </button>`;
-}
+/* The room's type is set when it starts and never changes: the Ask mode of
+   the new-conversation sheet makes an open room; One and Several make a
+   private room (founder, 2026-11-13). c.mode = 'open' | 'private'. */
+function roomOpen(c){ return !!(c && (c.mode === 'open' || (c.room && c.room.open))); }
 
 /* B54: every agent round asks the agent who speaks (POST /v1/suggest with
    room). An @, a reply or a typed vocative ("尼采你…") means only those
@@ -4367,13 +4363,6 @@ function pickerModal(){
     '暂时无法推荐。请自己选择要问谁；你的问题会作为对话的第一句。')}</p>` : '';
 
   if(mode === 'ask'){
-    const sug = chat.suggest;
-    const rows = Array.isArray(sug) ? sug.map(x => {
-      const p = philById(x.id); if(!p) return '';
-      return `<div class="srow">${castAvatar(p)}
-        <div class="meta"><b>${esc(pn(p))}</b>${x.why ? `<span>${esc(x.why[lang] || x.why.en || '')}</span>` : ''}</div>
-        <button type="button" class="sdrop" data-sug-drop="${esc(p.id)}" aria-label="${t('Remove','移除')} ${esc(pn(p))}">×</button>
-      </div>`; }).join('') : '';
     return `<div class="backdrop" data-pick-cancel="1"></div>
   <div class="modal pick" role="dialog" aria-modal="true" aria-label="${t('New conversation','新建对话')}">
     <header>
@@ -4381,18 +4370,14 @@ function pickerModal(){
       <button class="x" data-pick-cancel="1" aria-label="${t('Close','关闭')}">×</button>
     </header>
     ${seg}
+    <p class="notice ask-note">${t('Thinkers join and leave as the talk moves; the most relevant reply.',
+      '思想家会随话题自由加入、离开，最相关的几位回应。')}</p>
     <div class="plist askpane">
       <textarea id="askq" rows="3" placeholder="${t('Ask a question…','提一个问题…')}"
         aria-label="${t('Your question','你的问题')}">${esc(chat.askQ)}</textarea>
-      ${sug === 'finding' ? `<p class="notice" role="status">${t('Finding thinkers…','正在寻找思想家…')}</p>`
-        : Array.isArray(sug) ? `<p class="notice">${t(
-            "Suggested for your question. Remove anyone you don't want; your question opens the chat.",
-            '根据你的问题推荐。可以移除任何一位；你的问题会作为对话的第一句。')}</p>${rows}`
-        : `<button type="button" class="ghost" data-suggest="1" ${chat.askQ.trim() ? '' : 'disabled'}>${
-            t('Find thinkers','找思想家')}</button>`}
     </div>
     <footer>
-      <button class="wide" data-ask-start="1" ${Array.isArray(sug) && sug.length && chat.askQ.trim() ? '' : 'disabled'}>${
+      <button class="wide" data-ask-start="1" ${chat.askQ.trim() ? '' : 'disabled'}>${
         t('Start conversation','开始对话')}</button>
     </footer>
   </div>`;
@@ -4407,7 +4392,6 @@ function pickerModal(){
     </header>
     ${seg}
     ${carried}
-    ${mode === 'several' && AGENT_URL ? openRoomSwitch(fresh ? !!chat.pendingRoom : roomOpen(convo())) : ''}
 
     <input id="pq" placeholder="${t(`Search ${pool.length} philosophers…`,`搜索 ${pool.length} 位哲学家…`)}"
            value="${esc(chat.query)}" autocomplete="off">
@@ -4427,7 +4411,7 @@ function pickerModal(){
     </div>
 
     ${mode === 'one' ? '' : `<footer>
-      <button class="wide" data-pick-done="1" ${target.length || (fresh ? chat.pendingRoom : roomOpen(convo())) ? '' : 'disabled'}>${
+      <button class="wide" data-pick-done="1" ${target.length ? '' : 'disabled'}>${
         convo() ? t('Done','完成')
                 : t(`Start conversation${target.length ? ' · ' + target.length : ''}`,
                     `开始对话${target.length ? ' · ' + target.length : ''}`)}</button>
@@ -7014,27 +6998,15 @@ document.addEventListener('click', ev => {
     if(chat.newMode === 'ask') setTimeout(() => { const a = document.getElementById('askq'); if(a){ a.focus(); a.setSelectionRange(a.value.length, a.value.length); } });
     return;
   }
-  if((el = hit('[data-suggest]'))){ findThinkers(); return; }
-  if((el = hit('[data-sug-drop]'))){
-    if(Array.isArray(chat.suggest)) chat.suggest = chat.suggest.filter(x => x.id !== el.dataset.sugDrop);
-    return render();
-  }
   if((el = hit('[data-ask-start]'))){
-    if(Array.isArray(chat.suggest) && chat.suggest.length)
-      startNewChat(chat.suggest.map(x => x.id), chat.askQ.trim());
+    // Ask = an open room: it starts from the question alone, and the agent
+    // picks who answers each turn.
+    if(chat.askQ.trim()) startNewChat([], chat.askQ.trim(), true);
     return;
   }
-  if((el = hit('[data-open-room]'))){
-    const c = convo();
-    if(c){
-      c.room = Object.assign(c.room || {}, { open: !roomOpen(c) });
-      if(!c.room.open){ c.room.auto = []; c.room.quiet = {}; }   // everyone left is now the reader's
-    }else chat.pendingRoom = !chat.pendingRoom;
-    save(); return render();
-  }
   if((el = hit('[data-pick-done]'))){
-    if(!convo() && (chat.pending.length || chat.pendingRoom))
-      return startNewChat(chat.pending.slice(), chat.carried, chat.pendingRoom);
+    if(!convo() && chat.pending.length)
+      return startNewChat(chat.pending.slice(), chat.carried);
     chat.picking = false; save(); return render();
   }
   // One thinker: a tap on the row starts the chat.
@@ -7220,44 +7192,14 @@ function send(){
    line, sent for the reader once the room is open. */
 function startNewChat(cast, question, open){
   const c = { id: 'c' + Date.now(), cast: cast.slice(), msgs: [], said: {}, at: Date.now() };
-  if(open){ c.room = { open: true, auto: [], quiet: {} }; chat.pendingRoom = false; }
+  c.mode = open ? 'open' : 'private';
+  if(open) c.room = { open: true, auto: [], quiet: {} };
   chat.convos.push(c); chat.open = c.id; chat.pending = [];
   chat.picking = false; chat.suggest = null; chat.carried = null; chat.askQ = '';
   // On a phone the new conversation slides in like any opened one.
   if(innerWidth < 900){ NAV = 'push'; CONVO_PUSHED = true; try{ history.pushState({ still: 'convo' }, ''); }catch(e){} }
   save(); render();
   if(question) sendText(question);
-}
-
-/* Ask: POST /v1/suggest {question, lang, limit: 3}. Read loosely while the
-   endpoint settles (the app's GateClient.suggest reads the same): a list
-   under thinkers / suggestions / results (or the body), each item's
-   thinker / id / agentId as an agent or roster id, why / reason as a string
-   or {en, zh}. Busy, failed or nobody on the roster: pick instead, and the
-   question still opens the chat. */
-async function findThinkers(){
-  const q = chat.askQ.trim(); if(!q || chat.suggest === 'finding') return;
-  chat.suggest = 'finding'; render();
-  let found = [];
-  try{
-    if(!AGENT_URL) throw new Error('no agent');
-    const out = await agentFetch('/v1/suggest', { question: q, lang: questionLang(q), limit: 3 }, 30000);
-    const items = Array.isArray(out) ? out : (out && (out.thinkers || out.suggestions || out.results)) || [];
-    const roster = {}; Object.entries(AGENT_IDS).forEach(([r, a]) => { roster[a] = r; });
-    const seen = new Set();
-    found = items.map(x => {
-      const raw = x && (x.thinker || x.id || x.agentId); if(typeof raw !== 'string') return null;
-      const id = roster[raw] || (philById(raw) ? raw : null);
-      if(!id || seen.has(id)) return null; seen.add(id);
-      const w = x.why || x.reason;
-      const why = typeof w === 'string' ? { en: w, zh: w } : (w && typeof w === 'object') ? { en: w.en || w.zh || '', zh: w.zh || w.en || '' } : null;
-      return { id, why };
-    }).filter(Boolean).slice(0, 3);
-  }catch(e){ found = []; }
-  if(!chat.picking) return;               // closed while waiting
-  if(found.length){ chat.suggest = found; }
-  else { chat.suggest = null; chat.carried = q; chat.pending = []; chat.newMode = 'several'; }
-  render();
 }
 
 function sendText(text){
@@ -7372,13 +7314,10 @@ document.addEventListener('input', ev => {
   }
   if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); syncSend(); return; }
   if(ev.target.id === 'pq'){ chat.query = ev.target.value; render(); }
-  // The question box: no redraw while typing; only the Find button follows,
-  // and a changed question drops suggestions made for the old one.
+  // The question box: no redraw while typing; only the Start button follows.
   if(ev.target.id === 'askq'){
     chat.askQ = ev.target.value;
-    if(Array.isArray(chat.suggest)){ chat.suggest = null; render();
-      const a = document.getElementById('askq'); if(a){ a.focus(); a.setSelectionRange(a.value.length, a.value.length); } return; }
-    const b = document.querySelector('[data-suggest]'); if(b) b.disabled = !chat.askQ.trim();
+    const b = document.querySelector('[data-ask-start]'); if(b) b.disabled = !chat.askQ.trim();
   }
   // Only the results redraw, so the search box keeps focus and caret.
   if(ev.target.id === 'eq'){ exploreQuery = ev.target.value;
