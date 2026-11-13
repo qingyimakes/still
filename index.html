@@ -153,7 +153,7 @@ img{max-width:100%}
 .me-pop h2{margin:0;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.25;color:var(--ink)}
 .me-pop p{margin:8px 0 20px;font-size:14.5px;line-height:1.45;color:var(--ink-secondary)}
 .me-pop .gsi{display:flex;flex-direction:column;align-items:center;gap:12px}
-.me-pop .gsi .agree,.me-pop .gsi p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-tertiary,var(--ink-secondary))}
+.me-pop .gsi .agree,.me-pop .gsi p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-secondary)}
 .me-photo-row{display:flex;align-items:center;gap:var(--sp-m);margin:var(--sp-s) 0 var(--sp-l)}
 .me-photo-big{flex:none;width:64px;height:64px;font-size:24px}
 .me-photo-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 var(--sp-l);cursor:pointer}
@@ -1115,6 +1115,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .said-fold .chev{flex:none;transition:transform .15s ease}
 .said-fold[open] .chev{transform:rotate(180deg)}
 .said-fold .said{margin-top:6px}
+.said.life .life-text{margin:2px 0 0;color:var(--ink);font-size:14.5px;line-height:1.5}
 .note-fold .detail{margin-top:6px}
 .said-more summary{font-size:12.5px;font-weight:500;color:var(--ink-secondary);cursor:pointer;
                    list-style:none;padding:2px 0}
@@ -1269,6 +1270,31 @@ body.resizing{cursor:col-resize;user-select:none}
 .acc-f small{display:block;margin-top:var(--sp-xs);font-size:13px;line-height:1.4;color:var(--ink-secondary)}
 .acc-next{width:100%}
 .acc-back{align-self:flex-start;min-height:32px;font-size:14.5px;color:var(--ink-secondary)}
+/* The Join sheet: one column. The research-preview line, the email and
+   Request access, then the code, then a hairline and Google. */
+.acc-sheet--join .acc-sheet-body{display:flex;flex-direction:column;align-items:stretch;gap:var(--sp-m)}
+.join-top{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-s);margin-top:var(--sp-xs)}
+.join .acc-lede,.acc-sheet-body.join .acc-lede{margin:0}
+.join .acc-done{margin:var(--sp-s) 0 0}
+.join .acc-form{gap:var(--sp-m)}
+.join .acc-note{margin:0;text-align:left}
+.join-wide{width:100%}
+.join .key-bad{margin:0;font-size:13.5px;line-height:1.45;color:var(--danger)}
+.join-code-link,.join-alt{align-self:flex-start;min-height:44px;font-size:14.5px}
+.join-code{display:flex;flex-direction:column;gap:var(--sp-s);padding-top:var(--sp-m);border-top:1px solid var(--hairline)}
+.join-code input{text-transform:uppercase;letter-spacing:.04em}
+.join-use{align-self:flex-start;padding:0 var(--sp-xl)}
+.join-ok{margin:0;font-size:15px;line-height:1.45;color:var(--ink)}
+.join-or{margin-top:var(--sp-xs);padding-top:var(--sp-m);border-top:1px solid var(--hairline);text-align:center}
+.join-or > p{margin:0;font-size:13px;color:var(--ink-secondary)}
+.join-or .gsi{margin-top:var(--sp-s)}
+.join-ask{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.join-qs{padding-top:var(--sp-m);border-top:1px solid var(--hairline)}
+.me-join{margin-top:var(--sp-s);min-height:44px;padding:0 var(--sp-xl)}
+.me-acct-or{margin:var(--sp-l) 0 0;font-size:13px;color:var(--ink-secondary)}
+.me-acct-state{color:var(--ink-secondary)}
+.me-pop-join{display:block;margin:var(--sp-m) auto 0;min-height:44px;font-size:14px;text-align:center}
+.me-pop .me-pop-or{margin:var(--sp-m) 0 0;font-size:12.5px;color:var(--ink-tertiary,var(--ink-secondary))}
 .bar .bar-set{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:44px;height:44px;
   display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--ink)}
 .bar .bar-set[hidden]{display:none}
@@ -1602,6 +1628,9 @@ button.sim-tag:hover{color:var(--ink)}
 .me-privacy{margin-top:var(--sp-m);display:flex;gap:var(--sp-l)}
 .agree{margin:var(--sp-xs) 0 0;font-size:12px;line-height:1.45;color:var(--ink-tertiary);text-align:center}
 .agree a{color:inherit;text-underline-offset:2px}
+/* The sign-up line (Join sheet, Google buttons): secondary ink, AA on the page and the sheet. */
+.agree--join{color:var(--ink-secondary);font-size:12.5px}
+.join .agree--join{text-align:left;margin:0}
 .keyform .agree{text-align:left;align-self:stretch}
 .cfoot .agree{padding:0 var(--sp-xs)}
 .me-privacy a{font-size:14px;color:var(--ink);text-underline-offset:2px}
@@ -1788,7 +1817,7 @@ button.sim-tag:hover{color:var(--ink)}
            stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <span class="brand">Still</span>
-    <button type="button" class="rp-pill bar-acc" id="bar-acc" data-acc-open="1" hidden></button>
+    <button type="button" class="rp-pill bar-acc" id="bar-acc" data-join="home" hidden></button>
     <button type="button" class="bar-set" id="bar-set" data-me-settings="1" aria-label="Settings" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
   </header>
 
@@ -1882,6 +1911,7 @@ function load(){
 }
 function saveTopics(){
   if(PREVIEW) return;
+  scheduleSync();
   try{
     localStorage.setItem('still.topics', JSON.stringify(PICKS));
     if(ONBOARDED) localStorage.setItem('still.onboarded', new Date().toISOString());
@@ -1889,6 +1919,7 @@ function saveTopics(){
 }
 function save(){
   if(PREVIEW) return;
+  scheduleSync();
   try{
     localStorage.setItem('still.state', JSON.stringify(state));
     localStorage.setItem('still.lang', lang);
@@ -2403,7 +2434,9 @@ function confirmDialog(){
   const body = acct ? t("Still deletes your account and what it keeps with it, and you're signed out. This can't be undone.",
                         'Still 会删除你的账户及其保存的内容，并让你退出登录。此操作无法撤销。')
     : convoAsk ? t("It's removed from this browser. This can't be undone.",'它会从这个浏览器中移除，且无法撤销。')
-               : t("Your answers, likes, name and photo on this browser. This can't be undone.",'此浏览器上的回答、喜欢、名字和照片。此操作无法撤销。');
+               : AUTH.session
+                 ? t("Your answers, likes, name and photo on this browser, and you're signed out here. Your account keeps its copy.",'此浏览器上的回答、喜欢、名字和照片，并在此浏览器退出登录。你的账户会保留它的副本。')
+                 : t("Your answers, likes, name and photo on this browser. This can't be undone.",'此浏览器上的回答、喜欢、名字和照片。此操作无法撤销。');
   const act = acct ? t('Delete','删除') : convoAsk ? t('Delete','删除') : t('Clear','清除');
   return `<div class="backdrop" data-confirm-cancel="1"></div>
     <div class="af af--confirm" role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-d">
@@ -2552,7 +2585,7 @@ function finishOnboarding(picks){
 }
 /* The welcome (Welcome, then Topics) shows once, right after a sign-up:
    the first Google sign-in that creates an account, or, while sign-in is
-   off, the first access code entered here. `again` is Me's "Show the
+   off, the first invite code entered here. `again` is Me's "Show the
    welcome again", which opens it whatever happened before. */
 function openOnboarding(again){
   if(!again && ONBOARDED) return;
@@ -3603,7 +3636,7 @@ function howPanel(){
           <dt>${t('Inferred','推论')}</dt><dd>${t("Reasoned from their ideas. Not a view they stated.",'从他们的思想推出，不是他们陈述过的观点。')}</dd>
           <dt>${t('Quotation marks','引号')}</dt><dd>${t('Only words matched word for word to a passage in Sources.','只用于与“来源”中段落逐字相符的文字。')}</dd></dl>`)}
         ${AGENT_KEY ? `<p class="how-hosts"><button type="button" class="linkish" data-forget-key="1">${
-          t('Forget access code','忘记访问码')}</button></p>` : ''}
+          t('Forget invite code','忘记邀请码')}</button></p>` : ''}
       </div>
     </div>`;
 }
@@ -3623,6 +3656,11 @@ const TERMS_LINKS = () => [`<a href="terms?lang=${lang}" target="_blank" rel="no
   `<a href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy Policy','隐私政策')}</a>`];
 function agreeLine(verb){
   const [tm, pv] = TERMS_LINKS();
+  // Sign-up (the Join sheet, and every Google button): what a chat is, in
+  // one sentence, with the agreement. It replaced the chat-top disclaimer.
+  if(verb === 'join') return `<p class="agree agree--join">${t(
+    `Chats are simulated: an AI writes each reply from the thinker's own texts, and what you type is sent to it. By continuing you agree to the ${tm} and ${pv}.`,
+    `对话为模拟：回应由 AI 依据思想家本人的文本写成，你输入的内容会发送给它。继续即表示你同意${tm}和${pv}。`)}</p>`;
   return `<p class="agree">${verb === 'send'
     ? t(`By sending, you agree to the ${tm} and ${pv}.`, `发送即表示你同意${tm}和${pv}。`)
     : t(`By continuing you agree to the ${tm} and ${pv}.`, `继续即表示你同意${tm}和${pv}。`)}</p>`;
@@ -3680,13 +3718,13 @@ function modelControls(){
    bar and when it resets. */
 function usageLine(){
   const m = MY; if(!m) return '';
-  const guest = /^(guest|free)$/.test(m.kind || '');
+  const guest = /^(guest|free)$/.test(m.kind || '') || m.access === 'waiting';
   return guest ? t(`${m.used} of ${m.cap} free messages used`, `已用 ${m.used}/${m.cap} 条免费消息`)
     : m.cap ? t(`${m.used} of ${m.cap} messages with the thinkers`, `今天已与思想家对话 ${m.used}/${m.cap} 条`)
     : t(`${m.used} messages today`, `今天 ${m.used} 条消息`);
 }
 function usagePanel(){
-  const m = MY, guest = m && /^(guest|free)$/.test(m.kind || '');
+  const m = MY, guest = m && (/^(guest|free)$/.test(m.kind || '') || m.access === 'waiting');
   const resets = (() => {
     if(!m || !m.resets_at) return '';
     const d = new Date(m.resets_at);
@@ -3705,7 +3743,7 @@ function usagePanel(){
       <div class="up-row">
         <div class="up-line"><span>${line}</span>${resets ? `<span>${t(`Resets ${resets}`, `${resets} 重置`)}</span>` : ''}</div>
         <div class="up-bar${f >= .9 ? ' low' : ''}"><i style="width:${(f * 100).toFixed(1)}%"></i></div>
-        ${guest ? `<p class="up-none">${t('After that, an access code gives 15 messages a day.','之后，访问码每天可发 15 条消息。')}</p>` : ''}
+        ${guest ? `<p class="up-none">${t('Approved testers get 15 messages a day.','获批测试者每天可发 15 条消息。')}</p>` : ''}
       </div>
       ${usageAccess()}
     </div>`;
@@ -3726,11 +3764,24 @@ async function refreshMe(){
   if(!AGENT_URL) return;
   try{
     const r = await fetch(AGENT_URL + '/v1/me', { headers: agentHeaders({}) });
+    if(r.status === 401 && AUTH.session){
+      const b = await r.json().catch(() => null);
+      if(b && b.status === 'session_invalid'){ setSession(null); setAccessState(AGENT_KEY ? 'approved' : (ACCESS.sent ? 'waiting' : 'guest')); render(); }
+      return;
+    }
     if(!r.ok) return;
     const j = await r.json();
     const u = j && (j.usage || j);
-    if(u && u.used != null) MY = { kind: j.kind || u.kind || (j.account ? 'account' : ''),
+    if(u && u.used != null) MY = { kind: j.kind || u.kind || (j.account ? 'account' : ''), access: j.access || '',
       used: +u.used || 0, cap: u.cap == null ? null : +u.cap, resets_at: u.resets_at || '' };
+    // The gate's word for this reader: guest, waiting, approved.
+    if(j && j.access){
+      // A request sent from here that the gate no longer knows (revoked) is not "on the list".
+      if(j.access === 'guest' && ACCESS.sent && !AUTH.session){ ACCESS.sent = false; try{ localStorage.removeItem('still.accessRequested'); }catch(e){} }
+      setAccessState(j.access);
+      if(hasAccess() && ACCESS.required){ ACCESS.required = false; try{ localStorage.removeItem('still.accessRequired'); }catch(e){} }
+    }
+    if(j && j.tester && j.tester.since) ACCESS.since = j.tester.since;
     render();
   }catch(e){}
 }
@@ -3738,14 +3789,19 @@ async function refreshMe(){
    flow; a code saved, the code (masked) and a way to change it, through the
    same code sheet and the same re-check as the first time. */
 function usageAccess(){
-  if(!AGENT_KEY) return `<div class="up-acc">
-      <button type="button" class="acc-go" data-up-acc="1">${t('Request access','申请访问')}</button>
+  if(!AGENT_KEY){
+    if(hasAccess()) return '';
+    return `<div class="up-acc">${onList()
+      ? `<p class="up-none">${t("You're on the list.", '你已在名单上。')}</p>
+         <button type="button" class="linkish" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`
+      : `<button type="button" class="acc-go" data-join="chat">${t('Request access','申请访问')}</button>`}
     </div>`;
+  }
   const shown = '•'.repeat(Math.min(8, Math.max(4, AGENT_KEY.length - 2))) + AGENT_KEY.slice(-2);
   return `<div class="up-acc up-row up-code">
-      <div class="up-line"><span>${t('Access code','访问码')}</span>
+      <div class="up-line"><span>${t('Invite code','邀请码')}</span>
         <span class="up-mask" aria-label="${t('Saved, hidden','已保存，已隐藏')}">${esc(shown)}</span></div>
-      <button type="button" class="linkish" data-up-key-edit="1">${t('Edit','编辑')}</button>
+      <button type="button" class="linkish" data-join="chat" data-join-code="1">${t('Edit','编辑')}</button>
     </div>`;
 }
 function closeUsage(){
@@ -3852,8 +3908,9 @@ async function micSend(){
     if(r.status === 401){
       const b = body || {};
       if(b.status === 'access_required'){ accessRequired(b.reason);
-        err = t('Voice needs an access code.', '语音需要访问码。'); }
-      else { keyRejected(); err = t("That code didn't work.", '这个访问码不对。'); }
+        err = t('Voice needs tester access.', '语音需要测试权限。'); }
+      else if(b.status === 'session_invalid'){ sessionEnded(); err = t('Please sign in again.', '请重新登录。'); }
+      else { keyRejected(); err = t("That code didn't work.", '这个邀请码无效。'); }
     }
     else if(r.status === 429) err = t("Today's voice limit is used up.", '今天的语音额度已用完。');
     else if(!r.ok) err = t("Couldn't hear that, try again.", '没听清，请再试一次。');
@@ -4568,7 +4625,15 @@ const AGENT_CONSTANT = null;   // e.g. 'http://localhost:8077' to switch it on w
    where the gate is likewise the page's own origin. */
 /* Preview versions (`w.sh preview`) are served at <version>-still.<sub>.workers.dev. */
 const GATE_HOST = /^(([a-z0-9-]+-)?still\.[a-z0-9-]+\.workers\.dev|(www\.)?stillasking\.app)$/;
-const AGENT_GATE = GATE_HOST.test(location.hostname) ? location.origin : null;
+/* A local preview of the Worker (Hosting/worker/dev-access.mjs) serves the
+   page and the gate from one localhost origin, as the live site does; ?gate=1
+   (remembered for the tab) treats it as the gate. Only on localhost. */
+const DEV_GATE = (() => { try{
+  if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return false;
+  if(new URLSearchParams(location.search).get('gate') === '1') sessionStorage.setItem('still.devGate', '1');
+  return sessionStorage.getItem('still.devGate') === '1';
+}catch(e){ return false; } })();
+const AGENT_GATE = GATE_HOST.test(location.hostname) || DEV_GATE ? location.origin : null;
 const AGENT_DEFAULT = 'http://localhost:8077';
 const LOCAL_HOST = /^(localhost|127\.0\.0\.1|\[::1\])$/;
 /* A home network: the founder's phone opening the page from the Mac over
@@ -4625,37 +4690,85 @@ const DEVICE_ID = (() => {
     return d;
   }catch(e){ return ''; }
 })();
+/* --- Access: one Join sheet (Docs/access-api.md) ---------------------------
+   Anyone may read; anyone may sign in with Google. Chat beyond the free 3
+   needs membership: an approved request (the email they sign in with), an
+   invite code, or a personal code typed on its own. One sheet, joinSheet(),
+   is the way in from every entry point -- the Me card ('me'), chat when the
+   free messages are used ('chat'), Home's Request access ('home') and
+   Settings > Account ('settings'). Only its title changes. ACCESS.state is
+   the gate's word for this reader (GET /v1/me `access`): guest, waiting or
+   approved. "Member" is kept for the future paid tier (Claude, more
+   messages); an account is for saving things and waiting for access. */
 const ACCESS = {
   required: (() => { try{ return localStorage.getItem('still.accessRequired') === '1'; }catch(e){ return false; } })(),
   sent: (() => { try{ return localStorage.getItem('still.accessRequested') === '1'; }catch(e){ return false; } })(),
+  sentEmail: (() => { try{ return localStorage.getItem('still.accessEmail') || ''; }catch(e){ return ''; } })(),
+  state: (() => { try{
+    const v = localStorage.getItem('still.access') || '';
+    // Earlier names for the same states (before 13 Nov).
+    return ({ member: 'approved', code: 'approved', waitlisted: 'waiting', requested: 'waiting' })[v] || v;
+  }catch(e){ return ''; } })(),
   email: '', role: '', heard: '', question: '', interview: false, linkedin: '', updates: false,
-  sending: false, err: '', codeOpen: false, sheet: false, reason: '', step: 0
+  sending: false, err: '', sheet: false, reason: '', step: 0,
+  // After Request access: the optional questions, one per step (1-4), then done.
+  asking: false,
+  // "Have an invite code?": open, the typed code, the check's answer.
+  codeOpen: false, code: '', codeErr: '', codeBusy: false, codeOk: null, joined: false, pendingCode: '', since: ''
 };
+/* The ?c= a link brought (a channel slug or an invite code), kept until a
+   request or a sign-in carries it. */
+const LINK_C = (() => {
+  try{
+    const q = new URLSearchParams(location.search).get('c');
+    if(q && q.length <= 60){ localStorage.setItem('still.c', q.trim()); return q.trim(); }
+    return localStorage.getItem('still.c') || '';
+  }catch(e){ return ''; }
+})();
+/* A ?c= in an invite code's shape (WORD-XXXX or XXXXX-XXXXX) fills the code field. */
+const looksLikeCode = s => { const x = String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  return x.length === 10 || (x.length >= 7 && x.length <= 12 && /^[A-Z]+$/.test(x.slice(0, -4)) && /\d/.test(x.slice(-4))); };
+/* An invite link (stillasking.app/?c=AGORA-7KQ2) opens the Join sheet on its
+   code, once; the address loses the ?c= so a reload or a share doesn't. */
+try{
+  const u = new URL(location.href), c = u.searchParams.get('c');
+  if(c !== null){
+    u.searchParams.delete('c'); history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+    if(looksLikeCode(c) && !AGENT_KEY){ ACCESS.sheet = 'home'; ACCESS.codeOpen = true; ACCESS.code = c.trim().slice(0, 40); }
+  }
+}catch(e){}
+function setAccessState(s){
+  if(!s || s === ACCESS.state) return;
+  ACCESS.state = s;
+  try{ localStorage.setItem('still.access', s); }catch(e){}
+}
+/* Has more than the free messages: an approved tester's session, or a code. */
+const hasAccess = () => !!AGENT_KEY || (!!AUTH.session && ACCESS.state === 'approved');
+/* On the list: signed in but not approved, or a request sent from here. */
+const onList = () => (!!AUTH.session && ACCESS.state === 'waiting') || (!AUTH.session && (ACCESS.sent || ACCESS.state === 'waiting'));
 function accessRequired(reason){
-  if(!ACCESS.required) ACCESS.sheet = 'chat';   // the moment it happens: open the sheet once
+  if(!ACCESS.required) openJoin('chat');   // the moment it happens: open the sheet once
   ACCESS.required = true; ACCESS.reason = reason || '';
   try{ localStorage.setItem('still.accessRequired', '1'); }catch(e){}
 }
-const accessBlocked = () => !!AGENT_URL && ACCESS.required && !AGENT_KEY && !AUTH.session;
-/* A rejected code reopens the code sheet with the error, never an inline
-   field in the conversation. */
-function keyRejected(){ setAgentKey(''); AGENT_NEEDS_KEY = true; AGENT_KEY_BAD = true; ACCESS.sheet = 'code'; }
-/* The code form lives only in the Access code sheet (accessSheet). */
-function keyForm(){
-  // As the app has it: a full-width field, the note, then Save, dimmed
-  // until something is typed.
-  return `<form class="keyform" data-key-form="1">
-      ${AGENT_KEY_BAD ? `<p class="key-bad" role="alert">${t("That code didn't work.", '这个访问码不对。')}</p>` : ''}
-      <input id="agent-key" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
-        placeholder="${t('Access code','访问码')}" aria-label="${t('Access code','访问码')}">
-      <p>${t('Kept in this browser only.', '只保存在这个浏览器里。')}</p>
-      <button type="submit" class="key-save"${AGENT_KEY ? '' : ' disabled'}>${t('Save','保存')}</button>
-      ${agreeLine('continue')}
-    </form>`;
+const accessBlocked = () => !!AGENT_URL && ACCESS.required && !hasAccess();
+function openJoin(entry, o){
+  MENU.open = false; MENU.sub = false; chat.usageOpen = false;
+  ACCESS.sheet = entry || 'home'; ACCESS.err = ''; ACCESS.codeErr = ''; ACCESS.joined = false;
+  // Each opening starts on the main path; a code checked earlier is kept for the sign-in.
+  if(!ACCESS.pendingCode){ ACCESS.codeOpen = false; ACCESS.codeOk = null; }
+  if(o && o.code){ ACCESS.codeOpen = true; ACCESS.code = o.code; }
+  if(o && o.codeErr){ ACCESS.codeOpen = true; ACCESS.codeErr = o.codeErr; }
+}
+/* A saved code the gate refused: the sheet, with the code field and why. */
+function keyRejected(){
+  const was = AGENT_KEY;
+  setAgentKey(''); AGENT_NEEDS_KEY = true; AGENT_KEY_BAD = true;
+  openJoin(ACCESS.sheet || 'home', { code: was, codeErr: t("That code didn't work.", '这个邀请码无效。') });
 }
 
 /* "Research preview": a quiet pill on generated surfaces only (a chat, the
-   Agon list, the access card); never on reading, Answers or Explore, which
+   Agon list, the Join sheet); never on reading, Answers or Explore, which
    are authored. Tapping it opens one line. */
 let RP_OPEN = false;
 function rpPill(){
@@ -4670,130 +4783,144 @@ function rpLine(){
     '提问与回复会在我们的服务器上保存（不含姓名），用于改进 Still。')}</p>` : '';
 }
 
-/* The request-access card, in place of the reply box once the free
-   message is used. */
 const ACCESS_ROLES = () => [['student', t('Student','学生')], ['teacher_researcher', t('Teacher or researcher','教师或研究者')],
   ['tech', t('Working in tech','科技从业者')], ['creative', t('Writer or creative','写作或创作者')], ['curious', t('Just curious','只是好奇')]];
 const ACCESS_HEARD = () => [['friend', t('Friend','朋友')], ['social', t('Social media','社交媒体')],
   ['search', t('Search','搜索')], ['other', t('Other','其他')]];
-const codeLink = () => `<button type="button" class="linkish acc-code" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>`;
-/* The card (source "chat_limit") and the Home sheet (source "home") share
-   one form. */
-/* At the end of the conversation once the 3 free messages are used: one
-   centred column — a title, one line, the request button, the code, then a
-   hairline and the footnote. The form itself is a bottom sheet
-   (accessSheet), opened when it happens and again from here. */
+
+/* In place of the reply box once the free messages are used: one line and
+   the way in. On the list, it says so instead. */
 function accessCard(){
-  const code = `<button type="button" class="acc-in-code" data-acc-code="1">${
-    t('I have an access code','我有访问码')}</button>`;
   const note = `<p class="acc-in-note">${t(
     "Replies are generated from the thinkers' texts and can be wrong. Sourced lines are quoted; everything else is simulation.",
     '回复由思想家的著作生成，可能出错。有出处的是原文引用，其余为模拟。')}</p>`;
-  if(ACCESS.sent) return `<section class="acc-in card" aria-live="polite">
-      <h3 class="acc-in-title">${t("Thanks — we'll be in touch.", '谢谢，我们会联系你。')}</h3>
-      ${code}${note}</section>`;
+  if(onList()) return `<section class="acc-in card" aria-live="polite">
+      <h3 class="acc-in-title">${t("You're on the list.", '你已在名单上。')}</h3>
+      <p class="acc-in-line">${t("Still is letting people in a few at a time. We'll email you when you're in.",
+        'Still 正在分批开放。获得访问后，我们会发邮件通知你。')}</p>
+      <button type="button" class="acc-in-code" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>
+      ${note}</section>`;
   return `<section class="acc-in card">
       <h3 class="acc-in-title">${ACCESS.reason === 'free_closed' ? t('Free messages are closed for today.', '今天的免费消息已关闭。')
           : t("You've used your 3 free messages.", '你的 3 条免费消息已用完。')}</h3>
-      <p class="acc-in-line">${t('Still is in research preview. Request access to keep talking.',
-          'Still 正在研究预览中。申请访问即可继续对话。')}</p>
-      <button type="button" class="acc-go acc-in-go" data-acc-open="chat">${t('Request access','申请访问')}</button>
-      ${code}
+      <p class="acc-in-line">${t('Still is letting people in a few at a time.', 'Still 正在分批开放。')}</p>
+      <button type="button" class="acc-go acc-in-go" data-join="chat">${t('Keep talking','继续对话')}</button>
       ${note}
     </section>`;
 }
-function accessSheet(){
+
+/* The Join sheet. */
+const JOIN_TITLE = () => ACCESS.sheet === 'chat' ? t('Keep talking','继续对话') : t('Join Still','加入 Still');
+function joinSheet(){
   if(!ACCESS.sheet) return '';
-  if(ACCESS.sheet === 'code') return `<div class="backdrop" data-acc-close="1"></div>
-    <div class="modal acc-sheet acc-sheet--code" role="dialog" aria-modal="true" aria-labelledby="acc-title">
-      <header class="code-head"><button class="ghost" type="button" data-acc-close="1">${t('Cancel','取消')}</button>
-        <b id="acc-title">${t('Access code','访问码')}</b><span aria-hidden="true"></span></header>
-      <div class="acc-sheet-body">${keyForm()}</div>
-    </div>`;
-  // As the app's AccessSheet: Cancel | title, then one question per step.
-  // The lede and "Have an access code?" sit on the first step only.
-  const first = (ACCESS.step || 0) === 0;
   return `<div class="backdrop" data-acc-close="1"></div>
-    <div class="modal acc-sheet acc-sheet--steps" role="dialog" aria-modal="true" aria-labelledby="acc-title">
-      <header class="code-head"><button class="ghost" type="button" data-acc-close="1">${t('Cancel','取消')}</button>
-        <b id="acc-title">${ACCESS.sheet === 'chat' ? t('Want to keep talking?','想继续对话？') : t('Request access','申请访问')}</b><span aria-hidden="true"></span></header>
-      <div class="acc-sheet-body">
-        ${rpPill()}${rpLine()}
-        ${ACCESS.sent
-          ? `<p class="acc-done">${t("Thanks — we'll be in touch.", '谢谢，我们会联系你。')}</p>`
-          : `${first ? `<p class="acc-lede">${ACCESS.sheet === 'chat' && ACCESS.reason === 'free_closed'
-              ? t("Free messages are closed for today. Still is in research preview — leave your email and we'll send you full access.",
-                  '今天的免费消息已关闭。Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')
-              : t("Still is in research preview — leave your email and we'll send you full access.",
-              'Still 正在研究预览中，留下邮箱，我们会把完整权限发给你。')}</p>
-              ${googleOn() ? `${googleButton()}
-              <button type="button" class="linkish acc-or-code" data-acc-code="1">${t('or enter an access code','或输入访问码')}</button>
-              <p class="acc-or">${t('or request access','或申请访问')}</p>`
-              : `<button type="button" class="ghost acc-have" data-acc-code="1">${t('Have an access code?','有访问码？')}</button>`}` : ''}
-            ${accessForm(ACCESS.sheet === 'chat' ? 'chat_limit' : 'home')}`}
-      </div>
+    <div class="modal acc-sheet acc-sheet--join" role="dialog" aria-modal="true" aria-labelledby="acc-title">
+      <header class="code-head"><button class="ghost" type="button" data-acc-close="1">${
+        ACCESS.joined || (onList() && !ACCESS.asking) ? t('Done','完成') : t('Cancel','取消')}</button>
+        <b id="acc-title">${JOIN_TITLE()}</b><span aria-hidden="true"></span></header>
+      <div class="acc-sheet-body join">${joinBody()}</div>
     </div>`;
 }
-const ACC_STEPS = 5;
-/* Whether the optional question on this step has an answer: if not, the
-   button says Skip rather than Continue, as in the app. */
+function joinBody(){
+  if(ACCESS.joined || hasAccess()) return `<p class="acc-done">${t("You're approved.", '你已获批。')}</p>
+      <p class="acc-lede">${t('15 messages a day with the thinkers.', '每天可与思想家对话 15 条。')}</p>
+      <button type="button" class="acc-go join-wide" data-acc-close="1">${t('Start talking','开始对话')}</button>`;
+  const lede = `<div class="join-top">${rpPill()}<p class="acc-lede">${
+    t('Still is letting people in a few at a time.', 'Still 正在分批开放。')}</p></div>${rpLine()}`;
+  // Request sent (or signed in, not a member): on the list.
+  if(onList()){
+    const email = AUTH.session ? AUTH.email : (ACCESS.sentEmail || ACCESS.email.trim());
+    return `<p class="acc-done">${t("You're on the list.", '你已在名单上。')}</p>
+      <p class="acc-lede">${email ? t(`We'll email ${esc(email)} when you're in.`, `获得访问后，我们会发邮件到 ${esc(email)}。`)
+        : t("We'll email you when you're in.", '获得访问后，我们会发邮件通知你。')}</p>
+      ${ACCESS.asking ? joinQuestions() : ''}
+      ${ACCESS.asking ? '' : codeBlock()}
+      ${ACCESS.asking || AUTH.session ? '' : signInBlock()}`;
+  }
+  // Not signed in, a code that works: sign in to use it.
+  if(ACCESS.codeOk && !AUTH.session) return `${lede}
+      <p class="join-ok" role="status">${t('Code works. Sign in to use it.', '邀请码有效，登录后即可使用。')}</p>
+      ${googleOn() ? googleButton() : ''}
+      ${ACCESS.codeOk === 'personal' || ACCESS.codeOk === 'review' || !googleOn()
+        ? `<button type="button" class="linkish join-alt" data-code-standalone="1">${t('Use it without an account','不登录直接使用')}</button>` : ''}`;
+  return `${lede}
+    <form class="acc-form join-req" data-join-form="1" novalidate>
+      <label class="acc-f"><span>${t('Email','邮箱')}</span>
+        <input type="email" data-acc="email" value="${esc(ACCESS.email)}" autocomplete="email" aria-label="${t('Email','邮箱')}" required></label>
+      ${ACCESS.err ? `<p class="key-bad" role="alert">${esc(ACCESS.err)}</p>` : ''}
+      <button type="submit" class="acc-go join-wide"${ACCESS.sending ? ' disabled' : ''}>${
+        ACCESS.sending ? t('Sending…','发送中…') : t('Request access','申请访问')}</button>
+      <p class="acc-note">${t("We use your email only to tell you when you're in.", '我们只用你的邮箱通知你获得访问。')}</p>
+      ${agreeLine('join')}
+    </form>
+    ${codeBlock()}
+    ${signInBlock()}`;
+}
+function signInBlock(){
+  if(!googleOn() || AUTH.session) return '';
+  return `<div class="join-or"><p>${t('Or sign in to save your answers and likes. Approved? Use the email you were approved with.',
+    '或者登录，保存你的回答与喜欢。已获批？请使用获批的邮箱登录。')}</p>${googleButton()}</div>`;
+}
+function codeBlock(){
+  if(!ACCESS.codeOpen) return `<button type="button" class="linkish join-code-link" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`;
+  return `<form class="join-code" data-code-form="1" novalidate>
+      <label class="acc-f"><span>${t('Invite code','邀请码')}</span>
+        <input id="join-code" type="text" data-acc="code" value="${esc(ACCESS.code)}" autocomplete="off" autocapitalize="characters"
+          autocorrect="off" spellcheck="false" maxlength="40"></label>
+      ${ACCESS.codeErr ? `<p class="key-bad" role="alert">${esc(ACCESS.codeErr)}</p>` : ''}
+      <button type="submit" class="acc-go join-use"${ACCESS.codeBusy ? ' disabled' : ''}>${
+        ACCESS.codeBusy ? t('Checking…','正在验证…') : t('Use code','使用')}</button>
+    </form>`;
+}
+/* After Request access: the optional questions, one per step, each skippable. */
+const JOIN_Q = 4;
 function accAnswered(step){
   if(step === 1) return !!ACCESS.role;
   if(step === 2) return !!ACCESS.heard;
   if(step === 3) return !!ACCESS.question.trim();
   return true;
 }
-function accNext(source){
-  const step = ACCESS.step || 0;
-  if(step === ACC_STEPS - 1) return submitAccess(source);
-  if(step === 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ACCESS.email.trim())){
-    ACCESS.err = t('Please enter a valid email.', '请输入有效的邮箱。'); return render();
-  }
-  ACCESS.err = ''; ACCESS.step = step + 1; render();
-  setTimeout(() => { const f = document.querySelector('.acc-form input:not([type=radio]):not([type=checkbox])'); if(f) f.focus(); });
-}
-function accessForm(source){
+function joinQuestions(){
+  const step = ACCESS.step || 1, last = step === JOIN_Q;
   const opts = (name, list) => `<div class="acc-opts" role="radiogroup">${list.map(([v, l]) =>
-    `<label class="fpill"><input type="radio" name="${source}-${name}" value="${v}" data-acc="${name}"${ACCESS[name] === v ? ' checked' : ''}>${esc(l)}</label>`).join('')}</div>`;
-  // One question per step, as the app's stepper: email (with its note),
-  // who you are, how you heard, your question, then the two consents.
-  const step = ACCESS.step || 0, last = step === ACC_STEPS - 1;
+    `<label class="fpill"><input type="radio" name="join-${name}" value="${v}" data-acc="${name}"${ACCESS[name] === v ? ' checked' : ''}>${esc(l)}</label>`).join('')}</div>`;
   const opt = `<i>${t('optional','选填')}</i>`;
-  const body = step === 0 ? `<label class="acc-f"><span>${t('Email','邮箱')}</span>
-        <input type="email" data-acc="email" value="${esc(ACCESS.email)}" autocomplete="email" required>
-        <small>${t('We use your email only to send you access.','我们只用你的邮箱来发送访问权限。')}
-          <a href="privacy?lang=${lang}" target="_blank" rel="noopener">${t('Privacy','隐私')}</a></small></label>`
-    : step === 1 ? `<fieldset class="acc-f"><legend>${t('You are…','你是…')} ${opt}</legend>${opts('role', ACCESS_ROLES())}</fieldset>`
+  const body = step === 1 ? `<fieldset class="acc-f"><legend>${t('You are…','你是…')} ${opt}</legend>${opts('role', ACCESS_ROLES())}</fieldset>`
     : step === 2 ? `<fieldset class="acc-f"><legend>${t('How did you hear about Still?','你是怎么知道 Still 的？')} ${opt}</legend>${opts('heard', ACCESS_HEARD())}</fieldset>`
     : step === 3 ? `<label class="acc-f"><span>${t('What question would you ask a thinker?','你想问思想家什么问题？')} ${opt}</span>
         <input type="text" data-acc="question" value="${esc(ACCESS.question)}" maxlength="200"></label>`
     : `<label class="acc-check"><input type="checkbox" data-acc="interview"${ACCESS.interview ? ' checked' : ''}>
-        <span>${t("I'm open to a 20-minute video call about how I use Still — thank-you: 3 months of full access.",
-          '我愿意参加 20 分钟视频访谈，谈谈我如何使用 Still（感谢：3 个月完整权限）。')}</span></label>
+        <span>${t("I'm open to a 20-minute video call about how I use Still.", '我愿意参加 20 分钟视频访谈，谈谈我如何使用 Still。')}</span></label>
       ${ACCESS.interview ? `<label class="acc-f acc-sub"><span>${t('LinkedIn (optional, helps us schedule)','LinkedIn（可选，方便安排时间）')}</span>
         <input type="url" data-acc="linkedin" value="${esc(ACCESS.linkedin)}" maxlength="200"
           inputmode="url" autocomplete="url" placeholder="linkedin.com/in/…"></label>` : ''}
       <label class="acc-check"><input type="checkbox" data-acc="updates"${ACCESS.updates ? ' checked' : ''}>
         <span>${t('Also send me occasional updates about Still.','也给我发送 Still 的不定期更新。')}</span></label>`;
-  const label = ACCESS.sending ? t('Sending…','发送中…')
-    : last ? t('Request access','申请访问')
-    : step >= 1 && !accAnswered(step) ? t('Skip','跳过') : t('Continue','继续');
-  return `<form class="acc-form" data-acc-form="${source}" novalidate>
-      <p class="acc-step">${t(`${step + 1} of ${ACC_STEPS}`, `第 ${step + 1} / ${ACC_STEPS} 步`)}</p>
+  const label = ACCESS.sending ? t('Sending…','发送中…') : last ? t('Done','完成')
+    : !accAnswered(step) ? t('Skip','跳过') : t('Continue','继续');
+  return `<form class="acc-form join-qs" data-acc-form="1" novalidate>
+      ${step === 1 ? `<p class="join-ask">${t("Two quick questions help us choose who's next.", '回答几个简单问题，帮我们决定下一批邀请谁。')}</p>` : ''}
+      <p class="acc-step">${t(`${step} of ${JOIN_Q}`, `第 ${step} / ${JOIN_Q} 步`)}</p>
       ${body}
       ${ACCESS.err ? `<p class="key-bad" role="alert">${esc(ACCESS.err)}</p>` : ''}
       <button type="submit" class="acc-go acc-next"${ACCESS.sending ? ' disabled' : ''}>${label}</button>
-      ${step > 0 ? `<button type="button" class="acc-back" data-acc-back="1">${t('Back','上一步')}</button>` : ''}
-      ${last ? `<p class="acc-note">${t('We save your email, your answers and your country — only to give you access and, if you ticked it, to contact you.',
-        '我们保存你的邮箱、回答和所在国家，仅用于发送访问权限，以及在你勾选时联系你。')}</p>` : ''}
+      ${step > 1 ? `<button type="button" class="acc-back" data-acc-back="1">${t('Back','上一步')}</button>` : ''}
+      ${last ? `<p class="acc-note">${t('We keep your answers with your request, only to choose who joins next and, if you ticked it, to contact you.',
+        '你的回答与申请一起保存，仅用于决定下一批邀请谁，以及在你勾选时联系你。')}</p>` : ''}
     </form>`;
 }
+function accNext(){
+  const step = ACCESS.step || 1;
+  if(step === JOIN_Q) return submitAnswers();
+  ACCESS.err = ''; ACCESS.step = step + 1; render();
+  setTimeout(() => { const f = document.querySelector('.acc-form input:not([type=radio]):not([type=checkbox])'); if(f) f.focus(); });
+}
 
-/* The access request: POST /v1/access on the gate (Hosting/README.md).
-   202 = stored (or already on the list); 400 names the bad field; 429 =
-   too many from this network today. With no gate (GitHub Pages, this Mac)
-   nothing is sent, and the card says so: it never claims a request went
-   through. */
+/* The access request: POST /v1/access on the gate (Docs/access-api.md).
+   202 = stored (or already on the list: never revealed); 400 names the
+   bad field; 429 = too many from this network today. With no gate (GitHub
+   Pages, this Mac) nothing is sent, and the sheet says so: it never claims
+   a request went through. */
 const accessUrl = () => toGate() ? AGENT_URL + '/v1/access' : null;
 async function requestAccess(fields){
   const url = accessUrl();
@@ -4803,42 +4930,115 @@ async function requestAccess(fields){
   return { ok: r.status === 202 || r.ok, status: r.status, body: await r.json().catch(() => null) };
 }
 const LINKEDIN = /^(https:\/\/)?(www\.)?linkedin\.com\/\S+$/i;
-async function submitAccess(source){
+const ENTRY = () => ({ chat: 'chat_limit', me: 'me', settings: 'settings' })[ACCESS.sheet] || 'home';
+function requestBase(){
+  const c = convo();
+  const first = c && c.cast && c.cast[0];
+  return { email: (ACCESS.sentEmail || ACCESS.email).trim(), lang: lang === 'zh' ? 'zh' : 'en', device_id: DEVICE_ID,
+    entry: ENTRY(), ...(LINK_C ? { channel: LINK_C } : {}),
+    thinker: ACCESS.sheet === 'chat' && first ? (AGENT_IDS[first] || first) : null };
+}
+function requestError(res){
+  if(res.reason === 'not_configured') return t("Requests aren't open on this page.", '此页面暂不接受申请。');
+  if(res.status === 400 && res.body && res.body.field){
+    const f = res.body.field;
+    return f === 'email' ? t('Please check your email.', '请检查邮箱。')
+      : f === 'linkedin' ? t('That LinkedIn link should start with linkedin.com.', 'LinkedIn 链接应以 linkedin.com 开头。')
+      : t('Please check the form.', '请检查表单。');
+  }
+  if(res.status === 429) return t('Too many requests from this network today. Please try tomorrow.', '今天来自这个网络的申请太多，请明天再试。');
+  return t("That didn't go through. Please try again.", '没有发送成功，请再试一次。');
+}
+/* Request access: the email alone. Then the optional questions. */
+async function submitAccess(){
   const email = ACCESS.email.trim();
-  const li = ACCESS.interview ? ACCESS.linkedin.trim() : '';
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
     ACCESS.err = t('Please enter a valid email.', '请输入有效的邮箱。'); return render();
   }
+  ACCESS.sending = true; ACCESS.err = ''; render();
+  let res;
+  try{ res = await requestAccess({ ...requestBase(), email }); }catch(e){ res = { ok: false }; }
+  ACCESS.sending = false;
+  if(res.ok){
+    ACCESS.sent = true; ACCESS.sentEmail = email; ACCESS.asking = true; ACCESS.step = 1;
+    try{ localStorage.setItem('still.accessRequested', '1'); localStorage.setItem('still.accessEmail', email);
+         localStorage.removeItem('still.c'); }catch(e){}
+    if(!AUTH.session) setAccessState('waiting');
+  }else ACCESS.err = requestError(res);
+  render();
+}
+/* Done: the answers, if any, join the request (the gate fills in only
+   what is still empty, and only from this device). */
+async function submitAnswers(){
+  const li = ACCESS.interview ? ACCESS.linkedin.trim() : '';
   if(li && (li.length > 200 || !LINKEDIN.test(li))){
     ACCESS.err = t('That LinkedIn link should start with linkedin.com.', 'LinkedIn 链接应以 linkedin.com 开头。'); return render();
   }
-  const c = convo();
-  const first = c && c.cast && c.cast[0];
-  ACCESS.sending = true; ACCESS.err = ''; render();
-  let res;
+  const any = ACCESS.role || ACCESS.heard || ACCESS.question.trim() || ACCESS.interview || ACCESS.updates;
+  if(any){
+    ACCESS.sending = true; ACCESS.err = ''; render();
+    let res;
+    try{ res = await requestAccess({ ...requestBase(), role: ACCESS.role || null, heard_from: ACCESS.heard || null,
+      question: ACCESS.question.trim().slice(0, 200) || null, interview_ok: !!ACCESS.interview,
+      linkedin: li || null, updates_ok: !!ACCESS.updates }); }catch(e){ res = { ok: false }; }
+    ACCESS.sending = false;
+    if(!res.ok){ ACCESS.err = requestError(res); return render(); }
+  }
+  ACCESS.asking = false; ACCESS.err = ''; render();
+}
+
+/* "Have an invite code?": signed in, the code is used now (POST
+   /v1/invite/redeem); not signed in, it is checked (POST
+   /v1/invite/check) and kept for the sign-in, which carries it. Without a
+   gate (the local agent), it is the agent's passcode, saved as before. */
+const CODE_ERR = () => ({
+  invalid: t("That code didn't work.", '这个邀请码无效。'),
+  used_up: t('That code has been used up.', '这个邀请码已用完。'),
+  expired: t('That code has expired.', '这个邀请码已过期。'),
+  too_many_tries: t('Too many tries today.', '今天尝试次数过多。'),
+});
+async function useCode(){
+  const code = ACCESS.code.trim();
+  if(!code){ ACCESS.codeErr = CODE_ERR().invalid; return render(); }
+  if(!toGate()){   // the local agent: the code is its passcode
+    setAgentKey(code); AGENT_NEEDS_KEY = false; AGENT_KEY_BAD = false; ACCESS.sheet = false; ACCESS.codeOpen = false;
+    if(!googleOn()) openOnboarding();
+    AGENT_STATE = 'unknown'; agentReady().then(render); return render();
+  }
+  ACCESS.codeBusy = true; ACCESS.codeErr = ''; render();
+  let out = null, status = 0;
   try{
-    res = await requestAccess({ email, role: ACCESS.role || null, heard_from: ACCESS.heard || null,
-      question: ACCESS.question.trim().slice(0, 200) || null,
-      interview_ok: !!ACCESS.interview, linkedin: li || null, updates_ok: !!ACCESS.updates,
-      lang: lang === 'zh' ? 'zh' : 'en', thinker: source === 'chat_limit' && first ? (AGENT_IDS[first] || first) : null,
-      device_id: DEVICE_ID, source });
-  }catch(e){ res = { ok: false }; }
-  ACCESS.sending = false;
-  if(res.ok){
-    ACCESS.sent = true;
-    try{ localStorage.setItem('still.accessRequested', '1'); }catch(e){}
-  }else if(res.reason === 'not_configured'){
-    ACCESS.err = t("Requests aren't open on this page.", '此页面暂不接受申请。');
-  }else if(res.status === 400 && res.body && res.body.field){
-    const f = res.body.field;
-    ACCESS.err = f === 'email' ? t('Please check your email.', '请检查邮箱。')
-      : f === 'linkedin' ? t('That LinkedIn link should start with linkedin.com.', 'LinkedIn 链接应以 linkedin.com 开头。')
-      : t('Please check the form.', '请检查表单。');
-  }else if(res.status === 429){
-    ACCESS.err = t('Too many requests from this network today. Please try tomorrow.', '今天来自这个网络的申请太多，请明天再试。');
-  }else ACCESS.err = t("That didn't go through. Please try again.", '没有发送成功，请再试一次。');
+    const r = await fetch(AGENT_URL + (AUTH.session ? '/v1/invite/redeem' : '/v1/invite/check'), { method: 'POST',
+      headers: agentHeaders({ 'content-type': 'application/json' }), body: JSON.stringify({ code }) });
+    status = r.status; out = await r.json().catch(() => null);
+  }catch(e){}
+  ACCESS.codeBusy = false;
+  if(status === 401 && AUTH.session){ setSession(null); ACCESS.codeErr = t('Please sign in again.', '请重新登录。'); return render(); }
+  if(status === 429 || (out && out.reason === 'too_many_tries')){ ACCESS.codeErr = CODE_ERR().too_many_tries; return render(); }
+  if(!out){ ACCESS.codeErr = t("That didn't go through. Please try again.", '没有发送成功，请再试一次。'); return render(); }
+  if(!out.ok){ ACCESS.codeErr = CODE_ERR()[out.reason] || CODE_ERR().invalid; return render(); }
+  if(AUTH.session){
+    // Redeemed: approved now ("already_approved" says so too).
+    setAccessState('approved'); ACCESS.joined = true; ACCESS.required = false; ACCESS.codeOpen = false;
+    try{ localStorage.removeItem('still.accessRequired'); localStorage.removeItem('still.c'); }catch(e){}
+    if(out.status === 'already_approved') ACCESS.codeErr = '';
+    refreshMe(); return render();
+  }
+  ACCESS.codeOk = out.kind || 'channel'; ACCESS.pendingCode = code;
   render();
-}function setAgentKey(k){
+}
+/* A personal or review code on its own, with no account (Beta App Review,
+   people without Google): saved here and sent as X-Still-Key. */
+function useCodeStandalone(){
+  const code = ACCESS.pendingCode || ACCESS.code.trim();
+  if(!code) return;
+  setAgentKey(code); AGENT_NEEDS_KEY = false; AGENT_KEY_BAD = false;
+  setAccessState('approved'); ACCESS.joined = true; ACCESS.required = false; ACCESS.codeOk = null;
+  try{ localStorage.removeItem('still.accessRequired'); }catch(e){}
+  AGENT_STATE = 'unknown'; agentReady().then(render); refreshMe(); render();
+}
+
+function setAgentKey(k){
   AGENT_KEY = k || '';
   try{ k ? localStorage.setItem('still.agentKey', k) : localStorage.removeItem('still.agentKey'); }catch(e){}
 }
@@ -4869,8 +5069,14 @@ const googleOn = () => !!GOOGLE_WEB_CLIENT_ID && !!AGENT_URL;
 function setSession(s){
   const was = AUTH.session;
   AUTH.session = (s && s.session) || ''; AUTH.email = (s && s.email) || ''; AUTH.name = (s && s.name) || '';
-  // Signed in or out: an editor's drafts come or go with the session.
-  if(was !== AUTH.session) setTimeout(refreshEditor);
+  // Signed in or out: an editor's drafts come or go with the session, and
+  // the use shown is the new identity's (an account's, or this device's).
+  if(was !== AUTH.session){
+    MY = null; setTimeout(refreshEditor); setTimeout(refreshMe);
+    // Signed in: this browser and the account merge. Signed out: the next
+    // sign-in (whoever's) starts fresh; what is here stays here.
+    if(AUTH.session) setTimeout(syncNow); else setSyncBase(null);
+  }
   try{ AUTH.session ? localStorage.setItem('still.session', JSON.stringify(
       { session: AUTH.session, email: AUTH.email, name: AUTH.name })) : localStorage.removeItem('still.session'); }catch(e){}
 }
@@ -4885,18 +5091,39 @@ async function googleSignedIn(resp){
   if(!resp || !resp.credential) return;
   AUTH.busy = true; AUTH.err = ''; render();
   try{
-    const out = await authPost('/v1/auth/google', { id_token: resp.credential, platform: 'web' });
-    const u = out.user || out;
+    // The sign-in carries a code checked in the Join sheet (or a ?c= link
+    // in a code's shape) and the link's channel, so it can make a member.
+    const code = ACCESS.pendingCode || (looksLikeCode(LINK_C) ? LINK_C : '');
+    const out = await authPost('/v1/auth/google', { id_token: resp.credential, platform: 'web',
+      lang: lang === 'zh' ? 'zh' : 'en', ...(code ? { code } : {}), ...(LINK_C ? { channel: LINK_C } : {}) });
+    const u = out.account || out.user || out;
     const session = out.session || out.token;
     if(!session) throw new Error('no session');
     setSession({ session, email: u.email, name: u.name });
+    try{ localStorage.removeItem('still.c'); }catch(e){}
     // A sign-up, not a returning sign-in: the welcome. If the server does
     // not say which, the first sign-in in this browser counts as one.
     const created = out.created ?? out.new_user ?? out.is_new ?? u.created ?? u.is_new;
-    if(created === true || (created == null && !ONBOARDED)) openOnboarding();
-    // Signed in counts as access: the request card and sheet stand down.
-    ACCESS.required = false; ACCESS.sheet = false;
+    setAccessState(out.access || 'waiting');
+    if(out.tester && out.tester.since) ACCESS.since = out.tester.since;
+    ACCESS.pendingCode = ''; ACCESS.codeOk = null;
+    // A fresh allowance for the account: the request card stands down until
+    // the gate says otherwise (approved: 15 a day; on the list: 3).
+    ACCESS.required = false;
     try{ localStorage.removeItem('still.accessRequired'); }catch(e){}
+    if(out.invite && !out.invite.ok){
+      // The code didn't work: signed in all the same, on the list; the sheet says why.
+      openJoin(ACCESS.sheet || 'home', { code, codeErr: CODE_ERR()[out.invite.reason] || CODE_ERR().invalid });
+    }else if(out.access === 'approved'){
+      ACCESS.joined = !!ACCESS.sheet;   // the sheet, if open, says "You're in."
+    }
+    // On the list: the open sheet shows it; nothing else changes. A new
+    // account gets the welcome instead of a second sheet on top of it
+    // (unless a code failed, which the Join sheet has to say).
+    if(created === true || (created == null && !ONBOARDED)){
+      if(!(out.invite && !out.invite.ok) && out.access === 'approved') ACCESS.sheet = false;
+      openOnboarding();
+    }
   }catch(e){
     AUTH.err = t("Couldn't sign you in. Please try again.", '没能登录，请再试一次。');
   }
@@ -4923,13 +5150,142 @@ async function initGoogle(){
   mountGoogle();
   NONCE_TIMER = setTimeout(() => { if(!AUTH.session) initGoogle(); }, 9 * 60 * 1000);
 }
+/* The gate no longer knows this session (expired, or signed out elsewhere). */
+function sessionEnded(){
+  setSession(null); setAccessState(AGENT_KEY ? 'approved' : (ACCESS.sent ? 'waiting' : 'guest'));
+  openJoin(ACCESS.sheet || 'home');
+}
 async function signOut(){
   const had = AUTH.session;
   if(had){ try{ await authPost('/v1/auth/logout'); }catch(e){} }
   setSession(null);
+  setAccessState(AGENT_KEY ? 'approved' : (ACCESS.sent ? 'waiting' : 'guest'));
   try{ window.google && google.accounts.id.disableAutoSelect(); }catch(e){}
   render();
 }
+/* --- Account sync (Docs/access-api.md, "Sync") -------------------------------
+   A signed-in reader's votes, likes, name, language, topics and photo are
+   kept with their account, so another browser or the app shows them. The
+   device is still the working copy: a signed-out browser works as before.
+   How: the page keeps the last doc the gate returned (still.syncBase). On
+   any change it compares what is here with that doc, dates what differs
+   (a removal becomes a dated tombstone), and sends it to
+   /v1/me/data/merge, which merges per item -- the later change wins -- and
+   returns the result, which then becomes what is here. On sign-in (a base
+   for another account, or none) what is here goes up with no dates, so the
+   account's own dated answers win and anything only here is added. Likes
+   carry any key (question:, response:, reply:<conversation>:<message>) and,
+   optionally, small data (SYNC_LIKE_DATA). Chats are never synced. */
+const SYNC_PHOTO_MAX = 40 * 1024;   // characters of the photo's data URL; a bigger one stays on this device
+const SYNC = { timer: null, busy: false, again: false, err: '' };
+/* The small data that travels with a like (a liked chat reply's thinker,
+   excerpt and time): kept in state.likeData by default; a branch with its
+   own side map can point these at it. */
+const SYNC_LIKE_DATA = {
+  get: k => (state.likeData && state.likeData[k]) || null,
+  set: (k, d) => { state.likeData = state.likeData || {}; if(d) state.likeData[k] = d; else delete state.likeData[k]; },
+};
+function syncBase(){
+  try{ return JSON.parse(localStorage.getItem('still.syncBase') || 'null'); }catch(e){ return null; }
+}
+function setSyncBase(b){
+  try{ b ? localStorage.setItem('still.syncBase', JSON.stringify(b)) : localStorage.removeItem('still.syncBase'); }catch(e){}
+}
+/* What is here now, as plain values. */
+function syncHere(){
+  const likes = {};
+  for(const k of Object.keys(state.likes || {})) if(state.likes[k]) likes[k] = SYNC_LIKE_DATA.get(k);
+  const photo = ME_PHOTO && ME_PHOTO.length <= SYNC_PHOTO_MAX ? ME_PHOTO : (ME_PHOTO ? null : '');
+  return { votes: { ...(state.votes || {}) }, likes,
+    profile: { name: (ME_NAME || '').trim(), lang, topics: [...PICKS], ...(photo === null ? {} : { photo }) } };
+}
+const sameJSON = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+/* The doc to send: what is here, dated against the base. `fresh`: no base
+   for this account (a sign-in), so nothing here is dated. */
+function syncDoc(fresh){
+  const now = Date.now(), here = syncHere(), base = fresh ? null : (syncBase() || {}).doc;
+  const b = base || { votes: {}, likes: {}, profile: {} };
+  const doc = { votes: {}, likes: {}, profile: {} };
+  const votedAt = state.voteAt || {};
+  for(const q of new Set([...Object.keys(here.votes), ...Object.keys(b.votes || {})])){
+    const o = here.votes[q] ?? null, was = (b.votes || {})[q];
+    if(was && (was.o ?? null) === o) doc.votes[q] = was;
+    else if(o !== null) doc.votes[q] = { o, at: votedAt[q] || (fresh ? 0 : now) };
+    else if(was) doc.votes[q] = { o: null, at: now };
+  }
+  for(const k of new Set([...Object.keys(here.likes), ...Object.keys(b.likes || {})])){
+    const on = k in here.likes, was = (b.likes || {})[k], d = here.likes[k];
+    if(was && was.on === on && (!on || sameJSON(was.d, d))) doc.likes[k] = was;
+    else if(on) doc.likes[k] = { on: true, at: fresh ? 0 : now, ...(d ? { d } : {}) };
+    else if(was) doc.likes[k] = { on: false, at: was.on ? now : was.at };
+  }
+  for(const f of ['name', 'lang', 'topics', 'photo']){
+    if(!(f in here.profile)) continue;
+    const v = here.profile[f], was = (b.profile || {})[f];
+    doc.profile[f] = was && sameJSON(was.v, v) ? was : { v, at: fresh ? 0 : now };
+  }
+  return doc;
+}
+/* The merged doc becomes what is here. */
+let SYNC_APPLYING = false;
+function syncApply(doc){
+  SYNC_APPLYING = true;
+  try{
+    const votes = {}, voteAt = {};
+    for(const [q, x] of Object.entries(doc.votes || {})) if(x.o !== null){ votes[q] = x.o; if(x.at) voteAt[q] = x.at; }
+    const likes = {};
+    for(const [k, x] of Object.entries(doc.likes || {})) if(x.on){ likes[k] = (state.likes || {})[k] || 1; SYNC_LIKE_DATA.set(k, x.d || null); }
+    for(const k of Object.keys(state.likeData || {})) if(!likes[k]) SYNC_LIKE_DATA.set(k, null);
+    state.votes = votes; state.voteAt = voteAt; state.likes = likes;
+    const p = doc.profile || {};
+    if(p.name) { ME_NAME = p.name.v; try{ ME_NAME ? localStorage.setItem('still.name', ME_NAME) : localStorage.removeItem('still.name'); }catch(e){} }
+    if(p.lang && (p.lang.v === 'en' || p.lang.v === 'zh')) lang = p.lang.v;
+    if(p.topics && Array.isArray(p.topics.v)) PICKS = p.topics.v.filter(id => TOPICS.some(x => x[0] === id));
+    if(p.photo && (ME_PHOTO.length <= SYNC_PHOTO_MAX)){
+      ME_PHOTO = p.photo.v || '';
+      try{ ME_PHOTO ? localStorage.setItem('still.photo', ME_PHOTO) : localStorage.removeItem('still.photo'); }catch(e){}
+    }
+    save(); saveTopics();
+  }finally{ SYNC_APPLYING = false; }
+}
+async function syncNow(){
+  if(PREVIEW || !AUTH.session || !toGate()) return;
+  if(SYNC.busy){ SYNC.again = true; return; }
+  const base = syncBase(), who = AUTH.email || '';
+  const fresh = !base || base.account !== who;
+  const doc = syncDoc(fresh);
+  // Nothing changed since the last merge: nothing to send.
+  if(!fresh && sameJSON(doc, base.doc)) return;
+  SYNC.busy = true;
+  try{
+    const r = await fetch(AGENT_URL + '/v1/me/data/merge', { method: 'POST', keepalive: true,
+      headers: agentHeaders({ 'content-type': 'application/json' }), body: JSON.stringify({ doc }) });
+    const out = await r.json().catch(() => null);
+    // The session ended (signed out or deleted elsewhere): sign out here,
+    // quietly -- this runs in the background. What is here stays here.
+    if(r.status === 401 && out && out.status === 'session_invalid'){
+      setSession(null); setAccessState(AGENT_KEY ? 'approved' : (ACCESS.sent ? 'waiting' : 'guest')); render(); return;
+    }
+    if(!r.ok || !out || !out.doc){ SYNC.err = (out && (out.reason || out.field)) || String(r.status); return; }
+    if(AUTH.email !== who) return;   // signed out or switched while it was sent
+    SYNC.err = '';
+    setSyncBase({ account: who, doc: out.doc });
+    if(!sameJSON(out.doc, doc) || fresh){ syncApply(out.doc); render(); }
+  }catch(e){ SYNC.err = 'offline'; }
+  finally{
+    SYNC.busy = false;
+    if(SYNC.again){ SYNC.again = false; scheduleSync(); }
+  }
+}
+/* After a change: once things settle, and at once when the page is hidden. */
+function scheduleSync(ms = 2000){
+  if(SYNC_APPLYING || PREVIEW || !AUTH.session) return;
+  clearTimeout(SYNC.timer); SYNC.timer = setTimeout(syncNow, ms);
+}
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'hidden' && SYNC.timer){ clearTimeout(SYNC.timer); SYNC.timer = null; syncNow(); }
+  else if(document.visibilityState === 'visible') scheduleSync(0);   // another device may have changed things
+});
 async function deleteAccount(){
   AUTH.busy = true; AUTH.err = ''; render();
   try{ await authPost('/v1/account/delete'); }
@@ -4940,6 +5296,8 @@ async function deleteAccount(){
   }
   AUTH.busy = false;
   setSession(null);
+  setAccessState(AGENT_KEY ? 'approved' : 'guest');
+  // The request (if any) stays on the list until the person asks for it to go.
   try{ window.google && google.accounts.id.disableAutoSelect(); }catch(e){}
   render();
 }
@@ -4972,7 +5330,7 @@ function googleButton(){
   if(!googleOn() || AUTH.session) return '';
   return `<div class="gsi">
       <div class="gsi-slot" aria-label="${t('Sign in with Google','使用 Google 登录')}"></div>
-      ${agreeLine('continue')}
+      ${agreeLine('join')}
       ${GSI === 'failed' ? `<p class="gsi-err" role="alert">${t("Google sign-in didn't load. Check your connection or content blocker.",
         'Google 登录没有加载出来。请检查网络或内容拦截器。')}</p>` : ''}
       ${AUTH.busy ? `<p class="gsi-note" role="status">${t('Signing in…','正在登录…')}</p>` : ''}
@@ -4985,11 +5343,20 @@ function accountSection(){
   if(!googleOn()) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Sign-in is not available on this page.','此页面暂不支持登录。')}</p></section>`;
   if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
-      <p>${t('Sign in to keep talking with the thinkers.','登录后可以继续与思想家对话。')}</p>
-      ${googleButton()}</section>`;
+      <p>${t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
+      ${googleButton()}
+      ${onList() ? `<p class="me-acct-or">${t("You're on the list for more time with the thinkers.", '你已在名单上，等待与思想家更多对话。')}</p>
+          <button type="button" class="ghost me-join" data-join="settings" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`
+        : `<p class="me-acct-or">${t('Still is letting people in a few at a time.','Still 正在分批开放。')}</p>
+          <button type="button" class="ghost me-join" data-join="settings">${t('Request access','申请访问')}</button>`}</section>`;
+  const since = ACCESS.since ? new Date(ACCESS.since) : null;
+  const sinceText = since && !isNaN(since) ? since.toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
   return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b>${
         EDITOR.on ? ` <span class="ed-tag">${t('Editor','编辑')}</span>` : ''}</p>
+      ${ACCESS.state === 'approved' ? `<p class="me-acct-state">${sinceText ? t(`Tester access since ${esc(sinceText)}`, `测试权限，自 ${esc(sinceText)} 起`) : t('Tester access','测试权限')}</p>`
+        : ACCESS.state === 'waiting' ? `<p class="me-acct-state">${t("You're on the list. We'll email you when you're in.", '你已在名单上。获得访问后，我们会发邮件通知你。')}</p>
+          <button type="button" class="ghost me-join" data-join="settings" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>` : ''}
       ${EDITOR.on ? `<p class="fb-note">${t('Drafts waiting for review appear at the top of Home.','待评审的草稿显示在首页顶部。')}</p>` : ''}
       ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
       <div class="me-acct-row">
@@ -5160,7 +5527,7 @@ function modelMenu(){
   const locked = !AGENT_KEY && ((AGENT_INFO && AGENT_INFO.choices) || []).some(r => r.family === 'claude' || /^claude/i.test(r.id || ''));
   return `<div class="mback" data-mclose="1"></div>
     <div class="mmenu" id="mmenu" role="menu" aria-label="${t('Model','模型')}">${body}${locked ? `
-      <p class="mlock">${t('Claude models need an access code.','Claude 模型需要访问码。')} ${codeLink()}</p>` : ''}</div>`;
+      <p class="mlock">${t('Claude models need a personal invite code.','Claude 模型需要个人邀请码。')} <button type="button" class="linkish acc-code" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button></p>` : ''}</div>`;
 }
 function closeDerive(){
   const k = DERIVE; DERIVE = null; render();
@@ -5361,7 +5728,12 @@ async function agentFetch(path, body, ms){
       // code needed / no device) or invalid_code. The local agent's own
       // passcode 401 has no such status and is treated as a bad code.
       const b = await r.json().catch(() => null);
-      if(b && b.status === 'access_required'){ accessRequired(b.reason); throw new Error('access'); }
+      if(b && b.status === 'access_required'){
+        if(b.access) setAccessState(b.access);
+        accessRequired(b.reason); throw new Error('access');
+      }
+      // An ended session is not a bad code: sign out here, and offer the way back in.
+      if(b && b.status === 'session_invalid'){ sessionEnded(); throw new Error('access'); }
       keyRejected(); throw new Error('auth');
     }
     if(r.status === 503){
@@ -5536,8 +5908,10 @@ async function agentSpeak(c, cast){
       if(out && out.limit && out.limit.choice === 'tester'){
         chat.typing = null;
         c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text: out.limit.reason === 'site_daily'
-          ? t("Still has reached today's limit for everyone. It resets at midnight.", 'Still 今天的总额度已用完，午夜重置。')
-          : t("Your code's 15 messages for today are used up. They reset at midnight.", '你的访问码今天的 15 条消息已用完，午夜重置。') });
+          ? t("Still has reached today's limit for everyone. It resets at midnight (UTC).", 'Still 今天的总额度已用完，UTC 午夜重置。')
+          : out.limit.reason === 'network_daily'
+          ? t("This network has reached today's limit for signed-in messages. It resets at midnight (UTC).", '这个网络今天的登录用户消息已达上限，UTC 午夜重置。')
+          : t("Your 15 messages for today are used up. They reset at midnight (UTC).", '你今天的 15 条消息已用完，UTC 午夜重置。') });
         save(); render(); return;
       }
       if(out && out.limit){
@@ -5790,6 +6164,17 @@ function locText(l){
        .replace(/\b(paragraph|page|line|section)s\s+(\d+)\s*[-–]\s*(\d+)/i, (m, w, a, b) => `${w.toLowerCase()}s ${a}–${b}`);
   return l.replace(/\s*\(MVP rule\)/i, t(" (Still's numbering)", '（Still 的编号）'));
 }
+/* A fact from the thinker's life card (B55): biography, not his words, so no
+   quotation marks, and a "traditionally said" note where the record is thin. */
+function lifeFact(f){
+  const note = f.certainty === 'traditional' ? t(' · traditionally said', ' · 传统说法')
+             : f.certainty === 'legendary' ? t(' · legend', ' · 传说') : '';
+  return `<div class="said life">
+    <span class="tag">${t('Biography','生平')}${note}</span>
+    <p class="life-text">${esc(f.text || '')}</p>
+    <span class="src">— ${esc((f.sources || []).join('; '))}</span>
+  </div>`;
+}
 function agentPassage(p, n, who){
   const raw = p.title || p.work_id || '';
   const title = cleanTitle(raw);
@@ -5818,15 +6203,17 @@ document.addEventListener('toggle', ev => {
 }, true);
 function agentRow(m, p, cont, last){
   const a = m.agent || {};
+  const life = Array.isArray(a.life) ? a.life : [];
   const passages = a.passages || [];
   return `<article class="msg${cont}" data-k="${esc(msgKey(m))}">
     <div class="msg-body">
       <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
       <div class="bubble">${agentBubble(a, m.text)}</div>
-      ${passages.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
-        <summary><span>${t('Sources','来源')} · ${passages.length}</span>
+      ${passages.length + life.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
+        <summary><span>${t('Sources','来源')} · ${passages.length + life.length}</span>
           ${FOLD_CHEV}</summary>
         ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
+        ${life.map(lifeFact).join('')}
       </details>` : ''}
       ${msgFoot(m, last)}
     </div>
@@ -6503,7 +6890,7 @@ function setPhotoFrom(file){
     URL.revokeObjectURL(url);
     ME_PHOTO = c.toDataURL('image/jpeg', .85);
     try{ localStorage.setItem('still.photo', ME_PHOTO); }catch(e){}
-    render();
+    scheduleSync(); render();
   };
   img.src = url;
 }
@@ -6526,6 +6913,7 @@ function meGate(){
       <h2 id="me-pop-t">${t('Keep track of your thinking','记录你的思考')}</h2>
       <p>${t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
       ${googleButton()}
+      ${onList() ? '' : `<button type="button" class="linkish me-pop-join" data-join="me">${t('Request access to talk more with the thinkers','申请访问，与思想家多聊')}</button>`}
     </div></div>`;
 }
 function meView(){
@@ -6681,7 +7069,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + accessSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog();
+  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -6770,12 +7158,12 @@ function render(){
   const noBack = stack.length <= 1 && !chat.picking;
   document.getElementById('back').hidden = noBack;
   document.getElementById('back').setAttribute('aria-label', t('Back','返回'));
-  // "Request full access" on Home, while there is a gate to send it to and
-  // no working code on this device.
+  // "Request access" on Home, while there is a gate to send it to and this
+  // reader has no access and isn't on the list yet. It opens the Join sheet.
   const accBtn = document.getElementById('bar-acc');
-  const showAcc = e.tab === 'home' && stack.length <= 1 && !!accessUrl() && !AGENT_KEY;
+  const showAcc = e.tab === 'home' && stack.length <= 1 && !!accessUrl() && !hasAccess() && !onList();
   accBtn.hidden = !showAcc;
-  accBtn.textContent = t('Request full access', '申请完整权限');
+  accBtn.textContent = t('Request access', '申请访问');
   // Settings: a gear at the bar's right on Me, signed in or not (founder).
   const setBtn = document.getElementById('bar-set');
   const showSet = e.tab === 'me' && stack.length <= 1;
@@ -6813,7 +7201,7 @@ document.addEventListener('click', ev => {
   }
   if((el = hit('[data-rp]'))){ RP_OPEN = !RP_OPEN; return render(); }
   if((el = hit('[data-ob-skip]'))) return finishOnboarding(null);
-  if(hit('[data-photo-remove]')){ ME_PHOTO = ''; try{ localStorage.removeItem('still.photo'); }catch(e){} return render(); }
+  if(hit('[data-photo-remove]')){ ME_PHOTO = ''; try{ localStorage.removeItem('still.photo'); }catch(e){} scheduleSync(); return render(); }
   if((el = hit('[data-ob-again]'))){ ME_SETTINGS = false; openOnboarding(true); return render(); }
   if((el = hit('[data-ob-topic]'))){
     const id = el.dataset.obTopic;
@@ -6846,31 +7234,30 @@ document.addEventListener('click', ev => {
     el.setAttribute('aria-pressed', PICKS.includes(id) ? 'true' : 'false');
     saveTopics(); return;
   }
-  if((el = hit('[data-acc-open]'))){ MENU.open = false; MENU.sub = false; chat.usageOpen = false; ACCESS.sheet = el.dataset.accOpen === 'chat' ? 'chat' : 'home'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
-  if((el = hit('[data-acc-back]'))){ ACCESS.err = ''; ACCESS.step = Math.max(0, (ACCESS.step || 0) - 1); return render(); }
-  if((el = hit('[data-acc-close]'))){ ACCESS.sheet = false; ACCESS.codeOpen = false; return render(); }
+  // The Join sheet, from wherever: data-join names the entry point; with
+  // data-join-code it opens on the code field.
+  if((el = hit('[data-join]'))){
+    openJoin(el.dataset.join, el.dataset.joinCode ? { code: ACCESS.code || '' } : null);
+    if(el.dataset.joinCode) ACCESS.codeOpen = true;
+    render();
+    if(el.dataset.joinCode){ const k = document.getElementById('join-code'); if(k) k.focus(); }   // in the tap, for iOS
+    return;
+  }
+  if((el = hit('[data-join-code]'))){
+    ACCESS.codeOpen = true; ACCESS.codeErr = ''; render();
+    { const k = document.getElementById('join-code'); if(k) k.focus(); }
+    return;
+  }
+  if((el = hit('[data-code-standalone]'))){ useCodeStandalone(); return; }
+  if((el = hit('[data-acc-back]'))){ ACCESS.err = ''; ACCESS.step = Math.max(1, (ACCESS.step || 1) - 1); return render(); }
+  if((el = hit('[data-acc-close]'))){
+    ACCESS.sheet = false; ACCESS.codeErr = ''; ACCESS.joined = false;
+    // Closing the questions keeps what was answered so far.
+    if(ACCESS.asking) submitAnswers();
+    return render();
+  }
   if((el = hit('[data-af-close]'))){ ANSWER_FIRST = false; return render(); }
   if((el = hit('[data-lede]'))){ LEDE_OPEN = !LEDE_OPEN; return render(); }
-  // From Today's use: close it, then the same request flow or code sheet.
-  if((el = hit('[data-up-acc]'))){
-    chat.usageOpen = false; ACCESS.sheet = 'chat'; ACCESS.err = ''; ACCESS.step = 0; return render(); }
-  if((el = hit('[data-up-key-edit]'))){
-    chat.usageOpen = false; ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
-    // Focus inside the tap itself: iOS raises the keyboard only for a focus
-    // made during the user's gesture, never one from a timer.
-    const k = document.getElementById('agent-key');
-    if(k){ k.value = AGENT_KEY; const sv = k.form && k.form.querySelector('.key-save'); if(sv) sv.disabled = false;
-      k.focus(); k.select(); }
-    return;
-  }
-  if((el = hit('[data-acc-code]'))){
-    // From the model picker or Today's use: close those first, or they
-    // stayed on top of the code sheet and hid the field (founder).
-    MENU.open = false; MENU.sub = false; chat.usageOpen = false;
-    ACCESS.sheet = 'code'; AGENT_KEY_BAD = false; render();
-    { const k = document.getElementById('agent-key'); if(k) k.focus(); }   // in the tap, for iOS
-    return;
-  }
 
   if((el = hit('[data-tab]')))    return tab(el.dataset.tab);
   if((el = hit('#back')))         return back();
@@ -6883,6 +7270,8 @@ document.addEventListener('click', ev => {
     if(!q) return;
     // Tapping the answer you already chose takes it back (founder, B22):
     // the card returns to unanswered and nothing opens.
+    // When it changed: on sign-in the later answer wins (account sync).
+    state.voteAt = state.voteAt || {}; state.voteAt[q.id] = Date.now();
     if(state.votes[q.id] === el.dataset.vote){
       delete state.votes[q.id]; save();
       if(navigator.vibrate) try{ navigator.vibrate(8); }catch(e){}
@@ -7148,7 +7537,11 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-confirm-cancel]'))){ CONFIRM = null; return render(); }
   if((el = hit('[data-confirm-ok]'))){
     const c = CONFIRM; CONFIRM = null;
-    if(c && c.kind === 'erase'){ state = { votes:{}, likes:{} }; save();
+    if(c && c.kind === 'erase'){
+      // Signed in: this browser signs out first, so clearing it neither
+      // deletes the account's copy nor brings it straight back.
+      if(AUTH.session){ clearTimeout(SYNC.timer); setSyncBase(null); signOut(); }
+      state = { votes:{}, likes:{} }; save();
       ME_NAME = ''; ME_PHOTO = ''; try{ localStorage.removeItem('still.name'); localStorage.removeItem('still.photo'); }catch(e){} }
     else if(c && c.kind === 'account'){ deleteAccount(); return; }
     else if(c && c.kind === 'convo'){
@@ -7218,19 +7611,9 @@ document.addEventListener('change', ev => {
 });
 
 document.addEventListener('submit', ev => {
-  if(ev.target.dataset && ev.target.dataset.keyForm){
-    ev.preventDefault();
-    const v = (document.getElementById('agent-key') || {}).value || '';
-    if(!v.trim() && !AGENT_KEY) return;
-    // Empty: the saved code is removed, as Forget access code does.
-    setAgentKey(v.trim()); AGENT_NEEDS_KEY = false; AGENT_KEY_BAD = false; ACCESS.codeOpen = false;
-    // With sign-in off, the first code entered is the sign-up.
-    if(!googleOn()) openOnboarding();
-    ACCESS.sheet = false; AGENT_STATE = 'unknown';
-    agentReady().then(render);
-    return;
-  }
-  if(ev.target.dataset && ev.target.dataset.accForm){ ev.preventDefault(); accNext(ev.target.dataset.accForm); return; }
+  if(ev.target.dataset && ev.target.dataset.joinForm){ ev.preventDefault(); submitAccess(); return; }
+  if(ev.target.dataset && ev.target.dataset.codeForm){ ev.preventDefault(); useCode(); return; }
+  if(ev.target.dataset && ev.target.dataset.accForm){ ev.preventDefault(); accNext(); return; }
   if(ev.target.dataset && ev.target.dataset.renameForm){ ev.preventDefault(); finishRename(true); return; }
   if(ev.target.id !== 'composer') return;
   ev.preventDefault(); send();
@@ -7295,16 +7678,11 @@ document.addEventListener('keydown', ev => {
 
 document.addEventListener('input', ev => {
   if(ev.target.id === 'me-photo-file'){ setPhotoFrom(ev.target.files && ev.target.files[0]); return; }
-  if(ev.target.id === 'me-name'){ ME_NAME = ev.target.value; try{ localStorage.setItem('still.name', ME_NAME.trim()); }catch(e){} return; }
-  if(ev.target.id === 'agent-key'){
-    const s = ev.target.form && ev.target.form.querySelector('.key-save');
-    // With a code saved, an empty Save removes it (founder).
-    if(s) s.disabled = !ev.target.value.trim() && !AGENT_KEY;
-    return;
-  }
+  if(ev.target.id === 'me-name'){ ME_NAME = ev.target.value; try{ localStorage.setItem('still.name', ME_NAME.trim()); }catch(e){} scheduleSync(); return; }
   const af = ev.target.dataset && ev.target.dataset.acc;
   if(af){
     ACCESS[af] = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
+    if(af === 'code'){ ACCESS.codeOk = null; return; }   // a new code needs a new check
     if(af === 'interview' || ev.target.type === 'radio') render();   // LinkedIn field; Skip → Continue
     else if(af === 'question'){   // Skip ↔ Continue, without redrawing the field being typed in
       const b = document.querySelector('.acc-next');
@@ -7489,6 +7867,7 @@ Promise.all([
   // (openOnboarding, founder, B44).
   render(); model();
   refreshEditor();
+  if(AUTH.session) syncNow();   // another device may have changed things
   // ./?chat=<philosopher id> opens a chat with them (map.html links here).
   // The parameter is dropped so a reload does not start a second chat.
   const want = new URLSearchParams(location.search).get('chat');
