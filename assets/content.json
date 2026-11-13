@@ -69,8 +69,82 @@
  },
  "questions": [
   {
-   "id": "q-owe-your-parents",
+   "id": "q-art-by-bad-people",
    "index": 0,
+   "date": "2026-11-13",
+   "status": "published",
+   "title": {
+    "en": "Can You Still Love the Work of Someone Who Did Terrible Things?",
+    "zh": "一个人做过可怕的事，你还能爱他的作品吗？"
+   },
+   "why": {
+    "en": "A song you have loved for years, a film that shaped you, a book you still quote — and then you learn what its maker did. Does that knowledge change what the work is, or only whether you can still enjoy it with a clear conscience?",
+    "zh": "一首你爱了多年的歌、一部塑造过你的电影、一本你至今还会引用的书——然后你得知了它的作者做过什么。这份知道，改变的是作品本身，还是只改变了你能否心安理得地继续喜欢它？"
+   },
+   "baselinePct": null,
+   "joined": null,
+   "votesArePlaceholder": false,
+   "options": [
+    {
+     "key": "A",
+     "label": {
+      "en": "Yes — judge the work, not the maker",
+      "zh": "能——评判作品，而不是作者"
+     }
+    },
+    {
+     "key": "B",
+     "label": {
+      "en": "Yes, but only while remembering what they did",
+      "zh": "能，但必须同时记得他们做过什么"
+     }
+    },
+    {
+     "key": "C",
+     "label": {
+      "en": "No — what they did taints the work",
+      "zh": "不能——他们做过的事玷污了作品"
+     }
+    }
+   ],
+   "answers": {
+    "A": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-art-by-bad-people.A.0",
+      "q-art-by-bad-people.A.1",
+      "q-art-by-bad-people.A.2"
+     ],
+     "workIds": []
+    },
+    "B": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-art-by-bad-people.B.0",
+      "q-art-by-bad-people.B.1"
+     ],
+     "workIds": []
+    },
+    "C": {
+     "verdict": null,
+     "verdictSub": null,
+     "responseIds": [
+      "q-art-by-bad-people.C.0",
+      "q-art-by-bad-people.C.1"
+     ],
+     "workIds": []
+    }
+   },
+   "topics": [
+    "meaning",
+    "self"
+   ]
+  },
+  {
+   "id": "q-owe-your-parents",
+   "index": 1,
    "date": "2026-11-12",
    "status": "published",
    "title": {
@@ -144,7 +218,7 @@
   },
   {
    "id": "q-phones-before-sixteen",
-   "index": 1,
+   "index": 2,
    "date": "2026-11-11",
    "status": "published",
    "title": {
@@ -218,7 +292,7 @@
   },
   {
    "id": "q-marry-for-love",
-   "index": 2,
+   "index": 3,
    "date": "2026-11-10",
    "status": "published",
    "title": {
@@ -291,7 +365,7 @@
   },
   {
    "id": "q-meaningless-job-double-pay",
-   "index": 3,
+   "index": 4,
    "date": "2026-11-09",
    "status": "published",
    "title": {
@@ -366,7 +440,7 @@
   },
   {
    "id": "q-old-posts-judged",
-   "index": 4,
+   "index": 5,
    "date": "2026-11-08",
    "status": "published",
    "title": {
@@ -441,7 +515,7 @@
   },
   {
    "id": "q-selfish-no-children",
-   "index": 5,
+   "index": 6,
    "date": "2026-11-07",
    "status": "published",
    "title": {
@@ -514,7 +588,7 @@
   },
   {
    "id": "q-live-forever",
-   "index": 6,
+   "index": 7,
    "date": "2026-11-06",
    "status": "published",
    "title": {
@@ -588,7 +662,7 @@
   },
   {
    "id": "q-four-day-week",
-   "index": 7,
+   "index": 8,
    "date": "2026-11-05",
    "status": "published",
    "title": {
@@ -661,7 +735,7 @@
   },
   {
    "id": "q-hard-truth-friend",
-   "index": 8,
+   "index": 9,
    "date": "2026-11-04",
    "status": "published",
    "title": {
@@ -735,7 +809,7 @@
   },
   {
    "id": "q-nothing-to-hide",
-   "index": 9,
+   "index": 10,
    "date": "2026-10-31",
    "status": "published",
    "title": {
@@ -809,7 +883,7 @@
   },
   {
    "id": "q-good-or-effective-leader",
-   "index": 10,
+   "index": 11,
    "date": "2026-10-30",
    "status": "published",
    "title": {
@@ -883,7 +957,7 @@
   },
   {
    "id": "q-billionaire-earned-or-luck",
-   "index": 11,
+   "index": 12,
    "date": "2026-10-29",
    "status": "published",
    "title": {
@@ -958,7 +1032,7 @@
   },
   {
    "id": "q-partner-secrets",
-   "index": 12,
+   "index": 13,
    "date": "2026-10-28",
    "status": "published",
    "title": {
@@ -1033,7 +1107,7 @@
   },
   {
    "id": "q-make-the-smartest-lead",
-   "index": 13,
+   "index": 14,
    "date": "2026-10-27",
    "status": "published",
    "title": {
@@ -1106,7 +1180,7 @@
   },
   {
    "id": "q-everyone-cuts-corners",
-   "index": 14,
+   "index": 15,
    "date": "2026-10-26",
    "status": "published",
    "title": {
@@ -1180,7 +1254,7 @@
   },
   {
    "id": "q-spy-on-your-country",
-   "index": 15,
+   "index": 16,
    "date": "2026-10-25",
    "status": "published",
    "title": {
@@ -1255,7 +1329,7 @@
   },
   {
    "id": "q-wanting-power-disqualifies",
-   "index": 16,
+   "index": 17,
    "date": "2026-10-24",
    "status": "published",
    "title": {
@@ -1329,7 +1403,7 @@
   },
   {
    "id": "q-better-or-ruthless",
-   "index": 17,
+   "index": 18,
    "date": "2026-10-23",
    "status": "published",
    "title": {
@@ -1403,7 +1477,7 @@
   },
   {
    "id": "q-lying-for-your-country",
-   "index": 18,
+   "index": 19,
    "date": "2026-10-22",
    "status": "published",
    "title": {
@@ -1478,7 +1552,7 @@
   },
   {
    "id": "q-leader-like-you-or-better",
-   "index": 19,
+   "index": 20,
    "date": "2026-10-21",
    "status": "published",
    "title": {
@@ -1553,7 +1627,7 @@
   },
   {
    "id": "q-market-winner-best",
-   "index": 20,
+   "index": 21,
    "date": "2026-10-20",
    "status": "published",
    "title": {
@@ -1626,7 +1700,7 @@
   },
   {
    "id": "q-ai-better-than-you",
-   "index": 21,
+   "index": 22,
    "date": "2026-09-05",
    "status": "published",
    "title": {
@@ -1701,7 +1775,7 @@
   },
   {
    "id": "q-glp1-real-self",
-   "index": 22,
+   "index": 23,
    "date": "2026-09-04",
    "status": "published",
    "title": {
@@ -1774,7 +1848,7 @@
   },
   {
    "id": "q-sell-eggs-sperm",
-   "index": 23,
+   "index": 24,
    "date": "2026-09-03",
    "status": "published",
    "title": {
@@ -1848,7 +1922,7 @@
   },
   {
    "id": "q-nobody-remember",
-   "index": 24,
+   "index": 25,
    "date": "2026-09-01",
    "status": "published",
    "title": {
@@ -1940,7 +2014,7 @@
   },
   {
    "id": "q-beliefs-chosen",
-   "index": 25,
+   "index": 26,
    "date": "2026-08-31",
    "status": "published",
    "title": {
@@ -2029,7 +2103,7 @@
   },
   {
    "id": "q-nothing-happens-reason",
-   "index": 26,
+   "index": 27,
    "date": "2026-08-30",
    "status": "published",
    "title": {
@@ -2119,7 +2193,7 @@
   },
   {
    "id": "q-belief-not-true",
-   "index": 27,
+   "index": 28,
    "date": "2026-08-29",
    "status": "published",
    "title": {
@@ -2208,7 +2282,7 @@
   },
   {
    "id": "q-unlimited-freedom",
-   "index": 28,
+   "index": 29,
    "date": "2026-08-28",
    "status": "published",
    "title": {
@@ -2300,7 +2374,7 @@
   },
   {
    "id": "q-personality-performed",
-   "index": 29,
+   "index": 30,
    "date": "2026-08-27",
    "status": "published",
    "title": {
@@ -2394,7 +2468,7 @@
   },
   {
    "id": "q-born-500-years-ago",
-   "index": 30,
+   "index": 31,
    "date": "2026-08-26",
    "status": "published",
    "title": {
@@ -2485,7 +2559,7 @@
   },
   {
    "id": "q-everyone-thinks-wrong",
-   "index": 31,
+   "index": 32,
    "date": "2026-08-25",
    "status": "published",
    "title": {
@@ -2573,7 +2647,7 @@
   },
   {
    "id": "q-remove-painful-emotion",
-   "index": 32,
+   "index": 33,
    "date": "2026-08-24",
    "status": "published",
    "title": {
@@ -2665,7 +2739,7 @@
   },
   {
    "id": "q-solved-survival",
-   "index": 33,
+   "index": 34,
    "date": "2026-08-23",
    "status": "published",
    "title": {
@@ -2756,6 +2830,223 @@
   }
  ],
  "responses": [
+  {
+   "id": "q-art-by-bad-people.A.0",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "A",
+   "voiceId": "v-croce",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I held that art is independent of morality. Judging a work as art is one act; judging the artist as a man who acts in the world is another, and the first has nothing to do with the second.",
+    "zh": "我认为艺术独立于道德。把一部作品当作艺术来评判是一回事；把艺术家当作一个在世上行动的人来评判是另一回事，前者与后者毫不相干。"
+   },
+   "detail": {
+    "en": "In the Aesthetic, Croce separated contemplation from practical life, and in the same passage insisted that the artist still answers to the tribunal of moral conscience: he never excused the person. Applying this to a reader's or listener's love of a work is our step. The strongest objection is that some works are not sealed off from their making — when the wrong was done in making the work, or to the people in it, the two judgments are no longer separate.",
+    "zh": "在《美学》中，克罗齐把审美观照与实践生活分开，并在同一段里坚持艺术家仍要接受道德良知的审判：他从未替这个人开脱。把这一点用在读者或听者对作品的喜爱上，是我们的推论。最有力的反驳是：有些作品并没有与它的制作过程隔绝——如果恶行正是在创作中、或是对作品里的人犯下的，这两种评判就不再能分开。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "The aesthetic judgment on the work of art has nothing to do with the morality of the artist, in so far as he is a practical man, nor with the precautions to be taken that art may not be employed for evil purposes alien to its essence, which is pure theoretic contemplation.",
+    "zh": "The aesthetic judgment on the work of art has nothing to do with the morality of the artist, in so far as he is a practical man, nor with the precautions to be taken that art may not be employed for evil purposes alien to its essence, which is pure theoretic contemplation."
+   },
+   "origin": {
+    "en": "Italy, 1902",
+    "zh": "意大利，1902 年"
+   },
+   "source": {
+    "label": {
+     "en": "Benedetto Croce, Aesthetic as Science of Expression and General Linguistic, trans. Douglas Ainslie",
+     "zh": "克罗齐《作为表现的科学和一般语言学的美学》，安斯利 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/9306"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.A.1",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "A",
+   "voiceId": "v-aristotle",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I wrote that poetry has its own standard of correctness, which is not the standard of politics. A poem is to be faulted for failing as a poem, not for failing at something else.",
+    "zh": "我写过，诗有它自己的正误标准，不同于政治的标准。一首诗该因作为诗失败而受指责，而不是因为在别的事情上失败。"
+   },
+   "detail": {
+    "en": "Aristotle was separating the rules of an art from the rules of civic life, judging a tragedy by its craft rather than its politics. He said nothing about a poet's private conduct; carrying the point from the work's content to its maker's life is our step. The objection: the Poetics itself wants the characters of tragedy to be good, so Aristotle never made art wholly independent of ethics.",
+    "zh": "亚里士多德是在把一门艺术的规则与城邦生活的规则分开，按技艺而非政治来评判悲剧。他没有谈过诗人的私人品行；把这一点从作品内容延伸到作者的生平，是我们的推论。反驳是：《诗学》本身就要求悲剧人物品格良好，所以亚里士多德从未让艺术完全独立于伦理。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Add to this, that the standard of correctness is not the same in poetry and politics, any more than in poetry and any other art.",
+    "zh": "Add to this, that the standard of correctness is not the same in poetry and politics, any more than in poetry and any other art."
+   },
+   "origin": {
+    "en": "Athens, c. 335 BCE",
+    "zh": "雅典，约公元前 335 年"
+   },
+   "source": {
+    "label": {
+     "en": "Aristotle, Poetics, ch. 25, trans. S. H. Butcher",
+     "zh": "亚里士多德《诗学》第二十五章，布彻 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1974"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.A.2",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "A",
+   "voiceId": "v-montaigne",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I found so many contraries in one man, brave and cowardly, truthful and lying, that I would not let one fine act conclude anything about the person. When an inconstant man does something brave, I held, the praise belongs to the act and not to the man.",
+    "zh": "我在同一个人身上发现了太多相反的东西：勇敢又怯懦，诚实又说谎，所以我不肯凭一次漂亮的行为就对这个人下任何结论。我认为，一个反复无常的人做了勇敢的事，值得称赞的是这件事，而不是这个人。"
+   },
+   "detail": {
+    "en": "Montaigne was writing about courage and the inconstancy of character, not about art: one brave deed, he argued, proves nothing about the doer, because people are made of contradictions. Carrying that split between deed and doer over to a painting or a novel is our step. The strongest objection is that a work is not a single act like a charge into a breach; it is made over years out of the maker's own sensibility, so the man may be in the work in a way he is not in one sally of courage.",
+    "zh": "蒙田谈的是勇气和人性格的反复无常，而不是艺术：他认为，一次勇敢的行为说明不了做事的人，因为人本身就是由矛盾组成的。把这种行为与行为者的分离搬到一幅画或一部小说上，是我们的推论。最有力的反驳是：作品不像冲上缺口那样只是一次行动；它是作者用多年时间、从自己的感受力中造出来的，所以作者可能以一次勇敢冲动所没有的方式存在于作品之中。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "when he shrinks at the sight of a barber’s razor, and rushes fearless upon the swords of the enemy, the action is commendable, not the man.",
+    "zh": "when he shrinks at the sight of a barber’s razor, and rushes fearless upon the swords of the enemy, the action is commendable, not the man."
+   },
+   "origin": {
+    "en": "France, 1580",
+    "zh": "法国，1580 年"
+   },
+   "source": {
+    "label": {
+     "en": "Michel de Montaigne, Essays, Book II, ch. 1, Of the Inconstancy of Our Actions, trans. Charles Cotton",
+     "zh": "蒙田《随笔集》第二卷第一章〈论我们行为的反复无常〉，科顿 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/3600"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.B.0",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "B",
+   "voiceId": "v-hume",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I noticed that we can admire a thing and wish it destroyed at the same time: the walls of an enemy city strike us as beautiful for their strength, even while we hope they fall. The two feelings differ in kind, so they can be contrary without cancelling each other.",
+    "zh": "我注意到，我们可以同时欣赏一样东西、又希望它被毁掉：敌城的城墙因坚固而显得美，尽管我们盼着它倒塌。这两种感受性质不同，所以可以彼此相反而不相互抵消。"
+   },
+   "detail": {
+    "en": "Hume was explaining how approval arises when we view things in general rather than through our own interest. That an admirer can hold delight and condemnation together, neither erasing the other, is our application. The objection is that Hume describes what minds can do, not what they should: holding both feelings may simply be a comfortable way of never acting on the second.",
+    "zh": "休谟是在解释，当我们从一般的角度、而不是从自身利益出发看待事物时，赞许是如何产生的。一个欣赏者可以同时怀着喜爱与谴责、两者都不抹去对方，这是我们的引申。反驳是：休谟描述的是心灵能做到什么，而不是应当怎样——同时怀着两种感受，也可能只是一种永远不必按第二种感受行事的舒服办法。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Nay, these emotions are so different in their feeling, that they may often be contrary, without destroying each other; as when the fortifications of a city belonging to an enemy are esteemed beautiful upon account of their strength, though we could wish that they were entirely destroyed.",
+    "zh": "Nay, these emotions are so different in their feeling, that they may often be contrary, without destroying each other; as when the fortifications of a city belonging to an enemy are esteemed beautiful upon account of their strength, though we could wish that they were entirely destroyed."
+   },
+   "origin": {
+    "en": "Scotland, 1740",
+    "zh": "苏格兰，1740 年"
+   },
+   "source": {
+    "label": {
+     "en": "David Hume, A Treatise of Human Nature, Book III, Part III, Sect. I",
+     "zh": "休谟《人性论》第三卷第三部分第一节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/4705"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.B.1",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "B",
+   "voiceId": "v-pascal",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I held that it is dangerous to show a person their greatness without their baseness, or their baseness without their greatness, and more dangerous still to see neither. The advantage lies in seeing both.",
+    "zh": "我认为，只让人看到自己的伟大而看不到卑劣，或只看到卑劣而看不到伟大，都很危险；两者都看不见则更危险。好处在于把两者都看见。"
+   },
+   "detail": {
+    "en": "Pascal was writing about human nature before God, not about artists. Applying his double vision, greatness and vileness held in one view, to a gifted person who did harm is our step. The objection: seeing both is easy to claim and hard to sustain, and in practice the greatness on the page or screen tends to win.",
+    "zh": "帕斯卡写的是人在上帝面前的本性，而不是艺术家。把他这种双重目光——把伟大与卑劣放在同一视野里——用在一个有才华却伤害过人的人身上，是我们的推论。反驳是：说自己两者都看见很容易，真正做到却很难；实际上，纸面或银幕上的伟大往往会胜出。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "it is also dangerous to show him his greatness too clearly apart from his vileness. It is still more dangerous to leave him in ignorance of both. But it is of great advantage to show him both.",
+    "zh": "it is also dangerous to show him his greatness too clearly apart from his vileness. It is still more dangerous to leave him in ignorance of both. But it is of great advantage to show him both."
+   },
+   "origin": {
+    "en": "France, c. 1660",
+    "zh": "法国，约 1660 年"
+   },
+   "source": {
+    "label": {
+     "en": "Blaise Pascal, Thoughts (Pensées), trans. C. Kegan Paul",
+     "zh": "帕斯卡《思想录》，凯根·保罗 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/46921"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.C.0",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "C",
+   "voiceId": "v-plato",
+   "kind": "philosophy",
+   "claim": {
+    "en": "Through Socrates I argued that style follows the soul: grace and harmony are kin to goodness and virtue, and ugliness and discord are close allies of an ill nature.",
+    "zh": "我借苏格拉底之口论证，风格随灵魂而来：优雅与和谐是善与德的姊妹，丑陋与不谐则与恶劣的本性为伍。"
+   },
+   "detail": {
+    "en": "In the Republic the speaker is Socrates, the subject is the education of a city's young guardians, and this passage leads straight to censoring the poets. Reading it as a claim that a bad person's work must carry their badness is our step. The objection is history itself: many people who did terrible things made works of real grace, which the theory says should not happen.",
+    "zh": "《理想国》中的说话人是苏格拉底，话题是城邦年轻护卫者的教育，而这段话直接引向了对诗人的审查。把它读成坏人的作品必然带着他的坏，是我们的推论。反驳来自历史本身：许多做过可怕之事的人，都创作出了真正优雅的作品，而按这个理论，这本不该发生。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "And ugliness and discord and inharmonious motion are nearly allied to ill words and ill nature, as grace and harmony are the twin sisters of goodness and virtue and bear their likeness.",
+    "zh": "And ugliness and discord and inharmonious motion are nearly allied to ill words and ill nature, as grace and harmony are the twin sisters of goodness and virtue and bear their likeness."
+   },
+   "origin": {
+    "en": "Athens, c. 375 BCE",
+    "zh": "雅典，约公元前 375 年"
+   },
+   "source": {
+    "label": {
+     "en": "Plato, The Republic, Book III, trans. Benjamin Jowett",
+     "zh": "柏拉图《理想国》第三卷，乔伊特 英译"
+    },
+    "url": "https://www.gutenberg.org/ebooks/1497"
+   }
+  },
+  {
+   "id": "q-art-by-bad-people.C.1",
+   "questionId": "q-art-by-bad-people",
+   "optionKey": "C",
+   "voiceId": "v-santayana",
+   "kind": "philosophy",
+   "claim": {
+    "en": "I argued that moral concerns do more than outrank beauty: when they fill the mind, a form pleasing in itself can become disagreeable and stop being beautiful to us at all.",
+    "zh": "我认为，道德关切不只是比美更重要：当它们占据心灵时，一个本身令人愉悦的形式也会变得令人不快，对我们来说根本不再美。"
+   },
+   "detail": {
+    "en": "Santayana's examples were occasions, such as too much eloquence in a prayer or a diplomatic letter, and he held that nothing is ugly in itself. That knowing what a maker did can drain a work of its beauty for the one who knows is our application. The objection is that this makes the taint depend on the viewer: for someone who does not know, or whose mind is elsewhere, the work stays as beautiful as before.",
+    "zh": "桑塔亚那举的例子是场合，比如祈祷文或外交信函里过多的辞藻，而且他认为没有什么东西本身是丑的。知道作者做过什么，会让作品在知情者眼中失去美，这是我们的引申。反驳是：这样一来，玷污取决于观看的人——对不知情或心思不在此的人来说，作品依然和从前一样美。"
+   },
+   "extra": null,
+   "quote": {
+    "en": "Forms in themselves pleasing may become disagreeable when the practical interests then uppermost in the mind cannot, without violence, yield a place to them.",
+    "zh": "Forms in themselves pleasing may become disagreeable when the practical interests then uppermost in the mind cannot, without violence, yield a place to them."
+   },
+   "origin": {
+    "en": "United States, 1896",
+    "zh": "美国，1896 年"
+   },
+   "source": {
+    "label": {
+     "en": "George Santayana, The Sense of Beauty, §55",
+     "zh": "桑塔亚那《美感》第 55 节"
+    },
+    "url": "https://www.gutenberg.org/ebooks/26842"
+   }
+  },
   {
    "id": "q-owe-your-parents.A.0",
    "questionId": "q-owe-your-parents",
