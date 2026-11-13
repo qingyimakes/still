@@ -176,6 +176,15 @@ img{max-width:100%}
 .me-date{font-size:14px;color:var(--ink-secondary)}
 .me-q{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25;color:var(--ink);
   display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.me-reply-head{display:flex;align-items:center;gap:var(--sp-s);width:100%;min-width:0}
+.me-reply-head .av{width:28px;height:28px;font-size:12px;flex:none}
+.me-reply-head b{font-size:14px;font-weight:600;line-height:1.25;color:var(--ink);min-width:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.me-sim{margin-top:auto;flex:none;font-size:11.5px;font-weight:500;color:var(--ink-secondary);
+  padding:2px var(--sp-s);border-radius:var(--r-pill);background:var(--chip)}
+.me-excerpt{font-size:14.5px;line-height:1.45;color:var(--text-body);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.me-reply[disabled]{opacity:.7;cursor:default}
 .me-pick{margin-top:auto;font-size:13px;font-weight:500;line-height:1.35;padding:var(--sp-xs) var(--sp-m);border-radius:var(--r-vote)}
 .me-pick span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .me-empty{margin:var(--sp-xl) auto 0;max-width:320px;text-align:center}
@@ -943,11 +952,9 @@ body.resizing{cursor:col-resize;user-select:none}
 .crow .av{width:44px;height:44px;font-size:17px;flex:none}
 /* Overlap only once there is more than one face, so a single portrait is not
    needlessly shrunk. */
-.crow .faces.many .av{width:34px;height:34px;font-size:13px;
-                      border:2px solid var(--bg);margin-left:-13px}
-.crow .faces.many .av:first-child{margin-left:0}
-.crow .faces .more{font-size:11.5px;font-weight:600;color:var(--ink-secondary);
-                   margin-left:4px}
+.crow .fstack.many{--fs:34px}
+.crow .fstack.many .av{font-size:13px}
+.crow .fstack:not(.many){--fs:44px}
 .crow-body{flex:1;min-width:0}
 .crow-top{display:flex;align-items:baseline;gap:8px}
 .crow-top b{flex:1;min-width:0;font-size:15px;font-weight:600;white-space:nowrap;
@@ -972,10 +979,16 @@ body.resizing{cursor:col-resize;user-select:none}
 /* Conversation header */
 .chead{flex:none;display:flex;align-items:center;gap:10px;padding:8px 16px 10px;
        border-bottom:1px solid var(--hairline)}
-.faces{display:flex;flex:none}
-.faces .av{width:34px;height:34px;font-size:14px;border:2px solid var(--bg);
-           margin-left:-10px}
-.faces .av:first-child{margin-left:0}
+.faces{display:flex;flex:none;align-items:center}
+.faces .av{width:34px;height:34px;font-size:14px}
+/* The stack: --fs is one face; each after the first pulls back 35% of it. */
+.fstack{--fs:34px}
+.fstack > *{flex:none;width:var(--fs);height:var(--fs)}
+.fstack > * + *{margin-left:calc(var(--fs) * -.35)}
+.fstack .av{width:var(--fs);height:var(--fs);box-shadow:0 0 0 2px var(--bg);border:0}
+.fstack .avlink{display:block;border-radius:50%}
+.fmore{display:grid;place-items:center;border-radius:50%;background:linear-gradient(var(--chip),var(--chip)),var(--bg);
+  box-shadow:0 0 0 2px var(--bg);font-size:12px;font-weight:600;color:var(--ink);position:relative}
 .chead .who{flex:1;min-width:0}
 .chead .who b{display:block;font-size:15.5px;font-weight:700;white-space:nowrap;
               overflow:hidden;text-overflow:ellipsis}
@@ -1024,6 +1037,33 @@ body.resizing{cursor:col-resize;user-select:none}
                   border-radius:18px 18px 5px 18px}
 .msg.mine.cont .bubble{border-radius:18px}
 .stamp{font-size:10.5px;color:var(--ink-tertiary);padding:0 5px}
+/* Reply and Unsend. */
+.mine-foot{display:flex;align-items:center;gap:var(--sp-xxs)}
+.msg-more svg{width:16px;height:16px}
+.mine-foot .msg-more{opacity:0;transition:opacity .15s}
+.msg.mine:hover .msg-more,.msg.mine:focus-within .msg-more{opacity:1}
+@media (pointer:coarse){ .mine-foot .msg-more{opacity:1} }
+.rquote{display:flex;flex-direction:column;align-items:flex-start;gap:1px;max-width:min(100%,var(--measure));
+  padding:var(--sp-xs) var(--sp-m);border-left:2px solid var(--hairline-strong);border-radius:6px;
+  background:var(--chip-soft);text-align:left;font-size:12.5px;line-height:1.4;color:var(--ink-secondary)}
+.rquote b{font-weight:600;color:var(--ink)}
+.rquote span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.orphan{margin:0;font-size:12.5px;font-style:italic;color:var(--ink-secondary)}
+.msg.flash .bubble{animation:flash 1.2s ease}
+@keyframes flash{0%,40%{background-color:var(--chip)}100%{background-color:transparent}}
+@media (prefers-reduced-motion:reduce){ .msg.flash .bubble{animation:none;outline:2px solid var(--hairline-strong)} }
+.rstrip{display:flex;align-items:center;gap:var(--sp-s);margin:0 0 var(--sp-xs);padding:var(--sp-s) var(--sp-s) var(--sp-s) var(--sp-m);
+  background:var(--surface);border:1px solid var(--hairline-strong);border-left:3px solid var(--ink);border-radius:14px}
+.rstrip-t{flex:1;min-width:0;display:flex;flex-direction:column;font-size:13px;line-height:1.35}
+.rstrip-t b{font-weight:600;color:var(--ink)}
+.rstrip-t span{color:var(--ink-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rstrip-x{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-secondary);background:var(--chip)}
+.msg-menu .fb-body{padding-top:var(--sp-l)}
+.msg-menu-q{margin:0;font-size:13.5px;line-height:1.45;color:var(--ink-secondary)}
+.msg-menu-q b{color:var(--ink);font-weight:600}
+.mm-item{min-height:48px;padding:0 var(--sp-l);border-radius:var(--r-inner);background:var(--surface);
+  border:1px solid var(--hairline);font-size:16px;color:var(--ink);text-align:left}
+.mm-danger{color:var(--danger)}
 /* A thinker's reply is text on the page, not a bubble; the reader's own
    message keeps its dark bubble, so who said what still reads at a glance. */
 .msg:not(.mine) .bubble{background:none;border:0;border-radius:0;padding:0;
@@ -1116,6 +1156,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .said-fold[open] .chev{transform:rotate(180deg)}
 .said-fold .said{margin-top:6px}
 .said.life .life-text{margin:2px 0 0;color:var(--ink);font-size:14.5px;line-height:1.5}
+.said-fold .no-source{margin:6px 0 0;font-size:14px;line-height:1.5;color:var(--text-body-soft)}
 .note-fold .detail{margin-top:6px}
 .said-more summary{font-size:12.5px;font-weight:500;color:var(--ink-secondary);cursor:pointer;
                    list-style:none;padding:2px 0}
@@ -1348,6 +1389,11 @@ button.sim-tag:hover{color:var(--ink)}
 /* Feedback on a reply: a sheet on a phone, a centred card above. */
 .fb-body{padding:0 20px;display:flex;flex-direction:column;gap:var(--sp-m);overflow-y:auto}
 .fb-rates{display:flex;gap:var(--sp-s)}
+.fb-q{margin:0;font-size:15px;color:var(--ink)}
+.fb-choice{display:flex;gap:var(--sp-s)}
+.fb-choice button{flex:1;min-height:44px;padding:0 var(--sp-l);border-radius:var(--r-pill);font-size:15px;
+  font-weight:500;text-align:center;color:var(--ink);background:var(--surface);border:1px solid var(--hairline-strong)}
+.fb-choice button.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
 .fb-rates .act{width:44px;height:44px;border:1px solid var(--hairline-strong)}
 .fb-rates .act.on{border-color:var(--ink)}
 .fb-rates .act svg{width:20px;height:20px}
@@ -1847,7 +1893,7 @@ const IMG = 'assets/img/';
 const PREVIEW = new URLSearchParams(location.search).has('preview') && window.parent !== window;
 let C = null;                 // content.json
 let lang = 'en';
-let state = { votes:{}, likes:{} };
+let state = { votes:{}, likes:{}, likedReplies:{} };
 let stack = [{ tab:'home' }]; // view stack; last entry is what is showing
 let reported = null;          // which item's report note is showing
 let PHIL = [];                // the ranked roster, from assets/philosophers.json
@@ -1900,6 +1946,7 @@ function load(){
   try{
     const raw = localStorage.getItem('still.state');
     if(raw) state = Object.assign(state, JSON.parse(raw));
+    if(!state.likedReplies) state.likedReplies = {};
     const l = localStorage.getItem('still.lang');
     if(l === 'en' || l === 'zh') lang = l;
   }catch(e){ /* defaults stand */ }
@@ -2052,6 +2099,8 @@ async function sendReport(){
 }
 document.addEventListener('keydown', ev => {
   if(REPORT && ev.key === 'Escape' && !REPORT.sending){ ev.preventDefault(); REPORT = null; render(); }
+  else if(MSGMENU && ev.key === 'Escape'){ ev.preventDefault(); MSGMENU = null; render(); }
+  else if(REPLYING && ev.key === 'Escape' && ev.target.id === 'say'){ ev.preventDefault(); REPLYING = null; render(); }
 });
 document.addEventListener('change', async ev => {
   if(ev.target.id !== 'rep-file' || !REPORT) return;
@@ -2428,6 +2477,13 @@ function optionRow(q, o, chosen){
 let CONFIRM = null;   // { kind: 'convo', id } | { kind: 'erase' } | { kind: 'account' }
 function confirmDialog(){
   if(!CONFIRM) return '';
+  if(CONFIRM.kind === 'unsend') return `<div class="backdrop" data-confirm-cancel="1"></div>
+    <div class="af af--confirm" role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-d">
+      <b id="cf-t">${t('Unsend this message?','撤回这条消息？')}</b>
+      <p id="cf-d">${t("It's removed from this conversation.",'它会从这段对话中移除。')}</p>
+      <div class="af-row"><button type="button" data-confirm-cancel="1">${t('Cancel','取消')}</button>
+        <button type="button" class="af-danger" data-confirm-ok="1">${t('Unsend','撤回')}</button></div>
+    </div>`;
   const convoAsk = CONFIRM.kind === 'convo', acct = CONFIRM.kind === 'account';
   const title = acct ? t('Delete your account?','删除你的账户？')
     : convoAsk ? t('Delete this conversation?','删除这个对话？') : t('Clear data on this browser?','清除此浏览器上的数据？');
@@ -2967,6 +3023,17 @@ const philById = id => PHIL.find(p => p.id === id);
    zh (curated thread names first, then Wikidata), else the English. */
 const pn = p => (lang === 'zh' && p && p.nameZh) ? p.nameZh : ((p && p.name) || '');
 
+/* A group of people as one stacked avatar (header and conversation rows,
+   matching iOS): each face overlaps the one before by ~35% of its width,
+   with a 2px ring in the page colour; at most 3, then a +N chip of the same
+   size. Every slot has a fixed size, so the title beside it never shifts. */
+function faceStack(people, link, cls){
+  const shown = people.slice(0, 3), more = people.length - shown.length;
+  const face = p => link ? linkAvatar(p) : castAvatar(p);
+  return `<div class="faces fstack${people.length > 1 ? ' many' : ''}${cls ? ' ' + cls : ''}">${
+    shown.map(face).join('')}${more > 0
+      ? `<span class="fmore" aria-label="${t(`and ${more} more`, `另外 ${more} 人`)}">+${more}</span>` : ''}</div>`;
+}
 function linkAvatar(p, cls){
   if(!p || !p.id) return castAvatar(p, cls);
   return `<button class="avlink" data-phil="${esc(p.id)}"
@@ -3365,12 +3432,8 @@ function convoList(open){
                  <input id="rename-input" value="${esc(convoName(c))}" maxlength="80"
                    aria-label="${t('Conversation name','对话名称')}"></form></div>`
             : `<button class="crow-open" data-open-convo="${id}">
-          <div class="faces stack${faces.length > 1 ? ' many' : ''}">
-            ${faces.length
-              ? faces.slice(0,3).map(f => castAvatar(f)).join('')
-              : `<div class="av">${esc(convoTitle(c)[0] || '?')}</div>`}
-            ${faces.length > 3 ? `<span class="more">+${faces.length - 3}</span>` : ''}
-          </div>
+          ${faces.length ? faceStack(faces, false)
+            : `<div class="faces"><div class="av">${esc(convoTitle(c)[0] || '?')}</div></div>`}
           <div class="crow-body">
             <div class="crow-top">
               <b>${c.pinned ? `<span class="pin" aria-label="${t('Pinned','已置顶')}">${PIN}</span>` : ''}${esc(convoName(c))}</b>
@@ -3518,8 +3581,7 @@ function convoPane(c){
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <div class="faces">${cast.slice(0,3).map(p => linkAvatar(p)).join('')
-        || `<div class="av">?</div>`}</div>
+      ${cast.length ? faceStack(cast, true) : `<div class="faces"><div class="av">?</div></div>`}
       <div class="who">
         <div class="who-row"><b>${esc(convoTitle(c))}</b>${AGENT_URL ? rpPill() : ''}</div>
         <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open', '开放') + ' · ' : ''}${
@@ -3565,6 +3627,7 @@ function convoPane(c){
     ${cast.length && !c.msgs.length ? suggestions(cast) : ''}
 
     ${accessBlocked() ? '' : `<form class="composer" id="composer">
+      ${replyStrip()}
       <div class="inbox">
         <textarea id="say" rows="1" placeholder="${t('Message','发消息')}"
           aria-label="${t('Message','发消息')}"
@@ -3589,22 +3652,17 @@ function convoPane(c){
   </section>${agentAlert()}${chat.howOpen ? howPanel() : ''}${derivePanel()}`;
 }
 
-/* The first line of every conversation, part of the transcript, so it
-   scrolls away with it. Nothing stands permanently under the box; the "?"
-   in the header has the full account, and every reply keeps its labels. */
+/* The top of a conversation carries no disclaimer (founder: the
+   disclosure lives at sign-up, in the Terms line, and every reply keeps its
+   Simulated label and the header its Simulated ⓘ). Only the agent's state,
+   when there is something to say: waking up, or nothing to answer. */
 function convoIntro(){
-  let line;
+  let line = '';
   if(AGENT_URL && AGENT_STATE === 'starting') line = t(
     'The thinkers are waking up. This can take a minute or two.', '思想家们正在醒来，可能需要一两分钟。');
-  else if(AGENT_URL && AGENT_STATE === 'ok') line = t(
-    'This conversation is simulated. Replies are written by an AI model from each thinker\'s own texts, and what you type is sent to that model.',
-    '这段对话是模拟的。回应由 AI 模型依据每位思想家本人的文本写成，你输入的内容会发送给该模型。');
   else if(SAMPLE === null && AGENT_STATE !== 'ok') line = t(
-    'This conversation is simulated. No model is reachable here, so nobody will reply.',
-    '这段对话是模拟的。此处无法连接模型，因此不会有回应。');
-  else line = t('This conversation is simulated. Replies are written by an AI model, not by the thinkers.',
-                '这段对话是模拟的。回应由 AI 模型写成，不出自思想家本人。');
-  return `<p class="intro">${line}</p>`;
+    'No model is reachable here, so nobody will reply.', '此处无法连接模型，因此不会有回应。');
+  return line ? `<p class="intro">${line}</p>` : '';
 }
 
 /* "How this works": the whole account in plain words, on demand. */
@@ -3940,16 +3998,95 @@ const clock = ts => { const d = new Date(ts || Date.now());
   return d.getHours().toString().padStart(2,'0') + ':' +
          d.getMinutes().toString().padStart(2,'0'); };
 
+/* Reply and Unsend (founder; iOS matches). A message's menu opens from its
+   ⋯ (always there on touch, on hover with a mouse) or a long press on the
+   message around its text: a long press on the text itself stays the
+   system's text selection (B5). */
+let MSGMENU = null;      // message key whose menu is open
+let REPLYING = null;     // {id, speaker, name, excerpt}: the quote above the box
+const MORE_DOTS = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18.5" cy="12" r="1.6" fill="currentColor"/></svg>';
+function moreBtn(key){
+  return `<button type="button" class="act msg-more" data-msg-menu="${esc(key)}" aria-haspopup="dialog"
+    aria-label="${t('More','更多')}">${MORE_DOTS}</button>`;
+}
+const oneLine = (x, n) => { x = String(x || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : x; };
+function speakerName(m){ return m.mine ? t('You','你') : pn(philById(m.id) || { name: m.name }); }
+function replyQuote(rt){
+  if(!rt) return '';
+  const who = rt.speaker === 'reader' ? t('You','你') : pn(philById(rt.speaker) || { name: rt.name || '' });
+  return `<button type="button" class="rquote" data-jump="${esc(rt.id)}">
+      <b>${esc(who)}</b><span>${esc(rt.excerpt || '')}</span></button>`;
+}
+function replyStrip(){
+  if(!REPLYING) return '';
+  return `<div class="rstrip" role="status">
+      <div class="rstrip-t"><b>${t(`Replying to ${esc(REPLYING.name)}`, `回复 ${esc(REPLYING.name)}`)}</b>
+        <span>${esc(REPLYING.excerpt)}</span></div>
+      <button type="button" class="rstrip-x" data-reply-cancel="1" aria-label="${t('Cancel reply','取消回复')}">✕</button>
+    </div>`;
+}
+function msgMenu(){
+  const m = MSGMENU && msgByKey(MSGMENU); if(!m) return '';
+  return `<div class="backdrop" data-msg-menu-close="1"></div>
+    <div class="modal sheet fb-sheet msg-menu" role="dialog" aria-modal="true" aria-label="${t('Message','消息')}">
+      <div class="fb-body">
+        <p class="msg-menu-q"><b>${esc(speakerName(m))}</b> ${esc(oneLine(m.mine ? m.text : replyPlain(m), 90))}</p>
+        <button type="button" class="mm-item" data-msg-reply="${esc(MSGMENU)}">${t('Reply','回复')}</button>
+        ${m.mine ? `<button type="button" class="mm-item mm-danger" data-msg-unsend="${esc(MSGMENU)}">${t('Unsend','撤回')}</button>` : ''}
+      </div>
+      <footer class="fb-row"><button type="button" class="fb-cancel" data-msg-menu-close="1">${t('Cancel','取消')}</button></footer>
+    </div>`;
+}
+function startReply(key){
+  const m = msgByKey(key); MSGMENU = null; if(!m) return render();
+  REPLYING = { id: key, speaker: m.mine ? 'reader' : m.id, name: speakerName(m),
+               excerpt: oneLine(m.mine ? m.text : replyPlain(m), 80) };
+  render();
+  const box = document.getElementById('say'); if(box) box.focus();
+}
+function unsend(key){
+  const c = convo(); if(!c) return;
+  const i = c.msgs.findIndex(m => msgKey(m) === key && m.mine); if(i < 0) return;
+  c.msgs.splice(i, 1);
+  // Replies to it that already arrived stay, marked; any still arriving stop.
+  c.msgs.forEach(m => { if(m.replyOf === key) m.orphan = true; });
+  if(ROUND && ROUND.qKey === key && chat.busy){ ROUND.unsent = true; chat.stopped = false; ROUND.ctl.abort(); }
+  if(REPLYING && REPLYING.id === key) REPLYING = null;
+  save(); render();
+}
+function jumpTo(key){
+  const el = document.querySelector(`#msgs [data-k="${CSS.escape(key)}"]`); if(!el) return;
+  el.scrollIntoView({ block: 'center', behavior: navReduced() ? 'auto' : 'smooth' });
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+}
+/* Long press on a message, away from its text. */
+(function(){
+  let timer = null, x0 = 0, y0 = 0;
+  document.addEventListener('touchstart', ev => {
+    const art = ev.target.closest && ev.target.closest('#msgs article.msg[data-k]');
+    if(!art || ev.target.closest('.bubble,.said,.said-fold,button,a,summary,textarea,input')) return;
+    x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY;
+    clearTimeout(timer);
+    timer = setTimeout(() => { timer = null; MSGMENU = art.dataset.k; if(navigator.vibrate) navigator.vibrate(8); render(); }, 500);
+  }, { passive: true });
+  document.addEventListener('touchmove', ev => {
+    if(timer && Math.hypot(ev.touches[0].clientX - x0, ev.touches[0].clientY - y0) > 8){ clearTimeout(timer); timer = null; }
+  }, { passive: true });
+  const end = () => { clearTimeout(timer); timer = null; };
+  document.addEventListener('touchend', end, { passive: true });
+  document.addEventListener('touchcancel', end, { passive: true });
+})();
 function msgRow(m, i, c){
   // Same speaker twice running reads as one turn.
   const prev = c.msgs[i-1], next = c.msgs[i+1];
   const cont = prev && !!prev.mine === !!m.mine && prev.id === m.id ? ' cont' : '';
   const last = !(next && !!next.mine === !!m.mine && next.id === m.id);
 
-  if(m.mine) return `<article class="msg mine${cont}">
+  if(m.mine) return `<article class="msg mine${cont}" data-k="${esc(msgKey(m))}">
       <div class="msg-body">
+        ${replyQuote(m.replyTo)}
         <div class="bubble">${esc(m.text)}</div>
-        ${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}
+        <div class="mine-foot">${moreBtn(msgKey(m))}${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}</div>
       </div>
     </article>`;
 
@@ -4058,7 +4195,7 @@ function revealFresh(){
 
 /* A reply's text as paragraphs: blank lines separate them. */
 function paras(text){
-  return String(text || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean)
+  return withReader(text).split(/\n\s*\n/).map(x => x.trim()).filter(Boolean)
     .map(x => `<p>${esc(x)}</p>`).join('') || '<p></p>';
 }
 
@@ -4083,10 +4220,11 @@ function replyLabels(m){
    (founder: fold them all into the sheet). The word Simulated stays on the
    reply itself: every response carries a visible label (CLAUDE.md). */
 function msgFoot(m, last){
-  const key = msgKey(m), r = REACT[key];
+  const key = msgKey(m), r = REACT[key], cv = convo(), lk = cv ? replyLikeKey(cv.id, key) : '', liked = !!(lk && state.likes[lk]);
+  const HEART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.7 1.1-1a5.5 5.5 0 0 0 0-7.7z"/></svg>';
+  const FLAG_PATH = '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>';
   const icon = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
-  const UP = '<path d="M7 11v9H4v-9h3zm0 0l4-7a2 2 0 0 1 2 2v3h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/>';
   const SHARE = '<path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>';
   const COPY = '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>';
   const CHECK = '<path d="M5 12.5l4.5 4.5L19 7"/>';
@@ -4103,12 +4241,13 @@ function msgFoot(m, last){
         aria-label="${COPIED === key ? t('Copied','已复制') : t('Copy','复制')}">${icon(COPIED === key ? CHECK : COPY)}</button>
       ${'speechSynthesis' in window ? `<button type="button" class="act${speaking ? ' on' : ''}" data-speak="${esc(key)}"
         aria-pressed="${speaking}" aria-label="${speaking ? t('Stop reading','停止朗读') : t('Read aloud','朗读')}">${icon(speaking ? STOP : SPEAK)}</button>` : ''}
-      <button type="button" class="act${r === 'up' ? ' on' : ''}" data-react="up" data-key="${esc(key)}"
-        aria-haspopup="dialog" aria-pressed="${r === 'up'}" aria-label="${t('Good reply','回应不错')}">${icon(UP)}</button>
-      <button type="button" class="act down${r === 'down' ? ' on' : ''}" data-react="down" data-key="${esc(key)}"
-        aria-haspopup="dialog" aria-pressed="${r === 'down'}" aria-label="${t('Bad reply','回应不好')}">${icon(UP)}</button>
+      <button type="button" class="act${liked ? ' on' : ''}" data-reply-like="${esc(key)}"
+        aria-pressed="${liked}" aria-label="${t('Like','喜欢')}">${liked ? HEART.replace('fill="none"', 'fill="currentColor"') : HEART}</button>
+      <button type="button" class="act${r ? ' on' : ''}" data-react="${r || ''}" data-key="${esc(key)}"
+        aria-haspopup="dialog" aria-label="${t('Give feedback','反馈')}">${icon(FLAG_PATH)}</button>
       <button type="button" class="act" data-share="${esc(key)}"
         aria-label="${t('Share this reply','分享这条回应')}">${icon(SHARE)}</button>
+      ${moreBtn(key)}
       </span>
       ${THANKED === key ? `<span class="act-note" role="status">${t('Thanks','谢谢')}</span>` : ''}
       ${SHARED === key ? `<span class="act-note" role="status">${t('Copied','已复制')}</span>` : ''}
@@ -4118,7 +4257,26 @@ function msgFoot(m, last){
     </div>`;
 }
 
-/* Reactions stay on this device, like every other piece of user state. */
+/* Reactions stay on this device, like every other piece of user state.
+   A liked chat reply lives in state.likes like a liked question (so account
+   sync carries it), keyed reply:<conversationId>:<messageKey>, where the
+   message key is <at>:<thinkerId>. Its tile in Me ▸ Liked is drawn from
+   state.likedReplies[key] = {conv, msg, thinker, name, excerpt, at, likedAt},
+   so it needs neither the agent nor the conversation to still be here. */
+const replyLikeKey = (convId, mKey) => `reply:${convId}:${mKey}`;
+function toggleReplyLike(mKey){
+  const c = convo(), m = msgByKey(mKey); if(!c || !m) return;
+  const k = replyLikeKey(c.id, mKey);
+  if(state.likes[k]){ delete state.likes[k]; delete state.likedReplies[k]; }
+  else {
+    const text = replyPlain(m).replace(/\s+/g, ' ').trim();
+    state.likes[k] = 1;
+    state.likedReplies[k] = { conv: c.id, msg: mKey, thinker: m.id, name: m.name || '',
+      excerpt: text.length > 160 ? text.slice(0, 157).replace(/\s+\S*$/, '') + '…' : text,
+      at: m.at, likedAt: Date.now() };
+  }
+  save(); render();
+}
 const msgKey = m => `${m.at}:${m.id}`;
 let REACT = (() => { try{ return JSON.parse(localStorage.getItem('still.reactions') || '{}'); }catch(e){ return {}; } })();
 let SHARED = null;
@@ -4130,8 +4288,17 @@ function msgByKey(key){
    quotation marks, as in the chat. */
 /* A reply as plain text, paragraphs kept: what Copy, Read aloud and
    feedback carry. Verified spans keep their quotation marks. */
+/* The agent writes {{READER}} where it addresses the reader; the page fills
+   it in on display, copy, share and read aloud, so the name never goes to
+   the agent: the Settings name, else the signed-in first name, else
+   "friend" / 朋友. */
+function readerName(){
+  const n = (ME_NAME || '').trim() || String((AUTH && AUTH.name) || '').trim().split(/\s+/)[0] || '';
+  return n || t('friend','朋友');
+}
+const withReader = x => String(x == null ? '' : x).replace(/\{\{\s*READER\s*\}\}/g, readerName());
 function replyPlain(m){
-  if(!m.agent) return String(m.text || '').trim();
+  if(!m.agent) return withReader(m.text).trim();
   const tmp = document.createElement('div');
   tmp.innerHTML = agentBubble(m.agent, m.text);
   tmp.querySelectorAll('q').forEach(q => { q.textContent = '“' + q.textContent + '”'; });
@@ -4171,21 +4338,21 @@ let THANKED = null;
 function openFeedback(key, rating){
   FEEDBACK = { key, rating, comment: '', sending: false, err: '' };
   render();
-  setTimeout(() => { const b = document.querySelector('.fb-sheet [data-fb-rate].on'); if(b) b.focus(); });
+  setTimeout(() => { const b = document.querySelector('.fb-sheet [data-fb-rate].on') || document.querySelector('.fb-sheet [data-fb-rate]'); if(b) b.focus(); });
 }
 function feedbackDialog(){
   if(!FEEDBACK) return '';
   const f = FEEDBACK;
-  const UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4v-9h3zm0 0l4-7a2 2 0 0 1 2 2v3h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/></svg>';
   return `<div class="backdrop" data-fb-cancel="1"></div>
     <div class="modal sheet fb-sheet" role="dialog" aria-modal="true" aria-labelledby="fb-t">
-      <header><b id="fb-t">${t('Give feedback','反馈')}</b></header>
+      <header><b id="fb-t">${t('Feedback on this reply','对这条回应的反馈')}</b></header>
       <div class="fb-body">
-        <div class="fb-rates" role="group" aria-label="${t('Rating','评价')}">
-          <button type="button" class="act${f.rating === 'up' ? ' on' : ''}" data-fb-rate="up"
-            aria-pressed="${f.rating === 'up'}" aria-label="${t('Good reply','回应不错')}">${UP}</button>
-          <button type="button" class="act down${f.rating === 'down' ? ' on' : ''}" data-fb-rate="down"
-            aria-pressed="${f.rating === 'down'}" aria-label="${t('Bad reply','回应不好')}">${UP}</button>
+        <p class="fb-q" id="fb-q">${t('Was this reply good?','这条回应好吗？')}</p>
+        <div class="fb-choice" role="radiogroup" aria-labelledby="fb-q">
+          <button type="button" role="radio" class="${f.rating === 'up' ? 'on' : ''}" data-fb-rate="up"
+            aria-checked="${f.rating === 'up'}">${t('Good','好')}</button>
+          <button type="button" role="radio" class="${f.rating === 'down' ? 'on' : ''}" data-fb-rate="down"
+            aria-checked="${f.rating === 'down'}">${t('Not good','不好')}</button>
         </div>
         <textarea id="fb-comment" rows="4" maxlength="2000"
           placeholder="${t('Tell us more (optional)','补充说明（可选）')}"
@@ -4196,8 +4363,8 @@ function feedbackDialog(){
       </div>
       <footer class="fb-row">
         <button type="button" class="fb-cancel" data-fb-cancel="1">${t('Cancel','取消')}</button>
-        <button type="button" class="fb-send" data-fb-send="1"${f.sending ? ' disabled' : ''}>${
-          f.sending ? t('Sending…','发送中…') : t('Submit feedback','提交反馈')}</button>
+        <button type="button" class="fb-send" data-fb-send="1"${f.sending || !f.rating ? ' disabled' : ''}>${
+          f.sending ? t('Sending…','发送中…') : t('Send','发送')}</button>
       </footer>
     </div>`;
 }
@@ -5822,6 +5989,15 @@ function agentNotice(){
 async function agentSpeak(c, cast){
   const last = c.msgs[c.msgs.length - 1];
   const question = last && last.text;
+  // A reply to one thinker is answered by that thinker, and by any other
+  // in the room the reader names.
+  const rt = last && last.mine && last.replyTo;
+  if(rt && rt.speaker && rt.speaker !== 'reader' && cast.some(p => p.id === rt.speaker)){
+    const named = p => [p.name, p.nameZh, String(p.name || '').split(' ').pop()].filter(Boolean)
+      .some(n => n.length > 1 && String(question).includes(n));
+    cast = cast.filter(p => p.id === rt.speaker || named(p));
+  }
+  const qKey = last && last.mine ? msgKey(last) : null;
   if(!question){
     c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text:
       t('Say something first. The agent answers what was said; it does not start a conversation.',
@@ -5838,9 +6014,10 @@ async function agentSpeak(c, cast){
   }
   ROUND = { id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
                  : String(Date.now()) + Math.random().toString(16).slice(2),
-            ctl: new AbortController() };
+            ctl: new AbortController(), qKey };
   const stopped = () => {
     chat.stopped = false;   // said here; speak() need not say it again
+    if(ROUND && ROUND.unsent){ save(); render(); return; }   // unsent: nothing to say
     c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, text:
       t('Stopped. No one else was asked.', '已停止，没有再问其他人。') });
     save(); render();
@@ -5897,6 +6074,8 @@ async function agentSpeak(c, cast){
           room: { members, addressed: (c.turn && c.turn.addressed) || [],
                   transcript, round: round.slice(), readerPlaceholder: true },
           ...(askCtx ? { context: askCtx } : {}),
+          ...(rt ? { replyTo: { id: rt.id, speaker: rt.speaker === 'reader' ? 'reader'
+                     : (AGENT_IDS[rt.speaker] || rt.speaker), excerpt: rt.excerpt } } : {}),
           ...(pick ? { choice: pick.id } : {}) }, 90000);
       if(out && out.busy){ busyLine(out.busy, true); return; }
       if(out && out.rated){
@@ -6015,7 +6194,8 @@ async function agentSpeak(c, cast){
     const said = fillReader(noMarkers(row.answer));
     round.push({ speaker: AGENT_IDS[p.id], text: said });
     c.msgs.push({ id:p.id, name:p.name, text:said, said:null,
-                  at: Date.now(), agent: why, round: ROUND && ROUND.id });
+                  at: Date.now(), agent: why, round: ROUND && ROUND.id,
+                  ...(qKey ? { replyOf: qKey } : {}) });
     markFresh(c.msgs[c.msgs.length - 1]);
     c.at = Date.now(); save(); render();
   }
@@ -6044,8 +6224,8 @@ const BLOCK_QUOTE_CHARS = 90;
 function agentBubble(a, fallback){
   const nums = {}, byId = {};
   (a.passages || []).forEach((p, i) => { nums[p.id] = i + 1; byId[p.id] = p; });
-  const sentences = a.sentences && a.sentences.length ? a.sentences
-                  : [{ text: fallback, quotes: [] }];
+  const sentences = (a.sentences && a.sentences.length ? a.sentences
+                  : [{ text: fallback, quotes: [] }]).map(x => Object.assign({}, x, { text: withReader(x.text) }));
   // Inline html, with blank lines and block quotes as paragraph breaks.
   const out = []; let para = [], afterBlock = false;
   const flush = () => { const h = para.join('').trim(); if(h) out.push(`<p>${h}</p>`); para = []; };
@@ -6104,7 +6284,7 @@ function sentenceList(a, nums){
   const ss = a.sentences || [];
   const framed = x => x.support === 'framing' || x.support === 'uncited';
   if(!ss.length || !(a.passages || []).length || ss.every(framed)) return '';
-  const cut = x => { x = String(x || '').trim(); return x.length > 120 ? x.slice(0, 117).replace(/\s+\S*$/, '') + '…' : x; };
+  const cut = x => { x = withReader(x).trim(); return x.length > 120 ? x.slice(0, 117).replace(/\s+\S*$/, '') + '…' : x; };
   return `<p><span class="tag">${t('Sentence by sentence','逐句')}</span></p>
     <ol class="checks">${ss.map(x => {
       const q = (x.quotes || []).find(y => y.verbatim && y.quote);
@@ -6208,13 +6388,18 @@ function agentRow(m, p, cont, last){
   return `<article class="msg${cont}" data-k="${esc(msgKey(m))}">
     <div class="msg-body">
       <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
+      ${m.orphan ? `<p class="orphan">${t('replying to a message you unsent','回复的消息已撤回')}</p>` : ''}
       <div class="bubble">${agentBubble(a, m.text)}</div>
       ${passages.length + life.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
         <summary><span>${t('Sources','来源')} · ${passages.length + life.length}</span>
           ${FOLD_CHEV}</summary>
         ${passages.map((x, i) => agentPassage(x, i + 1, p)).join('')}
         ${life.map(lifeFact).join('')}
-      </details>` : ''}
+      </details>` : `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
+        <summary><span>${t('No direct source','无直接出处')}</span>${FOLD_CHEV}</summary>
+        <p class="no-source">${t("This reply isn't drawn from a specific passage. The AI wrote it from what it knows of their work, so treat it as interpretation, not their words.",
+          '这条回应并非取自某段原文，而是 AI 依据其整体思想写成的，请当作解读，而非原话。')}</p>
+      </details>`}
       ${msgFoot(m, last)}
     </div>
   </article>`;
@@ -6894,6 +7079,16 @@ function setPhotoFrom(file){
   };
   img.src = url;
 }
+function meReplyTile(v){
+  const p = philById(v.thinker) || { name: v.name };
+  const gone = !chat.convos.some(c => c.id === v.conv);
+  return `<button type="button" class="card me-tile me-reply" data-open-reply="${esc(v.conv)}"${gone ? ' disabled' : ''}>
+      <span class="me-reply-head">${castAvatar(p)}<b>${esc(pn(p))}</b></span>
+      <span class="me-excerpt">${esc(v.excerpt || '')}</span>
+      ${gone ? `<span class="me-date">${t('Conversation deleted','对话已删除')}</span>` : ''}
+      <span class="me-sim">${t('Simulated','模拟')}</span>
+    </button>`;
+}
 function meTile(q){
   const key = state.votes[q.id];
   const opt = key && (q.options || []).find(o => o.key === key);
@@ -6922,7 +7117,12 @@ function meView(){
   const voted = qs.filter(q => state.votes[q.id]);
   const liked = qs.filter(q => state.likes['question:' + q.id]);
   const name = ME_NAME.trim() || t('Reader','读者');
+  // Liked chat replies first, newest first; then liked questions.
+  const replies = Object.entries(state.likedReplies || {}).filter(([k]) => state.likes[k])
+    .sort((a, b) => (b[1].likedAt || 0) - (a[1].likedAt || 0));
   const shown = ME_TAB === 'likes' ? liked : voted;
+  const tiles = ME_TAB === 'likes' ? replies.map(([k, v]) => meReplyTile(v)).join('') + shown.map(meTile).join('')
+                                   : shown.map(meTile).join('');
   const tab = (k, label) => `<button type="button" role="tab" class="me-tab" data-me-tab="${k}"
       aria-selected="${ME_TAB === k}">${label}</button>`;
   return `<div class="page page--me${gated ? ' me-gated' : ''}">
@@ -6937,7 +7137,7 @@ function meView(){
     </div>
     <div class="me-tabs" role="tablist">${tab('votes', t('My answers','我的回答'))}${tab('likes', t('Liked','喜欢'))}</div>
     <p class="me-lock">${ME_LOCK}${t('Private. Only you can see your answers and likes.','仅自己可见：你的回答与喜欢只有你能看到。')}</p>
-    ${shown.length ? `<div class="me-grid">${shown.map(meTile).join('')}</div>` : meEmpty()}
+    ${tiles ? `<div class="me-grid">${tiles}</div>` : meEmpty()}
     </div>${gated ? meGate() : ''}
   </div>${ME_SETTINGS ? meSettings() : ''}`;
 }
@@ -7069,7 +7269,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog();
+  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + msgMenu();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -7444,7 +7644,20 @@ document.addEventListener('click', ev => {
     return;
   }
   if((el = hit('[data-derive-close]'))){ closeDerive(); return; }
-  if((el = hit('[data-react]'))){ openFeedback(el.dataset.key, el.dataset.react); return; }
+  if((el = hit('[data-msg-menu]'))){ MSGMENU = el.dataset.msgMenu; render();
+    setTimeout(() => { const b = document.querySelector('.msg-menu .mm-item'); if(b) b.focus(); }); return; }
+  if((el = hit('[data-msg-menu-close]'))){ MSGMENU = null; return render(); }
+  if((el = hit('[data-msg-reply]'))){ startReply(el.dataset.msgReply); return; }
+  if((el = hit('[data-msg-unsend]'))){ const k = el.dataset.msgUnsend; MSGMENU = null; CONFIRM = { kind: 'unsend', key: k }; return render(); }
+  if((el = hit('[data-reply-cancel]'))){ REPLYING = null; return render(); }
+  if((el = hit('[data-jump]'))){ jumpTo(el.dataset.jump); return; }
+  if((el = hit('[data-reply-like]'))){ toggleReplyLike(el.dataset.replyLike); return; }
+  if((el = hit('[data-open-reply]'))){
+    const id = el.dataset.openReply;
+    if(!chat.convos.some(c => c.id === id)) return;
+    tab('chat'); chat.open = id; return render();
+  }
+  if((el = hit('[data-react]'))){ openFeedback(el.dataset.key, el.dataset.react || null); return; }
   if((el = hit('[data-copy]'))){ copyReply(el.dataset.copy); return; }
   if((el = hit('[data-speak]'))){ speakReply(el.dataset.speak); return; }
   if((el = hit('[data-fb-rate]'))){
@@ -7541,9 +7754,10 @@ document.addEventListener('click', ev => {
       // Signed in: this browser signs out first, so clearing it neither
       // deletes the account's copy nor brings it straight back.
       if(AUTH.session){ clearTimeout(SYNC.timer); setSyncBase(null); signOut(); }
-      state = { votes:{}, likes:{} }; save();
+      state = { votes:{}, likes:{}, likedReplies:{} }; save();
       ME_NAME = ''; ME_PHOTO = ''; try{ localStorage.removeItem('still.name'); localStorage.removeItem('still.photo'); }catch(e){} }
     else if(c && c.kind === 'account'){ deleteAccount(); return; }
+    else if(c && c.kind === 'unsend'){ unsend(c.key); return; }
     else if(c && c.kind === 'convo'){
       chat.convos = chat.convos.filter(x => x.id !== c.id);
       if(chat.open === c.id) chat.open = null;
@@ -7599,7 +7813,9 @@ function sendText(text){
   const c = convo(); if(!c || !text || chat.busy) return;
   if(accessBlocked()) return render();
   if(!SENT_ONCE){ SENT_ONCE = true; try{ localStorage.setItem('still.sentOnce', '1'); }catch(e){} }
-  c.msgs.push({ mine:true, text, at: Date.now() });
+  const rt = REPLYING ? { id: REPLYING.id, speaker: REPLYING.speaker, excerpt: REPLYING.excerpt } : null;
+  REPLYING = null;
+  c.msgs.push(Object.assign({ mine:true, text, at: Date.now() }, rt ? { replyTo: rt } : {}));
   c.at = Date.now();
   save(); render();
   speak('The reader just said: ' + text + '\nAnswer them.');
