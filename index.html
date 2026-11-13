@@ -1530,6 +1530,18 @@ button.sim-tag:hover{color:var(--ink)}
 .modal footer .wide{margin:0}
 /* The new-chat sheet's three ways in (B46). */
 .pick-seg{flex:none;margin:0 20px 12px}
+/* Open room (B46): a switch in the add-people sheet, with what it does. */
+.openroom{flex:none;display:flex;align-items:flex-start;gap:12px;margin:0 20px 12px;padding:12px 14px;
+  border-radius:var(--r-card,14px);background:var(--chip);text-align:left;width:calc(100% - 40px)}
+.openroom .sw{flex:none;width:36px;height:22px;border-radius:11px;background:var(--hairline,#ccc);position:relative;
+  margin-top:1px;transition:background .15s}
+.openroom .sw::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
+  background:var(--surface,#fff);transition:transform .15s}
+.openroom[aria-checked="true"] .sw{background:var(--ink)}
+.openroom[aria-checked="true"] .sw::after{transform:translateX(14px)}
+.openroom b{display:block;font-size:14.5px;font-weight:600;color:var(--ink)}
+.openroom span.ex{display:block;font-size:13px;line-height:1.45;color:var(--ink-secondary);margin-top:2px}
+.sysline.room{font-size:12.5px}
 .askpane{display:flex;flex-direction:column;gap:12px;padding-top:4px}
 .askpane textarea{font:inherit;font-size:16.5px;line-height:1.4;color:var(--ink);resize:vertical;
   background:var(--surface);border:1px solid var(--hairline-strong);border-radius:var(--r-inner,16px);padding:12px 14px}
@@ -3476,7 +3488,8 @@ function convoPane(c){
         || `<div class="av">?</div>`}</div>
       <div class="who">
         <div class="who-row"><b>${esc(convoTitle(c))}</b>${AGENT_URL ? rpPill() : ''}</div>
-        <span>${cast.length ? `${t(`${cast.length} in the room`, `${cast.length} 人在场`)} · <button
+        <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open room', '开放房间') + ' · ' : ''}${
+            cast.length ? t(`${cast.length} in the room`, `${cast.length} 人在场`) + ' · ' : ''}<button
             type="button" class="simlink" data-how="1" aria-haspopup="dialog"
             aria-label="${t('Simulated. How this works','模拟。这是如何运作的')}">${
             t('Simulated','模拟')}<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5"
@@ -3521,15 +3534,15 @@ function convoPane(c){
       <div class="inbox">
         <textarea id="say" rows="1" placeholder="${t('Message','发消息')}"
           aria-label="${t('Message','发消息')}"
-          ${cast.length ? '' : 'disabled'}></textarea>
+          ${cast.length || roomOpen(c) ? '' : 'disabled'}></textarea>
         <div class="inbox-row">
         <div class="cmodel">${modelControls()}</div>
-        ${micButton(cast.length > 0)}
+        ${micButton(cast.length > 0 || roomOpen(c))}
         ${chat.busy
           ? `<button class="send stop" type="button" data-stop="1"
                aria-label="${t('Stop','停止')}"><i aria-hidden="true"></i></button>`
           : `<button class="send" type="submit" aria-label="${t('Send','发送')}"
-               ${cast.length && (chat.draft || '').trim() ? '' : 'disabled'}>
+               ${(cast.length || roomOpen(c)) && (chat.draft || '').trim() ? '' : 'disabled'}>
                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                  <path d="M12 19V5"/><path d="M5.5 11.5L12 5l6.5 6.5"/></svg>
@@ -3890,7 +3903,7 @@ function msgRow(m, i, c){
         : esc(L(m.source && m.source.label))}</span></div>`;
   // The interface speaking (stopped, busy, no passage…), not a thinker:
   // a plain centred line, never labelled Simulated.
-  if(!m.id) return `<p class="sysline">${esc(m.text)}${
+  if(!m.id) return `<p class="sysline${m.room ? ' room' : ''}">${esc(m.text)}${
     last ? ` <span>· ${clock(m.at)}</span>` : ''}</p>${(m.suggest || []).length
     ? `<div class="sys-sugg">${m.suggest.map(id => philById(id)).filter(Boolean).map(p =>
         `<button type="button" class="fpill" data-chat-with="${esc(p.id)}">${
@@ -4205,6 +4218,103 @@ const FILTERS = [
   ['sourced', () => ({en:'Quoted', zh:'有出处'})],
 ];
 
+/* Open room (B46). Each turn the agent picks who speaks from the whole
+   library (POST /v1/suggest with "room"): those whose own texts bear on the
+   turn join, and one who has not for a few turns leaves. People the reader
+   added by hand always stay and always reply. State lives on the
+   conversation: c.room = {open, auto: [ids that joined by themselves],
+   quiet: {agent id: turns without ranking}}. */
+const ROOM_MAX = 5, ROOM_AUTO = 3;
+function roomOpen(c){ return !!(c && c.room && c.room.open); }
+function openRoomSwitch(on){
+  return `<button type="button" class="openroom" role="switch" aria-checked="${on}" data-open-room="1">
+    <span class="sw" aria-hidden="true"></span>
+    <span><b>${t('Open room','开放房间')}</b><span class="ex">${t(
+      'Anyone can join or leave as the topic moves. Up to 5 reply, the most relevant first.',
+      '话题变化时，任何人都可以加入或离开。最多 5 位回应，最相关的先说。')}</span></span>
+  </button>`;
+}
+
+/* B54: every agent round asks the agent who speaks (POST /v1/suggest with
+   room). An @, a reply or a typed vocative ("尼采你…") means only those
+   reply, in private and open rooms alike; a private room is otherwise its
+   members; an open room picks by relevance. No model call unless an open
+   room has to rank. On failure a private room answers as before. */
+async function routeTurn(c){
+  const last = c.msgs[c.msgs.length - 1];
+  const question = last && last.mine ? last.text : '';
+  const open = roomOpen(c);
+  c.room = c.room || { open: false, auto: [], quiet: {} };
+  const room = c.room;
+  c.turn = { addressed: [] };
+  room.auto = (room.auto || []).filter(id => c.cast.includes(id));
+  room.quiet = room.quiet || {};
+  const roster = {}; Object.entries(AGENT_IDS).forEach(([r, a]) => { roster[a] = r; });
+  const hand = c.cast.filter(id => !room.auto.includes(id) && AGENT_IDS[id]);
+  const asIs = () => c.cast.map(philById).filter(p => p && AGENT_IDS[p.id]).slice(0, ROOM_MAX);
+  if(!question) return asIs();          // "Keep them going", or nothing said yet
+  const say = (text) => c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, room:true, text });
+  // Thinkers' replies only: an interface line ("Today's limit…") is no topic.
+  const recent = c.msgs.filter(m => m.id && !m.mine && !m.context && m.text).slice(-2)
+    .map(m => m.text).join(' ').slice(0, 1200);
+  let out = null;
+  try{
+    out = await agentFetch('/v1/suggest', {
+      question, lang: questionLang(question),
+      limit: Math.min(ROOM_MAX, hand.length + ROOM_AUTO),
+      room: { mode: open ? 'open' : 'private',
+              present: c.cast.map(id => AGENT_IDS[id]).filter(Boolean),
+              pinned: hand.map(id => AGENT_IDS[id]),
+              excluded: (room.excluded || []).map(id => AGENT_IDS[id]).filter(Boolean),
+              mentions: [], quiet: room.quiet, window: recent } }, 30000);
+  }catch(e){ out = null; }
+  if(!out || !out.room || !Array.isArray(out.room.speak)){
+    // Suggestions busy or used up for today: the room as it is answers.
+    if(!open) return asIs();
+    if(!room.fallbackNoted){
+      room.fallbackNoted = 1;
+      say(t("Couldn't pick who joins just now, so the people already here reply.",
+            '暂时无法挑选加入的人，由已在场的人回应。'));
+    }
+    save(); render();
+    return asIs();
+  }
+  room.fallbackNoted = 0;
+  c.turn.addressed = out.room.addressed || [];
+  // A name typed for someone not in the room: say so once; never auto-join.
+  for(const o of out.room.outside || []){
+    const id = roster[o.id]; const p = id && philById(id);
+    if(p) say(t(`${pn(p)} isn't in this room. Add them with the + button.`,
+                `${pn(p)} 不在这个对话里。可以用 + 按钮添加。`));
+  }
+  if(!open){
+    const speakers = out.room.speak.map(a => roster[a]).filter(Boolean)
+      .map(philById).filter(Boolean);
+    return speakers.length ? speakers : asIs();
+  }
+  for(const j of out.room.join || []){
+    const id = roster[j.id]; const p = id && philById(id);
+    if(!p || c.cast.includes(id)) continue;
+    c.cast.push(id); room.auto.push(id);
+    say(j.why ? t(`${pn(p)} joined · ${j.why}`, `${pn(p)} 加入了 · ${j.why}`)
+              : t(`${pn(p)} joined`, `${pn(p)} 加入了`));
+  }
+  for(const l of out.room.leave || []){
+    const id = roster[l.id]; const p = id && philById(id);
+    if(!p || !room.auto.includes(id)) continue;     // never someone added by hand
+    c.cast = c.cast.filter(x => x !== id); room.auto = room.auto.filter(x => x !== id);
+    say(t(`${pn(p)} left`, `${pn(p)} 离开了`));
+  }
+  room.quiet = out.room.quiet || {};
+  const speakers = out.room.speak.map(a => roster[a]).filter(Boolean)
+    .map(philById).filter(Boolean).slice(0, ROOM_MAX);
+  if(!speakers.length)
+    say(t('No one in the library has written on this. Add someone by hand, or ask about something else.',
+          '文库中没有人写过这个话题。可以手动添加一位，或换个问题。'));
+  save(); render();
+  return speakers;
+}
+
 function pickerModal(){
   const q = chat.query.trim().toLowerCase();
   const target = convo() ? convo().cast : chat.pending;
@@ -4297,6 +4407,7 @@ function pickerModal(){
     </header>
     ${seg}
     ${carried}
+    ${mode === 'several' && AGENT_URL ? openRoomSwitch(fresh ? !!chat.pendingRoom : roomOpen(convo())) : ''}
 
     <input id="pq" placeholder="${t(`Search ${pool.length} philosophers…`,`搜索 ${pool.length} 位哲学家…`)}"
            value="${esc(chat.query)}" autocomplete="off">
@@ -4316,7 +4427,7 @@ function pickerModal(){
     </div>
 
     ${mode === 'one' ? '' : `<footer>
-      <button class="wide" data-pick-done="1" ${target.length ? '' : 'disabled'}>${
+      <button class="wide" data-pick-done="1" ${target.length || (fresh ? chat.pendingRoom : roomOpen(convo())) ? '' : 'disabled'}>${
         convo() ? t('Done','完成')
                 : t(`Start conversation${target.length ? ' · ' + target.length : ''}`,
                     `开始对话${target.length ? ' · ' + target.length : ''}`)}</button>
@@ -5383,6 +5494,17 @@ async function agentSpeak(c, cast){
   const askCtx = !ctxMsg ? null : ctxMsg.ask || { quote: ctxMsg.quote.en || L(ctxMsg.quote), work: '',
     author: (ctxMsg.source && ctxMsg.source.label && String(ctxMsg.source.label.en || '').split(',')[0]) || '', passageId: '' };
   let answered = 0;
+  // B54: what each speaker sees. The transcript is the last six messages
+  // before this one (reader lines and thinker replies only: interface lines
+  // and unsent messages are simply absent); the round grows as each speaker
+  // answers. The reader's name never leaves the device: the agent writes
+  // {{READER}} and fillReader() puts the name in here.
+  const qi = c.msgs.lastIndexOf(last);
+  const transcript = c.msgs.slice(0, qi < 0 ? c.msgs.length : qi)
+    .filter(m => m.text && !m.context && (m.mine || (m.id && AGENT_IDS[m.id])))
+    .slice(-6).map(m => ({ speaker: m.mine ? 'reader' : AGENT_IDS[m.id], text: String(m.text) }));
+  const round = [];
+  const members = c.cast.map(id => AGENT_IDS[id]).filter(Boolean);
   // Busy: one calm line. If no one has answered yet, the reader's message
   // goes back into the box, so trying again is one tap.
   const busyLine = (b, restore) => {
@@ -5416,6 +5538,8 @@ async function agentSpeak(c, cast){
       const out = await agentFetch('/v1/ask',
         { question, thinker: AGENT_IDS[p.id], why: true, message_id: ROUND && ROUND.id,
           lang: questionLang(question),
+          room: { members, addressed: (c.turn && c.turn.addressed) || [],
+                  transcript, round: round.slice(), readerPlaceholder: true },
           ...(askCtx ? { context: askCtx } : {}),
           ...(pick ? { choice: pick.id } : {}) }, 90000);
       if(out && out.busy){ busyLine(out.busy, true); return; }
@@ -5527,7 +5651,12 @@ async function agentSpeak(c, cast){
     why.provider_host = (served && served.provider_host)
       || (AGENT_INFO && AGENT_INFO.provider_host) || '';
     answered++;
-    c.msgs.push({ id:p.id, name:p.name, text:String(row.answer), said:null,
+    // B53: an evidence id is never shown. The agent removes them; this is
+    // the belt for an older server. Sources come from why.passages.
+    (why.sentences || []).forEach(x => { x.text = fillReader(noMarkers(x.text)); });
+    const said = fillReader(noMarkers(row.answer));
+    round.push({ speaker: AGENT_IDS[p.id], text: said });
+    c.msgs.push({ id:p.id, name:p.name, text:said, said:null,
                   at: Date.now(), agent: why, round: ROUND && ROUND.id });
     markFresh(c.msgs[c.msgs.length - 1]);
     c.at = Date.now(); save(); render();
@@ -5535,6 +5664,20 @@ async function agentSpeak(c, cast){
 }
 
 const QUOTE_MARKS = /[\u201C\u201D\u201E\u201F"\u00AB\u00BB\u300C\u300D\u300E\u300F]/g;
+/* "[E1]", "[ E1]", "[E1, E2]", "【E1】", "(E2)", "[[Q3]]": never on screen (B53). */
+const MARKERS = /\s*(?:\[\[\s*Q\s*\d*\s*\]\]|[\[【［(（]\s*[EWQ]\s*\d*(?:\s*[,，、;；]\s*[EWQ]?\s*\d+)*\s*[\]】］)）])/g;
+/* {{READER}} -> the reader's own name, or 朋友 / friend. On the device only. */
+function fillReader(text){
+  const s = String(text || '');
+  if(!/\{\{\s*READER\s*\}\}/i.test(s)) return s;
+  const name = (typeof ME_NAME === 'string' && ME_NAME.trim()) ||
+    (/[\u3400-\u9fff]/.test(s) ? '朋友' : 'friend');
+  return s.replace(/\{\{\s*READER\s*\}\}/gi, name);
+}
+function noMarkers(text){
+  return String(text || '').replace(MARKERS, '').replace(/[ \t]{2,}/g, ' ')
+    .replace(/\s+([.,;:!?。，；：！？])/g, '$1').replace(/([。！？])\s+/g, '$1').trim();
+}
 
 /* The answer as the reader sees it. A span keeps its quotation marks only if
    the agent's verifier matched it word-for-word to a passage; every other
@@ -5802,7 +5945,7 @@ function transcript(){
 async function speak(extra){
   const c = convo(); if(!c) return;
   const cast = c.cast.map(philById).filter(Boolean);
-  if(!cast.length || chat.busy || document.hidden) return;
+  if((!cast.length && !roomOpen(c)) || chat.busy || document.hidden) return;
   chat.stopped = false;
   try{ await speakRound(c, cast, extra); }
   finally{
@@ -5824,9 +5967,10 @@ async function speakRound(c, cast, extra){
     let used = false;
     try{
       const ok = await agentReady();
-      if(ok && cast.some(p => AGENT_IDS[p.id])){
+      if(ok && (roomOpen(c) || cast.some(p => AGENT_IDS[p.id]))){
         used = true;
-        await agentSpeak(c, cast);
+        const speakers = await routeTurn(c);
+        if(speakers.length) await agentSpeak(c, speakers);
       }else if(ok){
         used = true;
         notInLibrary(c, cast);
@@ -6880,8 +7024,17 @@ document.addEventListener('click', ev => {
       startNewChat(chat.suggest.map(x => x.id), chat.askQ.trim());
     return;
   }
+  if((el = hit('[data-open-room]'))){
+    const c = convo();
+    if(c){
+      c.room = Object.assign(c.room || {}, { open: !roomOpen(c) });
+      if(!c.room.open){ c.room.auto = []; c.room.quiet = {}; }   // everyone left is now the reader's
+    }else chat.pendingRoom = !chat.pendingRoom;
+    save(); return render();
+  }
   if((el = hit('[data-pick-done]'))){
-    if(!convo() && chat.pending.length) return startNewChat(chat.pending.slice(), chat.carried);
+    if(!convo() && (chat.pending.length || chat.pendingRoom))
+      return startNewChat(chat.pending.slice(), chat.carried, chat.pendingRoom);
     chat.picking = false; save(); return render();
   }
   // One thinker: a tap on the row starts the chat.
@@ -6894,6 +7047,8 @@ document.addEventListener('click', ev => {
     const list = c ? c.cast : chat.pending;
     const next = list.includes(id) ? list.filter(x => x !== id) : list.concat(id);
     if(c) c.cast = next; else chat.pending = next;
+    // Tapped by hand: no longer someone who joined by themselves.
+    if(c && c.room && c.room.auto) c.room.auto = c.room.auto.filter(x => x !== id);
     save();
     // In the open picker, change only what the tap changed — the row, the
     // chips, the button. A full render replayed the sheet and reloaded
@@ -7063,8 +7218,9 @@ function send(){
 }
 /* B46: a new chat from the sheet, with the question (if any) as its first
    line, sent for the reader once the room is open. */
-function startNewChat(cast, question){
+function startNewChat(cast, question, open){
   const c = { id: 'c' + Date.now(), cast: cast.slice(), msgs: [], said: {}, at: Date.now() };
+  if(open){ c.room = { open: true, auto: [], quiet: {} }; chat.pendingRoom = false; }
   chat.convos.push(c); chat.open = c.id; chat.pending = [];
   chat.picking = false; chat.suggest = null; chat.carried = null; chat.askQ = '';
   // On a phone the new conversation slides in like any opened one.
