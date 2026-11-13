@@ -32,7 +32,7 @@
   --book-page:#F5F2EC; --cloth:#D3CCBD; --paper-ground:#F2F0EA;
   --dapple-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0065' numOctaves='3' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .62 0 0 0 0 .7 1.6 0 0 0 -.55'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 .25 .7 .85'/%3E%3C/feComponentTransfer%3E%3CfeGaussianBlur stdDeviation='9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   --forest:#1F3A2B; --on-forest:#E4E6E1; --on-forest-soft:#B9BFB7;
-  --quote-bg:rgba(224,213,199,.32);
+  --quote-bg:hsl(33 38% 98%);   /* founder 2026-11-13: lightness 98% */
   --chip:rgba(36,50,53,.07); --chip-soft:rgba(36,50,53,.045);
   --fill-muted:rgba(36,50,53,.05);
 
@@ -3549,7 +3549,7 @@ const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 
 function emptyPane(){
   return `<section class="convo-pane empty-pane">
-    <h3>${t('Start an argument','开一场争论')}</h3>
+    <h3>${t('Start a conversation','开始一段对话')}</h3>
     <p>${t('Pick philosophers and say something. Their replies are positions derived from commitments their texts carry — written by a model, and labelled on every line.','选几位哲学家，然后说点什么。他们的回应是从其文本中的承诺推导出的立场 — 由模型写成，并在每一行标明。')}</p>
     <button class="ghost" data-new="1">${t('New conversation','新建对话')}</button>
   </section>`;
@@ -3584,7 +3584,7 @@ function convoPane(c){
       ${cast.length ? faceStack(cast, true) : `<div class="faces"><div class="av">?</div></div>`}
       <div class="who">
         <div class="who-row"><b>${esc(convoTitle(c))}</b>${AGENT_URL ? rpPill() : ''}</div>
-        <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open', '开放') + ' · ' : ''}${
+        <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open room', '开放房间') + ' · ' : ''}${
             cast.length ? t(`${cast.length} in the room`, `${cast.length} 人在场`) + ' · ' : ''}<button
             type="button" class="simlink" data-how="1" aria-haspopup="dialog"
             aria-label="${t('Simulated. How this works','模拟。这是如何运作的')}">${
@@ -6513,6 +6513,12 @@ async function speak(extra){
     }
   }
 }
+/* An open room where no one could be picked: say so instead of silence. */
+function openRoomSilent(c){
+  c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, room:true, text:
+    t("No one could be picked to reply just now. Add someone with the + button.",
+      '暂时没能挑出回应的人。可以用 + 按钮添加。') });
+}
 async function speakRound(c, cast, extra){
   // Order: the local agent when switched on and healthy, then the artifact
   // runtime's model, then the authored DEMO rounds.
@@ -6527,6 +6533,7 @@ async function speakRound(c, cast, extra){
         used = true;
         const speakers = await routeTurn(c);
         if(speakers.length) await agentSpeak(c, speakers);
+        else if(roomOpen(c) && !(c.msgs[c.msgs.length - 1] || {}).room) openRoomSilent(c);
       }else if(ok){
         used = true;
         notInLibrary(c, cast);
@@ -6542,6 +6549,8 @@ async function speakRound(c, cast, extra){
   if(!m){
     // No model here. Rather than a button that does nothing, play an
     // authored round and say in the transcript that that is what it is.
+    // An open room has no one to play it until the AI picks someone.
+    if(roomOpen(c) && !cast.length){ openRoomSilent(c); save(); render(); return; }
     await demoSpeak(c, cast);
     chat.busy = false; chat.typing = null; save(); render();
     return;
