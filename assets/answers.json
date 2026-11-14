@@ -4049,6 +4049,1270 @@
     "en": "Schopenhauer describes an age in which religious faith and authority lose their hold and people insist on judging for themselves. As belief weakens, he argues, the hunger to know grows stronger, because the need for metaphysics does not disappear with faith. He presents this as the moment when serious philosophy is wanted, and contrasts it sharply with the salaried academic philosophy he despised.",
     "zh": "叔本华描述了一个宗教信仰和权威失去约束力、人们坚持自己作判断的时代。他认为，信仰越弱，求知的渴望就越强，因为对形而上学的需要并不随信仰一同消失。他把这看作需要严肃哲学的时刻，并把它与他所鄙视的、领薪水的学院哲学尖锐对立起来。"
    }
+  },
+  {
+   "id": "ap-shakespeare-hamlet_prince_of_denmark-mvp-00101-1421",
+   "thinker": "shakespeare",
+   "name": "William Shakespeare",
+   "en": "Thus conscience does make cowards of us all, And thus the native hue of resolution Is sicklied o’er with the pale cast of thought",
+   "zh": null,
+   "work": "The Tragedy of Hamlet, Prince of Denmark",
+   "locator": "Act III, Scene I",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Hamlet speaks this alone, in Hamlet, while deciding whether to act against the king who killed his father. It is the character's line, not the playwright's opinion.",
+   "interpretation": {
+    "en": "Hamlet has just weighed death against enduring life and found that fear of what comes after keeps people bearing what they hate. Here he widens the point: thinking a thing through, which should steady a decision, drains the colour out of it, until the plan dissolves before it is carried out. The speech is about his own delay, and the play goes on to show what that delay costs.",
+    "zh": "哈姆雷特刚把死亡与忍受人生放在一起衡量，发现正是对身后未知之事的恐惧让人忍受自己憎恶的东西。在这里他把这一点推开来说：本该让决定更稳的反复思量，反而把决心的颜色洗淡，直到计划在实行之前就散了。这段独白讲的是他自己的迟疑，而整部戏接下来要演出这份迟疑的代价。"
+   }
+  },
+  {
+   "id": "ap-shakespeare-the_sonnets-mvp-00113-60",
+   "thinker": "shakespeare",
+   "name": "William Shakespeare",
+   "en": "…love is not love Which alters when it alteration finds, Or bends with the remover to remove.",
+   "zh": null,
+   "work": "The Sonnets",
+   "locator": "Sonnet 116",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the Sonnets (1609), Sonnet 116, in which the poem's speaker defines love by what it refuses to do.",
+   "interpretation": {
+    "en": "The speaker defines love negatively: whatever changes when the other person changes, or withdraws when they withdraw, was never love. The rest of the sonnet makes it a fixed mark that storms do not shake and time does not rule. It is a definition offered with a dare, since the poem closes by staking the speaker's own writing on its truth.",
+    "zh": "诗中的说话者用否定来给爱下定义：凡是对方一变就跟着变、对方一走就跟着退的，从来就不是爱。这首十四行诗接下来把爱写成风暴摇撼不动、时间也无法支配的固定标志。这是一个带着赌注的定义，因为诗的结尾拿说话者自己的写作来担保它为真。"
+   }
+  },
+  {
+   "id": "ap-shakespeare-the_tempest-mvp-00144-619",
+   "thinker": "shakespeare",
+   "name": "William Shakespeare",
+   "en": "We are such stuff As dreams are made on, and our little life Is rounded with a sleep.",
+   "zh": null,
+   "work": "The Tempest",
+   "locator": "Act IV, Scene I",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Prospero says this to Ferdinand in The Tempest, after breaking off the masque he staged for Ferdinand's betrothal to his daughter.",
+   "interpretation": {
+    "en": "Prospero has just ended a show of spirits and compares it to the world itself: towers, palaces and the globe will fade as the pageant did. Life on this view is brief and enclosed by sleep on either side. He at once admits he is troubled and his old brain vexed, so the line is spoken in agitation, not as calm wisdom.",
+    "zh": "普洛斯彼罗刚刚中止了一场精灵演出的假面戏，并把它比作世界本身：高塔、宫殿乃至整个地球，都会像这场盛会一样消散。照这样看，人生短暂，两端都被睡眠围住。他紧接着承认自己心烦意乱、老脑筋受了搅扰，所以这句话是在激动中说出的，而不是平静的箴言。"
+   }
+  },
+  {
+   "id": "ap-shakespeare-as_you_like_it-mvp-00084-160",
+   "thinker": "shakespeare",
+   "name": "William Shakespeare",
+   "en": "All the world’s a stage, And all the men and women merely players; They have their exits and their entrances, And one man in his time plays many parts",
+   "zh": null,
+   "work": "As You Like It",
+   "locator": "Act II, Scene VII",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Jaques, a melancholy courtier in exile, says this in As You Like It; he goes on to list the seven ages of man.",
+   "interpretation": {
+    "en": "Jaques answers the duke's remark that others suffer too by turning the whole world into a theatre where everyone plays a part and leaves. His seven ages that follow end in second childishness, without teeth, eyes or taste. The play then undercuts him at once, as old Adam is carried in and cared for, so the speech is one bleak view among others.",
+    "zh": "公爵说别人也在受苦，杰奎斯接过话头，把整个世界变成一座剧场，每个人登场扮演角色然后退场。他接下来列出的人生七个阶段，以再度如孩童般、无齿无目无味告终。剧本随即反驳了他：老仆亚当被抬进来受到照料。所以这段话只是剧中众多看法里较为灰暗的一种。"
+   }
+  },
+  {
+   "id": "ap-shakespeare-othello_the_moor_of_venice-mvp-00125-98",
+   "thinker": "shakespeare",
+   "name": "William Shakespeare",
+   "en": "O, beware, my lord, of jealousy; It is the green-ey’d monster which doth mock The meat it feeds on.",
+   "zh": null,
+   "work": "The Tragedy of Othello, the Moor of Venice",
+   "locator": "Act III, Scene III",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Iago says this to Othello in Othello while deliberately making him jealous; the warning is part of the deception.",
+   "interpretation": {
+    "en": "Iago describes jealousy as a creature that mocks what it feeds on, tormenting the jealous person with the very love that feeds it. The description is accurate, and that is what makes it dangerous: by naming the feeling as a warning, Iago plants it. The play shows the line as a manipulation that works.",
+    "zh": "伊阿古把嫉妒描述成一种会嘲弄自己食物的怪物，正是滋养它的那份爱在折磨嫉妒的人。这个描述是准确的，而这正是它危险之处：伊阿古以警告的方式说出这种情感，也就把它种了下去。剧本把这句话呈现为一次奏效的操纵。"
+   }
+  },
+  {
+   "id": "ap-washington-inaugurals_and_farewell-mvp-00034-518",
+   "thinker": "washington",
+   "name": "George Washington",
+   "en": "I hold the maxim no less applicable to public than to private affairs that honesty is always the best policy.",
+   "zh": null,
+   "work": "Inaugural Addresses and Farewell Address",
+   "locator": "Farewell Address, 1796",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Washington's Farewell Address (1796), in the passage on keeping a nation's existing treaty engagements.",
+   "interpretation": {
+    "en": "Washington applies a household proverb to foreign policy. A nation should keep the engagements it has already made, in their genuine sense, because good faith pays over time for states as it does for people. He then warns against extending such engagements further, so the honesty he asks for is about promises kept, not new ones made.",
+    "zh": "华盛顿把一句居家格言用到外交政策上。一个国家应当按其本意履行已经作出的承诺，因为守信对国家和对个人一样，长远看是划算的。他随即告诫不要再扩大这类承诺，所以他要求的诚实是兑现已有的约定，而不是许下新的约定。"
+   }
+  },
+  {
+   "id": "ap-washington-annual_addresses-mvp-00006-171",
+   "thinker": "washington",
+   "name": "George Washington",
+   "en": "Knowledge is in every country the surest basis of public happiness.",
+   "zh": null,
+   "work": "Annual Addresses to Congress, 1790-1796",
+   "locator": "First Annual Address, 1790",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Washington's first annual address to Congress (January 1790), recommending that Congress promote science and literature.",
+   "interpretation": {
+    "en": "Washington argues that a government which takes its direction from public opinion needs an informed public. Knowledge teaches citizens to value their rights and officials to know the trust they hold. He leaves open whether Congress should found a national university or aid existing schools; the claim is about what a republic depends on.",
+    "zh": "华盛顿认为，一个以民意为导向的政府需要一个见多识广的公众。知识让公民懂得珍视自己的权利，也让官员明白自己所受的托付。至于国会应当建立国立大学还是资助现有学校，他留作开放问题；他的主张是关于一个共和国赖以存在的条件。"
+   }
+  },
+  {
+   "id": "ap-washington-annual_addresses-mvp-00001-139",
+   "thinker": "washington",
+   "name": "George Washington",
+   "en": "To be prepared for war is one of the most effectual means of preserving peace.",
+   "zh": null,
+   "work": "Annual Addresses to Congress, 1790-1796",
+   "locator": "First Annual Address, 1790",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Washington's first annual address to Congress (January 1790), on providing for the common defense.",
+   "interpretation": {
+    "en": "Washington asks Congress for a uniform plan of militia and for manufactures that would make the country independent for military supplies. A people known to be ready is less likely to be attacked, so readiness serves peace rather than war. He adds that a free people should be not only armed but disciplined.",
+    "zh": "华盛顿请求国会制定统一的民兵计划，并发展能让国家在军需上自给的制造业。一个众所周知有所准备的民族不容易遭到攻击，所以有备是为和平服务，而不是为战争服务。他还补充说，自由的人民不仅应当武装，而且应当有纪律。"
+   }
+  },
+  {
+   "id": "ap-washington-inaugurals_and_farewell-mvp-00021-268",
+   "thinker": "washington",
+   "name": "George Washington",
+   "en": "It serves always to distract the public councils and enfeeble the public administration.",
+   "zh": null,
+   "work": "Inaugural Addresses and Farewell Address",
+   "locator": "Farewell Address, 1796",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Washington's Farewell Address (1796), in the warning against the spirit of party.",
+   "interpretation": {
+    "en": "Washington treats party spirit as a passion rooted in human nature, which a free people cannot abolish but must restrain. Its ordinary effects are enough reason to resist it: it distracts deliberation, weakens administration, sets one part of the country against another and opens the door to foreign influence. He was writing as he left office, not as a party leader.",
+    "zh": "华盛顿把党派精神看作植根于人性的激情，自由的人民无法消灭它，但必须加以约束。仅凭它平常造成的后果就足以抵制它：它扰乱议事、削弱行政，挑动国家的一部分对抗另一部分，并为外国势力打开大门。他写这番话时正要卸任，并非以党派领袖的身份。"
+   }
+  },
+  {
+   "id": "ap-washington-inaugurals_and_farewell-mvp-00005-521",
+   "thinker": "washington",
+   "name": "George Washington",
+   "en": "…every day the increasing weight of years admonishes me more and more that the shade of retirement is as necessary to me as it will be welcome.",
+   "zh": null,
+   "work": "Inaugural Addresses and Farewell Address",
+   "locator": "Farewell Address, 1796",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the opening of Washington's Farewell Address (1796), explaining why he would not stand for a third term.",
+   "interpretation": {
+    "en": "Washington gives age and the wish for private life as his reasons for declining another term, and adds that his services had been valuable only for a time. By stepping aside voluntarily he set the example of a limited tenure. The tone is modest, but the decision itself was a political act.",
+    "zh": "华盛顿以年岁和对私人生活的向往作为拒绝再次连任的理由，并补充说他的服务只在一段时间内有价值。他主动退下，树立了任期有限的先例。语气谦逊，但这一决定本身就是一个政治行为。"
+   }
+  },
+  {
+   "id": "ap-lincoln-writings_1863_1865-mvp-00553-0",
+   "thinker": "lincoln",
+   "name": "Abraham Lincoln",
+   "en": "With malice toward none, with charity for all, with firmness in the right as God gives us to see the right,",
+   "zh": null,
+   "work": "Papers and Writings, 1863-1865",
+   "locator": "Second Inaugural Address, 1865",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the closing sentence of Lincoln's Second Inaugural Address (March 1865), weeks before the end of the Civil War.",
+   "interpretation": {
+    "en": "Lincoln asks the victorious side to finish the war without hatred and to bind up the nation's wounds, caring for soldiers, widows and orphans. Firmness is not dropped: the work is still to be finished. The qualifier as God gives us to see the right admits that their sight of the right is limited, which is itself a reason for charity.",
+    "zh": "林肯请求获胜的一方在不怀仇恨的情况下结束战争，包扎国家的创伤，照顾士兵、遗孀和孤儿。坚定并没有被放下：工作仍须完成。按上帝让我们看到的正义这一限定，承认了人们对正义的认识是有限的，而这本身就是宽厚待人的理由。"
+   }
+  },
+  {
+   "id": "ap-lincoln-writings_1862_1863-mvp-00345-407",
+   "thinker": "lincoln",
+   "name": "Abraham Lincoln",
+   "en": "In this sad world of ours sorrow comes to all, and to the young it comes with bittered agony because it takes them unawares.",
+   "zh": null,
+   "work": "Papers and Writings, 1862-1863",
+   "locator": "Letter to Fanny McCullough, December 1862",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Lincoln's letter to Fanny McCullough, whose father, a colonel and Lincoln's friend, had been killed in the war.",
+   "interpretation": {
+    "en": "Lincoln writes to a young woman overwhelmed by her father's death. He does not deny the pain; he explains why it is sharper for the young, who have not yet learned to expect it. The letter goes on to promise that she will be happy again, and that the memory will become a sad sweet feeling in her heart.",
+    "zh": "林肯写信给一位因父亲去世而悲痛欲绝的年轻女子。他并不否认痛苦，而是解释为何年轻人会更痛：他们还没有学会预料到它。这封信接着向她保证，她会重新快乐起来，而这段记忆会成为她心中一种既悲伤又甜美的感受。"
+   }
+  },
+  {
+   "id": "ap-lincoln-writings_1858_1862-mvp-00708-294",
+   "thinker": "lincoln",
+   "name": "Abraham Lincoln",
+   "en": "Capital is only the fruit of labor, and could never have existed if labor had not first existed.",
+   "zh": null,
+   "work": "Papers and Writings, 1858-1862",
+   "locator": "Annual Message to Congress, December 1861",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Lincoln's first annual message to Congress (December 1861), answering the claim that labor exists only by the grace of capital.",
+   "interpretation": {
+    "en": "Lincoln rejects the argument, made in defence of slavery and of a fixed hired class, that workers can only be either hired or owned. Labor comes first and capital is its product, so labor deserves the higher consideration. In the same passage he grants that capital has rights worth protecting, and praises the free worker who saves and becomes independent.",
+    "zh": "有人为奴隶制和固定的雇佣阶层辩护，声称劳动者要么被雇用、要么被占有，林肯驳斥了这一论点。劳动在先，资本是劳动的产物，所以劳动理应得到更高的重视。在同一段落里，他也承认资本享有值得保护的权利，并称赞那种储蓄起来、最终自立的自由劳动者。"
+   }
+  },
+  {
+   "id": "ap-lincoln-writings_1863_1865-mvp-00016-217",
+   "thinker": "lincoln",
+   "name": "Abraham Lincoln",
+   "en": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
+   "zh": null,
+   "work": "Papers and Writings, 1863-1865",
+   "locator": "Gettysburg Address, November 1863",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the Gettysburg Address (November 1863), given at the dedication of a cemetery for soldiers killed in the battle.",
+   "interpretation": {
+    "en": "Lincoln turns the ceremony around: those who spoke cannot consecrate the ground, because the soldiers already have. The task left to the living is not commemoration but dedication to the unfinished work. The sentence's prediction about his own words proved wrong, which only sharpens its point about deeds outweighing speeches.",
+    "zh": "林肯把这场仪式反转过来：致辞的人无法使这片土地神圣，因为士兵们已经做到了。留给生者的任务不是纪念，而是献身于尚未完成的事业。这句话对他自己言辞的预言后来被证明是错的，而这只让它关于行动重于言辞的观点更加鲜明。"
+   }
+  },
+  {
+   "id": "ap-lincoln-writings_1832_1843-mvp-00042-2731",
+   "thinker": "lincoln",
+   "name": "Abraham Lincoln",
+   "en": "Towering genius disdains a beaten path.",
+   "zh": null,
+   "work": "Papers and Writings, 1832-1843",
+   "locator": "Address before the Young Men's Lyceum of Springfield, 1838",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Lincoln's Lyceum Address (1838), on the dangers that threaten American institutions from within.",
+   "interpretation": {
+    "en": "The young Lincoln warns that once the founders' generation is gone, a man of great ambition will not be content to maintain what they built. Such a person seeks distinction and, finding none in preservation, may seek it in destruction. His remedy is reverence for the laws, taught in every home and school.",
+    "zh": "年轻的林肯警告说，一旦开国一代离去，一个雄心勃勃的人不会满足于维护前人建立的东西。这样的人追求出类拔萃，在守成中得不到，就可能到破坏中去寻求。他开出的药方是敬畏法律，在每个家庭和学校里加以教导。"
+   }
+  },
+  {
+   "id": "ap-theodore_roosevelt-autobiography-mvp-00061-819",
+   "thinker": "theodore_roosevelt",
+   "name": "Theodore Roosevelt",
+   "en": "…by acting as if I was not afraid I gradually ceased to be afraid.",
+   "zh": null,
+   "work": "An Autobiography",
+   "locator": "Chapter II, The Vigor of Life",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Roosevelt's Autobiography (1913), on how a sickly, timid boy trained himself into courage.",
+   "interpretation": {
+    "en": "Roosevelt admits that he was afraid of many things at first, from grizzly bears to mean horses and gun-fighters. His method was to behave as if he were not, until the behaviour became the habit. He adds that most men can do the same if they choose, by schooling themselves in advance for trials they can foresee.",
+    "zh": "罗斯福承认，他一开始害怕许多东西，从灰熊到烈马再到枪手。他的办法是表现得好像并不害怕，直到这种举止变成了习惯。他补充说，大多数人只要愿意都能做到，办法是预先为可以预见的考验训练自己。"
+   }
+  },
+  {
+   "id": "ap-theodore_roosevelt-the_strenuous_life-mvp-00231-393",
+   "thinker": "theodore_roosevelt",
+   "name": "Theodore Roosevelt",
+   "en": "…the chief factor in any man’s success or failure must be his own character",
+   "zh": null,
+   "work": "The Strenuous Life: Essays and Addresses",
+   "locator": "Christian Citizenship (address, 1900)",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Roosevelt's address Christian Citizenship, printed in The Strenuous Life (1900).",
+   "interpretation": {
+    "en": "Roosevelt grants that laws and conditions matter, then insists that after everything is said, a person's own character decides most of the outcome. By character he means a plain list: common sense, courage, energy and capacity. Nothing, he says, can take the place of this individual factor.",
+    "zh": "罗斯福承认法律和环境都有影响，但坚持认为，说到底，决定大部分结果的是一个人自己的品格。他所说的品格是一份朴素的清单：常识、勇气、活力和能力。他说，没有什么能取代这个个人因素。"
+   }
+  },
+  {
+   "id": "ap-theodore_roosevelt-autobiography-mvp-00862-1084",
+   "thinker": "theodore_roosevelt",
+   "name": "Theodore Roosevelt",
+   "en": "The only safe rule is to promise little, and faithfully to keep every promise;",
+   "zh": null,
+   "work": "An Autobiography",
+   "locator": "Chapter XV, The Peace of Righteousness",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Roosevelt's Autobiography (1913), in the chapter on his foreign policy as President.",
+   "interpretation": {
+    "en": "Roosevelt's rule is about credibility: a nation, or a person, that promises little and keeps its word is believed when it does speak. He ties it to the proverb about speaking softly and carrying a big stick, which for him meant restraint in words backed by real capacity to act.",
+    "zh": "罗斯福的这条规则关乎信誉：一个少作承诺、言出必行的国家或个人，一旦开口就会被人相信。他把它与那句轻声说话、手持大棒的谚语联系起来，对他而言，这意味着言辞克制，同时具备真正行动的能力。"
+   }
+  },
+  {
+   "id": "ap-theodore_roosevelt-autobiography-mvp-00788-137",
+   "thinker": "theodore_roosevelt",
+   "name": "Theodore Roosevelt",
+   "en": "…it is equally a violation of the policy of the square deal for a capitalist to protest against denunciation of a capitalist who is guilty of wrongdoing",
+   "zh": null,
+   "work": "An Autobiography",
+   "locator": "Chapter XII, The Big Stick and the Square Deal",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From a letter Roosevelt quotes in his Autobiography (1913), written during a 1907 labour dispute.",
+   "interpretation": {
+    "en": "Roosevelt answers people who demanded a square deal for accused union leaders. He agrees, and turns the demand into a rule for everyone: fairness means not shielding your own side's wrongdoers, whether capitalists or labour leaders. The square deal is a standard applied in both directions.",
+    "zh": "罗斯福回应那些要求给被控工会领袖公平待遇的人。他表示同意，并把这一要求变成适用于所有人的规则：公平意味着不包庇自己一方的过错者，无论是资本家还是劳工领袖。公平交易是一个双向适用的标准。"
+   }
+  },
+  {
+   "id": "ap-gandhi-hind_swaraj-mvp-00106-1096",
+   "thinker": "gandhi",
+   "name": "Mahatma Gandhi",
+   "en": "The means may be likened to a seed, the end to a tree;",
+   "zh": null,
+   "work": "Hind Swaraj, or Indian Home Rule",
+   "locator": "Chapter XVI, Brute-Force",
+   "locatorApprox": false,
+   "translator": "M. K. Gandhi (his own English translation)",
+   "context": "From Hind Swaraj (1909), Gandhi's dialogue on Indian self-rule, in the chapter answering the case for violence.",
+   "interpretation": {
+    "en": "Gandhi's Reader argues that the British took India by force and must be driven out by force. The Editor answers that results grow from methods the way trees grow from seeds: violent means will produce a violent and unfree outcome. The rest of the chapter gives homely examples of the same principle.",
+    "zh": "甘地书中的读者认为，英国人是用武力夺取印度的，所以必须用武力把他们赶走。编辑回答说，结果从方法中长出来，就像树从种子中长出来：暴力的手段会产生暴力而不自由的结果。这一章其余部分用日常的例子说明同一个原则。"
+   }
+  },
+  {
+   "id": "ap-gandhi-hind_swaraj-mvp-00115-371",
+   "thinker": "gandhi",
+   "name": "Mahatma Gandhi",
+   "en": "When I refuse to do a thing that is repugnant to my conscience, I use soul-force.",
+   "zh": null,
+   "work": "Hind Swaraj, or Indian Home Rule",
+   "locator": "Chapter XVII, Passive Resistance",
+   "locatorApprox": false,
+   "translator": "M. K. Gandhi (his own English translation)",
+   "context": "From Hind Swaraj (1909), in the chapter defining passive resistance.",
+   "interpretation": {
+    "en": "Gandhi defines soul-force by contrast. If he forces a government to repeal a law by violence, that is body-force; if he simply refuses to obey and accepts the penalty, he uses soul-force, and the only person who suffers is himself. The method is meant to persuade, not to coerce.",
+    "zh": "甘地通过对比来界定灵魂力。如果他用暴力迫使政府废除一项法律，那是身体之力；如果他只是拒绝服从并接受惩罚，他用的就是灵魂力，受苦的只有他自己。这种方法旨在说服，而不是强迫。"
+   }
+  },
+  {
+   "id": "ap-gandhi-hind_swaraj-mvp-00055-166",
+   "thinker": "gandhi",
+   "name": "Mahatma Gandhi",
+   "en": "Good travels at a snail's pace--it can, therefore, have little to do with the railways.",
+   "zh": null,
+   "work": "Hind Swaraj, or Indian Home Rule",
+   "locator": "Chapter IX, The Condition of India: Railways",
+   "locatorApprox": false,
+   "translator": "M. K. Gandhi (his own English translation)",
+   "context": "From Hind Swaraj (1909), where the Editor argues that railways have harmed India.",
+   "interpretation": {
+    "en": "The Reader objects that good people can use railways as easily as bad ones. The Editor answers that doing good is slow, patient work by unselfish people, so speed favours the wrong things. It is part of his broader polemic against modern civilization, and is offered as moral argument, not as a study of transport.",
+    "zh": "读者反驳说，好人和坏人一样可以利用铁路。编辑回答说，行善是无私之人缓慢而耐心的工作，所以速度更有利于坏事。这是他反对现代文明这一更大论战的一部分，是作为道德论证提出的，而不是对交通运输的研究。"
+   }
+  },
+  {
+   "id": "ap-gandhi-freedoms_battle-mvp-00167-217",
+   "thinker": "gandhi",
+   "name": "Mahatma Gandhi",
+   "en": "Untouchability I hold is a custom, not an integral part of Hinduism.",
+   "zh": null,
+   "work": "Freedom's Battle",
+   "locator": "Amelioration of the Depressed Classes",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Freedom's Battle (1922), a collection of Gandhi's articles and speeches, on the treatment of the depressed classes.",
+   "interpretation": {
+    "en": "Gandhi argues that Hindus cannot demand freedom from British rule while denying freedom to those they treat as untouchable. By calling untouchability a custom rather than part of the religion, he makes it something Hindus can and must give up. He calls non-co-operation a process of self-purification for that reason.",
+    "zh": "甘地认为，印度教徒不能一边要求摆脱英国统治，一边剥夺他们视为不可接触者之人的自由。他把不可接触制称为一种习俗而非宗教的组成部分，这样它就成了印度教徒能够也必须放弃的东西。正因如此，他把不合作称为一个自我净化的过程。"
+   }
+  },
+  {
+   "id": "ap-gandhi-hind_swaraj-mvp-00151-88",
+   "thinker": "gandhi",
+   "name": "Mahatma Gandhi",
+   "en": "Machinery is the chief symbol of modern civilization; it represents a great sin.",
+   "zh": null,
+   "work": "Hind Swaraj, or Indian Home Rule",
+   "locator": "Chapter XIX, Machinery",
+   "locatorApprox": false,
+   "translator": "M. K. Gandhi (his own English translation)",
+   "context": "From Hind Swaraj (1909), in the chapter on machinery and the mills of Bombay.",
+   "interpretation": {
+    "en": "Gandhi points to the condition of mill workers, women above all, and argues that machinery has made them slaves while enriching a few. He would rather see India poor than build its prosperity on that model. The claim is a moral judgement made in a polemical book.",
+    "zh": "甘地指出纺织厂工人、尤其是女工的处境，认为机器使他们沦为奴隶，而只让少数人致富。他宁愿看到印度贫穷，也不愿在这种模式上建立繁荣。这是一部论战性著作中的道德判断。"
+   }
+  },
+  {
+   "id": "ap-hamilton-federalist-mvp-00094-700",
+   "thinker": "hamilton",
+   "name": "Alexander Hamilton",
+   "en": "Why has government been instituted at all? Because the passions of men will not conform to the dictates of reason and justice, without constraint.",
+   "zh": null,
+   "work": "The Federalist (Hamilton's numbers)",
+   "locator": "Federalist No. 15",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Federalist No. 15 (1787), Hamilton's argument that the Confederation fails because it cannot compel.",
+   "interpretation": {
+    "en": "Hamilton asks why anyone thought states would obey a league's requests without being made to. Government exists precisely because people do not follow reason and justice of their own accord, and bodies of men behave no better than individuals. A union that can only ask, he concludes, is no government.",
+    "zh": "汉密尔顿问，为什么有人会认为各州会在不被强制的情况下服从一个联盟的要求。政府之所以存在，恰恰是因为人们不会自觉遵循理性与正义，而人群的行为也不比个人更好。他的结论是，一个只能请求的联盟算不上政府。"
+   }
+  },
+  {
+   "id": "ap-hamilton-federalist-mvp-00381-380",
+   "thinker": "hamilton",
+   "name": "Alexander Hamilton",
+   "en": "Energy in the Executive is a leading character in the definition of good government.",
+   "zh": null,
+   "work": "The Federalist (Hamilton's numbers)",
+   "locator": "Federalist No. 70",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Federalist No. 70 (1788), defending a single, vigorous president.",
+   "interpretation": {
+    "en": "Hamilton rejects the idea that a strong executive threatens republican government. Energy, which he breaks into unity, duration, support and competent powers, is what protects a community from attack, keeps administration steady and secures property and liberty. A feeble executive, he argues, means bad government whatever its theory.",
+    "zh": "汉密尔顿驳斥了强有力的行政首脑会威胁共和政体的看法。他把活力分解为统一、任期、供给和充分的权力，认为正是活力保护社会免受攻击、使行政稳定、保障财产与自由。他认为，软弱的行政意味着糟糕的政府，无论其理论如何。"
+   }
+  },
+  {
+   "id": "ap-hamilton-federalist-mvp-00488-461",
+   "thinker": "hamilton",
+   "name": "Alexander Hamilton",
+   "en": "In the general course of human nature, a power over a man's subsistence amounts to a power over his will.",
+   "zh": null,
+   "work": "The Federalist (Hamilton's numbers)",
+   "locator": "Federalist No. 79",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Federalist No. 79 (1788), arguing that judges' salaries must be fixed by law.",
+   "interpretation": {
+    "en": "Hamilton makes judicial independence a question of pay. If the legislature could cut judges' incomes at will, it could bend their decisions. A fixed provision for their support is therefore one of the strongest guarantees that the judicial power stays separate from the legislative.",
+    "zh": "汉密尔顿把司法独立变成一个关于薪酬的问题。如果立法机关可以随意削减法官的收入，它就能左右他们的判决。因此，以法律固定法官的薪俸，是保证司法权与立法权分离的最有力保障之一。"
+   }
+  },
+  {
+   "id": "ap-hamilton-federalist-mvp-00227-0",
+   "thinker": "hamilton",
+   "name": "Alexander Hamilton",
+   "en": "Money is, with propriety, considered as the vital principle of the body politic;",
+   "zh": null,
+   "work": "The Federalist (Hamilton's numbers)",
+   "locator": "Federalist No. 30",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Federalist No. 30 (1787), on the national government's power to tax.",
+   "interpretation": {
+    "en": "Hamilton argues that a government without its own reliable revenue cannot perform its essential functions. It must either let the people suffer neglect or plunder them by irregular means. A complete power to raise money is therefore an indispensable part of any constitution, not an optional addition.",
+    "zh": "汉密尔顿认为，一个没有自己可靠财源的政府无法履行其基本职能。它要么任由人民受到忽视，要么以不正当的手段掠夺他们。因此，完整的筹款权是任何宪法不可或缺的组成部分，而不是可有可无的附加。"
+   }
+  },
+  {
+   "id": "ap-caesar-gallic_war-mvp-00102-1128",
+   "thinker": "caesar",
+   "name": "Julius Caesar",
+   "en": "…in most cases men willingly believe what they wish.",
+   "zh": null,
+   "work": "The Gallic War, Books I-VII",
+   "locator": "Book III, Chapter XVIII",
+   "locatorApprox": false,
+   "translator": "W. A. McDevitte and W. S. Bohn",
+   "context": "From Caesar's Gallic War (Book III), describing how a Gallic army was lured into attacking a Roman camp.",
+   "interpretation": {
+    "en": "Caesar's lieutenant Sabinus feigned fear so that the Gauls would attack his camp on unfavourable ground. Caesar lists their reasons for believing the ruse: past success, hunger, hope and, above all, the general human tendency to believe what one wants to be true. The remark is offered as the explanation of a defeat.",
+    "zh": "凯撒的副将萨比努斯假装害怕，诱使高卢人在不利的地形上进攻他的营地。凯撒列举了他们相信这一诡计的理由：过去的成功、饥饿、希望，以及最重要的，人普遍倾向于相信自己希望为真的事。这句话是作为一场失败的解释提出的。"
+   }
+  },
+  {
+   "id": "ap-caesar-civil_war-mvp-00196-9",
+   "thinker": "caesar",
+   "name": "Julius Caesar",
+   "en": "But Fortune, who exerts a powerful influence as well in other matters, as especially in war, effects great changes from trifling causes,",
+   "zh": null,
+   "work": "The Civil War",
+   "locator": "Book III, Chapter LXVIII",
+   "locatorApprox": false,
+   "translator": "W. A. McDevitte and W. S. Bohn",
+   "context": "From Caesar's Civil War (Book III), on a setback at Dyrrachium against Pompey.",
+   "interpretation": {
+    "en": "Caesar explains a reverse at Dyrrachium: cohorts mistook one rampart for another, lost their way, and the attack collapsed. He attributes the outcome to fortune, which in war turns large events on small accidents. The explanation also shifts blame away from his own command, which is typical of the Commentaries.",
+    "zh": "凯撒解释了在迪拉基乌姆的一次挫败：几个步兵大队把一道壁垒误认作另一道，迷失了方向，进攻随之瓦解。他把结果归于命运，在战争中，命运会让小小的意外扭转大局。这一解释也把责任从他自己的指挥上移开，这是《战记》的典型做法。"
+   }
+  },
+  {
+   "id": "ap-caesar-gallic_war-mvp-00118-760",
+   "thinker": "caesar",
+   "name": "Julius Caesar",
+   "en": "…most people give to their questions answers framed agreeably to their wishes.",
+   "zh": null,
+   "work": "The Gallic War, Books I-VII",
+   "locator": "Book IV, Chapter V",
+   "locatorApprox": false,
+   "translator": "W. A. McDevitte and W. S. Bohn",
+   "context": "From Caesar's Gallic War (Book IV), on the Gauls' habit of stopping travellers for news.",
+   "interpretation": {
+    "en": "Caesar describes Gallic towns surrounding merchants to ask what they have heard, then acting on what they are told. Since informants tell people what they want to hear, decisions taken this way must soon be regretted. It is a conqueror's portrait of an enemy he calls fickle, and it is also an observation about rumour anywhere.",
+    "zh": "凯撒描述高卢城镇的人围住商人打听消息，然后根据听到的话采取行动。由于提供消息的人总是说别人想听的话，这样作出的决定很快就会后悔。这是一位征服者对他称为反复无常的敌人的描绘，同时也是一个关于传言的普遍观察。"
+   }
+  },
+  {
+   "id": "ap-caesar-civil_war-mvp-00226-295",
+   "thinker": "caesar",
+   "name": "Julius Caesar",
+   "en": "…he comforted them and bade them rise, and having spoken a few words of his own clemency to alleviate their fears, he pardoned them all,",
+   "zh": null,
+   "work": "The Civil War",
+   "locator": "Book III, Chapter XCVIII",
+   "locatorApprox": false,
+   "translator": "W. A. McDevitte and W. S. Bohn",
+   "context": "From Caesar's Civil War (Book III), after the battle of Pharsalus; Caesar writes of himself in the third person.",
+   "interpretation": {
+    "en": "After defeating Pompey's army, Caesar receives the surrendering soldiers, pardons them and forbids his men to harm or rob them. The Commentaries present clemency as Caesar's character; it was also a policy that won over former enemies in a civil war. Both readings are supported by the way he tells it.",
+    "zh": "击败庞培的军队后，凯撒接受了投降的士兵，赦免了他们，并禁止部下伤害或抢劫他们。《战记》把宽仁呈现为凯撒的品格；它同时也是在内战中争取昔日敌人的一项政策。从他的叙述方式来看，这两种理解都有依据。"
+   }
+  },
+  {
+   "id": "ap-jefferson-memoir_and_correspondence_2-mvp-00423-2416",
+   "thinker": "jefferson",
+   "name": "Thomas Jefferson",
+   "en": "The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants. It is its natural manure.",
+   "zh": null,
+   "work": "Memoir, Correspondence and Miscellanies, vol. 2",
+   "locator": "Letter to W. S. Smith, November 13, 1787",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Jefferson's letter to William Stephens Smith (1787), written in Paris about Shays's Rebellion and the new Constitution.",
+   "interpretation": {
+    "en": "Jefferson thought the Constitutional Convention had overreacted to the Massachusetts rebellion. A country without occasional resistance, he argued, lets its rulers forget that the people keep their spirit; the remedy for rebels is to set them right as to facts and pardon them. The famous line is a provocation inside that argument, written from a safe distance.",
+    "zh": "杰斐逊认为制宪会议对马萨诸塞州的叛乱反应过度。他认为，一个从不出现反抗的国家会让统治者忘记人民仍有血性；对待叛乱者的办法是向他们讲明事实并赦免他们。这句名言是这一论证中的挑衅之语，是在安全的距离之外写下的。"
+   }
+  },
+  {
+   "id": "ap-jefferson-memoir_and_correspondence_3-mvp-00025-0",
+   "thinker": "jefferson",
+   "name": "Thomas Jefferson",
+   "en": "This principle, that the earth belongs to the living and not to the dead, is of very extensive application and consequences in every country,",
+   "zh": null,
+   "work": "Memoir, Correspondence and Miscellanies, vol. 3",
+   "locator": "Letter to James Madison, September 6, 1789",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Jefferson's letter to James Madison (1789), written in Paris as the French Revolution began.",
+   "interpretation": {
+    "en": "Jefferson argues that one generation cannot bind the next with debts or laws: each generation has the use of the earth during its own life only. He applies it to entailed land, church property and public debt, and suggests that constitutions and laws should expire after about nineteen years. Madison replied with practical objections.",
+    "zh": "杰斐逊认为，一代人不能用债务或法律束缚下一代：每一代人只在自己有生之年享有对土地的使用权。他把这一原则应用于限定继承的土地、教会财产和公共债务，并提出宪法和法律应在大约十九年后失效。麦迪逊回信提出了实际层面的反对意见。"
+   }
+  },
+  {
+   "id": "ap-jefferson-memoir_and_correspondence_1-mvp-00485-724",
+   "thinker": "jefferson",
+   "name": "Thomas Jefferson",
+   "en": "The object of walking is to relax the mind.",
+   "zh": null,
+   "work": "Memoir, Correspondence and Miscellanies, vol. 1",
+   "locator": "Letter to Peter Carr, 1785",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Jefferson's letter of advice to his nephew Peter Carr (1785), on study, health and exercise.",
+   "interpretation": {
+    "en": "Jefferson tells his nephew to give two hours a day to exercise and calls walking the best kind. The point is rest for the mind: no book, no hard thinking, only attention to what is around you. The same letter recommends a gun as a walking companion, advice of its time and place.",
+    "zh": "杰斐逊告诉他的侄子每天用两个小时锻炼，并称散步是最好的锻炼方式。重点在于让头脑休息：不带书，不费力思考，只留意周围的事物。同一封信还建议带一支枪作为散步的伴侣，那是属于那个时代和地方的建议。"
+   }
+  },
+  {
+   "id": "ap-jefferson-memoir_and_correspondence_4-mvp-00577-153",
+   "thinker": "jefferson",
+   "name": "Thomas Jefferson",
+   "en": "When angry, count ten before you speak; if very angry, an hundred.",
+   "zh": null,
+   "work": "Memoir, Correspondence and Miscellanies, vol. 4",
+   "locator": "Letter to Thomas Jefferson Smith, February 21, 1825",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From a list of short rules of conduct Jefferson sent to a boy named after him (1825), the year before his death.",
+   "interpretation": {
+    "en": "Near the end of his life Jefferson wrote out a decalogue of practical canons for a young namesake. This one concerns temper: delay speech until the anger has cooled. Others in the list warn against buying what you do not want because it is cheap, and against the pain caused by evils that never happen.",
+    "zh": "杰斐逊在晚年为一位与他同名的少年写下了一份实用的十条准则。这一条关于脾气：等怒气消了再开口。清单中的其他几条告诫人们不要因为便宜而买自己不需要的东西，也不要为从未发生的祸事而痛苦。"
+   }
+  },
+  {
+   "id": "ap-newton-opticks-mvp-00392-503",
+   "thinker": "newton",
+   "name": "Isaac Newton",
+   "en": "…the main Business of natural Philosophy is to argue from Phænomena without feigning Hypotheses, and to deduce Causes from Effects, till we come to the very first Cause,",
+   "zh": null,
+   "work": "Opticks",
+   "locator": "Book III, Query 28",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the Queries at the end of Newton's Opticks (4th ed. 1730), where he criticises theories of light that rest on an imagined medium.",
+   "interpretation": {
+    "en": "Newton contrasts two ways of doing natural philosophy. One invents a hypothesis, such as a dense ether, and explains everything mechanically from it; the other starts from what is observed and works back to causes. He adds that the chain of causes ends in a first cause that is not mechanical, so for him the method leads toward theology rather than away from it.",
+    "zh": "牛顿对比了两种研究自然哲学的方式。一种是先虚构一个假说，比如稠密的以太，再据此机械地解释一切；另一种是从观察到的现象出发，逆推原因。他补充说，原因之链终止于一个并非机械的第一因，所以在他看来，这种方法是通向神学，而不是远离神学。"
+   }
+  },
+  {
+   "id": "ap-newton-opticks-mvp-00142-49",
+   "thinker": "newton",
+   "name": "Isaac Newton",
+   "en": "…the Whiteness of the Sun's Light is compounded of all the Colours wherewith the several sorts of Rays whereof that Light consists,",
+   "zh": null,
+   "work": "Opticks",
+   "locator": "Book I, Part II",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Newton's Opticks (1704; 4th ed. 1730), after the prism experiments that separate sunlight into colours.",
+   "interpretation": {
+    "en": "Newton concludes from his experiments that white light is not simple: it is a mixture of rays of different refrangibility, each of which, once separated, shows its own colour and keeps it. Whiteness is what we see when they arrive together in the right proportion. This overturned the older view that colours were modifications of white light.",
+    "zh": "牛顿从实验中得出结论：白光并不单纯，而是由折射程度不同的光线混合而成，每一种光线一旦被分离，就呈现并保持自己的颜色。白色是这些光线以适当比例同时到达时我们所见的样子。这推翻了颜色是白光之变形的旧观点。"
+   }
+  },
+  {
+   "id": "ap-newton-opticks-mvp-00111-530",
+   "thinker": "newton",
+   "name": "Isaac Newton",
+   "en": "For the Rays to speak properly are not coloured.",
+   "zh": null,
+   "work": "Opticks",
+   "locator": "Book I, Part II, Proposition II, Definition",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Newton's Opticks, where he defines the terms he will use for coloured light.",
+   "interpretation": {
+    "en": "Newton warns that when he calls rays red or blue he speaks loosely, as ordinary people would. Strictly, rays have only a power or disposition to stir up the sensation of a colour; the colour itself belongs to the sensation. It is a careful separation of the physical cause from the experience it produces.",
+    "zh": "牛顿提醒读者，当他把光线称为红色或蓝色时，只是像普通人那样随口而说。严格说来，光线只有一种激起某种颜色感觉的能力或倾向；颜色本身属于感觉。这是把物理原因与它所产生的体验仔细区分开来。"
+   }
+  },
+  {
+   "id": "ap-newton-opticks-mvp-00395-0",
+   "thinker": "newton",
+   "name": "Isaac Newton",
+   "en": "The changing of Bodies into Light, and Light into Bodies, is very conformable to the Course of Nature, which seems delighted with Transmutations.",
+   "zh": null,
+   "work": "Opticks",
+   "locator": "Book III, Query 30",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From the Queries at the end of Newton's Opticks, which he framed as questions rather than conclusions.",
+   "interpretation": {
+    "en": "Newton asks whether ordinary matter and light might be convertible into one another, and supports the guess with everyday transformations: water to vapour and ice, eggs to animals, food to flesh. The sentence belongs to a query, a form he used for ideas he could not prove; he presents it as a question for later inquiry.",
+    "zh": "牛顿提出疑问：普通物质与光是否可以相互转化？他用日常的变化来支持这一猜测：水变成蒸汽和冰，卵变成动物，食物变成血肉。这句话属于一条疑问，那是他用来表达无法证明之想法的形式；他把它作为留待日后研究的问题提出。"
+   }
+  },
+  {
+   "id": "ap-newton-prophecies-mvp-00197-317",
+   "thinker": "newton",
+   "name": "Isaac Newton",
+   "en": "…not to gratify men's curiosities by enabling them to foreknow things, but that after they were fulfilled they might be interpreted by the event,",
+   "zh": null,
+   "work": "Observations upon the Prophecies of Daniel and the Apocalypse of St. John",
+   "locator": "Part II, Chapter I",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Newton's Observations upon the Prophecies of Daniel and the Apocalypse of St. John, published in 1733, after his death.",
+   "interpretation": {
+    "en": "Newton criticises interpreters who predicted dates and so brought prophecy into contempt. In his view prophecy was not given for forecasting; its fulfilment, seen afterwards, would show that the world is governed by providence. It is a statement about how to read scripture, from the theological work he spent decades on.",
+    "zh": "牛顿批评那些预言具体日期、从而使预言遭到轻视的解释者。在他看来，预言不是为了预测而赐下的；人们事后看到它应验，便会明白世界由天意统治。这是关于如何解读经文的论述，出自他花了几十年研究的神学著作。"
+   }
+  },
+  {
+   "id": "ap-tesla-my_inventions-mvp-00052-339",
+   "thinker": "tesla",
+   "name": "Nikola Tesla",
+   "en": "The images I saw were to me perfectly real and tangible.",
+   "zh": null,
+   "work": "My Inventions",
+   "locator": "Chapter III, My Later Endeavors",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Tesla's memoir My Inventions, published in the Electrical Experimenter in 1919.",
+   "interpretation": {
+    "en": "Tesla describes how, as a student in Graz, he imagined motors, alternators and whole systems and ran them in his mind, watching the currents change. He presents this power of visualization as the core of his method: the device works in imagination before it is built. The passage is his own account, written decades later.",
+    "zh": "特斯拉描述了他在格拉茨求学时，如何在脑中想象电动机、交流发电机乃至整个系统，并让它们运转，观察电流的变化。他把这种视觉化能力呈现为自己方法的核心：装置在被造出来之前，先在想象中运转。这段话是他数十年后写下的自述。"
+   }
+  },
+  {
+   "id": "ap-tesla-my_inventions-mvp-00117-759",
+   "thinker": "tesla",
+   "name": "Nikola Tesla",
+   "en": "Deficient observation is merely a form of ignorance and responsible for the many morbid notions and foolish ideas prevailing.",
+   "zh": null,
+   "work": "My Inventions",
+   "locator": "Chapter VI, The Art of Telautomatics",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Tesla's My Inventions (1919), in a passage on attention and the mind as a mechanism.",
+   "interpretation": {
+    "en": "Tesla mocks the person who fusses for an hour over a lost collar button because he cannot picture what he did. Careful observation, he argues, would dispel many superstitions and odd beliefs. The point leads into his view that human actions are responses to outside impressions, which he treats almost mechanically.",
+    "zh": "特斯拉嘲笑那种丢了衣领纽扣就要折腾一小时的人，因为他想不起自己做过什么。他认为，细致的观察会驱散许多迷信和古怪的信念。这一观点引出了他的看法：人的行为是对外界印象的反应，他几乎以机械的方式来看待这一点。"
+   }
+  },
+  {
+   "id": "ap-tesla-increasing_human_energy-mvp-00021-431",
+   "thinker": "tesla",
+   "name": "Nikola Tesla",
+   "en": "Universal peace is a beautiful dream, but not at once realizable.",
+   "zh": null,
+   "work": "The Problem of Increasing Human Energy",
+   "locator": "Part I",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Tesla's essay The Problem of Increasing Human Energy (Century Magazine, 1900).",
+   "interpretation": {
+    "en": "Tesla argues that war is a force retarding human progress, but that sudden disarmament would produce something worse. Peace must come gradually, as conditions change. He goes on to predict that machines will replace soldiers and make war less bloody, a forecast he offers with confidence and which history did not bear out.",
+    "zh": "特斯拉认为战争是阻碍人类进步的力量，但突然裁军会带来更糟的局面。和平必须随着条件的变化逐步到来。他接着预言机器将取代士兵，使战争不那么血腥，他对这一预测很有信心，而历史并没有证实它。"
+   }
+  },
+  {
+   "id": "ap-tesla-my_inventions-mvp-00066-0",
+   "thinker": "tesla",
+   "name": "Nikola Tesla",
+   "en": "The meeting with Edison was a memorable event in my life.",
+   "zh": null,
+   "work": "My Inventions",
+   "locator": "Chapter IV, The Discovery of the Tesla Coil and Transformer",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Tesla's My Inventions (1919), recalling his arrival in New York in 1884.",
+   "interpretation": {
+    "en": "Tesla writes that he was amazed at Edison, who had achieved so much without early advantages or scientific training. He contrasts it with his own years of languages, literature and libraries, which he half suspects were wasted. The tone is admiring, with a note of self-questioning.",
+    "zh": "特斯拉写道，他对爱迪生感到惊叹，因为爱迪生在没有早年条件和科学训练的情况下取得了如此多的成就。他把这与自己多年学习语言、文学、泡在图书馆的经历相比，并半信半疑地觉得那些年或许是浪费了。语气是钦佩的，也带着几分自我怀疑。"
+   }
+  },
+  {
+   "id": "ap-franklin-autobiography-mvp-00152-1120",
+   "thinker": "franklin",
+   "name": "Benjamin Franklin",
+   "en": "13. Humility. Imitate Jesus and Socrates.",
+   "zh": null,
+   "work": "The Autobiography of Benjamin Franklin",
+   "locator": "Part II (written at Passy, 1784)",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Franklin's Autobiography, the last item in his list of thirteen virtues with their precepts.",
+   "interpretation": {
+    "en": "Franklin's list began with twelve virtues; a Quaker friend told him he was thought proud, so he added humility. Its precept is the shortest on the list. Elsewhere he admits he could never acquire the reality of this virtue, only a good deal of its appearance.",
+    "zh": "富兰克林的清单起初只有十二项美德；一位贵格会朋友告诉他，别人认为他很骄傲，于是他加上了谦逊。它的戒律是整份清单中最短的。他在别处承认，自己始终没能获得这一美德的实质，只获得了不少它的外表。"
+   }
+  },
+  {
+   "id": "ap-franklin-autobiography-mvp-00171-308",
+   "thinker": "franklin",
+   "name": "Benjamin Franklin",
+   "en": "…even if I could conceive that I had compleatly overcome it, I should probably be proud of my humility.",
+   "zh": null,
+   "work": "The Autobiography of Benjamin Franklin",
+   "locator": "Part II (written at Passy, 1784)",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Franklin's Autobiography, on pride, the passion he found hardest to subdue.",
+   "interpretation": {
+    "en": "Franklin calls pride the hardest of natural passions to subdue: disguise it and struggle with it as you will, it keeps reappearing. The joke at the end is also the argument. Any victory over pride becomes a new occasion for it, so the effort can change behaviour but cannot be declared complete.",
+    "zh": "富兰克林称骄傲是最难克服的天性：无论怎样掩饰、怎样与之搏斗，它总会重新冒出来。结尾的玩笑本身就是论证。任何对骄傲的胜利都会成为骄傲的新理由，所以这番努力可以改变行为，却不能宣告完成。"
+   }
+  },
+  {
+   "id": "ap-franklin-autobiography-mvp-00111-700",
+   "thinker": "franklin",
+   "name": "Benjamin Franklin",
+   "en": "…all expressions of positiveness in opinions, or direct contradiction, were after some time made contraband, and prohibited under small pecuniary penalties.",
+   "zh": null,
+   "work": "The Autobiography of Benjamin Franklin",
+   "locator": "Part I",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Franklin's Autobiography, describing the Junto, the club for mutual improvement he founded in Philadelphia in 1727.",
+   "interpretation": {
+    "en": "The Junto met weekly to debate questions of morals, politics and natural philosophy. To keep debate a sincere inquiry rather than a contest, members were fined for dogmatic assertion or flat contradiction. Franklin presents it as a practical rule that kept the club useful for decades.",
+    "zh": "讲读社每周聚会，辩论道德、政治和自然哲学的问题。为了让辩论保持为真诚的探究而非比赛，成员若武断断言或直接反驳就会被罚款。富兰克林把它描述为一条使这个俱乐部数十年间一直有益的实用规则。"
+   }
+  },
+  {
+   "id": "ap-franklin-autobiography-mvp-00161-145",
+   "thinker": "franklin",
+   "name": "Benjamin Franklin",
+   "en": "…find myself so much fuller of faults than I had imagined; but I had the satisfaction of seeing them diminish.",
+   "zh": null,
+   "work": "The Autobiography of Benjamin Franklin",
+   "locator": "Part II (written at Passy, 1784)",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Franklin's Autobiography, on his little book of daily tables for the thirteen virtues.",
+   "interpretation": {
+    "en": "Franklin marked each fault with a black spot in the column of the day. The first result was humbling, the second encouraging. He goes on to describe moving the tables onto ivory leaves so they could be wiped clean, a practical detail that shows how seriously he took the scheme.",
+    "zh": "富兰克林在当天那一栏里为每一个过失点上一个黑点。第一个结果令人谦卑，第二个结果令人鼓舞。他接着描述了把表格转抄到象牙页上以便擦拭干净，这一实用细节显示了他对这个计划的认真程度。"
+   }
+  },
+  {
+   "id": "ap-leonardo-notebooks-mvp-00978-223",
+   "thinker": "leonardo",
+   "name": "Leonardo da Vinci",
+   "en": "Just as iron rusts unless it is used, and water putrifies or, in cold, turns to ice, so our intellect spoils unless it is kept in use.",
+   "zh": null,
+   "work": "The Notebooks of Leonardo da Vinci",
+   "locator": "Philosophical Maxims",
+   "locatorApprox": false,
+   "translator": "Jean Paul Richter",
+   "context": "From Leonardo's notebooks, in J. P. Richter's 1883 English translation, among his maxims on learning.",
+   "interpretation": {
+    "en": "Leonardo compares the mind to materials that decay when idle. The comparison is practical, like most of his notes: the intellect is a working faculty, kept fit by exercise. Nearby notes make the same point about memory and study, warning that learning without a liking for it retains nothing.",
+    "zh": "列奥纳多把头脑比作闲置就会变质的材料。这个比喻是实际的，就像他大多数笔记一样：智力是一种需要工作的能力，靠锻炼保持良好状态。附近的笔记对记忆和学习也说了同样的道理，警告说没有兴趣的学习什么也留不住。"
+   }
+  },
+  {
+   "id": "ap-leonardo-notebooks-mvp-00575-0",
+   "thinker": "leonardo",
+   "name": "Leonardo da Vinci",
+   "en": "No sooner is Virtue born than Envy comes into the world to attack it; and sooner will there be a body without a shadow than Virtue without Envy.",
+   "zh": null,
+   "work": "The Notebooks of Leonardo da Vinci",
+   "locator": "Allegorical representations",
+   "locatorApprox": false,
+   "translator": "Jean Paul Richter",
+   "context": "From Leonardo's notebooks, among notes for allegorical pictures of Envy, Virtue and Pleasure.",
+   "interpretation": {
+    "en": "The line is a painter's note for an allegory: Envy and Virtue are paired figures, and he looks for an image that makes their connection visible. The comparison to body and shadow is the image. It is a reflection on reputation, set down as instructions for a picture rather than as a personal confession.",
+    "zh": "这句话是一位画家为寓意画所作的笔记：嫉妒与美德是成对的形象，他在寻找一个能让二者关系一目了然的画面。身体与影子的比喻就是那个画面。这是对名声的思考，是作为一幅画的说明写下的，而不是个人的自白。"
+   }
+  },
+  {
+   "id": "ap-leonardo-notebooks-mvp-00554-87",
+   "thinker": "leonardo",
+   "name": "Leonardo da Vinci",
+   "en": "The eye, which is called the window of the soul, is the principal means by which the central sense can most completely and abundantly appreciate the infinite works of nature;",
+   "zh": null,
+   "work": "The Notebooks of Leonardo da Vinci",
+   "locator": "On the superiority of painting",
+   "locatorApprox": false,
+   "translator": "Jean Paul Richter",
+   "context": "From Leonardo's notebooks, in his argument that painting surpasses poetry and the other arts.",
+   "interpretation": {
+    "en": "Leonardo ranks the senses: the eye first, the ear second. Because painting addresses the eye, he argues, it is the art that most fully conveys the works of nature, while poetry must work through the weaker channel of words. The phrase window of the soul is offered as a common saying he endorses.",
+    "zh": "列奥纳多为感官排了先后：眼睛第一，耳朵第二。他认为，由于绘画诉诸眼睛，它是最完整地传达自然之作的艺术，而诗歌必须通过较弱的语言渠道来工作。灵魂之窗这个说法，他是作为一个他所认同的常用说法提出的。"
+   }
+  },
+  {
+   "id": "ap-leonardo-notebooks-mvp-00976-0",
+   "thinker": "leonardo",
+   "name": "Leonardo da Vinci",
+   "en": "Learning acquired in youth arrests the evil of old age;",
+   "zh": null,
+   "work": "The Notebooks of Leonardo da Vinci",
+   "locator": "Philosophical Maxims",
+   "locatorApprox": false,
+   "translator": "Jean Paul Richter",
+   "context": "From Leonardo's notebooks, among his maxims on knowledge and age.",
+   "interpretation": {
+    "en": "Leonardo treats knowledge as provision laid up in youth for old age, when wisdom is the mind's food. He adds that any knowledge is useful because it drives out useless things. The note is advice to the young, put in terms of nourishment and storage.",
+    "zh": "列奥纳多把知识看作年轻时为晚年储备的粮食，到了老年，智慧便是心灵的食粮。他补充说，任何知识都有用，因为它能驱逐无用之物。这条笔记是对年轻人的忠告，用的是滋养与储存的说法。"
+   }
+  },
+  {
+   "id": "ap-leonardo-notebooks-mvp-00560-0",
+   "thinker": "leonardo",
+   "name": "Leonardo da Vinci",
+   "en": "Hence the painter will produce pictures of small merit if he takes for his standard the pictures of others.",
+   "zh": null,
+   "work": "The Notebooks of Leonardo da Vinci",
+   "locator": "On the history of painting",
+   "locatorApprox": false,
+   "translator": "Jean Paul Richter",
+   "context": "From Leonardo's notebooks, in a short history of painting from the Romans to Giotto and Masaccio.",
+   "interpretation": {
+    "en": "Leonardo traces how painting declined whenever painters imitated one another and revived when someone, like Giotto, went back to nature. The lesson for the painter is to take nature, not other pictures, as the standard. It is also a claim about where originality comes from.",
+    "zh": "列奥纳多追溯了绘画的历史：每当画家们彼此模仿，绘画就衰落；每当有人像乔托那样回到自然，绘画就复兴。对画家的教训是以自然而非他人的画作为标准。这同时也是一个关于独创性从何而来的论断。"
+   }
+  },
+  {
+   "id": "ap-austen-pride_and_prejudice-mvp-00986-1707",
+   "thinker": "austen",
+   "name": "Jane Austen",
+   "en": "For what do we live, but to make sport for our neighbours, and laugh at them in our turn?",
+   "zh": null,
+   "work": "Pride and Prejudice",
+   "locator": "Volume III, Chapter XV",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Mr Bennet says this to Elizabeth in Pride and Prejudice, after reading her a letter about a rumoured engagement. It is the character's line, not the author's opinion.",
+   "interpretation": {
+    "en": "Mr Bennet treats the rumour about Elizabeth and Darcy as a joke and invites her to laugh at it with him. His detached amusement at everyone, including his own family, is charming and also a failing: the novel has already shown what his refusal to take things seriously cost his daughters.",
+    "zh": "班内特先生把关于伊丽莎白和达西的传言当作笑话，并邀她一起取笑。他对所有人、包括自己家人的超然嘲弄既迷人，也是一种缺点：小说此前已经表明，他不肯认真对待事情给女儿们带来了什么代价。"
+   }
+  },
+  {
+   "id": "ap-austen-emma-mvp-00190-37",
+   "thinker": "austen",
+   "name": "Jane Austen",
+   "en": "One half of the world cannot understand the pleasures of the other.",
+   "zh": null,
+   "work": "Emma",
+   "locator": "Volume I, Chapter IX",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Emma says this to her father in Emma, when he cannot see why anyone would enjoy a riddle.",
+   "interpretation": {
+    "en": "Emma uses the line to end a small disagreement gracefully: her father does not care for charades, and she does not try to convince him. The irony is that Emma herself, throughout the novel, misunderstands what other people want, starting with the very charade they are discussing.",
+    "zh": "爱玛用这句话得体地结束了一个小小的分歧：她父亲不喜欢字谜游戏，她也不打算说服他。讽刺之处在于，爱玛本人在整部小说中都误解了别人想要什么，就从他们正在谈论的那个字谜开始。"
+   }
+  },
+  {
+   "id": "ap-austen-persuasion-mvp-00595-616",
+   "thinker": "austen",
+   "name": "Jane Austen",
+   "en": "All the privilege I claim for my own sex (it is not a very enviable one; you need not covet it), is that of loving longest,",
+   "zh": null,
+   "work": "Persuasion",
+   "locator": "Volume II, Chapter XI",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Anne Elliot says this in Persuasion, in a conversation with Captain Harville about whether men or women love more constantly; Captain Wentworth overhears.",
+   "interpretation": {
+    "en": "Anne answers Harville's claim that books show women as fickle by noting that books were written by men. She grants men stronger feelings in action, and claims for women only constancy without hope. The speech is overheard by Wentworth and changes the plot; it is Anne's argument in a dramatic moment, not a thesis stated by the author.",
+    "zh": "哈维尔说书里写女人善变，安妮回答说那些书都是男人写的。她承认男人在行动中情感更强烈，只为女人争取在无望之中依然坚贞这一点。这番话被温特沃斯听到，并改变了情节；这是安妮在戏剧性时刻提出的论点，而不是作者陈述的论题。"
+   }
+  },
+  {
+   "id": "ap-austen-letters-mvp-00616-334",
+   "thinker": "austen",
+   "name": "Jane Austen",
+   "en": "Pictures of perfection, as you know, make me sick and wicked;",
+   "zh": null,
+   "work": "Letters of Jane Austen (selection)",
+   "locator": "Letter to Fanny Knight, March 1817",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From one of Jane Austen's own letters to her niece Fanny Knight, written a few months before her death.",
+   "interpretation": {
+    "en": "Austen is discussing a suitor of Fanny's who admired a different kind of novel. She says plainly that flawless heroines repel her, then adds that there is good sense in his views and that she respects him. The remark is her own taste in her own voice, made in a family letter with characteristic dryness.",
+    "zh": "奥斯丁在谈论范妮的一位追求者，他欣赏的是另一类小说。她直言完美无缺的女主角让她反感，随即又补充说他的看法颇有道理，她也尊重他。这是她以自己的口吻表达的个人趣味，写在一封家信里，带着她一贯的冷幽默。"
+   }
+  },
+  {
+   "id": "ap-van_gogh-letters_to_theo_2-mvp-00910-76",
+   "thinker": "van_gogh",
+   "name": "Vincent van Gogh",
+   "en": "But I prefer to paint the eyes of people rather than cathedrals, for there is something in the eyes that is not in the cathedral,",
+   "zh": null,
+   "work": "Letters to his Brother, 1872-1886, vol. II",
+   "locator": "Letter to Theo, Antwerp, December 1885",
+   "locatorApprox": false,
+   "translator": "Johanna van Gogh-Bonger",
+   "context": "From a letter Vincent van Gogh wrote to his brother Theo from Antwerp, translated by Johanna van Gogh-Bonger (1927).",
+   "interpretation": {
+    "en": "Van Gogh has just drawn a view with the cathedral and explains why buildings interest him less than faces. He goes on to say that a human soul, even that of a beggar or a woman of the street, is more interesting to him. The passage states his preference for portraits at a time when he was trying to earn money by painting them.",
+    "zh": "梵高刚画了一幅能看到大教堂的风景，并解释为什么建筑不如人脸那样吸引他。他接着说，人的灵魂，即使是乞丐或街头女子的灵魂，对他来说也更有意思。这段话表明了他对肖像的偏爱，而那时他正试图靠画肖像来挣钱。"
+   }
+  },
+  {
+   "id": "ap-van_gogh-letters_to_theo_2-mvp-00575-369",
+   "thinker": "van_gogh",
+   "name": "Vincent van Gogh",
+   "en": "…to admire the things of nature, to be calm enough to draw them, to paint them.",
+   "zh": null,
+   "work": "Letters to his Brother, 1872-1886, vol. II",
+   "locator": "Letter to Theo, Drenthe, 1883",
+   "locatorApprox": false,
+   "translator": "Johanna van Gogh-Bonger",
+   "context": "From a letter Van Gogh wrote to Theo from Nieuw-Amsterdam in Drenthe, translated by Johanna van Gogh-Bonger (1927).",
+   "interpretation": {
+    "en": "Writing from the remote moors of Drenthe after a difficult period, Van Gogh describes regaining a feeling he had when he first began to see beauty in art. He calls it a normal mood and asks his brother to agree. The emphasis is on calm as a condition of work.",
+    "zh": "梵高在经历一段艰难时期后，从德伦特偏远的荒原写信，描述自己重新找回了初次在艺术中看见美时的那种感受。他称之为一种正常的心境，并请弟弟同意。重点在于，平静是工作的前提。"
+   }
+  },
+  {
+   "id": "ap-van_gogh-letters_to_theo_1-mvp-00548-0",
+   "thinker": "van_gogh",
+   "name": "Vincent van Gogh",
+   "en": "I have been working very hard lately and I am busy from morning till night.",
+   "zh": null,
+   "work": "Letters to his Brother, 1872-1886, vol. I",
+   "locator": "Letter to Theo, The Hague, 1882",
+   "locatorApprox": false,
+   "translator": "Johanna van Gogh-Bonger",
+   "context": "From a letter Van Gogh wrote to Theo from The Hague, translated by Johanna van Gogh-Bonger (1927).",
+   "interpretation": {
+    "en": "Van Gogh reports on a commission from his uncle for small drawings of city views, finished and sent but not yet paid for. The letter mixes the satisfaction of steady work with anxiety about money, which runs through his letters to Theo, who supported him.",
+    "zh": "梵高汇报了他叔叔委托的几幅城市小景素描，已经完成并寄出，但还没有收到钱。这封信把踏实工作的满足感与对钱的焦虑交织在一起，这种焦虑贯穿了他写给资助他的弟弟提奥的信。"
+   }
+  },
+  {
+   "id": "ap-poe-essays-mvp-00027-646",
+   "thinker": "poe",
+   "name": "Edgar Allan Poe",
+   "en": "I hold that a long poem does not exist.",
+   "zh": null,
+   "work": "The Poetic Principle; The Philosophy of Furniture",
+   "locator": "The Poetic Principle",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Poe's lecture-essay The Poetic Principle, published in 1850 after his death.",
+   "interpretation": {
+    "en": "Poe argues that a poem deserves the name only insofar as it excites by elevating the soul, and that such excitement cannot last long. A long poem is therefore a series of short poems joined by flat passages. It is his own critical principle, stated in his own voice, and it shaped his insistence on brevity and single effect.",
+    "zh": "爱伦·坡认为，一首诗之所以配称为诗，只在于它通过提升灵魂而令人激动，而这种激动不可能持久。因此，长诗不过是由平淡段落连接起来的一连串短诗。这是他以自己的口吻提出的批评原则，也塑造了他对简短和单一效果的坚持。"
+   }
+  },
+  {
+   "id": "ap-poe-tales_2-mvp-00328-111",
+   "thinker": "poe",
+   "name": "Edgar Allan Poe",
+   "en": "We perpetrate them because we feel that we should not.",
+   "zh": null,
+   "work": "Tales (Works, vol. II)",
+   "locator": "The Imp of the Perverse",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Poe's tale The Imp of the Perverse (1845); the speaker is the tale's narrator, a condemned man.",
+   "interpretation": {
+    "en": "The narrator describes an impulse to act against our own interest precisely because we know we should not, and calls it a primitive part of human nature that philosophy ignores. The argument is framed as a confession leading up to his own self-betrayal, so it is a character's explanation, not a claim Poe makes in an essay.",
+    "zh": "叙述者描述了一种冲动：恰恰因为知道不该做，我们才违背自身利益去做，他称之为被哲学忽视的人性原始部分。这一论点被安排成一段通向他自我出卖的忏悔，所以它是一个人物的解释，而不是坡在文章中提出的主张。"
+   }
+  },
+  {
+   "id": "ap-poe-tales_2-mvp-00035-459",
+   "thinker": "poe",
+   "name": "Edgar Allan Poe",
+   "en": "These, like the over-largely lettered signs and placards of the street, escape observation by dint of being excessively obvious;",
+   "zh": null,
+   "work": "Tales (Works, vol. II)",
+   "locator": "The Purloined Letter",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Dupin says this in Poe's tale The Purloined Letter (1844), explaining how a stolen letter was hidden in plain sight.",
+   "interpretation": {
+    "en": "Dupin compares a map game in which beginners choose tiny names and experts choose names stretched across the whole map. The large ones go unnoticed precisely because they are obvious. He uses this to explain why the police, searching every hidden place, missed a letter left openly in a card rack.",
+    "zh": "杜宾用一种地图游戏作比：新手挑选微小的地名，高手却挑选横跨整张地图的地名。大字反而无人注意，恰恰因为它们太显眼。他借此解释为什么搜遍每个隐秘角落的警察，偏偏漏掉了一封公然放在名片架上的信。"
+   }
+  },
+  {
+   "id": "ap-poe-tales_2-mvp-00299-0",
+   "thinker": "poe",
+   "name": "Edgar Allan Poe",
+   "en": "And now was acknowledged the presence of the Red Death. He had come like a thief in the night.",
+   "zh": null,
+   "work": "Tales (Works, vol. II)",
+   "locator": "The Masque of the Red Death",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Poe's tale The Masque of the Red Death (1842), near its end.",
+   "interpretation": {
+    "en": "Prince Prospero and his courtiers have sealed themselves in an abbey to escape a plague and spend the time in revelry. The masked figure who appears among them is the disease itself, and the tale ends with all of them dead. The biblical phrase marks death's arrival as unannounced and inescapable.",
+    "zh": "普洛斯彼罗亲王和他的廷臣们把自己封闭在一座修道院里躲避瘟疫，终日狂欢。出现在他们中间的那个戴面具的人就是瘟疫本身，故事以所有人死去告终。这个出自圣经的说法表明死亡的到来毫无预告，也无法逃脱。"
+   }
+  },
+  {
+   "id": "ap-dostoevsky-notes_from_underground-mvp-00023-612",
+   "thinker": "dostoevsky",
+   "name": "Fyodor Dostoevsky",
+   "en": "…such positiveness is not life, gentlemen, but is the beginning of death.",
+   "zh": null,
+   "work": "Notes from Underground",
+   "locator": "Part I, Chapter IX",
+   "locatorApprox": false,
+   "translator": "Constance Garnett",
+   "context": "The Underground Man says this in Notes from Underground, in Constance Garnett's translation. He is the book's narrator, not Dostoevsky.",
+   "interpretation": {
+    "en": "The narrator argues that people love striving more than arriving, and that a world calculated like twice two makes four would leave nothing to live for. His rebellion against certainty is also spite and self-torment, which the book exposes. Dostoevsky gives the argument its full force without making the speaker admirable.",
+    "zh": "叙述者认为，人们热爱的是追求的过程而不是抵达，一个像二二得四那样被算得清清楚楚的世界将不再有任何值得活下去的东西。他对确定性的反叛同时也是恶意与自我折磨，而这本书把这一点揭示了出来。陀思妥耶夫斯基让这一论点充分展开，却没有把说话者写得令人钦佩。"
+   }
+  },
+  {
+   "id": "ap-dostoevsky-the_brothers_karamazov-mvp-00748-147",
+   "thinker": "dostoevsky",
+   "name": "Fyodor Dostoevsky",
+   "en": "…every one is really responsible to all men for all men and for everything.",
+   "zh": null,
+   "work": "The Brothers Karamazov",
+   "locator": "Book VI, Chapter II",
+   "locatorApprox": false,
+   "translator": "Constance Garnett",
+   "context": "Markel, the dying elder brother of Father Zosima, says this in The Brothers Karamazov, as Zosima later recalls it.",
+   "interpretation": {
+    "en": "Markel, transformed by his illness, tells his mother that each person shares in the guilt of all and that if people knew it the world would be a paradise. Zosima carries the idea through his life, and it becomes central to the novel's answer to Ivan. It is presented as a lived conviction of characters, not as an argument the author signs.",
+    "zh": "马克尔在病中变了一个人，他告诉母亲，每个人都分担着所有人的罪，如果人们明白这一点，世界立刻就会成为天堂。佐西马把这一思想贯彻一生，它也成为小说回应伊万的核心。它被呈现为人物亲身践行的信念，而不是作者署名的论证。"
+   }
+  },
+  {
+   "id": "ap-dostoevsky-the_brothers_karamazov-mvp-00647-5663",
+   "thinker": "dostoevsky",
+   "name": "Fyodor Dostoevsky",
+   "en": "It’s not God that I don’t accept, Alyosha, only I most respectfully return Him the ticket.",
+   "zh": null,
+   "work": "The Brothers Karamazov",
+   "locator": "Book V, Chapter IV",
+   "locatorApprox": false,
+   "translator": "Constance Garnett",
+   "context": "Ivan Karamazov says this to his brother Alyosha in The Brothers Karamazov, after listing cases of children's suffering.",
+   "interpretation": {
+    "en": "Ivan does not deny God; he refuses a final harmony bought with the torment of children, and says no future reconciliation could justify it. Alyosha answers by pointing to Christ, and the novel answers at length through Zosima. Ivan's argument is given its full strength and left standing as his.",
+    "zh": "伊万并不否认上帝；他拒绝的是以孩子的苦难换来的最终和谐，并说任何未来的和解都不能为此辩护。阿廖沙以基督作答，小说则通过佐西马作出长篇回应。伊万的论证得到了充分的力量，并作为他自己的论证保留下来。"
+   }
+  },
+  {
+   "id": "ap-dostoevsky-the_brothers_karamazov-mvp-00865-48",
+   "thinker": "dostoevsky",
+   "name": "Fyodor Dostoevsky",
+   "en": "I maintain that it is the suffering of being unable to love.",
+   "zh": null,
+   "work": "The Brothers Karamazov",
+   "locator": "Book VI, Chapter III",
+   "locatorApprox": false,
+   "translator": "Constance Garnett",
+   "context": "Father Zosima says this in his teachings, as recorded by Alyosha in The Brothers Karamazov.",
+   "interpretation": {
+    "en": "Zosima redefines hell not as a place of punishment but as the state of someone who once could have loved and can no longer. The passage belongs to the elder's discourses that Alyosha writes down after his death. It is a character's spiritual teaching, given weight by the novel's structure.",
+    "zh": "佐西马把地狱重新定义为不是受罚之所，而是一个曾经能够去爱、如今却不再能爱的人所处的状态。这段话属于长老去世后阿廖沙记下的讲谈。这是一个人物的灵性教导，小说的结构赋予了它分量。"
+   }
+  },
+  {
+   "id": "ap-darwin-origin_of_species-mvp-00074-0",
+   "thinker": "darwin",
+   "name": "Charles Darwin",
+   "en": "A struggle for existence inevitably follows from the high rate at which all organic beings tend to increase.",
+   "zh": null,
+   "work": "On the Origin of Species",
+   "locator": "Chapter III, Struggle for Existence",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From On the Origin of Species (1859), first edition.",
+   "interpretation": {
+    "en": "Darwin starts from arithmetic: every species produces more offspring than can survive, so most must die before reproducing. He uses struggle in a wide sense, including dependence on other beings and success in leaving progeny. This pressure is what makes small useful variations matter.",
+    "zh": "达尔文从算术出发：每个物种产生的后代都多于能够存活的数量，所以大多数必定在繁殖之前死去。他所说的斗争是广义的，包括对其他生物的依赖以及能否成功留下后代。正是这种压力使微小而有用的变异变得重要。"
+   }
+  },
+  {
+   "id": "ap-darwin-origin_of_species-mvp-00089-412",
+   "thinker": "darwin",
+   "name": "Charles Darwin",
+   "en": "When we look at the plants and bushes clothing an entangled bank, we are tempted to attribute their proportional numbers and kinds to what we call chance.",
+   "zh": null,
+   "work": "On the Origin of Species",
+   "locator": "Chapter III",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From On the Origin of Species (1859), on the checks that limit each species.",
+   "interpretation": {
+    "en": "Darwin answers the temptation in the next sentence: the numbers are not chance but the outcome of countless interacting checks, as when a cut American forest regrows with a different mixture of trees. The image of the entangled bank returns at the end of the book as a picture of the whole theory.",
+    "zh": "达尔文在下一句就回答了这种诱惑：这些数量并非偶然，而是无数相互作用的制约的结果，正如一片被砍伐的美洲森林重新长出时，树种的组合已经不同。纠缠的河岸这一意象在全书结尾再次出现，成为整个理论的写照。"
+   }
+  },
+  {
+   "id": "ap-darwin-descent_of_man-mvp-01015-808",
+   "thinker": "darwin",
+   "name": "Charles Darwin",
+   "en": "…the first foundation or origin of the moral sense lies in the social instincts, including sympathy;",
+   "zh": null,
+   "work": "The Descent of Man, and Selection in Relation to Sex",
+   "locator": "Chapter XXI, General Summary",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From The Descent of Man (2nd ed., 1874), in the concluding summary.",
+   "interpretation": {
+    "en": "Darwin argues that conscience grew out of the social instincts that lead animals to enjoy company and help one another, later shaped by language, habit and reason. He does not reduce morality to instinct, but traces where it came from. The same book contains views on race and sex that belong to its time and are not endorsed here.",
+    "zh": "达尔文认为，良心源自社会性本能，正是这种本能使动物喜欢群居、彼此帮助，后来又经语言、习惯和理性塑造。他并没有把道德归结为本能，而是追溯它的来源。同一本书中还有关于种族和性别的观点，属于那个时代，这里并不认同。"
+   }
+  },
+  {
+   "id": "ap-darwin-autobiography-mvp-00135-446",
+   "thinker": "darwin",
+   "name": "Charles Darwin",
+   "en": "But now for many years I cannot endure to read a line of poetry:",
+   "zh": null,
+   "work": "Autobiography (Recollections of the Development of my Mind and Character)",
+   "locator": "Autobiography, written 1876-1881",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Darwin's private autobiography, written for his family and published after his death by his son Francis.",
+   "interpretation": {
+    "en": "Darwin records that he once loved Shakespeare, pictures and music, and in later life lost all pleasure in them. He suspects his mind became a machine for grinding general laws out of facts, and says that if he lived again he would read poetry and listen to music every week. It is a candid self-observation, not a recommendation.",
+    "zh": "达尔文记下，他曾经热爱莎士比亚、绘画和音乐，晚年却对它们失去了一切兴趣。他怀疑自己的头脑变成了一台从大量事实中碾磨出普遍规律的机器，并说如果再活一次，他会每周读诗、听音乐。这是坦率的自我观察，而不是一种建议。"
+   }
+  },
+  {
+   "id": "ap-dickens-david_copperfield-mvp-00589-71",
+   "thinker": "dickens",
+   "name": "Charles Dickens",
+   "en": "Annual income twenty pounds, annual expenditure nineteen nineteen and six, result happiness.",
+   "zh": null,
+   "work": "David Copperfield",
+   "locator": "Chapter 12",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Mr Micawber says this to young David in David Copperfield, before leaving London to escape his debts; it is the character's line.",
+   "interpretation": {
+    "en": "Micawber's formula is exact and funny, and he never lives by it: he is always in debt and always expecting something to turn up. The novel lets the advice be true while showing the man who gives it unable to follow it. Dickens's own father, imprisoned for debt, is often seen behind the character.",
+    "zh": "米考伯的公式精确而好笑，他自己却从不照着做：他总是负债，总是指望会有转机出现。小说让这条忠告成立，同时展示出说这话的人无法遵循它。人们常认为这个人物背后有狄更斯自己因债入狱的父亲的影子。"
+   }
+  },
+  {
+   "id": "ap-dickens-a_christmas_carol-mvp-00183-0",
+   "thinker": "dickens",
+   "name": "Charles Dickens",
+   "en": "\"Are there no prisons?\" said the Spirit, turning on him for the last time with his own words.",
+   "zh": null,
+   "work": "A Christmas Carol",
+   "locator": "Stave III",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "The Ghost of Christmas Present says this to Scrooge in A Christmas Carol, repeating what Scrooge said earlier about the poor.",
+   "interpretation": {
+    "en": "Earlier in the story Scrooge refused to give to charity, asking whether there were no prisons or workhouses for the poor. The Spirit returns the words just after showing him two starving children, Ignorance and Want. The tale makes the reader hear the callous phrase in a new setting.",
+    "zh": "故事前面，斯克鲁奇拒绝施舍，反问难道没有监狱、没有济贫院来收容穷人。精灵在给他看了两个饥饿的孩子——无知和匮乏——之后，把这些话原样奉还。这个故事让读者在新的情境里重新听到那句冷酷的话。"
+   }
+  },
+  {
+   "id": "ap-dickens-great_expectations-mvp-00751-109",
+   "thinker": "dickens",
+   "name": "Charles Dickens",
+   "en": "…life is made of ever so many partings welded together,",
+   "zh": null,
+   "work": "Great Expectations",
+   "locator": "Chapter XXVII",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "Joe Gargery says this to Pip in Great Expectations, during an awkward visit to London; it is Joe's line.",
+   "interpretation": {
+    "en": "Joe, a blacksmith, has come to see Pip, who is now ashamed of him. Joe understands the distance and explains it in the terms of his trade: people are divided like different kinds of smith, and partings must be met as they come. His dignity is the point of the scene, and Pip only sees it later.",
+    "zh": "铁匠乔来看望皮普，而皮普如今以他为耻。乔明白这种隔阂，并用自己行当的话来解释：人与人就像不同种类的工匠一样各有分别，离别来了就得面对。这场戏的重点是乔的尊严，而皮普要到后来才看明白。"
+   }
+  },
+  {
+   "id": "ap-keynes-economic_consequences_of_the_peace-mvp-00375-27",
+   "thinker": "keynes",
+   "name": "John Maynard Keynes",
+   "en": "There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency.",
+   "zh": null,
+   "work": "The Economic Consequences of the Peace",
+   "locator": "Chapter VI",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Keynes's The Economic Consequences of the Peace (1919), on inflation in post-war Europe.",
+   "interpretation": {
+    "en": "Keynes takes up a remark attributed to Lenin and agrees with it: inflation lets governments confiscate wealth secretly and arbitrarily, turning creditors and savers against the social order. Few people can see what is happening, which is what makes it dangerous. The passage belongs to his warning about Europe's finances after the war.",
+    "zh": "凯恩斯接过一句据说出自列宁的话并表示赞同：通货膨胀让政府得以秘密而任意地没收财富，使债权人和储蓄者转而反对社会秩序。很少有人能看清正在发生什么，这正是它危险之处。这段话属于他对战后欧洲财政的警告。"
+   }
+  },
+  {
+   "id": "ap-keynes-a_tract_on_monetary_reform-mvp-00131-460",
+   "thinker": "keynes",
+   "name": "John Maynard Keynes",
+   "en": "Economists set themselves too easy, too useless a task if in tempestuous seasons they can only tell us that when the storm is long past the ocean is flat again.",
+   "zh": null,
+   "work": "A Tract on Monetary Reform",
+   "locator": "Chapter III",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Keynes's A Tract on Monetary Reform (1923), just after the line about the long run.",
+   "interpretation": {
+    "en": "Keynes is criticising the quantity theory of money as used by economists who say prices will adjust eventually. That may be true in the long run, he says, but in the long run we are all dead; policy has to deal with the storm. The point is about the responsibility of economic advice, not about living for the moment.",
+    "zh": "凯恩斯在批评那些用货币数量论断言物价终将调整的经济学家。他说，长期来看也许如此，但长期来看我们都死了；政策必须应对风暴本身。这一点关乎经济建议的责任，而不是及时行乐。"
+   }
+  },
+  {
+   "id": "ap-keynes-economic_consequences_of_the_peace-mvp-00067-0",
+   "thinker": "keynes",
+   "name": "John Maynard Keynes",
+   "en": "Two rival schemes for the future polity of the world took the field,--the Fourteen Points of the President, and the Carthaginian Peace of M. Clemenceau.",
+   "zh": null,
+   "work": "The Economic Consequences of the Peace",
+   "locator": "Chapter IV, The Treaty",
+   "locatorApprox": false,
+   "translator": null,
+   "context": "From Keynes's The Economic Consequences of the Peace (1919), which he wrote after resigning from the British delegation at the Paris peace conference.",
+   "interpretation": {
+    "en": "Keynes sets the two programmes side by side: Wilson's Fourteen Points, on which Germany had agreed to the armistice, and Clemenceau's wish for a peace that would crush Germany for good. He argues that only the first was legitimate, because the surrender had been on agreed terms. The book goes on to show the treaty following the second.",
+    "zh": "凯恩斯把两套方案并列：一是威尔逊的十四点，德国正是据此同意停战；二是克列孟梭希望以一场和约彻底压垮德国。他认为只有前者是正当的，因为投降是按约定条件进行的。全书接着表明，条约实际上遵循的是后者。"
+   }
   }
  ]
 }

@@ -652,9 +652,9 @@ html.on-answers .page--answers{overflow-x:clip}
 .ef-bar .map-btn{display:inline-flex;align-items:center;padding:0 16px;text-decoration:none;
   border:1px solid transparent}
 @media (max-width:639px){
-  /* A phone: the three filters share the first row in equal thirds (the
-     choice alone, no "Tier/Era/Sort" key), the view row under it. */
-  .ef-left{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
+  /* A phone: the four filters in a two-by-two grid (the choice alone, no
+     "Field/Tier/Era/Sort" key), the view row under it. */
+  .ef-left{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;width:100%}
   .efd-btn{padding:0 10px 0 13px;gap:4px}
   .efd-btn .efd-k,.efd-v .lg{display:none}
   .efd-v .sh{display:inline}
@@ -4742,7 +4742,7 @@ function pickerModal(){
     ${seg}
     ${carried}
 
-    <input id="pq" placeholder="${t(`Search ${pool.length} philosophers…`,`搜索 ${pool.length} 位哲学家…`)}"
+    <input id="pq" placeholder="${t(`Search ${pool.length} thinkers…`,`搜索 ${pool.length} 位思想者…`)}"
            value="${esc(chat.query)}" autocomplete="off">
     ${only ? `<p class="notice">${t(
       `Showing the ${pool.length} people the thinker agent has texts for.`,
@@ -6747,7 +6747,12 @@ const tierLabel = tier => tier === 'pro' ? t('Pro','Pro') : t('Basic','基础');
    cards or a compact list. Years, field and country come from Wikidata
    (philosophers.json born / died / field / country). */
 let EXPLORE_VIEW = (() => { try{ return localStorage.getItem('still.exploreView') || 'grid'; }catch(e){ return 'grid'; } })();
-const EF = { tier: 'all', era: 'all', sort: 'rank' };
+const EF = { cat: 'all', tier: 'all', era: 'all', sort: 'rank' };
+/* Field: one category per person (philosophers.json `categories`, applied by
+   Tools/apply-categories.py). Only fields someone on the roster is in. */
+let PCATS = [];
+const CATS = () => [['all', t('All fields','全部领域'), t('All fields','全部领域')],
+  ...PCATS.filter(c => PHIL.some(p => !p.libraryOnly && p.category === c.id)).map(c => [c.id, L(c)])];
 const ERAS = () => [
   ['all', t('Any era','所有时代')], ['ancient', t('Ancient','古代')], ['medieval', t('Medieval','中世纪')],
   ['early', t('Early modern','近代早期'), t('Early mod.','近代早期')], ['c19', t('19th century','19 世纪'), t('1800s','19 世纪')],
@@ -6766,7 +6771,8 @@ function exploreRows(){
   const q = exploreQuery.trim().toLowerCase();
   let rows = PHIL.filter(p => !p.libraryOnly && (!q || p.name.toLowerCase().includes(q) || (p.nameZh || '').includes(q))
     && (EF.tier === 'all' || (EF.tier === 'pro' ? p.tier === 'pro' : p.tier !== 'pro'))
-    && (EF.era === 'all' || eraOf(p) === EF.era));
+    && (EF.era === 'all' || eraOf(p) === EF.era)
+    && (EF.cat === 'all' || (p.category || 'philosophy') === EF.cat));
   const yr = p => p.born == null ? 1e9 : p.born;
   const by = { rank: (a, b) => a.rank - b.rank, old: (a, b) => yr(a) - yr(b),
                new: (a, b) => (b.born ?? -1e9) - (a.born ?? -1e9), az: (a, b) => pn(a).localeCompare(pn(b), lang) };
@@ -6974,14 +6980,15 @@ function exploreView(){
   return `<div class="page">
     <div class="page-head">
       <h1 class="page-title">${t('Explore','浏览')}</h1>
-      <p class="page-sub">${t(`${exploreCount()} philosophers you can talk with.`, `可以对话的 ${exploreCount()} 位哲学家。`)}</p>
+      <p class="page-sub">${t(`${exploreCount()} thinkers you can talk with.`, `可以对话的 ${exploreCount()} 位思想者。`)}</p>
     </div>
     <div class="explore-tools">
       <input id="eq" type="search" value="${esc(exploreQuery)}" autocomplete="off"
-        placeholder="${t(`Search ${exploreCount()} philosophers…`, `搜索 ${exploreCount()} 位哲学家…`)}"
+        placeholder="${t(`Search ${exploreCount()} thinkers…`, `搜索 ${exploreCount()} 位思想者…`)}"
         aria-label="${t('Search','搜索')}">
       <div class="ef-bar">
         <div class="ef-left">
+          ${efDrop('cat', t('Field','领域'), CATS())}
           ${efDrop('tier', t('Tier','等级'), TIERS)}
           ${efDrop('era', t('Era','时代'), ERAS())}
           ${efDrop('sort', t('Sort','排序'), SORTS)}
@@ -8233,7 +8240,7 @@ Promise.all([
   MAP = map;
   ANSWERS = (answers && answers.entries || []).map(e => ({ ...e, pool: true }));
   addLibraryThinkers(roster.philosophers || []);
-  C = data; PHIL = roster.philosophers || []; LIB = library.thinkers || {};
+  C = data; PHIL = roster.philosophers || []; PCATS = roster.categories || []; LIB = library.thinkers || {};
   FEATURED_ZH = library.featuredZh || {};
   FEATURED_ORIG = library.featuredOrig || {};
   FEATURED_WIKI = library.featuredWiki || {};

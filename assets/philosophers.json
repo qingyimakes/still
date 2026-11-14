@@ -1,11 +1,598 @@
 {
  "_method": "English Wikipedia pageviews, 12 complete months, all-access, user traffic only (bots excluded). Regenerate with Tools/rank-philosophers.py. Pageviews measure readership, not importance, and carry two biases worth naming: they count English-language readers, and they reward people famous for something other than philosophy — Marx, Freud, Jung, Machiavelli and Rand all outrank Kant. The cutoff at 50 is arbitrary and the numbers either side of it are 2% apart.",
+ "categories": [
+  {
+   "id": "philosophy",
+   "en": "Philosophy",
+   "zh": "哲学"
+  },
+  {
+   "id": "religion",
+   "en": "Religion",
+   "zh": "宗教"
+  },
+  {
+   "id": "politics",
+   "en": "Politics",
+   "zh": "政治"
+  },
+  {
+   "id": "economics",
+   "en": "Economics",
+   "zh": "经济"
+  },
+  {
+   "id": "society",
+   "en": "Society",
+   "zh": "社会"
+  },
+  {
+   "id": "psychology",
+   "en": "Psychology",
+   "zh": "心理学"
+  },
+  {
+   "id": "science",
+   "en": "Science",
+   "zh": "科学"
+  },
+  {
+   "id": "literature",
+   "en": "Literature",
+   "zh": "文学"
+  },
+  {
+   "id": "art",
+   "en": "Art",
+   "zh": "艺术"
+  }
+ ],
  "philosophers": [
+  {
+   "id": "p-william-shakespeare",
+   "name": "William Shakespeare",
+   "wiki": "William_Shakespeare",
+   "rank": 1,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Thus conscience does make cowards of us all, And thus the native hue of resolution Is sicklied o’er with the pale cast of thought",
+      "zh": "Thus conscience does make cowards of us all, And thus the native hue of resolution Is sicklied o’er with the pale cast of thought"
+     },
+     "label": {
+      "en": "William Shakespeare, The Tragedy of Hamlet, Prince of Denmark, Act III, Scene I",
+      "zh": "威廉·莎士比亚《The Tragedy of Hamlet, Prince of Denmark》，Act III, Scene I"
+     },
+     "poolId": "ap-shakespeare-hamlet_prince_of_denmark-mvp-00101-1421"
+    },
+    {
+     "text": {
+      "en": "…love is not love Which alters when it alteration finds, Or bends with the remover to remove.",
+      "zh": "…love is not love Which alters when it alteration finds, Or bends with the remover to remove."
+     },
+     "label": {
+      "en": "William Shakespeare, The Sonnets, Sonnet 116",
+      "zh": "威廉·莎士比亚《The Sonnets》，Sonnet 116"
+     },
+     "poolId": "ap-shakespeare-the_sonnets-mvp-00113-60"
+    }
+   ],
+   "nameZh": "威廉·莎士比亚",
+   "born": 1564,
+   "died": 1616,
+   "field": {
+    "en": "Playwright and poet",
+    "zh": "剧作家、诗人"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q692",
+   "category": "literature",
+   "image": "roster-william-shakespeare.jpg",
+   "imageLicence": {
+    "file": "roster-william-shakespeare.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Attributed to John Taylor",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare.jpg"
+   }
+  },
+  {
+   "id": "p-george-washington",
+   "name": "George Washington",
+   "wiki": "George_Washington",
+   "rank": 2,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "I hold the maxim no less applicable to public than to private affairs that honesty is always the best policy.",
+      "zh": "I hold the maxim no less applicable to public than to private affairs that honesty is always the best policy."
+     },
+     "label": {
+      "en": "George Washington, Inaugural Addresses and Farewell Address, Farewell Address, 1796",
+      "zh": "乔治·华盛顿《Inaugural Addresses and Farewell Address》，Farewell Address, 1796"
+     },
+     "poolId": "ap-washington-inaugurals_and_farewell-mvp-00034-518"
+    },
+    {
+     "text": {
+      "en": "Knowledge is in every country the surest basis of public happiness.",
+      "zh": "Knowledge is in every country the surest basis of public happiness."
+     },
+     "label": {
+      "en": "George Washington, Annual Addresses to Congress, 1790-1796, First Annual Address, 1790",
+      "zh": "乔治·华盛顿《Annual Addresses to Congress, 1790-1796》，First Annual Address, 1790"
+     },
+     "poolId": "ap-washington-annual_addresses-mvp-00006-171"
+    }
+   ],
+   "nameZh": "乔治·华盛顿",
+   "born": 1732,
+   "died": 1799,
+   "field": {
+    "en": "Statesman",
+    "zh": "政治家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q23",
+   "category": "politics",
+   "image": "roster-george-washington.jpg",
+   "imageLicence": {
+    "file": "roster-george-washington.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Gilbert Stuart",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg"
+   }
+  },
+  {
+   "id": "p-abraham-lincoln",
+   "name": "Abraham Lincoln",
+   "wiki": "Abraham_Lincoln",
+   "rank": 3,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "With malice toward none, with charity for all, with firmness in the right as God gives us to see the right,",
+      "zh": "With malice toward none, with charity for all, with firmness in the right as God gives us to see the right,"
+     },
+     "label": {
+      "en": "Abraham Lincoln, Papers and Writings, 1863-1865, Second Inaugural Address, 1865",
+      "zh": "亚伯拉罕·林肯《Papers and Writings, 1863-1865》，Second Inaugural Address, 1865"
+     },
+     "poolId": "ap-lincoln-writings_1863_1865-mvp-00553-0"
+    },
+    {
+     "text": {
+      "en": "In this sad world of ours sorrow comes to all, and to the young it comes with bittered agony because it takes them unawares.",
+      "zh": "In this sad world of ours sorrow comes to all, and to the young it comes with bittered agony because it takes them unawares."
+     },
+     "label": {
+      "en": "Abraham Lincoln, Papers and Writings, 1862-1863, Letter to Fanny McCullough, December 1862",
+      "zh": "亚伯拉罕·林肯《Papers and Writings, 1862-1863》，Letter to Fanny McCullough, December 1862"
+     },
+     "poolId": "ap-lincoln-writings_1862_1863-mvp-00345-407"
+    }
+   ],
+   "nameZh": "亚伯拉罕·林肯",
+   "born": 1809,
+   "died": 1865,
+   "field": {
+    "en": "Statesman",
+    "zh": "政治家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q91",
+   "category": "politics",
+   "image": "roster-abraham-lincoln.jpg",
+   "imageLicence": {
+    "file": "roster-abraham-lincoln.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Alexander Gardner",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg"
+   }
+  },
+  {
+   "id": "p-theodore-roosevelt",
+   "name": "Theodore Roosevelt",
+   "wiki": "Theodore_Roosevelt",
+   "rank": 4,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "…by acting as if I was not afraid I gradually ceased to be afraid.",
+      "zh": "…by acting as if I was not afraid I gradually ceased to be afraid."
+     },
+     "label": {
+      "en": "Theodore Roosevelt, An Autobiography, Chapter II, The Vigor of Life",
+      "zh": "西奥多·罗斯福《An Autobiography》，Chapter II, The Vigor of Life"
+     },
+     "poolId": "ap-theodore_roosevelt-autobiography-mvp-00061-819"
+    },
+    {
+     "text": {
+      "en": "…the chief factor in any man’s success or failure must be his own character",
+      "zh": "…the chief factor in any man’s success or failure must be his own character"
+     },
+     "label": {
+      "en": "Theodore Roosevelt, The Strenuous Life: Essays and Addresses, Christian Citizenship (address, 1900)",
+      "zh": "西奥多·罗斯福《The Strenuous Life: Essays and Addresses》，Christian Citizenship (address, 1900)"
+     },
+     "poolId": "ap-theodore_roosevelt-the_strenuous_life-mvp-00231-393"
+    }
+   ],
+   "nameZh": "西奥多·罗斯福",
+   "born": 1858,
+   "died": 1919,
+   "field": {
+    "en": "Statesman",
+    "zh": "政治家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q33866",
+   "category": "politics",
+   "image": "roster-theodore-roosevelt.jpg",
+   "imageLicence": {
+    "file": "roster-theodore-roosevelt.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "John Singer Sargent (1903)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_by_John_Singer_Sargent,_1903.jpg"
+   }
+  },
+  {
+   "id": "p-mahatma-gandhi",
+   "name": "Mahatma Gandhi",
+   "wiki": "Mahatma_Gandhi",
+   "rank": 5,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "The means may be likened to a seed, the end to a tree;",
+      "zh": "The means may be likened to a seed, the end to a tree;"
+     },
+     "label": {
+      "en": "Mahatma Gandhi, Hind Swaraj, or Indian Home Rule, Chapter XVI, Brute-Force, trans. M. K. Gandhi (his own English translation)",
+      "zh": "圣雄甘地《Hind Swaraj, or Indian Home Rule》，Chapter XVI, Brute-Force"
+     },
+     "poolId": "ap-gandhi-hind_swaraj-mvp-00106-1096"
+    },
+    {
+     "text": {
+      "en": "When I refuse to do a thing that is repugnant to my conscience, I use soul-force.",
+      "zh": "When I refuse to do a thing that is repugnant to my conscience, I use soul-force."
+     },
+     "label": {
+      "en": "Mahatma Gandhi, Hind Swaraj, or Indian Home Rule, Chapter XVII, Passive Resistance, trans. M. K. Gandhi (his own English translation)",
+      "zh": "圣雄甘地《Hind Swaraj, or Indian Home Rule》，Chapter XVII, Passive Resistance"
+     },
+     "poolId": "ap-gandhi-hind_swaraj-mvp-00115-371"
+    }
+   ],
+   "nameZh": "圣雄甘地",
+   "born": 1869,
+   "died": 1948,
+   "field": {
+    "en": "Political leader",
+    "zh": "政治领袖"
+   },
+   "country": {
+    "en": "India",
+    "zh": "印度"
+   },
+   "wikidata": "Q1001",
+   "category": "politics",
+   "image": "roster-mahatma-gandhi.jpg",
+   "imageLicence": {
+    "file": "roster-mahatma-gandhi.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown photographer (1918)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandhi_Kheda_1918.jpg"
+   }
+  },
+  {
+   "id": "p-alexander-hamilton",
+   "name": "Alexander Hamilton",
+   "wiki": "Alexander_Hamilton",
+   "rank": 6,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Why has government been instituted at all? Because the passions of men will not conform to the dictates of reason and justice, without constraint.",
+      "zh": "Why has government been instituted at all? Because the passions of men will not conform to the dictates of reason and justice, without constraint."
+     },
+     "label": {
+      "en": "Alexander Hamilton, The Federalist (Hamilton's numbers), Federalist No. 15",
+      "zh": "亚历山大·汉密尔顿《The Federalist (Hamilton's numbers)》，Federalist No. 15"
+     },
+     "poolId": "ap-hamilton-federalist-mvp-00094-700"
+    },
+    {
+     "text": {
+      "en": "Energy in the Executive is a leading character in the definition of good government.",
+      "zh": "Energy in the Executive is a leading character in the definition of good government."
+     },
+     "label": {
+      "en": "Alexander Hamilton, The Federalist (Hamilton's numbers), Federalist No. 70",
+      "zh": "亚历山大·汉密尔顿《The Federalist (Hamilton's numbers)》，Federalist No. 70"
+     },
+     "poolId": "ap-hamilton-federalist-mvp-00381-380"
+    }
+   ],
+   "nameZh": "亚历山大·汉密尔顿",
+   "born": 1757,
+   "died": 1804,
+   "field": {
+    "en": "Statesman",
+    "zh": "政治家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q178903",
+   "category": "politics",
+   "image": "roster-alexander-hamilton.jpg",
+   "imageLicence": {
+    "file": "roster-alexander-hamilton.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "John Trumbull",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Google_Arts_Project_-_Alexander_Hamilton_(1792_portrait)_by_John_Trumbull.jpg"
+   }
+  },
+  {
+   "id": "p-julius-caesar",
+   "name": "Julius Caesar",
+   "wiki": "Julius_Caesar",
+   "rank": 7,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "…in most cases men willingly believe what they wish.",
+      "zh": "…in most cases men willingly believe what they wish."
+     },
+     "label": {
+      "en": "Julius Caesar, The Gallic War, Books I-VII, Book III, Chapter XVIII, trans. W. A. McDevitte and W. S. Bohn",
+      "zh": "凯撒《The Gallic War, Books I-VII》，Book III, Chapter XVIII"
+     },
+     "poolId": "ap-caesar-gallic_war-mvp-00102-1128"
+    },
+    {
+     "text": {
+      "en": "But Fortune, who exerts a powerful influence as well in other matters, as especially in war, effects great changes from trifling causes,",
+      "zh": "But Fortune, who exerts a powerful influence as well in other matters, as especially in war, effects great changes from trifling causes,"
+     },
+     "label": {
+      "en": "Julius Caesar, The Civil War, Book III, Chapter LXVIII, trans. W. A. McDevitte and W. S. Bohn",
+      "zh": "凯撒《The Civil War》，Book III, Chapter LXVIII"
+     },
+     "poolId": "ap-caesar-civil_war-mvp-00196-9"
+    }
+   ],
+   "nameZh": "凯撒",
+   "born": -100,
+   "died": -44,
+   "field": {
+    "en": "General and statesman",
+    "zh": "军事家、政治家"
+   },
+   "country": {
+    "en": "Roman Republic",
+    "zh": "罗马共和国"
+   },
+   "wikidata": "Q1048",
+   "category": "politics",
+   "image": "roster-julius-caesar.jpg",
+   "imageLicence": {
+    "file": "roster-julius-caesar.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Ángel M. Felicísimo from Mérida, España",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg"
+   }
+  },
+  {
+   "id": "p-thomas-jefferson",
+   "name": "Thomas Jefferson",
+   "wiki": "Thomas_Jefferson",
+   "rank": 8,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants. It is its natural manure.",
+      "zh": "The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants. It is its natural manure."
+     },
+     "label": {
+      "en": "Thomas Jefferson, Memoir, Correspondence and Miscellanies, vol. 2, Letter to W. S. Smith, November 13, 1787",
+      "zh": "托马斯·杰斐逊《Memoir, Correspondence and Miscellanies, vol. 2》，Letter to W. S. Smith, November 13, 1787"
+     },
+     "poolId": "ap-jefferson-memoir_and_correspondence_2-mvp-00423-2416"
+    },
+    {
+     "text": {
+      "en": "This principle, that the earth belongs to the living and not to the dead, is of very extensive application and consequences in every country,",
+      "zh": "This principle, that the earth belongs to the living and not to the dead, is of very extensive application and consequences in every country,"
+     },
+     "label": {
+      "en": "Thomas Jefferson, Memoir, Correspondence and Miscellanies, vol. 3, Letter to James Madison, September 6, 1789",
+      "zh": "托马斯·杰斐逊《Memoir, Correspondence and Miscellanies, vol. 3》，Letter to James Madison, September 6, 1789"
+     },
+     "poolId": "ap-jefferson-memoir_and_correspondence_3-mvp-00025-0"
+    }
+   ],
+   "nameZh": "托马斯·杰斐逊",
+   "born": 1743,
+   "died": 1826,
+   "field": {
+    "en": "Statesman",
+    "zh": "政治家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q11812",
+   "category": "politics",
+   "image": "roster-thomas-jefferson.jpg",
+   "imageLicence": {
+    "file": "roster-thomas-jefferson.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Rembrandt Peale",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Official_Presidential_portrait_of_Thomas_Jefferson_(by_Rembrandt_Peale%2C_1800)(cropped).jpg"
+   }
+  },
+  {
+   "id": "p-isaac-newton",
+   "name": "Isaac Newton",
+   "wiki": "Isaac_Newton",
+   "rank": 9,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "…the main Business of natural Philosophy is to argue from Phænomena without feigning Hypotheses, and to deduce Causes from Effects, till we come to the very first Cause,",
+      "zh": "…the main Business of natural Philosophy is to argue from Phænomena without feigning Hypotheses, and to deduce Causes from Effects, till we come to the very first Cause,"
+     },
+     "label": {
+      "en": "Isaac Newton, Opticks, Book III, Query 28",
+      "zh": "艾萨克·牛顿《Opticks》，Book III, Query 28"
+     },
+     "poolId": "ap-newton-opticks-mvp-00392-503"
+    },
+    {
+     "text": {
+      "en": "…the Whiteness of the Sun's Light is compounded of all the Colours wherewith the several sorts of Rays whereof that Light consists,",
+      "zh": "…the Whiteness of the Sun's Light is compounded of all the Colours wherewith the several sorts of Rays whereof that Light consists,"
+     },
+     "label": {
+      "en": "Isaac Newton, Opticks, Book I, Part II",
+      "zh": "艾萨克·牛顿《Opticks》，Book I, Part II"
+     },
+     "poolId": "ap-newton-opticks-mvp-00142-49"
+    }
+   ],
+   "nameZh": "艾萨克·牛顿",
+   "born": 1642,
+   "died": 1727,
+   "field": {
+    "en": "Natural philosopher",
+    "zh": "自然哲学家"
+   },
+   "country": {
+    "en": "Kingdom of England",
+    "zh": "英格兰王国"
+   },
+   "wikidata": "Q935",
+   "category": "science",
+   "image": "roster-isaac-newton.jpg",
+   "imageLicence": {
+    "file": "roster-isaac-newton.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Godfrey Kneller",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg"
+   }
+  },
+  {
+   "id": "p-nikola-tesla",
+   "name": "Nikola Tesla",
+   "wiki": "Nikola_Tesla",
+   "rank": 10,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "The images I saw were to me perfectly real and tangible.",
+      "zh": "The images I saw were to me perfectly real and tangible."
+     },
+     "label": {
+      "en": "Nikola Tesla, My Inventions, Chapter III, My Later Endeavors",
+      "zh": "尼古拉·特斯拉《My Inventions》，Chapter III, My Later Endeavors"
+     },
+     "poolId": "ap-tesla-my_inventions-mvp-00052-339"
+    },
+    {
+     "text": {
+      "en": "Deficient observation is merely a form of ignorance and responsible for the many morbid notions and foolish ideas prevailing.",
+      "zh": "Deficient observation is merely a form of ignorance and responsible for the many morbid notions and foolish ideas prevailing."
+     },
+     "label": {
+      "en": "Nikola Tesla, My Inventions, Chapter VI, The Art of Telautomatics",
+      "zh": "尼古拉·特斯拉《My Inventions》，Chapter VI, The Art of Telautomatics"
+     },
+     "poolId": "ap-tesla-my_inventions-mvp-00117-759"
+    }
+   ],
+   "nameZh": "尼古拉·特斯拉",
+   "born": 1856,
+   "died": 1943,
+   "field": {
+    "en": "Inventor and engineer",
+    "zh": "发明家、工程师"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q9036",
+   "category": "science",
+   "image": "roster-nikola-tesla.jpg",
+   "imageLicence": {
+    "file": "roster-nikola-tesla.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Napoleon Sarony",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg"
+   }
+  },
   {
    "id": "p-karl-marx",
    "name": "Karl Marx",
    "wiki": "Karl_Marx",
-   "rank": 1,
+   "rank": 11,
    "tier": "pro",
    "voiceId": "v-marx",
    "origin": {
@@ -59,13 +646,261 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q9061"
+   "wikidata": "Q9061",
+   "category": "philosophy"
+  },
+  {
+   "id": "p-benjamin-franklin",
+   "name": "Benjamin Franklin",
+   "wiki": "Benjamin_Franklin",
+   "rank": 12,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "13. Humility. Imitate Jesus and Socrates.",
+      "zh": "13. Humility. Imitate Jesus and Socrates."
+     },
+     "label": {
+      "en": "Benjamin Franklin, The Autobiography of Benjamin Franklin, Part II (written at Passy, 1784)",
+      "zh": "本杰明·富兰克林《The Autobiography of Benjamin Franklin》，Part II (written at Passy, 1784)"
+     },
+     "poolId": "ap-franklin-autobiography-mvp-00152-1120"
+    },
+    {
+     "text": {
+      "en": "…even if I could conceive that I had compleatly overcome it, I should probably be proud of my humility.",
+      "zh": "…even if I could conceive that I had compleatly overcome it, I should probably be proud of my humility."
+     },
+     "label": {
+      "en": "Benjamin Franklin, The Autobiography of Benjamin Franklin, Part II (written at Passy, 1784)",
+      "zh": "本杰明·富兰克林《The Autobiography of Benjamin Franklin》，Part II (written at Passy, 1784)"
+     },
+     "poolId": "ap-franklin-autobiography-mvp-00171-308"
+    }
+   ],
+   "nameZh": "本杰明·富兰克林",
+   "born": 1706,
+   "died": 1790,
+   "field": {
+    "en": "Statesman, writer and scientist",
+    "zh": "政治家、作家、科学家"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q34969",
+   "category": "politics",
+   "image": "roster-benjamin-franklin.jpg",
+   "imageLicence": {
+    "file": "roster-benjamin-franklin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Joseph-Siffred Duplessis",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"
+   }
+  },
+  {
+   "id": "p-marie-curie",
+   "name": "Marie Curie",
+   "wiki": "Marie_Curie",
+   "rank": 13,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [],
+   "nameZh": "玛丽·居里",
+   "born": 1867,
+   "died": 1934,
+   "field": {
+    "en": "Physicist and chemist",
+    "zh": "物理学家、化学家"
+   },
+   "country": {
+    "en": "France, Poland",
+    "zh": "法国、波兰"
+   },
+   "wikidata": "Q7186",
+   "category": "science",
+   "image": "roster-marie-curie.jpg",
+   "imageLicence": {
+    "file": "roster-marie-curie.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown photographer (1900)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Curie_(1900)_(cropped).jpg"
+   }
+  },
+  {
+   "id": "p-leonardo-da-vinci",
+   "name": "Leonardo da Vinci",
+   "wiki": "Leonardo_da_Vinci",
+   "rank": 14,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Just as iron rusts unless it is used, and water putrifies or, in cold, turns to ice, so our intellect spoils unless it is kept in use.",
+      "zh": "Just as iron rusts unless it is used, and water putrifies or, in cold, turns to ice, so our intellect spoils unless it is kept in use."
+     },
+     "label": {
+      "en": "Leonardo da Vinci, The Notebooks of Leonardo da Vinci, Philosophical Maxims, trans. Jean Paul Richter",
+      "zh": "列奥纳多·达·芬奇《The Notebooks of Leonardo da Vinci》，Philosophical Maxims"
+     },
+     "poolId": "ap-leonardo-notebooks-mvp-00978-223"
+    },
+    {
+     "text": {
+      "en": "No sooner is Virtue born than Envy comes into the world to attack it; and sooner will there be a body without a shadow than Virtue without Envy.",
+      "zh": "No sooner is Virtue born than Envy comes into the world to attack it; and sooner will there be a body without a shadow than Virtue without Envy."
+     },
+     "label": {
+      "en": "Leonardo da Vinci, The Notebooks of Leonardo da Vinci, Allegorical representations, trans. Jean Paul Richter",
+      "zh": "列奥纳多·达·芬奇《The Notebooks of Leonardo da Vinci》，Allegorical representations"
+     },
+     "poolId": "ap-leonardo-notebooks-mvp-00575-0"
+    }
+   ],
+   "nameZh": "列奥纳多·达·芬奇",
+   "born": 1452,
+   "died": 1519,
+   "field": {
+    "en": "Painter, engineer and scientist",
+    "zh": "画家、工程师、科学家"
+   },
+   "country": {
+    "en": "Republic of Florence",
+    "zh": "佛罗伦萨共和国"
+   },
+   "wikidata": "Q762",
+   "category": "art",
+   "image": "roster-leonardo-da-vinci.jpg",
+   "imageLicence": {
+    "file": "roster-leonardo-da-vinci.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Attributed to Francesco Melzi",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo.png"
+   }
+  },
+  {
+   "id": "p-jane-austen",
+   "name": "Jane Austen",
+   "wiki": "Jane_Austen",
+   "rank": 15,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "For what do we live, but to make sport for our neighbours, and laugh at them in our turn?",
+      "zh": "For what do we live, but to make sport for our neighbours, and laugh at them in our turn?"
+     },
+     "label": {
+      "en": "Jane Austen, Pride and Prejudice, Volume III, Chapter XV",
+      "zh": "简·奥斯丁《Pride and Prejudice》，Volume III, Chapter XV"
+     },
+     "poolId": "ap-austen-pride_and_prejudice-mvp-00986-1707"
+    },
+    {
+     "text": {
+      "en": "One half of the world cannot understand the pleasures of the other.",
+      "zh": "One half of the world cannot understand the pleasures of the other."
+     },
+     "label": {
+      "en": "Jane Austen, Emma, Volume I, Chapter IX",
+      "zh": "简·奥斯丁《Emma》，Volume I, Chapter IX"
+     },
+     "poolId": "ap-austen-emma-mvp-00190-37"
+    }
+   ],
+   "nameZh": "简·奥斯丁",
+   "born": 1775,
+   "died": 1817,
+   "field": {
+    "en": "Novelist",
+    "zh": "小说家"
+   },
+   "country": {
+    "en": "Great Britain",
+    "zh": "英国"
+   },
+   "wikidata": "Q36322",
+   "category": "literature",
+   "image": "roster-jane-austen.jpg",
+   "imageLicence": {
+    "file": "roster-jane-austen.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Cassandra Austen",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CassandraAusten-JaneAusten(c.1810)_hires.jpg"
+   }
+  },
+  {
+   "id": "p-vincent-van-gogh",
+   "name": "Vincent van Gogh",
+   "wiki": "Vincent_van_Gogh",
+   "rank": 16,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "But I prefer to paint the eyes of people rather than cathedrals, for there is something in the eyes that is not in the cathedral,",
+      "zh": "But I prefer to paint the eyes of people rather than cathedrals, for there is something in the eyes that is not in the cathedral,"
+     },
+     "label": {
+      "en": "Vincent van Gogh, Letters to his Brother, 1872-1886, vol. II, Letter to Theo, Antwerp, December 1885, trans. Johanna van Gogh-Bonger",
+      "zh": "文森特·梵高《Letters to his Brother, 1872-1886, vol. II》，Letter to Theo, Antwerp, December 1885"
+     },
+     "poolId": "ap-van_gogh-letters_to_theo_2-mvp-00910-76"
+    },
+    {
+     "text": {
+      "en": "…to admire the things of nature, to be calm enough to draw them, to paint them.",
+      "zh": "…to admire the things of nature, to be calm enough to draw them, to paint them."
+     },
+     "label": {
+      "en": "Vincent van Gogh, Letters to his Brother, 1872-1886, vol. II, Letter to Theo, Drenthe, 1883, trans. Johanna van Gogh-Bonger",
+      "zh": "文森特·梵高《Letters to his Brother, 1872-1886, vol. II》，Letter to Theo, Drenthe, 1883"
+     },
+     "poolId": "ap-van_gogh-letters_to_theo_2-mvp-00575-369"
+    }
+   ],
+   "nameZh": "文森特·梵高",
+   "born": 1853,
+   "died": 1890,
+   "field": {
+    "en": "Painter",
+    "zh": "画家"
+   },
+   "country": {
+    "en": "Netherlands",
+    "zh": "荷兰"
+   },
+   "wikidata": "Q5582",
+   "category": "art",
+   "image": "roster-vincent-van-gogh.jpg",
+   "imageLicence": {
+    "file": "roster-vincent-van-gogh.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Vincent van Gogh",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg"
+   }
   },
   {
    "id": "p-noam-chomsky",
    "name": "Noam Chomsky",
    "wiki": "Noam_Chomsky",
-   "rank": 2,
+   "rank": 17,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -89,13 +924,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q9049"
+   "wikidata": "Q9049",
+   "category": "science"
   },
   {
    "id": "p-marcus-aurelius",
    "name": "Marcus Aurelius",
    "wiki": "Marcus_Aurelius",
-   "rank": 3,
+   "rank": 18,
    "tier": "pro",
    "voiceId": "v-marcus-aurelius",
    "origin": {
@@ -145,13 +981,122 @@
     "en": "Ancient Rome",
     "zh": "古罗马"
    },
-   "wikidata": "Q1430"
+   "wikidata": "Q1430",
+   "category": "philosophy"
+  },
+  {
+   "id": "p-edgar-allan-poe",
+   "name": "Edgar Allan Poe",
+   "wiki": "Edgar_Allan_Poe",
+   "rank": 19,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "I hold that a long poem does not exist.",
+      "zh": "I hold that a long poem does not exist."
+     },
+     "label": {
+      "en": "Edgar Allan Poe, The Poetic Principle; The Philosophy of Furniture, The Poetic Principle",
+      "zh": "爱伦·坡《The Poetic Principle; The Philosophy of Furniture》，The Poetic Principle"
+     },
+     "poolId": "ap-poe-essays-mvp-00027-646"
+    },
+    {
+     "text": {
+      "en": "We perpetrate them because we feel that we should not.",
+      "zh": "We perpetrate them because we feel that we should not."
+     },
+     "label": {
+      "en": "Edgar Allan Poe, Tales (Works, vol. II), The Imp of the Perverse",
+      "zh": "爱伦·坡《Tales (Works, vol. II)》，The Imp of the Perverse"
+     },
+     "poolId": "ap-poe-tales_2-mvp-00328-111"
+    }
+   ],
+   "nameZh": "爱伦·坡",
+   "born": 1809,
+   "died": 1849,
+   "field": {
+    "en": "Writer and poet",
+    "zh": "作家、诗人"
+   },
+   "country": {
+    "en": "United States",
+    "zh": "美国"
+   },
+   "wikidata": "Q16867",
+   "category": "literature",
+   "image": "roster-edgar-allan-poe.jpg",
+   "imageLicence": {
+    "file": "roster-edgar-allan-poe.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown photographer (c. 1849); restored by Yann Forget and Adam Cuerden",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edgar_Allan_Poe%2C_circa_1849%2C_restored%2C_squared_off.jpg"
+   }
+  },
+  {
+   "id": "p-fyodor-dostoevsky",
+   "name": "Fyodor Dostoevsky",
+   "wiki": "Fyodor_Dostoevsky",
+   "rank": 20,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "…such positiveness is not life, gentlemen, but is the beginning of death.",
+      "zh": "…such positiveness is not life, gentlemen, but is the beginning of death."
+     },
+     "label": {
+      "en": "Fyodor Dostoevsky, Notes from Underground, Part I, Chapter IX, trans. Constance Garnett",
+      "zh": "费奥多尔·米哈伊洛维奇·陀思妥耶夫斯基《Notes from Underground》，Part I, Chapter IX"
+     },
+     "poolId": "ap-dostoevsky-notes_from_underground-mvp-00023-612"
+    },
+    {
+     "text": {
+      "en": "…every one is really responsible to all men for all men and for everything.",
+      "zh": "…every one is really responsible to all men for all men and for everything."
+     },
+     "label": {
+      "en": "Fyodor Dostoevsky, The Brothers Karamazov, Book VI, Chapter II, trans. Constance Garnett",
+      "zh": "费奥多尔·米哈伊洛维奇·陀思妥耶夫斯基《The Brothers Karamazov》，Book VI, Chapter II"
+     },
+     "poolId": "ap-dostoevsky-the_brothers_karamazov-mvp-00748-147"
+    }
+   ],
+   "nameZh": "陀思妥耶夫斯基",
+   "born": 1821,
+   "died": 1881,
+   "field": {
+    "en": "Novelist",
+    "zh": "小说家"
+   },
+   "country": {
+    "en": "Russian Empire",
+    "zh": "俄罗斯帝国"
+   },
+   "wikidata": "Q991",
+   "category": "literature",
+   "image": "roster-fyodor-dostoevsky.jpg",
+   "imageLicence": {
+    "file": "roster-fyodor-dostoevsky.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Vasily Perov",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg"
+   }
   },
   {
    "id": "p-friedrich-nietzsche",
    "name": "Friedrich Nietzsche",
    "wiki": "Friedrich_Nietzsche",
-   "rank": 4,
+   "rank": 21,
    "tier": "pro",
    "voiceId": "v-nietzsche",
    "origin": {
@@ -227,13 +1172,68 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q9358"
+   "wikidata": "Q9358",
+   "category": "philosophy"
+  },
+  {
+   "id": "p-charles-dickens",
+   "name": "Charles Dickens",
+   "wiki": "Charles_Dickens",
+   "rank": 22,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "Annual income twenty pounds, annual expenditure nineteen nineteen and six, result happiness.",
+      "zh": "Annual income twenty pounds, annual expenditure nineteen nineteen and six, result happiness."
+     },
+     "label": {
+      "en": "Charles Dickens, David Copperfield, Chapter 12",
+      "zh": "查尔斯·狄更斯《David Copperfield》，Chapter 12"
+     },
+     "poolId": "ap-dickens-david_copperfield-mvp-00589-71"
+    },
+    {
+     "text": {
+      "en": "\"Are there no prisons?\" said the Spirit, turning on him for the last time with his own words.",
+      "zh": "\"Are there no prisons?\" said the Spirit, turning on him for the last time with his own words."
+     },
+     "label": {
+      "en": "Charles Dickens, A Christmas Carol, Stave III",
+      "zh": "查尔斯·狄更斯《A Christmas Carol》，Stave III"
+     },
+     "poolId": "ap-dickens-a_christmas_carol-mvp-00183-0"
+    }
+   ],
+   "nameZh": "查尔斯·狄更斯",
+   "born": 1812,
+   "died": 1870,
+   "field": {
+    "en": "Novelist",
+    "zh": "小说家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q5686",
+   "category": "literature",
+   "image": "roster-charles-dickens.jpg",
+   "imageLicence": {
+    "file": "roster-charles-dickens.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Jeremiah Gurney",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dickens_Gurney_head.jpg"
+   }
   },
   {
    "id": "p-sigmund-freud",
    "name": "Sigmund Freud",
    "wiki": "Sigmund_Freud",
-   "rank": 5,
+   "rank": 23,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -282,13 +1282,14 @@
     "en": "Austrian Empire",
     "zh": "奥地利帝国"
    },
-   "wikidata": "Q9215"
+   "wikidata": "Q9215",
+   "category": "psychology"
   },
   {
    "id": "p-aristotle",
    "name": "Aristotle",
    "wiki": "Aristotle",
-   "rank": 6,
+   "rank": 24,
    "tier": "pro",
    "voiceId": "v-aristotle",
    "origin": {
@@ -375,13 +1376,14 @@
     "en": "Stageira",
     "zh": "斯塔伊拉"
    },
-   "wikidata": "Q868"
+   "wikidata": "Q868",
+   "category": "philosophy"
   },
   {
    "id": "p-socrates",
    "name": "Socrates",
    "wiki": "Socrates",
-   "rank": 7,
+   "rank": 25,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -405,13 +1407,14 @@
     "en": "Classical Athens",
     "zh": "古雅典"
    },
-   "wikidata": "Q913"
+   "wikidata": "Q913",
+   "category": "philosophy"
   },
   {
    "id": "p-carl-jung",
    "name": "Carl Jung",
    "wiki": "Carl_Jung",
-   "rank": 8,
+   "rank": 26,
    "tier": "basic",
    "voiceId": "v-jung",
    "origin": {
@@ -443,13 +1446,14 @@
     "en": "Switzerland",
     "zh": "瑞士"
    },
-   "wikidata": "Q41532"
+   "wikidata": "Q41532",
+   "category": "psychology"
   },
   {
    "id": "p-plato",
    "name": "Plato",
    "wiki": "Plato",
-   "rank": 9,
+   "rank": 27,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -510,13 +1514,14 @@
     "en": "Classical Athens",
     "zh": "古雅典"
    },
-   "wikidata": "Q859"
+   "wikidata": "Q859",
+   "category": "philosophy"
   },
   {
    "id": "p-ayn-rand",
    "name": "Ayn Rand",
    "wiki": "Ayn_Rand",
-   "rank": 10,
+   "rank": 28,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -540,13 +1545,14 @@
     "en": "Russian Empire",
     "zh": "俄罗斯帝国"
    },
-   "wikidata": "Q132524"
+   "wikidata": "Q132524",
+   "category": "literature"
   },
   {
    "id": "p-augustine-of-hippo",
    "name": "Augustine of Hippo",
    "wiki": "Augustine_of_Hippo",
-   "rank": 11,
+   "rank": 29,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -607,13 +1613,68 @@
     "en": "Ancient Rome",
     "zh": "古罗马"
    },
-   "wikidata": "Q8018"
+   "wikidata": "Q8018",
+   "category": "philosophy"
+  },
+  {
+   "id": "p-charles-darwin",
+   "name": "Charles Darwin",
+   "wiki": "Charles_Darwin",
+   "rank": 30,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "A struggle for existence inevitably follows from the high rate at which all organic beings tend to increase.",
+      "zh": "A struggle for existence inevitably follows from the high rate at which all organic beings tend to increase."
+     },
+     "label": {
+      "en": "Charles Darwin, On the Origin of Species, Chapter III, Struggle for Existence",
+      "zh": "查尔斯·达尔文《On the Origin of Species》，Chapter III, Struggle for Existence"
+     },
+     "poolId": "ap-darwin-origin_of_species-mvp-00074-0"
+    },
+    {
+     "text": {
+      "en": "When we look at the plants and bushes clothing an entangled bank, we are tempted to attribute their proportional numbers and kinds to what we call chance.",
+      "zh": "When we look at the plants and bushes clothing an entangled bank, we are tempted to attribute their proportional numbers and kinds to what we call chance."
+     },
+     "label": {
+      "en": "Charles Darwin, On the Origin of Species, Chapter III",
+      "zh": "查尔斯·达尔文《On the Origin of Species》，Chapter III"
+     },
+     "poolId": "ap-darwin-origin_of_species-mvp-00089-412"
+    }
+   ],
+   "nameZh": "查尔斯·达尔文",
+   "born": 1809,
+   "died": 1882,
+   "field": {
+    "en": "Naturalist",
+    "zh": "博物学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q1035",
+   "category": "science",
+   "image": "roster-charles-darwin.jpg",
+   "imageLicence": {
+    "file": "roster-charles-darwin.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Herbert Rose Barraud",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_portrait.jpg"
+   }
   },
   {
    "id": "p-niccolò-machiavelli",
    "name": "Niccolò Machiavelli",
    "wiki": "Niccolò_Machiavelli",
-   "rank": 12,
+   "rank": 31,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -662,13 +1723,14 @@
     "en": "Republic of Florence",
     "zh": "佛罗伦萨共和国"
    },
-   "wikidata": "Q1399"
+   "wikidata": "Q1399",
+   "category": "politics"
   },
   {
    "id": "p-albert-camus",
    "name": "Albert Camus",
    "wiki": "Albert_Camus",
-   "rank": 13,
+   "rank": 32,
    "tier": "basic",
    "voiceId": "v-camus",
    "origin": {
@@ -700,13 +1762,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q34670"
+   "wikidata": "Q34670",
+   "category": "literature"
   },
   {
    "id": "p-immanuel-kant",
    "name": "Immanuel Kant",
    "wiki": "Immanuel_Kant",
-   "rank": 14,
+   "rank": 33,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -766,13 +1829,14 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q9312"
+   "wikidata": "Q9312",
+   "category": "philosophy"
   },
   {
    "id": "p-thomas-aquinas",
    "name": "Thomas Aquinas",
    "wiki": "Thomas_Aquinas",
-   "rank": 15,
+   "rank": 34,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -830,13 +1894,14 @@
     "en": "castle of the counts of Aquino",
     "zh": "castle of the counts of Aquino"
    },
-   "wikidata": "Q9438"
+   "wikidata": "Q9438",
+   "category": "philosophy"
   },
   {
    "id": "p-voltaire",
    "name": "Voltaire",
    "wiki": "Voltaire",
-   "rank": 16,
+   "rank": 35,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -860,13 +1925,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q9068"
+   "wikidata": "Q9068",
+   "category": "philosophy"
   },
   {
    "id": "p-confucius",
    "name": "Confucius",
    "wiki": "Confucius",
-   "rank": 17,
+   "rank": 36,
    "tier": "pro",
    "voiceId": "v-confucius",
    "origin": {
@@ -920,13 +1986,14 @@
     "en": "Lu",
     "zh": "鲁国"
    },
-   "wikidata": "Q4604"
+   "wikidata": "Q4604",
+   "category": "philosophy"
   },
   {
    "id": "p-michel-foucault",
    "name": "Michel Foucault",
    "wiki": "Michel_Foucault",
-   "rank": 18,
+   "rank": 37,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -950,13 +2017,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q44272"
+   "wikidata": "Q44272",
+   "category": "philosophy"
   },
   {
    "id": "p-john-locke",
    "name": "John Locke",
    "wiki": "John_Locke",
-   "rank": 19,
+   "rank": 38,
    "tier": "pro",
    "voiceId": "v-locke",
    "origin": {
@@ -988,13 +2056,14 @@
     "en": "Kingdom of England",
     "zh": "英格兰王国"
    },
-   "wikidata": "Q9353"
+   "wikidata": "Q9353",
+   "category": "philosophy"
   },
   {
    "id": "p-hannah-arendt",
    "name": "Hannah Arendt",
    "wiki": "Hannah_Arendt",
-   "rank": 20,
+   "rank": 39,
    "tier": "basic",
    "voiceId": "v-arendt",
    "origin": {
@@ -1044,13 +2113,14 @@
     "en": "Prussia",
     "zh": "普魯士"
    },
-   "wikidata": "Q60025"
+   "wikidata": "Q60025",
+   "category": "philosophy"
   },
   {
    "id": "p-bertrand-russell",
    "name": "Bertrand Russell",
    "wiki": "Bertrand_Russell",
-   "rank": 21,
+   "rank": 40,
    "tier": "pro",
    "voiceId": "v-russell",
    "origin": {
@@ -1115,13 +2185,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q33760"
+   "wikidata": "Q33760",
+   "category": "philosophy"
   },
   {
    "id": "p-rumi",
    "name": "Rumi",
    "wiki": "Rumi",
-   "rank": 22,
+   "rank": 41,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -1145,13 +2216,14 @@
     "en": "Iran",
     "zh": "伊朗"
    },
-   "wikidata": "Q43347"
+   "wikidata": "Q43347",
+   "category": "religion"
   },
   {
    "id": "p-diogenes",
    "name": "Diogenes",
    "wiki": "Diogenes",
-   "rank": 23,
+   "rank": 42,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -1175,13 +2247,14 @@
     "en": "Sinope",
     "zh": "Sinope"
    },
-   "wikidata": "Q59180"
+   "wikidata": "Q59180",
+   "category": "philosophy"
   },
   {
    "id": "p-jean-paul-sartre",
    "name": "Jean-Paul Sartre",
    "wiki": "Jean-Paul_Sartre",
-   "rank": 24,
+   "rank": 43,
    "tier": "basic",
    "voiceId": "v-sartre",
    "origin": {
@@ -1231,13 +2304,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q9364"
+   "wikidata": "Q9364",
+   "category": "philosophy"
   },
   {
    "id": "p-rené-descartes",
    "name": "René Descartes",
    "wiki": "René_Descartes",
-   "rank": 25,
+   "rank": 44,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1286,13 +2360,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q9191"
+   "wikidata": "Q9191",
+   "category": "philosophy"
   },
   {
    "id": "p-henry-david-thoreau",
    "name": "Henry David Thoreau",
    "wiki": "Henry_David_Thoreau",
-   "rank": 26,
+   "rank": 45,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1353,13 +2428,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q131149"
+   "wikidata": "Q131149",
+   "category": "philosophy"
   },
   {
    "id": "p-ludwig-wittgenstein",
    "name": "Ludwig Wittgenstein",
    "wiki": "Ludwig_Wittgenstein",
-   "rank": 27,
+   "rank": 46,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -1383,13 +2459,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q9391"
+   "wikidata": "Q9391",
+   "category": "philosophy"
   },
   {
    "id": "p-arthur-schopenhauer",
    "name": "Arthur Schopenhauer",
    "wiki": "Arthur_Schopenhauer",
-   "rank": 28,
+   "rank": 47,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1438,13 +2515,14 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q38193"
+   "wikidata": "Q38193",
+   "category": "philosophy"
   },
   {
    "id": "p-søren-kierkegaard",
    "name": "Søren Kierkegaard",
    "wiki": "Søren_Kierkegaard",
-   "rank": 29,
+   "rank": 48,
    "tier": "basic",
    "voiceId": "v-kierkegaard",
    "origin": null,
@@ -1468,13 +2546,14 @@
     "en": "Kingdom of Denmark",
     "zh": "丹麦王国"
    },
-   "wikidata": "Q6512"
+   "wikidata": "Q6512",
+   "category": "philosophy"
   },
   {
    "id": "p-baruch-spinoza",
    "name": "Baruch Spinoza",
    "wiki": "Baruch_Spinoza",
-   "rank": 30,
+   "rank": 49,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1535,13 +2614,14 @@
     "en": "Dutch Republic",
     "zh": "荷兰共和国"
    },
-   "wikidata": "Q35802"
+   "wikidata": "Q35802",
+   "category": "philosophy"
   },
   {
    "id": "p-jean-jacques-rousseau",
    "name": "Jean-Jacques Rousseau",
    "wiki": "Jean-Jacques_Rousseau",
-   "rank": 31,
+   "rank": 50,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1578,13 +2658,14 @@
     "en": "Republic of Geneva",
     "zh": "日内瓦共和国"
    },
-   "wikidata": "Q6527"
+   "wikidata": "Q6527",
+   "category": "philosophy"
   },
   {
    "id": "p-simone-de-beauvoir",
    "name": "Simone de Beauvoir",
    "wiki": "Simone_de_Beauvoir",
-   "rank": 32,
+   "rank": 51,
    "tier": "basic",
    "voiceId": "v-beauvoir",
    "origin": {
@@ -1634,13 +2715,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q7197"
+   "wikidata": "Q7197",
+   "category": "philosophy"
   },
   {
    "id": "p-georg-wilhelm-friedrich-hegel",
    "name": "Georg Wilhelm Friedrich Hegel",
    "wiki": "Georg_Wilhelm_Friedrich_Hegel",
-   "rank": 33,
+   "rank": 52,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1688,13 +2770,14 @@
     "en": "Kingdom of Württemberg",
     "zh": "符腾堡王国"
    },
-   "wikidata": "Q9235"
+   "wikidata": "Q9235",
+   "category": "philosophy"
   },
   {
    "id": "p-adam-smith",
    "name": "Adam Smith",
    "wiki": "Adam_Smith",
-   "rank": 34,
+   "rank": 53,
    "tier": "pro",
    "voiceId": "v-smith",
    "origin": {
@@ -1759,13 +2842,14 @@
     "en": "Kingdom of Great Britain",
     "zh": "大不列颠王国"
    },
-   "wikidata": "Q9381"
+   "wikidata": "Q9381",
+   "category": "economics"
   },
   {
    "id": "p-francis-bacon",
    "name": "Francis Bacon",
    "wiki": "Francis_Bacon",
-   "rank": 35,
+   "rank": 54,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1826,13 +2910,14 @@
     "en": "Kingdom of England",
     "zh": "英格兰王国"
    },
-   "wikidata": "Q37388"
+   "wikidata": "Q37388",
+   "category": "philosophy"
   },
   {
    "id": "p-slavoj-žižek",
    "name": "Slavoj Žižek",
    "wiki": "Slavoj_Žižek",
-   "rank": 36,
+   "rank": 55,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -1856,13 +2941,14 @@
     "en": "Slovenia",
     "zh": "斯洛文尼亚"
    },
-   "wikidata": "Q184750"
+   "wikidata": "Q184750",
+   "category": "philosophy"
   },
   {
    "id": "p-adi-shankara",
    "name": "Adi Shankara",
    "wiki": "Adi_Shankara",
-   "rank": 37,
+   "rank": 56,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -1886,13 +2972,14 @@
     "en": "Kalady",
     "zh": "Kalady"
    },
-   "wikidata": "Q180967"
+   "wikidata": "Q180967",
+   "category": "philosophy"
   },
   {
    "id": "p-mary-wollstonecraft",
    "name": "Mary Wollstonecraft",
    "wiki": "Mary_Wollstonecraft",
-   "rank": 38,
+   "rank": 57,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -1953,13 +3040,68 @@
     "en": "Kingdom of Great Britain",
     "zh": "大不列颠王国"
    },
-   "wikidata": "Q101638"
+   "wikidata": "Q101638",
+   "category": "philosophy"
+  },
+  {
+   "id": "p-john-maynard-keynes",
+   "name": "John Maynard Keynes",
+   "wiki": "John_Maynard_Keynes",
+   "rank": 58,
+   "tier": "pro",
+   "voiceId": null,
+   "origin": null,
+   "quotes": [
+    {
+     "text": {
+      "en": "There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency.",
+      "zh": "There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency."
+     },
+     "label": {
+      "en": "John Maynard Keynes, The Economic Consequences of the Peace, Chapter VI",
+      "zh": "约翰·梅纳德·凯恩斯《The Economic Consequences of the Peace》，Chapter VI"
+     },
+     "poolId": "ap-keynes-economic_consequences_of_the_peace-mvp-00375-27"
+    },
+    {
+     "text": {
+      "en": "Economists set themselves too easy, too useless a task if in tempestuous seasons they can only tell us that when the storm is long past the ocean is flat again.",
+      "zh": "Economists set themselves too easy, too useless a task if in tempestuous seasons they can only tell us that when the storm is long past the ocean is flat again."
+     },
+     "label": {
+      "en": "John Maynard Keynes, A Tract on Monetary Reform, Chapter III",
+      "zh": "约翰·梅纳德·凯恩斯《A Tract on Monetary Reform》，Chapter III"
+     },
+     "poolId": "ap-keynes-a_tract_on_monetary_reform-mvp-00131-460"
+    }
+   ],
+   "nameZh": "约翰·梅纳德·凯恩斯",
+   "born": 1883,
+   "died": 1946,
+   "field": {
+    "en": "Economist",
+    "zh": "经济学家"
+   },
+   "country": {
+    "en": "United Kingdom",
+    "zh": "英国"
+   },
+   "wikidata": "Q9317",
+   "category": "economics",
+   "image": "roster-john-maynard-keynes.jpg",
+   "imageLicence": {
+    "file": "roster-john-maynard-keynes.jpg",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "credit": "Unknown photographer (before 1913)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keynes.jpg"
+   }
   },
   {
    "id": "p-ralph-waldo-emerson",
    "name": "Ralph Waldo Emerson",
    "wiki": "Ralph_Waldo_Emerson",
-   "rank": 39,
+   "rank": 59,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -2020,13 +3162,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q48226"
+   "wikidata": "Q48226",
+   "category": "philosophy"
   },
   {
    "id": "p-viktor-frankl",
    "name": "Viktor Frankl",
    "wiki": "Viktor_Frankl",
-   "rank": 40,
+   "rank": 60,
    "tier": "basic",
    "voiceId": "v-frankl",
    "origin": {
@@ -2076,13 +3219,14 @@
     "en": "Austria",
     "zh": "奥地利"
    },
-   "wikidata": "Q154723"
+   "wikidata": "Q154723",
+   "category": "psychology"
   },
   {
    "id": "p-pythagoras",
    "name": "Pythagoras",
    "wiki": "Pythagoras",
-   "rank": 41,
+   "rank": 61,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2106,13 +3250,14 @@
     "en": "Samos",
     "zh": "Samos"
    },
-   "wikidata": "Q10261"
+   "wikidata": "Q10261",
+   "category": "philosophy"
   },
   {
    "id": "p-seneca-the-younger",
    "name": "Seneca the Younger",
    "wiki": "Seneca_the_Younger",
-   "rank": 42,
+   "rank": 62,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2129,13 +3274,14 @@
     "en": "Ancient Rome",
     "zh": "古罗马"
    },
-   "wikidata": "Q2054"
+   "wikidata": "Q2054",
+   "category": "philosophy"
   },
   {
    "id": "p-friedrich-engels",
    "name": "Friedrich Engels",
    "wiki": "Friedrich_Engels",
-   "rank": 43,
+   "rank": 63,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2159,13 +3305,14 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q34787"
+   "wikidata": "Q34787",
+   "category": "philosophy"
   },
   {
    "id": "p-martin-heidegger",
    "name": "Martin Heidegger",
    "wiki": "Martin_Heidegger",
-   "rank": 44,
+   "rank": 64,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2189,13 +3336,14 @@
     "en": "Weimar Republic",
     "zh": "魏瑪共和国"
    },
-   "wikidata": "Q48301"
+   "wikidata": "Q48301",
+   "category": "philosophy"
   },
   {
    "id": "p-avicenna",
    "name": "Avicenna",
    "wiki": "Avicenna",
-   "rank": 45,
+   "rank": 65,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2219,13 +3367,14 @@
     "en": "Afshona",
     "zh": "Afshona"
    },
-   "wikidata": "Q8011"
+   "wikidata": "Q8011",
+   "category": "philosophy"
   },
   {
    "id": "p-david-hume",
    "name": "David Hume",
    "wiki": "David_Hume",
-   "rank": 46,
+   "rank": 66,
    "tier": "pro",
    "voiceId": "v-hume",
    "origin": {
@@ -2312,13 +3461,14 @@
     "en": "Kingdom of Great Britain",
     "zh": "大不列颠王国"
    },
-   "wikidata": "Q37160"
+   "wikidata": "Q37160",
+   "category": "philosophy"
   },
   {
    "id": "p-antonio-gramsci",
    "name": "Antonio Gramsci",
    "wiki": "Antonio_Gramsci",
-   "rank": 47,
+   "rank": 67,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2342,13 +3492,14 @@
     "en": "Kingdom of Italy",
     "zh": "意大利王国"
    },
-   "wikidata": "Q83003"
+   "wikidata": "Q83003",
+   "category": "philosophy"
   },
   {
    "id": "p-jürgen-habermas",
    "name": "Jürgen Habermas",
    "wiki": "Jürgen_Habermas",
-   "rank": 48,
+   "rank": 68,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2372,13 +3523,14 @@
     "en": "Germany",
     "zh": "德国"
    },
-   "wikidata": "Q76357"
+   "wikidata": "Q76357",
+   "category": "philosophy"
   },
   {
    "id": "p-frantz-fanon",
    "name": "Frantz Fanon",
    "wiki": "Frantz_Fanon",
-   "rank": 49,
+   "rank": 69,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2402,13 +3554,14 @@
     "en": "Fort-de-France",
     "zh": "法兰西堡"
    },
-   "wikidata": "Q193670"
+   "wikidata": "Q193670",
+   "category": "philosophy"
   },
   {
    "id": "p-hypatia",
    "name": "Hypatia",
    "wiki": "Hypatia",
-   "rank": 50,
+   "rank": 70,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2432,13 +3585,14 @@
     "en": "Byzantine Empire",
     "zh": "拜占庭帝国"
    },
-   "wikidata": "Q11903"
+   "wikidata": "Q11903",
+   "category": "philosophy"
   },
   {
    "id": "p-erasmus",
    "name": "Erasmus",
    "wiki": "Erasmus",
-   "rank": 51,
+   "rank": 71,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2462,13 +3616,14 @@
     "en": "Seventeen Provinces",
     "zh": "17個省"
    },
-   "wikidata": "Q43499"
+   "wikidata": "Q43499",
+   "category": "philosophy"
   },
   {
    "id": "p-gottfried-wilhelm-leibniz",
    "name": "Gottfried Wilhelm Leibniz",
    "wiki": "Gottfried_Wilhelm_Leibniz",
-   "rank": 52,
+   "rank": 72,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -2492,13 +3647,14 @@
     "en": "Electorate of Saxony",
     "zh": "萨克森选侯国"
    },
-   "wikidata": "Q9047"
+   "wikidata": "Q9047",
+   "category": "philosophy"
   },
   {
    "id": "p-blaise-pascal",
    "name": "Blaise Pascal",
    "wiki": "Blaise_Pascal",
-   "rank": 53,
+   "rank": 73,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -2559,13 +3715,14 @@
     "en": "Kingdom of France",
     "zh": "法兰西王国"
    },
-   "wikidata": "Q1290"
+   "wikidata": "Q1290",
+   "category": "philosophy"
   },
   {
    "id": "p-thomas-hobbes",
    "name": "Thomas Hobbes",
    "wiki": "Thomas_Hobbes",
-   "rank": 54,
+   "rank": 74,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -2626,13 +3783,14 @@
     "en": "Kingdom of England",
     "zh": "英格兰王国"
    },
-   "wikidata": "Q37621"
+   "wikidata": "Q37621",
+   "category": "philosophy"
   },
   {
    "id": "p-laozi",
    "name": "Laozi",
    "wiki": "Laozi",
-   "rank": 55,
+   "rank": 75,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -2693,13 +3851,14 @@
     "en": "Zhou dynasty",
     "zh": "周朝"
    },
-   "wikidata": "Q9333"
+   "wikidata": "Q9333",
+   "category": "philosophy"
   },
   {
    "id": "p-john-stuart-mill",
    "name": "John Stuart Mill",
    "wiki": "John_Stuart_Mill",
-   "rank": 56,
+   "rank": 76,
    "tier": "pro",
    "voiceId": "v-mill",
    "origin": {
@@ -2775,13 +3934,14 @@
     "en": "United Kingdom of Great Britain and Ireland",
     "zh": "大不列颠及爱尔兰联合王国"
    },
-   "wikidata": "Q50020"
+   "wikidata": "Q50020",
+   "category": "philosophy"
   },
   {
    "id": "p-simone-weil",
    "name": "Simone Weil",
    "wiki": "Simone_Weil",
-   "rank": 57,
+   "rank": 77,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2805,13 +3965,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q157309"
+   "wikidata": "Q157309",
+   "category": "philosophy"
   },
   {
    "id": "p-maimonides",
    "name": "Maimonides",
    "wiki": "Maimonides",
-   "rank": 58,
+   "rank": 78,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2835,13 +3996,14 @@
     "en": "al-Andalus",
     "zh": "安达卢斯"
    },
-   "wikidata": "Q127398"
+   "wikidata": "Q127398",
+   "category": "philosophy"
   },
   {
    "id": "p-judith-butler",
    "name": "Judith Butler",
    "wiki": "Judith_Butler",
-   "rank": 59,
+   "rank": 79,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2865,13 +4027,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q219368"
+   "wikidata": "Q219368",
+   "category": "philosophy"
   },
   {
    "id": "p-heraclitus",
    "name": "Heraclitus",
    "wiki": "Heraclitus",
-   "rank": 60,
+   "rank": 80,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2895,13 +4058,14 @@
     "en": "Ephesus",
     "zh": "以弗所"
    },
-   "wikidata": "Q41155"
+   "wikidata": "Q41155",
+   "category": "philosophy"
   },
   {
    "id": "p-jeremy-bentham",
    "name": "Jeremy Bentham",
    "wiki": "Jeremy_Bentham",
-   "rank": 61,
+   "rank": 81,
    "tier": "pro",
    "voiceId": "v-bentham",
    "origin": {
@@ -2933,13 +4097,14 @@
     "en": "Kingdom of Great Britain",
     "zh": "大不列颠王国"
    },
-   "wikidata": "Q60887"
+   "wikidata": "Q60887",
+   "category": "philosophy"
   },
   {
    "id": "p-karl-popper",
    "name": "Karl Popper",
    "wiki": "Karl_Popper",
-   "rank": 62,
+   "rank": 82,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -2956,13 +4121,14 @@
     "en": "Cisleithania",
     "zh": "內萊塔尼亞"
    },
-   "wikidata": "Q81244"
+   "wikidata": "Q81244",
+   "category": "philosophy"
   },
   {
    "id": "p-john-dewey",
    "name": "John Dewey",
    "wiki": "John_Dewey",
-   "rank": 63,
+   "rank": 83,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -3023,13 +4189,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q131805"
+   "wikidata": "Q131805",
+   "category": "philosophy"
   },
   {
    "id": "p-edward-said",
    "name": "Edward Said",
    "wiki": "Edward_Said",
-   "rank": 64,
+   "rank": 84,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3046,13 +4213,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q201538"
+   "wikidata": "Q201538",
+   "category": "literature"
   },
   {
    "id": "p-auguste-comte",
    "name": "Auguste Comte",
    "wiki": "Auguste_Comte",
-   "rank": 65,
+   "rank": 85,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -3111,13 +4279,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q12718"
+   "wikidata": "Q12718",
+   "category": "society"
   },
   {
    "id": "p-epictetus",
    "name": "Epictetus",
    "wiki": "Epictetus",
-   "rank": 66,
+   "rank": 86,
    "tier": "pro",
    "voiceId": "v-epictetus",
    "origin": {
@@ -3156,13 +4325,14 @@
     "en": "Ancient Rome",
     "zh": "古罗马"
    },
-   "wikidata": "Q183144"
+   "wikidata": "Q183144",
+   "category": "philosophy"
   },
   {
    "id": "p-william-james",
    "name": "William James",
    "wiki": "William_James",
-   "rank": 67,
+   "rank": 87,
    "tier": "pro",
    "voiceId": "v-william-james",
    "origin": {
@@ -3227,13 +4397,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q125249"
+   "wikidata": "Q125249",
+   "category": "philosophy"
   },
   {
    "id": "p-gilles-deleuze",
    "name": "Gilles Deleuze",
    "wiki": "Gilles_Deleuze",
-   "rank": 68,
+   "rank": 88,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3257,13 +4428,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q184226"
+   "wikidata": "Q184226",
+   "category": "philosophy"
   },
   {
    "id": "p-jacques-derrida",
    "name": "Jacques Derrida",
    "wiki": "Jacques_Derrida",
-   "rank": 69,
+   "rank": 89,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3287,13 +4459,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q130631"
+   "wikidata": "Q130631",
+   "category": "philosophy"
   },
   {
    "id": "p-jean-baudrillard",
    "name": "Jean Baudrillard",
    "wiki": "Jean_Baudrillard",
-   "rank": 70,
+   "rank": 90,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3317,13 +4490,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q182847"
+   "wikidata": "Q182847",
+   "category": "society"
   },
   {
    "id": "p-walter-benjamin",
    "name": "Walter Benjamin",
    "wiki": "Walter_Benjamin",
-   "rank": 71,
+   "rank": 91,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3347,13 +4521,14 @@
     "en": "Kingdom of Prussia",
     "zh": "普鲁士王国"
    },
-   "wikidata": "Q61078"
+   "wikidata": "Q61078",
+   "category": "philosophy"
   },
   {
    "id": "p-cornel-west",
    "name": "Cornel West",
    "wiki": "Cornel_West",
-   "rank": 72,
+   "rank": 92,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3377,13 +4552,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q712469"
+   "wikidata": "Q712469",
+   "category": "philosophy"
   },
   {
    "id": "p-epicurus",
    "name": "Epicurus",
    "wiki": "Epicurus",
-   "rank": 73,
+   "rank": 93,
    "tier": "pro",
    "voiceId": "v-epicurus",
    "origin": {
@@ -3437,13 +4613,14 @@
     "en": "Classical Athens",
     "zh": "古雅典"
    },
-   "wikidata": "Q43216"
+   "wikidata": "Q43216",
+   "category": "philosophy"
   },
   {
    "id": "p-jacques-lacan",
    "name": "Jacques Lacan",
    "wiki": "Jacques_Lacan",
-   "rank": 74,
+   "rank": 94,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3467,13 +4644,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q169906"
+   "wikidata": "Q169906",
+   "category": "psychology"
   },
   {
    "id": "p-al-ghazali",
    "name": "Al-Ghazali",
    "wiki": "Al-Ghazali",
-   "rank": 75,
+   "rank": 95,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3497,13 +4675,14 @@
     "en": "Seljuk Empire",
     "zh": "塞尔柱帝国"
    },
-   "wikidata": "Q9546"
+   "wikidata": "Q9546",
+   "category": "religion"
   },
   {
    "id": "p-montesquieu",
    "name": "Montesquieu",
    "wiki": "Montesquieu",
-   "rank": 76,
+   "rank": 96,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3527,13 +4706,14 @@
     "en": "Kingdom of France",
     "zh": "法兰西王国"
    },
-   "wikidata": "Q15975"
+   "wikidata": "Q15975",
+   "category": "philosophy"
   },
   {
    "id": "p-ibn-khaldun",
    "name": "Ibn Khaldun",
    "wiki": "Ibn_Khaldun",
-   "rank": 77,
+   "rank": 97,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3557,13 +4737,14 @@
     "en": "Tunis",
     "zh": "突尼斯市"
    },
-   "wikidata": "Q9294"
+   "wikidata": "Q9294",
+   "category": "society"
   },
   {
    "id": "p-peter-singer",
    "name": "Peter Singer",
    "wiki": "Peter_Singer",
-   "rank": 78,
+   "rank": 98,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3587,13 +4768,14 @@
     "en": "Australia",
     "zh": "澳大利亚"
    },
-   "wikidata": "Q211539"
+   "wikidata": "Q211539",
+   "category": "philosophy"
   },
   {
    "id": "p-gautama-buddha",
    "name": "Gautama Buddha",
    "wiki": "Gautama_Buddha",
-   "rank": 79,
+   "rank": 99,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3606,13 +4788,14 @@
     "credit": "พระมหาเทวประภาส วชิรญาณเมธี (ผู้ถ่าย-ปล่อยสัญญาอนุญาตภาพให้นำไปใช้ได้เพื่อการศึกษาโดยอยู่ภา่ยใต้ cc-by-sa-3.0) ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg"
    },
-   "nameZh": "释迦牟尼"
+   "nameZh": "释迦牟尼",
+   "category": "religion"
   },
   {
    "id": "p-daniel-dennett",
    "name": "Daniel Dennett",
    "wiki": "Daniel_Dennett",
-   "rank": 80,
+   "rank": 100,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3636,13 +4819,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q215263"
+   "wikidata": "Q215263",
+   "category": "philosophy"
   },
   {
    "id": "p-michel-de-montaigne",
    "name": "Michel de Montaigne",
    "wiki": "Michel_de_Montaigne",
-   "rank": 81,
+   "rank": 101,
    "tier": "pro",
    "voiceId": "v-montaigne",
    "origin": {
@@ -3685,13 +4869,14 @@
     "en": "Kingdom of France",
     "zh": "法兰西王国"
    },
-   "wikidata": "Q41568"
+   "wikidata": "Q41568",
+   "category": "philosophy"
   },
   {
    "id": "p-marshall-mcluhan",
    "name": "Marshall McLuhan",
    "wiki": "Marshall_McLuhan",
-   "rank": 82,
+   "rank": 102,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3715,13 +4900,14 @@
     "en": "Canada",
     "zh": "加拿大"
    },
-   "wikidata": "Q193871"
+   "wikidata": "Q193871",
+   "category": "society"
   },
   {
    "id": "p-theodor-w-adorno",
    "name": "Theodor W. Adorno",
    "wiki": "Theodor_W._Adorno",
-   "rank": 83,
+   "rank": 103,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3745,13 +4931,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q152388"
+   "wikidata": "Q152388",
+   "category": "philosophy"
   },
   {
    "id": "p-thales-of-miletus",
    "name": "Thales of Miletus",
    "wiki": "Thales_of_Miletus",
-   "rank": 84,
+   "rank": 104,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3775,13 +4962,14 @@
     "en": "Miletus",
     "zh": "米利都"
    },
-   "wikidata": "Q36303"
+   "wikidata": "Q36303",
+   "category": "philosophy"
   },
   {
    "id": "p-john-rawls",
    "name": "John Rawls",
    "wiki": "John_Rawls",
-   "rank": 85,
+   "rank": 105,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3805,13 +4993,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q172544"
+   "wikidata": "Q172544",
+   "category": "philosophy"
   },
   {
    "id": "p-peter-kropotkin",
    "name": "Peter Kropotkin",
    "wiki": "Peter_Kropotkin",
-   "rank": 86,
+   "rank": 106,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -3848,13 +5037,14 @@
     "en": "Russian Empire",
     "zh": "俄罗斯帝国"
    },
-   "wikidata": "Q5752"
+   "wikidata": "Q5752",
+   "category": "politics"
   },
   {
    "id": "p-mikhail-bakunin",
    "name": "Mikhail Bakunin",
    "wiki": "Mikhail_Bakunin",
-   "rank": 87,
+   "rank": 107,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3878,13 +5068,14 @@
     "en": "Russian Empire",
     "zh": "俄罗斯帝国"
    },
-   "wikidata": "Q27645"
+   "wikidata": "Q27645",
+   "category": "politics"
   },
   {
    "id": "p-iris-murdoch",
    "name": "Iris Murdoch",
    "wiki": "Iris_Murdoch",
-   "rank": 88,
+   "rank": 108,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3901,13 +5092,14 @@
     "en": "Ireland",
     "zh": "爱尔兰"
    },
-   "wikidata": "Q217495"
+   "wikidata": "Q217495",
+   "category": "literature"
   },
   {
    "id": "p-democritus",
    "name": "Democritus",
    "wiki": "Democritus",
-   "rank": 89,
+   "rank": 109,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3931,13 +5123,14 @@
     "en": "Greece",
     "zh": "希腊"
    },
-   "wikidata": "Q41980"
+   "wikidata": "Q41980",
+   "category": "philosophy"
   },
   {
    "id": "p-averroes",
    "name": "Averroes",
    "wiki": "Averroes",
-   "rank": 90,
+   "rank": 110,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -3961,13 +5154,14 @@
     "en": "Córdoba",
     "zh": "科尔多瓦"
    },
-   "wikidata": "Q39837"
+   "wikidata": "Q39837",
+   "category": "philosophy"
   },
   {
    "id": "p-boethius",
    "name": "Boethius",
    "wiki": "Boethius",
-   "rank": 91,
+   "rank": 111,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -4028,13 +5222,14 @@
     "en": "Ostrogothic Kingdom",
     "zh": "東哥德王國"
    },
-   "wikidata": "Q102851"
+   "wikidata": "Q102851",
+   "category": "philosophy"
   },
   {
    "id": "p-ramanuja",
    "name": "Ramanuja",
    "wiki": "Ramanuja",
-   "rank": 92,
+   "rank": 112,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4058,13 +5253,14 @@
     "en": "India",
     "zh": "印度"
    },
-   "wikidata": "Q1741798"
+   "wikidata": "Q1741798",
+   "category": "philosophy"
   },
   {
    "id": "p-herbert-marcuse",
    "name": "Herbert Marcuse",
    "wiki": "Herbert_Marcuse",
-   "rank": 93,
+   "rank": 113,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4088,13 +5284,14 @@
     "en": "Weimar Republic",
     "zh": "魏瑪共和国"
    },
-   "wikidata": "Q60030"
+   "wikidata": "Q60030",
+   "category": "philosophy"
   },
   {
    "id": "p-roland-barthes",
    "name": "Roland Barthes",
    "wiki": "Roland_Barthes",
-   "rank": 94,
+   "rank": 114,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4118,13 +5315,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q179109"
+   "wikidata": "Q179109",
+   "category": "literature"
   },
   {
    "id": "p-edmund-husserl",
    "name": "Edmund Husserl",
    "wiki": "Edmund_Husserl",
-   "rank": 95,
+   "rank": 115,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4148,13 +5346,14 @@
     "en": "Austrian Empire",
     "zh": "奥地利帝国"
    },
-   "wikidata": "Q58586"
+   "wikidata": "Q58586",
+   "category": "philosophy"
   },
   {
    "id": "p-william-of-ockham",
    "name": "William of Ockham",
    "wiki": "William_of_Ockham",
-   "rank": 96,
+   "rank": 116,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4178,13 +5377,14 @@
     "en": "Kingdom of England",
     "zh": "英格兰王国"
    },
-   "wikidata": "Q43936"
+   "wikidata": "Q43936",
+   "category": "philosophy"
   },
   {
    "id": "p-nagarjuna",
    "name": "Nagarjuna",
    "wiki": "Nagarjuna",
-   "rank": 97,
+   "rank": 117,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4208,13 +5408,14 @@
     "en": "South India",
     "zh": "印度南部"
    },
-   "wikidata": "Q171195"
+   "wikidata": "Q171195",
+   "category": "philosophy"
   },
   {
    "id": "p-plotinus",
    "name": "Plotinus",
    "wiki": "Plotinus",
-   "rank": 98,
+   "rank": 118,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4238,13 +5439,14 @@
     "en": "Ancient Rome",
     "zh": "古罗马"
    },
-   "wikidata": "Q134189"
+   "wikidata": "Q134189",
+   "category": "philosophy"
   },
   {
    "id": "p-louis-althusser",
    "name": "Louis Althusser",
    "wiki": "Louis_Althusser",
-   "rank": 99,
+   "rank": 119,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4268,13 +5470,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q184169"
+   "wikidata": "Q184169",
+   "category": "philosophy"
   },
   {
    "id": "p-anselm-of-canterbury",
    "name": "Anselm of Canterbury",
    "wiki": "Anselm_of_Canterbury",
-   "rank": 100,
+   "rank": 120,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4298,13 +5501,14 @@
     "en": "Kingdom of France",
     "zh": "法兰西王国"
    },
-   "wikidata": "Q43939"
+   "wikidata": "Q43939",
+   "category": "philosophy"
   },
   {
    "id": "p-henri-bergson",
    "name": "Henri Bergson",
    "wiki": "Henri_Bergson",
-   "rank": 101,
+   "rank": 121,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -4365,13 +5569,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q42156"
+   "wikidata": "Q42156",
+   "category": "philosophy"
   },
   {
    "id": "p-george-berkeley",
    "name": "George Berkeley",
    "wiki": "George_Berkeley",
-   "rank": 102,
+   "rank": 122,
    "tier": "pro",
    "voiceId": null,
    "origin": null,
@@ -4431,13 +5636,14 @@
     "en": "Kingdom of Ireland",
     "zh": "爱尔兰王国"
    },
-   "wikidata": "Q82049"
+   "wikidata": "Q82049",
+   "category": "philosophy"
   },
   {
    "id": "p-alfred-north-whitehead",
    "name": "Alfred North Whitehead",
    "wiki": "Alfred_North_Whitehead",
-   "rank": 103,
+   "rank": 123,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4461,13 +5667,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q183372"
+   "wikidata": "Q183372",
+   "category": "philosophy"
   },
   {
    "id": "p-martha-nussbaum",
    "name": "Martha Nussbaum",
    "wiki": "Martha_Nussbaum",
-   "rank": 104,
+   "rank": 124,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4491,13 +5698,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q235470"
+   "wikidata": "Q235470",
+   "category": "philosophy"
   },
   {
    "id": "p-zeno-of-citium",
    "name": "Zeno of Citium",
    "wiki": "Zeno_of_Citium",
-   "rank": 105,
+   "rank": 125,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4521,13 +5729,14 @@
     "en": "Kition",
     "zh": "基提翁"
    },
-   "wikidata": "Q171303"
+   "wikidata": "Q171303",
+   "category": "philosophy"
   },
   {
    "id": "p-parmenides",
    "name": "Parmenides",
    "wiki": "Parmenides",
-   "rank": 106,
+   "rank": 126,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4551,13 +5760,14 @@
     "en": "Velia",
     "zh": "韦利亚"
    },
-   "wikidata": "Q125551"
+   "wikidata": "Q125551",
+   "category": "philosophy"
   },
   {
    "id": "p-isaiah-berlin",
    "name": "Isaiah Berlin",
    "wiki": "Isaiah_Berlin",
-   "rank": 107,
+   "rank": 127,
    "tier": "basic",
    "voiceId": "v-berlin",
    "origin": {
@@ -4589,13 +5799,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q205162"
+   "wikidata": "Q205162",
+   "category": "philosophy"
   },
   {
    "id": "p-charles-sanders-peirce",
    "name": "Charles Sanders Peirce",
    "wiki": "Charles_Sanders_Peirce",
-   "rank": 108,
+   "rank": 128,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4619,13 +5830,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q187520"
+   "wikidata": "Q187520",
+   "category": "philosophy"
   },
   {
    "id": "p-thomas-kuhn",
    "name": "Thomas Kuhn",
    "wiki": "Thomas_Kuhn",
-   "rank": 109,
+   "rank": 129,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4649,13 +5861,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q184980"
+   "wikidata": "Q184980",
+   "category": "philosophy"
   },
   {
    "id": "p-robert-nozick",
    "name": "Robert Nozick",
    "wiki": "Robert_Nozick",
-   "rank": 110,
+   "rank": 130,
    "tier": "basic",
    "voiceId": "v-nozick",
    "origin": {
@@ -4698,13 +5911,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q205927"
+   "wikidata": "Q205927",
+   "category": "philosophy"
   },
   {
    "id": "p-alasdair-macintyre",
    "name": "Alasdair MacIntyre",
    "wiki": "Alasdair_MacIntyre",
-   "rank": 111,
+   "rank": 131,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4728,13 +5942,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q310178"
+   "wikidata": "Q310178",
+   "category": "philosophy"
   },
   {
    "id": "p-charles-taylor-(philosopher)",
    "name": "Charles Taylor",
    "wiki": "Charles_Taylor_(philosopher)",
-   "rank": 112,
+   "rank": 132,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4758,13 +5973,14 @@
     "en": "Canada",
     "zh": "加拿大"
    },
-   "wikidata": "Q311757"
+   "wikidata": "Q311757",
+   "category": "philosophy"
   },
   {
    "id": "p-duns-scotus",
    "name": "Duns Scotus",
    "wiki": "Duns_Scotus",
-   "rank": 113,
+   "rank": 133,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4788,13 +6004,14 @@
     "en": "Kingdom of Scotland",
     "zh": "苏格兰王国"
    },
-   "wikidata": "Q190089"
+   "wikidata": "Q190089",
+   "category": "philosophy"
   },
   {
    "id": "p-thorstein-veblen",
    "name": "Thorstein Veblen",
    "wiki": "Thorstein_Veblen",
-   "rank": 114,
+   "rank": 134,
    "tier": "basic",
    "voiceId": "v-veblen",
    "origin": {
@@ -4826,13 +6043,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q73646"
+   "wikidata": "Q73646",
+   "category": "economics"
   },
   {
    "id": "p-john-searle",
    "name": "John Searle",
    "wiki": "John_Searle",
-   "rank": 115,
+   "rank": 135,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4856,13 +6074,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q295012"
+   "wikidata": "Q295012",
+   "category": "philosophy"
   },
   {
    "id": "p-david-chalmers",
    "name": "David Chalmers",
    "wiki": "David_Chalmers",
-   "rank": 116,
+   "rank": 136,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4886,13 +6105,14 @@
     "en": "Australia",
     "zh": "澳大利亚"
    },
-   "wikidata": "Q366123"
+   "wikidata": "Q366123",
+   "category": "philosophy"
   },
   {
    "id": "p-patanjali",
    "name": "Patanjali",
    "wiki": "Patanjali",
-   "rank": 117,
+   "rank": 137,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4916,13 +6136,14 @@
     "en": "India",
     "zh": "印度"
    },
-   "wikidata": "Q231680"
+   "wikidata": "Q231680",
+   "category": "philosophy"
   },
   {
    "id": "p-mencius",
    "name": "Mencius",
    "wiki": "Mencius",
-   "rank": 118,
+   "rank": 138,
    "tier": "pro",
    "voiceId": "v-mencius",
    "origin": {
@@ -4954,13 +6175,14 @@
     "en": "Zhu",
     "zh": "邾国"
    },
-   "wikidata": "Q188903"
+   "wikidata": "Q188903",
+   "category": "philosophy"
   },
   {
    "id": "p-al-farabi",
    "name": "Al-Farabi",
    "wiki": "Al-Farabi",
-   "rank": 119,
+   "rank": 139,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -4984,13 +6206,14 @@
     "en": "Abbasid Caliphate",
     "zh": "阿拔斯王朝"
    },
-   "wikidata": "Q160460"
+   "wikidata": "Q160460",
+   "category": "philosophy"
   },
   {
    "id": "p-maurice-merleau-ponty",
    "name": "Maurice Merleau-Ponty",
    "wiki": "Maurice_Merleau-Ponty",
-   "rank": 120,
+   "rank": 140,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5014,13 +6237,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q212639"
+   "wikidata": "Q212639",
+   "category": "philosophy"
   },
   {
    "id": "p-gottlob-frege",
    "name": "Gottlob Frege",
    "wiki": "Gottlob_Frege",
-   "rank": 121,
+   "rank": 141,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5044,13 +6268,14 @@
     "en": "Germany",
     "zh": "德国"
    },
-   "wikidata": "Q60028"
+   "wikidata": "Q60028",
+   "category": "philosophy"
   },
   {
    "id": "p-thomas-nagel",
    "name": "Thomas Nagel",
    "wiki": "Thomas_Nagel",
-   "rank": 122,
+   "rank": 142,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5074,13 +6299,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q350239"
+   "wikidata": "Q350239",
+   "category": "philosophy"
   },
   {
    "id": "p-saul-kripke",
    "name": "Saul Kripke",
    "wiki": "Saul_Kripke",
-   "rank": 123,
+   "rank": 143,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5104,13 +6330,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q298521"
+   "wikidata": "Q298521",
+   "category": "philosophy"
   },
   {
    "id": "p-erving-goffman",
    "name": "Erving Goffman",
    "wiki": "Erving_Goffman",
-   "rank": 124,
+   "rank": 144,
    "tier": "basic",
    "voiceId": "v-goffman",
    "origin": {
@@ -5142,13 +6369,14 @@
     "en": "Canada",
     "zh": "加拿大"
    },
-   "wikidata": "Q314471"
+   "wikidata": "Q314471",
+   "category": "society"
   },
   {
    "id": "p-richard-rorty",
    "name": "Richard Rorty",
    "wiki": "Richard_Rorty",
-   "rank": 125,
+   "rank": 145,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5172,13 +6400,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q215258"
+   "wikidata": "Q215258",
+   "category": "philosophy"
   },
   {
    "id": "p-johann-gottlieb-fichte",
    "name": "Johann Gottlieb Fichte",
    "wiki": "Johann_Gottlieb_Fichte",
-   "rank": 126,
+   "rank": 146,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5202,13 +6431,14 @@
     "en": "Germany",
     "zh": "德国"
    },
-   "wikidata": "Q102585"
+   "wikidata": "Q102585",
+   "category": "philosophy"
   },
   {
    "id": "p-willard-van-orman-quine",
    "name": "Willard Van Orman Quine",
    "wiki": "Willard_Van_Orman_Quine",
-   "rank": 127,
+   "rank": 147,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5232,13 +6462,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q214969"
+   "wikidata": "Q214969",
+   "category": "philosophy"
   },
   {
    "id": "p-derek-parfit",
    "name": "Derek Parfit",
    "wiki": "Derek_Parfit",
-   "rank": 128,
+   "rank": 148,
    "tier": "basic",
    "voiceId": "v-parfit",
    "origin": {
@@ -5277,13 +6508,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q962160"
+   "wikidata": "Q962160",
+   "category": "philosophy"
   },
   {
    "id": "p-mozi",
    "name": "Mozi",
    "wiki": "Mozi",
-   "rank": 129,
+   "rank": 149,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5307,13 +6539,14 @@
     "en": "Zhou dynasty",
     "zh": "周朝"
    },
-   "wikidata": "Q272411"
+   "wikidata": "Q272411",
+   "category": "philosophy"
   },
   {
    "id": "p-max-horkheimer",
    "name": "Max Horkheimer",
    "wiki": "Max_Horkheimer",
-   "rank": 130,
+   "rank": 150,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5330,13 +6563,14 @@
     "en": "Germany",
     "zh": "德国"
    },
-   "wikidata": "Q76826"
+   "wikidata": "Q76826",
+   "category": "philosophy"
   },
   {
    "id": "p-emmanuel-levinas",
    "name": "Emmanuel Levinas",
    "wiki": "Emmanuel_Levinas",
-   "rank": 131,
+   "rank": 151,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5360,13 +6594,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q153034"
+   "wikidata": "Q153034",
+   "category": "philosophy"
   },
   {
    "id": "p-friedrich-wilhelm-joseph-schelling",
    "name": "Friedrich Wilhelm Joseph Schelling",
    "wiki": "Friedrich_Wilhelm_Joseph_Schelling",
-   "rank": 132,
+   "rank": 152,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5390,13 +6625,14 @@
     "en": "Kingdom of Württemberg",
     "zh": "符腾堡王国"
    },
-   "wikidata": "Q60070"
+   "wikidata": "Q60070",
+   "category": "philosophy"
   },
   {
    "id": "p-hans-georg-gadamer",
    "name": "Hans-Georg Gadamer",
    "wiki": "Hans-Georg_Gadamer",
-   "rank": 133,
+   "rank": 153,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5420,13 +6656,14 @@
     "en": "Germany",
     "zh": "德国"
    },
-   "wikidata": "Q76356"
+   "wikidata": "Q76356",
+   "category": "philosophy"
   },
   {
    "id": "p-hilary-putnam",
    "name": "Hilary Putnam",
    "wiki": "Hilary_Putnam",
-   "rank": 134,
+   "rank": 154,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5443,13 +6680,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q221697"
+   "wikidata": "Q221697",
+   "category": "philosophy"
   },
   {
    "id": "p-g-e-m-anscombe",
    "name": "G. E. M. Anscombe",
    "wiki": "G._E._M._Anscombe",
-   "rank": 135,
+   "rank": 155,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5473,13 +6711,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q229646"
+   "wikidata": "Q229646",
+   "category": "philosophy"
   },
   {
    "id": "p-jean-françois-lyotard",
    "name": "Jean-François Lyotard",
    "wiki": "Jean-François_Lyotard",
-   "rank": 136,
+   "rank": 156,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5503,13 +6742,14 @@
     "en": "France",
     "zh": "法国"
    },
-   "wikidata": "Q193257"
+   "wikidata": "Q193257",
+   "category": "philosophy"
   },
   {
    "id": "p-g-e-moore",
    "name": "G. E. Moore",
    "wiki": "G._E._Moore",
-   "rank": 137,
+   "rank": 157,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5533,13 +6773,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q295386"
+   "wikidata": "Q295386",
+   "category": "philosophy"
   },
   {
    "id": "p-bernard-williams",
    "name": "Bernard Williams",
    "wiki": "Bernard_Williams",
-   "rank": 138,
+   "rank": 158,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5556,13 +6797,14 @@
     "en": "United Kingdom",
     "zh": "英国"
    },
-   "wikidata": "Q345641"
+   "wikidata": "Q345641",
+   "category": "philosophy"
   },
   {
    "id": "p-rudolf-carnap",
    "name": "Rudolf Carnap",
    "wiki": "Rudolf_Carnap",
-   "rank": 139,
+   "rank": 159,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5586,13 +6828,14 @@
     "en": "German Empire",
     "zh": "德意志帝国"
    },
-   "wikidata": "Q76519"
+   "wikidata": "Q76519",
+   "category": "philosophy"
   },
   {
    "id": "p-zhu-xi",
    "name": "Zhu Xi",
    "wiki": "Zhu_Xi",
-   "rank": 140,
+   "rank": 160,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5616,13 +6859,14 @@
     "en": "Song dynasty",
     "zh": "宋朝"
    },
-   "wikidata": "Q9397"
+   "wikidata": "Q9397",
+   "category": "philosophy"
   },
   {
    "id": "p-ernest-becker",
    "name": "Ernest Becker",
    "wiki": "Ernest_Becker",
-   "rank": 141,
+   "rank": 161,
    "tier": "basic",
    "voiceId": "v-becker",
    "origin": {
@@ -5672,13 +6916,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q938094"
+   "wikidata": "Q938094",
+   "category": "psychology"
   },
   {
    "id": "p-han-fei",
    "name": "Han Fei",
    "wiki": "Han_Fei",
-   "rank": 142,
+   "rank": 162,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5702,13 +6947,14 @@
     "en": "Han",
     "zh": "韩国"
    },
-   "wikidata": "Q28959"
+   "wikidata": "Q28959",
+   "category": "philosophy"
   },
   {
    "id": "p-wang-yangming",
    "name": "Wang Yangming",
    "wiki": "Wang_Yangming",
-   "rank": 143,
+   "rank": 163,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5732,13 +6978,14 @@
     "en": "Ming dynasty",
     "zh": "明朝"
    },
-   "wikidata": "Q378462"
+   "wikidata": "Q378462",
+   "category": "philosophy"
   },
   {
    "id": "p-harry-frankfurt",
    "name": "Harry Frankfurt",
    "wiki": "Harry_Frankfurt",
-   "rank": 144,
+   "rank": 164,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5762,13 +7009,14 @@
     "en": "United States",
     "zh": "美国"
    },
-   "wikidata": "Q740969"
+   "wikidata": "Q740969",
+   "category": "philosophy"
   },
   {
    "id": "p-zhuangzi",
    "name": "Zhuangzi",
    "wiki": "Zhuangzi",
-   "rank": 145,
+   "rank": 165,
    "tier": "pro",
    "voiceId": "v-zhuangzi",
    "origin": {
@@ -5810,13 +7058,14 @@
     "licenceUrl": null,
     "credit": "Hua Zuli, 1326 — imagined some 1,600 years after Zhuangzi; no likeness of him survives",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hui_Zuli_%E8%8F%AF%E7%A5%96%E7%AB%8B%E2%80%94Zhuang_Zhou_%E8%8E%8A%E5%AD%90_(1326).jpg"
-   }
+   },
+   "category": "philosophy"
   },
   {
    "id": "p-paul-ricoeur",
    "name": "Paul Ricoeur",
    "wiki": "Paul_Ricoeur",
-   "rank": 146,
+   "rank": 166,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5829,13 +7078,14 @@
     "credit": "Juerg Mueller / Scanpix.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Ricoeur_Balzan.png"
    },
-   "nameZh": "保罗·利科"
+   "nameZh": "保罗·利科",
+   "category": "philosophy"
   },
   {
    "id": "p-dogen",
    "name": "Dogen",
    "wiki": "Dogen",
-   "rank": 147,
+   "rank": 167,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5848,13 +7098,14 @@
     "credit": "Shii",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dogen.jpg"
    },
-   "nameZh": "道元"
+   "nameZh": "道元",
+   "category": "religion"
   },
   {
    "id": "p-xunzi",
    "name": "Xunzi",
    "wiki": "Xunzi",
-   "rank": 148,
+   "rank": 168,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5863,13 +7114,14 @@
    "nameZh": "荀子",
    "born": null,
    "died": null,
-   "wikidata": "Q21072863"
+   "wikidata": "Q21072863",
+   "category": "philosophy"
   },
   {
    "id": "p-nishida-kitaro",
    "name": "Nishida Kitaro",
    "wiki": "Nishida_Kitaro",
-   "rank": 149,
+   "rank": 169,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5882,13 +7134,14 @@
     "credit": "Unknown author",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait-of-Kitaro-Nishida.png"
    },
-   "nameZh": "西田几多郎"
+   "nameZh": "西田几多郎",
+   "category": "philosophy"
   },
   {
    "id": "p-donald-davidson",
    "name": "Donald Davidson",
    "wiki": "Donald_Davidson",
-   "rank": 150,
+   "rank": 170,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5897,13 +7150,14 @@
    "nameZh": "唐纳德·戴维森",
    "born": null,
    "died": null,
-   "wikidata": "Q1184078"
+   "wikidata": "Q1184078",
+   "category": "philosophy"
   },
   {
    "id": "p-bell-hooks",
    "name": "bell hooks",
    "wiki": "bell_hooks",
-   "rank": 151,
+   "rank": 171,
    "tier": "basic",
    "voiceId": null,
    "origin": null,
@@ -5916,7 +7170,8 @@
     "credit": "Cmongirl",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellhooks.jpg"
    },
-   "nameZh": "贝尔·胡克斯"
+   "nameZh": "贝尔·胡克斯",
+   "category": "philosophy"
   }
  ]
 }
