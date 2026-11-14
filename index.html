@@ -32,7 +32,7 @@
   --book-page:#F5F2EC; --cloth:#D3CCBD; --paper-ground:#F2F0EA;
   --dapple-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0065' numOctaves='3' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .62 0 0 0 0 .7 1.6 0 0 0 -.55'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 .25 .7 .85'/%3E%3C/feComponentTransfer%3E%3CfeGaussianBlur stdDeviation='9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   --forest:#1F3A2B; --on-forest:#E4E6E1; --on-forest-soft:#B9BFB7;
-  --quote-bg:hsl(33 38% 98%);   /* founder 2026-11-13: lightness 98% */
+  --quote-bg:#EDEDED;   /* B61, founder 2026-11-14: a soft grey card, like a chat bubble */
   --chip:rgba(36,50,53,.07); --chip-soft:rgba(36,50,53,.045);
   --fill-muted:rgba(36,50,53,.05);
 
@@ -201,6 +201,11 @@ img{max-width:100%}
 .gsi-slot{width:100%;max-width:400px;min-height:44px;display:flex;justify-content:center}
 .gsi-note,.gsi-err{margin:0;font-size:13px;line-height:1.45;text-align:center;color:var(--ink-secondary)}
 .gsi-err{color:var(--danger)}
+/* "Trouble signing in?": a native disclosure (keyboard and screen readers for free). */
+.gsi-help{margin:var(--sp-s) 0 0;font-size:13px;line-height:1.45;color:var(--ink-secondary);text-align:center}
+.gsi-help summary{cursor:pointer;display:inline-block;min-height:24px;padding:2px 4px;color:var(--ink-secondary);text-decoration:underline;text-underline-offset:2px}
+.gsi-help p{margin:var(--sp-xs) 0 0;text-align:left}
+.gsi-help a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 .acc-or-code{display:block;margin:var(--sp-s) auto 0;font-size:14px}
 .acc-or{margin:var(--sp-l) 0 0;font-size:12.5px;color:var(--ink-tertiary);text-align:center}
 .me-acct p b{color:var(--ink);font-weight:600}
@@ -444,10 +449,18 @@ html.ob-open,html.ob-open body{overflow:hidden}
 .row-name span{font-size:14px;color:var(--ink-secondary)}
 .voted{align-self:flex-start;font-size:13px;font-weight:500;padding:4px 12px;
        border-radius:var(--r-vote);line-height:1.3}
-.quotebox{background:var(--quote-bg);border-radius:var(--r-inner);padding:12px 16px;
+/* B61: the pull-quote sits on a grey card, like a message bubble, in
+   near-black ink (ink on --quote-bg is 11:1). 17px is the body size, the
+   size a phone reads at; at 19 a quote ran to ten lines. 1.5 is the
+   reading leading: enough for Chinese, which needs more air than Latin,
+   without loosening English. The serif and the curly marks keep it a
+   quote, not another reply. The source line is ink-tertiary: 5.7:1 on the
+   grey, where ink-secondary would fall to 4.5. */
+.quotebox{background:var(--quote-bg);border-radius:var(--r-inner);padding:var(--sp-m) var(--sp-l) var(--sp-l);
           display:flex;flex-direction:column;gap:8px}
-.quotebox q{font-family:var(--serif);font-size:19px;line-height:1.516;quotes:"\201C" "\201D"}
-.quotebox .src{font-size:13.5px;font-weight:500;color:var(--ink-secondary)}
+.quotebox q{font-family:var(--serif);font-size:var(--body-size);line-height:var(--leading-read);
+  color:var(--ink);quotes:"\201C" "\201D"}
+.quotebox .src{font-size:13.5px;font-weight:500;color:var(--ink-tertiary)}
 .quotebox .src u{text-underline-offset:2px}
 .quotebox .src button{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer}
 .claim{font-size:17px;font-weight:500;line-height:1.494;margin:0}
@@ -1039,10 +1052,15 @@ body.resizing{cursor:col-resize;user-select:none}
 .stamp{font-size:10.5px;color:var(--ink-tertiary);padding:0 5px}
 /* Reply and Unsend. */
 .mine-foot{display:flex;align-items:center;gap:var(--sp-xxs)}
-.msg-more svg{width:16px;height:16px}
-.mine-foot .msg-more{opacity:0;transition:opacity .15s}
-.msg.mine:hover .msg-more,.msg.mine:focus-within .msg-more{opacity:1}
-@media (pointer:coarse){ .mine-foot .msg-more{opacity:1} }
+/* Your own message: Reply and Unsend as two small icons (B59), shown on
+   hover with a mouse and always on a touch screen. */
+.mine-foot .act{color:var(--ink-secondary)}
+.msg .mine-foot .act{width:32px;height:32px}
+.mine-foot .act svg{width:16px;height:16px}
+@media (hover:hover) and (pointer:fine){
+  .mine-foot .act{opacity:0;transition:opacity .15s}
+  .msg.mine:hover .mine-foot .act,.msg.mine:focus-within .mine-foot .act{opacity:1}
+}
 .rquote{display:flex;flex-direction:column;align-items:flex-start;gap:1px;max-width:min(100%,var(--measure));
   padding:var(--sp-xs) var(--sp-m);border-left:2px solid var(--hairline-strong);border-radius:6px;
   background:var(--chip-soft);text-align:left;font-size:12.5px;line-height:1.4;color:var(--ink-secondary)}
@@ -1863,6 +1881,15 @@ button.sim-tag:hover{color:var(--ink)}
      page up instead and the chat header goes off screen. While typing, the
      chat takes the visible height (--vvh, set from visualViewport). */
   body.kb .chat-wrap,html.in-convo body.kb .chat-wrap{height:var(--vvh,100dvh)}
+  /* B58: the open conversation is pinned to the screen. On the iPhone home-
+     screen app the page itself could scroll (left over from the keyboard,
+     or a scroll that ran past the transcript's top), which carried the
+     room's header off the top and slid the replies under the status bar.
+     Pinned, only the transcript scrolls, and the header — solid, with the
+     status bar's height inside it — always holds the top. */
+  html.in-convo,html.in-convo body{overflow:hidden;overscroll-behavior:none}
+  html.in-convo .chat-wrap{position:fixed;top:0;left:0;right:0;z-index:1}
+  html.in-convo .chead{background:var(--bg);position:relative;z-index:6}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
@@ -2112,7 +2139,6 @@ async function sendReport(){
 }
 document.addEventListener('keydown', ev => {
   if(REPORT && ev.key === 'Escape' && !REPORT.sending){ ev.preventDefault(); REPORT = null; render(); }
-  else if(MSGMENU && ev.key === 'Escape'){ ev.preventDefault(); MSGMENU = null; render(); }
   else if(REPLYING && ev.key === 'Escape' && ev.target.id === 'say'){ ev.preventDefault(); REPLYING = null; render(); }
 });
 document.addEventListener('change', async ev => {
@@ -4012,16 +4038,20 @@ const clock = ts => { const d = new Date(ts || Date.now());
   return d.getHours().toString().padStart(2,'0') + ':' +
          d.getMinutes().toString().padStart(2,'0'); };
 
-/* Reply and Unsend (founder; iOS matches). A message's menu opens from its
-   ⋯ (always there on touch, on hover with a mouse) or a long press on the
-   message around its text: a long press on the text itself stays the
-   system's text selection (B5). */
-let MSGMENU = null;      // message key whose menu is open
+/* Reply and Unsend (founder; iOS matches). A long press on a message is
+   left to the system's text selection (B5). */
 let REPLYING = null;     // {id, speaker, name, excerpt}: the quote above the box
-const MORE_DOTS = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18.5" cy="12" r="1.6" fill="currentColor"/></svg>';
-function moreBtn(key){
-  return `<button type="button" class="act msg-more" data-msg-menu="${esc(key)}" aria-haspopup="dialog"
-    aria-label="${t('More','更多')}">${MORE_DOTS}</button>`;
+/* B59 (founder): Reply is an icon in the action row, one tap, no pop-up.
+   Unsend sits beside it on your own messages and asks before it goes. */
+const ICON_SVG = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const REPLY_PATH = '<path d="M9.5 14.5 4.5 9.5l5-5"/><path d="M4.5 9.5H14a5.5 5.5 0 0 1 0 11h-2.5"/>';
+const UNSEND_PATH = '<path d="M4 7h16"/><path d="M9.5 7V4.5h5V7"/><path d="M6.5 7l.9 12.2a1.5 1.5 0 0 0 1.5 1.3h6.2a1.5 1.5 0 0 0 1.5-1.3L17.5 7"/>';
+function replyBtn(key){
+  return `<button type="button" class="act" data-msg-reply="${esc(key)}" aria-label="${t('Reply','回复')}">${ICON_SVG(REPLY_PATH)}</button>`;
+}
+function unsendBtn(key){
+  return `<button type="button" class="act" data-msg-unsend="${esc(key)}" aria-haspopup="dialog" aria-label="${t('Unsend','撤回')}">${ICON_SVG(UNSEND_PATH)}</button>`;
 }
 const oneLine = (x, n) => { x = String(x || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : x; };
 function speakerName(m){ return m.mine ? t('You','你') : pn(philById(m.id) || { name: m.name }); }
@@ -4039,20 +4069,8 @@ function replyStrip(){
       <button type="button" class="rstrip-x" data-reply-cancel="1" aria-label="${t('Cancel reply','取消回复')}">✕</button>
     </div>`;
 }
-function msgMenu(){
-  const m = MSGMENU && msgByKey(MSGMENU); if(!m) return '';
-  return `<div class="backdrop" data-msg-menu-close="1"></div>
-    <div class="modal sheet fb-sheet msg-menu" role="dialog" aria-modal="true" aria-label="${t('Message','消息')}">
-      <div class="fb-body">
-        <p class="msg-menu-q"><b>${esc(speakerName(m))}</b> ${esc(oneLine(m.mine ? m.text : replyPlain(m), 90))}</p>
-        <button type="button" class="mm-item" data-msg-reply="${esc(MSGMENU)}">${t('Reply','回复')}</button>
-        ${m.mine ? `<button type="button" class="mm-item mm-danger" data-msg-unsend="${esc(MSGMENU)}">${t('Unsend','撤回')}</button>` : ''}
-      </div>
-      <footer class="fb-row"><button type="button" class="fb-cancel" data-msg-menu-close="1">${t('Cancel','取消')}</button></footer>
-    </div>`;
-}
 function startReply(key){
-  const m = msgByKey(key); MSGMENU = null; if(!m) return render();
+  const m = msgByKey(key); if(!m) return render();
   REPLYING = { id: key, speaker: m.mine ? 'reader' : m.id, name: speakerName(m),
                excerpt: oneLine(m.mine ? m.text : replyPlain(m), 80) };
   render();
@@ -4183,23 +4201,6 @@ function jumpTo(key){
   el.scrollIntoView({ block: 'center', behavior: navReduced() ? 'auto' : 'smooth' });
   el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
 }
-/* Long press on a message, away from its text. */
-(function(){
-  let timer = null, x0 = 0, y0 = 0;
-  document.addEventListener('touchstart', ev => {
-    const art = ev.target.closest && ev.target.closest('#msgs article.msg[data-k]');
-    if(!art || ev.target.closest('.bubble,.said,.said-fold,button,a,summary,textarea,input')) return;
-    x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY;
-    clearTimeout(timer);
-    timer = setTimeout(() => { timer = null; MSGMENU = art.dataset.k; if(navigator.vibrate) navigator.vibrate(8); render(); }, 500);
-  }, { passive: true });
-  document.addEventListener('touchmove', ev => {
-    if(timer && Math.hypot(ev.touches[0].clientX - x0, ev.touches[0].clientY - y0) > 8){ clearTimeout(timer); timer = null; }
-  }, { passive: true });
-  const end = () => { clearTimeout(timer); timer = null; };
-  document.addEventListener('touchend', end, { passive: true });
-  document.addEventListener('touchcancel', end, { passive: true });
-})();
 function msgRow(m, i, c){
   // Same speaker twice running reads as one turn.
   const prev = c.msgs[i-1], next = c.msgs[i+1];
@@ -4210,7 +4211,7 @@ function msgRow(m, i, c){
       <div class="msg-body">
         ${replyQuote(m.replyTo)}
         <div class="bubble">${esc(m.text)}</div>
-        <div class="mine-foot">${moreBtn(msgKey(m))}${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}</div>
+        <div class="mine-foot">${replyBtn(msgKey(m))}${unsendBtn(msgKey(m))}${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}</div>
       </div>
     </article>`;
 
@@ -4371,7 +4372,7 @@ function msgFoot(m, last){
         aria-haspopup="dialog" aria-label="${t('Give feedback','反馈')}">${icon(FLAG_PATH)}</button>
       <button type="button" class="act" data-share="${esc(key)}"
         aria-label="${t('Share this reply','分享这条回应')}">${icon(SHARE)}</button>
-      ${moreBtn(key)}
+      ${replyBtn(key)}
       </span>
       ${THANKED === key ? `<span class="act-note" role="status">${t('Thanks','谢谢')}</span>` : ''}
       ${SHARED === key ? `<span class="act-note" role="status">${t('Copied','已复制')}</span>` : ''}
@@ -5036,6 +5037,9 @@ function setAccessState(s){
 }
 /* Has more than the free messages: an approved tester's session, or a code. */
 const hasAccess = () => !!AGENT_KEY || (!!AUTH.session && ACCESS.state === 'approved');
+/* Access from an invite code saved in this browser, with no account: it
+   works here only. Signing in is optional and keeps it on every device. */
+const codeOnly = () => !!AGENT_KEY && !AUTH.session;
 /* On the list: signed in but not approved, or a request sent from here. */
 const onList = () => (!!AUTH.session && ACCESS.state === 'waiting') || (!AUTH.session && (ACCESS.sent || ACCESS.state === 'waiting'));
 function accessRequired(reason){
@@ -5108,12 +5112,19 @@ function joinSheet(){
   return `<div class="backdrop" data-acc-close="1"></div>
     <div class="modal acc-sheet acc-sheet--join" role="dialog" aria-modal="true" aria-labelledby="acc-title">
       <header class="code-head"><button class="ghost" type="button" data-acc-close="1">${
-        ACCESS.joined || (onList() && !ACCESS.asking) ? t('Done','完成') : t('Cancel','取消')}</button>
+        ACCESS.joined || codeOnly() || (onList() && !ACCESS.asking) ? t('Done','完成') : t('Cancel','取消')}</button>
         <b id="acc-title">${JOIN_TITLE()}</b><span aria-hidden="true"></span></header>
       <div class="acc-sheet-body join">${joinBody()}</div>
     </div>`;
 }
 function joinBody(){
+  // Already in through a saved code, not signed in: say so, and what signing
+  // in would add, instead of "You're approved." over a sign-in card.
+  if(!ACCESS.joined && codeOnly()) return `<p class="acc-done">${t('You have tester access on this device.', '你在这台设备上有测试权限。')}</p>
+      <p class="acc-lede">${t('It comes from your invite code. Signing in is optional: it keeps your answers, likes and access on any device.',
+        '权限来自你的邀请码。登录是可选的：登录后，你的回答、喜欢和权限在任何设备上都在。')}</p>
+      ${googleButton()}
+      <button type="button" class="acc-go join-wide" data-acc-close="1">${t('Keep talking','继续对话')}</button>`;
   if(ACCESS.joined || hasAccess()) return `<p class="acc-done">${t("You're approved.", '你已获批。')}</p>
       <p class="acc-lede">${t('15 messages a day with the thinkers.', '每天可与思想家对话 15 条。')}</p>
       <button type="button" class="acc-go join-wide" data-acc-close="1">${t('Start talking','开始对话')}</button>`;
@@ -5151,7 +5162,7 @@ function joinBody(){
 function signInBlock(){
   if(!googleOn() || AUTH.session) return '';
   return `<div class="join-or"><p>${t('Or sign in to save your answers and likes. Approved? Use the email you were approved with.',
-    '或者登录，保存你的回答与喜欢。已获批？请使用获批的邮箱登录。')}</p>${googleButton()}</div>`;
+    '或者登录，保存你的回答与喜欢。已获批？请使用获批的邮箱登录。')}</p>${googleButton()}${signInHelp()}</div>`;
 }
 function codeBlock(){
   if(!ACCESS.codeOpen) return `<button type="button" class="linkish join-code-link" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`;
@@ -5385,7 +5396,11 @@ async function googleSignedIn(resp){
   try{
     // The sign-in carries a code checked in the Join sheet (or a ?c= link
     // in a code's shape) and the link's channel, so it can make a member.
-    const code = ACCESS.pendingCode || (looksLikeCode(LINK_C) ? LINK_C : '');
+    // A code saved in this browser (used without an account) goes too, so
+    // the account keeps that access on every device. If it can't be linked,
+    // nothing changes here: the code still works on this device.
+    const saved = !ACCESS.pendingCode && !looksLikeCode(LINK_C) && looksLikeCode(AGENT_KEY) ? AGENT_KEY : '';
+    const code = ACCESS.pendingCode || (looksLikeCode(LINK_C) ? LINK_C : '') || saved;
     const out = await authPost('/v1/auth/google', { id_token: resp.credential, platform: 'web',
       lang: lang === 'zh' ? 'zh' : 'en', ...(code ? { code } : {}), ...(LINK_C ? { channel: LINK_C } : {}) });
     const u = out.account || out.user || out;
@@ -5403,7 +5418,7 @@ async function googleSignedIn(resp){
     // the gate says otherwise (approved: 15 a day; on the list: 3).
     ACCESS.required = false;
     try{ localStorage.removeItem('still.accessRequired'); }catch(e){}
-    if(out.invite && !out.invite.ok){
+    if(out.invite && !out.invite.ok && !saved){
       // The code didn't work: signed in all the same, on the list; the sheet says why.
       openJoin(ACCESS.sheet || 'home', { code, codeErr: CODE_ERR()[out.invite.reason] || CODE_ERR().invalid });
     }else if(out.access === 'approved'){
@@ -5417,7 +5432,14 @@ async function googleSignedIn(resp){
       openOnboarding();
     }
   }catch(e){
-    AUTH.err = t("Couldn't sign you in. Please try again.", '没能登录，请再试一次。');
+    const why = String(e && e.message || '');
+    AUTH.err = why === 'limit_reached' || why === 'signups_closed'
+      ? t('New accounts are closed for today. Try again tomorrow, or use an invite code.', '今天暂停注册新账户。请明天再试，或使用邀请码。')
+      : why === 'nonce_invalid' || why === 'sign_in_failed'
+      ? t('That sign-in took too long. Please try again.', '登录超时，请再试一次。')
+      : /fetch|network|load/i.test(why)
+      ? t("Couldn't reach Still. Check your connection and try again.", '无法连接 Still。请检查网络后再试。')
+      : t("Couldn't sign you in. Please try again.", '没能登录，请再试一次。');
   }
   AUTH.busy = false; render();
   // A nonce is good for one sign-in: get the next one ready.
@@ -5428,6 +5450,17 @@ async function googleSignedIn(resp){
    minutes. So Google is set up again with a new one after every attempt and
    before the old one expires, and the buttons are redrawn with it. */
 let NONCE_TIMER = null;
+/* The web app added to an iPhone's home screen (standalone) can't use
+   Google's popup: the popup opens outside the app and never hands the token
+   back, so the button did nothing (B60). There Google redirects instead: it
+   posts the token to the gate's /v1/auth/google/return, which puts it in
+   this origin's storage and reopens the app, and gsiReturned() signs in
+   with it on load. Browsers keep the popup. The return URL must be listed
+   under the client's Authorized redirect URIs in Google Cloud. */
+const GSI_REDIRECT = (() => { try{
+  // The local Worker preview (?gate=1) can act standalone with ?standalone=1, to test this.
+  if(DEV_GATE && new URLSearchParams(location.search).get('standalone') === '1') return true;
+  return standalone(); }catch(e){ return false; } })();
 async function initGoogle(){
   clearTimeout(NONCE_TIMER);
   let nonce = '';
@@ -5435,12 +5468,35 @@ async function initGoogle(){
   if(!nonce){ GSI = 'failed'; return render(); }
   try{
     google.accounts.id.initialize({ client_id: GOOGLE_WEB_CLIENT_ID, callback: googleSignedIn, nonce,
-      ux_mode: 'popup', auto_select: false, cancel_on_tap_outside: true });
+      auto_select: false, cancel_on_tap_outside: true,
+      ...(GSI_REDIRECT ? { ux_mode: 'redirect', login_uri: AGENT_URL + '/v1/auth/google/return' } : { ux_mode: 'popup' }) });
+    // The nonce this browser asked for: a returned token must carry it.
+    if(GSI_REDIRECT){ try{ localStorage.setItem('still.gsiNonce', nonce); }catch(e){} }
     GSI = 'ready';
   }catch(e){ GSI = 'failed'; return render(); }
   document.querySelectorAll('.gsi-slot').forEach(el => { el.innerHTML = ''; });
   mountGoogle();
   NONCE_TIMER = setTimeout(() => { if(!AUTH.session) initGoogle(); }, 9 * 60 * 1000);
+}
+/* Back from Google's redirect (standalone only): sign in with the token the
+   gate left here, if it carries this browser's nonce. Read once, then gone. */
+function gsiReturned(){
+  let r = null, nonce = '', ctx = {};
+  try{
+    r = JSON.parse(localStorage.getItem('still.gsiReturn') || 'null');
+    nonce = localStorage.getItem('still.gsiNonce') || '';
+    ctx = JSON.parse(localStorage.getItem('still.gsiCtx') || '{}') || {};
+    localStorage.removeItem('still.gsiReturn'); localStorage.removeItem('still.gsiCtx');
+  }catch(e){}
+  if(!r || typeof r.credential !== 'string' || !(Date.now() - r.at < 10 * 60 * 1000)) return;
+  let claims = null;
+  try{ claims = JSON.parse(atob(r.credential.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))); }catch(e){}
+  if(!claims || !nonce || claims.nonce !== nonce) return;
+  try{ localStorage.removeItem('still.gsiNonce'); }catch(e){}
+  if(ctx.tab && typeof ctx.tab === 'string' && /^[a-z]{1,20}$/.test(ctx.tab)) stack = [{ tab: ctx.tab }];
+  if(ctx.code) ACCESS.pendingCode = ctx.code;
+  if(ctx.sheet) ACCESS.sheet = ctx.sheet;
+  googleSignedIn({ credential: r.credential });
 }
 /* The gate no longer knows this session (expired, or signed out elsewhere). */
 function sessionEnded(){
@@ -5610,6 +5666,10 @@ function mountGoogle(){
     return;
   }
   if(GSI !== 'ready') return;
+  // The redirect leaves the page: what the sign-in should carry (a code
+  // checked in the Join sheet) and where the reader was come back with it.
+  if(GSI_REDIRECT){ try{ localStorage.setItem('still.gsiCtx', JSON.stringify(
+    { code: ACCESS.pendingCode || '', sheet: ACCESS.sheet || '', tab: (stack[0] && stack[0].tab) || '' })); }catch(e){} }
   for(const el of slots){
     google.accounts.id.renderButton(el, { type: 'standard', theme: 'outline', size: 'large',
       text: 'signin_with', shape: 'pill', logo_alignment: 'center',
@@ -5618,8 +5678,16 @@ function mountGoogle(){
   }
 }
 /* The Google button, where it is offered. Empty without a client id. */
+/* Google refuses sign-in inside apps' built-in browsers (WeChat, Instagram,
+   Facebook, LINE, …: "disallowed_useragent"), so there the button would
+   only lead to an error page. Say how to get to a real browser instead. */
+const IN_APP_BROWSER = /MicroMessenger|WeChat|QQ\/|Weibo|Instagram|FBAN|FBAV|FB_IAB|Line\/|LinkedInApp|TikTok|musical_ly|Bytedance|Snapchat|Pinterest/i
+  .test(navigator.userAgent || '');
 function googleButton(){
   if(!googleOn() || AUTH.session) return '';
+  if(IN_APP_BROWSER) return `<div class="gsi"><p class="gsi-note gsi-inapp">${t(
+    "Google sign-in doesn't work inside this app's browser. Open this page in Safari or Chrome to sign in.",
+    '在这个应用的内置浏览器中无法使用 Google 登录。请在 Safari 或 Chrome 中打开本页后登录。')}</p></div>`;
   return `<div class="gsi">
       <div class="gsi-slot" aria-label="${t('Sign in with Google','使用 Google 登录')}"></div>
       ${agreeLine('join')}
@@ -5629,6 +5697,21 @@ function googleButton(){
       ${AUTH.err ? `<p class="gsi-err" role="alert">${esc(AUTH.err)}</p>` : ''}
     </div>`;
 }
+/* "Trouble signing in?": what stands in for "forgot password" when there are
+   no passwords. The account is the Google account; codes come from people. */
+function signInHelp(){
+  if(!googleOn() || AUTH.session) return '';
+  return `<details class="gsi-help"><summary>${t('Trouble signing in?','登录遇到问题？')}</summary>
+    <p>${t('Your account is your Google account: sign in with the same one on any device.',
+      '你的账户就是你的 Google 账户：在任何设备上用同一个账户登录即可。')}</p>
+    <p>${t('Lost your invite code? Ask whoever sent it, or write to us.',
+      '邀请码丢了？请联系发给你的人，或写信给我们。')}</p>
+    <p>${t("Can't get into your Google account? Google can help you recover it at",
+      '无法登录 Google 账户？可以通过 Google 找回：')} <a href="https://g.co/recover" target="_blank" rel="noopener">g.co/recover</a>${t('.','。')}
+      ${t("If it is gone for good, write to us and we'll help.",
+        '如果再也无法找回，请写信给我们，我们会帮你。')}</p>
+    <p><a href="mailto:support@stillasking.app">support@stillasking.app</a></p></details>`;
+}
 /* The Me page's account section: sign in, or who is signed in, Sign out
    and Delete account. */
 function accountSection(){
@@ -5637,7 +5720,10 @@ function accountSection(){
   if(!AUTH.session) return `<section class="me-acct"><h3>${t('Account','账户')}</h3>
       <p>${t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
       ${googleButton()}
-      ${onList() ? `<p class="me-acct-or">${t("You're on the list for more time with the thinkers.", '你已在名单上，等待与思想家更多对话。')}</p>
+      ${signInHelp()}
+      ${codeOnly() ? `<p class="me-acct-or">${t('Tester access on this device, from your invite code. Sign in to keep it on any device.',
+          '这台设备上的测试权限来自你的邀请码。登录后，在任何设备上都能使用。')}</p>`
+        : onList() ? `<p class="me-acct-or">${t("You're on the list for more time with the thinkers.", '你已在名单上，等待与思想家更多对话。')}</p>
           <button type="button" class="ghost me-join" data-join="settings" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`
         : `<p class="me-acct-or">${t('Still is letting people in a few at a time.','Still 正在分批开放。')}</p>
           <button type="button" class="ghost me-join" data-join="settings">${t('Request access','申请访问')}</button>`}</section>`;
@@ -7263,9 +7349,11 @@ function meGate(){
   return `<div class="me-pop-wrap">
     <div class="me-pop" role="dialog" aria-modal="false" aria-labelledby="me-pop-t">
       <h2 id="me-pop-t">${t('Keep track of your thinking','记录你的思考')}</h2>
-      <p>${t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
+      <p>${codeOnly() ? t('You have tester access on this device. Sign in to save your answers, likes and access on any device.',
+        '你在这台设备上有测试权限。登录后，你的回答、喜欢和权限在任何设备上都在。')
+        : t('Sign in to save your answers and likes.','登录后保存你的回答与喜欢。')}</p>
       ${googleButton()}
-      ${onList() ? '' : `<button type="button" class="linkish me-pop-join" data-join="me">${t('Request access to talk more with the thinkers','申请访问，与思想家多聊')}</button>`}
+      ${onList() || hasAccess() ? '' : `<button type="button" class="linkish me-pop-join" data-join="me">${t('Request access to talk more with the thinkers','申请访问，与思想家多聊')}</button>`}
     </div></div>`;
 }
 function meView(){
@@ -7426,7 +7514,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + msgMenu() + membersSheet();
+  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + membersSheet();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -7464,6 +7552,7 @@ function render(){
       if(list.style.paddingBottom === want) return;
       const atEnd = list.scrollHeight - list.scrollTop - list.clientHeight < 24;
       list.style.paddingBottom = want;
+      list.style.scrollPaddingBottom = want;   // a jump to a message clears the pill too
       if(atEnd) list.scrollTop = list.scrollHeight;
     };
     pad();
@@ -7806,11 +7895,8 @@ document.addEventListener('click', ev => {
     return;
   }
   if((el = hit('[data-derive-close]'))){ closeDerive(); return; }
-  if((el = hit('[data-msg-menu]'))){ MSGMENU = el.dataset.msgMenu; render();
-    setTimeout(() => { const b = document.querySelector('.msg-menu .mm-item'); if(b) b.focus(); }); return; }
-  if((el = hit('[data-msg-menu-close]'))){ MSGMENU = null; return render(); }
   if((el = hit('[data-msg-reply]'))){ startReply(el.dataset.msgReply); return; }
-  if((el = hit('[data-msg-unsend]'))){ const k = el.dataset.msgUnsend; MSGMENU = null; CONFIRM = { kind: 'unsend', key: k }; return render(); }
+  if((el = hit('[data-msg-unsend]'))){ const k = el.dataset.msgUnsend; CONFIRM = { kind: 'unsend', key: k }; return render(); }
   if((el = hit('[data-reply-cancel]'))){ REPLYING = null; return render(); }
   if((el = hit('[data-members-open]'))){ MEMBERS = true; render();
     setTimeout(() => { const b = document.querySelector('.members-sheet .mm-item'); if(b) b.focus(); }); return; }
@@ -8125,7 +8211,13 @@ document.addEventListener('focusout', ev => {
 if(window.visualViewport){
   const vv = window.visualViewport;
   const fit = () => {
-    if(!document.body.classList.contains('kb')){ document.documentElement.style.removeProperty('--vvh'); return; }
+    if(!document.body.classList.contains('kb')){
+      document.documentElement.style.removeProperty('--vvh');
+      // B58: the keyboard gone, Safari can leave the page scrolled; inside a
+      // conversation that hid the room's header.
+      if(window.scrollY && document.documentElement.classList.contains('in-convo')) window.scrollTo(0, 0);
+      return;
+    }
     document.documentElement.style.setProperty('--vvh', Math.round(vv.height) + 'px');
     if(window.scrollY || vv.offsetTop) window.scrollTo(0, 0);
   };
@@ -8252,6 +8344,7 @@ Promise.all([
   render(); model();
   refreshEditor();
   if(AUTH.session) syncNow();   // another device may have changed things
+  else if(googleOn()) gsiReturned();   // back from Google's redirect (home-screen app)
   // ./?chat=<philosopher id> opens a chat with them (map.html links here).
   // The parameter is dropped so a reload does not start a second chat.
   const want = new URLSearchParams(location.search).get('chat');
