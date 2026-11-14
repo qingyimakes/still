@@ -1064,6 +1064,19 @@ body.resizing{cursor:col-resize;user-select:none}
 .mm-item{min-height:48px;padding:0 var(--sp-l);border-radius:var(--r-inner);background:var(--surface);
   border:1px solid var(--hairline);font-size:16px;color:var(--ink);text-align:left}
 .mm-danger{color:var(--danger)}
+.left-tag{margin-left:6px;font-size:12.5px;font-weight:400;color:var(--ink-secondary)}
+.peer{font-style:normal}
+em.peer{font-style:italic}
+.members-sheet .mem-row{display:flex;align-items:center;gap:var(--sp-s);min-height:48px}
+.members-sheet .mem-row b{flex:1;min-width:0;font-weight:600;color:var(--ink)}
+.mem-x{min-height:36px;padding:0 var(--sp-m);border-radius:999px;border:1px solid var(--hairline-strong);
+  background:var(--surface);color:var(--danger);font-size:14px}
+.atpick{display:flex;flex-direction:column;max-height:220px;overflow:auto;margin:0 0 var(--sp-xs);padding:4px;
+  background:var(--surface);border:1px solid var(--hairline-strong);border-radius:14px}
+.at-opt{display:flex;align-items:center;gap:var(--sp-s);min-height:44px;padding:0 var(--sp-s);border-radius:10px;
+  color:var(--ink);font-size:15px;text-align:left;background:none}
+.at-opt:hover,.at-opt:focus-visible{background:var(--chip)}
+.at-opt .av{width:28px;height:28px;font-size:12px}
 /* A thinker's reply is text on the page, not a bubble; the reader's own
    message keeps its dark bubble, so who said what still reads at a glance. */
 .msg:not(.mine) .bubble{background:none;border:0;border-radius:0;padding:0;
@@ -3585,7 +3598,8 @@ function convoPane(c){
       <div class="who">
         <div class="who-row"><b>${esc(convoTitle(c))}</b>${AGENT_URL ? rpPill() : ''}</div>
         <span>${cast.length || roomOpen(c) ? `${roomOpen(c) ? t('Open room', '开放房间') + ' · ' : ''}${
-            cast.length ? t(`${cast.length} in the room`, `${cast.length} 人在场`) + ' · ' : ''}<button
+            cast.length ? `<button type="button" class="simlink" data-members-open="1" aria-haspopup="dialog">${
+              t(`${cast.length} in the room`, `${cast.length} 人在场`)}</button> · ` : ''}<button
             type="button" class="simlink" data-how="1" aria-haspopup="dialog"
             aria-label="${t('Simulated. How this works','模拟。这是如何运作的')}">${
             t('Simulated','模拟')}<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5"
@@ -4048,12 +4062,122 @@ function unsend(key){
   const c = convo(); if(!c) return;
   const i = c.msgs.findIndex(m => msgKey(m) === key && m.mine); if(i < 0) return;
   c.msgs.splice(i, 1);
+  if(c.ledger) c.ledger.points = (c.ledger.points || []).filter(x => x.message_id !== key);
   // Replies to it that already arrived stay, marked; any still arriving stop.
   c.msgs.forEach(m => { if(m.replyOf === key) m.orphan = true; });
   if(ROUND && ROUND.qKey === key && chat.busy){ ROUND.unsent = true; chat.stopped = false; ROUND.ctl.abort(); }
   if(REPLYING && REPLYING.id === key) REPLYING = null;
   save(); render();
 }
+/* Milestone 2 (advisor §1b): the room ledger, kept per chat. Each reply's
+   point (so no one repeats it) and its engagement (so forms and stances
+   rotate) go back to the agent on every /v1/ask; the last 12 of each. */
+const LEDGER_MAX = 12;
+function ledgerOf(c){
+  const l = c.ledger || {};
+  return { points: (l.points || []).slice(-LEDGER_MAX), engagements: (l.engagements || []).slice(-LEDGER_MAX) };
+}
+function ledgerAdd(c, speaker, eng, key){
+  if(!eng) return;
+  c.ledger = c.ledger || { points: [], engagements: [] };
+  if(eng.point) c.ledger.points.push({ speaker, point: String(eng.point).slice(0, 200), message_id: key });
+  if(eng.engaged && eng.target && eng.form)
+    c.ledger.engagements.push({ from: speaker, to: eng.target, form: eng.form, stance: eng.stance || '' });
+  c.ledger.points = c.ledger.points.slice(-LEDGER_MAX * 2);
+  c.ledger.engagements = c.ledger.engagements.slice(-LEDGER_MAX * 2);
+}
+/* The reader's reply-to, with the speaker as the agent's id. */
+function agentReplyTo(last){
+  const rt = last && last.mine && last.replyTo; if(!rt) return null;
+  return { id: String(rt.id || ''), speaker: rt.speaker === 'reader' ? 'reader' : (AGENT_IDS[rt.speaker] || rt.speaker),
+           excerpt: String(rt.excerpt || '') };
+}
+/* @ mentions: members named with an @ in the message, as agent ids. */
+function mentionNames(p){ return [pn(p), p.name, p.nameZh, String(p.name || '').split(' ').pop()].filter(x => x && x.length > 1); }
+function mentionsIn(c, text){
+  text = String(text || '');
+  if(!text.includes('@')) return [];
+  return (c.cast || []).map(philById).filter(p => p && AGENT_IDS[p.id])
+    .filter(p => mentionNames(p).some(n => text.includes('@' + n)))
+    .map(p => AGENT_IDS[p.id]);
+}
+/* Remove (kick): out of the room, never picked again until added back by
+   hand. Their past replies stay, labelled "(left)"; others speak of them only
+   in the third person. */
+let MEMBERS = false;
+function hasLeft(id){ const c = convo(); return !!(c && (c.left || []).includes(id) && !(c.cast || []).includes(id)); }
+function leftIds(c, transcript){
+  const spoke = new Set(transcript.map(x => x.speaker));
+  return (c.left || []).filter(id => !(c.cast || []).includes(id)).map(id => AGENT_IDS[id])
+    .filter(a => a && spoke.has(a));
+}
+function removeMember(id){
+  const c = convo(); const p = philById(id); if(!c || !p) return;
+  c.cast = c.cast.filter(x => x !== id);
+  c.room = c.room || { open: false, auto: [], quiet: {} };
+  c.room.auto = (c.room.auto || []).filter(x => x !== id);
+  c.room.excluded = [...new Set((c.room.excluded || []).concat(id))];
+  if(c.msgs.some(m => m.id === id && !m.mine)) c.left = [...new Set((c.left || []).concat(id))];
+  c.msgs.push({ id:null, name:'—', at: Date.now(), said:null, room:true,
+    text: t(`You removed ${pn(p)}.`, `你已将${pn(p)}移出。`) });
+  if(!c.cast.length && !roomOpen(c)) MEMBERS = false;
+  save(); render();
+}
+function membersSheet(){
+  const c = MEMBERS && convo(); if(!c) return '';
+  const cast = (c.cast || []).map(philById).filter(Boolean);
+  return `<div class="backdrop" data-members-close="1"></div>
+    <div class="modal sheet fb-sheet msg-menu members-sheet" role="dialog" aria-modal="true" aria-label="${t('In the room','在场的人')}">
+      <div class="fb-body">
+        <p class="msg-menu-q"><b>${t('In the room','在场的人')}</b> ${roomOpen(c)
+          ? t('An open room: others may join when they have written on the question.', '开放房间：写过这个话题的人可能会加入。')
+          : t('Only these people reply.', '只有这些人会回应。')}</p>
+        ${cast.length ? cast.map(p => `<div class="mem-row">${castAvatar(p)}<b>${esc(pn(p))}</b>
+          <button type="button" class="mem-x" data-member-remove="${esc(p.id)}"
+            aria-label="${t(`Remove ${esc(pn(p))}`, `移出${esc(pn(p))}`)}">${t('Remove','移出')}</button></div>`).join('')
+          : `<p class="msg-menu-q">${t('Nobody here yet.','这里还没有人。')}</p>`}
+        <button type="button" class="mm-item" data-members-add="1">${t('Add people','添加成员')}</button>
+      </div>
+      <footer class="fb-row"><button type="button" class="fb-cancel" data-members-close="1">${t('Done','完成')}</button></footer>
+    </div>`;
+}
+/* The @ picker: typing "@" in the box lists the people in the room; a tap
+   puts "@Name " in. Drawn into the composer without a re-render, so the
+   field keeps focus and the caret. */
+function atPick(box){
+  const c = convo(); const old = document.getElementById('atpick');
+  const before = box.value.slice(0, box.selectionStart || 0);
+  const m = c && before.match(/(?:^|\s)@([^\s@]{0,16})$/);
+  const q = m ? m[1].toLowerCase() : null;
+  const list = m ? (c.cast || []).map(philById).filter(p => p && AGENT_IDS[p.id])
+    .filter(p => !q || mentionNames(p).some(n => n.toLowerCase().startsWith(q))) : [];
+  if(!list.length){ if(old) old.remove(); return; }
+  const html = `<div class="atpick" id="atpick" role="listbox" aria-label="${t('Mention someone','提及某人')}">${
+    list.map(p => `<button type="button" role="option" class="at-opt" data-at="${esc(p.id)}">${castAvatar(p)}<span>${esc(pn(p))}</span></button>`).join('')}</div>`;
+  if(old) old.outerHTML = html;
+  else { const inbox = box.closest('.inbox'); if(inbox) inbox.insertAdjacentHTML('beforebegin', html); }
+}
+function atInsert(id){
+  const box = document.getElementById('say'); const p = philById(id); if(!box || !p) return;
+  const pos = box.selectionStart || 0;
+  const before = box.value.slice(0, pos).replace(/@([^\s@]{0,16})$/, '@' + pn(p) + ' ');
+  box.value = before + box.value.slice(pos);
+  box.setSelectionRange(before.length, before.length);
+  chat.draft = box.value; grow(box); syncSend(); box.focus();
+  const el = document.getElementById('atpick'); if(el) el.remove();
+}
+// mousedown, so the field never loses focus before the pick lands.
+document.addEventListener('mousedown', ev => {
+  const b = ev.target.closest && ev.target.closest('[data-at]');
+  if(b){ ev.preventDefault(); atInsert(b.dataset.at); }
+});
+document.addEventListener('touchend', ev => {
+  const b = ev.target.closest && ev.target.closest('[data-at]');
+  if(b){ ev.preventDefault(); atInsert(b.dataset.at); }
+});
+document.addEventListener('keydown', ev => {
+  if(ev.key === 'Escape'){ const el = document.getElementById('atpick'); if(el){ el.remove(); ev.stopPropagation(); } }
+}, true);
 function jumpTo(key){
   const el = document.querySelector(`#msgs [data-k="${CSS.escape(key)}"]`); if(!el) return;
   el.scrollIntoView({ block: 'center', behavior: navReduced() ? 'auto' : 'smooth' });
@@ -4486,7 +4610,8 @@ async function routeTurn(c){
               present: c.cast.map(id => AGENT_IDS[id]).filter(Boolean),
               pinned: hand.map(id => AGENT_IDS[id]),
               excluded: (room.excluded || []).map(id => AGENT_IDS[id]).filter(Boolean),
-              mentions: [], quiet: room.quiet, window: recent } }, 30000);
+              mentions: mentionsIn(c, question), quiet: room.quiet, window: recent,
+              ...(agentReplyTo(last) ? { replyTo: agentReplyTo(last) } : {}) } }, 30000);
   }catch(e){ out = null; }
   if(!out || !out.room || !Array.isArray(out.room.speak)){
     // Suggestions busy or used up for today: the room as it is answers.
@@ -6072,10 +6197,11 @@ async function agentSpeak(c, cast){
         { question, thinker: AGENT_IDS[p.id], why: true, message_id: ROUND && ROUND.id,
           lang: questionLang(question),
           room: { members, addressed: (c.turn && c.turn.addressed) || [],
-                  transcript, round: round.slice(), readerPlaceholder: true },
+                  transcript, round: round.slice(), readerPlaceholder: true,
+                  mentions: mentionsIn(c, question), left: leftIds(c, transcript),
+                  ledger: ledgerOf(c),
+                  ...(agentReplyTo(last) ? { replyTo: agentReplyTo(last) } : {}) },
           ...(askCtx ? { context: askCtx } : {}),
-          ...(rt ? { replyTo: { id: rt.id, speaker: rt.speaker === 'reader' ? 'reader'
-                     : (AGENT_IDS[rt.speaker] || rt.speaker), excerpt: rt.excerpt } } : {}),
           ...(pick ? { choice: pick.id } : {}) }, 90000);
       if(out && out.busy){ busyLine(out.busy, true); return; }
       if(out && out.rated){
@@ -6192,10 +6318,13 @@ async function agentSpeak(c, cast){
     // the belt for an older server. Sources come from why.passages.
     (why.sentences || []).forEach(x => { x.text = fillReader(noMarkers(x.text)); });
     const said = fillReader(noMarkers(row.answer));
-    round.push({ speaker: AGENT_IDS[p.id], text: said });
+    const eng = row.room && row.room.engage;
+    if(eng) why.engage = eng;
+    round.push({ speaker: AGENT_IDS[p.id], text: said, ...(eng && eng.form ? { form: eng.form } : {}) });
     c.msgs.push({ id:p.id, name:p.name, text:said, said:null,
                   at: Date.now(), agent: why, round: ROUND && ROUND.id,
                   ...(qKey ? { replyOf: qKey } : {}) });
+    ledgerAdd(c, AGENT_IDS[p.id], eng, msgKey(c.msgs[c.msgs.length - 1]));
     markFresh(c.msgs[c.msgs.length - 1]);
     c.at = Date.now(); save(); render();
   }
@@ -6221,8 +6350,10 @@ function noMarkers(text){
    the agent's verifier matched it word-for-word to a passage; every other
    quotation mark is removed, so nothing unverified can look like a quote. */
 const BLOCK_QUOTE_CHARS = 90;
+const PEER_RE = /「([^」\n]{1,24})」|\*([^*\n]{1,120})\*/g;
 function agentBubble(a, fallback){
   const nums = {}, byId = {};
+  const peers = ((a.engage && a.engage.phrases) || []).map(x => String(x.text || ''));
   (a.passages || []).forEach((p, i) => { nums[p.id] = i + 1; byId[p.id] = p; });
   const sentences = (a.sentences && a.sentences.length ? a.sentences
                   : [{ text: fallback, quotes: [] }]).map(x => Object.assign({}, x, { text: withReader(x.text) }));
@@ -6242,13 +6373,22 @@ function agentBubble(a, fallback){
     }
     for(const part of parts){
       if(!part.q){
-        let plain = part.t.replace(QUOTE_MARKS, '');
+        // A phrase another speaker said in this room (M8): 「…」 / italics,
+        // never “ ”, no source. Kept out of the quote-mark strip below.
+        const peerHtml = [];
+        let plain = part.t.replace(PEER_RE, (m0, zh, en) => {
+          const x = zh || en;
+          if(!peers.includes(x)) return m0;
+          peerHtml.push(zh ? `<span class="peer">「${esc(x)}」</span>` : `<em class="peer">${esc(x)}</em>`);
+          return `\uE010${peerHtml.length - 1}\uE011`;
+        }).replace(QUOTE_MARKS, '');
         // The punctuation that closed a block quote would open the next
         // paragraph ("。这些…"); the block already ends the sentence.
         if(afterBlock) plain = plain.replace(/^[\s.,;:!?\u3002\uFF0C\u3001\uFF1B\uFF1A\uFF01\uFF1F\u2019\u201D'"\u300D\u300F\u00BB)\uFF09]+/, '');
         if(plain) afterBlock = false;
         const bits = plain.split(/\n\s*\n/);
-        bits.forEach((b, k) => { if(k) flush(); para.push(ital(esc(b))); });
+        bits.forEach((b, k) => { if(k) flush();
+          para.push(ital(esc(b)).replace(/\uE010(\d+)\uE011/g, (m0, n) => peerHtml[+n] || '')); });
         continue;
       }
       const n = nums[part.q.evidence_id], src = byId[part.q.evidence_id];
@@ -6387,7 +6527,8 @@ function agentRow(m, p, cont, last){
   const passages = a.passages || [];
   return `<article class="msg${cont}" data-k="${esc(msgKey(m))}">
     <div class="msg-body">
-      <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b></div>
+      <div class="msg-head">${linkAvatar(p)}<b>${esc(pn(p))}</b>${hasLeft(m.id)
+        ? `<span class="left-tag">${t('(left)','（已离开）')}</span>` : ''}</div>
       ${m.orphan ? `<p class="orphan">${t('replying to a message you unsent','回复的消息已撤回')}</p>` : ''}
       <div class="bubble">${agentBubble(a, m.text)}</div>
       ${passages.length + life.length ? `<details class="said-fold"${FOLD_OPEN.has(msgKey(m)) ? ' open' : ''}>
@@ -7278,7 +7419,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + msgMenu();
+  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + msgMenu() + membersSheet();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -7619,6 +7760,11 @@ document.addEventListener('click', ev => {
     if(c) c.cast = next; else chat.pending = next;
     // Tapped by hand: no longer someone who joined by themselves.
     if(c && c.room && c.room.auto) c.room.auto = c.room.auto.filter(x => x !== id);
+    // Added back by hand: no longer removed.
+    if(c && next.includes(id)){
+      if(c.room && c.room.excluded) c.room.excluded = c.room.excluded.filter(x => x !== id);
+      if(c.left) c.left = c.left.filter(x => x !== id);
+    }
     save();
     // In the open picker, change only what the tap changed — the row, the
     // chips, the button. A full render replayed the sheet and reloaded
@@ -7659,6 +7805,12 @@ document.addEventListener('click', ev => {
   if((el = hit('[data-msg-reply]'))){ startReply(el.dataset.msgReply); return; }
   if((el = hit('[data-msg-unsend]'))){ const k = el.dataset.msgUnsend; MSGMENU = null; CONFIRM = { kind: 'unsend', key: k }; return render(); }
   if((el = hit('[data-reply-cancel]'))){ REPLYING = null; return render(); }
+  if((el = hit('[data-members-open]'))){ MEMBERS = true; render();
+    setTimeout(() => { const b = document.querySelector('.members-sheet .mm-item'); if(b) b.focus(); }); return; }
+  if((el = hit('[data-members-close]'))){ MEMBERS = false; return render(); }
+  if((el = hit('[data-member-remove]'))){ removeMember(el.dataset.memberRemove); return; }
+  if((el = hit('[data-members-add]'))){ MEMBERS = false;
+    chat.picking = true; chat.query = ''; chat.filter = 'all'; return render(); }
   if((el = hit('[data-jump]'))){ jumpTo(el.dataset.jump); return; }
   if((el = hit('[data-reply-like]'))){ toggleReplyLike(el.dataset.replyLike); return; }
   if((el = hit('[data-open-reply]'))){
@@ -7915,7 +8067,7 @@ document.addEventListener('input', ev => {
     }
     return;
   }
-  if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); syncSend(); return; }
+  if(ev.target.id === 'say'){ chat.draft = ev.target.value; grow(ev.target); syncSend(); atPick(ev.target); return; }
   if(ev.target.id === 'pq'){ chat.query = ev.target.value; render(); }
   // The question box: no redraw while typing; only the Start button follows.
   if(ev.target.id === 'askq'){
