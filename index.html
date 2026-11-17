@@ -1052,15 +1052,19 @@ body.resizing{cursor:col-resize;user-select:none}
 .stamp{font-size:10.5px;color:var(--ink-tertiary);padding:0 5px}
 /* Reply and Unsend. */
 .mine-foot{display:flex;align-items:center;gap:var(--sp-xxs)}
-/* Your own message: Reply and Unsend as two small icons (B59), shown on
-   hover with a mouse and always on a touch screen. */
-.mine-foot .act{color:var(--ink-secondary)}
-.msg .mine-foot .act{width:32px;height:32px}
-.mine-foot .act svg{width:16px;height:16px}
-@media (hover:hover) and (pointer:fine){
-  .mine-foot .act{opacity:0;transition:opacity .15s}
-  .msg.mine:hover .mine-foot .act,.msg.mine:focus-within .mine-foot .act{opacity:1}
-}
+/* Your own message (B63): only the time under it; a long press opens the
+   bubble's menu. No text selection or iOS callout on the bubble, so the
+   press is ours alone. */
+.msg.mine .bubble{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;cursor:default}
+.msg.mine .bubble:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.bm-back{position:fixed;inset:0;z-index:70}
+.bmenu{position:fixed;z-index:71;min-width:180px;padding:var(--sp-xs);display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--hairline-strong);border-radius:var(--r-chip);
+  box-shadow:0 8px 28px rgba(36,50,53,.16)}
+.bmenu button{display:flex;align-items:center;gap:var(--sp-m);min-height:44px;padding:0 var(--sp-m);
+  border-radius:10px;font-size:15px;color:var(--ink);text-align:left}
+.bmenu button:hover,.bmenu button:focus-visible{background:var(--chip)}
+.bmenu svg{width:18px;height:18px;flex:none;color:var(--ink-secondary)}
 .rquote{display:flex;flex-direction:column;align-items:flex-start;gap:1px;max-width:min(100%,var(--measure));
   padding:var(--sp-xs) var(--sp-m);border-left:2px solid var(--hairline-strong);border-radius:6px;
   background:var(--chip-soft);text-align:left;font-size:12.5px;line-height:1.4;color:var(--ink-secondary)}
@@ -2139,6 +2143,8 @@ async function sendReport(){
 }
 document.addEventListener('keydown', ev => {
   if(REPORT && ev.key === 'Escape' && !REPORT.sending){ ev.preventDefault(); REPORT = null; render(); }
+  else if(BUBMENU && ev.key === 'Escape'){ ev.preventDefault(); const k = BUBMENU.key; BUBMENU = null; render();
+    const b = document.querySelector(`#msgs [data-k="${CSS.escape(k)}"] .bubble`); if(b) b.focus(); }
   else if(REPLYING && ev.key === 'Escape' && ev.target.id === 'say'){ ev.preventDefault(); REPLYING = null; render(); }
 });
 document.addEventListener('change', async ev => {
@@ -4050,9 +4056,57 @@ const UNSEND_PATH = '<path d="M4 7h16"/><path d="M9.5 7V4.5h5V7"/><path d="M6.5 
 function replyBtn(key){
   return `<button type="button" class="act" data-msg-reply="${esc(key)}" aria-label="${t('Reply','回复')}">${ICON_SVG(REPLY_PATH)}</button>`;
 }
-function unsendBtn(key){
-  return `<button type="button" class="act" data-msg-unsend="${esc(key)}" aria-haspopup="dialog" aria-label="${t('Unsend','撤回')}">${ICON_SVG(UNSEND_PATH)}</button>`;
+/* B63 (founder): nothing under your own message but the time. A long press
+   on your bubble (right-click, or Shift+F10 / the menu key on a focused
+   bubble) opens a small menu beside it, as in the Claude app: Copy only,
+   since the founder would rather a sent line could not be taken back. The bubble's text is not selectable, so iOS Safari's
+   own selection and callout never compete with it. */
+let BUBMENU = null;      // {key, top, right}: the menu open beside a bubble
+const COPY_PATH = '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>';
+function openBubbleMenu(art){
+  const b = art && art.querySelector('.bubble'); if(!b) return;
+  const r = b.getBoundingClientRect(), h = 3 * 44 + 12;
+  const below = r.bottom + 6 + h < (window.visualViewport ? visualViewport.height : innerHeight) - 8;
+  BUBMENU = { key: art.dataset.k, top: Math.max(8, Math.round(below ? r.bottom + 6 : r.top - 6 - h)),
+              right: Math.max(8, Math.round(innerWidth - r.right)) };
+  render();
+  const first = document.querySelector('.bmenu [role="menuitem"]'); if(first) first.focus({ preventScroll: true });
 }
+function bubbleMenu(){
+  const m = BUBMENU && msgByKey(BUBMENU.key); if(!m || !m.mine) return '';
+  const k = esc(BUBMENU.key);
+  return `<div class="bm-back" data-bm-close="1"></div>
+    <div class="bmenu" role="menu" aria-label="${t('Message','消息')}" style="top:${BUBMENU.top}px;right:${BUBMENU.right}px">
+      <button type="button" role="menuitem" data-bm-copy="${k}">${ICON_SVG(COPY_PATH)}<span>${t('Copy','复制')}</span></button>
+    </div>`;
+}
+(function(){
+  let timer = null, x0 = 0, y0 = 0, fired = false;
+  const own = ev => ev.target.closest && ev.target.closest('#msgs article.msg.mine[data-k]');
+  document.addEventListener('touchstart', ev => {
+    const art = own(ev); fired = false; if(!art || !ev.target.closest('.bubble')) return;
+    x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY; clearTimeout(timer);
+    timer = setTimeout(() => { timer = null; fired = true; if(navigator.vibrate) navigator.vibrate(8); openBubbleMenu(art); }, 450);
+  }, { passive: true });
+  document.addEventListener('touchmove', ev => {
+    if(timer && Math.hypot(ev.touches[0].clientX - x0, ev.touches[0].clientY - y0) > 8){ clearTimeout(timer); timer = null; }
+  }, { passive: true });
+  // The finger lifting after the menu opened must not land on it.
+  document.addEventListener('touchend', ev => { clearTimeout(timer); timer = null; if(fired){ fired = false; ev.preventDefault(); } });
+  document.addEventListener('touchcancel', () => { clearTimeout(timer); timer = null; }, { passive: true });
+  document.addEventListener('contextmenu', ev => {
+    const art = own(ev); if(!art || !ev.target.closest('.bubble')) return;
+    ev.preventDefault(); openBubbleMenu(art);
+  });
+  document.addEventListener('keydown', ev => {
+    const art = own(ev); if(!art || !ev.target.matches('.bubble')) return;
+    if(ev.key === 'ContextMenu' || (ev.key === 'F10' && ev.shiftKey) || ev.key === 'Enter'){ ev.preventDefault(); openBubbleMenu(art); }
+  });
+  // The menu sits where the bubble was: close it when the transcript moves.
+  document.addEventListener('scroll', ev => {
+    if(BUBMENU && ev.target && ev.target.id === 'msgs'){ BUBMENU = null; render(); }
+  }, { capture: true, passive: true });
+})();
 const oneLine = (x, n) => { x = String(x || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : x; };
 function speakerName(m){ return m.mine ? t('You','你') : pn(philById(m.id) || { name: m.name }); }
 function replyQuote(rt){
@@ -4210,8 +4264,8 @@ function msgRow(m, i, c){
   if(m.mine) return `<article class="msg mine${cont}" data-k="${esc(msgKey(m))}">
       <div class="msg-body">
         ${replyQuote(m.replyTo)}
-        <div class="bubble">${esc(m.text)}</div>
-        <div class="mine-foot">${replyBtn(msgKey(m))}${unsendBtn(msgKey(m))}${last ? `<span class="stamp">${clock(m.at)}</span>` : ''}</div>
+        <div class="bubble" tabindex="0" aria-haspopup="menu" aria-label="${esc(m.text)}. ${t('Long press to copy','长按可复制')}">${esc(m.text)}</div>
+        ${last ? `<div class="mine-foot"><span class="stamp">${clock(m.at)}</span></div>` : ''}
       </div>
     </article>`;
 
@@ -7514,7 +7568,7 @@ function render(){
   const hadFocus = box && document.activeElement === box;
   if(box) chat.draft = box.value;
 
-  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + membersSheet();
+  view.innerHTML = html + joinSheet() + onboardSheet() + answerFirstDialog() + confirmDialog() + feedbackDialog() + reportDialog() + rateDialog() + membersSheet() + bubbleMenu();
   if(ghost) navAnimate(ghost, NAV);
   NAV = null;
   document.documentElement.classList.toggle('ob-open', OB.open);
@@ -7895,8 +7949,14 @@ document.addEventListener('click', ev => {
     return;
   }
   if((el = hit('[data-derive-close]'))){ closeDerive(); return; }
-  if((el = hit('[data-msg-reply]'))){ startReply(el.dataset.msgReply); return; }
-  if((el = hit('[data-msg-unsend]'))){ const k = el.dataset.msgUnsend; CONFIRM = { kind: 'unsend', key: k }; return render(); }
+  if((el = hit('[data-bm-close]'))){ BUBMENU = null; return render(); }
+  if((el = hit('[data-bm-copy]'))){
+    const m = msgByKey(el.dataset.bmCopy); BUBMENU = null; render();
+    if(m && navigator.clipboard) navigator.clipboard.writeText(m.text).catch(() => {});
+    return;
+  }
+  if((el = hit('[data-msg-reply]'))){ BUBMENU = null; startReply(el.dataset.msgReply); return; }
+  if((el = hit('[data-msg-unsend]'))){ BUBMENU = null; const k = el.dataset.msgUnsend; CONFIRM = { kind: 'unsend', key: k }; return render(); }
   if((el = hit('[data-reply-cancel]'))){ REPLYING = null; return render(); }
   if((el = hit('[data-members-open]'))){ MEMBERS = true; render();
     setTimeout(() => { const b = document.querySelector('.members-sheet .mm-item'); if(b) b.focus(); }); return; }
