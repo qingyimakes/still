@@ -79,6 +79,10 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+/* In-app browsers (WeChat above all) scale page text by the app's own font
+   setting, ~1.25x, which wraps names and titles the design sizes to fit.
+   Lock text at the size the tokens say; pinch-zoom still works. */
+html,body{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
 body{margin:0;background:var(--room);font-family:var(--sans);color:var(--ink);
      -webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;
@@ -1916,6 +1920,23 @@ button.sim-tag:hover{color:var(--ink)}
   <nav class="nav" id="nav"></nav>
 </div>
 
+<script>
+/* WeChat's browser also resizes text through its own bridge, which the CSS
+   above cannot reach. Ask it to keep the page's sizes (fontSize 0 = default)
+   and to keep them when the reader changes WeChat's font setting. */
+(function(){
+  function keep(){
+    try{
+      WeixinJSBridge.invoke('setFontSizeCallback',{fontSize:0});
+      WeixinJSBridge.on('menu:setfont',function(){
+        WeixinJSBridge.invoke('setFontSizeCallback',{fontSize:0});
+      });
+    }catch(e){}
+  }
+  if(typeof WeixinJSBridge==='object'&&typeof WeixinJSBridge.invoke==='function')keep();
+  else document.addEventListener('WeixinJSBridgeReady',keep,false);
+})();
+</script>
 <script>
 /* ---------------------------------------------------------------------------
    Still, on the web.
