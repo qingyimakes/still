@@ -3907,6 +3907,7 @@ async function refreshMe(){
       if(hasAccess() && ACCESS.required){ ACCESS.required = false; try{ localStorage.removeItem('still.accessRequired'); }catch(e){} }
     }
     if(j && j.tester && j.tester.since) ACCESS.since = j.tester.since;
+    if(j) setTeam(j.kind === 'account' && !!j.team);
     render();
   }catch(e){}
 }
@@ -5825,9 +5826,16 @@ let AGENT_CHOICE = '';
 
 /* Claude is offered only to someone with an access code (the gate
    enforces it too); without one the menu shows the free models only. */
+/* The team (GET /v1/me `team`) may pick Claude too, while signed in. */
+let TEAM = (() => { try{ return localStorage.getItem('still.team') === '1'; }catch(e){ return false; } })();
+function setTeam(on){
+  TEAM = !!on;
+  try{ on ? localStorage.setItem('still.team', '1') : localStorage.removeItem('still.team'); }catch(e){}
+}
+const mayPickClaude = () => !!AGENT_KEY || (TEAM && !!AUTH.session);
 function agentChoices(){
   const all = (AGENT_INFO && AGENT_INFO.choices) || [];
-  return AGENT_KEY ? all : all.filter(r => r.family !== 'claude' && !/^claude/i.test(r.id || ''));
+  return mayPickClaude() ? all : all.filter(r => r.family !== 'claude' && !/^claude/i.test(r.id || ''));
 }
 /* A model whose worst-case reply costs more than the per-message cap can
    never answer under it (Fable 5.1 at $0.50). It stays in the list, greyed
@@ -5977,7 +5985,7 @@ function modelMenu(){
        <button type="button" class="mi" role="menuitem" aria-haspopup="menu" tabindex="-1" data-mmore="1">
          <span class="nm">${t('More models','更多模型')}</span>
          <span class="side" aria-hidden="true">&#8250;</span><span class="chk"></span></button></div>` : ''}`;
-  const locked = !AGENT_KEY && ((AGENT_INFO && AGENT_INFO.choices) || []).some(r => r.family === 'claude' || /^claude/i.test(r.id || ''));
+  const locked = !mayPickClaude() && ((AGENT_INFO && AGENT_INFO.choices) || []).some(r => r.family === 'claude' || /^claude/i.test(r.id || ''));
   return `<div class="mback" data-mclose="1"></div>
     <div class="mmenu" id="mmenu" role="menu" aria-label="${t('Model','模型')}">${body}${locked ? `
       <p class="mlock">${t('Claude models need a personal invite code.','Claude 模型需要个人邀请码。')} <button type="button" class="linkish acc-code" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button></p>` : ''}</div>`;
