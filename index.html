@@ -5832,7 +5832,12 @@ function setTeam(on){
   TEAM = !!on;
   try{ on ? localStorage.setItem('still.team', '1') : localStorage.removeItem('still.team'); }catch(e){}
 }
-const mayPickClaude = () => !!AGENT_KEY || (TEAM && !!AUTH.session);
+/* Only the founders' passcode and the team pick Claude by name. Testers and
+   invite codes get Auto, which reaches Claude only when the free models are
+   used up (Docs/agent/usage-limits.md). Before /v1/me answers, a saved code
+   is given the benefit of the doubt. */
+const mayPickClaude = () => (TEAM && !!AUTH.session)
+  || (!!AGENT_KEY && (!MY || !MY.kind || MY.kind === 'founder'));
 function agentChoices(){
   const all = (AGENT_INFO && AGENT_INFO.choices) || [];
   return mayPickClaude() ? all : all.filter(r => r.family !== 'claude' && !/^claude/i.test(r.id || ''));
@@ -5988,7 +5993,9 @@ function modelMenu(){
   const locked = !mayPickClaude() && ((AGENT_INFO && AGENT_INFO.choices) || []).some(r => r.family === 'claude' || /^claude/i.test(r.id || ''));
   return `<div class="mback" data-mclose="1"></div>
     <div class="mmenu" id="mmenu" role="menu" aria-label="${t('Model','模型')}">${body}${locked ? `
-      <p class="mlock">${t('Claude models need a personal invite code.','Claude 模型需要个人邀请码。')} <button type="button" class="linkish acc-code" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button></p>` : ''}</div>`;
+      <p class="mlock">${hasAccess()
+        ? t('Auto moves on to Claude when the free models are used up for the day.','免费模型当天用完后，Auto 会接着用 Claude。')
+        : `${t('Testers get Claude through Auto.','测试者可通过 Auto 使用 Claude。')} <button type="button" class="linkish acc-code" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`}</p>` : ''}</div>`;
 }
 function closeDerive(){
   const k = DERIVE; DERIVE = null; render();
