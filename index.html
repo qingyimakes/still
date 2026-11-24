@@ -3908,6 +3908,7 @@ async function refreshMe(){
     }
     if(j && j.tester && j.tester.since) ACCESS.since = j.tester.since;
     if(j) setTeam(j.kind === 'account' && !!j.team);
+    if(j) setSeat(j.kind === 'account' && j.seat ? j.seat.daily : 0);
     render();
   }catch(e){}
 }
@@ -3917,6 +3918,7 @@ async function refreshMe(){
 function usageAccess(){
   if(!AGENT_KEY){
     if(hasAccess()) return '';
+    if(seated()) return `<div class="up-acc"><button type="button" class="linkish" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button></div>`;
     return `<div class="up-acc">${onList()
       ? `<p class="up-none">${t("You're on the list.", '你已在名单上。')}</p>
          <button type="button" class="linkish" data-join="chat" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`
@@ -5116,8 +5118,16 @@ const hasAccess = () => !!AGENT_KEY || (!!AUTH.session && ACCESS.state === 'appr
 /* Access from an invite code saved in this browser, with no account: it
    works here only. Signing in is optional and keeps it on every device. */
 const codeOnly = () => !!AGENT_KEY && !AUTH.session;
+/* One of the first sign-ups (GET /v1/me `seat`): a daily allowance on the
+   free models, so not "on the list" (Docs/agent/usage-limits.md). */
+let SEAT = (() => { try{ return +(localStorage.getItem('still.seat') || 0) || 0; }catch(e){ return 0; } })();
+function setSeat(daily){
+  SEAT = +daily || 0;
+  try{ SEAT ? localStorage.setItem('still.seat', String(SEAT)) : localStorage.removeItem('still.seat'); }catch(e){}
+}
+const seated = () => !!AUTH.session && SEAT > 0 && ACCESS.state !== 'approved';
 /* On the list: signed in but not approved, or a request sent from here. */
-const onList = () => (!!AUTH.session && ACCESS.state === 'waiting') || (!AUTH.session && (ACCESS.sent || ACCESS.state === 'waiting'));
+const onList = () => !seated() && ((!!AUTH.session && ACCESS.state === 'waiting') || (!AUTH.session && (ACCESS.sent || ACCESS.state === 'waiting')));
 function accessRequired(reason){
   if(!ACCESS.required) openJoin('chat');   // the moment it happens: open the sheet once
   ACCESS.required = true; ACCESS.reason = reason || '';
@@ -5809,6 +5819,8 @@ function accountSection(){
       <p>${t('Signed in as','已登录：')} <b>${esc(AUTH.email || AUTH.name || t('your Google account','你的 Google 账户'))}</b>${
         EDITOR.on ? ` <span class="ed-tag">${t('Editor','编辑')}</span>` : ''}</p>
       ${ACCESS.state === 'approved' ? `<p class="me-acct-state">${sinceText ? t(`Tester access since ${esc(sinceText)}`, `测试权限，自 ${esc(sinceText)} 起`) : t('Tester access','测试权限')}</p>`
+        : seated() ? `<p class="me-acct-state">${t(`${SEAT} messages a day with the thinkers.`, `每天可与思想家对话 ${SEAT} 条。`)}</p>
+          <button type="button" class="ghost me-join" data-join="settings" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>`
         : ACCESS.state === 'waiting' ? `<p class="me-acct-state">${t("You're on the list. We'll email you when you're in.", '你已在名单上。获得访问后，我们会发邮件通知你。')}</p>
           <button type="button" class="ghost me-join" data-join="settings" data-join-code="1">${t('Have an invite code?','有邀请码？')}</button>` : ''}
       ${EDITOR.on ? `<p class="fb-note">${t('Drafts waiting for review appear at the top of Home.','待评审的草稿显示在首页顶部。')}</p>` : ''}
@@ -7697,7 +7709,7 @@ function render(){
   // "Request access" on Home, while there is a gate to send it to and this
   // reader has no access and isn't on the list yet. It opens the Join sheet.
   const accBtn = document.getElementById('bar-acc');
-  const showAcc = e.tab === 'home' && stack.length <= 1 && !!accessUrl() && !hasAccess() && !onList();
+  const showAcc = e.tab === 'home' && stack.length <= 1 && !!accessUrl() && !hasAccess() && !onList() && !seated();
   accBtn.hidden = !showAcc;
   accBtn.textContent = t('Request access', '申请访问');
   // Settings: a gear at the bar's right on Me, signed in or not (founder).
